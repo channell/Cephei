@@ -58,14 +58,14 @@ module ModifiedCraigSneydSchemeFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
-                let builder () = withMnemonic mnemonic ((ModifiedCraigSneydSchemeModel.Cast _ModifiedCraigSneydScheme.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((ModifiedCraigSneydSchemeModel.Cast _ModifiedCraigSneydScheme.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalInputs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
-                let source = Helper.sourceFold (_ModifiedCraigSneydScheme.source + ".Factory") 
+                let source () = Helper.sourceFold (_ModifiedCraigSneydScheme.source + ".Factory") 
                                                [| _ModifiedCraigSneydScheme.source
                                                ;  _L.source
                                                ;  _bcs.source
@@ -78,7 +78,7 @@ module ModifiedCraigSneydSchemeFunction =
                                 ;  _additionalInputs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ModifiedCraigSneydScheme> format
                     ; source = source 
@@ -112,7 +112,7 @@ module ModifiedCraigSneydSchemeFunction =
                 let _mu = Helper.toCell<double> mu "mu" 
                 let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
                 let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
-                let builder () = withMnemonic mnemonic (Fun.ModifiedCraigSneydScheme1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ModifiedCraigSneydScheme1
                                                             _theta.cell 
                                                             _mu.cell 
                                                             _map.cell 
@@ -120,7 +120,7 @@ module ModifiedCraigSneydSchemeFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ModifiedCraigSneydScheme>) l
 
-                let source = Helper.sourceFold "Fun.ModifiedCraigSneydScheme1" 
+                let source () = Helper.sourceFold "Fun.ModifiedCraigSneydScheme1" 
                                                [| _theta.source
                                                ;  _mu.source
                                                ;  _map.source
@@ -133,7 +133,7 @@ module ModifiedCraigSneydSchemeFunction =
                                 ;  _bcSet.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ModifiedCraigSneydScheme> format
                     ; source = source 
@@ -155,16 +155,16 @@ module ModifiedCraigSneydSchemeFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ModifiedCraigSneydScheme ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ModifiedCraigSneydScheme ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ModifiedCraigSneydScheme>) l
 
-                let source = Helper.sourceFold "Fun.ModifiedCraigSneydScheme ()" 
+                let source () = Helper.sourceFold "Fun.ModifiedCraigSneydScheme ()" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ModifiedCraigSneydScheme> format
                     ; source = source 
@@ -192,12 +192,12 @@ module ModifiedCraigSneydSchemeFunction =
 
                 let _ModifiedCraigSneydScheme = Helper.toCell<ModifiedCraigSneydScheme> modifiedcraigsneydscheme "ModifiedCraigSneydScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((ModifiedCraigSneydSchemeModel.Cast _ModifiedCraigSneydScheme.cell).SetStep
+                let builder (current : ICell) = withMnemonic mnemonic ((ModifiedCraigSneydSchemeModel.Cast _ModifiedCraigSneydScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : ModifiedCraigSneydScheme) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ModifiedCraigSneydScheme.source + ".SetStep") 
+                let source () = Helper.sourceFold (_ModifiedCraigSneydScheme.source + ".SetStep") 
                                                [| _ModifiedCraigSneydScheme.source
                                                ;  _dt.source
                                                |]
@@ -206,7 +206,7 @@ module ModifiedCraigSneydSchemeFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,14 +240,14 @@ module ModifiedCraigSneydSchemeFunction =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((ModifiedCraigSneydSchemeModel.Cast _ModifiedCraigSneydScheme.cell).Step
+                let builder (current : ICell) = withMnemonic mnemonic ((ModifiedCraigSneydSchemeModel.Cast _ModifiedCraigSneydScheme.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 
                                                        ) :> ICell
                 let format (o : ModifiedCraigSneydScheme) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ModifiedCraigSneydScheme.source + ".Step") 
+                let source () = Helper.sourceFold (_ModifiedCraigSneydScheme.source + ".Step") 
                                                [| _ModifiedCraigSneydScheme.source
                                                ;  _a.source
                                                ;  _t.source
@@ -260,7 +260,7 @@ module ModifiedCraigSneydSchemeFunction =
                                 ;  _theta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,14 +289,14 @@ module ModifiedCraigSneydSchemeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ModifiedCraigSneydScheme>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ModifiedCraigSneydScheme>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ModifiedCraigSneydScheme>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ModifiedCraigSneydScheme>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

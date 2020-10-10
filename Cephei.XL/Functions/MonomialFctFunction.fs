@@ -49,19 +49,19 @@ module MonomialFctFunction =
             try
 
                 let _order = Helper.toCell<int> order "order" 
-                let builder () = withMnemonic mnemonic (Fun.MonomialFct 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MonomialFct 
                                                             _order.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MonomialFct>) l
 
-                let source = Helper.sourceFold "Fun.MonomialFct" 
+                let source () = Helper.sourceFold "Fun.MonomialFct" 
                                                [| _order.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _order.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MonomialFct> format
                     ; source = source 
@@ -89,12 +89,12 @@ module MonomialFctFunction =
 
                 let _MonomialFct = Helper.toCell<MonomialFct> monomialfct "MonomialFct"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((MonomialFctModel.Cast _MonomialFct.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((MonomialFctModel.Cast _MonomialFct.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MonomialFct.source + ".Value") 
+                let source () = Helper.sourceFold (_MonomialFct.source + ".Value") 
                                                [| _MonomialFct.source
                                                ;  _x.source
                                                |]
@@ -103,7 +103,7 @@ module MonomialFctFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -132,14 +132,14 @@ module MonomialFctFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MonomialFct>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MonomialFct>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MonomialFct>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MonomialFct>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

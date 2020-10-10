@@ -46,16 +46,16 @@ module NullParameterFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.NullParameter 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NullParameter 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NullParameter>) l
 
-                let source = Helper.sourceFold "Fun.NullParameter" 
+                let source () = Helper.sourceFold "Fun.NullParameter" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NullParameter> format
                     ; source = source 
@@ -80,18 +80,18 @@ module NullParameterFunction =
             try
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
-                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Constraint
+                let builder (current : ICell) = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold (_NullParameter.source + ".CONSTRAINT") 
+                let source () = Helper.sourceFold (_NullParameter.source + ".CONSTRAINT") 
                                                [| _NullParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NullParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NullParameter> format
                     ; source = source 
@@ -116,18 +116,18 @@ module NullParameterFunction =
             try
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
-                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Implementation
+                let builder (current : ICell) = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Impl) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NullParameter.source + ".Implementation") 
+                let source () = Helper.sourceFold (_NullParameter.source + ".Implementation") 
                                                [| _NullParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NullParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -152,18 +152,18 @@ module NullParameterFunction =
             try
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
-                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NullParameter.source + ".Parameters") 
+                let source () = Helper.sourceFold (_NullParameter.source + ".Parameters") 
                                                [| _NullParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NullParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NullParameter> format
                     ; source = source 
@@ -194,13 +194,13 @@ module NullParameterFunction =
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).SetParam
+                let builder (current : ICell) = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).SetParam
                                                             _i.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : NullParameter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NullParameter.source + ".SetParam") 
+                let source () = Helper.sourceFold (_NullParameter.source + ".SetParam") 
                                                [| _NullParameter.source
                                                ;  _i.source
                                                ;  _x.source
@@ -211,7 +211,7 @@ module NullParameterFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,18 +236,18 @@ module NullParameterFunction =
             try
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
-                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NullParameter.source + ".Size") 
+                let source () = Helper.sourceFold (_NullParameter.source + ".Size") 
                                                [| _NullParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NullParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -275,12 +275,12 @@ module NullParameterFunction =
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).TestParams
+                let builder (current : ICell) = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).TestParams
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NullParameter.source + ".TestParams") 
+                let source () = Helper.sourceFold (_NullParameter.source + ".TestParams") 
                                                [| _NullParameter.source
                                                ;  _p.source
                                                |]
@@ -289,7 +289,7 @@ module NullParameterFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -317,12 +317,12 @@ module NullParameterFunction =
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NullParameter.source + ".Value") 
+                let source () = Helper.sourceFold (_NullParameter.source + ".Value") 
                                                [| _NullParameter.source
                                                ;  _t.source
                                                |]
@@ -331,7 +331,7 @@ module NullParameterFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -360,14 +360,14 @@ module NullParameterFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NullParameter>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NullParameter>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NullParameter>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NullParameter>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

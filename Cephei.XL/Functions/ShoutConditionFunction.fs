@@ -55,13 +55,13 @@ module ShoutConditionFunction =
                 let _ShoutCondition = Helper.toCell<ShoutCondition> shoutcondition "ShoutCondition"  
                 let _a = Helper.toCell<Vector> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ShoutConditionModel.Cast _ShoutCondition.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((ShoutConditionModel.Cast _ShoutCondition.cell).ApplyTo
                                                             _a.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : ShoutCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ShoutCondition.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_ShoutCondition.source + ".ApplyTo") 
                                                [| _ShoutCondition.source
                                                ;  _a.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module ShoutConditionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -106,7 +106,7 @@ module ShoutConditionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _resTime = Helper.toCell<double> resTime "resTime" 
                 let _rate = Helper.toCell<double> rate "rate" 
-                let builder () = withMnemonic mnemonic (Fun.ShoutCondition 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ShoutCondition 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _resTime.cell 
@@ -114,7 +114,7 @@ module ShoutConditionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ShoutCondition>) l
 
-                let source = Helper.sourceFold "Fun.ShoutCondition" 
+                let source () = Helper.sourceFold "Fun.ShoutCondition" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _resTime.source
@@ -127,7 +127,7 @@ module ShoutConditionFunction =
                                 ;  _rate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ShoutCondition> format
                     ; source = source 
@@ -158,14 +158,14 @@ module ShoutConditionFunction =
                 let _intrinsicValues = Helper.toCell<Vector> intrinsicValues "intrinsicValues" 
                 let _resTime = Helper.toCell<double> resTime "resTime" 
                 let _rate = Helper.toCell<double> rate "rate" 
-                let builder () = withMnemonic mnemonic (Fun.ShoutCondition1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ShoutCondition1 
                                                             _intrinsicValues.cell 
                                                             _resTime.cell 
                                                             _rate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ShoutCondition>) l
 
-                let source = Helper.sourceFold "Fun.ShoutCondition1" 
+                let source () = Helper.sourceFold "Fun.ShoutCondition1" 
                                                [| _intrinsicValues.source
                                                ;  _resTime.source
                                                ;  _rate.source
@@ -176,7 +176,7 @@ module ShoutConditionFunction =
                                 ;  _rate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ShoutCondition> format
                     ; source = source 
@@ -205,14 +205,14 @@ module ShoutConditionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ShoutCondition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ShoutCondition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ShoutCondition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ShoutCondition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

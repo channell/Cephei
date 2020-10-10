@@ -64,7 +64,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 let _compounding = Helper.toDefault<Compounding> compounding "compounding" Compounding.Continuous
                 let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.NoFrequency
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.PiecewiseZeroSpreadedTermStructure 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PiecewiseZeroSpreadedTermStructure 
                                                             _h.cell 
                                                             _spreads.cell 
                                                             _dates.cell 
@@ -74,7 +74,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PiecewiseZeroSpreadedTermStructure>) l
 
-                let source = Helper.sourceFold "Fun.PiecewiseZeroSpreadedTermStructure" 
+                let source () = Helper.sourceFold "Fun.PiecewiseZeroSpreadedTermStructure" 
                                                [| _h.source
                                                ;  _spreads.source
                                                ;  _dates.source
@@ -91,7 +91,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroSpreadedTermStructure> format
                     ; source = source 
@@ -116,18 +116,18 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".Calendar") 
+                let source () = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".Calendar") 
                                                [| _PiecewiseZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroSpreadedTermStructure> format
                     ; source = source 
@@ -152,18 +152,18 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".DayCounter") 
                                                [| _PiecewiseZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroSpreadedTermStructure> format
                     ; source = source 
@@ -188,18 +188,18 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".MaxDate") 
                                                [| _PiecewiseZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -224,18 +224,18 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".ReferenceDate") 
                                                [| _PiecewiseZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,18 +260,18 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _PiecewiseZeroSpreadedTermStructure = Helper.toCell<PiecewiseZeroSpreadedTermStructure> piecewisezerospreadedtermstructure "PiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroSpreadedTermStructureModel.Cast _PiecewiseZeroSpreadedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".SettlementDays") 
                                                [| _PiecewiseZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -300,14 +300,14 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PiecewiseZeroSpreadedTermStructure>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PiecewiseZeroSpreadedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PiecewiseZeroSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PiecewiseZeroSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

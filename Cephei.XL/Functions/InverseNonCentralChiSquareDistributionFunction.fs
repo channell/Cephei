@@ -52,13 +52,13 @@ module InverseNonCentralChiSquareDistributionFunction =
 
                 let _df = Helper.toCell<double> df "df" 
                 let _ncp = Helper.toCell<double> ncp "ncp" 
-                let builder () = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution 
                                                             _df.cell 
                                                             _ncp.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseNonCentralChiSquareDistribution>) l
 
-                let source = Helper.sourceFold "Fun.InverseNonCentralChiSquareDistribution" 
+                let source () = Helper.sourceFold "Fun.InverseNonCentralChiSquareDistribution" 
                                                [| _df.source
                                                ;  _ncp.source
                                                |]
@@ -67,7 +67,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                                 ;  _ncp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InverseNonCentralChiSquareDistribution> format
                     ; source = source 
@@ -98,14 +98,14 @@ module InverseNonCentralChiSquareDistributionFunction =
                 let _df = Helper.toCell<double> df "df" 
                 let _ncp = Helper.toCell<double> ncp "ncp" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution1 
                                                             _df.cell 
                                                             _ncp.cell 
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseNonCentralChiSquareDistribution>) l
 
-                let source = Helper.sourceFold "Fun.InverseNonCentralChiSquareDistribution1" 
+                let source () = Helper.sourceFold "Fun.InverseNonCentralChiSquareDistribution1" 
                                                [| _df.source
                                                ;  _ncp.source
                                                ;  _maxEvaluations.source
@@ -116,7 +116,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InverseNonCentralChiSquareDistribution> format
                     ; source = source 
@@ -150,7 +150,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                 let _ncp = Helper.toCell<double> ncp "ncp" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseNonCentralChiSquareDistribution2 
                                                             _df.cell 
                                                             _ncp.cell 
                                                             _maxEvaluations.cell 
@@ -158,7 +158,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseNonCentralChiSquareDistribution>) l
 
-                let source = Helper.sourceFold "Fun.InverseNonCentralChiSquareDistribution2" 
+                let source () = Helper.sourceFold "Fun.InverseNonCentralChiSquareDistribution2" 
                                                [| _df.source
                                                ;  _ncp.source
                                                ;  _maxEvaluations.source
@@ -171,7 +171,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                                 ;  _accuracy.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InverseNonCentralChiSquareDistribution> format
                     ; source = source 
@@ -199,12 +199,12 @@ module InverseNonCentralChiSquareDistributionFunction =
 
                 let _InverseNonCentralChiSquareDistribution = Helper.toCell<InverseNonCentralChiSquareDistribution> inversenoncentralchisquaredistribution "InverseNonCentralChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((InverseNonCentralChiSquareDistributionModel.Cast _InverseNonCentralChiSquareDistribution.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((InverseNonCentralChiSquareDistributionModel.Cast _InverseNonCentralChiSquareDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InverseNonCentralChiSquareDistribution.source + ".Value") 
+                let source () = Helper.sourceFold (_InverseNonCentralChiSquareDistribution.source + ".Value") 
                                                [| _InverseNonCentralChiSquareDistribution.source
                                                ;  _x.source
                                                |]
@@ -213,7 +213,7 @@ module InverseNonCentralChiSquareDistributionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,14 +242,14 @@ module InverseNonCentralChiSquareDistributionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InverseNonCentralChiSquareDistribution>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InverseNonCentralChiSquareDistribution>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InverseNonCentralChiSquareDistribution>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InverseNonCentralChiSquareDistribution>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

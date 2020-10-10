@@ -55,14 +55,14 @@ module AmericanPathPricerFunction =
                 let _payoff = Helper.toCell<Payoff> payoff "payoff" 
                 let _polynomOrder = Helper.toCell<int> polynomOrder "polynomOrder" 
                 let _polynomType = Helper.toCell<LsmBasisSystem.PolynomType> polynomType "polynomType" 
-                let builder () = withMnemonic mnemonic (Fun.AmericanPathPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmericanPathPricer 
                                                             _payoff.cell 
                                                             _polynomOrder.cell 
                                                             _polynomType.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AmericanPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.AmericanPathPricer" 
+                let source () = Helper.sourceFold "Fun.AmericanPathPricer" 
                                                [| _payoff.source
                                                ;  _polynomOrder.source
                                                ;  _polynomType.source
@@ -73,7 +73,7 @@ module AmericanPathPricerFunction =
                                 ;  _polynomType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AmericanPathPricer> format
                     ; source = source 
@@ -98,18 +98,18 @@ module AmericanPathPricerFunction =
             try
 
                 let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
-                let builder () = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).BasisSystem
+                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).BasisSystem
                                                        ) :> ICell
                 let format (i : Generic.List<Func<double,double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_AmericanPathPricer.source + ".BasisSystem") 
+                let source () = Helper.sourceFold (_AmericanPathPricer.source + ".BasisSystem") 
                                                [| _AmericanPathPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmericanPathPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -140,13 +140,13 @@ module AmericanPathPricerFunction =
                 let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let _t = Helper.toCell<int> t "t" 
-                let builder () = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).State
+                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).State
                                                             _path.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmericanPathPricer.source + ".State") 
+                let source () = Helper.sourceFold (_AmericanPathPricer.source + ".State") 
                                                [| _AmericanPathPricer.source
                                                ;  _path.source
                                                ;  _t.source
@@ -157,7 +157,7 @@ module AmericanPathPricerFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -188,13 +188,13 @@ module AmericanPathPricerFunction =
                 let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let _t = Helper.toCell<int> t "t" 
-                let builder () = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).Value
                                                             _path.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmericanPathPricer.source + ".Value") 
+                let source () = Helper.sourceFold (_AmericanPathPricer.source + ".Value") 
                                                [| _AmericanPathPricer.source
                                                ;  _path.source
                                                ;  _t.source
@@ -205,7 +205,7 @@ module AmericanPathPricerFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -234,14 +234,14 @@ module AmericanPathPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AmericanPathPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AmericanPathPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AmericanPathPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AmericanPathPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

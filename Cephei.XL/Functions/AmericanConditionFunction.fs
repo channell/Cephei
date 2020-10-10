@@ -49,19 +49,19 @@ module AmericanConditionFunction =
             try
 
                 let _intrinsicValues = Helper.toCell<Vector> intrinsicValues "intrinsicValues" 
-                let builder () = withMnemonic mnemonic (Fun.AmericanCondition1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmericanCondition1 
                                                             _intrinsicValues.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AmericanCondition>) l
 
-                let source = Helper.sourceFold "Fun.AmericanCondition" 
+                let source () = Helper.sourceFold "Fun.AmericanCondition" 
                                                [| _intrinsicValues.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _intrinsicValues.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AmericanCondition> format
                     ; source = source 
@@ -89,13 +89,13 @@ module AmericanConditionFunction =
 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic (Fun.AmericanCondition
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmericanCondition
                                                             _Type.cell 
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AmericanCondition>) l
 
-                let source = Helper.sourceFold "Fun.AmericanCondition1" 
+                let source () = Helper.sourceFold "Fun.AmericanCondition1" 
                                                [| _Type.source
                                                ;  _strike.source
                                                |]
@@ -104,7 +104,7 @@ module AmericanConditionFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AmericanCondition> format
                     ; source = source 
@@ -135,13 +135,13 @@ module AmericanConditionFunction =
                 let _AmericanCondition = Helper.toCell<AmericanCondition> americancondition "AmericanCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((AmericanConditionModel.Cast _AmericanCondition.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((AmericanConditionModel.Cast _AmericanCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : AmericanCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AmericanCondition.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_AmericanCondition.source + ".ApplyTo") 
                                                [| _AmericanCondition.source
                                                ;  _o.source
                                                ;  _t.source
@@ -152,7 +152,7 @@ module AmericanConditionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -181,14 +181,14 @@ module AmericanConditionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AmericanCondition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AmericanCondition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AmericanCondition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AmericanCondition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

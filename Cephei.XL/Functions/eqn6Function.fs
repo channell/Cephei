@@ -61,7 +61,7 @@ module eqn6Function =
                 let _d = Helper.toCell<double> d "d" 
                 let _bs = Helper.toCell<double> bs "bs" 
                 let _hk = Helper.toCell<double> hk "hk" 
-                let builder () = withMnemonic mnemonic (Fun.eqn6 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.eqn6 
                                                             _a.cell 
                                                             _c.cell 
                                                             _d.cell 
@@ -70,7 +70,7 @@ module eqn6Function =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<eqn6>) l
 
-                let source = Helper.sourceFold "Fun.eqn6" 
+                let source () = Helper.sourceFold "Fun.eqn6" 
                                                [| _a.source
                                                ;  _c.source
                                                ;  _d.source
@@ -85,7 +85,7 @@ module eqn6Function =
                                 ;  _hk.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<eqn6> format
                     ; source = source 
@@ -113,12 +113,12 @@ module eqn6Function =
 
                 let _eqn6 = Helper.toCell<eqn6> eqn6 "eqn6"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((eqn6Model.Cast _eqn6.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((eqn6Model.Cast _eqn6.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_eqn6.source + ".Value") 
+                let source () = Helper.sourceFold (_eqn6.source + ".Value") 
                                                [| _eqn6.source
                                                ;  _x.source
                                                |]
@@ -127,7 +127,7 @@ module eqn6Function =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -156,14 +156,14 @@ module eqn6Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<eqn6>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<eqn6>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<eqn6>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<eqn6>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

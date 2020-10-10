@@ -49,19 +49,19 @@ module AnalyticContinuousFixedLookbackEngineFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticContinuousFixedLookbackEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticContinuousFixedLookbackEngine 
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticContinuousFixedLookbackEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticContinuousFixedLookbackEngine" 
+                let source () = Helper.sourceFold "Fun.AnalyticContinuousFixedLookbackEngine" 
                                                [| _Process.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticContinuousFixedLookbackEngine> format
                     ; source = source 
@@ -93,14 +93,14 @@ module AnalyticContinuousFixedLookbackEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticContinuousFixedLookbackEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticContinuousFixedLookbackEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticContinuousFixedLookbackEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticContinuousFixedLookbackEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -46,16 +46,16 @@ module VNDCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.VNDCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.VNDCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VNDCurrency>) l
 
-                let source = Helper.sourceFold "Fun.VNDCurrency" 
+                let source () = Helper.sourceFold "Fun.VNDCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VNDCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".Code") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".Empty") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module VNDCurrencyFunction =
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".Equals") 
                                                [| _VNDCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module VNDCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".Format") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".FractionsPerUnit") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".FractionSymbol") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".Name") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".NumericCode") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".Rounding") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VNDCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".Symbol") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".ToString") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module VNDCurrencyFunction =
             try
 
                 let _VNDCurrency = Helper.toCell<VNDCurrency> vndcurrency "VNDCurrency"  
-                let builder () = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((VNDCurrencyModel.Cast _VNDCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_VNDCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_VNDCurrency.source + ".TriangulationCurrency") 
                                                [| _VNDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VNDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VNDCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module VNDCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<VNDCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<VNDCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<VNDCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<VNDCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

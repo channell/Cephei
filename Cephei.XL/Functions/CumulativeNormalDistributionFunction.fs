@@ -52,13 +52,13 @@ module CumulativeNormalDistributionFunction =
 
                 let _average = Helper.toCell<double> average "average" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder () = withMnemonic mnemonic (Fun.CumulativeNormalDistribution1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CumulativeNormalDistribution1 
                                                             _average.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CumulativeNormalDistribution>) l
 
-                let source = Helper.sourceFold "Fun.CumulativeNormalDistribution1" 
+                let source () = Helper.sourceFold "Fun.CumulativeNormalDistribution1" 
                                                [| _average.source
                                                ;  _sigma.source
                                                |]
@@ -67,7 +67,7 @@ module CumulativeNormalDistributionFunction =
                                 ;  _sigma.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CumulativeNormalDistribution> format
                     ; source = source 
@@ -89,16 +89,16 @@ module CumulativeNormalDistributionFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.CumulativeNormalDistribution ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CumulativeNormalDistribution ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CumulativeNormalDistribution>) l
 
-                let source = Helper.sourceFold "Fun.CumulativeNormalDistribution1" 
+                let source () = Helper.sourceFold "Fun.CumulativeNormalDistribution1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CumulativeNormalDistribution> format
                     ; source = source 
@@ -126,12 +126,12 @@ module CumulativeNormalDistributionFunction =
 
                 let _CumulativeNormalDistribution = Helper.toCell<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((CumulativeNormalDistributionModel.Cast _CumulativeNormalDistribution.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((CumulativeNormalDistributionModel.Cast _CumulativeNormalDistribution.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CumulativeNormalDistribution.source + ".Derivative") 
+                let source () = Helper.sourceFold (_CumulativeNormalDistribution.source + ".Derivative") 
                                                [| _CumulativeNormalDistribution.source
                                                ;  _x.source
                                                |]
@@ -140,7 +140,7 @@ module CumulativeNormalDistributionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -168,12 +168,12 @@ module CumulativeNormalDistributionFunction =
 
                 let _CumulativeNormalDistribution = Helper.toCell<CumulativeNormalDistribution> cumulativenormaldistribution "CumulativeNormalDistribution"  
                 let _z = Helper.toCell<double> z "z" 
-                let builder () = withMnemonic mnemonic ((CumulativeNormalDistributionModel.Cast _CumulativeNormalDistribution.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((CumulativeNormalDistributionModel.Cast _CumulativeNormalDistribution.cell).Value
                                                             _z.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CumulativeNormalDistribution.source + ".Value") 
+                let source () = Helper.sourceFold (_CumulativeNormalDistribution.source + ".Value") 
                                                [| _CumulativeNormalDistribution.source
                                                ;  _z.source
                                                |]
@@ -182,7 +182,7 @@ module CumulativeNormalDistributionFunction =
                                 ;  _z.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -211,14 +211,14 @@ module CumulativeNormalDistributionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CumulativeNormalDistribution>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CumulativeNormalDistribution>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CumulativeNormalDistribution>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CumulativeNormalDistribution>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

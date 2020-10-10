@@ -52,13 +52,13 @@ module EarlyExerciseFunction =
 
                 let _Type = Helper.toCell<Exercise.Type> Type "Type" 
                 let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" 
-                let builder () = withMnemonic mnemonic (Fun.EarlyExercise 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EarlyExercise 
                                                             _Type.cell 
                                                             _payoffAtExpiry.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EarlyExercise>) l
 
-                let source = Helper.sourceFold "Fun.EarlyExercise" 
+                let source () = Helper.sourceFold "Fun.EarlyExercise" 
                                                [| _Type.source
                                                ;  _payoffAtExpiry.source
                                                |]
@@ -67,7 +67,7 @@ module EarlyExerciseFunction =
                                 ;  _payoffAtExpiry.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EarlyExercise> format
                     ; source = source 
@@ -92,18 +92,18 @@ module EarlyExerciseFunction =
             try
 
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
-                let builder () = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).PayoffAtExpiry
+                let builder (current : ICell) = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EarlyExercise.source + ".PayoffAtExpiry") 
+                let source () = Helper.sourceFold (_EarlyExercise.source + ".PayoffAtExpiry") 
                                                [| _EarlyExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EarlyExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,12 +131,12 @@ module EarlyExerciseFunction =
 
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).Date
                                                             _index.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EarlyExercise.source + ".Date") 
+                let source () = Helper.sourceFold (_EarlyExercise.source + ".Date") 
                                                [| _EarlyExercise.source
                                                ;  _index.source
                                                |]
@@ -145,7 +145,7 @@ module EarlyExerciseFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module EarlyExerciseFunction =
             try
 
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
-                let builder () = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).Dates
+                let builder (current : ICell) = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_EarlyExercise.source + ".Dates") 
+                let source () = Helper.sourceFold (_EarlyExercise.source + ".Dates") 
                                                [| _EarlyExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EarlyExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -206,18 +206,18 @@ module EarlyExerciseFunction =
             try
 
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
-                let builder () = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).LastDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EarlyExercise.source + ".LastDate") 
+                let source () = Helper.sourceFold (_EarlyExercise.source + ".LastDate") 
                                                [| _EarlyExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EarlyExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module EarlyExerciseFunction =
             try
 
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
-                let builder () = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EarlyExercise.source + ".TYPE") 
+                let source () = Helper.sourceFold (_EarlyExercise.source + ".TYPE") 
                                                [| _EarlyExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EarlyExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -282,14 +282,14 @@ module EarlyExerciseFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EarlyExercise>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EarlyExercise>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EarlyExercise>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EarlyExercise>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

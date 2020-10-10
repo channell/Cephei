@@ -46,16 +46,16 @@ module FIMCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.FIMCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FIMCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FIMCurrency>) l
 
-                let source = Helper.sourceFold "Fun.FIMCurrency" 
+                let source () = Helper.sourceFold "Fun.FIMCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FIMCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".Code") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".Empty") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module FIMCurrencyFunction =
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".Equals") 
                                                [| _FIMCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module FIMCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".Format") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".FractionsPerUnit") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".FractionSymbol") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".Name") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".NumericCode") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".Rounding") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FIMCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".Symbol") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".ToString") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module FIMCurrencyFunction =
             try
 
                 let _FIMCurrency = Helper.toCell<FIMCurrency> fimcurrency "FIMCurrency"  
-                let builder () = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((FIMCurrencyModel.Cast _FIMCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_FIMCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_FIMCurrency.source + ".TriangulationCurrency") 
                                                [| _FIMCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FIMCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module FIMCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FIMCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FIMCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FIMCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FIMCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -55,14 +55,14 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                 let _args = Helper.toCell<BarrierOption.Arguments> args "args" 
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
                 let _grid = Helper.toDefault<TimeGrid> grid "grid" null
-                let builder () = withMnemonic mnemonic (Fun.DiscretizedDermanKaniBarrierOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscretizedDermanKaniBarrierOption 
                                                             _args.cell 
                                                             _Process.cell 
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscretizedDermanKaniBarrierOption>) l
 
-                let source = Helper.sourceFold "Fun.DiscretizedDermanKaniBarrierOption" 
+                let source () = Helper.sourceFold "Fun.DiscretizedDermanKaniBarrierOption" 
                                                [| _args.source
                                                ;  _Process.source
                                                ;  _grid.source
@@ -73,7 +73,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                                 ;  _grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedDermanKaniBarrierOption> format
                     ; source = source 
@@ -98,18 +98,18 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).MandatoryTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".MandatoryTimes") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".MandatoryTimes") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -137,12 +137,12 @@ module DiscretizedDermanKaniBarrierOptionFunction =
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Reset
                                                             _size.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".Reset") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".Reset") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                ;  _size.source
                                                |]
@@ -151,7 +151,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,18 +176,18 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).AdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".AdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".AdjustValues") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -218,13 +218,13 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Initialize
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Initialize
                                                             _Method.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".Initialize") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".Initialize") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                ;  _Method.source
                                                ;  _t.source
@@ -235,7 +235,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,18 +260,18 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Method
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".METHOD") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".METHOD") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedDermanKaniBarrierOption> format
                     ; source = source 
@@ -299,12 +299,12 @@ module DiscretizedDermanKaniBarrierOptionFunction =
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PartialRollback
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".PartialRollback") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".PartialRollback") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                ;  _To.source
                                                |]
@@ -313,7 +313,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PostAdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".PostAdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".PostAdjustValues") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PreAdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".PreAdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".PreAdjustValues") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -410,18 +410,18 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PresentValue
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".PresentValue") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".PresentValue") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -449,12 +449,12 @@ module DiscretizedDermanKaniBarrierOptionFunction =
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Rollback
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Rollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".Rollback") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".Rollback") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                ;  _To.source
                                                |]
@@ -463,7 +463,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -491,12 +491,12 @@ module DiscretizedDermanKaniBarrierOptionFunction =
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".SetTime") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".SetTime") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                ;  _t.source
                                                |]
@@ -505,7 +505,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -533,12 +533,12 @@ module DiscretizedDermanKaniBarrierOptionFunction =
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).SetValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).SetValues
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".SetValues") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".SetValues") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                ;  _v.source
                                                |]
@@ -547,7 +547,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -572,18 +572,18 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Time
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".Time") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".Time") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Values
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".Values") 
+                let source () = Helper.sourceFold (_DiscretizedDermanKaniBarrierOption.source + ".Values") 
                                                [| _DiscretizedDermanKaniBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedDermanKaniBarrierOption> format
                     ; source = source 
@@ -648,14 +648,14 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscretizedDermanKaniBarrierOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscretizedDermanKaniBarrierOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscretizedDermanKaniBarrierOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscretizedDermanKaniBarrierOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

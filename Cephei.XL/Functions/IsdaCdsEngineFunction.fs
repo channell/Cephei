@@ -68,7 +68,7 @@ module IsdaCdsEngineFunction =
                 let _numericalFix = Helper.toDefault<IsdaCdsEngine.NumericalFix> numericalFix "numericalFix" IsdaCdsEngine.NumericalFix.Taylor
                 let _accrualBias = Helper.toDefault<IsdaCdsEngine.AccrualBias> accrualBias "accrualBias" IsdaCdsEngine.AccrualBias.HalfDayBias
                 let _forwardsInCouponPeriod = Helper.toDefault<IsdaCdsEngine.ForwardsInCouponPeriod> forwardsInCouponPeriod "forwardsInCouponPeriod" IsdaCdsEngine.ForwardsInCouponPeriod.Piecewise
-                let builder () = withMnemonic mnemonic (Fun.IsdaCdsEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.IsdaCdsEngine 
                                                             _probability.cell 
                                                             _recoveryRate.cell 
                                                             _discountCurve.cell 
@@ -79,7 +79,7 @@ module IsdaCdsEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IsdaCdsEngine>) l
 
-                let source = Helper.sourceFold "Fun.IsdaCdsEngine" 
+                let source () = Helper.sourceFold "Fun.IsdaCdsEngine" 
                                                [| _probability.source
                                                ;  _recoveryRate.source
                                                ;  _discountCurve.source
@@ -98,7 +98,7 @@ module IsdaCdsEngineFunction =
                                 ;  _forwardsInCouponPeriod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IsdaCdsEngine> format
                     ; source = source 
@@ -123,18 +123,18 @@ module IsdaCdsEngineFunction =
             try
 
                 let _IsdaCdsEngine = Helper.toCell<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine"  
-                let builder () = withMnemonic mnemonic ((IsdaCdsEngineModel.Cast _IsdaCdsEngine.cell).IsdaCreditCurve
+                let builder (current : ICell) = withMnemonic mnemonic ((IsdaCdsEngineModel.Cast _IsdaCdsEngine.cell).IsdaCreditCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<DefaultProbabilityTermStructure>>) l
 
-                let source = Helper.sourceFold (_IsdaCdsEngine.source + ".IsdaCreditCurve") 
+                let source () = Helper.sourceFold (_IsdaCdsEngine.source + ".IsdaCreditCurve") 
                                                [| _IsdaCdsEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IsdaCdsEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IsdaCdsEngine> format
                     ; source = source 
@@ -159,18 +159,18 @@ module IsdaCdsEngineFunction =
             try
 
                 let _IsdaCdsEngine = Helper.toCell<IsdaCdsEngine> isdacdsengine "IsdaCdsEngine"  
-                let builder () = withMnemonic mnemonic ((IsdaCdsEngineModel.Cast _IsdaCdsEngine.cell).IsdaRateCurve
+                let builder (current : ICell) = withMnemonic mnemonic ((IsdaCdsEngineModel.Cast _IsdaCdsEngine.cell).IsdaRateCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_IsdaCdsEngine.source + ".IsdaRateCurve") 
+                let source () = Helper.sourceFold (_IsdaCdsEngine.source + ".IsdaRateCurve") 
                                                [| _IsdaCdsEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IsdaCdsEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IsdaCdsEngine> format
                     ; source = source 
@@ -199,14 +199,14 @@ module IsdaCdsEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IsdaCdsEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<IsdaCdsEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<IsdaCdsEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<IsdaCdsEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

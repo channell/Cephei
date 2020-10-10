@@ -52,13 +52,13 @@ module MoroInverseCumulativeNormalFunction =
 
                 let _average = Helper.toCell<double> average "average" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder () = withMnemonic mnemonic (Fun.MoroInverseCumulativeNormal 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MoroInverseCumulativeNormal 
                                                             _average.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MoroInverseCumulativeNormal>) l
 
-                let source = Helper.sourceFold "Fun.MoroInverseCumulativeNormal" 
+                let source () = Helper.sourceFold "Fun.MoroInverseCumulativeNormal" 
                                                [| _average.source
                                                ;  _sigma.source
                                                |]
@@ -67,7 +67,7 @@ module MoroInverseCumulativeNormalFunction =
                                 ;  _sigma.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MoroInverseCumulativeNormal> format
                     ; source = source 
@@ -95,12 +95,12 @@ module MoroInverseCumulativeNormalFunction =
 
                 let _MoroInverseCumulativeNormal = Helper.toCell<MoroInverseCumulativeNormal> moroinversecumulativenormal "MoroInverseCumulativeNormal"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((MoroInverseCumulativeNormalModel.Cast _MoroInverseCumulativeNormal.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((MoroInverseCumulativeNormalModel.Cast _MoroInverseCumulativeNormal.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MoroInverseCumulativeNormal.source + ".Value") 
+                let source () = Helper.sourceFold (_MoroInverseCumulativeNormal.source + ".Value") 
                                                [| _MoroInverseCumulativeNormal.source
                                                ;  _x.source
                                                |]
@@ -109,7 +109,7 @@ module MoroInverseCumulativeNormalFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -138,14 +138,14 @@ module MoroInverseCumulativeNormalFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MoroInverseCumulativeNormal>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MoroInverseCumulativeNormal>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MoroInverseCumulativeNormal>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MoroInverseCumulativeNormal>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

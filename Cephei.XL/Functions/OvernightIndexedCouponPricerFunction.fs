@@ -52,12 +52,12 @@ module OvernightIndexedCouponPricerFunction =
 
                 let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).CapletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).CapletPrice
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".CapletPrice") 
+                let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".CapletPrice") 
                                                [| _OvernightIndexedCouponPricer.source
                                                ;  _d.source
                                                |]
@@ -66,7 +66,7 @@ module OvernightIndexedCouponPricerFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module OvernightIndexedCouponPricerFunction =
 
                 let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).CapletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).CapletRate
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".CapletRate") 
+                let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".CapletRate") 
                                                [| _OvernightIndexedCouponPricer.source
                                                ;  _d.source
                                                |]
@@ -108,7 +108,7 @@ module OvernightIndexedCouponPricerFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -136,12 +136,12 @@ module OvernightIndexedCouponPricerFunction =
 
                 let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).FloorletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).FloorletPrice
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".FloorletPrice") 
+                let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".FloorletPrice") 
                                                [| _OvernightIndexedCouponPricer.source
                                                ;  _d.source
                                                |]
@@ -150,7 +150,7 @@ module OvernightIndexedCouponPricerFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -178,12 +178,12 @@ module OvernightIndexedCouponPricerFunction =
 
                 let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).FloorletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).FloorletRate
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".FloorletRate") 
+                let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".FloorletRate") 
                                                [| _OvernightIndexedCouponPricer.source
                                                ;  _d.source
                                                |]
@@ -192,7 +192,7 @@ module OvernightIndexedCouponPricerFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -220,12 +220,12 @@ module OvernightIndexedCouponPricerFunction =
 
                 let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
                 let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
-                let builder () = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).Initialize
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : OvernightIndexedCouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".Initialize") 
+                let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".Initialize") 
                                                [| _OvernightIndexedCouponPricer.source
                                                ;  _coupon.source
                                                |]
@@ -234,7 +234,7 @@ module OvernightIndexedCouponPricerFunction =
                                 ;  _coupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -259,18 +259,18 @@ module OvernightIndexedCouponPricerFunction =
             try
 
                 let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
-                let builder () = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).SwapletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".SwapletPrice") 
+                let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".SwapletPrice") 
                                                [| _OvernightIndexedCouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -295,18 +295,18 @@ module OvernightIndexedCouponPricerFunction =
             try
 
                 let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
-                let builder () = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).SwapletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".SwapletRate") 
+                let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".SwapletRate") 
                                                [| _OvernightIndexedCouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -334,12 +334,12 @@ module OvernightIndexedCouponPricerFunction =
 
                 let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : OvernightIndexedCouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".RegisterWith") 
                                                [| _OvernightIndexedCouponPricer.source
                                                ;  _handler.source
                                                |]
@@ -348,7 +348,7 @@ module OvernightIndexedCouponPricerFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -376,12 +376,12 @@ module OvernightIndexedCouponPricerFunction =
 
                 let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : OvernightIndexedCouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".UnregisterWith") 
                                                [| _OvernightIndexedCouponPricer.source
                                                ;  _handler.source
                                                |]
@@ -390,7 +390,7 @@ module OvernightIndexedCouponPricerFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -415,18 +415,18 @@ module OvernightIndexedCouponPricerFunction =
             try
 
                 let _OvernightIndexedCouponPricer = Helper.toCell<OvernightIndexedCouponPricer> overnightindexedcouponpricer "OvernightIndexedCouponPricer"  
-                let builder () = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponPricerModel.Cast _OvernightIndexedCouponPricer.cell).Update
                                                        ) :> ICell
                 let format (o : OvernightIndexedCouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".Update") 
+                let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".Update") 
                                                [| _OvernightIndexedCouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -455,14 +455,14 @@ module OvernightIndexedCouponPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<OvernightIndexedCouponPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<OvernightIndexedCouponPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<OvernightIndexedCouponPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<OvernightIndexedCouponPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -56,13 +56,13 @@ module IncrementalStatisticsFunction =
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Add
                                                             _value.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Add") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Add") 
                                                [| _IncrementalStatistics.source
                                                ;  _value.source
                                                ;  _weight.source
@@ -73,7 +73,7 @@ module IncrementalStatisticsFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -102,12 +102,12 @@ module IncrementalStatisticsFunction =
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Add1
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Add1
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Add") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Add") 
                                                [| _IncrementalStatistics.source
                                                ;  _value.source
                                                |]
@@ -116,7 +116,7 @@ module IncrementalStatisticsFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -144,12 +144,12 @@ module IncrementalStatisticsFunction =
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _list = Helper.toCell<Generic.List<double>> list "list" 
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).AddSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).AddSequence
                                                             _list.cell 
                                                        ) :> ICell
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".AddSequence") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".AddSequence") 
                                                [| _IncrementalStatistics.source
                                                ;  _list.source
                                                |]
@@ -158,7 +158,7 @@ module IncrementalStatisticsFunction =
                                 ;  _list.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -189,13 +189,13 @@ module IncrementalStatisticsFunction =
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).AddSequence1
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).AddSequence1
                                                             _data.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".AddSequence1") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".AddSequence1") 
                                                [| _IncrementalStatistics.source
                                                ;  _data.source
                                                ;  _weight.source
@@ -206,7 +206,7 @@ module IncrementalStatisticsFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -231,18 +231,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).DownsideDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).DownsideDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".DownsideDeviation") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".DownsideDeviation") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -267,18 +267,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).DownsideVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).DownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".DownsideVariance") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".DownsideVariance") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -303,18 +303,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".ErrorEstimate") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -345,13 +345,13 @@ module IncrementalStatisticsFunction =
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).ExpectationValue
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
                                                        ) :> ICell
                 let format (o : Generic.KeyValuePair<double,int>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".ExpectationValue") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".ExpectationValue") 
                                                [| _IncrementalStatistics.source
                                                ;  _f.source
                                                ;  _inRange.source
@@ -362,7 +362,7 @@ module IncrementalStatisticsFunction =
                                 ;  _inRange.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -384,16 +384,16 @@ module IncrementalStatisticsFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.IncrementalStatistics ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.IncrementalStatistics ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IncrementalStatistics>) l
 
-                let source = Helper.sourceFold "Fun.IncrementalStatistics" 
+                let source () = Helper.sourceFold "Fun.IncrementalStatistics" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IncrementalStatistics> format
                     ; source = source 
@@ -418,18 +418,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Kurtosis
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Kurtosis") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Kurtosis") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -454,18 +454,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Max
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Max") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Max") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -490,18 +490,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Mean
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Mean") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Mean") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -526,18 +526,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Min
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Min") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Min") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -565,12 +565,12 @@ module IncrementalStatisticsFunction =
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Percentile
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Percentile") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Percentile") 
                                                [| _IncrementalStatistics.source
                                                ;  _percent.source
                                                |]
@@ -579,7 +579,7 @@ module IncrementalStatisticsFunction =
                                 ;  _percent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -604,18 +604,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Reset
                                                        ) :> ICell
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Reset") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Reset") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -640,18 +640,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Samples
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Samples") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Samples") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -676,18 +676,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Skewness
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Skewness") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Skewness") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -712,18 +712,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).StandardDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".StandardDeviation") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".StandardDeviation") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -748,18 +748,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".Variance") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Variance") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -784,18 +784,18 @@ module IncrementalStatisticsFunction =
             try
 
                 let _IncrementalStatistics = Helper.toCell<IncrementalStatistics> incrementalstatistics "IncrementalStatistics"  
-                let builder () = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).WeightSum
+                let builder (current : ICell) = withMnemonic mnemonic ((IncrementalStatisticsModel.Cast _IncrementalStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IncrementalStatistics.source + ".WeightSum") 
+                let source () = Helper.sourceFold (_IncrementalStatistics.source + ".WeightSum") 
                                                [| _IncrementalStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -824,14 +824,14 @@ module IncrementalStatisticsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IncrementalStatistics>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<IncrementalStatistics>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<IncrementalStatistics>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<IncrementalStatistics>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

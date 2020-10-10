@@ -49,18 +49,18 @@ module SobolBrownianGeneratorFunction =
             try
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
-                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NextPath
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NextPath
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SobolBrownianGenerator.source + ".NextPath") 
+                let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".NextPath") 
                                                [| _SobolBrownianGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -88,12 +88,12 @@ module SobolBrownianGeneratorFunction =
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
                 let _output = Helper.toCell<Generic.List<double>> output "output" 
-                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NextStep
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NextStep
                                                             _output.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SobolBrownianGenerator.source + ".NextStep") 
+                let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".NextStep") 
                                                [| _SobolBrownianGenerator.source
                                                ;  _output.source
                                                |]
@@ -102,7 +102,7 @@ module SobolBrownianGeneratorFunction =
                                 ;  _output.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -127,18 +127,18 @@ module SobolBrownianGeneratorFunction =
             try
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
-                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NumberOfFactors
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NumberOfFactors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SobolBrownianGenerator.source + ".NumberOfFactors") 
+                let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".NumberOfFactors") 
                                                [| _SobolBrownianGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -163,18 +163,18 @@ module SobolBrownianGeneratorFunction =
             try
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
-                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NumberOfSteps
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NumberOfSteps
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SobolBrownianGenerator.source + ".NumberOfSteps") 
+                let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".NumberOfSteps") 
                                                [| _SobolBrownianGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -199,18 +199,18 @@ module SobolBrownianGeneratorFunction =
             try
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
-                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).OrderedIndices
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).OrderedIndices
                                                        ) :> ICell
                 let format (i : Generic.List<Generic.List<int>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_SobolBrownianGenerator.source + ".OrderedIndices") 
+                let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".OrderedIndices") 
                                                [| _SobolBrownianGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -247,7 +247,7 @@ module SobolBrownianGeneratorFunction =
                 let _ordering = Helper.toCell<SobolBrownianGenerator.Ordering> ordering "ordering" 
                 let _seed = Helper.toDefault<uint64> seed "seed" 0UL
                 let _directionIntegers = Helper.toDefault<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" SobolRsg.DirectionIntegers.Jaeckel
-                let builder () = withMnemonic mnemonic (Fun.SobolBrownianGenerator 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolBrownianGenerator 
                                                             _factors.cell 
                                                             _steps.cell 
                                                             _ordering.cell 
@@ -256,7 +256,7 @@ module SobolBrownianGeneratorFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SobolBrownianGenerator>) l
 
-                let source = Helper.sourceFold "Fun.SobolBrownianGenerator" 
+                let source () = Helper.sourceFold "Fun.SobolBrownianGenerator" 
                                                [| _factors.source
                                                ;  _steps.source
                                                ;  _ordering.source
@@ -271,7 +271,7 @@ module SobolBrownianGeneratorFunction =
                                 ;  _directionIntegers.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SobolBrownianGenerator> format
                     ; source = source 
@@ -299,12 +299,12 @@ module SobolBrownianGeneratorFunction =
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
                 let _variates = Helper.toCell<Generic.List<Generic.List<double>>> variates "variates" 
-                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).Transform
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).Transform
                                                             _variates.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_SobolBrownianGenerator.source + ".Transform") 
+                let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".Transform") 
                                                [| _SobolBrownianGenerator.source
                                                ;  _variates.source
                                                |]
@@ -313,7 +313,7 @@ module SobolBrownianGeneratorFunction =
                                 ;  _variates.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -342,14 +342,14 @@ module SobolBrownianGeneratorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SobolBrownianGenerator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SobolBrownianGenerator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SobolBrownianGenerator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SobolBrownianGenerator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

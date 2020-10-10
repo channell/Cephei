@@ -58,14 +58,14 @@ module FDDividendEuropeanEngineFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
-                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IFDEngine>) l
 
-                let source = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".Factory") 
+                let source () = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".Factory") 
                                                [| _FDDividendEuropeanEngine.source
                                                ;  _Process.source
                                                ;  _timeSteps.source
@@ -78,7 +78,7 @@ module FDDividendEuropeanEngineFunction =
                                 ;  _gridPoints.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDDividendEuropeanEngine> format
                     ; source = source 
@@ -112,7 +112,7 @@ module FDDividendEuropeanEngineFunction =
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
                 let _timeDependent = Helper.toDefault<bool> timeDependent "timeDependent" false
-                let builder () = withMnemonic mnemonic (Fun.FDDividendEuropeanEngine1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDDividendEuropeanEngine1
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -120,7 +120,7 @@ module FDDividendEuropeanEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDDividendEuropeanEngine>) l
 
-                let source = Helper.sourceFold "Fun.FDDividendEuropeanEngine" 
+                let source () = Helper.sourceFold "Fun.FDDividendEuropeanEngine" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
@@ -133,7 +133,7 @@ module FDDividendEuropeanEngineFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDDividendEuropeanEngine> format
                     ; source = source 
@@ -155,16 +155,16 @@ module FDDividendEuropeanEngineFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.FDDividendEuropeanEngine ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDDividendEuropeanEngine ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDDividendEuropeanEngine>) l
 
-                let source = Helper.sourceFold "Fun.FDDividendEuropeanEngine1" 
+                let source () = Helper.sourceFold "Fun.FDDividendEuropeanEngine1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDDividendEuropeanEngine> format
                     ; source = source 
@@ -193,12 +193,12 @@ module FDDividendEuropeanEngineFunction =
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".RegisterWith") 
                                                [| _FDDividendEuropeanEngine.source
                                                ;  _handler.source
                                                |]
@@ -207,7 +207,7 @@ module FDDividendEuropeanEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -232,18 +232,18 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".Reset") 
                                                [| _FDDividendEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDDividendEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -271,12 +271,12 @@ module FDDividendEuropeanEngineFunction =
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".UnregisterWith") 
                                                [| _FDDividendEuropeanEngine.source
                                                ;  _handler.source
                                                |]
@@ -285,7 +285,7 @@ module FDDividendEuropeanEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -310,18 +310,18 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Update
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".Update") 
                                                [| _FDDividendEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDDividendEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -346,18 +346,18 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).EnsureStrikeInGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".EnsureStrikeInGrid") 
+                let source () = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".EnsureStrikeInGrid") 
                                                [| _FDDividendEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDDividendEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -382,18 +382,18 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).GetResidualTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".GetResidualTime") 
+                let source () = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".GetResidualTime") 
                                                [| _FDDividendEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDDividendEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -418,18 +418,18 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".Grid") 
+                let source () = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".Grid") 
                                                [| _FDDividendEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDDividendEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDDividendEuropeanEngine> format
                     ; source = source 
@@ -454,18 +454,18 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).IntrinsicValues_
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".IntrinsicValues_") 
+                let source () = Helper.sourceFold (_FDDividendEuropeanEngine.source + ".IntrinsicValues_") 
                                                [| _FDDividendEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDDividendEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDDividendEuropeanEngine> format
                     ; source = source 
@@ -494,14 +494,14 @@ module FDDividendEuropeanEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDDividendEuropeanEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FDDividendEuropeanEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FDDividendEuropeanEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FDDividendEuropeanEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

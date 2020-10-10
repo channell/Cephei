@@ -49,18 +49,18 @@ module HaltonRsgFunction =
             try
 
                 let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
-                let builder () = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).Dimension
+                let builder (current : ICell) = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HaltonRsg.source + ".Dimension") 
+                let source () = Helper.sourceFold (_HaltonRsg.source + ".Dimension") 
                                                [| _HaltonRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HaltonRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,13 +91,13 @@ module HaltonRsgFunction =
                 let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toDefault<uint64> seed "seed" 0UL
-                let builder () = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
-                let source = Helper.sourceFold (_HaltonRsg.source + ".Factory") 
+                let source () = Helper.sourceFold (_HaltonRsg.source + ".Factory") 
                                                [| _HaltonRsg.source
                                                ;  _dimensionality.source
                                                ;  _seed.source
@@ -108,7 +108,7 @@ module HaltonRsgFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<HaltonRsg> format
                     ; source = source 
@@ -142,7 +142,7 @@ module HaltonRsgFunction =
                 let _seed = Helper.toDefault<uint64> seed "seed" 0UL
                 let _randomStart = Helper.toDefault<bool> randomStart "randomStart" true
                 let _randomShift = Helper.toDefault<bool> randomShift "randomShift" false
-                let builder () = withMnemonic mnemonic (Fun.HaltonRsg 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.HaltonRsg 
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                             _randomStart.cell 
@@ -150,7 +150,7 @@ module HaltonRsgFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HaltonRsg>) l
 
-                let source = Helper.sourceFold "Fun.HaltonRsg" 
+                let source () = Helper.sourceFold "Fun.HaltonRsg" 
                                                [| _dimensionality.source
                                                ;  _seed.source
                                                ;  _randomStart.source
@@ -163,7 +163,7 @@ module HaltonRsgFunction =
                                 ;  _randomShift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<HaltonRsg> format
                     ; source = source 
@@ -189,18 +189,18 @@ module HaltonRsgFunction =
             try
 
                 let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
-                let builder () = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).LastSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.value.ToArray()) l)
 
-                let source = Helper.sourceFold (_HaltonRsg.source + ".LastSequence") 
+                let source () = Helper.sourceFold (_HaltonRsg.source + ".LastSequence") 
                                                [| _HaltonRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HaltonRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -227,18 +227,18 @@ module HaltonRsgFunction =
             try
 
                 let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
-                let builder () = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).NextSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_HaltonRsg.source + ".NextSequence") 
+                let source () = Helper.sourceFold (_HaltonRsg.source + ".NextSequence") 
                                                [| _HaltonRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HaltonRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -268,14 +268,14 @@ module HaltonRsgFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HaltonRsg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<HaltonRsg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<HaltonRsg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<HaltonRsg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -55,14 +55,14 @@ module EuriborSwapIsdaFixAFunction =
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let _discounting = Helper.toHandle<YieldTermStructure> discounting "discounting" 
-                let builder () = withMnemonic mnemonic (Fun.EuriborSwapIsdaFixA2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EuriborSwapIsdaFixA2
                                                             _tenor.cell 
                                                             _forwarding.cell 
                                                             _discounting.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EuriborSwapIsdaFixA>) l
 
-                let source = Helper.sourceFold "Fun.EuriborSwapIsdaFixA2" 
+                let source () = Helper.sourceFold "Fun.EuriborSwapIsdaFixA2" 
                                                [| _tenor.source
                                                ;  _forwarding.source
                                                ;  _discounting.source
@@ -73,7 +73,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _discounting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -101,13 +101,13 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.EuriborSwapIsdaFixA1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EuriborSwapIsdaFixA1 
                                                             _tenor.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EuriborSwapIsdaFixA>) l
 
-                let source = Helper.sourceFold "Fun.EuriborSwapIsdaFixA1" 
+                let source () = Helper.sourceFold "Fun.EuriborSwapIsdaFixA1" 
                                                [| _tenor.source
                                                ;  _h.source
                                                |]
@@ -116,7 +116,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -141,19 +141,19 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic (Fun.EuriborSwapIsdaFixA
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EuriborSwapIsdaFixA
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EuriborSwapIsdaFixA>) l
 
-                let source = Helper.sourceFold "Fun.EuriborSwapIsdaFixA" 
+                let source () = Helper.sourceFold "Fun.EuriborSwapIsdaFixA" 
                                                [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _tenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -181,12 +181,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Clone
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Clone") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Clone") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _tenor.source
                                                |]
@@ -195,7 +195,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _tenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -226,13 +226,13 @@ module EuriborSwapIsdaFixAFunction =
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let _discounting = Helper.toHandle<YieldTermStructure> discounting "discounting" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Clone1
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Clone1
                                                             _forwarding.cell 
                                                             _discounting.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Clone1") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Clone1") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _forwarding.source
                                                ;  _discounting.source
@@ -243,7 +243,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _discounting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -271,12 +271,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Clone2
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Clone2
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Clone2") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Clone2") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _forwarding.source
                                                |]
@@ -285,7 +285,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _forwarding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -310,18 +310,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).DiscountingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).DiscountingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".DiscountingTermStructure") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".DiscountingTermStructure") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -346,18 +346,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).ExogenousDiscount
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).ExogenousDiscount
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".ExogenousDiscount") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".ExogenousDiscount") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -382,18 +382,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FixedLegConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FixedLegConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FixedLegConvention") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FixedLegConvention") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -418,18 +418,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FixedLegTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FixedLegTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FixedLegTenor") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FixedLegTenor") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -457,12 +457,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".ForecastFixing") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _fixingDate.source
                                                |]
@@ -471,7 +471,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -496,18 +496,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".ForwardingTermStructure") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -532,18 +532,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).IborIndex
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".IborIndex") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".IborIndex") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -571,12 +571,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".MaturityDate") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _valueDate.source
                                                |]
@@ -585,7 +585,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -613,12 +613,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).UnderlyingSwap
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).UnderlyingSwap
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".UnderlyingSwap") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".UnderlyingSwap") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _fixingDate.source
                                                |]
@@ -627,7 +627,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -652,18 +652,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Currency") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Currency") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -688,18 +688,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".DayCounter") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -724,18 +724,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FamilyName") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -766,13 +766,13 @@ module EuriborSwapIsdaFixAFunction =
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Fixing") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Fixing") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -783,7 +783,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -808,18 +808,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FixingCalendar") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -847,12 +847,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FixingDate") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _valueDate.source
                                                |]
@@ -861,7 +861,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -886,18 +886,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".FixingDays") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -925,12 +925,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".IsValidFixingDate") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _fixingDate.source
                                                |]
@@ -939,7 +939,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -964,18 +964,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Name") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Name") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1003,12 +1003,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".PastFixing") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _fixingDate.source
                                                |]
@@ -1017,7 +1017,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1042,18 +1042,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Tenor") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Tenor") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuriborSwapIsdaFixA> format
                     ; source = source 
@@ -1078,18 +1078,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).Update
                                                        ) :> ICell
                 let format (o : EuriborSwapIsdaFixA) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Update") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".Update") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1117,12 +1117,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".ValueDate") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _fixingDate.source
                                                |]
@@ -1131,7 +1131,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1165,14 +1165,14 @@ module EuriborSwapIsdaFixAFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : EuriborSwapIsdaFixA) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".AddFixing") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1185,7 +1185,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1219,14 +1219,14 @@ module EuriborSwapIsdaFixAFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : EuriborSwapIsdaFixA) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".AddFixings") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1239,7 +1239,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1270,13 +1270,13 @@ module EuriborSwapIsdaFixAFunction =
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : EuriborSwapIsdaFixA) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".AddFixings1") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1287,7 +1287,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1312,18 +1312,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".AllowsNativeFixings") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1348,18 +1348,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : EuriborSwapIsdaFixA) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".ClearFixings") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1387,12 +1387,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : EuriborSwapIsdaFixA) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".RegisterWith") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _handler.source
                                                |]
@@ -1401,7 +1401,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1426,18 +1426,18 @@ module EuriborSwapIsdaFixAFunction =
             try
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".TimeSeries") 
                                                [| _EuriborSwapIsdaFixA.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuriborSwapIsdaFixA.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1465,12 +1465,12 @@ module EuriborSwapIsdaFixAFunction =
 
                 let _EuriborSwapIsdaFixA = Helper.toCell<EuriborSwapIsdaFixA> euriborswapisdafixa "EuriborSwapIsdaFixA"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((EuriborSwapIsdaFixAModel.Cast _EuriborSwapIsdaFixA.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : EuriborSwapIsdaFixA) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_EuriborSwapIsdaFixA.source + ".UnregisterWith") 
                                                [| _EuriborSwapIsdaFixA.source
                                                ;  _handler.source
                                                |]
@@ -1479,7 +1479,7 @@ module EuriborSwapIsdaFixAFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1508,14 +1508,14 @@ module EuriborSwapIsdaFixAFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EuriborSwapIsdaFixA>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EuriborSwapIsdaFixA>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EuriborSwapIsdaFixA>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EuriborSwapIsdaFixA>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

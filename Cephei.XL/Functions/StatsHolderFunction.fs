@@ -56,13 +56,13 @@ module StatsHolderFunction =
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Add
                                                             _value.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : StatsHolder) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".Add") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".Add") 
                                                [| _StatsHolder.source
                                                ;  _value.source
                                                ;  _weight.source
@@ -73,7 +73,7 @@ module StatsHolderFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -105,13 +105,13 @@ module StatsHolderFunction =
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).AddSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).AddSequence
                                                             _data.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : StatsHolder) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".AddSequence") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".AddSequence") 
                                                [| _StatsHolder.source
                                                ;  _data.source
                                                ;  _weight.source
@@ -122,7 +122,7 @@ module StatsHolderFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -147,18 +147,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".ErrorEstimate") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -189,13 +189,13 @@ module StatsHolderFunction =
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).ExpectationValue
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
                                                        ) :> ICell
                 let format (o : Generic.KeyValuePair<double,int>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".ExpectationValue") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".ExpectationValue") 
                                                [| _StatsHolder.source
                                                ;  _f.source
                                                ;  _inRange.source
@@ -206,7 +206,7 @@ module StatsHolderFunction =
                                 ;  _inRange.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -231,18 +231,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Kurtosis
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".Kurtosis") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".Kurtosis") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -267,18 +267,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Max
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".Max") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".Max") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -303,18 +303,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Mean
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".Mean") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".Mean") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -339,18 +339,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Min
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".Min") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".Min") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -378,12 +378,12 @@ module StatsHolderFunction =
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
                 let _percent = Helper.toCell<double> percent "percent" 
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Percentile
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".Percentile") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".Percentile") 
                                                [| _StatsHolder.source
                                                ;  _percent.source
                                                |]
@@ -392,7 +392,7 @@ module StatsHolderFunction =
                                 ;  _percent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -417,18 +417,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Reset
                                                        ) :> ICell
                 let format (o : StatsHolder) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".Reset") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".Reset") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -453,18 +453,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Samples
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".Samples") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".Samples") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -489,18 +489,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Skewness
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".Skewness") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".Skewness") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -525,18 +525,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).StandardDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".StandardDeviation") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".StandardDeviation") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -558,16 +558,16 @@ module StatsHolderFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.StatsHolder1 () 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.StatsHolder1 () 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<StatsHolder>) l
 
-                let source = Helper.sourceFold "Fun.StatsHolder1" 
+                let source () = Helper.sourceFold "Fun.StatsHolder1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StatsHolder> format
                     ; source = source 
@@ -595,13 +595,13 @@ module StatsHolderFunction =
 
                 let _mean = Helper.toCell<double> mean "mean" 
                 let _standardDeviation = Helper.toCell<double> standardDeviation "standardDeviation" 
-                let builder () = withMnemonic mnemonic (Fun.StatsHolder
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.StatsHolder
                                                             _mean.cell 
                                                             _standardDeviation.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<StatsHolder>) l
 
-                let source = Helper.sourceFold "Fun.StatsHolder" 
+                let source () = Helper.sourceFold "Fun.StatsHolder" 
                                                [| _mean.source
                                                ;  _standardDeviation.source
                                                |]
@@ -610,7 +610,7 @@ module StatsHolderFunction =
                                 ;  _standardDeviation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StatsHolder> format
                     ; source = source 
@@ -635,18 +635,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".Variance") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".Variance") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -671,18 +671,18 @@ module StatsHolderFunction =
             try
 
                 let _StatsHolder = Helper.toCell<StatsHolder> statsholder "StatsHolder"  
-                let builder () = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).WeightSum
+                let builder (current : ICell) = withMnemonic mnemonic ((StatsHolderModel.Cast _StatsHolder.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StatsHolder.source + ".WeightSum") 
+                let source () = Helper.sourceFold (_StatsHolder.source + ".WeightSum") 
                                                [| _StatsHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -711,14 +711,14 @@ module StatsHolderFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<StatsHolder>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<StatsHolder>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<StatsHolder>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<StatsHolder>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

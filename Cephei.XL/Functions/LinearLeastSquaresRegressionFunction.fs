@@ -50,18 +50,18 @@ module LinearLeastSquaresRegressionFunction =
             try
 
                 let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
-                let builder () = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Coefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Coefficients
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".Coefficients") 
+                let source () = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".Coefficients") 
                                                [| _LinearLeastSquaresRegression.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearLeastSquaresRegression.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LinearLeastSquaresRegression> format
                     ; source = source 
@@ -88,18 +88,18 @@ module LinearLeastSquaresRegressionFunction =
             try
 
                 let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
-                let builder () = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Error
+                let builder (current : ICell) = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Error
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".Error") 
+                let source () = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".Error") 
                                                [| _LinearLeastSquaresRegression.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearLeastSquaresRegression.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LinearLeastSquaresRegression> format
                     ; source = source 
@@ -131,14 +131,14 @@ module LinearLeastSquaresRegressionFunction =
                 let _x = Helper.toCell<Generic.List<double>> x "x" 
                 let _y = Helper.toCell<Generic.List<double>> y "y" 
                 let _v = Helper.toCell<Generic.List<Func<double,double>>> v "v" 
-                let builder () = withMnemonic mnemonic (Fun.LinearLeastSquaresRegression 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LinearLeastSquaresRegression 
                                                             _x.cell 
                                                             _y.cell 
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LinearLeastSquaresRegression>) l
 
-                let source = Helper.sourceFold "Fun.LinearLeastSquaresRegression" 
+                let source () = Helper.sourceFold "Fun.LinearLeastSquaresRegression" 
                                                [| _x.source
                                                ;  _y.source
                                                ;  _v.source
@@ -149,7 +149,7 @@ module LinearLeastSquaresRegressionFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LinearLeastSquaresRegression> format
                     ; source = source 
@@ -175,18 +175,18 @@ module LinearLeastSquaresRegressionFunction =
             try
 
                 let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
-                let builder () = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Residuals
+                let builder (current : ICell) = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).Residuals
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".Residuals") 
+                let source () = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".Residuals") 
                                                [| _LinearLeastSquaresRegression.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearLeastSquaresRegression.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LinearLeastSquaresRegression> format
                     ; source = source 
@@ -213,18 +213,18 @@ module LinearLeastSquaresRegressionFunction =
             try
 
                 let _LinearLeastSquaresRegression = Helper.toCell<LinearLeastSquaresRegression> linearleastsquaresregression "LinearLeastSquaresRegression"  
-                let builder () = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).StandardErrors
+                let builder (current : ICell) = withMnemonic mnemonic ((LinearLeastSquaresRegressionModel.Cast _LinearLeastSquaresRegression.cell).StandardErrors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".StandardErrors") 
+                let source () = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".StandardErrors") 
                                                [| _LinearLeastSquaresRegression.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearLeastSquaresRegression.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LinearLeastSquaresRegression> format
                     ; source = source 
@@ -254,14 +254,14 @@ module LinearLeastSquaresRegressionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LinearLeastSquaresRegression>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LinearLeastSquaresRegression>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LinearLeastSquaresRegression>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LinearLeastSquaresRegression>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

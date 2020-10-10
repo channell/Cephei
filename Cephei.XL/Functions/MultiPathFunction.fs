@@ -49,18 +49,18 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder () = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).AssetNumber
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).AssetNumber
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiPath.source + ".AssetNumber") 
+                let source () = Helper.sourceFold (_MultiPath.source + ".AssetNumber") 
                                                [| _MultiPath.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiPath.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder () = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MultiPath.source + ".Clone") 
+                let source () = Helper.sourceFold (_MultiPath.source + ".Clone") 
                                                [| _MultiPath.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiPath.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder () = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).Length
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).Length
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiPath.source + ".Length") 
+                let source () = Helper.sourceFold (_MultiPath.source + ".Length") 
                                                [| _MultiPath.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiPath.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,19 +157,19 @@ module MultiPathFunction =
             try
 
                 let _multiPath = Helper.toCell<Generic.List<Path>> multiPath "multiPath" 
-                let builder () = withMnemonic mnemonic (Fun.MultiPath2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiPath2 
                                                             _multiPath.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MultiPath>) l
 
-                let source = Helper.sourceFold "Fun.MultiPath2" 
+                let source () = Helper.sourceFold "Fun.MultiPath2" 
                                                [| _multiPath.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _multiPath.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiPath> format
                     ; source = source 
@@ -197,13 +197,13 @@ module MultiPathFunction =
 
                 let _nAsset = Helper.toCell<int> nAsset "nAsset" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
-                let builder () = withMnemonic mnemonic (Fun.MultiPath
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiPath
                                                             _nAsset.cell 
                                                             _timeGrid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MultiPath>) l
 
-                let source = Helper.sourceFold "Fun.MultiPath" 
+                let source () = Helper.sourceFold "Fun.MultiPath" 
                                                [| _nAsset.source
                                                ;  _timeGrid.source
                                                |]
@@ -212,7 +212,7 @@ module MultiPathFunction =
                                 ;  _timeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiPath> format
                     ; source = source 
@@ -234,16 +234,16 @@ module MultiPathFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.MultiPath1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiPath1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MultiPath>) l
 
-                let source = Helper.sourceFold "Fun.MultiPath1" 
+                let source () = Helper.sourceFold "Fun.MultiPath1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiPath> format
                     ; source = source 
@@ -268,18 +268,18 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder () = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).PathSize
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).PathSize
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiPath.source + ".PathSize") 
+                let source () = Helper.sourceFold (_MultiPath.source + ".PathSize") 
                                                [| _MultiPath.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiPath.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -307,12 +307,12 @@ module MultiPathFunction =
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).This
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).This
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Path) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MultiPath.source + ".This") 
+                let source () = Helper.sourceFold (_MultiPath.source + ".This") 
                                                [| _MultiPath.source
                                                ;  _j.source
                                                |]
@@ -321,7 +321,7 @@ module MultiPathFunction =
                                 ;  _j.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -350,14 +350,14 @@ module MultiPathFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MultiPath>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MultiPath>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MultiPath>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MultiPath>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

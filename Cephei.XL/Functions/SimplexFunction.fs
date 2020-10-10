@@ -55,13 +55,13 @@ module SimplexFunction =
                 let _Simplex = Helper.toCell<Simplex> simplex "Simplex"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((SimplexModel.Cast _Simplex.cell).Minimize
+                let builder (current : ICell) = withMnemonic mnemonic ((SimplexModel.Cast _Simplex.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Simplex.source + ".Minimize") 
+                let source () = Helper.sourceFold (_Simplex.source + ".Minimize") 
                                                [| _Simplex.source
                                                ;  _P.source
                                                ;  _endCriteria.source
@@ -72,7 +72,7 @@ module SimplexFunction =
                                 ;  _endCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,19 +97,19 @@ module SimplexFunction =
             try
 
                 let _lambda = Helper.toCell<double> lambda "lambda" 
-                let builder () = withMnemonic mnemonic (Fun.Simplex 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Simplex 
                                                             _lambda.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Simplex>) l
 
-                let source = Helper.sourceFold "Fun.Simplex" 
+                let source () = Helper.sourceFold "Fun.Simplex" 
                                                [| _lambda.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _lambda.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Simplex> format
                     ; source = source 
@@ -138,14 +138,14 @@ module SimplexFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Simplex>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Simplex>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Simplex>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Simplex>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

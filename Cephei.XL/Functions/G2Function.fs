@@ -52,12 +52,12 @@ module G2Function =
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Discount
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".Discount") 
+                let source () = Helper.sourceFold (_G2.source + ".Discount") 
                                                [| _G2.source
                                                ;  _t.source
                                                |]
@@ -66,7 +66,7 @@ module G2Function =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,7 +103,7 @@ module G2Function =
                 let _T2 = Helper.toCell<double> T2 "T2" 
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).DiscountBond1
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).DiscountBond1
                                                             _t.cell 
                                                             _T2.cell 
                                                             _x.cell 
@@ -111,7 +111,7 @@ module G2Function =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".DiscountBond1") 
+                let source () = Helper.sourceFold (_G2.source + ".DiscountBond1") 
                                                [| _G2.source
                                                ;  _t.source
                                                ;  _T2.source
@@ -126,7 +126,7 @@ module G2Function =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -160,14 +160,14 @@ module G2Function =
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _factors = Helper.toCell<Vector> factors "factors" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).DiscountBond
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).DiscountBond
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _factors.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".DiscountBond") 
+                let source () = Helper.sourceFold (_G2.source + ".DiscountBond") 
                                                [| _G2.source
                                                ;  _now.source
                                                ;  _maturity.source
@@ -180,7 +180,7 @@ module G2Function =
                                 ;  _factors.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -217,7 +217,7 @@ module G2Function =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).DiscountBondOption
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).DiscountBondOption
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _maturity.cell 
@@ -225,7 +225,7 @@ module G2Function =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".DiscountBondOption") 
+                let source () = Helper.sourceFold (_G2.source + ".DiscountBondOption") 
                                                [| _G2.source
                                                ;  _Type.source
                                                ;  _strike.source
@@ -240,7 +240,7 @@ module G2Function =
                                 ;  _bondMaturity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -265,18 +265,18 @@ module G2Function =
             try
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Dynamics
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".Dynamics") 
+                let source () = Helper.sourceFold (_G2.source + ".Dynamics") 
                                                [| _G2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -304,13 +304,13 @@ module G2Function =
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let _a = Helper.toCell<double> a "a" 
-                let builder () = withMnemonic mnemonic (Fun.G25
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.G25
                                                             _termStructure.cell 
                                                             _a.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<G2>) l
 
-                let source = Helper.sourceFold "Fun.G25" 
+                let source () = Helper.sourceFold "Fun.G25" 
                                                [| _termStructure.source
                                                ;  _a.source
                                                |]
@@ -319,7 +319,7 @@ module G2Function =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -356,7 +356,7 @@ module G2Function =
                 let _sigma = Helper.toCell<double> sigma "sigma" 
                 let _b = Helper.toCell<double> b "b" 
                 let _eta = Helper.toCell<double> eta "eta" 
-                let builder () = withMnemonic mnemonic (Fun.G23
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.G23
                                                             _termStructure.cell 
                                                             _a.cell 
                                                             _sigma.cell 
@@ -365,7 +365,7 @@ module G2Function =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<G2>) l
 
-                let source = Helper.sourceFold "Fun.G23" 
+                let source () = Helper.sourceFold "Fun.G23" 
                                                [| _termStructure.source
                                                ;  _a.source
                                                ;  _sigma.source
@@ -380,7 +380,7 @@ module G2Function =
                                 ;  _eta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -411,14 +411,14 @@ module G2Function =
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
                 let _a = Helper.toCell<double> a "a" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder () = withMnemonic mnemonic (Fun.G22 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.G22 
                                                             _termStructure.cell 
                                                             _a.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<G2>) l
 
-                let source = Helper.sourceFold "Fun.G22" 
+                let source () = Helper.sourceFold "Fun.G22" 
                                                [| _termStructure.source
                                                ;  _a.source
                                                ;  _sigma.source
@@ -429,7 +429,7 @@ module G2Function =
                                 ;  _sigma.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -463,7 +463,7 @@ module G2Function =
                 let _a = Helper.toCell<double> a "a" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic (Fun.G2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.G2
                                                             _termStructure.cell 
                                                             _a.cell 
                                                             _sigma.cell 
@@ -471,7 +471,7 @@ module G2Function =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<G2>) l
 
-                let source = Helper.sourceFold "Fun.G2" 
+                let source () = Helper.sourceFold "Fun.G2" 
                                                [| _termStructure.source
                                                ;  _a.source
                                                ;  _sigma.source
@@ -484,7 +484,7 @@ module G2Function =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -524,7 +524,7 @@ module G2Function =
                 let _b = Helper.toCell<double> b "b" 
                 let _eta = Helper.toCell<double> eta "eta" 
                 let _rho = Helper.toCell<double> rho "rho" 
-                let builder () = withMnemonic mnemonic (Fun.G24 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.G24 
                                                             _termStructure.cell 
                                                             _a.cell 
                                                             _sigma.cell 
@@ -534,7 +534,7 @@ module G2Function =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<G2>) l
 
-                let source = Helper.sourceFold "Fun.G24" 
+                let source () = Helper.sourceFold "Fun.G24" 
                                                [| _termStructure.source
                                                ;  _a.source
                                                ;  _sigma.source
@@ -551,7 +551,7 @@ module G2Function =
                                 ;  _rho.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -576,19 +576,19 @@ module G2Function =
             try
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let builder () = withMnemonic mnemonic (Fun.G21
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.G21
                                                             _termStructure.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<G2>) l
 
-                let source = Helper.sourceFold "Fun.G21" 
+                let source () = Helper.sourceFold "Fun.G21" 
                                                [| _termStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _termStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -625,7 +625,7 @@ module G2Function =
                 let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
                 let _range = Helper.toCell<double> range "range" 
                 let _intervals = Helper.toCell<int> intervals "intervals" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Swaption
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Swaption
                                                             _arguments.cell 
                                                             _fixedRate.cell 
                                                             _range.cell 
@@ -633,7 +633,7 @@ module G2Function =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".Swaption") 
+                let source () = Helper.sourceFold (_G2.source + ".Swaption") 
                                                [| _G2.source
                                                ;  _arguments.source
                                                ;  _fixedRate.source
@@ -648,7 +648,7 @@ module G2Function =
                                 ;  _intervals.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -673,18 +673,18 @@ module G2Function =
             try
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).TermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_G2.source + ".TermStructure") 
+                let source () = Helper.sourceFold (_G2.source + ".TermStructure") 
                                                [| _G2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -709,18 +709,18 @@ module G2Function =
             try
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).TermStructure_
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).TermStructure_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_G2.source + ".TermStructure_") 
+                let source () = Helper.sourceFold (_G2.source + ".TermStructure_") 
                                                [| _G2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -748,12 +748,12 @@ module G2Function =
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
                 let _grid = Helper.toCell<TimeGrid> grid "grid" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Tree
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Tree
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
-                let source = Helper.sourceFold (_G2.source + ".Tree") 
+                let source () = Helper.sourceFold (_G2.source + ".Tree") 
                                                [| _G2.source
                                                ;  _grid.source
                                                |]
@@ -762,7 +762,7 @@ module G2Function =
                                 ;  _grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -805,7 +805,7 @@ module G2Function =
                 let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
                 let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
                 let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Calibrate
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
                                                             _endCriteria.cell 
@@ -815,7 +815,7 @@ module G2Function =
                                                        ) :> ICell
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".Calibrate") 
+                let source () = Helper.sourceFold (_G2.source + ".Calibrate") 
                                                [| _G2.source
                                                ;  _instruments.source
                                                ;  _Method.source
@@ -834,7 +834,7 @@ module G2Function =
                                 ;  _fixParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -859,18 +859,18 @@ module G2Function =
             try
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Constraint
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold (_G2.source + ".CONSTRAINT") 
+                let source () = Helper.sourceFold (_G2.source + ".CONSTRAINT") 
                                                [| _G2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -895,18 +895,18 @@ module G2Function =
             try
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).EndCriteria
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".EndCriteria") 
+                let source () = Helper.sourceFold (_G2.source + ".EndCriteria") 
                                                [| _G2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -931,18 +931,18 @@ module G2Function =
             try
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).NotifyObservers
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".NotifyObservers") 
+                let source () = Helper.sourceFold (_G2.source + ".NotifyObservers") 
                                                [| _G2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -967,18 +967,18 @@ module G2Function =
             try
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_G2.source + ".Parameters") 
+                let source () = Helper.sourceFold (_G2.source + ".Parameters") 
                                                [| _G2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2> format
                     ; source = source 
@@ -1006,12 +1006,12 @@ module G2Function =
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_G2.source + ".RegisterWith") 
                                                [| _G2.source
                                                ;  _handler.source
                                                |]
@@ -1020,7 +1020,7 @@ module G2Function =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1048,12 +1048,12 @@ module G2Function =
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".SetParams") 
+                let source () = Helper.sourceFold (_G2.source + ".SetParams") 
                                                [| _G2.source
                                                ;  _parameters.source
                                                |]
@@ -1062,7 +1062,7 @@ module G2Function =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1090,12 +1090,12 @@ module G2Function =
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_G2.source + ".UnregisterWith") 
                                                [| _G2.source
                                                ;  _handler.source
                                                |]
@@ -1104,7 +1104,7 @@ module G2Function =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1129,18 +1129,18 @@ module G2Function =
             try
 
                 let _G2 = Helper.toCell<G2> g2 "G2"  
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Update
                                                        ) :> ICell
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".Update") 
+                let source () = Helper.sourceFold (_G2.source + ".Update") 
                                                [| _G2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1171,13 +1171,13 @@ module G2Function =
                 let _G2 = Helper.toCell<G2> g2 "G2"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
-                let builder () = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((G2Model.Cast _G2.cell).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_G2.source + ".Value") 
+                let source () = Helper.sourceFold (_G2.source + ".Value") 
                                                [| _G2.source
                                                ;  _parameters.source
                                                ;  _instruments.source
@@ -1188,7 +1188,7 @@ module G2Function =
                                 ;  _instruments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1217,14 +1217,14 @@ module G2Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<G2>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<G2>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<G2>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<G2>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

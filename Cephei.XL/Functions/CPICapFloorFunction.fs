@@ -91,7 +91,7 @@ module CPICapFloorFunction =
                 let _observationInterpolation = Helper.toDefault<InterpolationType> observationInterpolation "observationInterpolation" InterpolationType.AsIndex
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.CPICapFloor 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CPICapFloor 
                                                             _Type.cell 
                                                             _nominal.cell 
                                                             _startDate.cell 
@@ -110,7 +110,7 @@ module CPICapFloorFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPICapFloor>) l
 
-                let source = Helper.sourceFold "Fun.CPICapFloor" 
+                let source () = Helper.sourceFold "Fun.CPICapFloor" 
                                                [| _Type.source
                                                ;  _nominal.source
                                                ;  _startDate.source
@@ -145,7 +145,7 @@ module CPICapFloorFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICapFloor> format
                     ; source = source 
@@ -170,18 +170,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".FixingDate") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,18 +206,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).InflationIndex
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).InflationIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationIndex>>) l
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".InflationIndex") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".InflationIndex") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICapFloor> format
                     ; source = source 
@@ -242,18 +242,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".IsExpired") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -278,18 +278,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".Nominal") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".Nominal") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -314,18 +314,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).ObservationLag
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".ObservationLag") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".ObservationLag") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICapFloor> format
                     ; source = source 
@@ -350,18 +350,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).PayDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).PayDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".PayDate") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".PayDate") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,18 +386,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).Strike
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".Strike") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".Strike") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -422,18 +422,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).Type
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".TYPE") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".TYPE") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -458,18 +458,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".CASH") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".CASH") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -494,18 +494,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".ErrorEstimate") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -530,18 +530,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".NPV") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".NPV") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -569,12 +569,12 @@ module CPICapFloorFunction =
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".Result") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".Result") 
                                                [| _CPICapFloor.source
                                                ;  _tag.source
                                                |]
@@ -583,7 +583,7 @@ module CPICapFloorFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -611,12 +611,12 @@ module CPICapFloorFunction =
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CPICapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".SetPricingEngine") 
                                                [| _CPICapFloor.source
                                                ;  _e.source
                                                |]
@@ -625,7 +625,7 @@ module CPICapFloorFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -650,18 +650,18 @@ module CPICapFloorFunction =
             try
 
                 let _CPICapFloor = Helper.toCell<CPICapFloor> cpicapfloor "CPICapFloor"  
-                let builder () = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICapFloorModel.Cast _CPICapFloor.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICapFloor.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_CPICapFloor.source + ".ValuationDate") 
                                                [| _CPICapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -690,14 +690,14 @@ module CPICapFloorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CPICapFloor>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CPICapFloor>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CPICapFloor>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CPICapFloor>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,12 +52,12 @@ module PeriodFunction =
 
                 let _Period = Helper.toCell<Period> period "Period"  
                 let _obj = Helper.toCell<Object> obj "obj" 
-                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).CompareTo
                                                             _obj.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Period.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_Period.source + ".CompareTo") 
                                                [| _Period.source
                                                ;  _obj.source
                                                |]
@@ -66,7 +66,7 @@ module PeriodFunction =
                                 ;  _obj.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module PeriodFunction =
 
                 let _Period = Helper.toCell<Period> period "Period"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Period.source + ".Equals") 
+                let source () = Helper.sourceFold (_Period.source + ".Equals") 
                                                [| _Period.source
                                                ;  _o.source
                                                |]
@@ -108,7 +108,7 @@ module PeriodFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -133,18 +133,18 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Period.source + ".Frequency") 
+                let source () = Helper.sourceFold (_Period.source + ".Frequency") 
                                                [| _Period.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -169,18 +169,18 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Length
+                let builder (current : ICell) = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Length
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Period.source + ".Length") 
+                let source () = Helper.sourceFold (_Period.source + ".Length") 
                                                [| _Period.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -205,18 +205,18 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Normalize
+                let builder (current : ICell) = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Normalize
                                                        ) :> ICell
                 let format (o : Period) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Period.source + ".Normalize") 
+                let source () = Helper.sourceFold (_Period.source + ".Normalize") 
                                                [| _Period.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -241,19 +241,19 @@ module PeriodFunction =
             try
 
                 let _periodString = Helper.toCell<string> periodString "periodString" 
-                let builder () = withMnemonic mnemonic (Fun.Period3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Period3 
                                                             _periodString.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold "Fun.Period3" 
+                let source () = Helper.sourceFold "Fun.Period3" 
                                                [| _periodString.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _periodString.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Period> format
                     ; source = source 
@@ -278,19 +278,19 @@ module PeriodFunction =
             try
 
                 let _f = Helper.toCell<Frequency> f "f" 
-                let builder () = withMnemonic mnemonic (Fun.Period2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Period2
                                                             _f.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold "Fun.Period2" 
+                let source () = Helper.sourceFold "Fun.Period2" 
                                                [| _f.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Period> format
                     ; source = source 
@@ -318,13 +318,13 @@ module PeriodFunction =
 
                 let _n = Helper.toCell<int> n "n" 
                 let _u = Helper.toCell<TimeUnit> u "u" 
-                let builder () = withMnemonic mnemonic (Fun.Period
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Period
                                                             _n.cell 
                                                             _u.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold "Fun.Period" 
+                let source () = Helper.sourceFold "Fun.Period" 
                                                [| _n.source
                                                ;  _u.source
                                                |]
@@ -333,7 +333,7 @@ module PeriodFunction =
                                 ;  _u.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Period> format
                     ; source = source 
@@ -355,16 +355,16 @@ module PeriodFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Period1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Period1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold "Fun.Period1" 
+                let source () = Helper.sourceFold "Fun.Period1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Period> format
                     ; source = source 
@@ -389,18 +389,18 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).ToShortString
+                let builder (current : ICell) = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).ToShortString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Period.source + ".ToShortString") 
+                let source () = Helper.sourceFold (_Period.source + ".ToShortString") 
                                                [| _Period.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -425,18 +425,18 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Period.source + ".ToString") 
+                let source () = Helper.sourceFold (_Period.source + ".ToString") 
                                                [| _Period.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -461,18 +461,18 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Units
+                let builder (current : ICell) = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Units
                                                        ) :> ICell
                 let format (o : TimeUnit) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Period.source + ".Units") 
+                let source () = Helper.sourceFold (_Period.source + ".Units") 
                                                [| _Period.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -501,14 +501,14 @@ module PeriodFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Period>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Period>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Period>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,13 +52,13 @@ module GaussGegenbauerIntegrationFunction =
 
                 let _n = Helper.toCell<int> n "n" 
                 let _lambda = Helper.toCell<double> lambda "lambda" 
-                let builder () = withMnemonic mnemonic (Fun.GaussGegenbauerIntegration 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussGegenbauerIntegration 
                                                             _n.cell 
                                                             _lambda.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussGegenbauerIntegration>) l
 
-                let source = Helper.sourceFold "Fun.GaussGegenbauerIntegration" 
+                let source () = Helper.sourceFold "Fun.GaussGegenbauerIntegration" 
                                                [| _n.source
                                                ;  _lambda.source
                                                |]
@@ -67,7 +67,7 @@ module GaussGegenbauerIntegrationFunction =
                                 ;  _lambda.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussGegenbauerIntegration> format
                     ; source = source 
@@ -92,18 +92,18 @@ module GaussGegenbauerIntegrationFunction =
             try
 
                 let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).Order
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussGegenbauerIntegration.source + ".Order") 
+                let source () = Helper.sourceFold (_GaussGegenbauerIntegration.source + ".Order") 
                                                [| _GaussGegenbauerIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussGegenbauerIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,12 +131,12 @@ module GaussGegenbauerIntegrationFunction =
 
                 let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussGegenbauerIntegration.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussGegenbauerIntegration.source + ".Value") 
                                                [| _GaussGegenbauerIntegration.source
                                                ;  _f.source
                                                |]
@@ -145,7 +145,7 @@ module GaussGegenbauerIntegrationFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module GaussGegenbauerIntegrationFunction =
             try
 
                 let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussGegenbauerIntegration.source + ".Weights") 
+                let source () = Helper.sourceFold (_GaussGegenbauerIntegration.source + ".Weights") 
                                                [| _GaussGegenbauerIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussGegenbauerIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussGegenbauerIntegration> format
                     ; source = source 
@@ -206,18 +206,18 @@ module GaussGegenbauerIntegrationFunction =
             try
 
                 let _GaussGegenbauerIntegration = Helper.toCell<GaussGegenbauerIntegration> gaussgegenbauerintegration "GaussGegenbauerIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).X
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussGegenbauerIntegrationModel.Cast _GaussGegenbauerIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussGegenbauerIntegration.source + ".X") 
+                let source () = Helper.sourceFold (_GaussGegenbauerIntegration.source + ".X") 
                                                [| _GaussGegenbauerIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussGegenbauerIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussGegenbauerIntegration> format
                     ; source = source 
@@ -246,14 +246,14 @@ module GaussGegenbauerIntegrationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussGegenbauerIntegration>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussGegenbauerIntegration>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussGegenbauerIntegration>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussGegenbauerIntegration>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -76,7 +76,7 @@ module AverageBMACouponFunction =
                 let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
-                let builder () = withMnemonic mnemonic (Fun.AverageBMACoupon 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AverageBMACoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
                                                             _startDate.cell 
@@ -90,7 +90,7 @@ module AverageBMACouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AverageBMACoupon>) l
 
-                let source = Helper.sourceFold "Fun.AverageBMACoupon" 
+                let source () = Helper.sourceFold "Fun.AverageBMACoupon" 
                                                [| _paymentDate.source
                                                ;  _nominal.source
                                                ;  _startDate.source
@@ -115,7 +115,7 @@ module AverageBMACouponFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AverageBMACoupon> format
                     ; source = source 
@@ -140,18 +140,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ConvexityAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".ConvexityAdjustment") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".ConvexityAdjustment") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,18 +176,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".FixingDate") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -212,18 +212,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).FixingDates
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).FixingDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".FixingDates") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".FixingDates") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -248,18 +248,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).IndexFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".IndexFixing") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".IndexFixing") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).IndexFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).IndexFixings
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".IndexFixings") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".IndexFixings") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -323,12 +323,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccruedAmount") 
                                                [| _AverageBMACoupon.source
                                                ;  _d.source
                                                |]
@@ -337,7 +337,7 @@ module AverageBMACouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -362,18 +362,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AdjustedFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".AdjustedFixing") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AdjustedFixing") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -398,18 +398,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Amount") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Amount") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -434,18 +434,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".DayCounter") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AverageBMACoupon> format
                     ; source = source 
@@ -506,7 +506,7 @@ module AverageBMACouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toCell<bool> isInArrears "isInArrears" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 
                                                             _startDate.cell 
@@ -522,7 +522,7 @@ module AverageBMACouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Factory") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Factory") 
                                                [| _AverageBMACoupon.source
                                                ;  _nominal.source
                                                ;  _paymentDate.source
@@ -553,7 +553,7 @@ module AverageBMACouponFunction =
                                 ;  _isInArrears.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AverageBMACoupon> format
                     ; source = source 
@@ -578,18 +578,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".FixingDays") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -614,18 +614,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Gearing
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Gearing") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Gearing") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -650,18 +650,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Index") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Index") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AverageBMACoupon> format
                     ; source = source 
@@ -686,18 +686,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).IsInArrears
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".IsInArrears") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".IsInArrears") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -725,12 +725,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Price
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Price") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Price") 
                                                [| _AverageBMACoupon.source
                                                ;  _yts.source
                                                |]
@@ -739,7 +739,7 @@ module AverageBMACouponFunction =
                                 ;  _yts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -764,18 +764,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Pricer
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Pricer") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Pricer") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AverageBMACoupon> format
                     ; source = source 
@@ -800,18 +800,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Rate
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Rate") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Rate") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -839,12 +839,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).SetPricer
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".SetPricer") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".SetPricer") 
                                                [| _AverageBMACoupon.source
                                                ;  _pricer.source
                                                |]
@@ -853,7 +853,7 @@ module AverageBMACouponFunction =
                                 ;  _pricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -878,18 +878,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Spread
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Spread") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Spread") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -914,18 +914,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Update
                                                        ) :> ICell
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Update") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Update") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -950,18 +950,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualDays
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualDays") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualDays") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -986,18 +986,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualEndDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualEndDate") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualEndDate") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1022,18 +1022,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualPeriod") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualPeriod") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1058,18 +1058,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualStartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualStartDate") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualStartDate") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1097,12 +1097,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccruedDays
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".AccruedDays") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccruedDays") 
                                                [| _AverageBMACoupon.source
                                                ;  _d.source
                                                |]
@@ -1111,7 +1111,7 @@ module AverageBMACouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1139,12 +1139,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccruedPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".AccruedPeriod") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccruedPeriod") 
                                                [| _AverageBMACoupon.source
                                                ;  _d.source
                                                |]
@@ -1153,7 +1153,7 @@ module AverageBMACouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1178,18 +1178,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Date") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Date") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1214,18 +1214,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".ExCouponDate") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1250,18 +1250,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Nominal") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Nominal") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1286,18 +1286,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".ReferencePeriodEnd") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".ReferencePeriodEnd") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1322,18 +1322,18 @@ module AverageBMACouponFunction =
             try
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".ReferencePeriodStart") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".ReferencePeriodStart") 
                                                [| _AverageBMACoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1361,12 +1361,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".CompareTo") 
                                                [| _AverageBMACoupon.source
                                                ;  _cf.source
                                                |]
@@ -1375,7 +1375,7 @@ module AverageBMACouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1403,12 +1403,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Equals") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Equals") 
                                                [| _AverageBMACoupon.source
                                                ;  _cf.source
                                                |]
@@ -1417,7 +1417,7 @@ module AverageBMACouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1448,13 +1448,13 @@ module AverageBMACouponFunction =
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".HasOccurred") 
                                                [| _AverageBMACoupon.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -1465,7 +1465,7 @@ module AverageBMACouponFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1493,12 +1493,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".TradingExCoupon") 
                                                [| _AverageBMACoupon.source
                                                ;  _refDate.source
                                                |]
@@ -1507,7 +1507,7 @@ module AverageBMACouponFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1535,12 +1535,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".Accept") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Accept") 
                                                [| _AverageBMACoupon.source
                                                ;  _v.source
                                                |]
@@ -1549,7 +1549,7 @@ module AverageBMACouponFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1577,12 +1577,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".RegisterWith") 
                                                [| _AverageBMACoupon.source
                                                ;  _handler.source
                                                |]
@@ -1591,7 +1591,7 @@ module AverageBMACouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1619,12 +1619,12 @@ module AverageBMACouponFunction =
 
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACoupon.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_AverageBMACoupon.source + ".UnregisterWith") 
                                                [| _AverageBMACoupon.source
                                                ;  _handler.source
                                                |]
@@ -1633,7 +1633,7 @@ module AverageBMACouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1662,14 +1662,14 @@ module AverageBMACouponFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AverageBMACoupon>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AverageBMACoupon>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AverageBMACoupon>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AverageBMACoupon>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

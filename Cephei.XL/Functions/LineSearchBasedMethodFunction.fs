@@ -49,19 +49,19 @@ module LineSearchBasedMethodFunction =
             try
 
                 let _lineSearch = Helper.toDefault<LineSearch> lineSearch "lineSearch" null
-                let builder () = withMnemonic mnemonic (Fun.LineSearchBasedMethod 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LineSearchBasedMethod 
                                                             _lineSearch.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LineSearchBasedMethod>) l
 
-                let source = Helper.sourceFold "Fun.LineSearchBasedMethod" 
+                let source () = Helper.sourceFold "Fun.LineSearchBasedMethod" 
                                                [| _lineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _lineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LineSearchBasedMethod> format
                     ; source = source 
@@ -92,13 +92,13 @@ module LineSearchBasedMethodFunction =
                 let _LineSearchBasedMethod = Helper.toCell<LineSearchBasedMethod> linesearchbasedmethod "LineSearchBasedMethod"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((LineSearchBasedMethodModel.Cast _LineSearchBasedMethod.cell).Minimize
+                let builder (current : ICell) = withMnemonic mnemonic ((LineSearchBasedMethodModel.Cast _LineSearchBasedMethod.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LineSearchBasedMethod.source + ".Minimize") 
+                let source () = Helper.sourceFold (_LineSearchBasedMethod.source + ".Minimize") 
                                                [| _LineSearchBasedMethod.source
                                                ;  _P.source
                                                ;  _endCriteria.source
@@ -109,7 +109,7 @@ module LineSearchBasedMethodFunction =
                                 ;  _endCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -138,14 +138,14 @@ module LineSearchBasedMethodFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LineSearchBasedMethod>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LineSearchBasedMethod>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LineSearchBasedMethod>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LineSearchBasedMethod>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

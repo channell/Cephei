@@ -55,13 +55,13 @@ module SimulatedAnnealingFunction =
                 let _SimulatedAnnealing = Helper.toCell<SimulatedAnnealing> simulatedannealing "SimulatedAnnealing"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((SimulatedAnnealingModel.Cast _SimulatedAnnealing.cell).Minimize
+                let builder (current : ICell) = withMnemonic mnemonic ((SimulatedAnnealingModel.Cast _SimulatedAnnealing.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimulatedAnnealing.source + ".Minimize") 
+                let source () = Helper.sourceFold (_SimulatedAnnealing.source + ".Minimize") 
                                                [| _SimulatedAnnealing.source
                                                ;  _P.source
                                                ;  _endCriteria.source
@@ -72,7 +72,7 @@ module SimulatedAnnealingFunction =
                                 ;  _endCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -109,7 +109,7 @@ module SimulatedAnnealingFunction =
                 let _K = Helper.toCell<int> K "K" 
                 let _alpha = Helper.toCell<double> alpha "alpha" 
                 let _rng = Helper.toDefault<'RNG> rng "rng" default(RNG)
-                let builder () = withMnemonic mnemonic (Fun.SimulatedAnnealing 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimulatedAnnealing 
                                                             _lambda.cell 
                                                             _T0.cell 
                                                             _K.cell 
@@ -118,7 +118,7 @@ module SimulatedAnnealingFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SimulatedAnnealing>) l
 
-                let source = Helper.sourceFold "Fun.SimulatedAnnealing" 
+                let source () = Helper.sourceFold "Fun.SimulatedAnnealing" 
                                                [| _lambda.source
                                                ;  _T0.source
                                                ;  _K.source
@@ -133,7 +133,7 @@ module SimulatedAnnealingFunction =
                                 ;  _rng.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimulatedAnnealing> format
                     ; source = source 
@@ -170,7 +170,7 @@ module SimulatedAnnealingFunction =
                 let _epsilon = Helper.toCell<double> epsilon "epsilon" 
                 let _m = Helper.toCell<int> m "m" 
                 let _rng = Helper.toDefault<'RNG> rng "rng" default(RNG)
-                let builder () = withMnemonic mnemonic (Fun.SimulatedAnnealing1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimulatedAnnealing1 
                                                             _lambda.cell 
                                                             _T0.cell 
                                                             _epsilon.cell 
@@ -179,7 +179,7 @@ module SimulatedAnnealingFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SimulatedAnnealing>) l
 
-                let source = Helper.sourceFold "Fun.SimulatedAnnealing1" 
+                let source () = Helper.sourceFold "Fun.SimulatedAnnealing1" 
                                                [| _lambda.source
                                                ;  _T0.source
                                                ;  _epsilon.source
@@ -194,7 +194,7 @@ module SimulatedAnnealingFunction =
                                 ;  _rng.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimulatedAnnealing> format
                     ; source = source 
@@ -223,14 +223,14 @@ module SimulatedAnnealingFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SimulatedAnnealing>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SimulatedAnnealing>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SimulatedAnnealing>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SimulatedAnnealing>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

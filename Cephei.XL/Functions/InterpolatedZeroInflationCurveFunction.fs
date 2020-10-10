@@ -49,18 +49,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).BaseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".BaseDate") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".BaseDate") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Clone") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Clone") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Data
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Data") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Data") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -157,18 +157,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Data_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Data_") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Data_") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -193,18 +193,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Dates
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Dates") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Dates") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -229,18 +229,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Dates_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Dates_") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Dates_") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -265,18 +265,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Forwards
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Forwards
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Forwards") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Forwards") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -328,7 +328,7 @@ module InterpolatedZeroInflationCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _rates = Helper.toCell<Generic.List<double>> rates "rates" 
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroInflationCurve 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedZeroInflationCurve 
                                                             _referenceDate.cell 
                                                             _calendar.cell 
                                                             _dayCounter.cell 
@@ -342,7 +342,7 @@ module InterpolatedZeroInflationCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedZeroInflationCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedZeroInflationCurve" 
+                let source () = Helper.sourceFold "Fun.InterpolatedZeroInflationCurve" 
                                                [| _referenceDate.source
                                                ;  _calendar.source
                                                ;  _dayCounter.source
@@ -367,7 +367,7 @@ module InterpolatedZeroInflationCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedZeroInflationCurve> format
                     ; source = source 
@@ -392,18 +392,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Interpolation_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Interpolation_") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Interpolation_") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedZeroInflationCurve> format
                     ; source = source 
@@ -428,18 +428,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Interpolator_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Interpolator_") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Interpolator_") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedZeroInflationCurve> format
                     ; source = source 
@@ -464,18 +464,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".MaxDate") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -500,18 +500,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).MaxDate_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".MaxDate_") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".MaxDate_") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -536,18 +536,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Nodes
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Nodes") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Nodes") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -572,18 +572,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Rates
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Rates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Rates") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Rates") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -608,18 +608,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).SetupInterpolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".SetupInterpolation") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".SetupInterpolation") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -644,18 +644,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Times
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Times") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Times") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -680,18 +680,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Times_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Times_") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Times_") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -728,7 +728,7 @@ module InterpolatedZeroInflationCurveFunction =
                 let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
                 let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ZeroRate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ZeroRate
                                                             _d.cell 
                                                             _instObsLag.cell 
                                                             _forceLinearInterpolation.cell 
@@ -736,7 +736,7 @@ module InterpolatedZeroInflationCurveFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ZeroRate") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ZeroRate") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                ;  _d.source
                                                ;  _instObsLag.source
@@ -751,7 +751,7 @@ module InterpolatedZeroInflationCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -785,14 +785,14 @@ module InterpolatedZeroInflationCurveFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
                 let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" 
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ZeroRate1
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ZeroRate1
                                                             _d.cell 
                                                             _instObsLag.cell 
                                                             _forceLinearInterpolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ZeroRate") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ZeroRate") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                ;  _d.source
                                                ;  _instObsLag.source
@@ -805,7 +805,7 @@ module InterpolatedZeroInflationCurveFunction =
                                 ;  _forceLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -836,13 +836,13 @@ module InterpolatedZeroInflationCurveFunction =
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ZeroRate2
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ZeroRate2
                                                             _d.cell 
                                                             _instObsLag.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ZeroRate") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ZeroRate") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                ;  _d.source
                                                ;  _instObsLag.source
@@ -853,7 +853,7 @@ module InterpolatedZeroInflationCurveFunction =
                                 ;  _instObsLag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -881,12 +881,12 @@ module InterpolatedZeroInflationCurveFunction =
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ZeroRate3
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ZeroRate3
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ZeroRate") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ZeroRate") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                ;  _d.source
                                                |]
@@ -895,7 +895,7 @@ module InterpolatedZeroInflationCurveFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -920,18 +920,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).BaseRate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).BaseRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".BaseRate") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".BaseRate") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -956,18 +956,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Frequency") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Frequency") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -992,18 +992,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).HasSeasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).HasSeasonality
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".HasSeasonality") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".HasSeasonality") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1028,18 +1028,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).IndexIsInterpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).IndexIsInterpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".IndexIsInterpolated") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".IndexIsInterpolated") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1064,18 +1064,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).NominalTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).NominalTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".NominalTermStructure") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".NominalTermStructure") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedZeroInflationCurve> format
                     ; source = source 
@@ -1100,18 +1100,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ObservationLag
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ObservationLag") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ObservationLag") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedZeroInflationCurve> format
                     ; source = source 
@@ -1136,18 +1136,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Seasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Seasonality
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Seasonality>) l
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Seasonality") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Seasonality") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedZeroInflationCurve> format
                     ; source = source 
@@ -1175,12 +1175,12 @@ module InterpolatedZeroInflationCurveFunction =
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
                 let _seasonality = Helper.toCell<Seasonality> seasonality "seasonality" 
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).SetSeasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).SetSeasonality
                                                             _seasonality.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".SetSeasonality") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".SetSeasonality") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                ;  _seasonality.source
                                                |]
@@ -1189,7 +1189,7 @@ module InterpolatedZeroInflationCurveFunction =
                                 ;  _seasonality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1214,18 +1214,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Calendar") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Calendar") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedZeroInflationCurve> format
                     ; source = source 
@@ -1250,18 +1250,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".DayCounter") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedZeroInflationCurve> format
                     ; source = source 
@@ -1286,18 +1286,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".MaxTime") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1322,18 +1322,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".ReferenceDate") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1358,18 +1358,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".SettlementDays") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1397,12 +1397,12 @@ module InterpolatedZeroInflationCurveFunction =
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".TimeFromReference") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                ;  _date.source
                                                |]
@@ -1411,7 +1411,7 @@ module InterpolatedZeroInflationCurveFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1436,18 +1436,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Update
                                                        ) :> ICell
                 let format (o : InterpolatedZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Update") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Update") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1472,18 +1472,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".AllowsExtrapolation") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1511,12 +1511,12 @@ module InterpolatedZeroInflationCurveFunction =
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".DisableExtrapolation") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                ;  _b.source
                                                |]
@@ -1525,7 +1525,7 @@ module InterpolatedZeroInflationCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1553,12 +1553,12 @@ module InterpolatedZeroInflationCurveFunction =
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".EnableExtrapolation") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                ;  _b.source
                                                |]
@@ -1567,7 +1567,7 @@ module InterpolatedZeroInflationCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1592,18 +1592,18 @@ module InterpolatedZeroInflationCurveFunction =
             try
 
                 let _InterpolatedZeroInflationCurve = Helper.toCell<InterpolatedZeroInflationCurve> interpolatedzeroinflationcurve "InterpolatedZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroInflationCurveModel.Cast _InterpolatedZeroInflationCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_InterpolatedZeroInflationCurve.source + ".Extrapolate") 
                                                [| _InterpolatedZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1632,14 +1632,14 @@ module InterpolatedZeroInflationCurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatedZeroInflationCurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InterpolatedZeroInflationCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InterpolatedZeroInflationCurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InterpolatedZeroInflationCurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

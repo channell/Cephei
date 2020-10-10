@@ -49,18 +49,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).EndTime
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).EndTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".EndTime") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".EndTime") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).LowerTrigger
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).LowerTrigger
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".LowerTrigger") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".LowerTrigger") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ObservationDates
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ObservationDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationDates") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationDates") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -157,18 +157,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ObservationsNo
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ObservationsNo
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationsNo") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationsNo") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ObservationsSchedule
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ObservationsSchedule
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationsSchedule") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationsSchedule") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
@@ -229,18 +229,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ObservationTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ObservationTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationTimes") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationTimes") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -268,12 +268,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).PriceWithoutOptionality
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).PriceWithoutOptionality
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".PriceWithoutOptionality") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".PriceWithoutOptionality") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _discountCurve.source
                                                |]
@@ -282,7 +282,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _discountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -346,7 +346,7 @@ module RangeAccrualFloatersCouponFunction =
                 let _observationsSchedule = Helper.toCell<Schedule> observationsSchedule "observationsSchedule" 
                 let _lowerTrigger = Helper.toCell<double> lowerTrigger "lowerTrigger" 
                 let _upperTrigger = Helper.toCell<double> upperTrigger "upperTrigger" 
-                let builder () = withMnemonic mnemonic (Fun.RangeAccrualFloatersCoupon 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RangeAccrualFloatersCoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
                                                             _index.cell 
@@ -364,7 +364,7 @@ module RangeAccrualFloatersCouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualFloatersCoupon>) l
 
-                let source = Helper.sourceFold "Fun.RangeAccrualFloatersCoupon" 
+                let source () = Helper.sourceFold "Fun.RangeAccrualFloatersCoupon" 
                                                [| _paymentDate.source
                                                ;  _nominal.source
                                                ;  _index.source
@@ -397,7 +397,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _upperTrigger.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
@@ -422,18 +422,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).StartTime
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).StartTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".StartTime") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".StartTime") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -458,18 +458,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).UpperTrigger
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).UpperTrigger
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".UpperTrigger") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".UpperTrigger") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -497,12 +497,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccruedAmount") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _d.source
                                                |]
@@ -511,7 +511,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -536,18 +536,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AdjustedFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AdjustedFixing") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AdjustedFixing") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -572,18 +572,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Amount") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Amount") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ConvexityAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ConvexityAdjustment") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ConvexityAdjustment") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -644,18 +644,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".DayCounter") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
@@ -716,7 +716,7 @@ module RangeAccrualFloatersCouponFunction =
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _isInArrears = Helper.toCell<bool> isInArrears "isInArrears" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 
                                                             _startDate.cell 
@@ -732,7 +732,7 @@ module RangeAccrualFloatersCouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Factory") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Factory") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _nominal.source
                                                ;  _paymentDate.source
@@ -763,7 +763,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _isInArrears.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
@@ -788,18 +788,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".FixingDate") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -824,18 +824,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".FixingDays") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -860,18 +860,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Gearing
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Gearing") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Gearing") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -896,18 +896,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Index") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Index") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
@@ -932,18 +932,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).IndexFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".IndexFixing") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".IndexFixing") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -968,18 +968,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).IsInArrears
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".IsInArrears") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".IsInArrears") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1007,12 +1007,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Price
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Price") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Price") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _yts.source
                                                |]
@@ -1021,7 +1021,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _yts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1046,18 +1046,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Pricer
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Pricer") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Pricer") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RangeAccrualFloatersCoupon> format
                     ; source = source 
@@ -1082,18 +1082,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Rate
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Rate") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Rate") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1121,12 +1121,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).SetPricer
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".SetPricer") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".SetPricer") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _pricer.source
                                                |]
@@ -1135,7 +1135,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _pricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1160,18 +1160,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Spread
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Spread") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Spread") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1196,18 +1196,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Update") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Update") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1232,18 +1232,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccrualDays
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualDays") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualDays") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1268,18 +1268,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccrualEndDate
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualEndDate") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualEndDate") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1304,18 +1304,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccrualPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualPeriod") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualPeriod") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1340,18 +1340,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccrualStartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualStartDate") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualStartDate") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1379,12 +1379,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccruedDays
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccruedDays") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccruedDays") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _d.source
                                                |]
@@ -1393,7 +1393,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1421,12 +1421,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccruedPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccruedPeriod") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccruedPeriod") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _d.source
                                                |]
@@ -1435,7 +1435,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1460,18 +1460,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Date") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Date") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1496,18 +1496,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ExCouponDate") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1532,18 +1532,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Nominal") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Nominal") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1568,18 +1568,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ReferencePeriodEnd") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ReferencePeriodEnd") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1604,18 +1604,18 @@ module RangeAccrualFloatersCouponFunction =
             try
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ReferencePeriodStart") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ReferencePeriodStart") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1643,12 +1643,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".CompareTo") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _cf.source
                                                |]
@@ -1657,7 +1657,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1685,12 +1685,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Equals") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Equals") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _cf.source
                                                |]
@@ -1699,7 +1699,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1730,13 +1730,13 @@ module RangeAccrualFloatersCouponFunction =
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".HasOccurred") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -1747,7 +1747,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1775,12 +1775,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".TradingExCoupon") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _refDate.source
                                                |]
@@ -1789,7 +1789,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1817,12 +1817,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Accept") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Accept") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _v.source
                                                |]
@@ -1831,7 +1831,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1859,12 +1859,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".RegisterWith") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _handler.source
                                                |]
@@ -1873,7 +1873,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1901,12 +1901,12 @@ module RangeAccrualFloatersCouponFunction =
 
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".UnregisterWith") 
                                                [| _RangeAccrualFloatersCoupon.source
                                                ;  _handler.source
                                                |]
@@ -1915,7 +1915,7 @@ module RangeAccrualFloatersCouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1944,14 +1944,14 @@ module RangeAccrualFloatersCouponFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RangeAccrualFloatersCoupon>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RangeAccrualFloatersCoupon>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RangeAccrualFloatersCoupon>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RangeAccrualFloatersCoupon>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

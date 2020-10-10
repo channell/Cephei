@@ -55,13 +55,13 @@ module CompositeInstrumentFunction =
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _instrument = Helper.toCell<Instrument> instrument "instrument" 
                 let _multiplier = Helper.toDefault<double> multiplier "multiplier" 1.0
-                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Add
                                                             _instrument.cell 
                                                             _multiplier.cell 
                                                        ) :> ICell
                 let format (o : CompositeInstrument) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CompositeInstrument.source + ".Add") 
+                let source () = Helper.sourceFold (_CompositeInstrument.source + ".Add") 
                                                [| _CompositeInstrument.source
                                                ;  _instrument.source
                                                ;  _multiplier.source
@@ -72,7 +72,7 @@ module CompositeInstrumentFunction =
                                 ;  _multiplier.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -98,18 +98,18 @@ module CompositeInstrumentFunction =
             try
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
-                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CompositeInstrument.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_CompositeInstrument.source + ".IsExpired") 
                                                [| _CompositeInstrument.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -140,13 +140,13 @@ module CompositeInstrumentFunction =
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _instrument = Helper.toCell<Instrument> instrument "instrument" 
                 let _multiplier = Helper.toDefault<double> multiplier "multiplier" 1.0
-                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Subtract
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Subtract
                                                             _instrument.cell 
                                                             _multiplier.cell 
                                                        ) :> ICell
                 let format (o : CompositeInstrument) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CompositeInstrument.source + ".Subtract") 
+                let source () = Helper.sourceFold (_CompositeInstrument.source + ".Subtract") 
                                                [| _CompositeInstrument.source
                                                ;  _instrument.source
                                                ;  _multiplier.source
@@ -157,7 +157,7 @@ module CompositeInstrumentFunction =
                                 ;  _multiplier.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,18 +182,18 @@ module CompositeInstrumentFunction =
             try
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
-                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CompositeInstrument.source + ".CASH") 
+                let source () = Helper.sourceFold (_CompositeInstrument.source + ".CASH") 
                                                [| _CompositeInstrument.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -218,18 +218,18 @@ module CompositeInstrumentFunction =
             try
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
-                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CompositeInstrument.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_CompositeInstrument.source + ".ErrorEstimate") 
                                                [| _CompositeInstrument.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,18 +254,18 @@ module CompositeInstrumentFunction =
             try
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
-                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CompositeInstrument.source + ".NPV") 
+                let source () = Helper.sourceFold (_CompositeInstrument.source + ".NPV") 
                                                [| _CompositeInstrument.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -293,12 +293,12 @@ module CompositeInstrumentFunction =
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CompositeInstrument.source + ".Result") 
+                let source () = Helper.sourceFold (_CompositeInstrument.source + ".Result") 
                                                [| _CompositeInstrument.source
                                                ;  _tag.source
                                                |]
@@ -307,7 +307,7 @@ module CompositeInstrumentFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -335,12 +335,12 @@ module CompositeInstrumentFunction =
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CompositeInstrument) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CompositeInstrument.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_CompositeInstrument.source + ".SetPricingEngine") 
                                                [| _CompositeInstrument.source
                                                ;  _e.source
                                                |]
@@ -349,7 +349,7 @@ module CompositeInstrumentFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module CompositeInstrumentFunction =
             try
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
-                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CompositeInstrument.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_CompositeInstrument.source + ".ValuationDate") 
                                                [| _CompositeInstrument.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -414,14 +414,14 @@ module CompositeInstrumentFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CompositeInstrument>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CompositeInstrument>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CompositeInstrument>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CompositeInstrument>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

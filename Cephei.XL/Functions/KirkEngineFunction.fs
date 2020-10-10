@@ -56,14 +56,14 @@ module KirkEngineFunction =
                 let _process1 = Helper.toCell<BlackProcess> process1 "process1" 
                 let _process2 = Helper.toCell<BlackProcess> process2 "process2" 
                 let _correlation = Helper.toCell<double> correlation "correlation" 
-                let builder () = withMnemonic mnemonic (Fun.KirkEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.KirkEngine 
                                                             _process1.cell 
                                                             _process2.cell 
                                                             _correlation.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<KirkEngine>) l
 
-                let source = Helper.sourceFold "Fun.KirkEngine" 
+                let source () = Helper.sourceFold "Fun.KirkEngine" 
                                                [| _process1.source
                                                ;  _process2.source
                                                ;  _correlation.source
@@ -74,7 +74,7 @@ module KirkEngineFunction =
                                 ;  _correlation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<KirkEngine> format
                     ; source = source 
@@ -103,14 +103,14 @@ module KirkEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<KirkEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<KirkEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<KirkEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<KirkEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

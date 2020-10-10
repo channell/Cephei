@@ -52,13 +52,13 @@ module InverseCumulativeNormalFunction =
 
                 let _average = Helper.toCell<double> average "average" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder () = withMnemonic mnemonic (Fun.InverseCumulativeNormal1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativeNormal1 
                                                             _average.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseCumulativeNormal>) l
 
-                let source = Helper.sourceFold "Fun.InverseCumulativeNormal1" 
+                let source () = Helper.sourceFold "Fun.InverseCumulativeNormal1" 
                                                [| _average.source
                                                ;  _sigma.source
                                                |]
@@ -67,7 +67,7 @@ module InverseCumulativeNormalFunction =
                                 ;  _sigma.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InverseCumulativeNormal> format
                     ; source = source 
@@ -89,16 +89,16 @@ module InverseCumulativeNormalFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.InverseCumulativeNormal ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativeNormal ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseCumulativeNormal>) l
 
-                let source = Helper.sourceFold "Fun.InverseCumulativeNormal" 
+                let source () = Helper.sourceFold "Fun.InverseCumulativeNormal" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InverseCumulativeNormal> format
                     ; source = source 
@@ -126,12 +126,12 @@ module InverseCumulativeNormalFunction =
 
                 let _InverseCumulativeNormal = Helper.toCell<InverseCumulativeNormal> inversecumulativenormal "InverseCumulativeNormal"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((InverseCumulativeNormalModel.Cast _InverseCumulativeNormal.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((InverseCumulativeNormalModel.Cast _InverseCumulativeNormal.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InverseCumulativeNormal.source + ".Value") 
+                let source () = Helper.sourceFold (_InverseCumulativeNormal.source + ".Value") 
                                                [| _InverseCumulativeNormal.source
                                                ;  _x.source
                                                |]
@@ -140,7 +140,7 @@ module InverseCumulativeNormalFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -169,14 +169,14 @@ module InverseCumulativeNormalFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InverseCumulativeNormal>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InverseCumulativeNormal>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InverseCumulativeNormal>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InverseCumulativeNormal>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

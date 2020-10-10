@@ -49,19 +49,19 @@ module ChiSquareDistributionFunction =
             try
 
                 let _df = Helper.toCell<double> df "df" 
-                let builder () = withMnemonic mnemonic (Fun.ChiSquareDistribution 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ChiSquareDistribution 
                                                             _df.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ChiSquareDistribution>) l
 
-                let source = Helper.sourceFold "Fun.ChiSquareDistribution" 
+                let source () = Helper.sourceFold "Fun.ChiSquareDistribution" 
                                                [| _df.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _df.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ChiSquareDistribution> format
                     ; source = source 
@@ -89,12 +89,12 @@ module ChiSquareDistributionFunction =
 
                 let _ChiSquareDistribution = Helper.toCell<ChiSquareDistribution> chisquaredistribution "ChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((ChiSquareDistributionModel.Cast _ChiSquareDistribution.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ChiSquareDistributionModel.Cast _ChiSquareDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ChiSquareDistribution.source + ".Value") 
+                let source () = Helper.sourceFold (_ChiSquareDistribution.source + ".Value") 
                                                [| _ChiSquareDistribution.source
                                                ;  _x.source
                                                |]
@@ -103,7 +103,7 @@ module ChiSquareDistributionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -132,14 +132,14 @@ module ChiSquareDistributionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ChiSquareDistribution>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ChiSquareDistribution>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ChiSquareDistribution>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ChiSquareDistribution>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).ImpliedQuote
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".ImpliedQuote") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".ImpliedQuote") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -88,12 +88,12 @@ module YearOnYearInflationSwapHelperFunction =
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
                 let _y = Helper.toCell<YoYInflationTermStructure> y "y" 
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).SetTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).SetTermStructure
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".SetTermStructure") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".SetTermStructure") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                ;  _y.source
                                                |]
@@ -102,7 +102,7 @@ module YearOnYearInflationSwapHelperFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -145,7 +145,7 @@ module YearOnYearInflationSwapHelperFunction =
                 let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _yii = Helper.toCell<YoYInflationIndex> yii "yii" 
-                let builder () = withMnemonic mnemonic (Fun.YearOnYearInflationSwapHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.YearOnYearInflationSwapHelper 
                                                             _quote.cell 
                                                             _swapObsLag.cell 
                                                             _maturity.cell 
@@ -156,7 +156,7 @@ module YearOnYearInflationSwapHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YearOnYearInflationSwapHelper>) l
 
-                let source = Helper.sourceFold "Fun.YearOnYearInflationSwapHelper" 
+                let source () = Helper.sourceFold "Fun.YearOnYearInflationSwapHelper" 
                                                [| _quote.source
                                                ;  _swapObsLag.source
                                                ;  _maturity.source
@@ -175,7 +175,7 @@ module YearOnYearInflationSwapHelperFunction =
                                 ;  _yii.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YearOnYearInflationSwapHelper> format
                     ; source = source 
@@ -200,18 +200,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).EarliestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".EarliestDate") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".EarliestDate") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,18 +236,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).LatestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".LatestDate") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".LatestDate") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,18 +272,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).LatestRelevantDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".LatestRelevantDate") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".LatestRelevantDate") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,18 +308,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".MaturityDate") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,18 +344,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).PillarDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".PillarDate") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".PillarDate") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,18 +380,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).Quote
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".Quote") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".Quote") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YearOnYearInflationSwapHelper> format
                     ; source = source 
@@ -416,18 +416,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).QuoteError
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".QuoteError") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".QuoteError") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -452,18 +452,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).QuoteIsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".QuoteIsValid") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".QuoteIsValid") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,18 +488,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).QuoteValue
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".QuoteValue") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".QuoteValue") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -527,12 +527,12 @@ module YearOnYearInflationSwapHelperFunction =
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".RegisterWith") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                ;  _handler.source
                                                |]
@@ -541,7 +541,7 @@ module YearOnYearInflationSwapHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -569,12 +569,12 @@ module YearOnYearInflationSwapHelperFunction =
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".UnregisterWith") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                ;  _handler.source
                                                |]
@@ -583,7 +583,7 @@ module YearOnYearInflationSwapHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).Update
                                                        ) :> ICell
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".Update") 
+                let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".Update") 
                                                [| _YearOnYearInflationSwapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -648,14 +648,14 @@ module YearOnYearInflationSwapHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<YearOnYearInflationSwapHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<YearOnYearInflationSwapHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<YearOnYearInflationSwapHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<YearOnYearInflationSwapHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

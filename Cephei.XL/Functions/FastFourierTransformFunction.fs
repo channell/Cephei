@@ -49,19 +49,19 @@ module FastFourierTransformFunction =
             try
 
                 let _order = Helper.toCell<int> order "order" 
-                let builder () = withMnemonic mnemonic (Fun.FastFourierTransform 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FastFourierTransform 
                                                             _order.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FastFourierTransform>) l
 
-                let source = Helper.sourceFold "Fun.FastFourierTransform" 
+                let source () = Helper.sourceFold "Fun.FastFourierTransform" 
                                                [| _order.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _order.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FastFourierTransform> format
                     ; source = source 
@@ -98,7 +98,7 @@ module FastFourierTransformFunction =
                 let _inputBeg = Helper.toCell<int> inputBeg "inputBeg" 
                 let _inputEnd = Helper.toCell<int> inputEnd "inputEnd" 
                 let _output = Helper.toCell<Generic.List<System.Numerics.Complex>> output "output" 
-                let builder () = withMnemonic mnemonic ((FastFourierTransformModel.Cast _FastFourierTransform.cell).Inverse_transform
+                let builder (current : ICell) = withMnemonic mnemonic ((FastFourierTransformModel.Cast _FastFourierTransform.cell).Inverse_transform
                                                             _input.cell 
                                                             _inputBeg.cell 
                                                             _inputEnd.cell 
@@ -106,7 +106,7 @@ module FastFourierTransformFunction =
                                                        ) :> ICell
                 let format (o : FastFourierTransform) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FastFourierTransform.source + ".Inverse_transform") 
+                let source () = Helper.sourceFold (_FastFourierTransform.source + ".Inverse_transform") 
                                                [| _FastFourierTransform.source
                                                ;  _input.source
                                                ;  _inputBeg.source
@@ -121,7 +121,7 @@ module FastFourierTransformFunction =
                                 ;  _output.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -146,18 +146,18 @@ module FastFourierTransformFunction =
             try
 
                 let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
-                let builder () = withMnemonic mnemonic ((FastFourierTransformModel.Cast _FastFourierTransform.cell).Output_size
+                let builder (current : ICell) = withMnemonic mnemonic ((FastFourierTransformModel.Cast _FastFourierTransform.cell).Output_size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FastFourierTransform.source + ".Output_size") 
+                let source () = Helper.sourceFold (_FastFourierTransform.source + ".Output_size") 
                                                [| _FastFourierTransform.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FastFourierTransform.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,7 +194,7 @@ module FastFourierTransformFunction =
                 let _inputBeg = Helper.toCell<int> inputBeg "inputBeg" 
                 let _inputEnd = Helper.toCell<int> inputEnd "inputEnd" 
                 let _output = Helper.toCell<Generic.List<System.Numerics.Complex>> output "output" 
-                let builder () = withMnemonic mnemonic ((FastFourierTransformModel.Cast _FastFourierTransform.cell).Transform
+                let builder (current : ICell) = withMnemonic mnemonic ((FastFourierTransformModel.Cast _FastFourierTransform.cell).Transform
                                                             _input.cell 
                                                             _inputBeg.cell 
                                                             _inputEnd.cell 
@@ -202,7 +202,7 @@ module FastFourierTransformFunction =
                                                        ) :> ICell
                 let format (o : FastFourierTransform) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FastFourierTransform.source + ".Transform") 
+                let source () = Helper.sourceFold (_FastFourierTransform.source + ".Transform") 
                                                [| _FastFourierTransform.source
                                                ;  _input.source
                                                ;  _inputBeg.source
@@ -217,7 +217,7 @@ module FastFourierTransformFunction =
                                 ;  _output.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -246,14 +246,14 @@ module FastFourierTransformFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FastFourierTransform>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FastFourierTransform>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FastFourierTransform>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FastFourierTransform>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

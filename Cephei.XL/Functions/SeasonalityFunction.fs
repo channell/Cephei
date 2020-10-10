@@ -58,14 +58,14 @@ module SeasonalityFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((SeasonalityModel.Cast _Seasonality.cell).CorrectYoYRate
+                let builder (current : ICell) = withMnemonic mnemonic ((SeasonalityModel.Cast _Seasonality.cell).CorrectYoYRate
                                                             _d.cell 
                                                             _r.cell 
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Seasonality.source + ".CorrectYoYRate") 
+                let source () = Helper.sourceFold (_Seasonality.source + ".CorrectYoYRate") 
                                                [| _Seasonality.source
                                                ;  _d.source
                                                ;  _r.source
@@ -78,7 +78,7 @@ module SeasonalityFunction =
                                 ;  _iTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -112,14 +112,14 @@ module SeasonalityFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((SeasonalityModel.Cast _Seasonality.cell).CorrectZeroRate
+                let builder (current : ICell) = withMnemonic mnemonic ((SeasonalityModel.Cast _Seasonality.cell).CorrectZeroRate
                                                             _d.cell 
                                                             _r.cell 
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Seasonality.source + ".CorrectZeroRate") 
+                let source () = Helper.sourceFold (_Seasonality.source + ".CorrectZeroRate") 
                                                [| _Seasonality.source
                                                ;  _d.source
                                                ;  _r.source
@@ -132,7 +132,7 @@ module SeasonalityFunction =
                                 ;  _iTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -160,12 +160,12 @@ module SeasonalityFunction =
 
                 let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality"  
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((SeasonalityModel.Cast _Seasonality.cell).IsConsistent
+                let builder (current : ICell) = withMnemonic mnemonic ((SeasonalityModel.Cast _Seasonality.cell).IsConsistent
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Seasonality.source + ".IsConsistent") 
+                let source () = Helper.sourceFold (_Seasonality.source + ".IsConsistent") 
                                                [| _Seasonality.source
                                                ;  _iTS.source
                                                |]
@@ -174,7 +174,7 @@ module SeasonalityFunction =
                                 ;  _iTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,14 +203,14 @@ module SeasonalityFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Seasonality>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Seasonality>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Seasonality>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Seasonality>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

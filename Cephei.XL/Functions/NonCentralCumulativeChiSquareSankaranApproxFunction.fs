@@ -52,13 +52,13 @@ module NonCentralCumulativeChiSquareSankaranApproxFunction =
 
                 let _df = Helper.toCell<double> df "df" 
                 let _ncp = Helper.toCell<double> ncp "ncp" 
-                let builder () = withMnemonic mnemonic (Fun.NonCentralCumulativeChiSquareSankaranApprox 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonCentralCumulativeChiSquareSankaranApprox 
                                                             _df.cell 
                                                             _ncp.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NonCentralCumulativeChiSquareSankaranApprox>) l
 
-                let source = Helper.sourceFold "Fun.NonCentralCumulativeChiSquareSankaranApprox" 
+                let source () = Helper.sourceFold "Fun.NonCentralCumulativeChiSquareSankaranApprox" 
                                                [| _df.source
                                                ;  _ncp.source
                                                |]
@@ -67,7 +67,7 @@ module NonCentralCumulativeChiSquareSankaranApproxFunction =
                                 ;  _ncp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonCentralCumulativeChiSquareSankaranApprox> format
                     ; source = source 
@@ -96,14 +96,14 @@ module NonCentralCumulativeChiSquareSankaranApproxFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NonCentralCumulativeChiSquareSankaranApprox>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NonCentralCumulativeChiSquareSankaranApprox>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NonCentralCumulativeChiSquareSankaranApprox>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NonCentralCumulativeChiSquareSankaranApprox>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

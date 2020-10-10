@@ -55,14 +55,14 @@ module ArithmeticAPOPathPricerFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ArithmeticAPOPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.ArithmeticAPOPathPricer" 
+                let source () = Helper.sourceFold "Fun.ArithmeticAPOPathPricer" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -73,7 +73,7 @@ module ArithmeticAPOPathPricerFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ArithmeticAPOPathPricer> format
                     ; source = source 
@@ -107,7 +107,7 @@ module ArithmeticAPOPathPricerFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _runningSum = Helper.toCell<double> runningSum "runningSum" 
-                let builder () = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer1 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -115,7 +115,7 @@ module ArithmeticAPOPathPricerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ArithmeticAPOPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.ArithmeticAPOPathPricer1" 
+                let source () = Helper.sourceFold "Fun.ArithmeticAPOPathPricer1" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -128,7 +128,7 @@ module ArithmeticAPOPathPricerFunction =
                                 ;  _runningSum.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ArithmeticAPOPathPricer> format
                     ; source = source 
@@ -165,7 +165,7 @@ module ArithmeticAPOPathPricerFunction =
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _runningSum = Helper.toCell<double> runningSum "runningSum" 
                 let _pastFixings = Helper.toCell<int> pastFixings "pastFixings" 
-                let builder () = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ArithmeticAPOPathPricer2 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -174,7 +174,7 @@ module ArithmeticAPOPathPricerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ArithmeticAPOPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.ArithmeticAPOPathPricer2" 
+                let source () = Helper.sourceFold "Fun.ArithmeticAPOPathPricer2" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -189,7 +189,7 @@ module ArithmeticAPOPathPricerFunction =
                                 ;  _pastFixings.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ArithmeticAPOPathPricer> format
                     ; source = source 
@@ -217,12 +217,12 @@ module ArithmeticAPOPathPricerFunction =
 
                 let _ArithmeticAPOPathPricer = Helper.toCell<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder () = withMnemonic mnemonic ((ArithmeticAPOPathPricerModel.Cast _ArithmeticAPOPathPricer.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ArithmeticAPOPathPricerModel.Cast _ArithmeticAPOPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ArithmeticAPOPathPricer.source + ".Value") 
+                let source () = Helper.sourceFold (_ArithmeticAPOPathPricer.source + ".Value") 
                                                [| _ArithmeticAPOPathPricer.source
                                                ;  _path.source
                                                |]
@@ -231,7 +231,7 @@ module ArithmeticAPOPathPricerFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -259,12 +259,12 @@ module ArithmeticAPOPathPricerFunction =
 
                 let _ArithmeticAPOPathPricer = Helper.toCell<ArithmeticAPOPathPricer> arithmeticapopathpricer "ArithmeticAPOPathPricer"  
                 let _path = Helper.toCell<Path> path "path" 
-                let builder () = withMnemonic mnemonic ((ArithmeticAPOPathPricerModel.Cast _ArithmeticAPOPathPricer.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((ArithmeticAPOPathPricerModel.Cast _ArithmeticAPOPathPricer.cell).Value1
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ArithmeticAPOPathPricer.source + ".Value1") 
+                let source () = Helper.sourceFold (_ArithmeticAPOPathPricer.source + ".Value1") 
                                                [| _ArithmeticAPOPathPricer.source
                                                ;  _path.source
                                                |]
@@ -273,7 +273,7 @@ module ArithmeticAPOPathPricerFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,14 +302,14 @@ module ArithmeticAPOPathPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ArithmeticAPOPathPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ArithmeticAPOPathPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ArithmeticAPOPathPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ArithmeticAPOPathPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

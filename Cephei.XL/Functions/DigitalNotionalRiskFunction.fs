@@ -52,13 +52,13 @@ module DigitalNotionalRiskFunction =
 
                 let _paymentOffset = Helper.toCell<EventPaymentOffset> paymentOffset "paymentOffset" 
                 let _threshold = Helper.toCell<double> threshold "threshold" 
-                let builder () = withMnemonic mnemonic (Fun.DigitalNotionalRisk 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalNotionalRisk 
                                                             _paymentOffset.cell 
                                                             _threshold.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalNotionalRisk>) l
 
-                let source = Helper.sourceFold "Fun.DigitalNotionalRisk" 
+                let source () = Helper.sourceFold "Fun.DigitalNotionalRisk" 
                                                [| _paymentOffset.source
                                                ;  _threshold.source
                                                |]
@@ -67,7 +67,7 @@ module DigitalNotionalRiskFunction =
                                 ;  _threshold.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalNotionalRisk> format
                     ; source = source 
@@ -98,13 +98,13 @@ module DigitalNotionalRiskFunction =
                 let _DigitalNotionalRisk = Helper.toCell<DigitalNotionalRisk> digitalnotionalrisk "DigitalNotionalRisk"  
                 let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
                 let _path = Helper.toCell<NotionalPath> path "path" 
-                let builder () = withMnemonic mnemonic ((DigitalNotionalRiskModel.Cast _DigitalNotionalRisk.cell).UpdatePath
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalNotionalRiskModel.Cast _DigitalNotionalRisk.cell).UpdatePath
                                                             _events.cell 
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : DigitalNotionalRisk) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalNotionalRisk.source + ".UpdatePath") 
+                let source () = Helper.sourceFold (_DigitalNotionalRisk.source + ".UpdatePath") 
                                                [| _DigitalNotionalRisk.source
                                                ;  _events.source
                                                ;  _path.source
@@ -115,7 +115,7 @@ module DigitalNotionalRiskFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -144,14 +144,14 @@ module DigitalNotionalRiskFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DigitalNotionalRisk>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DigitalNotionalRisk>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DigitalNotionalRisk>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DigitalNotionalRisk>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

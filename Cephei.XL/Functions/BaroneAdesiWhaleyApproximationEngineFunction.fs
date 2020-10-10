@@ -49,19 +49,19 @@ module BaroneAdesiWhaleyApproximationEngineFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic (Fun.BaroneAdesiWhaleyApproximationEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BaroneAdesiWhaleyApproximationEngine 
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BaroneAdesiWhaleyApproximationEngine>) l
 
-                let source = Helper.sourceFold "Fun.BaroneAdesiWhaleyApproximationEngine" 
+                let source () = Helper.sourceFold "Fun.BaroneAdesiWhaleyApproximationEngine" 
                                                [| _Process.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BaroneAdesiWhaleyApproximationEngine> format
                     ; source = source 
@@ -91,14 +91,14 @@ module BaroneAdesiWhaleyApproximationEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BaroneAdesiWhaleyApproximationEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BaroneAdesiWhaleyApproximationEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BaroneAdesiWhaleyApproximationEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BaroneAdesiWhaleyApproximationEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

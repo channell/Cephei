@@ -52,12 +52,12 @@ module CapFloorFunction =
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
                 let _discountCurve = Helper.toCell<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).AtmRate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).AtmRate
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".AtmRate") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".AtmRate") 
                                                [| _CapFloor.source
                                                ;  _discountCurve.source
                                                |]
@@ -66,7 +66,7 @@ module CapFloorFunction =
                                 ;  _discountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -106,7 +106,7 @@ module CapFloorFunction =
                 let _floorRates = Helper.toCell<Generic.List<double>> floorRates "floorRates" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.CapFloor 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloor 
                                                             _Type.cell 
                                                             _floatingLeg.cell 
                                                             _capRates.cell 
@@ -116,7 +116,7 @@ module CapFloorFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloor>) l
 
-                let source = Helper.sourceFold "Fun.CapFloor" 
+                let source () = Helper.sourceFold "Fun.CapFloor" 
                                                [| _Type.source
                                                ;  _floatingLeg.source
                                                ;  _capRates.source
@@ -133,7 +133,7 @@ module CapFloorFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloor> format
                     ; source = source 
@@ -170,7 +170,7 @@ module CapFloorFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.CapFloor1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloor1 
                                                             _Type.cell 
                                                             _floatingLeg.cell 
                                                             _strikes.cell 
@@ -179,7 +179,7 @@ module CapFloorFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloor>) l
 
-                let source = Helper.sourceFold "Fun.CapFloor1" 
+                let source () = Helper.sourceFold "Fun.CapFloor1" 
                                                [| _Type.source
                                                ;  _floatingLeg.source
                                                ;  _strikes.source
@@ -194,7 +194,7 @@ module CapFloorFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloor> format
                     ; source = source 
@@ -219,18 +219,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).CapRates
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).CapRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CapFloor.source + ".CapRates") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".CapRates") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -255,18 +255,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).FloatingLeg
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CapFloor.source + ".FloatingLeg") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".FloatingLeg") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -291,18 +291,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).FloorRates
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).FloorRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CapFloor.source + ".FloorRates") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".FloorRates") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -327,18 +327,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).GetType
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).GetType
                                                        ) :> ICell
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".GetType") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".GetType") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -390,7 +390,7 @@ module CapFloorFunction =
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _displacement = Helper.toCell<double> displacement "displacement" 
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ImpliedVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _guess.cell 
@@ -403,7 +403,7 @@ module CapFloorFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".ImpliedVolatility") 
                                                [| _CapFloor.source
                                                ;  _targetValue.source
                                                ;  _discountCurve.source
@@ -428,7 +428,7 @@ module CapFloorFunction =
                                 ;  _displacement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -468,7 +468,7 @@ module CapFloorFunction =
                 let _guess = Helper.toCell<double> guess "guess" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ImpliedVolatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ImpliedVolatility1
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _guess.cell 
@@ -477,7 +477,7 @@ module CapFloorFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".ImpliedVolatility") 
                                                [| _CapFloor.source
                                                ;  _targetValue.source
                                                ;  _discountCurve.source
@@ -494,7 +494,7 @@ module CapFloorFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -519,18 +519,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".IsExpired") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -555,18 +555,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).LastFloatingRateCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).LastFloatingRateCoupon
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
-                let source = Helper.sourceFold (_CapFloor.source + ".LastFloatingRateCoupon") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".LastFloatingRateCoupon") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloor> format
                     ; source = source 
@@ -591,18 +591,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".MaturityDate") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -630,12 +630,12 @@ module CapFloorFunction =
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).Optionlet
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).Optionlet
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloor>) l
 
-                let source = Helper.sourceFold (_CapFloor.source + ".Optionlet") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".Optionlet") 
                                                [| _CapFloor.source
                                                ;  _i.source
                                                |]
@@ -644,7 +644,7 @@ module CapFloorFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloor> format
                     ; source = source 
@@ -669,18 +669,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).StartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".StartDate") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".StartDate") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -705,18 +705,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".CASH") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".CASH") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -741,18 +741,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".ErrorEstimate") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -777,18 +777,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".NPV") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".NPV") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -816,12 +816,12 @@ module CapFloorFunction =
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".Result") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".Result") 
                                                [| _CapFloor.source
                                                ;  _tag.source
                                                |]
@@ -830,7 +830,7 @@ module CapFloorFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -858,12 +858,12 @@ module CapFloorFunction =
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".SetPricingEngine") 
                                                [| _CapFloor.source
                                                ;  _e.source
                                                |]
@@ -872,7 +872,7 @@ module CapFloorFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -897,18 +897,18 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CapFloor.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_CapFloor.source + ".ValuationDate") 
                                                [| _CapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -937,14 +937,14 @@ module CapFloorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CapFloor>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CapFloor>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CapFloor>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CapFloor>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

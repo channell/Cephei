@@ -51,18 +51,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).BaseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".BaseDate") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".BaseDate") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -87,18 +87,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Clone") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Clone") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -123,18 +123,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Data
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Data") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Data") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -159,18 +159,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Data_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Data_") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Data_") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -195,18 +195,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Dates
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Dates") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Dates") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -231,18 +231,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Dates_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Dates_") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Dates_") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -267,18 +267,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Forwards
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Forwards
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Forwards") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Forwards") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -330,7 +330,7 @@ module InterpolatedYoYInflationCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _rates = Helper.toCell<Generic.List<double>> rates "rates" 
                 let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedYoYInflationCurve 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedYoYInflationCurve 
                                                             _referenceDate.cell 
                                                             _calendar.cell 
                                                             _dayCounter.cell 
@@ -344,7 +344,7 @@ module InterpolatedYoYInflationCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedYoYInflationCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedYoYInflationCurve" 
+                let source () = Helper.sourceFold "Fun.InterpolatedYoYInflationCurve" 
                                                [| _referenceDate.source
                                                ;  _calendar.source
                                                ;  _dayCounter.source
@@ -369,7 +369,7 @@ module InterpolatedYoYInflationCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
@@ -418,7 +418,7 @@ module InterpolatedYoYInflationCurveFunction =
                 let _yTS = Helper.toHandle<YieldTermStructure> yTS "yTS" 
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _rates = Helper.toCell<Generic.List<double>> rates "rates" 
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedYoYInflationCurve1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedYoYInflationCurve1 
                                                             _referenceDate.cell 
                                                             _calendar.cell 
                                                             _dayCounter.cell 
@@ -431,7 +431,7 @@ module InterpolatedYoYInflationCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedYoYInflationCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedYoYInflationCurve1" 
+                let source () = Helper.sourceFold "Fun.InterpolatedYoYInflationCurve1" 
                                                [| _referenceDate.source
                                                ;  _calendar.source
                                                ;  _dayCounter.source
@@ -454,7 +454,7 @@ module InterpolatedYoYInflationCurveFunction =
                                 ;  _rates.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
@@ -479,18 +479,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Interpolation_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Interpolation_") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Interpolation_") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
@@ -515,18 +515,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Interpolator_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Interpolator_") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Interpolator_") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
@@ -551,18 +551,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".MaxDate") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -587,18 +587,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).MaxDate_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".MaxDate_") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".MaxDate_") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -623,18 +623,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Nodes
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Nodes") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Nodes") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -659,18 +659,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Rates
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Rates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Rates") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Rates") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -695,18 +695,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).SetupInterpolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".SetupInterpolation") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".SetupInterpolation") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -731,18 +731,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Times
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Times") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Times") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -767,18 +767,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Times_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Times_") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Times_") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -815,7 +815,7 @@ module InterpolatedYoYInflationCurveFunction =
                 let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
                 let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).YoyRate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).YoyRate
                                                             _d.cell 
                                                             _instObsLag.cell 
                                                             _forceLinearInterpolation.cell 
@@ -823,7 +823,7 @@ module InterpolatedYoYInflationCurveFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                ;  _d.source
                                                ;  _instObsLag.source
@@ -838,7 +838,7 @@ module InterpolatedYoYInflationCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -872,14 +872,14 @@ module InterpolatedYoYInflationCurveFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
                 let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" 
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).YoyRate1
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).YoyRate1
                                                             _d.cell 
                                                             _instObsLag.cell 
                                                             _forceLinearInterpolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                ;  _d.source
                                                ;  _instObsLag.source
@@ -892,7 +892,7 @@ module InterpolatedYoYInflationCurveFunction =
                                 ;  _forceLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -923,13 +923,13 @@ module InterpolatedYoYInflationCurveFunction =
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).YoyRate2
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).YoyRate2
                                                             _d.cell 
                                                             _instObsLag.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                ;  _d.source
                                                ;  _instObsLag.source
@@ -940,7 +940,7 @@ module InterpolatedYoYInflationCurveFunction =
                                 ;  _instObsLag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -968,12 +968,12 @@ module InterpolatedYoYInflationCurveFunction =
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).YoyRate3
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).YoyRate3
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                ;  _d.source
                                                |]
@@ -982,7 +982,7 @@ module InterpolatedYoYInflationCurveFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1007,18 +1007,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).BaseRate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).BaseRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".BaseRate") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".BaseRate") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1043,18 +1043,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Frequency") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Frequency") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1079,18 +1079,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).HasSeasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).HasSeasonality
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".HasSeasonality") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".HasSeasonality") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1115,18 +1115,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).IndexIsInterpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).IndexIsInterpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".IndexIsInterpolated") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".IndexIsInterpolated") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1151,18 +1151,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).NominalTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).NominalTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".NominalTermStructure") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".NominalTermStructure") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
@@ -1187,18 +1187,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).ObservationLag
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".ObservationLag") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".ObservationLag") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
@@ -1223,18 +1223,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Seasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Seasonality
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Seasonality>) l
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Seasonality") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Seasonality") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
@@ -1262,12 +1262,12 @@ module InterpolatedYoYInflationCurveFunction =
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let _seasonality = Helper.toCell<Seasonality> seasonality "seasonality" 
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).SetSeasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).SetSeasonality
                                                             _seasonality.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".SetSeasonality") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".SetSeasonality") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                ;  _seasonality.source
                                                |]
@@ -1276,7 +1276,7 @@ module InterpolatedYoYInflationCurveFunction =
                                 ;  _seasonality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1301,18 +1301,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Calendar") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Calendar") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
@@ -1337,18 +1337,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".DayCounter") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedYoYInflationCurve> format
                     ; source = source 
@@ -1373,18 +1373,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".MaxTime") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1409,18 +1409,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".ReferenceDate") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1445,18 +1445,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".SettlementDays") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1484,12 +1484,12 @@ module InterpolatedYoYInflationCurveFunction =
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".TimeFromReference") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                ;  _date.source
                                                |]
@@ -1498,7 +1498,7 @@ module InterpolatedYoYInflationCurveFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1523,18 +1523,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Update
                                                        ) :> ICell
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Update") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Update") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1559,18 +1559,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".AllowsExtrapolation") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1598,12 +1598,12 @@ module InterpolatedYoYInflationCurveFunction =
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".DisableExtrapolation") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                ;  _b.source
                                                |]
@@ -1612,7 +1612,7 @@ module InterpolatedYoYInflationCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1640,12 +1640,12 @@ module InterpolatedYoYInflationCurveFunction =
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".EnableExtrapolation") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                ;  _b.source
                                                |]
@@ -1654,7 +1654,7 @@ module InterpolatedYoYInflationCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1679,18 +1679,18 @@ module InterpolatedYoYInflationCurveFunction =
             try
 
                 let _InterpolatedYoYInflationCurve = Helper.toCell<InterpolatedYoYInflationCurve> interpolatedyoyinflationcurve "InterpolatedYoYInflationCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedYoYInflationCurveModel.Cast _InterpolatedYoYInflationCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Extrapolate") 
                                                [| _InterpolatedYoYInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1719,14 +1719,14 @@ module InterpolatedYoYInflationCurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatedYoYInflationCurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InterpolatedYoYInflationCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InterpolatedYoYInflationCurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InterpolatedYoYInflationCurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

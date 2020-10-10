@@ -55,14 +55,14 @@ module CallabilityFunction =
                 let _price = Helper.toCell<Callability.Price> price "price" 
                 let _Type = Helper.toCell<Callability.Type> Type "Type" 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic (Fun.Callability 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Callability 
                                                             _price.cell 
                                                             _Type.cell 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Callability>) l
 
-                let source = Helper.sourceFold "Fun.Callability" 
+                let source () = Helper.sourceFold "Fun.Callability" 
                                                [| _price.source
                                                ;  _Type.source
                                                ;  _date.source
@@ -73,7 +73,7 @@ module CallabilityFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Callability> format
                     ; source = source 
@@ -98,18 +98,18 @@ module CallabilityFunction =
             try
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
-                let builder () = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Callability.source + ".Date") 
+                let source () = Helper.sourceFold (_Callability.source + ".Date") 
                                                [| _Callability.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Callability.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -134,18 +134,18 @@ module CallabilityFunction =
             try
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
-                let builder () = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Price
+                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Price
                                                        ) :> ICell
                 let format (o : Callability.Price) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Callability.source + ".Price") 
+                let source () = Helper.sourceFold (_Callability.source + ".Price") 
                                                [| _Callability.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Callability.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module CallabilityFunction =
             try
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
-                let builder () = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Callability.source + ".TYPE") 
+                let source () = Helper.sourceFold (_Callability.source + ".TYPE") 
                                                [| _Callability.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Callability.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module CallabilityFunction =
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : Callability) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Callability.source + ".Accept") 
+                let source () = Helper.sourceFold (_Callability.source + ".Accept") 
                                                [| _Callability.source
                                                ;  _v.source
                                                |]
@@ -223,7 +223,7 @@ module CallabilityFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,13 +254,13 @@ module CallabilityFunction =
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).HasOccurred
                                                             _d.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Callability.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_Callability.source + ".HasOccurred") 
                                                [| _Callability.source
                                                ;  _d.source
                                                ;  _includeRefDate.source
@@ -271,7 +271,7 @@ module CallabilityFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -299,12 +299,12 @@ module CallabilityFunction =
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Callability) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Callability.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Callability.source + ".RegisterWith") 
                                                [| _Callability.source
                                                ;  _handler.source
                                                |]
@@ -313,7 +313,7 @@ module CallabilityFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -341,12 +341,12 @@ module CallabilityFunction =
 
                 let _Callability = Helper.toCell<Callability> callability "Callability"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CallabilityModel.Cast _Callability.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Callability) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Callability.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Callability.source + ".UnregisterWith") 
                                                [| _Callability.source
                                                ;  _handler.source
                                                |]
@@ -355,7 +355,7 @@ module CallabilityFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -384,14 +384,14 @@ module CallabilityFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Callability>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Callability>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Callability>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Callability>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

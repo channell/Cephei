@@ -49,18 +49,18 @@ module RandomSequenceGeneratorFunction =
             try
 
                 let _RandomSequenceGenerator = Helper.toCell<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
-                let builder () = withMnemonic mnemonic ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).Dimension
+                let builder (current : ICell) = withMnemonic mnemonic ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RandomSequenceGenerator.source + ".Dimension") 
+                let source () = Helper.sourceFold (_RandomSequenceGenerator.source + ".Dimension") 
                                                [| _RandomSequenceGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RandomSequenceGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,13 +91,13 @@ module RandomSequenceGeneratorFunction =
                 let _RandomSequenceGenerator = Helper.toCell<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
-                let source = Helper.sourceFold (_RandomSequenceGenerator.source + ".Factory") 
+                let source () = Helper.sourceFold (_RandomSequenceGenerator.source + ".Factory") 
                                                [| _RandomSequenceGenerator.source
                                                ;  _dimensionality.source
                                                ;  _seed.source
@@ -108,7 +108,7 @@ module RandomSequenceGeneratorFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RandomSequenceGenerator> format
                     ; source = source 
@@ -133,18 +133,18 @@ module RandomSequenceGeneratorFunction =
             try
 
                 let _RandomSequenceGenerator = Helper.toCell<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
-                let builder () = withMnemonic mnemonic ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).LastSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RandomSequenceGenerator.source + ".LastSequence") 
+                let source () = Helper.sourceFold (_RandomSequenceGenerator.source + ".LastSequence") 
                                                [| _RandomSequenceGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RandomSequenceGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -169,18 +169,18 @@ module RandomSequenceGeneratorFunction =
             try
 
                 let _RandomSequenceGenerator = Helper.toCell<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
-                let builder () = withMnemonic mnemonic ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).NextInt32Sequence
+                let builder (current : ICell) = withMnemonic mnemonic ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).NextInt32Sequence
                                                        ) :> ICell
                 let format (i : Generic.List<ulong>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RandomSequenceGenerator.source + ".NextInt32Sequence") 
+                let source () = Helper.sourceFold (_RandomSequenceGenerator.source + ".NextInt32Sequence") 
                                                [| _RandomSequenceGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RandomSequenceGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -205,18 +205,18 @@ module RandomSequenceGeneratorFunction =
             try
 
                 let _RandomSequenceGenerator = Helper.toCell<RandomSequenceGenerator> randomsequencegenerator "RandomSequenceGenerator"  
-                let builder () = withMnemonic mnemonic ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).NextSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((RandomSequenceGeneratorModel.Cast _RandomSequenceGenerator.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RandomSequenceGenerator.source + ".NextSequence") 
+                let source () = Helper.sourceFold (_RandomSequenceGenerator.source + ".NextSequence") 
                                                [| _RandomSequenceGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RandomSequenceGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -244,13 +244,13 @@ module RandomSequenceGeneratorFunction =
 
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic (Fun.RandomSequenceGenerator 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RandomSequenceGenerator 
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RandomSequenceGenerator>) l
 
-                let source = Helper.sourceFold "Fun.RandomSequenceGenerator" 
+                let source () = Helper.sourceFold "Fun.RandomSequenceGenerator" 
                                                [| _dimensionality.source
                                                ;  _seed.source
                                                |]
@@ -259,7 +259,7 @@ module RandomSequenceGeneratorFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RandomSequenceGenerator> format
                     ; source = source 
@@ -287,13 +287,13 @@ module RandomSequenceGeneratorFunction =
 
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _rng = Helper.toCell<'RNG> rng "rng" 
-                let builder () = withMnemonic mnemonic (Fun.RandomSequenceGenerator1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RandomSequenceGenerator1 
                                                             _dimensionality.cell 
                                                             _rng.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RandomSequenceGenerator>) l
 
-                let source = Helper.sourceFold "Fun.RandomSequenceGenerator1" 
+                let source () = Helper.sourceFold "Fun.RandomSequenceGenerator1" 
                                                [| _dimensionality.source
                                                ;  _rng.source
                                                |]
@@ -302,7 +302,7 @@ module RandomSequenceGeneratorFunction =
                                 ;  _rng.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RandomSequenceGenerator> format
                     ; source = source 
@@ -331,14 +331,14 @@ module RandomSequenceGeneratorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RandomSequenceGenerator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RandomSequenceGenerator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RandomSequenceGenerator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RandomSequenceGenerator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

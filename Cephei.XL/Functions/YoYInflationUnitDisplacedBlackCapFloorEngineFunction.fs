@@ -52,13 +52,13 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
 
                 let _index = Helper.toCell<YoYInflationIndex> index "index" 
                 let _vol = Helper.toHandle<YoYOptionletVolatilitySurface> vol "vol" 
-                let builder () = withMnemonic mnemonic (Fun.YoYInflationUnitDisplacedBlackCapFloorEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.YoYInflationUnitDisplacedBlackCapFloorEngine 
                                                             _index.cell 
                                                             _vol.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationUnitDisplacedBlackCapFloorEngine>) l
 
-                let source = Helper.sourceFold "Fun.YoYInflationUnitDisplacedBlackCapFloorEngine" 
+                let source () = Helper.sourceFold "Fun.YoYInflationUnitDisplacedBlackCapFloorEngine" 
                                                [| _index.source
                                                ;  _vol.source
                                                |]
@@ -67,7 +67,7 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
                                 ;  _vol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationUnitDisplacedBlackCapFloorEngine> format
                     ; source = source 
@@ -93,18 +93,18 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
             try
 
                 let _YoYInflationUnitDisplacedBlackCapFloorEngine = Helper.toCell<YoYInflationUnitDisplacedBlackCapFloorEngine> yoyinflationunitdisplacedblackcapfloorengine "YoYInflationUnitDisplacedBlackCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((YoYInflationUnitDisplacedBlackCapFloorEngineModel.Cast _YoYInflationUnitDisplacedBlackCapFloorEngine.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationUnitDisplacedBlackCapFloorEngineModel.Cast _YoYInflationUnitDisplacedBlackCapFloorEngine.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
-                let source = Helper.sourceFold (_YoYInflationUnitDisplacedBlackCapFloorEngine.source + ".Index") 
+                let source () = Helper.sourceFold (_YoYInflationUnitDisplacedBlackCapFloorEngine.source + ".Index") 
                                                [| _YoYInflationUnitDisplacedBlackCapFloorEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationUnitDisplacedBlackCapFloorEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationUnitDisplacedBlackCapFloorEngine> format
                     ; source = source 
@@ -132,12 +132,12 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
 
                 let _YoYInflationUnitDisplacedBlackCapFloorEngine = Helper.toCell<YoYInflationUnitDisplacedBlackCapFloorEngine> yoyinflationunitdisplacedblackcapfloorengine "YoYInflationUnitDisplacedBlackCapFloorEngine"  
                 let _vol = Helper.toHandle<YoYOptionletVolatilitySurface> vol "vol" 
-                let builder () = withMnemonic mnemonic ((YoYInflationUnitDisplacedBlackCapFloorEngineModel.Cast _YoYInflationUnitDisplacedBlackCapFloorEngine.cell).SetVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationUnitDisplacedBlackCapFloorEngineModel.Cast _YoYInflationUnitDisplacedBlackCapFloorEngine.cell).SetVolatility
                                                             _vol.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationUnitDisplacedBlackCapFloorEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationUnitDisplacedBlackCapFloorEngine.source + ".SetVolatility") 
+                let source () = Helper.sourceFold (_YoYInflationUnitDisplacedBlackCapFloorEngine.source + ".SetVolatility") 
                                                [| _YoYInflationUnitDisplacedBlackCapFloorEngine.source
                                                ;  _vol.source
                                                |]
@@ -146,7 +146,7 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
                                 ;  _vol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -171,18 +171,18 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
             try
 
                 let _YoYInflationUnitDisplacedBlackCapFloorEngine = Helper.toCell<YoYInflationUnitDisplacedBlackCapFloorEngine> yoyinflationunitdisplacedblackcapfloorengine "YoYInflationUnitDisplacedBlackCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((YoYInflationUnitDisplacedBlackCapFloorEngineModel.Cast _YoYInflationUnitDisplacedBlackCapFloorEngine.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationUnitDisplacedBlackCapFloorEngineModel.Cast _YoYInflationUnitDisplacedBlackCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l
 
-                let source = Helper.sourceFold (_YoYInflationUnitDisplacedBlackCapFloorEngine.source + ".Volatility") 
+                let source () = Helper.sourceFold (_YoYInflationUnitDisplacedBlackCapFloorEngine.source + ".Volatility") 
                                                [| _YoYInflationUnitDisplacedBlackCapFloorEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationUnitDisplacedBlackCapFloorEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationUnitDisplacedBlackCapFloorEngine> format
                     ; source = source 
@@ -211,14 +211,14 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<YoYInflationUnitDisplacedBlackCapFloorEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<YoYInflationUnitDisplacedBlackCapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<YoYInflationUnitDisplacedBlackCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<YoYInflationUnitDisplacedBlackCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

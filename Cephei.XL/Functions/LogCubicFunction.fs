@@ -49,18 +49,18 @@ module LogCubicFunction =
             try
 
                 let _LogCubic = Helper.toCell<LogCubic> logcubic "LogCubic"  
-                let builder () = withMnemonic mnemonic ((LogCubicModel.Cast _LogCubic.cell).Global
+                let builder (current : ICell) = withMnemonic mnemonic ((LogCubicModel.Cast _LogCubic.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LogCubic.source + ".GLOBAL") 
+                let source () = Helper.sourceFold (_LogCubic.source + ".GLOBAL") 
                                                [| _LogCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,14 +94,14 @@ module LogCubicFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((LogCubicModel.Cast _LogCubic.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((LogCubicModel.Cast _LogCubic.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_LogCubic.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_LogCubic.source + ".Interpolate") 
                                                [| _LogCubic.source
                                                ;  _xBegin.source
                                                ;  _size.source
@@ -114,7 +114,7 @@ module LogCubicFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogCubic> format
                     ; source = source 
@@ -154,7 +154,7 @@ module LogCubicFunction =
                 let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" 
                 let _rightCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCondition "rightCondition" 
                 let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" 
-                let builder () = withMnemonic mnemonic (Fun.LogCubic 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LogCubic 
                                                             _da.cell 
                                                             _monotonic.cell 
                                                             _leftCondition.cell 
@@ -164,7 +164,7 @@ module LogCubicFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LogCubic>) l
 
-                let source = Helper.sourceFold "Fun.LogCubic" 
+                let source () = Helper.sourceFold "Fun.LogCubic" 
                                                [| _da.source
                                                ;  _monotonic.source
                                                ;  _leftCondition.source
@@ -181,7 +181,7 @@ module LogCubicFunction =
                                 ;  _rightConditionValue.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogCubic> format
                     ; source = source 
@@ -203,16 +203,16 @@ module LogCubicFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.LogCubic1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LogCubic1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LogCubic>) l
 
-                let source = Helper.sourceFold "Fun.LogCubic1" 
+                let source () = Helper.sourceFold "Fun.LogCubic1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogCubic> format
                     ; source = source 
@@ -237,18 +237,18 @@ module LogCubicFunction =
             try
 
                 let _LogCubic = Helper.toCell<LogCubic> logcubic "LogCubic"  
-                let builder () = withMnemonic mnemonic ((LogCubicModel.Cast _LogCubic.cell).RequiredPoints
+                let builder (current : ICell) = withMnemonic mnemonic ((LogCubicModel.Cast _LogCubic.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogCubic.source + ".RequiredPoints") 
+                let source () = Helper.sourceFold (_LogCubic.source + ".RequiredPoints") 
                                                [| _LogCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -277,14 +277,14 @@ module LogCubicFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LogCubic>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LogCubic>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LogCubic>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LogCubic>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

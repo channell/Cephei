@@ -49,18 +49,18 @@ module GapPayoffFunction =
             try
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
-                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GapPayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_GapPayoff.source + ".Description") 
                                                [| _GapPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,14 +91,14 @@ module GapPayoffFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _secondStrike = Helper.toCell<double> secondStrike "secondStrike" 
-                let builder () = withMnemonic mnemonic (Fun.GapPayoff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GapPayoff 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _secondStrike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GapPayoff>) l
 
-                let source = Helper.sourceFold "Fun.GapPayoff" 
+                let source () = Helper.sourceFold "Fun.GapPayoff" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _secondStrike.source
@@ -109,7 +109,7 @@ module GapPayoffFunction =
                                 ;  _secondStrike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GapPayoff> format
                     ; source = source 
@@ -134,18 +134,18 @@ module GapPayoffFunction =
             try
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
-                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GapPayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_GapPayoff.source + ".Name") 
                                                [| _GapPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module GapPayoffFunction =
             try
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
-                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).SecondStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).SecondStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GapPayoff.source + ".SecondStrike") 
+                let source () = Helper.sourceFold (_GapPayoff.source + ".SecondStrike") 
                                                [| _GapPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module GapPayoffFunction =
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GapPayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_GapPayoff.source + ".Value") 
                                                [| _GapPayoff.source
                                                ;  _price.source
                                                |]
@@ -223,7 +223,7 @@ module GapPayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module GapPayoffFunction =
             try
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
-                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Strike
+                let builder (current : ICell) = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GapPayoff.source + ".Strike") 
+                let source () = Helper.sourceFold (_GapPayoff.source + ".Strike") 
                                                [| _GapPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module GapPayoffFunction =
             try
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
-                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).OptionType
+                let builder (current : ICell) = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GapPayoff.source + ".OptionType") 
+                let source () = Helper.sourceFold (_GapPayoff.source + ".OptionType") 
                                                [| _GapPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -323,12 +323,12 @@ module GapPayoffFunction =
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : GapPayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GapPayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_GapPayoff.source + ".Accept") 
                                                [| _GapPayoff.source
                                                ;  _v.source
                                                |]
@@ -337,7 +337,7 @@ module GapPayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -366,14 +366,14 @@ module GapPayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GapPayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GapPayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GapPayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GapPayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

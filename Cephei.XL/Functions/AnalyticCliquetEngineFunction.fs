@@ -49,19 +49,19 @@ module AnalyticCliquetEngineFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticCliquetEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticCliquetEngine 
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticCliquetEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticCliquetEngine" 
+                let source () = Helper.sourceFold "Fun.AnalyticCliquetEngine" 
                                                [| _Process.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticCliquetEngine> format
                     ; source = source 
@@ -91,14 +91,14 @@ module AnalyticCliquetEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticCliquetEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticCliquetEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticCliquetEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticCliquetEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

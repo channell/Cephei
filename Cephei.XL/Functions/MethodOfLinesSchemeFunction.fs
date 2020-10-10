@@ -58,14 +58,14 @@ module MethodOfLinesSchemeFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
-                let builder () = withMnemonic mnemonic ((MethodOfLinesSchemeModel.Cast _MethodOfLinesScheme.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((MethodOfLinesSchemeModel.Cast _MethodOfLinesScheme.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalInputs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
-                let source = Helper.sourceFold (_MethodOfLinesScheme.source + ".Factory") 
+                let source () = Helper.sourceFold (_MethodOfLinesScheme.source + ".Factory") 
                                                [| _MethodOfLinesScheme.source
                                                ;  _L.source
                                                ;  _bcs.source
@@ -78,7 +78,7 @@ module MethodOfLinesSchemeFunction =
                                 ;  _additionalInputs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MethodOfLinesScheme> format
                     ; source = source 
@@ -112,7 +112,7 @@ module MethodOfLinesSchemeFunction =
                 let _relInitStepSize = Helper.toCell<double> relInitStepSize "relInitStepSize" 
                 let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
                 let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
-                let builder () = withMnemonic mnemonic (Fun.MethodOfLinesScheme 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MethodOfLinesScheme 
                                                             _eps.cell 
                                                             _relInitStepSize.cell 
                                                             _map.cell 
@@ -120,7 +120,7 @@ module MethodOfLinesSchemeFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MethodOfLinesScheme>) l
 
-                let source = Helper.sourceFold "Fun.MethodOfLinesScheme" 
+                let source () = Helper.sourceFold "Fun.MethodOfLinesScheme" 
                                                [| _eps.source
                                                ;  _relInitStepSize.source
                                                ;  _map.source
@@ -133,7 +133,7 @@ module MethodOfLinesSchemeFunction =
                                 ;  _bcSet.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MethodOfLinesScheme> format
                     ; source = source 
@@ -155,16 +155,16 @@ module MethodOfLinesSchemeFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.MethodOfLinesScheme1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MethodOfLinesScheme1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MethodOfLinesScheme>) l
 
-                let source = Helper.sourceFold "Fun.MethodOfLinesScheme1" 
+                let source () = Helper.sourceFold "Fun.MethodOfLinesScheme1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MethodOfLinesScheme> format
                     ; source = source 
@@ -192,12 +192,12 @@ module MethodOfLinesSchemeFunction =
 
                 let _MethodOfLinesScheme = Helper.toCell<MethodOfLinesScheme> methodoflinesscheme "MethodOfLinesScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((MethodOfLinesSchemeModel.Cast _MethodOfLinesScheme.cell).SetStep
+                let builder (current : ICell) = withMnemonic mnemonic ((MethodOfLinesSchemeModel.Cast _MethodOfLinesScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : MethodOfLinesScheme) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MethodOfLinesScheme.source + ".SetStep") 
+                let source () = Helper.sourceFold (_MethodOfLinesScheme.source + ".SetStep") 
                                                [| _MethodOfLinesScheme.source
                                                ;  _dt.source
                                                |]
@@ -206,7 +206,7 @@ module MethodOfLinesSchemeFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,14 +240,14 @@ module MethodOfLinesSchemeFunction =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((MethodOfLinesSchemeModel.Cast _MethodOfLinesScheme.cell).Step
+                let builder (current : ICell) = withMnemonic mnemonic ((MethodOfLinesSchemeModel.Cast _MethodOfLinesScheme.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 
                                                        ) :> ICell
                 let format (o : MethodOfLinesScheme) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MethodOfLinesScheme.source + ".Step") 
+                let source () = Helper.sourceFold (_MethodOfLinesScheme.source + ".Step") 
                                                [| _MethodOfLinesScheme.source
                                                ;  _a.source
                                                ;  _t.source
@@ -260,7 +260,7 @@ module MethodOfLinesSchemeFunction =
                                 ;  _theta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,14 +289,14 @@ module MethodOfLinesSchemeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MethodOfLinesScheme>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MethodOfLinesScheme>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MethodOfLinesScheme>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MethodOfLinesScheme>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

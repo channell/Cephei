@@ -52,13 +52,13 @@ module InvalidPriceSignExceptionFunction =
 
                 let _message = Helper.toCell<string> message "message" 
                 let _inner = Helper.toCell<Exception> inner "inner" 
-                let builder () = withMnemonic mnemonic (Fun.InvalidPriceSignException 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InvalidPriceSignException 
                                                             _message.cell 
                                                             _inner.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InvalidPriceSignException>) l
 
-                let source = Helper.sourceFold "Fun.InvalidPriceSignException" 
+                let source () = Helper.sourceFold "Fun.InvalidPriceSignException" 
                                                [| _message.source
                                                ;  _inner.source
                                                |]
@@ -67,7 +67,7 @@ module InvalidPriceSignExceptionFunction =
                                 ;  _inner.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InvalidPriceSignException> format
                     ; source = source 
@@ -92,19 +92,19 @@ module InvalidPriceSignExceptionFunction =
             try
 
                 let _message = Helper.toCell<string> message "message" 
-                let builder () = withMnemonic mnemonic (Fun.InvalidPriceSignException1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InvalidPriceSignException1 
                                                             _message.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InvalidPriceSignException>) l
 
-                let source = Helper.sourceFold "Fun.InvalidPriceSignException1" 
+                let source () = Helper.sourceFold "Fun.InvalidPriceSignException1" 
                                                [| _message.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _message.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InvalidPriceSignException> format
                     ; source = source 
@@ -126,16 +126,16 @@ module InvalidPriceSignExceptionFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.InvalidPriceSignException2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InvalidPriceSignException2 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InvalidPriceSignException>) l
 
-                let source = Helper.sourceFold "Fun.InvalidPriceSignException2" 
+                let source () = Helper.sourceFold "Fun.InvalidPriceSignException2" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InvalidPriceSignException> format
                     ; source = source 
@@ -164,14 +164,14 @@ module InvalidPriceSignExceptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InvalidPriceSignException>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InvalidPriceSignException>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InvalidPriceSignException>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InvalidPriceSignException>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

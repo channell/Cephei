@@ -52,12 +52,12 @@ module MinBasketPayoffFunction =
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Accumulate
+                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Accumulate
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MinBasketPayoff.source + ".Accumulate") 
+                let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Accumulate") 
                                                [| _MinBasketPayoff.source
                                                ;  _a.source
                                                |]
@@ -66,7 +66,7 @@ module MinBasketPayoffFunction =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,19 +91,19 @@ module MinBasketPayoffFunction =
             try
 
                 let _p = Helper.toCell<Payoff> p "p" 
-                let builder () = withMnemonic mnemonic (Fun.MinBasketPayoff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MinBasketPayoff 
                                                             _p.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MinBasketPayoff>) l
 
-                let source = Helper.sourceFold "Fun.MinBasketPayoff" 
+                let source () = Helper.sourceFold "Fun.MinBasketPayoff" 
                                                [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MinBasketPayoff> format
                     ; source = source 
@@ -128,18 +128,18 @@ module MinBasketPayoffFunction =
             try
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).BasePayoff
+                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_MinBasketPayoff.source + ".BasePayoff") 
+                let source () = Helper.sourceFold (_MinBasketPayoff.source + ".BasePayoff") 
                                                [| _MinBasketPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MinBasketPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MinBasketPayoff> format
                     ; source = source 
@@ -164,18 +164,18 @@ module MinBasketPayoffFunction =
             try
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MinBasketPayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Description") 
                                                [| _MinBasketPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MinBasketPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module MinBasketPayoffFunction =
             try
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MinBasketPayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Name") 
                                                [| _MinBasketPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MinBasketPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -239,12 +239,12 @@ module MinBasketPayoffFunction =
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Value1
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MinBasketPayoff.source + ".Value1") 
+                let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Value1") 
                                                [| _MinBasketPayoff.source
                                                ;  _a.source
                                                |]
@@ -253,7 +253,7 @@ module MinBasketPayoffFunction =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -281,12 +281,12 @@ module MinBasketPayoffFunction =
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MinBasketPayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Value") 
                                                [| _MinBasketPayoff.source
                                                ;  _price.source
                                                |]
@@ -295,7 +295,7 @@ module MinBasketPayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -323,12 +323,12 @@ module MinBasketPayoffFunction =
 
                 let _MinBasketPayoff = Helper.toCell<MinBasketPayoff> minbasketpayoff "MinBasketPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((MinBasketPayoffModel.Cast _MinBasketPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : MinBasketPayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MinBasketPayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Accept") 
                                                [| _MinBasketPayoff.source
                                                ;  _v.source
                                                |]
@@ -337,7 +337,7 @@ module MinBasketPayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -366,14 +366,14 @@ module MinBasketPayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MinBasketPayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MinBasketPayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MinBasketPayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MinBasketPayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

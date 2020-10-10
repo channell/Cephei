@@ -74,7 +74,7 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let _requiredTolerance = Helper.toCell<double> requiredTolerance "requiredTolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic (Fun.MCDiscreteAveragingAsianEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MCDiscreteAveragingAsianEngine 
                                                             _Process.cell 
                                                             _maxTimeStepsPerYear.cell 
                                                             _brownianBridge.cell 
@@ -87,7 +87,7 @@ module MCDiscreteAveragingAsianEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MCDiscreteAveragingAsianEngine>) l
 
-                let source = Helper.sourceFold "Fun.MCDiscreteAveragingAsianEngine" 
+                let source () = Helper.sourceFold "Fun.MCDiscreteAveragingAsianEngine" 
                                                [| _Process.source
                                                ;  _maxTimeStepsPerYear.source
                                                ;  _brownianBridge.source
@@ -110,7 +110,7 @@ module MCDiscreteAveragingAsianEngineFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MCDiscreteAveragingAsianEngine> format
                     ; source = source 
@@ -138,12 +138,12 @@ module MCDiscreteAveragingAsianEngineFunction =
 
                 let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".RegisterWith") 
                                                [| _MCDiscreteAveragingAsianEngine.source
                                                ;  _handler.source
                                                |]
@@ -152,7 +152,7 @@ module MCDiscreteAveragingAsianEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -177,18 +177,18 @@ module MCDiscreteAveragingAsianEngineFunction =
             try
 
                 let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
-                let builder () = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".Reset") 
                                                [| _MCDiscreteAveragingAsianEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -216,12 +216,12 @@ module MCDiscreteAveragingAsianEngineFunction =
 
                 let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".UnregisterWith") 
                                                [| _MCDiscreteAveragingAsianEngine.source
                                                ;  _handler.source
                                                |]
@@ -230,7 +230,7 @@ module MCDiscreteAveragingAsianEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,18 +255,18 @@ module MCDiscreteAveragingAsianEngineFunction =
             try
 
                 let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
-                let builder () = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).Update
                                                        ) :> ICell
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".Update") 
                                                [| _MCDiscreteAveragingAsianEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -291,18 +291,18 @@ module MCDiscreteAveragingAsianEngineFunction =
             try
 
                 let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
-                let builder () = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".ErrorEstimate") 
                                                [| _MCDiscreteAveragingAsianEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -327,18 +327,18 @@ module MCDiscreteAveragingAsianEngineFunction =
             try
 
                 let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
-                let builder () = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).SampleAccumulator
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".SampleAccumulator") 
+                let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".SampleAccumulator") 
                                                [| _MCDiscreteAveragingAsianEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -372,14 +372,14 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let _tolerance = Helper.toCell<double> tolerance "tolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _minSamples = Helper.toCell<int> minSamples "minSamples" 
-                let builder () = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).Value
                                                             _tolerance.cell 
                                                             _maxSamples.cell 
                                                             _minSamples.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".Value") 
+                let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".Value") 
                                                [| _MCDiscreteAveragingAsianEngine.source
                                                ;  _tolerance.source
                                                ;  _maxSamples.source
@@ -392,7 +392,7 @@ module MCDiscreteAveragingAsianEngineFunction =
                                 ;  _minSamples.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -420,12 +420,12 @@ module MCDiscreteAveragingAsianEngineFunction =
 
                 let _MCDiscreteAveragingAsianEngine = Helper.toCell<MCDiscreteAveragingAsianEngine> mcdiscreteaveragingasianengine "MCDiscreteAveragingAsianEngine"  
                 let _samples = Helper.toCell<int> samples "samples" 
-                let builder () = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).ValueWithSamples
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteAveragingAsianEngineModel.Cast _MCDiscreteAveragingAsianEngine.cell).ValueWithSamples
                                                             _samples.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".ValueWithSamples") 
+                let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".ValueWithSamples") 
                                                [| _MCDiscreteAveragingAsianEngine.source
                                                ;  _samples.source
                                                |]
@@ -434,7 +434,7 @@ module MCDiscreteAveragingAsianEngineFunction =
                                 ;  _samples.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -463,14 +463,14 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MCDiscreteAveragingAsianEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MCDiscreteAveragingAsianEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MCDiscreteAveragingAsianEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MCDiscreteAveragingAsianEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

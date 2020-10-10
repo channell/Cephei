@@ -49,18 +49,18 @@ module VarProxy_HelperFunction =
             try
 
                 let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
-                let builder () = withMnemonic mnemonic ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).CorrModel_
+                let builder (current : ICell) = withMnemonic mnemonic ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).CorrModel_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmCorrelationModel>) l
 
-                let source = Helper.sourceFold (_VarProxy_Helper.source + ".CorrModel_") 
+                let source () = Helper.sourceFold (_VarProxy_Helper.source + ".CorrModel_") 
                                                [| _VarProxy_Helper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VarProxy_Helper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VarProxy_Helper> format
                     ; source = source 
@@ -88,12 +88,12 @@ module VarProxy_HelperFunction =
 
                 let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VarProxy_Helper.source + ".Value") 
+                let source () = Helper.sourceFold (_VarProxy_Helper.source + ".Value") 
                                                [| _VarProxy_Helper.source
                                                ;  _t.source
                                                |]
@@ -102,7 +102,7 @@ module VarProxy_HelperFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -133,14 +133,14 @@ module VarProxy_HelperFunction =
                 let _proxy = Helper.toCell<LfmCovarianceProxy> proxy "proxy" 
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic (Fun.VarProxy_Helper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.VarProxy_Helper 
                                                             _proxy.cell 
                                                             _i.cell 
                                                             _j.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VarProxy_Helper>) l
 
-                let source = Helper.sourceFold "Fun.VarProxy_Helper" 
+                let source () = Helper.sourceFold "Fun.VarProxy_Helper" 
                                                [| _proxy.source
                                                ;  _i.source
                                                ;  _j.source
@@ -151,7 +151,7 @@ module VarProxy_HelperFunction =
                                 ;  _j.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VarProxy_Helper> format
                     ; source = source 
@@ -176,18 +176,18 @@ module VarProxy_HelperFunction =
             try
 
                 let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
-                let builder () = withMnemonic mnemonic ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).VolaModel_
+                let builder (current : ICell) = withMnemonic mnemonic ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).VolaModel_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmVolatilityModel>) l
 
-                let source = Helper.sourceFold (_VarProxy_Helper.source + ".VolaModel_") 
+                let source () = Helper.sourceFold (_VarProxy_Helper.source + ".VolaModel_") 
                                                [| _VarProxy_Helper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VarProxy_Helper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VarProxy_Helper> format
                     ; source = source 
@@ -216,14 +216,14 @@ module VarProxy_HelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<VarProxy_Helper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<VarProxy_Helper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<VarProxy_Helper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<VarProxy_Helper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -46,16 +46,16 @@ module TWDCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.TWDCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TWDCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TWDCurrency>) l
 
-                let source = Helper.sourceFold "Fun.TWDCurrency" 
+                let source () = Helper.sourceFold "Fun.TWDCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TWDCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".Code") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".Empty") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module TWDCurrencyFunction =
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".Equals") 
                                                [| _TWDCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module TWDCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".Format") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".FractionsPerUnit") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".FractionSymbol") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".Name") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".NumericCode") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".Rounding") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TWDCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".Symbol") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".ToString") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module TWDCurrencyFunction =
             try
 
                 let _TWDCurrency = Helper.toCell<TWDCurrency> twdcurrency "TWDCurrency"  
-                let builder () = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((TWDCurrencyModel.Cast _TWDCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_TWDCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_TWDCurrency.source + ".TriangulationCurrency") 
                                                [| _TWDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TWDCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module TWDCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TWDCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TWDCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TWDCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TWDCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

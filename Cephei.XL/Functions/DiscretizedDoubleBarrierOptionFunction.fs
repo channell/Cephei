@@ -55,13 +55,13 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _optvalues = Helper.toCell<Vector> optvalues "optvalues" 
                 let _grid = Helper.toDefault<Vector> grid "grid" null
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).CheckBarrier
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).CheckBarrier
                                                             _optvalues.cell 
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".CheckBarrier") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".CheckBarrier") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                ;  _optvalues.source
                                                ;  _grid.source
@@ -72,7 +72,7 @@ module DiscretizedDoubleBarrierOptionFunction =
                                 ;  _grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,14 +103,14 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let _args = Helper.toCell<DoubleBarrierOption.Arguments> args "args" 
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
                 let _grid = Helper.toDefault<TimeGrid> grid "grid" null
-                let builder () = withMnemonic mnemonic (Fun.DiscretizedDoubleBarrierOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscretizedDoubleBarrierOption 
                                                             _args.cell 
                                                             _Process.cell 
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscretizedDoubleBarrierOption>) l
 
-                let source = Helper.sourceFold "Fun.DiscretizedDoubleBarrierOption" 
+                let source () = Helper.sourceFold "Fun.DiscretizedDoubleBarrierOption" 
                                                [| _args.source
                                                ;  _Process.source
                                                ;  _grid.source
@@ -121,7 +121,7 @@ module DiscretizedDoubleBarrierOptionFunction =
                                 ;  _grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedDoubleBarrierOption> format
                     ; source = source 
@@ -146,18 +146,18 @@ module DiscretizedDoubleBarrierOptionFunction =
             try
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).MandatoryTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".MandatoryTimes") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".MandatoryTimes") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -185,12 +185,12 @@ module DiscretizedDoubleBarrierOptionFunction =
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Reset
                                                             _size.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Reset") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Reset") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                ;  _size.source
                                                |]
@@ -199,7 +199,7 @@ module DiscretizedDoubleBarrierOptionFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -224,18 +224,18 @@ module DiscretizedDoubleBarrierOptionFunction =
             try
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Vanilla
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Vanilla
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Vanilla") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Vanilla") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedDoubleBarrierOption> format
                     ; source = source 
@@ -260,18 +260,18 @@ module DiscretizedDoubleBarrierOptionFunction =
             try
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).AdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".AdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".AdjustValues") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,13 +302,13 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Initialize
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Initialize
                                                             _Method.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Initialize") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Initialize") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                ;  _Method.source
                                                ;  _t.source
@@ -319,7 +319,7 @@ module DiscretizedDoubleBarrierOptionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,18 +344,18 @@ module DiscretizedDoubleBarrierOptionFunction =
             try
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Method
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".METHOD") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".METHOD") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedDoubleBarrierOption> format
                     ; source = source 
@@ -383,12 +383,12 @@ module DiscretizedDoubleBarrierOptionFunction =
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PartialRollback
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PartialRollback") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PartialRollback") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                ;  _To.source
                                                |]
@@ -397,7 +397,7 @@ module DiscretizedDoubleBarrierOptionFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -422,18 +422,18 @@ module DiscretizedDoubleBarrierOptionFunction =
             try
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PostAdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PostAdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PostAdjustValues") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -458,18 +458,18 @@ module DiscretizedDoubleBarrierOptionFunction =
             try
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PreAdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PreAdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PreAdjustValues") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -494,18 +494,18 @@ module DiscretizedDoubleBarrierOptionFunction =
             try
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PresentValue
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PresentValue") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PresentValue") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -533,12 +533,12 @@ module DiscretizedDoubleBarrierOptionFunction =
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Rollback
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Rollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Rollback") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Rollback") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                ;  _To.source
                                                |]
@@ -547,7 +547,7 @@ module DiscretizedDoubleBarrierOptionFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -575,12 +575,12 @@ module DiscretizedDoubleBarrierOptionFunction =
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".SetTime") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".SetTime") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                ;  _t.source
                                                |]
@@ -589,7 +589,7 @@ module DiscretizedDoubleBarrierOptionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -617,12 +617,12 @@ module DiscretizedDoubleBarrierOptionFunction =
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).SetValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).SetValues
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".SetValues") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".SetValues") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                ;  _v.source
                                                |]
@@ -631,7 +631,7 @@ module DiscretizedDoubleBarrierOptionFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -656,18 +656,18 @@ module DiscretizedDoubleBarrierOptionFunction =
             try
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Time
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Time") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Time") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -692,18 +692,18 @@ module DiscretizedDoubleBarrierOptionFunction =
             try
 
                 let _DiscretizedDoubleBarrierOption = Helper.toCell<DiscretizedDoubleBarrierOption> discretizeddoublebarrieroption "DiscretizedDoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Values
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedDoubleBarrierOptionModel.Cast _DiscretizedDoubleBarrierOption.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Values") 
+                let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Values") 
                                                [| _DiscretizedDoubleBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedDoubleBarrierOption> format
                     ; source = source 
@@ -732,14 +732,14 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscretizedDoubleBarrierOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscretizedDoubleBarrierOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscretizedDoubleBarrierOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscretizedDoubleBarrierOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

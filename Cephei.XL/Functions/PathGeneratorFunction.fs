@@ -49,18 +49,18 @@ module PathGeneratorFunction =
             try
 
                 let _PathGenerator = Helper.toCell<PathGenerator> pathgenerator "PathGenerator"  
-                let builder () = withMnemonic mnemonic ((PathGeneratorModel.Cast _PathGenerator.cell).Antithetic
+                let builder (current : ICell) = withMnemonic mnemonic ((PathGeneratorModel.Cast _PathGenerator.cell).Antithetic
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
-                let source = Helper.sourceFold (_PathGenerator.source + ".Antithetic") 
+                let source () = Helper.sourceFold (_PathGenerator.source + ".Antithetic") 
                                                [| _PathGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PathGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PathGenerator> format
                     ; source = source 
@@ -85,18 +85,18 @@ module PathGeneratorFunction =
             try
 
                 let _PathGenerator = Helper.toCell<PathGenerator> pathgenerator "PathGenerator"  
-                let builder () = withMnemonic mnemonic ((PathGeneratorModel.Cast _PathGenerator.cell).Next
+                let builder (current : ICell) = withMnemonic mnemonic ((PathGeneratorModel.Cast _PathGenerator.cell).Next
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
-                let source = Helper.sourceFold (_PathGenerator.source + ".Next") 
+                let source () = Helper.sourceFold (_PathGenerator.source + ".Next") 
                                                [| _PathGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PathGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PathGenerator> format
                     ; source = source 
@@ -133,7 +133,7 @@ module PathGeneratorFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _generator = Helper.toCell<'GSG> generator "generator" 
                 let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
-                let builder () = withMnemonic mnemonic (Fun.PathGenerator 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PathGenerator 
                                                             _Process.cell 
                                                             _length.cell 
                                                             _timeSteps.cell 
@@ -142,7 +142,7 @@ module PathGeneratorFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PathGenerator>) l
 
-                let source = Helper.sourceFold "Fun.PathGenerator" 
+                let source () = Helper.sourceFold "Fun.PathGenerator" 
                                                [| _Process.source
                                                ;  _length.source
                                                ;  _timeSteps.source
@@ -157,7 +157,7 @@ module PathGeneratorFunction =
                                 ;  _brownianBridge.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PathGenerator> format
                     ; source = source 
@@ -191,7 +191,7 @@ module PathGeneratorFunction =
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _generator = Helper.toCell<'GSG> generator "generator" 
                 let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
-                let builder () = withMnemonic mnemonic (Fun.PathGenerator1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PathGenerator1 
                                                             _Process.cell 
                                                             _timeGrid.cell 
                                                             _generator.cell 
@@ -199,7 +199,7 @@ module PathGeneratorFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PathGenerator>) l
 
-                let source = Helper.sourceFold "Fun.PathGenerator1" 
+                let source () = Helper.sourceFold "Fun.PathGenerator1" 
                                                [| _Process.source
                                                ;  _timeGrid.source
                                                ;  _generator.source
@@ -212,7 +212,7 @@ module PathGeneratorFunction =
                                 ;  _brownianBridge.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PathGenerator> format
                     ; source = source 
@@ -241,14 +241,14 @@ module PathGeneratorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PathGenerator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PathGenerator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PathGenerator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PathGenerator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

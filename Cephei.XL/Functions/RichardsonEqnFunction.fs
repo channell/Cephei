@@ -61,7 +61,7 @@ module RichardsonEqnFunction =
                 let _fs = Helper.toCell<double> fs "fs" 
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic (Fun.RichardsonEqn 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RichardsonEqn 
                                                             _fh.cell 
                                                             _ft.cell 
                                                             _fs.cell 
@@ -70,7 +70,7 @@ module RichardsonEqnFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RichardsonEqn>) l
 
-                let source = Helper.sourceFold "Fun.RichardsonEqn" 
+                let source () = Helper.sourceFold "Fun.RichardsonEqn" 
                                                [| _fh.source
                                                ;  _ft.source
                                                ;  _fs.source
@@ -85,7 +85,7 @@ module RichardsonEqnFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RichardsonEqn> format
                     ; source = source 
@@ -113,12 +113,12 @@ module RichardsonEqnFunction =
 
                 let _RichardsonEqn = Helper.toCell<RichardsonEqn> richardsoneqn "RichardsonEqn"  
                 let _k = Helper.toCell<double> k "k" 
-                let builder () = withMnemonic mnemonic ((RichardsonEqnModel.Cast _RichardsonEqn.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((RichardsonEqnModel.Cast _RichardsonEqn.cell).Value
                                                             _k.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RichardsonEqn.source + ".Value") 
+                let source () = Helper.sourceFold (_RichardsonEqn.source + ".Value") 
                                                [| _RichardsonEqn.source
                                                ;  _k.source
                                                |]
@@ -127,7 +127,7 @@ module RichardsonEqnFunction =
                                 ;  _k.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module RichardsonEqnFunction =
 
                 let _RichardsonEqn = Helper.toCell<RichardsonEqn> richardsoneqn "RichardsonEqn"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((RichardsonEqnModel.Cast _RichardsonEqn.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((RichardsonEqnModel.Cast _RichardsonEqn.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RichardsonEqn.source + ".Derivative") 
+                let source () = Helper.sourceFold (_RichardsonEqn.source + ".Derivative") 
                                                [| _RichardsonEqn.source
                                                ;  _x.source
                                                |]
@@ -169,7 +169,7 @@ module RichardsonEqnFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -198,14 +198,14 @@ module RichardsonEqnFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RichardsonEqn>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RichardsonEqn>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RichardsonEqn>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RichardsonEqn>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

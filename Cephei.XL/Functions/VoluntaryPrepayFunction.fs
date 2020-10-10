@@ -52,13 +52,13 @@ module VoluntaryPrepayFunction =
 
                 let _amount = Helper.toCell<double> amount "amount" 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic (Fun.VoluntaryPrepay 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.VoluntaryPrepay 
                                                             _amount.cell 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VoluntaryPrepay>) l
 
-                let source = Helper.sourceFold "Fun.VoluntaryPrepay" 
+                let source () = Helper.sourceFold "Fun.VoluntaryPrepay" 
                                                [| _amount.source
                                                ;  _date.source
                                                |]
@@ -67,7 +67,7 @@ module VoluntaryPrepayFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VoluntaryPrepay> format
                     ; source = source 
@@ -92,18 +92,18 @@ module VoluntaryPrepayFunction =
             try
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
-                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VoluntaryPrepay.source + ".Amount") 
+                let source () = Helper.sourceFold (_VoluntaryPrepay.source + ".Amount") 
                                                [| _VoluntaryPrepay.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VoluntaryPrepay.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module VoluntaryPrepayFunction =
             try
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
-                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_VoluntaryPrepay.source + ".Date") 
+                let source () = Helper.sourceFold (_VoluntaryPrepay.source + ".Date") 
                                                [| _VoluntaryPrepay.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VoluntaryPrepay.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -167,12 +167,12 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VoluntaryPrepay.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_VoluntaryPrepay.source + ".CompareTo") 
                                                [| _VoluntaryPrepay.source
                                                ;  _cf.source
                                                |]
@@ -181,7 +181,7 @@ module VoluntaryPrepayFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VoluntaryPrepay.source + ".Equals") 
+                let source () = Helper.sourceFold (_VoluntaryPrepay.source + ".Equals") 
                                                [| _VoluntaryPrepay.source
                                                ;  _cf.source
                                                |]
@@ -223,7 +223,7 @@ module VoluntaryPrepayFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module VoluntaryPrepayFunction =
             try
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
-                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_VoluntaryPrepay.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_VoluntaryPrepay.source + ".ExCouponDate") 
                                                [| _VoluntaryPrepay.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VoluntaryPrepay.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,13 +290,13 @@ module VoluntaryPrepayFunction =
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VoluntaryPrepay.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_VoluntaryPrepay.source + ".HasOccurred") 
                                                [| _VoluntaryPrepay.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -307,7 +307,7 @@ module VoluntaryPrepayFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -335,12 +335,12 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VoluntaryPrepay.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_VoluntaryPrepay.source + ".TradingExCoupon") 
                                                [| _VoluntaryPrepay.source
                                                ;  _refDate.source
                                                |]
@@ -349,7 +349,7 @@ module VoluntaryPrepayFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,12 +377,12 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : VoluntaryPrepay) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VoluntaryPrepay.source + ".Accept") 
+                let source () = Helper.sourceFold (_VoluntaryPrepay.source + ".Accept") 
                                                [| _VoluntaryPrepay.source
                                                ;  _v.source
                                                |]
@@ -391,7 +391,7 @@ module VoluntaryPrepayFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -419,12 +419,12 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : VoluntaryPrepay) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VoluntaryPrepay.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_VoluntaryPrepay.source + ".RegisterWith") 
                                                [| _VoluntaryPrepay.source
                                                ;  _handler.source
                                                |]
@@ -433,7 +433,7 @@ module VoluntaryPrepayFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -461,12 +461,12 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : VoluntaryPrepay) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VoluntaryPrepay.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_VoluntaryPrepay.source + ".UnregisterWith") 
                                                [| _VoluntaryPrepay.source
                                                ;  _handler.source
                                                |]
@@ -475,7 +475,7 @@ module VoluntaryPrepayFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -504,14 +504,14 @@ module VoluntaryPrepayFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<VoluntaryPrepay>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<VoluntaryPrepay>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<VoluntaryPrepay>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<VoluntaryPrepay>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

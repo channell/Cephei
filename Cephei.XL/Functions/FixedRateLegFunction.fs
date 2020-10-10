@@ -49,19 +49,19 @@ module FixedRateLegFunction =
             try
 
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
-                let builder () = withMnemonic mnemonic (Fun.FixedRateLeg 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FixedRateLeg 
                                                             _schedule.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold "Fun.FixedRateLeg" 
+                let source () = Helper.sourceFold "Fun.FixedRateLeg" 
                                                [| _schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -86,18 +86,18 @@ module FixedRateLegFunction =
             try
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".Value") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".Value") 
                                                [| _FixedRateLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -134,7 +134,7 @@ module FixedRateLegFunction =
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates3
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates3
                                                             _couponRates.cell 
                                                             _paymentDayCounter.cell 
                                                             _comp.cell 
@@ -142,7 +142,7 @@ module FixedRateLegFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates3") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates3") 
                                                [| _FixedRateLeg.source
                                                ;  _couponRates.source
                                                ;  _paymentDayCounter.source
@@ -157,7 +157,7 @@ module FixedRateLegFunction =
                                 ;  _freq.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -188,13 +188,13 @@ module FixedRateLegFunction =
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRate = Helper.toCell<double> couponRate "couponRate" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates6
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates6
                                                             _couponRate.cell 
                                                             _paymentDayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates6") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates6") 
                                                [| _FixedRateLeg.source
                                                ;  _couponRate.source
                                                ;  _paymentDayCounter.source
@@ -205,7 +205,7 @@ module FixedRateLegFunction =
                                 ;  _paymentDayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -239,14 +239,14 @@ module FixedRateLegFunction =
                 let _couponRate = Helper.toCell<double> couponRate "couponRate" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates1
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates1
                                                             _couponRate.cell 
                                                             _paymentDayCounter.cell 
                                                             _comp.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates1") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates1") 
                                                [| _FixedRateLeg.source
                                                ;  _couponRate.source
                                                ;  _paymentDayCounter.source
@@ -259,7 +259,7 @@ module FixedRateLegFunction =
                                 ;  _comp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -296,7 +296,7 @@ module FixedRateLegFunction =
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates
                                                             _couponRate.cell 
                                                             _paymentDayCounter.cell 
                                                             _comp.cell 
@@ -304,7 +304,7 @@ module FixedRateLegFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates") 
                                                [| _FixedRateLeg.source
                                                ;  _couponRate.source
                                                ;  _paymentDayCounter.source
@@ -319,7 +319,7 @@ module FixedRateLegFunction =
                                 ;  _freq.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -353,14 +353,14 @@ module FixedRateLegFunction =
                 let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates7
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates7
                                                             _couponRates.cell 
                                                             _paymentDayCounter.cell 
                                                             _comp.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates7") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates7") 
                                                [| _FixedRateLeg.source
                                                ;  _couponRates.source
                                                ;  _paymentDayCounter.source
@@ -373,7 +373,7 @@ module FixedRateLegFunction =
                                 ;  _comp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -401,12 +401,12 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRate = Helper.toCell<InterestRate> couponRate "couponRate" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates5
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates5
                                                             _couponRate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates5") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates5") 
                                                [| _FixedRateLeg.source
                                                ;  _couponRate.source
                                                |]
@@ -415,7 +415,7 @@ module FixedRateLegFunction =
                                 ;  _couponRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -443,12 +443,12 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRates = Helper.toCell<Generic.List<InterestRate>> couponRates "couponRates" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates4
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates4
                                                             _couponRates.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates4") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates4") 
                                                [| _FixedRateLeg.source
                                                ;  _couponRates.source
                                                |]
@@ -457,7 +457,7 @@ module FixedRateLegFunction =
                                 ;  _couponRates.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -488,13 +488,13 @@ module FixedRateLegFunction =
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates2
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates2
                                                             _couponRates.cell 
                                                             _paymentDayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates2") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates2") 
                                                [| _FixedRateLeg.source
                                                ;  _couponRates.source
                                                ;  _paymentDayCounter.source
@@ -505,7 +505,7 @@ module FixedRateLegFunction =
                                 ;  _paymentDayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -542,7 +542,7 @@ module FixedRateLegFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toDefault<bool> endOfMonth "endOfMonth" false
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithExCouponPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithExCouponPeriod
                                                             _period.cell 
                                                             _cal.cell 
                                                             _convention.cell 
@@ -550,7 +550,7 @@ module FixedRateLegFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithExCouponPeriod") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithExCouponPeriod") 
                                                [| _FixedRateLeg.source
                                                ;  _period.source
                                                ;  _cal.source
@@ -565,7 +565,7 @@ module FixedRateLegFunction =
                                 ;  _endOfMonth.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -593,12 +593,12 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithFirstPeriodDayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithFirstPeriodDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithFirstPeriodDayCounter") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithFirstPeriodDayCounter") 
                                                [| _FixedRateLeg.source
                                                ;  _dayCounter.source
                                                |]
@@ -607,7 +607,7 @@ module FixedRateLegFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -635,12 +635,12 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithLastPeriodDayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithLastPeriodDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithLastPeriodDayCounter") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithLastPeriodDayCounter") 
                                                [| _FixedRateLeg.source
                                                ;  _dayCounter.source
                                                |]
@@ -649,7 +649,7 @@ module FixedRateLegFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -677,12 +677,12 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _cal = Helper.toCell<Calendar> cal "cal" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithPaymentCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithPaymentCalendar
                                                             _cal.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithPaymentCalendar") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithPaymentCalendar") 
                                                [| _FixedRateLeg.source
                                                ;  _cal.source
                                                |]
@@ -691,7 +691,7 @@ module FixedRateLegFunction =
                                 ;  _cal.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -719,12 +719,12 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithNotionals1
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithNotionals1") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithNotionals1") 
                                                [| _FixedRateLeg.source
                                                ;  _notionals.source
                                                |]
@@ -733,7 +733,7 @@ module FixedRateLegFunction =
                                 ;  _notionals.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -761,12 +761,12 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithNotionals
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithNotionals") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithNotionals") 
                                                [| _FixedRateLeg.source
                                                ;  _notional.source
                                                |]
@@ -775,7 +775,7 @@ module FixedRateLegFunction =
                                 ;  _notional.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -803,12 +803,12 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithPaymentAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
-                let source = Helper.sourceFold (_FixedRateLeg.source + ".WithPaymentAdjustment") 
+                let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithPaymentAdjustment") 
                                                [| _FixedRateLeg.source
                                                ;  _convention.source
                                                |]
@@ -817,7 +817,7 @@ module FixedRateLegFunction =
                                 ;  _convention.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateLeg> format
                     ; source = source 
@@ -846,14 +846,14 @@ module FixedRateLegFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FixedRateLeg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FixedRateLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FixedRateLeg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FixedRateLeg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

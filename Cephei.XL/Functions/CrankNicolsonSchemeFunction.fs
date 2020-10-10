@@ -61,7 +61,7 @@ module CrankNicolsonSchemeFunction =
                 let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
                 let _relTol = Helper.toDefault<double> relTol "relTol" 1E-8
                 let _solverType = Helper.toDefault<ImplicitEulerScheme.SolverType> solverType "solverType" ImplicitEulerScheme.SolverType.BiCGstab
-                let builder () = withMnemonic mnemonic (Fun.CrankNicolsonScheme 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CrankNicolsonScheme 
                                                             _theta.cell 
                                                             _map.cell 
                                                             _bcSet.cell 
@@ -70,7 +70,7 @@ module CrankNicolsonSchemeFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CrankNicolsonScheme>) l
 
-                let source = Helper.sourceFold "Fun.CrankNicolsonScheme" 
+                let source () = Helper.sourceFold "Fun.CrankNicolsonScheme" 
                                                [| _theta.source
                                                ;  _map.source
                                                ;  _bcSet.source
@@ -85,7 +85,7 @@ module CrankNicolsonSchemeFunction =
                                 ;  _solverType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CrankNicolsonScheme> format
                     ; source = source 
@@ -107,16 +107,16 @@ module CrankNicolsonSchemeFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.CrankNicolsonScheme1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CrankNicolsonScheme1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CrankNicolsonScheme>) l
 
-                let source = Helper.sourceFold "Fun.CrankNicolsonScheme1" 
+                let source () = Helper.sourceFold "Fun.CrankNicolsonScheme1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CrankNicolsonScheme> format
                     ; source = source 
@@ -150,14 +150,14 @@ module CrankNicolsonSchemeFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
-                let builder () = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalInputs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
-                let source = Helper.sourceFold (_CrankNicolsonScheme.source + ".Factory") 
+                let source () = Helper.sourceFold (_CrankNicolsonScheme.source + ".Factory") 
                                                [| _CrankNicolsonScheme.source
                                                ;  _L.source
                                                ;  _bcs.source
@@ -170,7 +170,7 @@ module CrankNicolsonSchemeFunction =
                                 ;  _additionalInputs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CrankNicolsonScheme> format
                     ; source = source 
@@ -195,18 +195,18 @@ module CrankNicolsonSchemeFunction =
             try
 
                 let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme"  
-                let builder () = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).NumberOfIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CrankNicolsonScheme.source + ".NumberOfIterations") 
+                let source () = Helper.sourceFold (_CrankNicolsonScheme.source + ".NumberOfIterations") 
                                                [| _CrankNicolsonScheme.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CrankNicolsonScheme.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -234,12 +234,12 @@ module CrankNicolsonSchemeFunction =
 
                 let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).SetStep
+                let builder (current : ICell) = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : CrankNicolsonScheme) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CrankNicolsonScheme.source + ".SetStep") 
+                let source () = Helper.sourceFold (_CrankNicolsonScheme.source + ".SetStep") 
                                                [| _CrankNicolsonScheme.source
                                                ;  _dt.source
                                                |]
@@ -248,7 +248,7 @@ module CrankNicolsonSchemeFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -282,14 +282,14 @@ module CrankNicolsonSchemeFunction =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).Step
+                let builder (current : ICell) = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 
                                                        ) :> ICell
                 let format (o : CrankNicolsonScheme) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CrankNicolsonScheme.source + ".Step") 
+                let source () = Helper.sourceFold (_CrankNicolsonScheme.source + ".Step") 
                                                [| _CrankNicolsonScheme.source
                                                ;  _a.source
                                                ;  _t.source
@@ -302,7 +302,7 @@ module CrankNicolsonSchemeFunction =
                                 ;  _theta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -331,14 +331,14 @@ module CrankNicolsonSchemeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CrankNicolsonScheme>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CrankNicolsonScheme>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CrankNicolsonScheme>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CrankNicolsonScheme>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -71,7 +71,7 @@ module VannaVolgaBarrierEngineFunction =
                 let _foreignTS = Helper.toHandle<YieldTermStructure> foreignTS "foreignTS" 
                 let _adaptVanDelta = Helper.toDefault<bool> adaptVanDelta "adaptVanDelta" false
                 let _bsPriceWithSmile = Helper.toDefault<double> bsPriceWithSmile "bsPriceWithSmile" 0.0
-                let builder () = withMnemonic mnemonic (Fun.VannaVolgaBarrierEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.VannaVolgaBarrierEngine 
                                                             _atmVol.cell 
                                                             _vol25Put.cell 
                                                             _vol25Call.cell 
@@ -83,7 +83,7 @@ module VannaVolgaBarrierEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VannaVolgaBarrierEngine>) l
 
-                let source = Helper.sourceFold "Fun.VannaVolgaBarrierEngine" 
+                let source () = Helper.sourceFold "Fun.VannaVolgaBarrierEngine" 
                                                [| _atmVol.source
                                                ;  _vol25Put.source
                                                ;  _vol25Call.source
@@ -104,7 +104,7 @@ module VannaVolgaBarrierEngineFunction =
                                 ;  _bsPriceWithSmile.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VannaVolgaBarrierEngine> format
                     ; source = source 
@@ -132,12 +132,12 @@ module VannaVolgaBarrierEngineFunction =
 
                 let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".RegisterWith") 
                                                [| _VannaVolgaBarrierEngine.source
                                                ;  _handler.source
                                                |]
@@ -146,7 +146,7 @@ module VannaVolgaBarrierEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -171,18 +171,18 @@ module VannaVolgaBarrierEngineFunction =
             try
 
                 let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
-                let builder () = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".Reset") 
                                                [| _VannaVolgaBarrierEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VannaVolgaBarrierEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -210,12 +210,12 @@ module VannaVolgaBarrierEngineFunction =
 
                 let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".UnregisterWith") 
                                                [| _VannaVolgaBarrierEngine.source
                                                ;  _handler.source
                                                |]
@@ -224,7 +224,7 @@ module VannaVolgaBarrierEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -249,18 +249,18 @@ module VannaVolgaBarrierEngineFunction =
             try
 
                 let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
-                let builder () = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).Update
                                                        ) :> ICell
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".Update") 
                                                [| _VannaVolgaBarrierEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VannaVolgaBarrierEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,14 +289,14 @@ module VannaVolgaBarrierEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<VannaVolgaBarrierEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<VannaVolgaBarrierEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<VannaVolgaBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<VannaVolgaBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

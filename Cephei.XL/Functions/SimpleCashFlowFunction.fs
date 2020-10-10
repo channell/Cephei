@@ -49,18 +49,18 @@ module SimpleCashFlowFunction =
             try
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
-                let builder () = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimpleCashFlow.source + ".Amount") 
+                let source () = Helper.sourceFold (_SimpleCashFlow.source + ".Amount") 
                                                [| _SimpleCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module SimpleCashFlowFunction =
             try
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
-                let builder () = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SimpleCashFlow.source + ".Date") 
+                let source () = Helper.sourceFold (_SimpleCashFlow.source + ".Date") 
                                                [| _SimpleCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,13 +124,13 @@ module SimpleCashFlowFunction =
 
                 let _amount = Helper.toCell<double> amount "amount" 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic (Fun.SimpleCashFlow 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimpleCashFlow 
                                                             _amount.cell 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SimpleCashFlow>) l
 
-                let source = Helper.sourceFold "Fun.SimpleCashFlow" 
+                let source () = Helper.sourceFold "Fun.SimpleCashFlow" 
                                                [| _amount.source
                                                ;  _date.source
                                                |]
@@ -139,7 +139,7 @@ module SimpleCashFlowFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimpleCashFlow> format
                     ; source = source 
@@ -167,12 +167,12 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimpleCashFlow.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_SimpleCashFlow.source + ".CompareTo") 
                                                [| _SimpleCashFlow.source
                                                ;  _cf.source
                                                |]
@@ -181,7 +181,7 @@ module SimpleCashFlowFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpleCashFlow.source + ".Equals") 
+                let source () = Helper.sourceFold (_SimpleCashFlow.source + ".Equals") 
                                                [| _SimpleCashFlow.source
                                                ;  _cf.source
                                                |]
@@ -223,7 +223,7 @@ module SimpleCashFlowFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module SimpleCashFlowFunction =
             try
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
-                let builder () = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SimpleCashFlow.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_SimpleCashFlow.source + ".ExCouponDate") 
                                                [| _SimpleCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,13 +290,13 @@ module SimpleCashFlowFunction =
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpleCashFlow.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_SimpleCashFlow.source + ".HasOccurred") 
                                                [| _SimpleCashFlow.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -307,7 +307,7 @@ module SimpleCashFlowFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -335,12 +335,12 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpleCashFlow.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_SimpleCashFlow.source + ".TradingExCoupon") 
                                                [| _SimpleCashFlow.source
                                                ;  _refDate.source
                                                |]
@@ -349,7 +349,7 @@ module SimpleCashFlowFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,12 +377,12 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : SimpleCashFlow) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpleCashFlow.source + ".Accept") 
+                let source () = Helper.sourceFold (_SimpleCashFlow.source + ".Accept") 
                                                [| _SimpleCashFlow.source
                                                ;  _v.source
                                                |]
@@ -391,7 +391,7 @@ module SimpleCashFlowFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -419,12 +419,12 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SimpleCashFlow) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpleCashFlow.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_SimpleCashFlow.source + ".RegisterWith") 
                                                [| _SimpleCashFlow.source
                                                ;  _handler.source
                                                |]
@@ -433,7 +433,7 @@ module SimpleCashFlowFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -461,12 +461,12 @@ module SimpleCashFlowFunction =
 
                 let _SimpleCashFlow = Helper.toCell<SimpleCashFlow> simplecashflow "SimpleCashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleCashFlowModel.Cast _SimpleCashFlow.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SimpleCashFlow) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpleCashFlow.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_SimpleCashFlow.source + ".UnregisterWith") 
                                                [| _SimpleCashFlow.source
                                                ;  _handler.source
                                                |]
@@ -475,7 +475,7 @@ module SimpleCashFlowFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -504,14 +504,14 @@ module SimpleCashFlowFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SimpleCashFlow>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SimpleCashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SimpleCashFlow>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SimpleCashFlow>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

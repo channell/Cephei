@@ -52,12 +52,12 @@ module NeumannBCFunction =
 
                 let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
                 let _u = Helper.toCell<Vector> u "u" 
-                let builder () = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyAfterApplying
+                let builder (current : ICell) = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyAfterApplying
                                                             _u.cell 
                                                        ) :> ICell
                 let format (o : NeumannBC) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NeumannBC.source + ".ApplyAfterApplying") 
+                let source () = Helper.sourceFold (_NeumannBC.source + ".ApplyAfterApplying") 
                                                [| _NeumannBC.source
                                                ;  _u.source
                                                |]
@@ -66,7 +66,7 @@ module NeumannBCFunction =
                                 ;  _u.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module NeumannBCFunction =
 
                 let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyAfterSolving
+                let builder (current : ICell) = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyAfterSolving
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : NeumannBC) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NeumannBC.source + ".ApplyAfterSolving") 
+                let source () = Helper.sourceFold (_NeumannBC.source + ".ApplyAfterSolving") 
                                                [| _NeumannBC.source
                                                ;  _v.source
                                                |]
@@ -108,7 +108,7 @@ module NeumannBCFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -136,12 +136,12 @@ module NeumannBCFunction =
 
                 let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
                 let _o = Helper.toCell<IOperator> o "o" 
-                let builder () = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyBeforeApplying
+                let builder (current : ICell) = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyBeforeApplying
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : NeumannBC) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NeumannBC.source + ".ApplyBeforeApplying") 
+                let source () = Helper.sourceFold (_NeumannBC.source + ".ApplyBeforeApplying") 
                                                [| _NeumannBC.source
                                                ;  _o.source
                                                |]
@@ -150,7 +150,7 @@ module NeumannBCFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -181,13 +181,13 @@ module NeumannBCFunction =
                 let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
                 let _o = Helper.toCell<IOperator> o "o" 
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder () = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyBeforeSolving
+                let builder (current : ICell) = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).ApplyBeforeSolving
                                                             _o.cell 
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (o : NeumannBC) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NeumannBC.source + ".ApplyBeforeSolving") 
+                let source () = Helper.sourceFold (_NeumannBC.source + ".ApplyBeforeSolving") 
                                                [| _NeumannBC.source
                                                ;  _o.source
                                                ;  _rhs.source
@@ -198,7 +198,7 @@ module NeumannBCFunction =
                                 ;  _rhs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -226,13 +226,13 @@ module NeumannBCFunction =
 
                 let _value = Helper.toCell<double> value "value" 
                 let _side = Helper.toCell<BoundaryCondition<IOperator>.Side> side "side" 
-                let builder () = withMnemonic mnemonic (Fun.NeumannBC 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NeumannBC 
                                                             _value.cell 
                                                             _side.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NeumannBC>) l
 
-                let source = Helper.sourceFold "Fun.NeumannBC" 
+                let source () = Helper.sourceFold "Fun.NeumannBC" 
                                                [| _value.source
                                                ;  _side.source
                                                |]
@@ -241,7 +241,7 @@ module NeumannBCFunction =
                                 ;  _side.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NeumannBC> format
                     ; source = source 
@@ -269,12 +269,12 @@ module NeumannBCFunction =
 
                 let _NeumannBC = Helper.toCell<NeumannBC> neumannbc "NeumannBC"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((NeumannBCModel.Cast _NeumannBC.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : NeumannBC) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NeumannBC.source + ".SetTime") 
+                let source () = Helper.sourceFold (_NeumannBC.source + ".SetTime") 
                                                [| _NeumannBC.source
                                                ;  _t.source
                                                |]
@@ -283,7 +283,7 @@ module NeumannBCFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -312,14 +312,14 @@ module NeumannBCFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NeumannBC>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NeumannBC>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NeumannBC>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NeumannBC>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

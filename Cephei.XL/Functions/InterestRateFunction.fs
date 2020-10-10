@@ -52,12 +52,12 @@ module InterestRateFunction =
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).CompoundFactor
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).CompoundFactor
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterestRate.source + ".CompoundFactor") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".CompoundFactor") 
                                                [| _InterestRate.source
                                                ;  _t.source
                                                |]
@@ -66,7 +66,7 @@ module InterestRateFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,7 +103,7 @@ module InterestRateFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refStart = Helper.toDefault<Date> refStart "refStart" null
                 let _refEnd = Helper.toDefault<Date> refEnd "refEnd" null
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).CompoundFactor1
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).CompoundFactor1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refStart.cell 
@@ -111,7 +111,7 @@ module InterestRateFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterestRate.source + ".CompoundFactor") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".CompoundFactor") 
                                                [| _InterestRate.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -126,7 +126,7 @@ module InterestRateFunction =
                                 ;  _refEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -151,18 +151,18 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Compounding
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Compounding
                                                        ) :> ICell
                 let format (o : Compounding) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterestRate.source + ".Compounding") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".Compounding") 
                                                [| _InterestRate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -187,18 +187,18 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_InterestRate.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".DayCounter") 
                                                [| _InterestRate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterestRate> format
                     ; source = source 
@@ -235,7 +235,7 @@ module InterestRateFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refStart = Helper.toDefault<Date> refStart "refStart" null
                 let _refEnd = Helper.toDefault<Date> refEnd "refEnd" null
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).DiscountFactor
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).DiscountFactor
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refStart.cell 
@@ -243,7 +243,7 @@ module InterestRateFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterestRate.source + ".DiscountFactor") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".DiscountFactor") 
                                                [| _InterestRate.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -258,7 +258,7 @@ module InterestRateFunction =
                                 ;  _refEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -286,12 +286,12 @@ module InterestRateFunction =
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).DiscountFactor1
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).DiscountFactor1
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterestRate.source + ".DiscountFactor1") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".DiscountFactor1") 
                                                [| _InterestRate.source
                                                ;  _t.source
                                                |]
@@ -300,7 +300,7 @@ module InterestRateFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -346,7 +346,7 @@ module InterestRateFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refStart = Helper.toDefault<Date> refStart "refStart" null
                 let _refEnd = Helper.toDefault<Date> refEnd "refEnd" null
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).EquivalentRate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).EquivalentRate
                                                             _resultDC.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -357,7 +357,7 @@ module InterestRateFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_InterestRate.source + ".EquivalentRate") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".EquivalentRate") 
                                                [| _InterestRate.source
                                                ;  _resultDC.source
                                                ;  _comp.source
@@ -378,7 +378,7 @@ module InterestRateFunction =
                                 ;  _refEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterestRate> format
                     ; source = source 
@@ -412,14 +412,14 @@ module InterestRateFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).EquivalentRate1
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).EquivalentRate1
                                                             _comp.cell 
                                                             _freq.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_InterestRate.source + ".EquivalentRate") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".EquivalentRate") 
                                                [| _InterestRate.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -432,7 +432,7 @@ module InterestRateFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterestRate> format
                     ; source = source 
@@ -457,18 +457,18 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterestRate.source + ".Frequency") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".Frequency") 
                                                [| _InterestRate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -502,7 +502,7 @@ module InterestRateFunction =
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
-                let builder () = withMnemonic mnemonic (Fun.InterestRate 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterestRate 
                                                             _r.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -510,7 +510,7 @@ module InterestRateFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold "Fun.InterestRate" 
+                let source () = Helper.sourceFold "Fun.InterestRate" 
                                                [| _r.source
                                                ;  _dc.source
                                                ;  _comp.source
@@ -523,7 +523,7 @@ module InterestRateFunction =
                                 ;  _freq.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterestRate> format
                     ; source = source 
@@ -545,16 +545,16 @@ module InterestRateFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.InterestRate1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterestRate1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold "Fun.InterestRate1" 
+                let source () = Helper.sourceFold "Fun.InterestRate1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterestRate> format
                     ; source = source 
@@ -579,18 +579,18 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Rate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterestRate.source + ".Rate") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".Rate") 
                                                [| _InterestRate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,18 +615,18 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterestRate.source + ".ToString") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".ToString") 
                                                [| _InterestRate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -651,18 +651,18 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterestRate.source + ".Value") 
+                let source () = Helper.sourceFold (_InterestRate.source + ".Value") 
                                                [| _InterestRate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -691,14 +691,14 @@ module InterestRateFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterestRate>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InterestRate>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InterestRate>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InterestRate>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

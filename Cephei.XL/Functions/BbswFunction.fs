@@ -52,13 +52,13 @@ module BbswFunction =
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.Bbsw 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Bbsw 
                                                             _tenor.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bbsw>) l
 
-                let source = Helper.sourceFold "Fun.Bbsw" 
+                let source () = Helper.sourceFold "Fun.Bbsw" 
                                                [| _tenor.source
                                                ;  _h.source
                                                |]
@@ -67,7 +67,7 @@ module BbswFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bbsw> format
                     ; source = source 
@@ -92,18 +92,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".BusinessDayConvention") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,12 +131,12 @@ module BbswFunction =
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_Bbsw.source + ".Clone") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".Clone") 
                                                [| _Bbsw.source
                                                ;  _forwarding.source
                                                |]
@@ -145,7 +145,7 @@ module BbswFunction =
                                 ;  _forwarding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bbsw> format
                     ; source = source 
@@ -170,18 +170,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".EndOfMonth") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -215,14 +215,14 @@ module BbswFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".ForecastFixing1") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".ForecastFixing1") 
                                                [| _Bbsw.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -235,7 +235,7 @@ module BbswFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -263,12 +263,12 @@ module BbswFunction =
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".ForecastFixing") 
                                                [| _Bbsw.source
                                                ;  _fixingDate.source
                                                |]
@@ -277,7 +277,7 @@ module BbswFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_Bbsw.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".ForwardingTermStructure") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bbsw> format
                     ; source = source 
@@ -341,12 +341,12 @@ module BbswFunction =
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".MaturityDate") 
                                                [| _Bbsw.source
                                                ;  _valueDate.source
                                                |]
@@ -355,7 +355,7 @@ module BbswFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,18 +380,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_Bbsw.source + ".Currency") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".Currency") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bbsw> format
                     ; source = source 
@@ -416,18 +416,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Bbsw.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".DayCounter") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bbsw> format
                     ; source = source 
@@ -452,18 +452,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".FamilyName") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -494,13 +494,13 @@ module BbswFunction =
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".Fixing") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".Fixing") 
                                                [| _Bbsw.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -511,7 +511,7 @@ module BbswFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -536,18 +536,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_Bbsw.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".FixingCalendar") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bbsw> format
                     ; source = source 
@@ -575,12 +575,12 @@ module BbswFunction =
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".FixingDate") 
                                                [| _Bbsw.source
                                                ;  _valueDate.source
                                                |]
@@ -589,7 +589,7 @@ module BbswFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -614,18 +614,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".FixingDays") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -653,12 +653,12 @@ module BbswFunction =
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".IsValidFixingDate") 
                                                [| _Bbsw.source
                                                ;  _fixingDate.source
                                                |]
@@ -667,7 +667,7 @@ module BbswFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -692,18 +692,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".Name") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".Name") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -731,12 +731,12 @@ module BbswFunction =
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".PastFixing") 
                                                [| _Bbsw.source
                                                ;  _fixingDate.source
                                                |]
@@ -745,7 +745,7 @@ module BbswFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -770,18 +770,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_Bbsw.source + ".Tenor") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".Tenor") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bbsw> format
                     ; source = source 
@@ -806,18 +806,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).Update
                                                        ) :> ICell
                 let format (o : Bbsw) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".Update") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".Update") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -845,12 +845,12 @@ module BbswFunction =
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".ValueDate") 
                                                [| _Bbsw.source
                                                ;  _fixingDate.source
                                                |]
@@ -859,7 +859,7 @@ module BbswFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -893,14 +893,14 @@ module BbswFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Bbsw) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".AddFixing") 
                                                [| _Bbsw.source
                                                ;  _d.source
                                                ;  _v.source
@@ -913,7 +913,7 @@ module BbswFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -947,14 +947,14 @@ module BbswFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Bbsw) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".AddFixings") 
                                                [| _Bbsw.source
                                                ;  _d.source
                                                ;  _v.source
@@ -967,7 +967,7 @@ module BbswFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -998,13 +998,13 @@ module BbswFunction =
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Bbsw) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".AddFixings1") 
                                                [| _Bbsw.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1015,7 +1015,7 @@ module BbswFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1040,18 +1040,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".AllowsNativeFixings") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1076,18 +1076,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Bbsw) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".ClearFixings") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1115,12 +1115,12 @@ module BbswFunction =
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Bbsw) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".RegisterWith") 
                                                [| _Bbsw.source
                                                ;  _handler.source
                                                |]
@@ -1129,7 +1129,7 @@ module BbswFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1154,18 +1154,18 @@ module BbswFunction =
             try
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".TimeSeries") 
                                                [| _Bbsw.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bbsw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1193,12 +1193,12 @@ module BbswFunction =
 
                 let _Bbsw = Helper.toCell<Bbsw> bbsw "Bbsw"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((BbswModel.Cast _Bbsw.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Bbsw) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bbsw.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Bbsw.source + ".UnregisterWith") 
                                                [| _Bbsw.source
                                                ;  _handler.source
                                                |]
@@ -1207,7 +1207,7 @@ module BbswFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1236,14 +1236,14 @@ module BbswFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Bbsw>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Bbsw>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Bbsw>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Bbsw>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

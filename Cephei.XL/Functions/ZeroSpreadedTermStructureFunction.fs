@@ -49,18 +49,18 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".Calendar") 
+                let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".Calendar") 
                                                [| _ZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZeroSpreadedTermStructure> format
                     ; source = source 
@@ -85,18 +85,18 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".DayCounter") 
                                                [| _ZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZeroSpreadedTermStructure> format
                     ; source = source 
@@ -121,18 +121,18 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".MaxDate") 
                                                [| _ZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".MaxTime") 
                                                [| _ZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".ReferenceDate") 
                                                [| _ZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,18 +229,18 @@ module ZeroSpreadedTermStructureFunction =
             try
 
                 let _ZeroSpreadedTermStructure = Helper.toCell<ZeroSpreadedTermStructure> zerospreadedtermstructure "ZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroSpreadedTermStructureModel.Cast _ZeroSpreadedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".SettlementDays") 
                                                [| _ZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -277,7 +277,7 @@ module ZeroSpreadedTermStructureFunction =
                 let _comp = Helper.toDefault<Compounding> comp "comp" Compounding.Continuous
                 let _freq = Helper.toDefault<Frequency> freq "freq" Frequency.NoFrequency
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.ZeroSpreadedTermStructure 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ZeroSpreadedTermStructure 
                                                             _h.cell 
                                                             _spread.cell 
                                                             _comp.cell 
@@ -286,7 +286,7 @@ module ZeroSpreadedTermStructureFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroSpreadedTermStructure>) l
 
-                let source = Helper.sourceFold "Fun.ZeroSpreadedTermStructure" 
+                let source () = Helper.sourceFold "Fun.ZeroSpreadedTermStructure" 
                                                [| _h.source
                                                ;  _spread.source
                                                ;  _comp.source
@@ -301,7 +301,7 @@ module ZeroSpreadedTermStructureFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZeroSpreadedTermStructure> format
                     ; source = source 
@@ -330,14 +330,14 @@ module ZeroSpreadedTermStructureFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZeroSpreadedTermStructure>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ZeroSpreadedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ZeroSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ZeroSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

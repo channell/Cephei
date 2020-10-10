@@ -46,16 +46,16 @@ module ZARCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ZARCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ZARCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZARCurrency>) l
 
-                let source = Helper.sourceFold "Fun.ZARCurrency" 
+                let source () = Helper.sourceFold "Fun.ZARCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZARCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".Code") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".Empty") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module ZARCurrencyFunction =
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".Equals") 
                                                [| _ZARCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module ZARCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".Format") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".FractionsPerUnit") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".FractionSymbol") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".Name") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".NumericCode") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".Rounding") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZARCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".Symbol") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".ToString") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module ZARCurrencyFunction =
             try
 
                 let _ZARCurrency = Helper.toCell<ZARCurrency> zarcurrency "ZARCurrency"  
-                let builder () = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARCurrencyModel.Cast _ZARCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_ZARCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_ZARCurrency.source + ".TriangulationCurrency") 
                                                [| _ZARCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZARCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module ZARCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZARCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ZARCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ZARCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ZARCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

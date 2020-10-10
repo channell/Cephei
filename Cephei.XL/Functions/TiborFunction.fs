@@ -49,19 +49,19 @@ module TiborFunction =
             try
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic (Fun.Tibor 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Tibor 
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Tibor>) l
 
-                let source = Helper.sourceFold "Fun.Tibor" 
+                let source () = Helper.sourceFold "Fun.Tibor" 
                                                [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _tenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tibor> format
                     ; source = source 
@@ -89,13 +89,13 @@ module TiborFunction =
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.Tibor1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Tibor1 
                                                             _tenor.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Tibor>) l
 
-                let source = Helper.sourceFold "Fun.Tibor1" 
+                let source () = Helper.sourceFold "Fun.Tibor1" 
                                                [| _tenor.source
                                                ;  _h.source
                                                |]
@@ -104,7 +104,7 @@ module TiborFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tibor> format
                     ; source = source 
@@ -129,18 +129,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_Tibor.source + ".BusinessDayConvention") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -168,12 +168,12 @@ module TiborFunction =
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_Tibor.source + ".Clone") 
+                let source () = Helper.sourceFold (_Tibor.source + ".Clone") 
                                                [| _Tibor.source
                                                ;  _forwarding.source
                                                |]
@@ -182,7 +182,7 @@ module TiborFunction =
                                 ;  _forwarding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tibor> format
                     ; source = source 
@@ -207,18 +207,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_Tibor.source + ".EndOfMonth") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -252,14 +252,14 @@ module TiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".ForecastFixing1") 
+                let source () = Helper.sourceFold (_Tibor.source + ".ForecastFixing1") 
                                                [| _Tibor.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -272,7 +272,7 @@ module TiborFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -300,12 +300,12 @@ module TiborFunction =
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_Tibor.source + ".ForecastFixing") 
                                                [| _Tibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -314,7 +314,7 @@ module TiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -339,18 +339,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_Tibor.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_Tibor.source + ".ForwardingTermStructure") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tibor> format
                     ; source = source 
@@ -378,12 +378,12 @@ module TiborFunction =
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_Tibor.source + ".MaturityDate") 
                                                [| _Tibor.source
                                                ;  _valueDate.source
                                                |]
@@ -392,7 +392,7 @@ module TiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -417,18 +417,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_Tibor.source + ".Currency") 
+                let source () = Helper.sourceFold (_Tibor.source + ".Currency") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tibor> format
                     ; source = source 
@@ -453,18 +453,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Tibor.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Tibor.source + ".DayCounter") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tibor> format
                     ; source = source 
@@ -489,18 +489,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_Tibor.source + ".FamilyName") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -531,13 +531,13 @@ module TiborFunction =
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".Fixing") 
+                let source () = Helper.sourceFold (_Tibor.source + ".Fixing") 
                                                [| _Tibor.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -548,7 +548,7 @@ module TiborFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -573,18 +573,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_Tibor.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_Tibor.source + ".FixingCalendar") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tibor> format
                     ; source = source 
@@ -612,12 +612,12 @@ module TiborFunction =
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_Tibor.source + ".FixingDate") 
                                                [| _Tibor.source
                                                ;  _valueDate.source
                                                |]
@@ -626,7 +626,7 @@ module TiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -651,18 +651,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_Tibor.source + ".FixingDays") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -690,12 +690,12 @@ module TiborFunction =
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_Tibor.source + ".IsValidFixingDate") 
                                                [| _Tibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -704,7 +704,7 @@ module TiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -729,18 +729,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".Name") 
+                let source () = Helper.sourceFold (_Tibor.source + ".Name") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -768,12 +768,12 @@ module TiborFunction =
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_Tibor.source + ".PastFixing") 
                                                [| _Tibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -782,7 +782,7 @@ module TiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -807,18 +807,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_Tibor.source + ".Tenor") 
+                let source () = Helper.sourceFold (_Tibor.source + ".Tenor") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tibor> format
                     ; source = source 
@@ -843,18 +843,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).Update
                                                        ) :> ICell
                 let format (o : Tibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".Update") 
+                let source () = Helper.sourceFold (_Tibor.source + ".Update") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -882,12 +882,12 @@ module TiborFunction =
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_Tibor.source + ".ValueDate") 
                                                [| _Tibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -896,7 +896,7 @@ module TiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -930,14 +930,14 @@ module TiborFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Tibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_Tibor.source + ".AddFixing") 
                                                [| _Tibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -950,7 +950,7 @@ module TiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -984,14 +984,14 @@ module TiborFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Tibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_Tibor.source + ".AddFixings") 
                                                [| _Tibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1004,7 +1004,7 @@ module TiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1035,13 +1035,13 @@ module TiborFunction =
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Tibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_Tibor.source + ".AddFixings1") 
                                                [| _Tibor.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1052,7 +1052,7 @@ module TiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1077,18 +1077,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_Tibor.source + ".AllowsNativeFixings") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1113,18 +1113,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Tibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_Tibor.source + ".ClearFixings") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1152,12 +1152,12 @@ module TiborFunction =
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Tibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Tibor.source + ".RegisterWith") 
                                                [| _Tibor.source
                                                ;  _handler.source
                                                |]
@@ -1166,7 +1166,7 @@ module TiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1191,18 +1191,18 @@ module TiborFunction =
             try
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_Tibor.source + ".TimeSeries") 
                                                [| _Tibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1230,12 +1230,12 @@ module TiborFunction =
 
                 let _Tibor = Helper.toCell<Tibor> tibor "Tibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((TiborModel.Cast _Tibor.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Tibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Tibor.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Tibor.source + ".UnregisterWith") 
                                                [| _Tibor.source
                                                ;  _handler.source
                                                |]
@@ -1244,7 +1244,7 @@ module TiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1273,14 +1273,14 @@ module TiborFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Tibor>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Tibor>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Tibor>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Tibor>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

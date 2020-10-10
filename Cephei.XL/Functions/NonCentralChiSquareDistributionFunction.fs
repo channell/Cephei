@@ -52,13 +52,13 @@ module NonCentralChiSquareDistributionFunction =
 
                 let _df = Helper.toCell<double> df "df" 
                 let _ncp = Helper.toCell<double> ncp "ncp" 
-                let builder () = withMnemonic mnemonic (Fun.NonCentralChiSquareDistribution 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonCentralChiSquareDistribution 
                                                             _df.cell 
                                                             _ncp.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NonCentralChiSquareDistribution>) l
 
-                let source = Helper.sourceFold "Fun.NonCentralChiSquareDistribution" 
+                let source () = Helper.sourceFold "Fun.NonCentralChiSquareDistribution" 
                                                [| _df.source
                                                ;  _ncp.source
                                                |]
@@ -67,7 +67,7 @@ module NonCentralChiSquareDistributionFunction =
                                 ;  _ncp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonCentralChiSquareDistribution> format
                     ; source = source 
@@ -95,12 +95,12 @@ module NonCentralChiSquareDistributionFunction =
 
                 let _NonCentralChiSquareDistribution = Helper.toCell<NonCentralChiSquareDistribution> noncentralchisquaredistribution "NonCentralChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((NonCentralChiSquareDistributionModel.Cast _NonCentralChiSquareDistribution.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((NonCentralChiSquareDistributionModel.Cast _NonCentralChiSquareDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NonCentralChiSquareDistribution.source + ".Value") 
+                let source () = Helper.sourceFold (_NonCentralChiSquareDistribution.source + ".Value") 
                                                [| _NonCentralChiSquareDistribution.source
                                                ;  _x.source
                                                |]
@@ -109,7 +109,7 @@ module NonCentralChiSquareDistributionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -138,14 +138,14 @@ module NonCentralChiSquareDistributionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NonCentralChiSquareDistribution>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NonCentralChiSquareDistribution>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NonCentralChiSquareDistribution>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NonCentralChiSquareDistribution>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -64,7 +64,7 @@ module SVISpecsFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).DefaultValues
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).DefaultValues
                                                             _param.cell 
                                                             _paramIsFixed.cell 
                                                             _forward.cell 
@@ -73,7 +73,7 @@ module SVISpecsFunction =
                                                        ) :> ICell
                 let format (o : SVISpecs) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".DefaultValues") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".DefaultValues") 
                                                [| _SVISpecs.source
                                                ;  _param.source
                                                ;  _paramIsFixed.source
@@ -90,7 +90,7 @@ module SVISpecsFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -115,18 +115,18 @@ module SVISpecsFunction =
             try
 
                 let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).DilationFactor
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).DilationFactor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".DilationFactor") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".DilationFactor") 
                                                [| _SVISpecs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVISpecs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -151,18 +151,18 @@ module SVISpecsFunction =
             try
 
                 let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Dimension
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".Dimension") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".Dimension") 
                                                [| _SVISpecs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVISpecs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -199,7 +199,7 @@ module SVISpecsFunction =
                 let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
                 let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
                 let _forward = Helper.toCell<double> forward "forward" 
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Direct
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Direct
                                                             _x.cell 
                                                             _paramIsFixed.cell 
                                                             _param.cell 
@@ -207,7 +207,7 @@ module SVISpecsFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".Direct") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".Direct") 
                                                [| _SVISpecs.source
                                                ;  _x.source
                                                ;  _paramIsFixed.source
@@ -222,7 +222,7 @@ module SVISpecsFunction =
                                 ;  _forward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVISpecs> format
                     ; source = source 
@@ -247,18 +247,18 @@ module SVISpecsFunction =
             try
 
                 let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Eps1
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Eps1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".Eps1") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".Eps1") 
                                                [| _SVISpecs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVISpecs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -283,18 +283,18 @@ module SVISpecsFunction =
             try
 
                 let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Eps2
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Eps2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".Eps2") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".Eps2") 
                                                [| _SVISpecs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVISpecs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,7 +337,7 @@ module SVISpecsFunction =
                 let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" 
                 let _r = Helper.toCell<Generic.List<double>> r "r" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Guess
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Guess
                                                             _values.cell 
                                                             _paramIsFixed.cell 
                                                             _forward.cell 
@@ -347,7 +347,7 @@ module SVISpecsFunction =
                                                        ) :> ICell
                 let format (o : SVISpecs) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".Guess") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".Guess") 
                                                [| _SVISpecs.source
                                                ;  _values.source
                                                ;  _paramIsFixed.source
@@ -366,7 +366,7 @@ module SVISpecsFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -403,7 +403,7 @@ module SVISpecsFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Instance
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Instance
                                                             _t.cell 
                                                             _forward.cell 
                                                             _param.cell 
@@ -411,7 +411,7 @@ module SVISpecsFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IWrapper>) l
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".Instance") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".Instance") 
                                                [| _SVISpecs.source
                                                ;  _t.source
                                                ;  _forward.source
@@ -426,7 +426,7 @@ module SVISpecsFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVISpecs> format
                     ; source = source 
@@ -463,7 +463,7 @@ module SVISpecsFunction =
                 let _b = Helper.toCell<Generic.List<bool>> b "b" 
                 let _c = Helper.toCell<Generic.List<Nullable<double>>> c "c" 
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Inverse
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Inverse
                                                             _y.cell 
                                                             _b.cell 
                                                             _c.cell 
@@ -471,7 +471,7 @@ module SVISpecsFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".Inverse") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".Inverse") 
                                                [| _SVISpecs.source
                                                ;  _y.source
                                                ;  _b.source
@@ -486,7 +486,7 @@ module SVISpecsFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVISpecs> format
                     ; source = source 
@@ -511,18 +511,18 @@ module SVISpecsFunction =
             try
 
                 let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).ModelInstance_
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).ModelInstance_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SVIWrapper>) l
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".ModelInstance_") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".ModelInstance_") 
                                                [| _SVISpecs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVISpecs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVISpecs> format
                     ; source = source 
@@ -559,7 +559,7 @@ module SVISpecsFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Weight
+                let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Weight
                                                             _strike.cell 
                                                             _forward.cell 
                                                             _stdDev.cell 
@@ -567,7 +567,7 @@ module SVISpecsFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SVISpecs.source + ".Weight") 
+                let source () = Helper.sourceFold (_SVISpecs.source + ".Weight") 
                                                [| _SVISpecs.source
                                                ;  _strike.source
                                                ;  _forward.source
@@ -582,7 +582,7 @@ module SVISpecsFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -611,14 +611,14 @@ module SVISpecsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SVISpecs>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SVISpecs>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SVISpecs>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SVISpecs>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

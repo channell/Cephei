@@ -49,19 +49,19 @@ module RateHelperFunction =
             try
 
                 let _quote = Helper.toCell<double> quote "quote" 
-                let builder () = withMnemonic mnemonic (Fun.RateHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RateHelper 
                                                             _quote.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateHelper>) l
 
-                let source = Helper.sourceFold "Fun.RateHelper" 
+                let source () = Helper.sourceFold "Fun.RateHelper" 
                                                [| _quote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _quote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RateHelper> format
                     ; source = source 
@@ -86,19 +86,19 @@ module RateHelperFunction =
             try
 
                 let _quote = Helper.toHandle<Quote> quote "quote" 
-                let builder () = withMnemonic mnemonic (Fun.RateHelper1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RateHelper1 
                                                             _quote.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateHelper>) l
 
-                let source = Helper.sourceFold "Fun.RateHelper1" 
+                let source () = Helper.sourceFold "Fun.RateHelper1" 
                                                [| _quote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _quote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RateHelper> format
                     ; source = source 
@@ -120,16 +120,16 @@ module RateHelperFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.RateHelper2 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RateHelper2 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateHelper>) l
 
-                let source = Helper.sourceFold "Fun.RateHelper2" 
+                let source () = Helper.sourceFold "Fun.RateHelper2" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RateHelper> format
                     ; source = source 
@@ -154,18 +154,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).EarliestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".EarliestDate") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".EarliestDate") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -190,18 +190,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).ImpliedQuote
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".ImpliedQuote") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".ImpliedQuote") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -226,18 +226,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).LatestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".LatestDate") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".LatestDate") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -262,18 +262,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).LatestRelevantDate
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".LatestRelevantDate") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".LatestRelevantDate") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -298,18 +298,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".MaturityDate") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -334,18 +334,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).PillarDate
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".PillarDate") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".PillarDate") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -370,18 +370,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).Quote
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
-                let source = Helper.sourceFold (_RateHelper.source + ".Quote") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".Quote") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RateHelper> format
                     ; source = source 
@@ -406,18 +406,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).QuoteError
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".QuoteError") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".QuoteError") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -442,18 +442,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).QuoteIsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".QuoteIsValid") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".QuoteIsValid") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -478,18 +478,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).QuoteValue
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".QuoteValue") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".QuoteValue") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -517,12 +517,12 @@ module RateHelperFunction =
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".RegisterWith") 
                                                [| _RateHelper.source
                                                ;  _handler.source
                                                |]
@@ -531,7 +531,7 @@ module RateHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -559,12 +559,12 @@ module RateHelperFunction =
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let _ts = Helper.toCell<YieldTermStructure> ts "ts" 
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).SetTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).SetTermStructure
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (o : RateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".SetTermStructure") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".SetTermStructure") 
                                                [| _RateHelper.source
                                                ;  _ts.source
                                                |]
@@ -573,7 +573,7 @@ module RateHelperFunction =
                                 ;  _ts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -601,12 +601,12 @@ module RateHelperFunction =
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".UnregisterWith") 
                                                [| _RateHelper.source
                                                ;  _handler.source
                                                |]
@@ -615,7 +615,7 @@ module RateHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -640,18 +640,18 @@ module RateHelperFunction =
             try
 
                 let _RateHelper = Helper.toCell<RateHelper> ratehelper "RateHelper"  
-                let builder () = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((RateHelperModel.Cast _RateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : RateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RateHelper.source + ".Update") 
+                let source () = Helper.sourceFold (_RateHelper.source + ".Update") 
                                                [| _RateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -680,14 +680,14 @@ module RateHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RateHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RateHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RateHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RateHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

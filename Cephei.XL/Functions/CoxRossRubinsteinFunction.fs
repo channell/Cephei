@@ -58,7 +58,7 @@ module CoxRossRubinsteinFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic (Fun.CoxRossRubinstein1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CoxRossRubinstein1 
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -66,7 +66,7 @@ module CoxRossRubinsteinFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CoxRossRubinstein>) l
 
-                let source = Helper.sourceFold "Fun.CoxRossRubinstein1" 
+                let source () = Helper.sourceFold "Fun.CoxRossRubinstein1" 
                                                [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
@@ -79,7 +79,7 @@ module CoxRossRubinsteinFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CoxRossRubinstein> format
                     ; source = source 
@@ -101,16 +101,16 @@ module CoxRossRubinsteinFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.CoxRossRubinstein ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CoxRossRubinstein ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CoxRossRubinstein>) l
 
-                let source = Helper.sourceFold "Fun.CoxRossRubinstein" 
+                let source () = Helper.sourceFold "Fun.CoxRossRubinstein" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CoxRossRubinstein> format
                     ; source = source 
@@ -147,7 +147,7 @@ module CoxRossRubinsteinFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Factory
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -155,7 +155,7 @@ module CoxRossRubinsteinFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CoxRossRubinstein>) l
 
-                let source = Helper.sourceFold (_CoxRossRubinstein.source + ".Factory") 
+                let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Factory") 
                                                [| _CoxRossRubinstein.source
                                                ;  _Process.source
                                                ;  _End.source
@@ -170,7 +170,7 @@ module CoxRossRubinsteinFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CoxRossRubinstein> format
                     ; source = source 
@@ -204,14 +204,14 @@ module CoxRossRubinsteinFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Probability
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Probability
                                                             _x.cell 
                                                             _y.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CoxRossRubinstein.source + ".Probability") 
+                let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Probability") 
                                                [| _CoxRossRubinstein.source
                                                ;  _x.source
                                                ;  _y.source
@@ -224,7 +224,7 @@ module CoxRossRubinsteinFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,13 +255,13 @@ module CoxRossRubinsteinFunction =
                 let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Underlying
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CoxRossRubinstein.source + ".Underlying") 
+                let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Underlying") 
                                                [| _CoxRossRubinstein.source
                                                ;  _i.source
                                                ;  _index.source
@@ -272,7 +272,7 @@ module CoxRossRubinsteinFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -306,14 +306,14 @@ module CoxRossRubinsteinFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Descendant
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CoxRossRubinstein.source + ".Descendant") 
+                let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Descendant") 
                                                [| _CoxRossRubinstein.source
                                                ;  _x.source
                                                ;  _index.source
@@ -326,7 +326,7 @@ module CoxRossRubinsteinFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -354,12 +354,12 @@ module CoxRossRubinsteinFunction =
 
                 let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CoxRossRubinstein.source + ".Size") 
+                let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Size") 
                                                [| _CoxRossRubinstein.source
                                                ;  _i.source
                                                |]
@@ -368,7 +368,7 @@ module CoxRossRubinsteinFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -393,18 +393,18 @@ module CoxRossRubinsteinFunction =
             try
 
                 let _CoxRossRubinstein = Helper.toCell<CoxRossRubinstein> coxrossrubinstein "CoxRossRubinstein"  
-                let builder () = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Columns
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxRossRubinsteinModel.Cast _CoxRossRubinstein.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CoxRossRubinstein.source + ".Columns") 
+                let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Columns") 
                                                [| _CoxRossRubinstein.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxRossRubinstein.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -433,14 +433,14 @@ module CoxRossRubinsteinFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CoxRossRubinstein>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CoxRossRubinstein>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CoxRossRubinstein>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CoxRossRubinstein>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

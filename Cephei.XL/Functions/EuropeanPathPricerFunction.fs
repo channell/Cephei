@@ -55,14 +55,14 @@ module EuropeanPathPricerFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic (Fun.EuropeanPathPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EuropeanPathPricer 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EuropeanPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.EuropeanPathPricer" 
+                let source () = Helper.sourceFold "Fun.EuropeanPathPricer" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -73,7 +73,7 @@ module EuropeanPathPricerFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuropeanPathPricer> format
                     ; source = source 
@@ -101,12 +101,12 @@ module EuropeanPathPricerFunction =
 
                 let _EuropeanPathPricer = Helper.toCell<EuropeanPathPricer> europeanpathpricer "EuropeanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder () = withMnemonic mnemonic ((EuropeanPathPricerModel.Cast _EuropeanPathPricer.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanPathPricerModel.Cast _EuropeanPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanPathPricer.source + ".Value") 
+                let source () = Helper.sourceFold (_EuropeanPathPricer.source + ".Value") 
                                                [| _EuropeanPathPricer.source
                                                ;  _path.source
                                                |]
@@ -115,7 +115,7 @@ module EuropeanPathPricerFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -144,14 +144,14 @@ module EuropeanPathPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EuropeanPathPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EuropeanPathPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EuropeanPathPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EuropeanPathPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

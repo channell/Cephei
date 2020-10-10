@@ -49,18 +49,18 @@ module LogLinearFunction =
             try
 
                 let _LogLinear = Helper.toCell<LogLinear> loglinear "LogLinear"  
-                let builder () = withMnemonic mnemonic ((LogLinearModel.Cast _LogLinear.cell).Global
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearModel.Cast _LogLinear.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LogLinear.source + ".GLOBAL") 
+                let source () = Helper.sourceFold (_LogLinear.source + ".GLOBAL") 
                                                [| _LogLinear.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogLinear.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,14 +94,14 @@ module LogLinearFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((LogLinearModel.Cast _LogLinear.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearModel.Cast _LogLinear.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_LogLinear.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_LogLinear.source + ".Interpolate") 
                                                [| _LogLinear.source
                                                ;  _xBegin.source
                                                ;  _size.source
@@ -114,7 +114,7 @@ module LogLinearFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogLinear> format
                     ; source = source 
@@ -139,18 +139,18 @@ module LogLinearFunction =
             try
 
                 let _LogLinear = Helper.toCell<LogLinear> loglinear "LogLinear"  
-                let builder () = withMnemonic mnemonic ((LogLinearModel.Cast _LogLinear.cell).RequiredPoints
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearModel.Cast _LogLinear.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogLinear.source + ".RequiredPoints") 
+                let source () = Helper.sourceFold (_LogLinear.source + ".RequiredPoints") 
                                                [| _LogLinear.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogLinear.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -179,14 +179,14 @@ module LogLinearFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LogLinear>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LogLinear>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LogLinear>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LogLinear>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

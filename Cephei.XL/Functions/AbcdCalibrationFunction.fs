@@ -49,18 +49,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).A
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".A") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".A") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -100,7 +100,7 @@ module AbcdCalibrationFunction =
                 let _b = Helper.toCell<double> b "b" 
                 let _c = Helper.toCell<double> c "c" 
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).AbcdBlackVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).AbcdBlackVolatility
                                                             _u.cell 
                                                             _a.cell 
                                                             _b.cell 
@@ -109,7 +109,7 @@ module AbcdCalibrationFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".AbcdBlackVolatility") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".AbcdBlackVolatility") 
                                                [| _AbcdCalibration.source
                                                ;  _u.source
                                                ;  _a.source
@@ -126,7 +126,7 @@ module AbcdCalibrationFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -187,7 +187,7 @@ module AbcdCalibrationFunction =
                 let _vegaWeighted = Helper.toDefault<bool> vegaWeighted "vegaWeighted" false
                 let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
-                let builder () = withMnemonic mnemonic (Fun.AbcdCalibration1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AbcdCalibration1
                                                             _t.cell 
                                                             _blackVols.cell 
                                                             _aGuess.cell 
@@ -204,7 +204,7 @@ module AbcdCalibrationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AbcdCalibration>) l
 
-                let source = Helper.sourceFold "Fun.AbcdCalibration1" 
+                let source () = Helper.sourceFold "Fun.AbcdCalibration1" 
                                                [| _t.source
                                                ;  _blackVols.source
                                                ;  _aGuess.source
@@ -235,7 +235,7 @@ module AbcdCalibrationFunction =
                                 ;  _Method.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AbcdCalibration> format
                     ; source = source 
@@ -257,16 +257,16 @@ module AbcdCalibrationFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.AbcdCalibration ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AbcdCalibration ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AbcdCalibration>) l
 
-                let source = Helper.sourceFold "Fun.AbcdCalibration" 
+                let source () = Helper.sourceFold "Fun.AbcdCalibration" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AbcdCalibration> format
                     ; source = source 
@@ -291,18 +291,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).AIsFixed_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).AIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".AIsFixed_") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".AIsFixed_") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -327,18 +327,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).B
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".B") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".B") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -363,18 +363,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).BIsFixed_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).BIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".BIsFixed_") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".BIsFixed_") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -399,18 +399,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).C
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).C
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".C") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".C") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -435,18 +435,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).CIsFixed_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).CIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".CIsFixed_") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".CIsFixed_") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -471,18 +471,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).Compute
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).Compute
                                                        ) :> ICell
                 let format (o : AbcdCalibration) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".Compute") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".Compute") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -507,18 +507,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).D
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).D
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".D") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".D") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -543,18 +543,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).DIsFixed_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).DIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".DIsFixed_") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".DIsFixed_") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -579,18 +579,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).EndCriteria
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".EndCriteria") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".EndCriteria") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,18 +615,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).Error
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).Error
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".Error") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".Error") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -651,18 +651,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).Errors
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).Errors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".Errors") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".Errors") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AbcdCalibration> format
                     ; source = source 
@@ -693,13 +693,13 @@ module AbcdCalibrationFunction =
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let _t = Helper.toCell<Generic.List<double>> t "t" 
                 let _blackVols = Helper.toCell<Generic.List<double>> blackVols "blackVols" 
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).K
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).K
                                                             _t.cell 
                                                             _blackVols.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".K") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".K") 
                                                [| _AbcdCalibration.source
                                                ;  _t.source
                                                ;  _blackVols.source
@@ -710,7 +710,7 @@ module AbcdCalibrationFunction =
                                 ;  _blackVols.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -735,18 +735,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).MaxError
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".MaxError") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".MaxError") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -771,18 +771,18 @@ module AbcdCalibrationFunction =
             try
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).Transformation_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).Transformation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IParametersTransformation>) l
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".Transformation_") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".Transformation_") 
                                                [| _AbcdCalibration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCalibration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AbcdCalibration> format
                     ; source = source 
@@ -810,12 +810,12 @@ module AbcdCalibrationFunction =
 
                 let _AbcdCalibration = Helper.toCell<AbcdCalibration> abcdcalibration "AbcdCalibration"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCalibrationModel.Cast _AbcdCalibration.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdCalibration.source + ".Value") 
+                let source () = Helper.sourceFold (_AbcdCalibration.source + ".Value") 
                                                [| _AbcdCalibration.source
                                                ;  _x.source
                                                |]
@@ -824,7 +824,7 @@ module AbcdCalibrationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -853,14 +853,14 @@ module AbcdCalibrationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AbcdCalibration>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AbcdCalibration>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AbcdCalibration>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AbcdCalibration>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

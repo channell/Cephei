@@ -58,7 +58,7 @@ module FlatHazardRateFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _hazardRate = Helper.toCell<double> hazardRate "hazardRate" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.FlatHazardRate3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatHazardRate3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _hazardRate.cell 
@@ -66,7 +66,7 @@ module FlatHazardRateFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatHazardRate>) l
 
-                let source = Helper.sourceFold "Fun.FlatHazardRate3" 
+                let source () = Helper.sourceFold "Fun.FlatHazardRate3" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _hazardRate.source
@@ -79,7 +79,7 @@ module FlatHazardRateFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatHazardRate> format
                     ; source = source 
@@ -113,7 +113,7 @@ module FlatHazardRateFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _hazardRate = Helper.toHandle<Quote> hazardRate "hazardRate" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.FlatHazardRate
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatHazardRate
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _hazardRate.cell 
@@ -121,7 +121,7 @@ module FlatHazardRateFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatHazardRate>) l
 
-                let source = Helper.sourceFold "Fun.FlatHazardRate" 
+                let source () = Helper.sourceFold "Fun.FlatHazardRate" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _hazardRate.source
@@ -134,7 +134,7 @@ module FlatHazardRateFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatHazardRate> format
                     ; source = source 
@@ -165,14 +165,14 @@ module FlatHazardRateFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _hazardRate = Helper.toCell<double> hazardRate "hazardRate" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.FlatHazardRate1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatHazardRate1
                                                             _referenceDate.cell 
                                                             _hazardRate.cell 
                                                             _dc.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatHazardRate>) l
 
-                let source = Helper.sourceFold "Fun.FlatHazardRate1" 
+                let source () = Helper.sourceFold "Fun.FlatHazardRate1" 
                                                [| _referenceDate.source
                                                ;  _hazardRate.source
                                                ;  _dc.source
@@ -183,7 +183,7 @@ module FlatHazardRateFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatHazardRate> format
                     ; source = source 
@@ -214,14 +214,14 @@ module FlatHazardRateFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _hazardRate = Helper.toHandle<Quote> hazardRate "hazardRate" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.FlatHazardRate2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatHazardRate2
                                                             _referenceDate.cell 
                                                             _hazardRate.cell 
                                                             _dc.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatHazardRate>) l
 
-                let source = Helper.sourceFold "Fun.FlatHazardRate2" 
+                let source () = Helper.sourceFold "Fun.FlatHazardRate2" 
                                                [| _referenceDate.source
                                                ;  _hazardRate.source
                                                ;  _dc.source
@@ -232,7 +232,7 @@ module FlatHazardRateFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatHazardRate> format
                     ; source = source 
@@ -257,18 +257,18 @@ module FlatHazardRateFunction =
             try
 
                 let _FlatHazardRate = Helper.toCell<FlatHazardRate> flathazardrate "FlatHazardRate"  
-                let builder () = withMnemonic mnemonic ((FlatHazardRateModel.Cast _FlatHazardRate.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatHazardRateModel.Cast _FlatHazardRate.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FlatHazardRate.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_FlatHazardRate.source + ".MaxDate") 
                                                [| _FlatHazardRate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatHazardRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -297,14 +297,14 @@ module FlatHazardRateFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FlatHazardRate>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FlatHazardRate>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FlatHazardRate>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FlatHazardRate>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

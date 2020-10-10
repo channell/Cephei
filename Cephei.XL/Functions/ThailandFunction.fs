@@ -46,16 +46,16 @@ module ThailandFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Thailand ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Thailand ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Thailand>) l
 
-                let source = Helper.sourceFold "Fun.Thailand" 
+                let source () = Helper.sourceFold "Fun.Thailand" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Thailand> format
                     ; source = source 
@@ -80,18 +80,18 @@ module ThailandFunction =
             try
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).AddedHolidays
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_Thailand.source + ".AddedHolidays") 
+                let source () = Helper.sourceFold (_Thailand.source + ".AddedHolidays") 
                                                [| _Thailand.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Thailand.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -119,12 +119,12 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).AddHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Thailand) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".AddHoliday") 
+                let source () = Helper.sourceFold (_Thailand.source + ".AddHoliday") 
                                                [| _Thailand.source
                                                ;  _d.source
                                                |]
@@ -133,7 +133,7 @@ module ThailandFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,13 +164,13 @@ module ThailandFunction =
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Adjust
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".Adjust") 
+                let source () = Helper.sourceFold (_Thailand.source + ".Adjust") 
                                                [| _Thailand.source
                                                ;  _d.source
                                                ;  _c.source
@@ -181,7 +181,7 @@ module ThailandFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -221,7 +221,7 @@ module ThailandFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Advance1
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -230,7 +230,7 @@ module ThailandFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".Advance1") 
+                let source () = Helper.sourceFold (_Thailand.source + ".Advance1") 
                                                [| _Thailand.source
                                                ;  _d.source
                                                ;  _n.source
@@ -247,7 +247,7 @@ module ThailandFunction =
                                 ;  _endOfMonth.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,7 +284,7 @@ module ThailandFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Advance
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -292,7 +292,7 @@ module ThailandFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".Advance") 
+                let source () = Helper.sourceFold (_Thailand.source + ".Advance") 
                                                [| _Thailand.source
                                                ;  _d.source
                                                ;  _p.source
@@ -307,7 +307,7 @@ module ThailandFunction =
                                 ;  _endOfMonth.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,7 +344,7 @@ module ThailandFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).BusinessDaysBetween
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -352,7 +352,7 @@ module ThailandFunction =
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".BusinessDaysBetween") 
+                let source () = Helper.sourceFold (_Thailand.source + ".BusinessDaysBetween") 
                                                [| _Thailand.source
                                                ;  _from.source
                                                ;  _To.source
@@ -367,7 +367,7 @@ module ThailandFunction =
                                 ;  _includeLast.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -392,18 +392,18 @@ module ThailandFunction =
             try
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_Thailand.source + ".Calendar") 
+                let source () = Helper.sourceFold (_Thailand.source + ".Calendar") 
                                                [| _Thailand.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Thailand.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Thailand> format
                     ; source = source 
@@ -428,18 +428,18 @@ module ThailandFunction =
             try
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".Empty") 
+                let source () = Helper.sourceFold (_Thailand.source + ".Empty") 
                                                [| _Thailand.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Thailand.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -467,12 +467,12 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_Thailand.source + ".EndOfMonth") 
                                                [| _Thailand.source
                                                ;  _d.source
                                                |]
@@ -481,7 +481,7 @@ module ThailandFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -509,12 +509,12 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".Equals") 
+                let source () = Helper.sourceFold (_Thailand.source + ".Equals") 
                                                [| _Thailand.source
                                                ;  _o.source
                                                |]
@@ -523,7 +523,7 @@ module ThailandFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -551,12 +551,12 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsBusinessDay
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".IsBusinessDay") 
+                let source () = Helper.sourceFold (_Thailand.source + ".IsBusinessDay") 
                                                [| _Thailand.source
                                                ;  _d.source
                                                |]
@@ -565,7 +565,7 @@ module ThailandFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -593,12 +593,12 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsEndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".IsEndOfMonth") 
+                let source () = Helper.sourceFold (_Thailand.source + ".IsEndOfMonth") 
                                                [| _Thailand.source
                                                ;  _d.source
                                                |]
@@ -607,7 +607,7 @@ module ThailandFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -635,12 +635,12 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".IsHoliday") 
+                let source () = Helper.sourceFold (_Thailand.source + ".IsHoliday") 
                                                [| _Thailand.source
                                                ;  _d.source
                                                |]
@@ -649,7 +649,7 @@ module ThailandFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -677,12 +677,12 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsWeekend
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".IsWeekend") 
+                let source () = Helper.sourceFold (_Thailand.source + ".IsWeekend") 
                                                [| _Thailand.source
                                                ;  _w.source
                                                |]
@@ -691,7 +691,7 @@ module ThailandFunction =
                                 ;  _w.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -718,18 +718,18 @@ module ThailandFunction =
             try
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".Name") 
+                let source () = Helper.sourceFold (_Thailand.source + ".Name") 
                                                [| _Thailand.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Thailand.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -754,18 +754,18 @@ module ThailandFunction =
             try
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).RemovedHolidays
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_Thailand.source + ".RemovedHolidays") 
+                let source () = Helper.sourceFold (_Thailand.source + ".RemovedHolidays") 
                                                [| _Thailand.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Thailand.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -793,12 +793,12 @@ module ThailandFunction =
 
                 let _Thailand = Helper.toCell<Thailand> thailand "Thailand"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).RemoveHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((ThailandModel.Cast _Thailand.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Thailand) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thailand.source + ".RemoveHoliday") 
+                let source () = Helper.sourceFold (_Thailand.source + ".RemoveHoliday") 
                                                [| _Thailand.source
                                                ;  _d.source
                                                |]
@@ -807,7 +807,7 @@ module ThailandFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -836,14 +836,14 @@ module ThailandFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Thailand>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Thailand>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Thailand>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Thailand>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

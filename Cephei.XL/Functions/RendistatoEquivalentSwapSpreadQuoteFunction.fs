@@ -49,18 +49,18 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
             try
 
                 let _RendistatoEquivalentSwapSpreadQuote = Helper.toCell<RendistatoEquivalentSwapSpreadQuote> rendistatoequivalentswapspreadquote "RendistatoEquivalentSwapSpreadQuote"  
-                let builder () = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).IsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RendistatoEquivalentSwapSpreadQuote.source + ".IsValid") 
+                let source () = Helper.sourceFold (_RendistatoEquivalentSwapSpreadQuote.source + ".IsValid") 
                                                [| _RendistatoEquivalentSwapSpreadQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoEquivalentSwapSpreadQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,19 +85,19 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
             try
 
                 let _r = Helper.toCell<RendistatoCalculator> r "r" 
-                let builder () = withMnemonic mnemonic (Fun.RendistatoEquivalentSwapSpreadQuote 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RendistatoEquivalentSwapSpreadQuote 
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RendistatoEquivalentSwapSpreadQuote>) l
 
-                let source = Helper.sourceFold "Fun.RendistatoEquivalentSwapSpreadQuote" 
+                let source () = Helper.sourceFold "Fun.RendistatoEquivalentSwapSpreadQuote" 
                                                [| _r.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _r.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RendistatoEquivalentSwapSpreadQuote> format
                     ; source = source 
@@ -122,18 +122,18 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
             try
 
                 let _RendistatoEquivalentSwapSpreadQuote = Helper.toCell<RendistatoEquivalentSwapSpreadQuote> rendistatoequivalentswapspreadquote "RendistatoEquivalentSwapSpreadQuote"  
-                let builder () = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RendistatoEquivalentSwapSpreadQuote.source + ".Value") 
+                let source () = Helper.sourceFold (_RendistatoEquivalentSwapSpreadQuote.source + ".Value") 
                                                [| _RendistatoEquivalentSwapSpreadQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoEquivalentSwapSpreadQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -161,12 +161,12 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
 
                 let _RendistatoEquivalentSwapSpreadQuote = Helper.toCell<RendistatoEquivalentSwapSpreadQuote> rendistatoequivalentswapspreadquote "RendistatoEquivalentSwapSpreadQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RendistatoEquivalentSwapSpreadQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RendistatoEquivalentSwapSpreadQuote.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_RendistatoEquivalentSwapSpreadQuote.source + ".RegisterWith") 
                                                [| _RendistatoEquivalentSwapSpreadQuote.source
                                                ;  _handler.source
                                                |]
@@ -175,7 +175,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,12 +203,12 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
 
                 let _RendistatoEquivalentSwapSpreadQuote = Helper.toCell<RendistatoEquivalentSwapSpreadQuote> rendistatoequivalentswapspreadquote "RendistatoEquivalentSwapSpreadQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RendistatoEquivalentSwapSpreadQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RendistatoEquivalentSwapSpreadQuote.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_RendistatoEquivalentSwapSpreadQuote.source + ".UnregisterWith") 
                                                [| _RendistatoEquivalentSwapSpreadQuote.source
                                                ;  _handler.source
                                                |]
@@ -217,7 +217,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -246,14 +246,14 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RendistatoEquivalentSwapSpreadQuote>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RendistatoEquivalentSwapSpreadQuote>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RendistatoEquivalentSwapSpreadQuote>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RendistatoEquivalentSwapSpreadQuote>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

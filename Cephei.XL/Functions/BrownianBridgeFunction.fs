@@ -49,19 +49,19 @@ module BrownianBridgeFunction =
             try
 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
-                let builder () = withMnemonic mnemonic (Fun.BrownianBridge 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BrownianBridge 
                                                             _timeGrid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BrownianBridge>) l
 
-                let source = Helper.sourceFold "Fun.BrownianBridge" 
+                let source () = Helper.sourceFold "Fun.BrownianBridge" 
                                                [| _timeGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _timeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BrownianBridge> format
                     ; source = source 
@@ -86,19 +86,19 @@ module BrownianBridgeFunction =
             try
 
                 let _times = Helper.toCell<Generic.List<double>> times "times" 
-                let builder () = withMnemonic mnemonic (Fun.BrownianBridge1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BrownianBridge1 
                                                             _times.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BrownianBridge>) l
 
-                let source = Helper.sourceFold "Fun.BrownianBridge1" 
+                let source () = Helper.sourceFold "Fun.BrownianBridge1" 
                                                [| _times.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _times.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BrownianBridge> format
                     ; source = source 
@@ -123,19 +123,19 @@ module BrownianBridgeFunction =
             try
 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder () = withMnemonic mnemonic (Fun.BrownianBridge2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BrownianBridge2 
                                                             _steps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BrownianBridge>) l
 
-                let source = Helper.sourceFold "Fun.BrownianBridge2" 
+                let source () = Helper.sourceFold "Fun.BrownianBridge2" 
                                                [| _steps.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _steps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BrownianBridge> format
                     ; source = source 
@@ -160,18 +160,18 @@ module BrownianBridgeFunction =
             try
 
                 let _BrownianBridge = Helper.toCell<BrownianBridge> brownianbridge "BrownianBridge"  
-                let builder () = withMnemonic mnemonic ((BrownianBridgeModel.Cast _BrownianBridge.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((BrownianBridgeModel.Cast _BrownianBridge.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BrownianBridge.source + ".Size") 
+                let source () = Helper.sourceFold (_BrownianBridge.source + ".Size") 
                                                [| _BrownianBridge.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BrownianBridge.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -196,18 +196,18 @@ module BrownianBridgeFunction =
             try
 
                 let _BrownianBridge = Helper.toCell<BrownianBridge> brownianbridge "BrownianBridge"  
-                let builder () = withMnemonic mnemonic ((BrownianBridgeModel.Cast _BrownianBridge.cell).Times
+                let builder (current : ICell) = withMnemonic mnemonic ((BrownianBridgeModel.Cast _BrownianBridge.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_BrownianBridge.source + ".Times") 
+                let source () = Helper.sourceFold (_BrownianBridge.source + ".Times") 
                                                [| _BrownianBridge.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BrownianBridge.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -238,13 +238,13 @@ module BrownianBridgeFunction =
                 let _BrownianBridge = Helper.toCell<BrownianBridge> brownianbridge "BrownianBridge"  
                 let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let _output = Helper.toCell<Generic.List<double>> output "output" 
-                let builder () = withMnemonic mnemonic ((BrownianBridgeModel.Cast _BrownianBridge.cell).Transform
+                let builder (current : ICell) = withMnemonic mnemonic ((BrownianBridgeModel.Cast _BrownianBridge.cell).Transform
                                                             _Begin.cell 
                                                             _output.cell 
                                                        ) :> ICell
                 let format (o : BrownianBridge) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BrownianBridge.source + ".Transform") 
+                let source () = Helper.sourceFold (_BrownianBridge.source + ".Transform") 
                                                [| _BrownianBridge.source
                                                ;  _Begin.source
                                                ;  _output.source
@@ -255,7 +255,7 @@ module BrownianBridgeFunction =
                                 ;  _output.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,14 +284,14 @@ module BrownianBridgeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BrownianBridge>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BrownianBridge>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BrownianBridge>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BrownianBridge>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

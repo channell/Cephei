@@ -49,18 +49,18 @@ module TreeFunction =
             try
 
                 let _Tree = Helper.toCell<Tree> tree "Tree"  
-                let builder () = withMnemonic mnemonic ((TreeModel.Cast _Tree.cell).Columns
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeModel.Cast _Tree.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Tree.source + ".Columns") 
+                let source () = Helper.sourceFold (_Tree.source + ".Columns") 
                                                [| _Tree.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tree.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,19 +85,19 @@ module TreeFunction =
             try
 
                 let _columns = Helper.toCell<int> columns "columns" 
-                let builder () = withMnemonic mnemonic (Fun.Tree 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Tree 
                                                             _columns.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Tree>) l
 
-                let source = Helper.sourceFold "Fun.Tree" 
+                let source () = Helper.sourceFold "Fun.Tree" 
                                                [| _columns.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _columns.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tree> format
                     ; source = source 
@@ -119,16 +119,16 @@ module TreeFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Tree1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Tree1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Tree>) l
 
-                let source = Helper.sourceFold "Fun.Tree1" 
+                let source () = Helper.sourceFold "Fun.Tree1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tree> format
                     ; source = source 
@@ -157,14 +157,14 @@ module TreeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Tree>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Tree>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Tree>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Tree>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

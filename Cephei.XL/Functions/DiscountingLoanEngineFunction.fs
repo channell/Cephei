@@ -50,18 +50,18 @@ module DiscountingLoanEngineFunction =
             try
 
                 let _DiscountingLoanEngine = Helper.toCell<DiscountingLoanEngine> discountingloanengine "DiscountingLoanEngine"  
-                let builder () = withMnemonic mnemonic ((DiscountingLoanEngineModel.Cast _DiscountingLoanEngine.cell).DiscountCurve
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountingLoanEngineModel.Cast _DiscountingLoanEngine.cell).DiscountCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_DiscountingLoanEngine.source + ".DiscountCurve") 
+                let source () = Helper.sourceFold (_DiscountingLoanEngine.source + ".DiscountCurve") 
                                                [| _DiscountingLoanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscountingLoanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscountingLoanEngine> format
                     ; source = source 
@@ -89,13 +89,13 @@ module DiscountingLoanEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
-                let builder () = withMnemonic mnemonic (Fun.DiscountingLoanEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscountingLoanEngine 
                                                             _discountCurve.cell 
                                                             _includeSettlementDateFlows.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscountingLoanEngine>) l
 
-                let source = Helper.sourceFold "Fun.DiscountingLoanEngine" 
+                let source () = Helper.sourceFold "Fun.DiscountingLoanEngine" 
                                                [| _discountCurve.source
                                                ;  _includeSettlementDateFlows.source
                                                |]
@@ -104,7 +104,7 @@ module DiscountingLoanEngineFunction =
                                 ;  _includeSettlementDateFlows.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscountingLoanEngine> format
                     ; source = source 
@@ -133,14 +133,14 @@ module DiscountingLoanEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscountingLoanEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscountingLoanEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscountingLoanEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscountingLoanEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

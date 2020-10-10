@@ -52,12 +52,12 @@ module TermStructureConsistentModelFunction =
 
                 let _TermStructureConsistentModel = Helper.toCell<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TermStructureConsistentModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TermStructureConsistentModel.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_TermStructureConsistentModel.source + ".RegisterWith") 
                                                [| _TermStructureConsistentModel.source
                                                ;  _handler.source
                                                |]
@@ -66,7 +66,7 @@ module TermStructureConsistentModelFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,18 +91,18 @@ module TermStructureConsistentModelFunction =
             try
 
                 let _TermStructureConsistentModel = Helper.toCell<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
-                let builder () = withMnemonic mnemonic ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).TermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_TermStructureConsistentModel.source + ".TermStructure") 
+                let source () = Helper.sourceFold (_TermStructureConsistentModel.source + ".TermStructure") 
                                                [| _TermStructureConsistentModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TermStructureConsistentModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TermStructureConsistentModel> format
                     ; source = source 
@@ -127,19 +127,19 @@ module TermStructureConsistentModelFunction =
             try
 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let builder () = withMnemonic mnemonic (Fun.TermStructureConsistentModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TermStructureConsistentModel 
                                                             _termStructure.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TermStructureConsistentModel>) l
 
-                let source = Helper.sourceFold "Fun.TermStructureConsistentModel" 
+                let source () = Helper.sourceFold "Fun.TermStructureConsistentModel" 
                                                [| _termStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _termStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TermStructureConsistentModel> format
                     ; source = source 
@@ -167,12 +167,12 @@ module TermStructureConsistentModelFunction =
 
                 let _TermStructureConsistentModel = Helper.toCell<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TermStructureConsistentModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TermStructureConsistentModel.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_TermStructureConsistentModel.source + ".UnregisterWith") 
                                                [| _TermStructureConsistentModel.source
                                                ;  _handler.source
                                                |]
@@ -181,7 +181,7 @@ module TermStructureConsistentModelFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -210,14 +210,14 @@ module TermStructureConsistentModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TermStructureConsistentModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TermStructureConsistentModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TermStructureConsistentModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TermStructureConsistentModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

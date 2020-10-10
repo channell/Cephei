@@ -49,18 +49,18 @@ module SobolRsgFunction =
             try
 
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
-                let builder () = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).Dimension
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SobolRsg.source + ".Dimension") 
+                let source () = Helper.sourceFold (_SobolRsg.source + ".Dimension") 
                                                [| _SobolRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,13 +91,13 @@ module SobolRsgFunction =
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
-                let source = Helper.sourceFold (_SobolRsg.source + ".Factory") 
+                let source () = Helper.sourceFold (_SobolRsg.source + ".Factory") 
                                                [| _SobolRsg.source
                                                ;  _dimensionality.source
                                                ;  _seed.source
@@ -108,7 +108,7 @@ module SobolRsgFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SobolRsg> format
                     ; source = source 
@@ -134,18 +134,18 @@ module SobolRsgFunction =
             try
 
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
-                let builder () = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).LastSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_SobolRsg.source + ".LastSequence") 
+                let source () = Helper.sourceFold (_SobolRsg.source + ".LastSequence") 
                                                [| _SobolRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -171,18 +171,18 @@ module SobolRsgFunction =
             try
 
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
-                let builder () = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).NextInt32Sequence
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).NextInt32Sequence
                                                        ) :> ICell
                 let format (i : Generic.List<uint64>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_SobolRsg.source + ".NextInt32Sequence") 
+                let source () = Helper.sourceFold (_SobolRsg.source + ".NextInt32Sequence") 
                                                [| _SobolRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -208,18 +208,18 @@ module SobolRsgFunction =
             try
 
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
-                let builder () = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).NextSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_SobolRsg.source + ".NextSequence") 
+                let source () = Helper.sourceFold (_SobolRsg.source + ".NextSequence") 
                                                [| _SobolRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -248,12 +248,12 @@ module SobolRsgFunction =
 
                 let _SobolRsg = Helper.toCell<SobolRsg> sobolrsg "SobolRsg"  
                 let _skip = Helper.toCell<uint64> skip "skip" 
-                let builder () = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).SkipTo
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolRsgModel.Cast _SobolRsg.cell).SkipTo
                                                             _skip.cell 
                                                        ) :> ICell
                 let format (o : SobolRsg) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SobolRsg.source + ".SkipTo") 
+                let source () = Helper.sourceFold (_SobolRsg.source + ".SkipTo") 
                                                [| _SobolRsg.source
                                                ;  _skip.source
                                                |]
@@ -262,7 +262,7 @@ module SobolRsgFunction =
                                 ;  _skip.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -293,14 +293,14 @@ module SobolRsgFunction =
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
                 let _directionIntegers = Helper.toCell<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" 
-                let builder () = withMnemonic mnemonic (Fun.SobolRsg2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolRsg2 
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                             _directionIntegers.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SobolRsg>) l
 
-                let source = Helper.sourceFold "Fun.SobolRsg2" 
+                let source () = Helper.sourceFold "Fun.SobolRsg2" 
                                                [| _dimensionality.source
                                                ;  _seed.source
                                                ;  _directionIntegers.source
@@ -311,7 +311,7 @@ module SobolRsgFunction =
                                 ;  _directionIntegers.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SobolRsg> format
                     ; source = source 
@@ -339,13 +339,13 @@ module SobolRsgFunction =
 
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic (Fun.SobolRsg3
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolRsg3
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SobolRsg>) l
 
-                let source = Helper.sourceFold "Fun.SobolRsg3" 
+                let source () = Helper.sourceFold "Fun.SobolRsg3" 
                                                [| _dimensionality.source
                                                ;  _seed.source
                                                |]
@@ -354,7 +354,7 @@ module SobolRsgFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SobolRsg> format
                     ; source = source 
@@ -379,19 +379,19 @@ module SobolRsgFunction =
             try
 
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
-                let builder () = withMnemonic mnemonic (Fun.SobolRsg
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolRsg
                                                             _dimensionality.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SobolRsg>) l
 
-                let source = Helper.sourceFold "Fun.SobolRsg" 
+                let source () = Helper.sourceFold "Fun.SobolRsg" 
                                                [| _dimensionality.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _dimensionality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SobolRsg> format
                     ; source = source 
@@ -413,16 +413,16 @@ module SobolRsgFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.SobolRsg1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolRsg1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SobolRsg>) l
 
-                let source = Helper.sourceFold "Fun.SobolRsg1 ()" 
+                let source () = Helper.sourceFold "Fun.SobolRsg1 ()" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SobolRsg> format
                     ; source = source 
@@ -451,14 +451,14 @@ module SobolRsgFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SobolRsg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SobolRsg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SobolRsg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SobolRsg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

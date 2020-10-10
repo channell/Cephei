@@ -49,18 +49,18 @@ module FdmLinearOpIteratorFunction =
             try
 
                 let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
-                let builder () = withMnemonic mnemonic ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Coordinates
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Coordinates
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FdmLinearOpIterator.source + ".Coordinates") 
+                let source () = Helper.sourceFold (_FdmLinearOpIterator.source + ".Coordinates") 
                                                [| _FdmLinearOpIterator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmLinearOpIterator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -88,12 +88,12 @@ module FdmLinearOpIteratorFunction =
 
                 let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
                 let _obj = Helper.toCell<Object> obj "obj" 
-                let builder () = withMnemonic mnemonic ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Equals
                                                             _obj.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmLinearOpIterator.source + ".Equals") 
+                let source () = Helper.sourceFold (_FdmLinearOpIterator.source + ".Equals") 
                                                [| _FdmLinearOpIterator.source
                                                ;  _obj.source
                                                |]
@@ -102,7 +102,7 @@ module FdmLinearOpIteratorFunction =
                                 ;  _obj.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -127,19 +127,19 @@ module FdmLinearOpIteratorFunction =
             try
 
                 let _index = Helper.toDefault<int> index "index" 0
-                let builder () = withMnemonic mnemonic (Fun.FdmLinearOpIterator 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmLinearOpIterator 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpIterator>) l
 
-                let source = Helper.sourceFold "Fun.FdmLinearOpIterator" 
+                let source () = Helper.sourceFold "Fun.FdmLinearOpIterator" 
                                                [| _index.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmLinearOpIterator> format
                     ; source = source 
@@ -164,19 +164,19 @@ module FdmLinearOpIteratorFunction =
             try
 
                 let _dim = Helper.toCell<Generic.List<int>> dim "dim" 
-                let builder () = withMnemonic mnemonic (Fun.FdmLinearOpIterator1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmLinearOpIterator1 
                                                             _dim.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpIterator>) l
 
-                let source = Helper.sourceFold "Fun.FdmLinearOpIterator1" 
+                let source () = Helper.sourceFold "Fun.FdmLinearOpIterator1" 
                                                [| _dim.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _dim.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmLinearOpIterator> format
                     ; source = source 
@@ -201,19 +201,19 @@ module FdmLinearOpIteratorFunction =
             try
 
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
-                let builder () = withMnemonic mnemonic (Fun.FdmLinearOpIterator3
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmLinearOpIterator3
                                                             _iter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpIterator>) l
 
-                let source = Helper.sourceFold "Fun.FdmLinearOpIterator3" 
+                let source () = Helper.sourceFold "Fun.FdmLinearOpIterator3" 
                                                [| _iter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _iter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmLinearOpIterator> format
                     ; source = source 
@@ -244,14 +244,14 @@ module FdmLinearOpIteratorFunction =
                 let _dim = Helper.toCell<Generic.List<int>> dim "dim" 
                 let _coordinates = Helper.toCell<Generic.List<int>> coordinates "coordinates" 
                 let _index = Helper.toDefault<int> index "index" 0
-                let builder () = withMnemonic mnemonic (Fun.FdmLinearOpIterator2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmLinearOpIterator2
                                                             _dim.cell 
                                                             _coordinates.cell 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpIterator>) l
 
-                let source = Helper.sourceFold "Fun.FdmLinearOpIterator2" 
+                let source () = Helper.sourceFold "Fun.FdmLinearOpIterator2" 
                                                [| _dim.source
                                                ;  _coordinates.source
                                                ;  _index.source
@@ -262,7 +262,7 @@ module FdmLinearOpIteratorFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmLinearOpIterator> format
                     ; source = source 
@@ -287,18 +287,18 @@ module FdmLinearOpIteratorFunction =
             try
 
                 let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
-                let builder () = withMnemonic mnemonic ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Index
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmLinearOpIterator.source + ".Index") 
+                let source () = Helper.sourceFold (_FdmLinearOpIterator.source + ".Index") 
                                                [| _FdmLinearOpIterator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmLinearOpIterator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,12 +326,12 @@ module FdmLinearOpIteratorFunction =
 
                 let _FdmLinearOpIterator = Helper.toCell<FdmLinearOpIterator> fdmlinearopiterator "FdmLinearOpIterator"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
-                let builder () = withMnemonic mnemonic ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Swap
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmLinearOpIteratorModel.Cast _FdmLinearOpIterator.cell).Swap
                                                             _iter.cell 
                                                        ) :> ICell
                 let format (o : FdmLinearOpIterator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmLinearOpIterator.source + ".Swap") 
+                let source () = Helper.sourceFold (_FdmLinearOpIterator.source + ".Swap") 
                                                [| _FdmLinearOpIterator.source
                                                ;  _iter.source
                                                |]
@@ -340,7 +340,7 @@ module FdmLinearOpIteratorFunction =
                                 ;  _iter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -369,14 +369,14 @@ module FdmLinearOpIteratorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmLinearOpIterator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmLinearOpIterator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmLinearOpIterator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmLinearOpIterator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

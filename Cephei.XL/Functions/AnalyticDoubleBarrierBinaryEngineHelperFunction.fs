@@ -55,14 +55,14 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _payoff = Helper.toCell<CashOrNothingPayoff> payoff "payoff" 
                 let _arguments = Helper.toCell<DoubleBarrierOption.Arguments> arguments "arguments" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticDoubleBarrierBinaryEngineHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticDoubleBarrierBinaryEngineHelper 
                                                             _Process.cell 
                                                             _payoff.cell 
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticDoubleBarrierBinaryEngineHelper>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticDoubleBarrierBinaryEngineHelper" 
+                let source () = Helper.sourceFold "Fun.AnalyticDoubleBarrierBinaryEngineHelper" 
                                                [| _Process.source
                                                ;  _payoff.source
                                                ;  _arguments.source
@@ -73,7 +73,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                                 ;  _arguments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticDoubleBarrierBinaryEngineHelper> format
                     ; source = source 
@@ -113,7 +113,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
                 let _maxIteration = Helper.toDefault<int> maxIteration "maxIteration" 100
                 let _requiredConvergence = Helper.toDefault<double> requiredConvergence "requiredConvergence" 1e-8
-                let builder () = withMnemonic mnemonic ((AnalyticDoubleBarrierBinaryEngineHelperModel.Cast _AnalyticDoubleBarrierBinaryEngineHelper.cell).PayoffAtExpiry
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticDoubleBarrierBinaryEngineHelperModel.Cast _AnalyticDoubleBarrierBinaryEngineHelper.cell).PayoffAtExpiry
                                                             _spot.cell 
                                                             _variance.cell 
                                                             _barrierType.cell 
@@ -122,7 +122,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AnalyticDoubleBarrierBinaryEngineHelper.source + ".PayoffAtExpiry") 
+                let source () = Helper.sourceFold (_AnalyticDoubleBarrierBinaryEngineHelper.source + ".PayoffAtExpiry") 
                                                [| _AnalyticDoubleBarrierBinaryEngineHelper.source
                                                ;  _spot.source
                                                ;  _variance.source
@@ -139,7 +139,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                                 ;  _requiredConvergence.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -179,7 +179,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
                 let _maxIteration = Helper.toDefault<int> maxIteration "maxIteration" 100
                 let _requiredConvergence = Helper.toDefault<double> requiredConvergence "requiredConvergence" 1e-8
-                let builder () = withMnemonic mnemonic ((AnalyticDoubleBarrierBinaryEngineHelperModel.Cast _AnalyticDoubleBarrierBinaryEngineHelper.cell).PayoffKIKO
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticDoubleBarrierBinaryEngineHelperModel.Cast _AnalyticDoubleBarrierBinaryEngineHelper.cell).PayoffKIKO
                                                             _spot.cell 
                                                             _variance.cell 
                                                             _barrierType.cell 
@@ -188,7 +188,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AnalyticDoubleBarrierBinaryEngineHelper.source + ".PayoffKIKO") 
+                let source () = Helper.sourceFold (_AnalyticDoubleBarrierBinaryEngineHelper.source + ".PayoffKIKO") 
                                                [| _AnalyticDoubleBarrierBinaryEngineHelper.source
                                                ;  _spot.source
                                                ;  _variance.source
@@ -205,7 +205,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                                 ;  _requiredConvergence.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -234,14 +234,14 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticDoubleBarrierBinaryEngineHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticDoubleBarrierBinaryEngineHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticDoubleBarrierBinaryEngineHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticDoubleBarrierBinaryEngineHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

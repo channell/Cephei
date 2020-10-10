@@ -49,18 +49,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).ImpliedQuote
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".ImpliedQuote") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".ImpliedQuote") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,7 +94,7 @@ module OISRateHelperFunction =
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _fixedRate = Helper.toHandle<Quote> fixedRate "fixedRate" 
                 let _overnightIndex = Helper.toCell<OvernightIndex> overnightIndex "overnightIndex" 
-                let builder () = withMnemonic mnemonic (Fun.OISRateHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.OISRateHelper 
                                                             _settlementDays.cell 
                                                             _tenor.cell 
                                                             _fixedRate.cell 
@@ -102,7 +102,7 @@ module OISRateHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OISRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.OISRateHelper" 
+                let source () = Helper.sourceFold "Fun.OISRateHelper" 
                                                [| _settlementDays.source
                                                ;  _tenor.source
                                                ;  _fixedRate.source
@@ -115,7 +115,7 @@ module OISRateHelperFunction =
                                 ;  _overnightIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OISRateHelper> format
                     ; source = source 
@@ -143,12 +143,12 @@ module OISRateHelperFunction =
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).SetTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : OISRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".SetTermStructure") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".SetTermStructure") 
                                                [| _OISRateHelper.source
                                                ;  _t.source
                                                |]
@@ -157,7 +157,7 @@ module OISRateHelperFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,18 +182,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).Swap
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).Swap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndexedSwap>) l
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".Swap") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".Swap") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OISRateHelper> format
                     ; source = source 
@@ -218,18 +218,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : OISRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".Update") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".Update") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,18 +254,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).EarliestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".EarliestDate") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".EarliestDate") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,18 +290,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).LatestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".LatestDate") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".LatestDate") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,18 +326,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).LatestRelevantDate
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".LatestRelevantDate") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".LatestRelevantDate") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -362,18 +362,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".MaturityDate") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -398,18 +398,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).PillarDate
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".PillarDate") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".PillarDate") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -434,18 +434,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).Quote
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".Quote") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".Quote") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OISRateHelper> format
                     ; source = source 
@@ -470,18 +470,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).QuoteError
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".QuoteError") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".QuoteError") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -506,18 +506,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).QuoteIsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".QuoteIsValid") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".QuoteIsValid") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -542,18 +542,18 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).QuoteValue
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".QuoteValue") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".QuoteValue") 
                                                [| _OISRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OISRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -581,12 +581,12 @@ module OISRateHelperFunction =
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : OISRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".RegisterWith") 
                                                [| _OISRateHelper.source
                                                ;  _handler.source
                                                |]
@@ -595,7 +595,7 @@ module OISRateHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -623,12 +623,12 @@ module OISRateHelperFunction =
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : OISRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OISRateHelper.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_OISRateHelper.source + ".UnregisterWith") 
                                                [| _OISRateHelper.source
                                                ;  _handler.source
                                                |]
@@ -637,7 +637,7 @@ module OISRateHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -666,14 +666,14 @@ module OISRateHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<OISRateHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<OISRateHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<OISRateHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<OISRateHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

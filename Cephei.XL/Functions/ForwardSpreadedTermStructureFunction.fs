@@ -49,18 +49,18 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".Calendar") 
+                let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".Calendar") 
                                                [| _ForwardSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ForwardSpreadedTermStructure> format
                     ; source = source 
@@ -85,18 +85,18 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".DayCounter") 
                                                [| _ForwardSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ForwardSpreadedTermStructure> format
                     ; source = source 
@@ -124,13 +124,13 @@ module ForwardSpreadedTermStructureFunction =
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let builder () = withMnemonic mnemonic (Fun.ForwardSpreadedTermStructure 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ForwardSpreadedTermStructure 
                                                             _h.cell 
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ForwardSpreadedTermStructure>) l
 
-                let source = Helper.sourceFold "Fun.ForwardSpreadedTermStructure" 
+                let source () = Helper.sourceFold "Fun.ForwardSpreadedTermStructure" 
                                                [| _h.source
                                                ;  _spread.source
                                                |]
@@ -139,7 +139,7 @@ module ForwardSpreadedTermStructureFunction =
                                 ;  _spread.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ForwardSpreadedTermStructure> format
                     ; source = source 
@@ -164,18 +164,18 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".MaxDate") 
                                                [| _ForwardSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".MaxTime") 
                                                [| _ForwardSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,18 +236,18 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".ReferenceDate") 
                                                [| _ForwardSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,18 +272,18 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".SettlementDays") 
                                                [| _ForwardSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -312,14 +312,14 @@ module ForwardSpreadedTermStructureFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardSpreadedTermStructure>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ForwardSpreadedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ForwardSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ForwardSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

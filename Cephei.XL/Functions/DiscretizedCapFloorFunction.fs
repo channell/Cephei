@@ -55,14 +55,14 @@ module DiscretizedCapFloorFunction =
                 let _args = Helper.toCell<CapFloor.Arguments> args "args" 
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic (Fun.DiscretizedCapFloor 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscretizedCapFloor 
                                                             _args.cell 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscretizedCapFloor>) l
 
-                let source = Helper.sourceFold "Fun.DiscretizedCapFloor" 
+                let source () = Helper.sourceFold "Fun.DiscretizedCapFloor" 
                                                [| _args.source
                                                ;  _referenceDate.source
                                                ;  _dayCounter.source
@@ -73,7 +73,7 @@ module DiscretizedCapFloorFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedCapFloor> format
                     ; source = source 
@@ -98,18 +98,18 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).MandatoryTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".MandatoryTimes") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".MandatoryTimes") 
                                                [| _DiscretizedCapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -137,12 +137,12 @@ module DiscretizedCapFloorFunction =
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Reset
                                                             _size.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".Reset") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".Reset") 
                                                [| _DiscretizedCapFloor.source
                                                ;  _size.source
                                                |]
@@ -151,7 +151,7 @@ module DiscretizedCapFloorFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,18 +176,18 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).AdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".AdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".AdjustValues") 
                                                [| _DiscretizedCapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -218,13 +218,13 @@ module DiscretizedCapFloorFunction =
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Initialize
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Initialize
                                                             _Method.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".Initialize") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".Initialize") 
                                                [| _DiscretizedCapFloor.source
                                                ;  _Method.source
                                                ;  _t.source
@@ -235,7 +235,7 @@ module DiscretizedCapFloorFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,18 +260,18 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Method
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".METHOD") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".METHOD") 
                                                [| _DiscretizedCapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedCapFloor> format
                     ; source = source 
@@ -299,12 +299,12 @@ module DiscretizedCapFloorFunction =
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PartialRollback
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".PartialRollback") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".PartialRollback") 
                                                [| _DiscretizedCapFloor.source
                                                ;  _To.source
                                                |]
@@ -313,7 +313,7 @@ module DiscretizedCapFloorFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PostAdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".PostAdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".PostAdjustValues") 
                                                [| _DiscretizedCapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PreAdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".PreAdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".PreAdjustValues") 
                                                [| _DiscretizedCapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -410,18 +410,18 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PresentValue
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".PresentValue") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".PresentValue") 
                                                [| _DiscretizedCapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -449,12 +449,12 @@ module DiscretizedCapFloorFunction =
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Rollback
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Rollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".Rollback") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".Rollback") 
                                                [| _DiscretizedCapFloor.source
                                                ;  _To.source
                                                |]
@@ -463,7 +463,7 @@ module DiscretizedCapFloorFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -491,12 +491,12 @@ module DiscretizedCapFloorFunction =
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".SetTime") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".SetTime") 
                                                [| _DiscretizedCapFloor.source
                                                ;  _t.source
                                                |]
@@ -505,7 +505,7 @@ module DiscretizedCapFloorFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -533,12 +533,12 @@ module DiscretizedCapFloorFunction =
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).SetValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).SetValues
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCapFloor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".SetValues") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".SetValues") 
                                                [| _DiscretizedCapFloor.source
                                                ;  _v.source
                                                |]
@@ -547,7 +547,7 @@ module DiscretizedCapFloorFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -572,18 +572,18 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Time
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".Time") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".Time") 
                                                [| _DiscretizedCapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module DiscretizedCapFloorFunction =
             try
 
                 let _DiscretizedCapFloor = Helper.toCell<DiscretizedCapFloor> discretizedcapfloor "DiscretizedCapFloor"  
-                let builder () = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Values
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedCapFloorModel.Cast _DiscretizedCapFloor.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DiscretizedCapFloor.source + ".Values") 
+                let source () = Helper.sourceFold (_DiscretizedCapFloor.source + ".Values") 
                                                [| _DiscretizedCapFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCapFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedCapFloor> format
                     ; source = source 
@@ -648,14 +648,14 @@ module DiscretizedCapFloorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscretizedCapFloor>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscretizedCapFloor>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscretizedCapFloor>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscretizedCapFloor>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

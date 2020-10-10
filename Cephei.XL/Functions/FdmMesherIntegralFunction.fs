@@ -52,13 +52,13 @@ module FdmMesherIntegralFunction =
 
                 let _mesher = Helper.toCell<FdmMesherComposite> mesher "mesher" 
                 let _integrator1d = Helper.toCell<Func<Vector,Vector,double>> integrator1d "integrator1d" 
-                let builder () = withMnemonic mnemonic (Fun.FdmMesherIntegral 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmMesherIntegral 
                                                             _mesher.cell 
                                                             _integrator1d.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmMesherIntegral>) l
 
-                let source = Helper.sourceFold "Fun.FdmMesherIntegral" 
+                let source () = Helper.sourceFold "Fun.FdmMesherIntegral" 
                                                [| _mesher.source
                                                ;  _integrator1d.source
                                                |]
@@ -67,7 +67,7 @@ module FdmMesherIntegralFunction =
                                 ;  _integrator1d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmMesherIntegral> format
                     ; source = source 
@@ -95,12 +95,12 @@ module FdmMesherIntegralFunction =
 
                 let _FdmMesherIntegral = Helper.toCell<FdmMesherIntegral> fdmmesherintegral "FdmMesherIntegral"  
                 let _f = Helper.toCell<Vector> f "f" 
-                let builder () = withMnemonic mnemonic ((FdmMesherIntegralModel.Cast _FdmMesherIntegral.cell).Integrate
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmMesherIntegralModel.Cast _FdmMesherIntegral.cell).Integrate
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmMesherIntegral.source + ".Integrate") 
+                let source () = Helper.sourceFold (_FdmMesherIntegral.source + ".Integrate") 
                                                [| _FdmMesherIntegral.source
                                                ;  _f.source
                                                |]
@@ -109,7 +109,7 @@ module FdmMesherIntegralFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -138,14 +138,14 @@ module FdmMesherIntegralFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmMesherIntegral>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmMesherIntegral>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmMesherIntegral>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmMesherIntegral>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

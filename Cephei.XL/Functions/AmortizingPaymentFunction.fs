@@ -52,13 +52,13 @@ module AmortizingPaymentFunction =
 
                 let _amount = Helper.toCell<double> amount "amount" 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic (Fun.AmortizingPayment 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmortizingPayment 
                                                             _amount.cell 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AmortizingPayment>) l
 
-                let source = Helper.sourceFold "Fun.AmortizingPayment" 
+                let source () = Helper.sourceFold "Fun.AmortizingPayment" 
                                                [| _amount.source
                                                ;  _date.source
                                                |]
@@ -67,7 +67,7 @@ module AmortizingPaymentFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AmortizingPayment> format
                     ; source = source 
@@ -92,18 +92,18 @@ module AmortizingPaymentFunction =
             try
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
-                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmortizingPayment.source + ".Amount") 
+                let source () = Helper.sourceFold (_AmortizingPayment.source + ".Amount") 
                                                [| _AmortizingPayment.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module AmortizingPaymentFunction =
             try
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
-                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AmortizingPayment.source + ".Date") 
+                let source () = Helper.sourceFold (_AmortizingPayment.source + ".Date") 
                                                [| _AmortizingPayment.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -167,12 +167,12 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmortizingPayment.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_AmortizingPayment.source + ".CompareTo") 
                                                [| _AmortizingPayment.source
                                                ;  _cf.source
                                                |]
@@ -181,7 +181,7 @@ module AmortizingPaymentFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AmortizingPayment.source + ".Equals") 
+                let source () = Helper.sourceFold (_AmortizingPayment.source + ".Equals") 
                                                [| _AmortizingPayment.source
                                                ;  _cf.source
                                                |]
@@ -223,7 +223,7 @@ module AmortizingPaymentFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module AmortizingPaymentFunction =
             try
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
-                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AmortizingPayment.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_AmortizingPayment.source + ".ExCouponDate") 
                                                [| _AmortizingPayment.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,13 +290,13 @@ module AmortizingPaymentFunction =
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AmortizingPayment.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_AmortizingPayment.source + ".HasOccurred") 
                                                [| _AmortizingPayment.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -307,7 +307,7 @@ module AmortizingPaymentFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -335,12 +335,12 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AmortizingPayment.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_AmortizingPayment.source + ".TradingExCoupon") 
                                                [| _AmortizingPayment.source
                                                ;  _refDate.source
                                                |]
@@ -349,7 +349,7 @@ module AmortizingPaymentFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,12 +377,12 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : AmortizingPayment) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AmortizingPayment.source + ".Accept") 
+                let source () = Helper.sourceFold (_AmortizingPayment.source + ".Accept") 
                                                [| _AmortizingPayment.source
                                                ;  _v.source
                                                |]
@@ -391,7 +391,7 @@ module AmortizingPaymentFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -419,12 +419,12 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AmortizingPayment) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AmortizingPayment.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_AmortizingPayment.source + ".RegisterWith") 
                                                [| _AmortizingPayment.source
                                                ;  _handler.source
                                                |]
@@ -433,7 +433,7 @@ module AmortizingPaymentFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -461,12 +461,12 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AmortizingPayment) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AmortizingPayment.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_AmortizingPayment.source + ".UnregisterWith") 
                                                [| _AmortizingPayment.source
                                                ;  _handler.source
                                                |]
@@ -475,7 +475,7 @@ module AmortizingPaymentFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -504,14 +504,14 @@ module AmortizingPaymentFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AmortizingPayment>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AmortizingPayment>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AmortizingPayment>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AmortizingPayment>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

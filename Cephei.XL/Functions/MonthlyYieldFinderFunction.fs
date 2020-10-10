@@ -55,14 +55,14 @@ module MonthlyYieldFinderFunction =
                 let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" 
                 let _cashflows = Helper.toCell<Generic.List<CashFlow>> cashflows "cashflows" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic (Fun.MonthlyYieldFinder 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MonthlyYieldFinder 
                                                             _faceAmount.cell 
                                                             _cashflows.cell 
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MonthlyYieldFinder>) l
 
-                let source = Helper.sourceFold "Fun.MonthlyYieldFinder" 
+                let source () = Helper.sourceFold "Fun.MonthlyYieldFinder" 
                                                [| _faceAmount.source
                                                ;  _cashflows.source
                                                ;  _settlement.source
@@ -73,7 +73,7 @@ module MonthlyYieldFinderFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MonthlyYieldFinder> format
                     ; source = source 
@@ -101,12 +101,12 @@ module MonthlyYieldFinderFunction =
 
                 let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
-                let builder () = withMnemonic mnemonic ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Value
                                                             _Yield.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MonthlyYieldFinder.source + ".Value") 
+                let source () = Helper.sourceFold (_MonthlyYieldFinder.source + ".Value") 
                                                [| _MonthlyYieldFinder.source
                                                ;  _Yield.source
                                                |]
@@ -115,7 +115,7 @@ module MonthlyYieldFinderFunction =
                                 ;  _Yield.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -143,12 +143,12 @@ module MonthlyYieldFinderFunction =
 
                 let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MonthlyYieldFinder.source + ".Derivative") 
+                let source () = Helper.sourceFold (_MonthlyYieldFinder.source + ".Derivative") 
                                                [| _MonthlyYieldFinder.source
                                                ;  _x.source
                                                |]
@@ -157,7 +157,7 @@ module MonthlyYieldFinderFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -186,14 +186,14 @@ module MonthlyYieldFinderFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MonthlyYieldFinder>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MonthlyYieldFinder>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MonthlyYieldFinder>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MonthlyYieldFinder>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

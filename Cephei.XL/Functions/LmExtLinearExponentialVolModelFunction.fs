@@ -61,7 +61,7 @@ module LmExtLinearExponentialVolModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).IntegratedVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 
                                                             _u.cell 
@@ -69,7 +69,7 @@ module LmExtLinearExponentialVolModelFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".IntegratedVariance") 
+                let source () = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".IntegratedVariance") 
                                                [| _LmExtLinearExponentialVolModel.source
                                                ;  _i.source
                                                ;  _j.source
@@ -84,7 +84,7 @@ module LmExtLinearExponentialVolModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,7 +121,7 @@ module LmExtLinearExponentialVolModelFunction =
                 let _b = Helper.toCell<double> b "b" 
                 let _c = Helper.toCell<double> c "c" 
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic (Fun.LmExtLinearExponentialVolModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LmExtLinearExponentialVolModel 
                                                             _fixingTimes.cell 
                                                             _a.cell 
                                                             _b.cell 
@@ -130,7 +130,7 @@ module LmExtLinearExponentialVolModelFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmExtLinearExponentialVolModel>) l
 
-                let source = Helper.sourceFold "Fun.LmExtLinearExponentialVolModel" 
+                let source () = Helper.sourceFold "Fun.LmExtLinearExponentialVolModel" 
                                                [| _fixingTimes.source
                                                ;  _a.source
                                                ;  _b.source
@@ -145,7 +145,7 @@ module LmExtLinearExponentialVolModelFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmExtLinearExponentialVolModel> format
                     ; source = source 
@@ -176,13 +176,13 @@ module LmExtLinearExponentialVolModelFunction =
                 let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Volatility1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".Volatility1") 
                                                [| _LmExtLinearExponentialVolModel.source
                                                ;  _t.source
                                                ;  _x.source
@@ -193,7 +193,7 @@ module LmExtLinearExponentialVolModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmExtLinearExponentialVolModel> format
                     ; source = source 
@@ -227,14 +227,14 @@ module LmExtLinearExponentialVolModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Volatility
                                                             _i.cell 
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".Volatility") 
+                let source () = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".Volatility") 
                                                [| _LmExtLinearExponentialVolModel.source
                                                ;  _i.source
                                                ;  _t.source
@@ -247,7 +247,7 @@ module LmExtLinearExponentialVolModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,18 +272,18 @@ module LmExtLinearExponentialVolModelFunction =
             try
 
                 let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
-                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".Parameters") 
+                let source () = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".Parameters") 
                                                [| _LmExtLinearExponentialVolModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmExtLinearExponentialVolModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -311,12 +311,12 @@ module LmExtLinearExponentialVolModelFunction =
 
                 let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmExtLinearExponentialVolModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".SetParams") 
+                let source () = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".SetParams") 
                                                [| _LmExtLinearExponentialVolModel.source
                                                ;  _arguments.source
                                                |]
@@ -325,7 +325,7 @@ module LmExtLinearExponentialVolModelFunction =
                                 ;  _arguments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -350,18 +350,18 @@ module LmExtLinearExponentialVolModelFunction =
             try
 
                 let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
-                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".Size") 
+                let source () = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".Size") 
                                                [| _LmExtLinearExponentialVolModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmExtLinearExponentialVolModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -390,14 +390,14 @@ module LmExtLinearExponentialVolModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LmExtLinearExponentialVolModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LmExtLinearExponentialVolModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LmExtLinearExponentialVolModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LmExtLinearExponentialVolModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

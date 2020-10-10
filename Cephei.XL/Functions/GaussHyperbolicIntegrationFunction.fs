@@ -49,19 +49,19 @@ module GaussHyperbolicIntegrationFunction =
             try
 
                 let _n = Helper.toCell<int> n "n" 
-                let builder () = withMnemonic mnemonic (Fun.GaussHyperbolicIntegration 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussHyperbolicIntegration 
                                                             _n.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussHyperbolicIntegration>) l
 
-                let source = Helper.sourceFold "Fun.GaussHyperbolicIntegration" 
+                let source () = Helper.sourceFold "Fun.GaussHyperbolicIntegration" 
                                                [| _n.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _n.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussHyperbolicIntegration> format
                     ; source = source 
@@ -86,18 +86,18 @@ module GaussHyperbolicIntegrationFunction =
             try
 
                 let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Order
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".Order") 
+                let source () = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".Order") 
                                                [| _GaussHyperbolicIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -125,12 +125,12 @@ module GaussHyperbolicIntegrationFunction =
 
                 let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".Value") 
                                                [| _GaussHyperbolicIntegration.source
                                                ;  _f.source
                                                |]
@@ -139,7 +139,7 @@ module GaussHyperbolicIntegrationFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module GaussHyperbolicIntegrationFunction =
             try
 
                 let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".Weights") 
+                let source () = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".Weights") 
                                                [| _GaussHyperbolicIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussHyperbolicIntegration> format
                     ; source = source 
@@ -200,18 +200,18 @@ module GaussHyperbolicIntegrationFunction =
             try
 
                 let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).X
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".X") 
+                let source () = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".X") 
                                                [| _GaussHyperbolicIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussHyperbolicIntegration> format
                     ; source = source 
@@ -240,14 +240,14 @@ module GaussHyperbolicIntegrationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussHyperbolicIntegration>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussHyperbolicIntegration>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussHyperbolicIntegration>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussHyperbolicIntegration>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

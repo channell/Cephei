@@ -49,18 +49,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Duration
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Duration
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".Duration") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".Duration") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Durations
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Durations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".Durations") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".Durations") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -121,18 +121,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwap
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwap") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwap") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RendistatoCalculator> format
                     ; source = source 
@@ -157,18 +157,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapDuration
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapDuration
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapDuration") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapDuration") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapLength
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapLength
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapLength") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapLength") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,18 +229,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapRate
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapRate") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapRate") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -265,18 +265,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapSpread
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapSpread") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapSpread") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -301,18 +301,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapYield
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).EquivalentSwapYield
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapYield") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapYield") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -343,14 +343,14 @@ module RendistatoCalculatorFunction =
                 let _basket = Helper.toCell<RendistatoBasket> basket "basket" 
                 let _euriborIndex = Helper.toCell<Euribor> euriborIndex "euriborIndex" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic (Fun.RendistatoCalculator 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RendistatoCalculator 
                                                             _basket.cell 
                                                             _euriborIndex.cell 
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RendistatoCalculator>) l
 
-                let source = Helper.sourceFold "Fun.RendistatoCalculator" 
+                let source () = Helper.sourceFold "Fun.RendistatoCalculator" 
                                                [| _basket.source
                                                ;  _euriborIndex.source
                                                ;  _discountCurve.source
@@ -361,7 +361,7 @@ module RendistatoCalculatorFunction =
                                 ;  _discountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RendistatoCalculator> format
                     ; source = source 
@@ -386,18 +386,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapDurations
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapDurations
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".SwapDurations") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".SwapDurations") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -422,18 +422,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapLengths
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapLengths
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".SwapLengths") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".SwapLengths") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -458,18 +458,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapRates
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapRates
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".SwapRates") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".SwapRates") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -494,18 +494,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapYields
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).SwapYields
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".SwapYields") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".SwapYields") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -530,18 +530,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Yield
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Yield
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".Yield") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".Yield") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -566,18 +566,18 @@ module RendistatoCalculatorFunction =
             try
 
                 let _RendistatoCalculator = Helper.toCell<RendistatoCalculator> rendistatocalculator "RendistatoCalculator"  
-                let builder () = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Yields
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoCalculatorModel.Cast _RendistatoCalculator.cell).Yields
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RendistatoCalculator.source + ".Yields") 
+                let source () = Helper.sourceFold (_RendistatoCalculator.source + ".Yields") 
                                                [| _RendistatoCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -606,14 +606,14 @@ module RendistatoCalculatorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RendistatoCalculator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RendistatoCalculator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RendistatoCalculator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RendistatoCalculator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

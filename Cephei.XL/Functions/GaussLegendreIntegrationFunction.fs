@@ -49,19 +49,19 @@ module GaussLegendreIntegrationFunction =
             try
 
                 let _n = Helper.toCell<int> n "n" 
-                let builder () = withMnemonic mnemonic (Fun.GaussLegendreIntegration 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussLegendreIntegration 
                                                             _n.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussLegendreIntegration>) l
 
-                let source = Helper.sourceFold "Fun.GaussLegendreIntegration" 
+                let source () = Helper.sourceFold "Fun.GaussLegendreIntegration" 
                                                [| _n.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _n.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussLegendreIntegration> format
                     ; source = source 
@@ -86,18 +86,18 @@ module GaussLegendreIntegrationFunction =
             try
 
                 let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).Order
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLegendreIntegration.source + ".Order") 
+                let source () = Helper.sourceFold (_GaussLegendreIntegration.source + ".Order") 
                                                [| _GaussLegendreIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLegendreIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -125,12 +125,12 @@ module GaussLegendreIntegrationFunction =
 
                 let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLegendreIntegration.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussLegendreIntegration.source + ".Value") 
                                                [| _GaussLegendreIntegration.source
                                                ;  _f.source
                                                |]
@@ -139,7 +139,7 @@ module GaussLegendreIntegrationFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module GaussLegendreIntegrationFunction =
             try
 
                 let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussLegendreIntegration.source + ".Weights") 
+                let source () = Helper.sourceFold (_GaussLegendreIntegration.source + ".Weights") 
                                                [| _GaussLegendreIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLegendreIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussLegendreIntegration> format
                     ; source = source 
@@ -200,18 +200,18 @@ module GaussLegendreIntegrationFunction =
             try
 
                 let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).X
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussLegendreIntegration.source + ".X") 
+                let source () = Helper.sourceFold (_GaussLegendreIntegration.source + ".X") 
                                                [| _GaussLegendreIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLegendreIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussLegendreIntegration> format
                     ; source = source 
@@ -240,14 +240,14 @@ module GaussLegendreIntegrationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussLegendreIntegration>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussLegendreIntegration>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussLegendreIntegration>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussLegendreIntegration>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

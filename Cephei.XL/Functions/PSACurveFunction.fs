@@ -52,12 +52,12 @@ module PSACurveFunction =
 
                 let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
-                let builder () = withMnemonic mnemonic ((PSACurveModel.Cast _PSACurve.cell).GetCPR
+                let builder (current : ICell) = withMnemonic mnemonic ((PSACurveModel.Cast _PSACurve.cell).GetCPR
                                                             _valDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PSACurve.source + ".GetCPR") 
+                let source () = Helper.sourceFold (_PSACurve.source + ".GetCPR") 
                                                [| _PSACurve.source
                                                ;  _valDate.source
                                                |]
@@ -66,7 +66,7 @@ module PSACurveFunction =
                                 ;  _valDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module PSACurveFunction =
 
                 let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
-                let builder () = withMnemonic mnemonic ((PSACurveModel.Cast _PSACurve.cell).GetSMM
+                let builder (current : ICell) = withMnemonic mnemonic ((PSACurveModel.Cast _PSACurve.cell).GetSMM
                                                             _valDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PSACurve.source + ".GetSMM") 
+                let source () = Helper.sourceFold (_PSACurve.source + ".GetSMM") 
                                                [| _PSACurve.source
                                                ;  _valDate.source
                                                |]
@@ -108,7 +108,7 @@ module PSACurveFunction =
                                 ;  _valDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -136,13 +136,13 @@ module PSACurveFunction =
 
                 let _startdate = Helper.toCell<Date> startdate "startdate" 
                 let _multiplier = Helper.toCell<double> multiplier "multiplier" 
-                let builder () = withMnemonic mnemonic (Fun.PSACurve 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PSACurve 
                                                             _startdate.cell 
                                                             _multiplier.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PSACurve>) l
 
-                let source = Helper.sourceFold "Fun.PSACurve" 
+                let source () = Helper.sourceFold "Fun.PSACurve" 
                                                [| _startdate.source
                                                ;  _multiplier.source
                                                |]
@@ -151,7 +151,7 @@ module PSACurveFunction =
                                 ;  _multiplier.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PSACurve> format
                     ; source = source 
@@ -176,19 +176,19 @@ module PSACurveFunction =
             try
 
                 let _startdate = Helper.toCell<Date> startdate "startdate" 
-                let builder () = withMnemonic mnemonic (Fun.PSACurve1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PSACurve1 
                                                             _startdate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PSACurve>) l
 
-                let source = Helper.sourceFold "Fun.PSACurve1" 
+                let source () = Helper.sourceFold "Fun.PSACurve1" 
                                                [| _startdate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _startdate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PSACurve> format
                     ; source = source 
@@ -217,14 +217,14 @@ module PSACurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PSACurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PSACurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PSACurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PSACurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

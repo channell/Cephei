@@ -74,7 +74,7 @@ module FittedBondDiscountCurveFunction =
                 let _guess = Helper.toDefault<Vector> guess "guess" null
                 let _simplexLambda = Helper.toDefault<double> simplexLambda "simplexLambda" 1.0
                 let _maxStationaryStateIterations = Helper.toDefault<int> maxStationaryStateIterations "maxStationaryStateIterations" 100
-                let builder () = withMnemonic mnemonic (Fun.FittedBondDiscountCurve1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FittedBondDiscountCurve1 
                                                             _referenceDate.cell 
                                                             _bondHelpers.cell 
                                                             _dayCounter.cell 
@@ -87,7 +87,7 @@ module FittedBondDiscountCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve>) l
 
-                let source = Helper.sourceFold "Fun.FittedBondDiscountCurve1" 
+                let source () = Helper.sourceFold "Fun.FittedBondDiscountCurve1" 
                                                [| _referenceDate.source
                                                ;  _bondHelpers.source
                                                ;  _dayCounter.source
@@ -110,7 +110,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _maxStationaryStateIterations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
@@ -162,7 +162,7 @@ module FittedBondDiscountCurveFunction =
                 let _guess = Helper.toDefault<Vector> guess "guess" null
                 let _simplexLambda = Helper.toDefault<double> simplexLambda "simplexLambda" 1.0
                 let _maxStationaryStateIterations = Helper.toDefault<int> maxStationaryStateIterations "maxStationaryStateIterations" 100
-                let builder () = withMnemonic mnemonic (Fun.FittedBondDiscountCurve
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FittedBondDiscountCurve
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _bondHelpers.cell 
@@ -176,7 +176,7 @@ module FittedBondDiscountCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve>) l
 
-                let source = Helper.sourceFold "Fun.FittedBondDiscountCurve" 
+                let source () = Helper.sourceFold "Fun.FittedBondDiscountCurve" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _bondHelpers.source
@@ -201,7 +201,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _maxStationaryStateIterations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
@@ -226,18 +226,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".MaxDate") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -262,18 +262,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).NumberOfBonds
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).NumberOfBonds
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".NumberOfBonds") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".NumberOfBonds") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -304,13 +304,13 @@ module FittedBondDiscountCurveFunction =
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Discount
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Discount") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Discount") 
                                                [| _FittedBondDiscountCurve.source
                                                ;  _t.source
                                                ;  _extrapolate.source
@@ -321,7 +321,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -352,13 +352,13 @@ module FittedBondDiscountCurveFunction =
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Discount1
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Discount1
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Discount1") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Discount1") 
                                                [| _FittedBondDiscountCurve.source
                                                ;  _d.source
                                                ;  _extrapolate.source
@@ -369,7 +369,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -412,7 +412,7 @@ module FittedBondDiscountCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ForwardRate
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ForwardRate
                                                             _d.cell 
                                                             _p.cell 
                                                             _dayCounter.cell 
@@ -422,7 +422,7 @@ module FittedBondDiscountCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ForwardRate") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ForwardRate") 
                                                [| _FittedBondDiscountCurve.source
                                                ;  _d.source
                                                ;  _p.source
@@ -441,7 +441,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
@@ -484,7 +484,7 @@ module FittedBondDiscountCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ForwardRate1
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ForwardRate1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _dayCounter.cell 
@@ -494,7 +494,7 @@ module FittedBondDiscountCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ForwardRate1") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ForwardRate1") 
                                                [| _FittedBondDiscountCurve.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -513,7 +513,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
@@ -553,7 +553,7 @@ module FittedBondDiscountCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ForwardRate2
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ForwardRate2
                                                             _t1.cell 
                                                             _t2.cell 
                                                             _comp.cell 
@@ -562,7 +562,7 @@ module FittedBondDiscountCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ForwardRate2") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ForwardRate2") 
                                                [| _FittedBondDiscountCurve.source
                                                ;  _t1.source
                                                ;  _t2.source
@@ -579,7 +579,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
@@ -604,18 +604,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).JumpDates
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".JumpDates") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".JumpDates") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -640,18 +640,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).JumpTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".JumpTimes") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".JumpTimes") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -676,18 +676,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Update
                                                        ) :> ICell
                 let format (o : FittedBondDiscountCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Update") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Update") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -727,7 +727,7 @@ module FittedBondDiscountCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ZeroRate1
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ZeroRate1
                                                             _d.cell 
                                                             _dayCounter.cell 
                                                             _comp.cell 
@@ -736,7 +736,7 @@ module FittedBondDiscountCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ZeroRate1") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ZeroRate1") 
                                                [| _FittedBondDiscountCurve.source
                                                ;  _d.source
                                                ;  _dayCounter.source
@@ -753,7 +753,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
@@ -790,7 +790,7 @@ module FittedBondDiscountCurveFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ZeroRate
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ZeroRate
                                                             _t.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -798,7 +798,7 @@ module FittedBondDiscountCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ZeroRate") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ZeroRate") 
                                                [| _FittedBondDiscountCurve.source
                                                ;  _t.source
                                                ;  _comp.source
@@ -813,7 +813,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
@@ -838,18 +838,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Calendar") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Calendar") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
@@ -874,18 +874,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".DayCounter") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FittedBondDiscountCurve> format
                     ; source = source 
@@ -910,18 +910,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".MaxTime") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -946,18 +946,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ReferenceDate") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -982,18 +982,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".SettlementDays") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1021,12 +1021,12 @@ module FittedBondDiscountCurveFunction =
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".TimeFromReference") 
                                                [| _FittedBondDiscountCurve.source
                                                ;  _date.source
                                                |]
@@ -1035,7 +1035,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1060,18 +1060,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".AllowsExtrapolation") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1099,12 +1099,12 @@ module FittedBondDiscountCurveFunction =
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : FittedBondDiscountCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".DisableExtrapolation") 
                                                [| _FittedBondDiscountCurve.source
                                                ;  _b.source
                                                |]
@@ -1113,7 +1113,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1141,12 +1141,12 @@ module FittedBondDiscountCurveFunction =
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : FittedBondDiscountCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".EnableExtrapolation") 
                                                [| _FittedBondDiscountCurve.source
                                                ;  _b.source
                                                |]
@@ -1155,7 +1155,7 @@ module FittedBondDiscountCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1180,18 +1180,18 @@ module FittedBondDiscountCurveFunction =
             try
 
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
-                let builder () = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Extrapolate") 
                                                [| _FittedBondDiscountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1220,14 +1220,14 @@ module FittedBondDiscountCurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FittedBondDiscountCurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FittedBondDiscountCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FittedBondDiscountCurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FittedBondDiscountCurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

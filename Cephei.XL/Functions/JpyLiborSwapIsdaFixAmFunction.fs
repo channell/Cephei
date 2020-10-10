@@ -52,13 +52,13 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.JpyLiborSwapIsdaFixAm 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.JpyLiborSwapIsdaFixAm 
                                                             _tenor.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JpyLiborSwapIsdaFixAm>) l
 
-                let source = Helper.sourceFold "Fun.JpyLiborSwapIsdaFixAm" 
+                let source () = Helper.sourceFold "Fun.JpyLiborSwapIsdaFixAm" 
                                                [| _tenor.source
                                                ;  _h.source
                                                |]
@@ -67,7 +67,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -92,19 +92,19 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic (Fun.JpyLiborSwapIsdaFixAm1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.JpyLiborSwapIsdaFixAm1 
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JpyLiborSwapIsdaFixAm>) l
 
-                let source = Helper.sourceFold "Fun.JpyLiborSwapIsdaFixAm1" 
+                let source () = Helper.sourceFold "Fun.JpyLiborSwapIsdaFixAm1" 
                                                [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _tenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -132,12 +132,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Clone
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Clone") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Clone") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _tenor.source
                                                |]
@@ -146,7 +146,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _tenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -177,13 +177,13 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let _discounting = Helper.toHandle<YieldTermStructure> discounting "discounting" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Clone1
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Clone1
                                                             _forwarding.cell 
                                                             _discounting.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Clone1") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Clone1") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _forwarding.source
                                                ;  _discounting.source
@@ -194,7 +194,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _discounting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -222,12 +222,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Clone2
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Clone2
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Clone2") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Clone2") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _forwarding.source
                                                |]
@@ -236,7 +236,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _forwarding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -261,18 +261,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).DiscountingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).DiscountingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".DiscountingTermStructure") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".DiscountingTermStructure") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -297,18 +297,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).ExogenousDiscount
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).ExogenousDiscount
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ExogenousDiscount") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ExogenousDiscount") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -333,18 +333,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FixedLegConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FixedLegConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixedLegConvention") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixedLegConvention") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -369,18 +369,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FixedLegTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FixedLegTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixedLegTenor") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixedLegTenor") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -408,12 +408,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ForecastFixing") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _fixingDate.source
                                                |]
@@ -422,7 +422,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -447,18 +447,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ForwardingTermStructure") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -483,18 +483,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).IborIndex
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".IborIndex") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".IborIndex") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -522,12 +522,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".MaturityDate") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _valueDate.source
                                                |]
@@ -536,7 +536,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -564,12 +564,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).UnderlyingSwap
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).UnderlyingSwap
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".UnderlyingSwap") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".UnderlyingSwap") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _fixingDate.source
                                                |]
@@ -578,7 +578,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -603,18 +603,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Currency") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Currency") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -639,18 +639,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".DayCounter") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -675,18 +675,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FamilyName") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -717,13 +717,13 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Fixing") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Fixing") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -734,7 +734,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -759,18 +759,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixingCalendar") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -798,12 +798,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixingDate") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _valueDate.source
                                                |]
@@ -812,7 +812,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -837,18 +837,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixingDays") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -876,12 +876,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".IsValidFixingDate") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _fixingDate.source
                                                |]
@@ -890,7 +890,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -915,18 +915,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Name") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Name") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -954,12 +954,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".PastFixing") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _fixingDate.source
                                                |]
@@ -968,7 +968,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -993,18 +993,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Tenor") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Tenor") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JpyLiborSwapIsdaFixAm> format
                     ; source = source 
@@ -1029,18 +1029,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).Update
                                                        ) :> ICell
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Update") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Update") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1068,12 +1068,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ValueDate") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _fixingDate.source
                                                |]
@@ -1082,7 +1082,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1116,14 +1116,14 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AddFixing") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1136,7 +1136,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1170,14 +1170,14 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AddFixings") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1190,7 +1190,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1221,13 +1221,13 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AddFixings1") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1238,7 +1238,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1263,18 +1263,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AllowsNativeFixings") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1299,18 +1299,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ClearFixings") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1338,12 +1338,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".RegisterWith") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _handler.source
                                                |]
@@ -1352,7 +1352,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1377,18 +1377,18 @@ module JpyLiborSwapIsdaFixAmFunction =
             try
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".TimeSeries") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1416,12 +1416,12 @@ module JpyLiborSwapIsdaFixAmFunction =
 
                 let _JpyLiborSwapIsdaFixAm = Helper.toCell<JpyLiborSwapIsdaFixAm> jpyliborswapisdafixam "JpyLiborSwapIsdaFixAm"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((JpyLiborSwapIsdaFixAmModel.Cast _JpyLiborSwapIsdaFixAm.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".UnregisterWith") 
                                                [| _JpyLiborSwapIsdaFixAm.source
                                                ;  _handler.source
                                                |]
@@ -1430,7 +1430,7 @@ module JpyLiborSwapIsdaFixAmFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1459,14 +1459,14 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<JpyLiborSwapIsdaFixAm>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<JpyLiborSwapIsdaFixAm>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<JpyLiborSwapIsdaFixAm>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<JpyLiborSwapIsdaFixAm>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -61,7 +61,7 @@ module BilinearInterpolationFunction =
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _ySize = Helper.toCell<int> ySize "ySize" 
                 let _zData = Helper.toCell<Matrix> zData "zData" 
-                let builder () = withMnemonic mnemonic (Fun.BilinearInterpolation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BilinearInterpolation 
                                                             _xBegin.cell 
                                                             _xSize.cell 
                                                             _yBegin.cell 
@@ -70,7 +70,7 @@ module BilinearInterpolationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BilinearInterpolation>) l
 
-                let source = Helper.sourceFold "Fun.BilinearInterpolation" 
+                let source () = Helper.sourceFold "Fun.BilinearInterpolation" 
                                                [| _xBegin.source
                                                ;  _xSize.source
                                                ;  _yBegin.source
@@ -85,7 +85,7 @@ module BilinearInterpolationFunction =
                                 ;  _zData.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BilinearInterpolation> format
                     ; source = source 
@@ -116,13 +116,13 @@ module BilinearInterpolationFunction =
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).IsInRange
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).IsInRange
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".IsInRange") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".IsInRange") 
                                                [| _BilinearInterpolation.source
                                                ;  _x.source
                                                ;  _y.source
@@ -133,7 +133,7 @@ module BilinearInterpolationFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -161,12 +161,12 @@ module BilinearInterpolationFunction =
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).LocateX
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).LocateX
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".LocateX") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".LocateX") 
                                                [| _BilinearInterpolation.source
                                                ;  _x.source
                                                |]
@@ -175,7 +175,7 @@ module BilinearInterpolationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,12 +203,12 @@ module BilinearInterpolationFunction =
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).LocateY
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).LocateY
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".LocateY") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".LocateY") 
                                                [| _BilinearInterpolation.source
                                                ;  _y.source
                                                |]
@@ -217,7 +217,7 @@ module BilinearInterpolationFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module BilinearInterpolationFunction =
             try
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : BilinearInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".Update") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".Update") 
                                                [| _BilinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BilinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,13 +284,13 @@ module BilinearInterpolationFunction =
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).Value1
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".Value") 
                                                [| _BilinearInterpolation.source
                                                ;  _x.source
                                                ;  _y.source
@@ -301,7 +301,7 @@ module BilinearInterpolationFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -335,14 +335,14 @@ module BilinearInterpolationFunction =
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).Value
                                                             _x.cell 
                                                             _y.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".Value") 
                                                [| _BilinearInterpolation.source
                                                ;  _x.source
                                                ;  _y.source
@@ -355,7 +355,7 @@ module BilinearInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,18 +380,18 @@ module BilinearInterpolationFunction =
             try
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".XMax") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".XMax") 
                                                [| _BilinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BilinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -416,18 +416,18 @@ module BilinearInterpolationFunction =
             try
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".XMin") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".XMin") 
                                                [| _BilinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BilinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -452,18 +452,18 @@ module BilinearInterpolationFunction =
             try
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).XValues
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).XValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".XValues") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".XValues") 
                                                [| _BilinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BilinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -488,18 +488,18 @@ module BilinearInterpolationFunction =
             try
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).YMax
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).YMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".YMax") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".YMax") 
                                                [| _BilinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BilinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -524,18 +524,18 @@ module BilinearInterpolationFunction =
             try
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).YMin
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).YMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".YMin") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".YMin") 
                                                [| _BilinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BilinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -560,18 +560,18 @@ module BilinearInterpolationFunction =
             try
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).YValues
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).YValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".YValues") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".YValues") 
                                                [| _BilinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BilinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -596,18 +596,18 @@ module BilinearInterpolationFunction =
             try
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).ZData
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).ZData
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".ZData") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".ZData") 
                                                [| _BilinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BilinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BilinearInterpolation> format
                     ; source = source 
@@ -632,18 +632,18 @@ module BilinearInterpolationFunction =
             try
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".AllowsExtrapolation") 
                                                [| _BilinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BilinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -671,12 +671,12 @@ module BilinearInterpolationFunction =
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : BilinearInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".DisableExtrapolation") 
                                                [| _BilinearInterpolation.source
                                                ;  _b.source
                                                |]
@@ -685,7 +685,7 @@ module BilinearInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -713,12 +713,12 @@ module BilinearInterpolationFunction =
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : BilinearInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".EnableExtrapolation") 
                                                [| _BilinearInterpolation.source
                                                ;  _b.source
                                                |]
@@ -727,7 +727,7 @@ module BilinearInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -752,18 +752,18 @@ module BilinearInterpolationFunction =
             try
 
                 let _BilinearInterpolation = Helper.toCell<BilinearInterpolation> bilinearinterpolation "BilinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearInterpolationModel.Cast _BilinearInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BilinearInterpolation.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_BilinearInterpolation.source + ".Extrapolate") 
                                                [| _BilinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BilinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -792,14 +792,14 @@ module BilinearInterpolationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BilinearInterpolation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BilinearInterpolation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BilinearInterpolation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BilinearInterpolation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

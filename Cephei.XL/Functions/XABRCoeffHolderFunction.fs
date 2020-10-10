@@ -49,18 +49,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).AddParams_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).AddParams_
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".AddParams_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".AddParams_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -85,18 +85,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Error_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Error_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".Error_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".Error_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Forward_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Forward_
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".Forward_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".Forward_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).MaxError_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).MaxError_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".MaxError_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".MaxError_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Model_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Model_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IModel>) l
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".Model_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".Model_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<XABRCoeffHolder> format
                     ; source = source 
@@ -229,18 +229,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).ModelInstance_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).ModelInstance_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IWrapper>) l
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".ModelInstance_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".ModelInstance_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<XABRCoeffHolder> format
                     ; source = source 
@@ -265,18 +265,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).ParamIsFixed_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).ParamIsFixed_
                                                        ) :> ICell
                 let format (i : Generic.List<bool>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".ParamIsFixed_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".ParamIsFixed_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -301,18 +301,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Params_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Params_
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".Params_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".Params_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -337,18 +337,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).T_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).T_
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".T_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".T_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -373,18 +373,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).UpdateModelInstance
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).UpdateModelInstance
                                                        ) :> ICell
                 let format (o : XABRCoeffHolder) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".UpdateModelInstance") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".UpdateModelInstance") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -409,18 +409,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Weights_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Weights_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".Weights_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".Weights_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -457,7 +457,7 @@ module XABRCoeffHolderFunction =
                 let __params = Helper.toCell<Generic.List<Nullable<double>>> _params "_params" 
                 let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic (Fun.XABRCoeffHolder 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.XABRCoeffHolder 
                                                             _t.cell 
                                                             _forward.cell 
                                                             __params.cell 
@@ -466,7 +466,7 @@ module XABRCoeffHolderFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<XABRCoeffHolder>) l
 
-                let source = Helper.sourceFold "Fun.XABRCoeffHolder" 
+                let source () = Helper.sourceFold "Fun.XABRCoeffHolder" 
                                                [| _t.source
                                                ;  _forward.source
                                                ;  __params.source
@@ -481,7 +481,7 @@ module XABRCoeffHolderFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<XABRCoeffHolder> format
                     ; source = source 
@@ -506,18 +506,18 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).XABREndCriteria_
+                let builder (current : ICell) = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).XABREndCriteria_
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_XABRCoeffHolder.source + ".XABREndCriteria_") 
+                let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".XABREndCriteria_") 
                                                [| _XABRCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -546,14 +546,14 @@ module XABRCoeffHolderFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<XABRCoeffHolder>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<XABRCoeffHolder>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<XABRCoeffHolder>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<XABRCoeffHolder>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

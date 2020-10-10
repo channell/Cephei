@@ -49,19 +49,19 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _evaluations = Helper.toCell<int> evaluations "evaluations" 
-                let builder () = withMnemonic mnemonic (Fun.DiscreteTrapezoidIntegrator 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscreteTrapezoidIntegrator 
                                                             _evaluations.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscreteTrapezoidIntegrator>) l
 
-                let source = Helper.sourceFold "Fun.DiscreteTrapezoidIntegrator" 
+                let source () = Helper.sourceFold "Fun.DiscreteTrapezoidIntegrator" 
                                                [| _evaluations.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _evaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscreteTrapezoidIntegrator> format
                     ; source = source 
@@ -86,18 +86,18 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
-                let builder () = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).AbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".AbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".AbsoluteAccuracy") 
                                                [| _DiscreteTrapezoidIntegrator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -122,18 +122,18 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
-                let builder () = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).AbsoluteError
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".AbsoluteError") 
+                let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".AbsoluteError") 
                                                [| _DiscreteTrapezoidIntegrator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -158,18 +158,18 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
-                let builder () = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).IntegrationSuccess
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".IntegrationSuccess") 
+                let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".IntegrationSuccess") 
                                                [| _DiscreteTrapezoidIntegrator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
-                let builder () = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).MaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".MaxEvaluations") 
+                let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".MaxEvaluations") 
                                                [| _DiscreteTrapezoidIntegrator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module DiscreteTrapezoidIntegratorFunction =
             try
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
-                let builder () = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).NumberOfEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".NumberOfEvaluations") 
+                let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".NumberOfEvaluations") 
                                                [| _DiscreteTrapezoidIntegrator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -269,12 +269,12 @@ module DiscreteTrapezoidIntegratorFunction =
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).SetAbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : DiscreteTrapezoidIntegrator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".SetAbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".SetAbsoluteAccuracy") 
                                                [| _DiscreteTrapezoidIntegrator.source
                                                ;  _accuracy.source
                                                |]
@@ -283,7 +283,7 @@ module DiscreteTrapezoidIntegratorFunction =
                                 ;  _accuracy.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -311,12 +311,12 @@ module DiscreteTrapezoidIntegratorFunction =
 
                 let _DiscreteTrapezoidIntegrator = Helper.toCell<DiscreteTrapezoidIntegrator> discretetrapezoidintegrator "DiscreteTrapezoidIntegrator"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).SetMaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : DiscreteTrapezoidIntegrator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".SetMaxEvaluations") 
+                let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".SetMaxEvaluations") 
                                                [| _DiscreteTrapezoidIntegrator.source
                                                ;  _maxEvaluations.source
                                                |]
@@ -325,7 +325,7 @@ module DiscreteTrapezoidIntegratorFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -359,14 +359,14 @@ module DiscreteTrapezoidIntegratorFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegratorModel.Cast _DiscreteTrapezoidIntegrator.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".Value") 
+                let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".Value") 
                                                [| _DiscreteTrapezoidIntegrator.source
                                                ;  _f.source
                                                ;  _a.source
@@ -379,7 +379,7 @@ module DiscreteTrapezoidIntegratorFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -408,14 +408,14 @@ module DiscreteTrapezoidIntegratorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscreteTrapezoidIntegrator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscreteTrapezoidIntegrator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscreteTrapezoidIntegrator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscreteTrapezoidIntegrator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -55,13 +55,13 @@ module TimeSeriesFunction =
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _key = Helper.toCell<Date> key "key" 
                 let _value = Helper.toCell<'T> value "value" 
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Add
                                                             _key.cell 
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".Add") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".Add") 
                                                [| _TimeSeries.source
                                                ;  _key.source
                                                ;  _value.source
@@ -72,7 +72,7 @@ module TimeSeriesFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -100,12 +100,12 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" 
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Add1
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Add1
                                                             _item.cell 
                                                        ) :> ICell
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".Add") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".Add") 
                                                [| _TimeSeries.source
                                                ;  _item.source
                                                |]
@@ -114,7 +114,7 @@ module TimeSeriesFunction =
                                 ;  _item.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -139,18 +139,18 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Clear
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Clear
                                                        ) :> ICell
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".Clear") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".Clear") 
                                                [| _TimeSeries.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -178,12 +178,12 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" 
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Contains
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Contains
                                                             _item.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".Contains") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".Contains") 
                                                [| _TimeSeries.source
                                                ;  _item.source
                                                |]
@@ -192,7 +192,7 @@ module TimeSeriesFunction =
                                 ;  _item.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -220,12 +220,12 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _key = Helper.toCell<Date> key "key" 
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).ContainsKey
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).ContainsKey
                                                             _key.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".ContainsKey") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".ContainsKey") 
                                                [| _TimeSeries.source
                                                ;  _key.source
                                                |]
@@ -234,7 +234,7 @@ module TimeSeriesFunction =
                                 ;  _key.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -265,13 +265,13 @@ module TimeSeriesFunction =
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _array = Helper.toCell<Generic.KeyValuePair<Date,T>[]> array "array" 
                 let _arrayIndex = Helper.toCell<int> arrayIndex "arrayIndex" 
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).CopyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).CopyTo
                                                             _array.cell 
                                                             _arrayIndex.cell 
                                                        ) :> ICell
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".CopyTo") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".CopyTo") 
                                                [| _TimeSeries.source
                                                ;  _array.source
                                                ;  _arrayIndex.source
@@ -282,7 +282,7 @@ module TimeSeriesFunction =
                                 ;  _arrayIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -307,18 +307,18 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Count
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Count
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".Count") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".Count") 
                                                [| _TimeSeries.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -343,18 +343,18 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).GetEnumerator
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).GetEnumerator
                                                        ) :> ICell
                 let format (o : IEnumerator<Generic.KeyValuePair<Date,T>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".GetEnumerator") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".GetEnumerator") 
                                                [| _TimeSeries.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -379,18 +379,18 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).IsReadOnly
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).IsReadOnly
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".IsReadOnly") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".IsReadOnly") 
                                                [| _TimeSeries.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -415,18 +415,18 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Keys
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Keys
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ICollection<Date>>) l
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".Keys") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".Keys") 
                                                [| _TimeSeries.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TimeSeries> format
                     ; source = source 
@@ -454,12 +454,12 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _item = Helper.toCell<Generic.KeyValuePair<Date,T>> item "item" 
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Remove
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Remove
                                                             _item.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".Remove") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".Remove") 
                                                [| _TimeSeries.source
                                                ;  _item.source
                                                |]
@@ -468,7 +468,7 @@ module TimeSeriesFunction =
                                 ;  _item.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -496,12 +496,12 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _key = Helper.toCell<Date> key "key" 
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Remove1
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Remove1
                                                             _key.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".Remove") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".Remove") 
                                                [| _TimeSeries.source
                                                ;  _key.source
                                                |]
@@ -510,7 +510,7 @@ module TimeSeriesFunction =
                                 ;  _key.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -538,12 +538,12 @@ module TimeSeriesFunction =
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _key = Helper.toCell<Date> key "key" 
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).This
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).This
                                                             _key.cell 
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".This") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".This") 
                                                [| _TimeSeries.source
                                                ;  _key.source
                                                |]
@@ -552,7 +552,7 @@ module TimeSeriesFunction =
                                 ;  _key.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -577,19 +577,19 @@ module TimeSeriesFunction =
             try
 
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic (Fun.TimeSeries 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeSeries 
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeSeries>) l
 
-                let source = Helper.sourceFold "Fun.TimeSeries" 
+                let source () = Helper.sourceFold "Fun.TimeSeries" 
                                                [| _size.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TimeSeries> format
                     ; source = source 
@@ -611,16 +611,16 @@ module TimeSeriesFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.TimeSeries1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeSeries1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeSeries>) l
 
-                let source = Helper.sourceFold "Fun.TimeSeries1" 
+                let source () = Helper.sourceFold "Fun.TimeSeries1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TimeSeries> format
                     ; source = source 
@@ -651,13 +651,13 @@ module TimeSeriesFunction =
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
                 let _key = Helper.toCell<Date> key "key" 
                 let _value = Helper.toCell<'T> value "value" 
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).TryGetValue
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).TryGetValue
                                                             _key.cell 
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".TryGetValue") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".TryGetValue") 
                                                [| _TimeSeries.source
                                                ;  _key.source
                                                ;  _value.source
@@ -668,7 +668,7 @@ module TimeSeriesFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -693,18 +693,18 @@ module TimeSeriesFunction =
             try
 
                 let _TimeSeries = Helper.toCell<TimeSeries> timeseries "TimeSeries"  
-                let builder () = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Values
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeSeriesModel.Cast _TimeSeries.cell).Values
                                                        ) :> ICell
                 let format (o : ICollection<T>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeSeries.source + ".Values") 
+                let source () = Helper.sourceFold (_TimeSeries.source + ".Values") 
                                                [| _TimeSeries.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -733,14 +733,14 @@ module TimeSeriesFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TimeSeries>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TimeSeries>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TimeSeries>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TimeSeries>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

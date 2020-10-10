@@ -49,18 +49,18 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).A
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".A") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".A") 
                                                [| _Vasicek.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vasicek.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).B
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".B") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".B") 
                                                [| _Vasicek.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vasicek.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -133,7 +133,7 @@ module VasicekFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" 
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).DiscountBondOption
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).DiscountBondOption
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _maturity.cell 
@@ -141,7 +141,7 @@ module VasicekFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".DiscountBondOption") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".DiscountBondOption") 
                                                [| _Vasicek.source
                                                ;  _Type.source
                                                ;  _strike.source
@@ -156,7 +156,7 @@ module VasicekFunction =
                                 ;  _bondMaturity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -181,18 +181,18 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Dynamics
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".Dynamics") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".Dynamics") 
                                                [| _Vasicek.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vasicek.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -217,18 +217,18 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Lambda
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Lambda
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".Lambda") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".Lambda") 
                                                [| _Vasicek.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vasicek.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -253,18 +253,18 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Sigma
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".Sigma") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".Sigma") 
                                                [| _Vasicek.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vasicek.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -301,7 +301,7 @@ module VasicekFunction =
                 let _b = Helper.toDefault<double> b "b" 0.05
                 let _sigma = Helper.toDefault<double> sigma "sigma" 0.01
                 let _lambda = Helper.toDefault<double> lambda "lambda" 0.0
-                let builder () = withMnemonic mnemonic (Fun.Vasicek 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Vasicek 
                                                             _r0.cell 
                                                             _a.cell 
                                                             _b.cell 
@@ -310,7 +310,7 @@ module VasicekFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vasicek>) l
 
-                let source = Helper.sourceFold "Fun.Vasicek" 
+                let source () = Helper.sourceFold "Fun.Vasicek" 
                                                [| _r0.source
                                                ;  _a.source
                                                ;  _b.source
@@ -325,7 +325,7 @@ module VasicekFunction =
                                 ;  _lambda.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vasicek> format
                     ; source = source 
@@ -353,12 +353,12 @@ module VasicekFunction =
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Discount
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".Discount") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".Discount") 
                                                [| _Vasicek.source
                                                ;  _t.source
                                                |]
@@ -367,7 +367,7 @@ module VasicekFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -401,14 +401,14 @@ module VasicekFunction =
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _rate = Helper.toCell<double> rate "rate" 
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).DiscountBond1
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).DiscountBond1
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _rate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".DiscountBond1") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".DiscountBond1") 
                                                [| _Vasicek.source
                                                ;  _now.source
                                                ;  _maturity.source
@@ -421,7 +421,7 @@ module VasicekFunction =
                                 ;  _rate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -455,14 +455,14 @@ module VasicekFunction =
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _factors = Helper.toCell<Vector> factors "factors" 
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).DiscountBond
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).DiscountBond
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _factors.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".DiscountBond") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".DiscountBond") 
                                                [| _Vasicek.source
                                                ;  _now.source
                                                ;  _maturity.source
@@ -475,7 +475,7 @@ module VasicekFunction =
                                 ;  _factors.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -503,12 +503,12 @@ module VasicekFunction =
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _grid = Helper.toCell<TimeGrid> grid "grid" 
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Tree
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Tree
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
-                let source = Helper.sourceFold (_Vasicek.source + ".Tree") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".Tree") 
                                                [| _Vasicek.source
                                                ;  _grid.source
                                                |]
@@ -517,7 +517,7 @@ module VasicekFunction =
                                 ;  _grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vasicek> format
                     ; source = source 
@@ -560,7 +560,7 @@ module VasicekFunction =
                 let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
                 let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
                 let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Calibrate
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
                                                             _endCriteria.cell 
@@ -570,7 +570,7 @@ module VasicekFunction =
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".Calibrate") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".Calibrate") 
                                                [| _Vasicek.source
                                                ;  _instruments.source
                                                ;  _Method.source
@@ -589,7 +589,7 @@ module VasicekFunction =
                                 ;  _fixParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -614,18 +614,18 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Constraint
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold (_Vasicek.source + ".CONSTRAINT") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".CONSTRAINT") 
                                                [| _Vasicek.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vasicek.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vasicek> format
                     ; source = source 
@@ -650,18 +650,18 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).EndCriteria
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".EndCriteria") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".EndCriteria") 
                                                [| _Vasicek.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vasicek.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -686,18 +686,18 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).NotifyObservers
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".NotifyObservers") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".NotifyObservers") 
                                                [| _Vasicek.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vasicek.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -722,18 +722,18 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Vasicek.source + ".Parameters") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".Parameters") 
                                                [| _Vasicek.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vasicek.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vasicek> format
                     ; source = source 
@@ -761,12 +761,12 @@ module VasicekFunction =
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".RegisterWith") 
                                                [| _Vasicek.source
                                                ;  _handler.source
                                                |]
@@ -775,7 +775,7 @@ module VasicekFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -803,12 +803,12 @@ module VasicekFunction =
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".SetParams") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".SetParams") 
                                                [| _Vasicek.source
                                                ;  _parameters.source
                                                |]
@@ -817,7 +817,7 @@ module VasicekFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -845,12 +845,12 @@ module VasicekFunction =
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".UnregisterWith") 
                                                [| _Vasicek.source
                                                ;  _handler.source
                                                |]
@@ -859,7 +859,7 @@ module VasicekFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -884,18 +884,18 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Update
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".Update") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".Update") 
                                                [| _Vasicek.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vasicek.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -926,13 +926,13 @@ module VasicekFunction =
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
-                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vasicek.source + ".Value") 
+                let source () = Helper.sourceFold (_Vasicek.source + ".Value") 
                                                [| _Vasicek.source
                                                ;  _parameters.source
                                                ;  _instruments.source
@@ -943,7 +943,7 @@ module VasicekFunction =
                                 ;  _instruments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -972,14 +972,14 @@ module VasicekFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Vasicek>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Vasicek>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Vasicek>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Vasicek>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

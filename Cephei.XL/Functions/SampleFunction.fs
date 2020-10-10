@@ -52,13 +52,13 @@ module SampleFunction =
 
                 let _value_ = Helper.toCell<'T> value_ "value_" 
                 let _weight_ = Helper.toCell<double> weight_ "weight_" 
-                let builder () = withMnemonic mnemonic (Fun.Sample 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Sample 
                                                             _value_.cell 
                                                             _weight_.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample>) l
 
-                let source = Helper.sourceFold "Fun.Sample" 
+                let source () = Helper.sourceFold "Fun.Sample" 
                                                [| _value_.source
                                                ;  _weight_.source
                                                |]
@@ -67,7 +67,7 @@ module SampleFunction =
                                 ;  _weight_.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Sample> format
                     ; source = source 
@@ -92,18 +92,18 @@ module SampleFunction =
             try
 
                 let _Sample = Helper.toCell<Sample> sample "Sample"  
-                let builder () = withMnemonic mnemonic ((SampleModel.Cast _Sample.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((SampleModel.Cast _Sample.cell).Value
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Sample.source + ".Value") 
+                let source () = Helper.sourceFold (_Sample.source + ".Value") 
                                                [| _Sample.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sample.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module SampleFunction =
             try
 
                 let _Sample = Helper.toCell<Sample> sample "Sample"  
-                let builder () = withMnemonic mnemonic ((SampleModel.Cast _Sample.cell).Weight
+                let builder (current : ICell) = withMnemonic mnemonic ((SampleModel.Cast _Sample.cell).Weight
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Sample.source + ".Weight") 
+                let source () = Helper.sourceFold (_Sample.source + ".Weight") 
                                                [| _Sample.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sample.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -168,14 +168,14 @@ module SampleFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Sample>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Sample>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Sample>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Sample>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

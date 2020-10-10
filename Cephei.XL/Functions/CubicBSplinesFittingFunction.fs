@@ -55,13 +55,13 @@ module CubicBSplinesFittingFunction =
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).BasisFunction
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).BasisFunction
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicBSplinesFitting.source + ".BasisFunction") 
+                let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".BasisFunction") 
                                                [| _CubicBSplinesFitting.source
                                                ;  _i.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module CubicBSplinesFittingFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,18 +97,18 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
-                let source = Helper.sourceFold (_CubicBSplinesFitting.source + ".Clone") 
+                let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".Clone") 
                                                [| _CubicBSplinesFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CubicBSplinesFitting> format
                     ; source = source 
@@ -142,7 +142,7 @@ module CubicBSplinesFittingFunction =
                 let _constrainAtZero = Helper.toDefault<bool> constrainAtZero "constrainAtZero" true
                 let _weights = Helper.toDefault<Vector> weights "weights" null
                 let _optimizationMethod = Helper.toDefault<OptimizationMethod> optimizationMethod "optimizationMethod" null
-                let builder () = withMnemonic mnemonic (Fun.CubicBSplinesFitting 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CubicBSplinesFitting 
                                                             _knots.cell 
                                                             _constrainAtZero.cell 
                                                             _weights.cell 
@@ -150,7 +150,7 @@ module CubicBSplinesFittingFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CubicBSplinesFitting>) l
 
-                let source = Helper.sourceFold "Fun.CubicBSplinesFitting" 
+                let source () = Helper.sourceFold "Fun.CubicBSplinesFitting" 
                                                [| _knots.source
                                                ;  _constrainAtZero.source
                                                ;  _weights.source
@@ -163,7 +163,7 @@ module CubicBSplinesFittingFunction =
                                 ;  _optimizationMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CubicBSplinesFitting> format
                     ; source = source 
@@ -188,18 +188,18 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicBSplinesFitting.source + ".Size") 
+                let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".Size") 
                                                [| _CubicBSplinesFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -224,18 +224,18 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).ConstrainAtZero
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicBSplinesFitting.source + ".ConstrainAtZero") 
+                let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".ConstrainAtZero") 
                                                [| _CubicBSplinesFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,13 +266,13 @@ module CubicBSplinesFittingFunction =
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Discount
                                                             _x.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicBSplinesFitting.source + ".Discount") 
+                let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".Discount") 
                                                [| _CubicBSplinesFitting.source
                                                ;  _x.source
                                                ;  _t.source
@@ -283,7 +283,7 @@ module CubicBSplinesFittingFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,18 +308,18 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).MinimumCostValue
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicBSplinesFitting.source + ".MinimumCostValue") 
+                let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".MinimumCostValue") 
                                                [| _CubicBSplinesFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,18 +344,18 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).NumberOfIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicBSplinesFitting.source + ".NumberOfIterations") 
+                let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".NumberOfIterations") 
                                                [| _CubicBSplinesFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,18 +380,18 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).OptimizationMethod
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
-                let source = Helper.sourceFold (_CubicBSplinesFitting.source + ".OptimizationMethod") 
+                let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".OptimizationMethod") 
                                                [| _CubicBSplinesFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CubicBSplinesFitting> format
                     ; source = source 
@@ -416,18 +416,18 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Solution
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_CubicBSplinesFitting.source + ".Solution") 
+                let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".Solution") 
                                                [| _CubicBSplinesFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CubicBSplinesFitting> format
                     ; source = source 
@@ -452,18 +452,18 @@ module CubicBSplinesFittingFunction =
             try
 
                 let _CubicBSplinesFitting = Helper.toCell<CubicBSplinesFitting> cubicbsplinesfitting "CubicBSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicBSplinesFittingModel.Cast _CubicBSplinesFitting.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_CubicBSplinesFitting.source + ".Weights") 
+                let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".Weights") 
                                                [| _CubicBSplinesFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CubicBSplinesFitting> format
                     ; source = source 
@@ -492,14 +492,14 @@ module CubicBSplinesFittingFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CubicBSplinesFitting>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CubicBSplinesFitting>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CubicBSplinesFitting>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CubicBSplinesFitting>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

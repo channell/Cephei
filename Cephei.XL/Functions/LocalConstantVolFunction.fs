@@ -49,18 +49,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".DayCounter") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalConstantVol> format
                     ; source = source 
@@ -91,14 +91,14 @@ module LocalConstantVolFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _volatility = Helper.toCell<double> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.LocalConstantVol2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalConstantVol2
                                                             _referenceDate.cell 
                                                             _volatility.cell 
                                                             _dc.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LocalConstantVol>) l
 
-                let source = Helper.sourceFold "Fun.LocalConstantVol2" 
+                let source () = Helper.sourceFold "Fun.LocalConstantVol2" 
                                                [| _referenceDate.source
                                                ;  _volatility.source
                                                ;  _dc.source
@@ -109,7 +109,7 @@ module LocalConstantVolFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalConstantVol> format
                     ; source = source 
@@ -140,14 +140,14 @@ module LocalConstantVolFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.LocalConstantVol1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalConstantVol1 
                                                             _referenceDate.cell 
                                                             _volatility.cell 
                                                             _dc.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LocalConstantVol>) l
 
-                let source = Helper.sourceFold "Fun.LocalConstantVol1" 
+                let source () = Helper.sourceFold "Fun.LocalConstantVol1" 
                                                [| _referenceDate.source
                                                ;  _volatility.source
                                                ;  _dc.source
@@ -158,7 +158,7 @@ module LocalConstantVolFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalConstantVol> format
                     ; source = source 
@@ -192,7 +192,7 @@ module LocalConstantVolFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _volatility = Helper.toCell<double> volatility "volatility" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic (Fun.LocalConstantVol3
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalConstantVol3
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _volatility.cell 
@@ -200,7 +200,7 @@ module LocalConstantVolFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LocalConstantVol>) l
 
-                let source = Helper.sourceFold "Fun.LocalConstantVol3" 
+                let source () = Helper.sourceFold "Fun.LocalConstantVol3" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _volatility.source
@@ -213,7 +213,7 @@ module LocalConstantVolFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalConstantVol> format
                     ; source = source 
@@ -247,7 +247,7 @@ module LocalConstantVolFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic (Fun.LocalConstantVol
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalConstantVol
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _volatility.cell 
@@ -255,7 +255,7 @@ module LocalConstantVolFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LocalConstantVol>) l
 
-                let source = Helper.sourceFold "Fun.LocalConstantVol" 
+                let source () = Helper.sourceFold "Fun.LocalConstantVol" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _volatility.source
@@ -268,7 +268,7 @@ module LocalConstantVolFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalConstantVol> format
                     ; source = source 
@@ -293,18 +293,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".MaxDate") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -329,18 +329,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".MaxStrike") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -365,18 +365,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".MinStrike") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -410,14 +410,14 @@ module LocalConstantVolFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).LocalVol
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).LocalVol
                                                             _t.cell 
                                                             _underlyingLevel.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".LocalVol") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".LocalVol") 
                                                [| _LocalConstantVol.source
                                                ;  _t.source
                                                ;  _underlyingLevel.source
@@ -430,7 +430,7 @@ module LocalConstantVolFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -464,14 +464,14 @@ module LocalConstantVolFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).LocalVol1
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).LocalVol1
                                                             _d.cell 
                                                             _underlyingLevel.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".LocalVol1") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".LocalVol1") 
                                                [| _LocalConstantVol.source
                                                ;  _d.source
                                                ;  _underlyingLevel.source
@@ -484,7 +484,7 @@ module LocalConstantVolFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -509,18 +509,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".BusinessDayConvention") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -548,12 +548,12 @@ module LocalConstantVolFunction =
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).OptionDateFromTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".OptionDateFromTenor") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".OptionDateFromTenor") 
                                                [| _LocalConstantVol.source
                                                ;  _p.source
                                                |]
@@ -562,7 +562,7 @@ module LocalConstantVolFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -587,18 +587,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".Calendar") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".Calendar") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalConstantVol> format
                     ; source = source 
@@ -623,18 +623,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".MaxTime") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -659,18 +659,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".ReferenceDate") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -695,18 +695,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".SettlementDays") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -734,12 +734,12 @@ module LocalConstantVolFunction =
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".TimeFromReference") 
                                                [| _LocalConstantVol.source
                                                ;  _date.source
                                                |]
@@ -748,7 +748,7 @@ module LocalConstantVolFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -773,18 +773,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Update
                                                        ) :> ICell
                 let format (o : LocalConstantVol) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".Update") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".Update") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -809,18 +809,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".AllowsExtrapolation") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -848,12 +848,12 @@ module LocalConstantVolFunction =
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LocalConstantVol) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".DisableExtrapolation") 
                                                [| _LocalConstantVol.source
                                                ;  _b.source
                                                |]
@@ -862,7 +862,7 @@ module LocalConstantVolFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -890,12 +890,12 @@ module LocalConstantVolFunction =
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LocalConstantVol) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".EnableExtrapolation") 
                                                [| _LocalConstantVol.source
                                                ;  _b.source
                                                |]
@@ -904,7 +904,7 @@ module LocalConstantVolFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -929,18 +929,18 @@ module LocalConstantVolFunction =
             try
 
                 let _LocalConstantVol = Helper.toCell<LocalConstantVol> localconstantvol "LocalConstantVol"  
-                let builder () = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalConstantVolModel.Cast _LocalConstantVol.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalConstantVol.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_LocalConstantVol.source + ".Extrapolate") 
                                                [| _LocalConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -969,14 +969,14 @@ module LocalConstantVolFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LocalConstantVol>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LocalConstantVol>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LocalConstantVol>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LocalConstantVol>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

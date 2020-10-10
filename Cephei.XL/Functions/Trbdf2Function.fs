@@ -52,12 +52,12 @@ module Trbdf2Function =
 
                 let _Trbdf2 = Helper.toCell<Trbdf2> trbdf2 "Trbdf2"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((Trbdf2Model.Cast _Trbdf2.cell).SetStep
+                let builder (current : ICell) = withMnemonic mnemonic ((Trbdf2Model.Cast _Trbdf2.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : Trbdf2) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Trbdf2.source + ".SetStep") 
+                let source () = Helper.sourceFold (_Trbdf2.source + ".SetStep") 
                                                [| _Trbdf2.source
                                                ;  _dt.source
                                                |]
@@ -66,7 +66,7 @@ module Trbdf2Function =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -100,14 +100,14 @@ module Trbdf2Function =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((Trbdf2Model.Cast _Trbdf2.cell).Step
+                let builder (current : ICell) = withMnemonic mnemonic ((Trbdf2Model.Cast _Trbdf2.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 
                                                        ) :> ICell
                 let format (o : Trbdf2) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Trbdf2.source + ".Step") 
+                let source () = Helper.sourceFold (_Trbdf2.source + ".Step") 
                                                [| _Trbdf2.source
                                                ;  _a.source
                                                ;  _t.source
@@ -120,7 +120,7 @@ module Trbdf2Function =
                                 ;  _theta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -148,13 +148,13 @@ module Trbdf2Function =
 
                 let _L = Helper.toCell<'Operator> L "L" 
                 let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
-                let builder () = withMnemonic mnemonic (Fun.Trbdf2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Trbdf2 
                                                             _L.cell 
                                                             _bcs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Trbdf2>) l
 
-                let source = Helper.sourceFold "Fun.Trbdf2" 
+                let source () = Helper.sourceFold "Fun.Trbdf2" 
                                                [| _L.source
                                                ;  _bcs.source
                                                |]
@@ -163,7 +163,7 @@ module Trbdf2Function =
                                 ;  _bcs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Trbdf2> format
                     ; source = source 
@@ -185,16 +185,16 @@ module Trbdf2Function =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Trbdf21 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Trbdf21 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Trbdf2>) l
 
-                let source = Helper.sourceFold "Fun.Trbdf21" 
+                let source () = Helper.sourceFold "Fun.Trbdf21" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Trbdf2> format
                     ; source = source 
@@ -223,14 +223,14 @@ module Trbdf2Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Trbdf2>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Trbdf2>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Trbdf2>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Trbdf2>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

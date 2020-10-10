@@ -46,16 +46,16 @@ module OneDayCounterFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.OneDayCounter ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.OneDayCounter ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OneDayCounter>) l
 
-                let source = Helper.sourceFold "Fun.OneDayCounter" 
+                let source () = Helper.sourceFold "Fun.OneDayCounter" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OneDayCounter> format
                     ; source = source 
@@ -86,13 +86,13 @@ module OneDayCounterFunction =
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).DayCount
+                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneDayCounter.source + ".DayCount") 
+                let source () = Helper.sourceFold (_OneDayCounter.source + ".DayCount") 
                                                [| _OneDayCounter.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -103,7 +103,7 @@ module OneDayCounterFunction =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module OneDayCounterFunction =
             try
 
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
-                let builder () = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_OneDayCounter.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_OneDayCounter.source + ".DayCounter") 
                                                [| _OneDayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneDayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OneDayCounter> format
                     ; source = source 
@@ -164,18 +164,18 @@ module OneDayCounterFunction =
             try
 
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
-                let builder () = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OneDayCounter.source + ".Empty") 
+                let source () = Helper.sourceFold (_OneDayCounter.source + ".Empty") 
                                                [| _OneDayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneDayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,12 +203,12 @@ module OneDayCounterFunction =
 
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OneDayCounter.source + ".Equals") 
+                let source () = Helper.sourceFold (_OneDayCounter.source + ".Equals") 
                                                [| _OneDayCounter.source
                                                ;  _o.source
                                                |]
@@ -217,7 +217,7 @@ module OneDayCounterFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module OneDayCounterFunction =
             try
 
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
-                let builder () = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OneDayCounter.source + ".Name") 
+                let source () = Helper.sourceFold (_OneDayCounter.source + ".Name") 
                                                [| _OneDayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneDayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -278,18 +278,18 @@ module OneDayCounterFunction =
             try
 
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
-                let builder () = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OneDayCounter.source + ".ToString") 
+                let source () = Helper.sourceFold (_OneDayCounter.source + ".ToString") 
                                                [| _OneDayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneDayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,7 +326,7 @@ module OneDayCounterFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder () = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).YearFraction
+                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -334,7 +334,7 @@ module OneDayCounterFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneDayCounter.source + ".YearFraction") 
+                let source () = Helper.sourceFold (_OneDayCounter.source + ".YearFraction") 
                                                [| _OneDayCounter.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -349,7 +349,7 @@ module OneDayCounterFunction =
                                 ;  _refPeriodEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,13 +380,13 @@ module OneDayCounterFunction =
                 let _OneDayCounter = Helper.toCell<OneDayCounter> onedaycounter "OneDayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).YearFraction1
+                let builder (current : ICell) = withMnemonic mnemonic ((OneDayCounterModel.Cast _OneDayCounter.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneDayCounter.source + ".YearFraction1") 
+                let source () = Helper.sourceFold (_OneDayCounter.source + ".YearFraction1") 
                                                [| _OneDayCounter.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -397,7 +397,7 @@ module OneDayCounterFunction =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -426,14 +426,14 @@ module OneDayCounterFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<OneDayCounter>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<OneDayCounter>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<OneDayCounter>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<OneDayCounter>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

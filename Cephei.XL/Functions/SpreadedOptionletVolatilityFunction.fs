@@ -49,18 +49,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BusinessDayConvention") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Calendar") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Calendar") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadedOptionletVolatility> format
                     ; source = source 
@@ -121,18 +121,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".DayCounter") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadedOptionletVolatility> format
                     ; source = source 
@@ -157,18 +157,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MaxDate") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MaxStrike") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,18 +229,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MaxTime") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -265,18 +265,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MinStrike") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -301,18 +301,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".ReferenceDate") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,18 +337,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SettlementDays") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -376,13 +376,13 @@ module SpreadedOptionletVolatilityFunction =
 
                 let _baseVol = Helper.toHandle<OptionletVolatilityStructure> baseVol "baseVol" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let builder () = withMnemonic mnemonic (Fun.SpreadedOptionletVolatility 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SpreadedOptionletVolatility 
                                                             _baseVol.cell 
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SpreadedOptionletVolatility>) l
 
-                let source = Helper.sourceFold "Fun.SpreadedOptionletVolatility" 
+                let source () = Helper.sourceFold "Fun.SpreadedOptionletVolatility" 
                                                [| _baseVol.source
                                                ;  _spread.source
                                                |]
@@ -391,7 +391,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _spread.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadedOptionletVolatility> format
                     ; source = source 
@@ -425,14 +425,14 @@ module SpreadedOptionletVolatilityFunction =
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).BlackVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).BlackVariance
                                                             _optionTime.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BlackVariance") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BlackVariance") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _optionTime.source
                                                ;  _strike.source
@@ -445,7 +445,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -479,14 +479,14 @@ module SpreadedOptionletVolatilityFunction =
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).BlackVariance2
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).BlackVariance2
                                                             _optionTenor.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BlackVariance2") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BlackVariance2") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _optionTenor.source
                                                ;  _strike.source
@@ -499,7 +499,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -533,14 +533,14 @@ module SpreadedOptionletVolatilityFunction =
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).BlackVariance1
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).BlackVariance1
                                                             _optionDate.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BlackVariance1") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BlackVariance1") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _optionDate.source
                                                ;  _strike.source
@@ -553,7 +553,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -578,18 +578,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Displacement
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Displacement") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Displacement") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -620,13 +620,13 @@ module SpreadedOptionletVolatilityFunction =
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).SmileSection
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).SmileSection
                                                             _optionTime.cell 
                                                             _extr.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SmileSection") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SmileSection") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _optionTime.source
                                                ;  _extr.source
@@ -637,7 +637,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _extr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadedOptionletVolatility> format
                     ; source = source 
@@ -668,13 +668,13 @@ module SpreadedOptionletVolatilityFunction =
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).SmileSection2
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).SmileSection2
                                                             _optionDate.cell 
                                                             _extr.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SmileSection2") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SmileSection2") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _optionDate.source
                                                ;  _extr.source
@@ -685,7 +685,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _extr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadedOptionletVolatility> format
                     ; source = source 
@@ -716,13 +716,13 @@ module SpreadedOptionletVolatilityFunction =
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).SmileSection1
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).SmileSection1
                                                             _optionTenor.cell 
                                                             _extr.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SmileSection1") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SmileSection1") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _optionTenor.source
                                                ;  _extr.source
@@ -733,7 +733,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _extr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadedOptionletVolatility> format
                     ; source = source 
@@ -767,14 +767,14 @@ module SpreadedOptionletVolatilityFunction =
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Volatility2
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Volatility2
                                                             _optionTime.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Volatility2") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Volatility2") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _optionTime.source
                                                ;  _strike.source
@@ -787,7 +787,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -821,14 +821,14 @@ module SpreadedOptionletVolatilityFunction =
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Volatility1
                                                             _optionDate.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Volatility1") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _optionDate.source
                                                ;  _strike.source
@@ -841,7 +841,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -875,14 +875,14 @@ module SpreadedOptionletVolatilityFunction =
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Volatility
                                                             _optionTenor.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Volatility") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Volatility") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _optionTenor.source
                                                ;  _strike.source
@@ -895,7 +895,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -920,18 +920,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).VolatilityType
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".VolatilityType") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".VolatilityType") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -959,12 +959,12 @@ module SpreadedOptionletVolatilityFunction =
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).OptionDateFromTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".OptionDateFromTenor") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".OptionDateFromTenor") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _p.source
                                                |]
@@ -973,7 +973,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1001,12 +1001,12 @@ module SpreadedOptionletVolatilityFunction =
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".TimeFromReference") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _date.source
                                                |]
@@ -1015,7 +1015,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1040,18 +1040,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Update
                                                        ) :> ICell
                 let format (o : SpreadedOptionletVolatility) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Update") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Update") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1076,18 +1076,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".AllowsExtrapolation") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1115,12 +1115,12 @@ module SpreadedOptionletVolatilityFunction =
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : SpreadedOptionletVolatility) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".DisableExtrapolation") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _b.source
                                                |]
@@ -1129,7 +1129,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1157,12 +1157,12 @@ module SpreadedOptionletVolatilityFunction =
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : SpreadedOptionletVolatility) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".EnableExtrapolation") 
                                                [| _SpreadedOptionletVolatility.source
                                                ;  _b.source
                                                |]
@@ -1171,7 +1171,7 @@ module SpreadedOptionletVolatilityFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1196,18 +1196,18 @@ module SpreadedOptionletVolatilityFunction =
             try
 
                 let _SpreadedOptionletVolatility = Helper.toCell<SpreadedOptionletVolatility> spreadedoptionletvolatility "SpreadedOptionletVolatility"  
-                let builder () = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadedOptionletVolatilityModel.Cast _SpreadedOptionletVolatility.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Extrapolate") 
                                                [| _SpreadedOptionletVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1236,14 +1236,14 @@ module SpreadedOptionletVolatilityFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SpreadedOptionletVolatility>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SpreadedOptionletVolatility>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SpreadedOptionletVolatility>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SpreadedOptionletVolatility>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

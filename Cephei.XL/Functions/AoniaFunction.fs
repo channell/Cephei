@@ -49,19 +49,19 @@ module AoniaFunction =
             try
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.Aonia 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Aonia 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Aonia>) l
 
-                let source = Helper.sourceFold "Fun.Aonia" 
+                let source () = Helper.sourceFold "Fun.Aonia" 
                                                [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Aonia> format
                     ; source = source 
@@ -89,12 +89,12 @@ module AoniaFunction =
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
 
-                let source = Helper.sourceFold (_Aonia.source + ".Clone") 
+                let source () = Helper.sourceFold (_Aonia.source + ".Clone") 
                                                [| _Aonia.source
                                                ;  _h.source
                                                |]
@@ -103,7 +103,7 @@ module AoniaFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Aonia> format
                     ; source = source 
@@ -128,18 +128,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_Aonia.source + ".BusinessDayConvention") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_Aonia.source + ".EndOfMonth") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,14 +209,14 @@ module AoniaFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".ForecastFixing1") 
+                let source () = Helper.sourceFold (_Aonia.source + ".ForecastFixing1") 
                                                [| _Aonia.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -229,7 +229,7 @@ module AoniaFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -258,12 +258,12 @@ module AoniaFunction =
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_Aonia.source + ".ForecastFixing") 
                                                [| _Aonia.source
                                                ;  _fixingDate.source
                                                |]
@@ -272,7 +272,7 @@ module AoniaFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -298,18 +298,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_Aonia.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_Aonia.source + ".ForwardingTermStructure") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Aonia> format
                     ; source = source 
@@ -337,12 +337,12 @@ module AoniaFunction =
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_Aonia.source + ".MaturityDate") 
                                                [| _Aonia.source
                                                ;  _valueDate.source
                                                |]
@@ -351,7 +351,7 @@ module AoniaFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -376,18 +376,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_Aonia.source + ".Currency") 
+                let source () = Helper.sourceFold (_Aonia.source + ".Currency") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Aonia> format
                     ; source = source 
@@ -412,18 +412,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Aonia.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Aonia.source + ".DayCounter") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Aonia> format
                     ; source = source 
@@ -448,18 +448,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_Aonia.source + ".FamilyName") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -490,13 +490,13 @@ module AoniaFunction =
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".Fixing") 
+                let source () = Helper.sourceFold (_Aonia.source + ".Fixing") 
                                                [| _Aonia.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -507,7 +507,7 @@ module AoniaFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -532,18 +532,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_Aonia.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_Aonia.source + ".FixingCalendar") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Aonia> format
                     ; source = source 
@@ -571,12 +571,12 @@ module AoniaFunction =
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_Aonia.source + ".FixingDate") 
                                                [| _Aonia.source
                                                ;  _valueDate.source
                                                |]
@@ -585,7 +585,7 @@ module AoniaFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -610,18 +610,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_Aonia.source + ".FixingDays") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -649,12 +649,12 @@ module AoniaFunction =
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_Aonia.source + ".IsValidFixingDate") 
                                                [| _Aonia.source
                                                ;  _fixingDate.source
                                                |]
@@ -663,7 +663,7 @@ module AoniaFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -688,18 +688,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".Name") 
+                let source () = Helper.sourceFold (_Aonia.source + ".Name") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -727,12 +727,12 @@ module AoniaFunction =
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_Aonia.source + ".PastFixing") 
                                                [| _Aonia.source
                                                ;  _fixingDate.source
                                                |]
@@ -741,7 +741,7 @@ module AoniaFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -766,18 +766,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_Aonia.source + ".Tenor") 
+                let source () = Helper.sourceFold (_Aonia.source + ".Tenor") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Aonia> format
                     ; source = source 
@@ -802,18 +802,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).Update
                                                        ) :> ICell
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".Update") 
+                let source () = Helper.sourceFold (_Aonia.source + ".Update") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -841,12 +841,12 @@ module AoniaFunction =
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_Aonia.source + ".ValueDate") 
                                                [| _Aonia.source
                                                ;  _fixingDate.source
                                                |]
@@ -855,7 +855,7 @@ module AoniaFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -889,14 +889,14 @@ module AoniaFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_Aonia.source + ".AddFixing") 
                                                [| _Aonia.source
                                                ;  _d.source
                                                ;  _v.source
@@ -909,7 +909,7 @@ module AoniaFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -943,14 +943,14 @@ module AoniaFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_Aonia.source + ".AddFixings") 
                                                [| _Aonia.source
                                                ;  _d.source
                                                ;  _v.source
@@ -963,7 +963,7 @@ module AoniaFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -994,13 +994,13 @@ module AoniaFunction =
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_Aonia.source + ".AddFixings1") 
                                                [| _Aonia.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1011,7 +1011,7 @@ module AoniaFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1036,18 +1036,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_Aonia.source + ".AllowsNativeFixings") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1072,18 +1072,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_Aonia.source + ".ClearFixings") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1111,12 +1111,12 @@ module AoniaFunction =
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Aonia.source + ".RegisterWith") 
                                                [| _Aonia.source
                                                ;  _handler.source
                                                |]
@@ -1125,7 +1125,7 @@ module AoniaFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1150,18 +1150,18 @@ module AoniaFunction =
             try
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_Aonia.source + ".TimeSeries") 
                                                [| _Aonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1189,12 +1189,12 @@ module AoniaFunction =
 
                 let _Aonia = Helper.toCell<Aonia> aonia "Aonia"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AoniaModel.Cast _Aonia.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Aonia.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Aonia.source + ".UnregisterWith") 
                                                [| _Aonia.source
                                                ;  _handler.source
                                                |]
@@ -1203,7 +1203,7 @@ module AoniaFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1232,14 +1232,14 @@ module AoniaFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Aonia>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Aonia>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Aonia>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Aonia>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

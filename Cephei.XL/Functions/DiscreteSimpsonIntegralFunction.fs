@@ -55,13 +55,13 @@ module DiscreteSimpsonIntegralFunction =
                 let _DiscreteSimpsonIntegral = Helper.toCell<DiscreteSimpsonIntegral> discretesimpsonintegral "DiscreteSimpsonIntegral"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _f = Helper.toCell<Vector> f "f" 
-                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegralModel.Cast _DiscreteSimpsonIntegral.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteSimpsonIntegralModel.Cast _DiscreteSimpsonIntegral.cell).Value
                                                             _x.cell 
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteSimpsonIntegral.source + ".Value") 
+                let source () = Helper.sourceFold (_DiscreteSimpsonIntegral.source + ".Value") 
                                                [| _DiscreteSimpsonIntegral.source
                                                ;  _x.source
                                                ;  _f.source
@@ -72,7 +72,7 @@ module DiscreteSimpsonIntegralFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -101,14 +101,14 @@ module DiscreteSimpsonIntegralFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscreteSimpsonIntegral>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscreteSimpsonIntegral>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscreteSimpsonIntegral>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscreteSimpsonIntegral>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

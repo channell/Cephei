@@ -61,7 +61,7 @@ module BlackScholesMertonProcessFunction =
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
                 let _d = Helper.toCell<IDiscretization1D> d "d" 
-                let builder () = withMnemonic mnemonic (Fun.BlackScholesMertonProcess 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackScholesMertonProcess 
                                                             _x0.cell 
                                                             _dividendTS.cell 
                                                             _riskFreeTS.cell 
@@ -70,7 +70,7 @@ module BlackScholesMertonProcessFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackScholesMertonProcess>) l
 
-                let source = Helper.sourceFold "Fun.BlackScholesMertonProcess" 
+                let source () = Helper.sourceFold "Fun.BlackScholesMertonProcess" 
                                                [| _x0.source
                                                ;  _dividendTS.source
                                                ;  _riskFreeTS.source
@@ -85,7 +85,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
@@ -119,7 +119,7 @@ module BlackScholesMertonProcessFunction =
                 let _dividendTS = Helper.toHandle<YieldTermStructure> dividendTS "dividendTS" 
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
-                let builder () = withMnemonic mnemonic (Fun.BlackScholesMertonProcess1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackScholesMertonProcess1 
                                                             _x0.cell 
                                                             _dividendTS.cell 
                                                             _riskFreeTS.cell 
@@ -127,7 +127,7 @@ module BlackScholesMertonProcessFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackScholesMertonProcess>) l
 
-                let source = Helper.sourceFold "Fun.BlackScholesMertonProcess1" 
+                let source () = Helper.sourceFold "Fun.BlackScholesMertonProcess1" 
                                                [| _x0.source
                                                ;  _dividendTS.source
                                                ;  _riskFreeTS.source
@@ -140,7 +140,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _blackVolTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
@@ -171,13 +171,13 @@ module BlackScholesMertonProcessFunction =
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dx = Helper.toCell<double> dx "dx" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Apply
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Apply") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Apply") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _x0.source
                                                ;  _dx.source
@@ -188,7 +188,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _dx.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -213,18 +213,18 @@ module BlackScholesMertonProcessFunction =
             try
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).BlackVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).BlackVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<BlackVolTermStructure>>) l
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".BlackVolatility") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".BlackVolatility") 
                                                [| _BlackScholesMertonProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesMertonProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
@@ -255,13 +255,13 @@ module BlackScholesMertonProcessFunction =
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Diffusion
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Diffusion") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Diffusion") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _t.source
                                                ;  _x.source
@@ -272,7 +272,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -297,18 +297,18 @@ module BlackScholesMertonProcessFunction =
             try
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).DividendYield
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".DividendYield") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".DividendYield") 
                                                [| _BlackScholesMertonProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesMertonProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
@@ -339,13 +339,13 @@ module BlackScholesMertonProcessFunction =
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Drift
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Drift") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Drift") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _t.source
                                                ;  _x.source
@@ -356,7 +356,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -393,7 +393,7 @@ module BlackScholesMertonProcessFunction =
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<double> dw "dw" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Evolve
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -401,7 +401,7 @@ module BlackScholesMertonProcessFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Evolve") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Evolve") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -416,7 +416,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _dw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -450,14 +450,14 @@ module BlackScholesMertonProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Expectation
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Expectation") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Expectation") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -470,7 +470,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -495,18 +495,18 @@ module BlackScholesMertonProcessFunction =
             try
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).LocalVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).LocalVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<LocalVolTermStructure>>) l
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".LocalVolatility") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".LocalVolatility") 
                                                [| _BlackScholesMertonProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesMertonProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
@@ -531,18 +531,18 @@ module BlackScholesMertonProcessFunction =
             try
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).RiskFreeRate
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".RiskFreeRate") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".RiskFreeRate") 
                                                [| _BlackScholesMertonProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesMertonProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
@@ -567,18 +567,18 @@ module BlackScholesMertonProcessFunction =
             try
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).StateVariable
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).StateVariable
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".StateVariable") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".StateVariable") 
                                                [| _BlackScholesMertonProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesMertonProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
@@ -612,14 +612,14 @@ module BlackScholesMertonProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).StdDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".StdDeviation") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".StdDeviation") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -632,7 +632,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -660,12 +660,12 @@ module BlackScholesMertonProcessFunction =
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Time
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Time
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Time") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Time") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _d.source
                                                |]
@@ -674,7 +674,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -699,18 +699,18 @@ module BlackScholesMertonProcessFunction =
             try
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Update
                                                        ) :> ICell
                 let format (o : BlackScholesMertonProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Update") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Update") 
                                                [| _BlackScholesMertonProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesMertonProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -744,14 +744,14 @@ module BlackScholesMertonProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Variance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Variance") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Variance") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -764,7 +764,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -789,18 +789,18 @@ module BlackScholesMertonProcessFunction =
             try
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).X0
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".X0") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".X0") 
                                                [| _BlackScholesMertonProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesMertonProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -825,18 +825,18 @@ module BlackScholesMertonProcessFunction =
             try
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).InitialValues
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".InitialValues") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".InitialValues") 
                                                [| _BlackScholesMertonProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesMertonProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
@@ -861,18 +861,18 @@ module BlackScholesMertonProcessFunction =
             try
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Size") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Size") 
                                                [| _BlackScholesMertonProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesMertonProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -906,14 +906,14 @@ module BlackScholesMertonProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Covariance
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Covariance") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Covariance") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -926,7 +926,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackScholesMertonProcess> format
                     ; source = source 
@@ -951,18 +951,18 @@ module BlackScholesMertonProcessFunction =
             try
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Factors
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Factors") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".Factors") 
                                                [| _BlackScholesMertonProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesMertonProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -990,12 +990,12 @@ module BlackScholesMertonProcessFunction =
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BlackScholesMertonProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".RegisterWith") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _handler.source
                                                |]
@@ -1004,7 +1004,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1032,12 +1032,12 @@ module BlackScholesMertonProcessFunction =
 
                 let _BlackScholesMertonProcess = Helper.toCell<BlackScholesMertonProcess> blackscholesmertonprocess "BlackScholesMertonProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesMertonProcessModel.Cast _BlackScholesMertonProcess.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BlackScholesMertonProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BlackScholesMertonProcess.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_BlackScholesMertonProcess.source + ".UnregisterWith") 
                                                [| _BlackScholesMertonProcess.source
                                                ;  _handler.source
                                                |]
@@ -1046,7 +1046,7 @@ module BlackScholesMertonProcessFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1075,14 +1075,14 @@ module BlackScholesMertonProcessFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackScholesMertonProcess>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackScholesMertonProcess>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackScholesMertonProcess>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackScholesMertonProcess>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

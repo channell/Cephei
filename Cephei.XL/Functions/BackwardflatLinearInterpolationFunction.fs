@@ -61,7 +61,7 @@ module BackwardflatLinearInterpolationFunction =
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _yEnd = Helper.toCell<int> yEnd "yEnd" 
                 let _zData = Helper.toCell<Matrix> zData "zData" 
-                let builder () = withMnemonic mnemonic (Fun.BackwardflatLinearInterpolation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BackwardflatLinearInterpolation 
                                                             _xBegin.cell 
                                                             _xEnd.cell 
                                                             _yBegin.cell 
@@ -70,7 +70,7 @@ module BackwardflatLinearInterpolationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BackwardflatLinearInterpolation>) l
 
-                let source = Helper.sourceFold "Fun.BackwardflatLinearInterpolation" 
+                let source () = Helper.sourceFold "Fun.BackwardflatLinearInterpolation" 
                                                [| _xBegin.source
                                                ;  _xEnd.source
                                                ;  _yBegin.source
@@ -85,7 +85,7 @@ module BackwardflatLinearInterpolationFunction =
                                 ;  _zData.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BackwardflatLinearInterpolation> format
                     ; source = source 
@@ -116,13 +116,13 @@ module BackwardflatLinearInterpolationFunction =
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).IsInRange
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).IsInRange
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".IsInRange") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".IsInRange") 
                                                [| _BackwardflatLinearInterpolation.source
                                                ;  _x.source
                                                ;  _y.source
@@ -133,7 +133,7 @@ module BackwardflatLinearInterpolationFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -161,12 +161,12 @@ module BackwardflatLinearInterpolationFunction =
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).LocateX
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).LocateX
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".LocateX") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".LocateX") 
                                                [| _BackwardflatLinearInterpolation.source
                                                ;  _x.source
                                                |]
@@ -175,7 +175,7 @@ module BackwardflatLinearInterpolationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,12 +203,12 @@ module BackwardflatLinearInterpolationFunction =
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).LocateY
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).LocateY
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".LocateY") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".LocateY") 
                                                [| _BackwardflatLinearInterpolation.source
                                                ;  _y.source
                                                |]
@@ -217,7 +217,7 @@ module BackwardflatLinearInterpolationFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module BackwardflatLinearInterpolationFunction =
             try
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : BackwardflatLinearInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".Update") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".Update") 
                                                [| _BackwardflatLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BackwardflatLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,13 +284,13 @@ module BackwardflatLinearInterpolationFunction =
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).Value1
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".Value1") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".Value1") 
                                                [| _BackwardflatLinearInterpolation.source
                                                ;  _x.source
                                                ;  _y.source
@@ -301,7 +301,7 @@ module BackwardflatLinearInterpolationFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -335,14 +335,14 @@ module BackwardflatLinearInterpolationFunction =
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).Value
                                                             _x.cell 
                                                             _y.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".Value") 
                                                [| _BackwardflatLinearInterpolation.source
                                                ;  _x.source
                                                ;  _y.source
@@ -355,7 +355,7 @@ module BackwardflatLinearInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,18 +380,18 @@ module BackwardflatLinearInterpolationFunction =
             try
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".XMax") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".XMax") 
                                                [| _BackwardflatLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BackwardflatLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -416,18 +416,18 @@ module BackwardflatLinearInterpolationFunction =
             try
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".XMin") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".XMin") 
                                                [| _BackwardflatLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BackwardflatLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -452,18 +452,18 @@ module BackwardflatLinearInterpolationFunction =
             try
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).XValues
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).XValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".XValues") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".XValues") 
                                                [| _BackwardflatLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BackwardflatLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -488,18 +488,18 @@ module BackwardflatLinearInterpolationFunction =
             try
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).YMax
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).YMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".YMax") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".YMax") 
                                                [| _BackwardflatLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BackwardflatLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -524,18 +524,18 @@ module BackwardflatLinearInterpolationFunction =
             try
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).YMin
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).YMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".YMin") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".YMin") 
                                                [| _BackwardflatLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BackwardflatLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -560,18 +560,18 @@ module BackwardflatLinearInterpolationFunction =
             try
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).YValues
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).YValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".YValues") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".YValues") 
                                                [| _BackwardflatLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BackwardflatLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -596,18 +596,18 @@ module BackwardflatLinearInterpolationFunction =
             try
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).ZData
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).ZData
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".ZData") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".ZData") 
                                                [| _BackwardflatLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BackwardflatLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BackwardflatLinearInterpolation> format
                     ; source = source 
@@ -632,18 +632,18 @@ module BackwardflatLinearInterpolationFunction =
             try
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".AllowsExtrapolation") 
                                                [| _BackwardflatLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BackwardflatLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -671,12 +671,12 @@ module BackwardflatLinearInterpolationFunction =
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : BackwardflatLinearInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".DisableExtrapolation") 
                                                [| _BackwardflatLinearInterpolation.source
                                                ;  _b.source
                                                |]
@@ -685,7 +685,7 @@ module BackwardflatLinearInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -713,12 +713,12 @@ module BackwardflatLinearInterpolationFunction =
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : BackwardflatLinearInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".EnableExtrapolation") 
                                                [| _BackwardflatLinearInterpolation.source
                                                ;  _b.source
                                                |]
@@ -727,7 +727,7 @@ module BackwardflatLinearInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -752,18 +752,18 @@ module BackwardflatLinearInterpolationFunction =
             try
 
                 let _BackwardflatLinearInterpolation = Helper.toCell<BackwardflatLinearInterpolation> backwardflatlinearinterpolation "BackwardflatLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearInterpolationModel.Cast _BackwardflatLinearInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_BackwardflatLinearInterpolation.source + ".Extrapolate") 
                                                [| _BackwardflatLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BackwardflatLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -792,14 +792,14 @@ module BackwardflatLinearInterpolationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BackwardflatLinearInterpolation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BackwardflatLinearInterpolation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BackwardflatLinearInterpolation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BackwardflatLinearInterpolation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,19 +49,19 @@ module GenericModelEngineFunction =
             try
 
                 let _model = Helper.toCell<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic (Fun.GenericModelEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericModelEngine 
                                                             _model.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GenericModelEngine>) l
 
-                let source = Helper.sourceFold "Fun.GenericModelEngine" 
+                let source () = Helper.sourceFold "Fun.GenericModelEngine" 
                                                [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericModelEngine> format
                     ; source = source 
@@ -88,19 +88,19 @@ module GenericModelEngineFunction =
             try
 
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic (Fun.GenericModelEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericModelEngine1 
                                                             _model.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GenericModelEngine>) l
 
-                let source = Helper.sourceFold "Fun.GenericModelEngine1" 
+                let source () = Helper.sourceFold "Fun.GenericModelEngine1" 
                                                [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericModelEngine> format
                     ; source = source 
@@ -122,16 +122,16 @@ module GenericModelEngineFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.GenericModelEngine2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericModelEngine2 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GenericModelEngine>) l
 
-                let source = Helper.sourceFold "Fun.GenericModelEngine2" 
+                let source () = Helper.sourceFold "Fun.GenericModelEngine2" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericModelEngine> format
                     ; source = source 
@@ -160,12 +160,12 @@ module GenericModelEngineFunction =
 
                 let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
                 let _model = Helper.toHandle<'ModelTyp>> model "model" 
-                let builder () = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericModelEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_GenericModelEngine.source + ".SetModel") 
                                                [| _GenericModelEngine.source
                                                ;  _model.source
                                                |]
@@ -174,7 +174,7 @@ module GenericModelEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,12 +203,12 @@ module GenericModelEngineFunction =
 
                 let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericModelEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_GenericModelEngine.source + ".RegisterWith") 
                                                [| _GenericModelEngine.source
                                                ;  _handler.source
                                                |]
@@ -217,7 +217,7 @@ module GenericModelEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module GenericModelEngineFunction =
             try
 
                 let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
-                let builder () = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericModelEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_GenericModelEngine.source + ".Reset") 
                                                [| _GenericModelEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericModelEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -281,12 +281,12 @@ module GenericModelEngineFunction =
 
                 let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericModelEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_GenericModelEngine.source + ".UnregisterWith") 
                                                [| _GenericModelEngine.source
                                                ;  _handler.source
                                                |]
@@ -295,7 +295,7 @@ module GenericModelEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module GenericModelEngineFunction =
             try
 
                 let _GenericModelEngine = Helper.toCell<GenericModelEngine> genericmodelengine "GenericModelEngine"  
-                let builder () = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericModelEngineModel.Cast _GenericModelEngine.cell).Update
                                                        ) :> ICell
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericModelEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_GenericModelEngine.source + ".Update") 
                                                [| _GenericModelEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericModelEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -360,14 +360,14 @@ module GenericModelEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GenericModelEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GenericModelEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GenericModelEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GenericModelEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

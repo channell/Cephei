@@ -64,7 +64,7 @@ module FordeHestonExpansionFunction =
                 let _v0 = Helper.toCell<double> v0 "v0" 
                 let _rho = Helper.toCell<double> rho "rho" 
                 let _term = Helper.toCell<double> term "term" 
-                let builder () = withMnemonic mnemonic (Fun.FordeHestonExpansion 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FordeHestonExpansion 
                                                             _kappa.cell 
                                                             _theta.cell 
                                                             _sigma.cell 
@@ -74,7 +74,7 @@ module FordeHestonExpansionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FordeHestonExpansion>) l
 
-                let source = Helper.sourceFold "Fun.FordeHestonExpansion" 
+                let source () = Helper.sourceFold "Fun.FordeHestonExpansion" 
                                                [| _kappa.source
                                                ;  _theta.source
                                                ;  _sigma.source
@@ -91,7 +91,7 @@ module FordeHestonExpansionFunction =
                                 ;  _term.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FordeHestonExpansion> format
                     ; source = source 
@@ -122,13 +122,13 @@ module FordeHestonExpansionFunction =
                 let _FordeHestonExpansion = Helper.toCell<FordeHestonExpansion> fordehestonexpansion "FordeHestonExpansion"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _forward = Helper.toCell<double> forward "forward" 
-                let builder () = withMnemonic mnemonic ((FordeHestonExpansionModel.Cast _FordeHestonExpansion.cell).ImpliedVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((FordeHestonExpansionModel.Cast _FordeHestonExpansion.cell).ImpliedVolatility
                                                             _strike.cell 
                                                             _forward.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FordeHestonExpansion.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_FordeHestonExpansion.source + ".ImpliedVolatility") 
                                                [| _FordeHestonExpansion.source
                                                ;  _strike.source
                                                ;  _forward.source
@@ -139,7 +139,7 @@ module FordeHestonExpansionFunction =
                                 ;  _forward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -168,14 +168,14 @@ module FordeHestonExpansionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FordeHestonExpansion>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FordeHestonExpansion>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FordeHestonExpansion>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FordeHestonExpansion>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

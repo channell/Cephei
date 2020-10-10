@@ -55,14 +55,14 @@ module ComboHelperFunction =
                 let _quadraticHelper = Helper.toCell<ISectionHelper> quadraticHelper "quadraticHelper" 
                 let _convMonoHelper = Helper.toCell<ISectionHelper> convMonoHelper "convMonoHelper" 
                 let _quadraticity = Helper.toCell<double> quadraticity "quadraticity" 
-                let builder () = withMnemonic mnemonic (Fun.ComboHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ComboHelper 
                                                             _quadraticHelper.cell 
                                                             _convMonoHelper.cell 
                                                             _quadraticity.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ComboHelper>) l
 
-                let source = Helper.sourceFold "Fun.ComboHelper" 
+                let source () = Helper.sourceFold "Fun.ComboHelper" 
                                                [| _quadraticHelper.source
                                                ;  _convMonoHelper.source
                                                ;  _quadraticity.source
@@ -73,7 +73,7 @@ module ComboHelperFunction =
                                 ;  _quadraticity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ComboHelper> format
                     ; source = source 
@@ -98,18 +98,18 @@ module ComboHelperFunction =
             try
 
                 let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
-                let builder () = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).FNext
+                let builder (current : ICell) = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ComboHelper.source + ".FNext") 
+                let source () = Helper.sourceFold (_ComboHelper.source + ".FNext") 
                                                [| _ComboHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ComboHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -137,12 +137,12 @@ module ComboHelperFunction =
 
                 let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ComboHelper.source + ".Primitive") 
+                let source () = Helper.sourceFold (_ComboHelper.source + ".Primitive") 
                                                [| _ComboHelper.source
                                                ;  _x.source
                                                |]
@@ -151,7 +151,7 @@ module ComboHelperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -179,12 +179,12 @@ module ComboHelperFunction =
 
                 let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ComboHelper.source + ".Value") 
+                let source () = Helper.sourceFold (_ComboHelper.source + ".Value") 
                                                [| _ComboHelper.source
                                                ;  _x.source
                                                |]
@@ -193,7 +193,7 @@ module ComboHelperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -222,14 +222,14 @@ module ComboHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ComboHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ComboHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ComboHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ComboHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

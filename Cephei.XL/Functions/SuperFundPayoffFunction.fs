@@ -49,18 +49,18 @@ module SuperFundPayoffFunction =
             try
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
-                let builder () = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SuperFundPayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_SuperFundPayoff.source + ".Name") 
                                                [| _SuperFundPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SuperFundPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module SuperFundPayoffFunction =
             try
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
-                let builder () = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).SecondStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).SecondStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SuperFundPayoff.source + ".SecondStrike") 
+                let source () = Helper.sourceFold (_SuperFundPayoff.source + ".SecondStrike") 
                                                [| _SuperFundPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SuperFundPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,13 +124,13 @@ module SuperFundPayoffFunction =
 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _secondStrike = Helper.toCell<double> secondStrike "secondStrike" 
-                let builder () = withMnemonic mnemonic (Fun.SuperFundPayoff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SuperFundPayoff 
                                                             _strike.cell 
                                                             _secondStrike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SuperFundPayoff>) l
 
-                let source = Helper.sourceFold "Fun.SuperFundPayoff" 
+                let source () = Helper.sourceFold "Fun.SuperFundPayoff" 
                                                [| _strike.source
                                                ;  _secondStrike.source
                                                |]
@@ -139,7 +139,7 @@ module SuperFundPayoffFunction =
                                 ;  _secondStrike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SuperFundPayoff> format
                     ; source = source 
@@ -167,12 +167,12 @@ module SuperFundPayoffFunction =
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SuperFundPayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_SuperFundPayoff.source + ".Value") 
                                                [| _SuperFundPayoff.source
                                                ;  _price.source
                                                |]
@@ -181,7 +181,7 @@ module SuperFundPayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,18 +206,18 @@ module SuperFundPayoffFunction =
             try
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
-                let builder () = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SuperFundPayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_SuperFundPayoff.source + ".Description") 
                                                [| _SuperFundPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SuperFundPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module SuperFundPayoffFunction =
             try
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
-                let builder () = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Strike
+                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SuperFundPayoff.source + ".Strike") 
+                let source () = Helper.sourceFold (_SuperFundPayoff.source + ".Strike") 
                                                [| _SuperFundPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SuperFundPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -278,18 +278,18 @@ module SuperFundPayoffFunction =
             try
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
-                let builder () = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).OptionType
+                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SuperFundPayoff.source + ".OptionType") 
+                let source () = Helper.sourceFold (_SuperFundPayoff.source + ".OptionType") 
                                                [| _SuperFundPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SuperFundPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -317,12 +317,12 @@ module SuperFundPayoffFunction =
 
                 let _SuperFundPayoff = Helper.toCell<SuperFundPayoff> superfundpayoff "SuperFundPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((SuperFundPayoffModel.Cast _SuperFundPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : SuperFundPayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SuperFundPayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_SuperFundPayoff.source + ".Accept") 
                                                [| _SuperFundPayoff.source
                                                ;  _v.source
                                                |]
@@ -331,7 +331,7 @@ module SuperFundPayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -360,14 +360,14 @@ module SuperFundPayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SuperFundPayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SuperFundPayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SuperFundPayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SuperFundPayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

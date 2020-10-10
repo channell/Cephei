@@ -55,13 +55,13 @@ module SquareRootProcessFunction =
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Diffusion
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Diffusion
                                                             _UnnamedParameter1.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Diffusion") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Diffusion") 
                                                [| _SquareRootProcess.source
                                                ;  _UnnamedParameter1.source
                                                ;  _x.source
@@ -72,7 +72,7 @@ module SquareRootProcessFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module SquareRootProcessFunction =
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Drift
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Drift
                                                             _UnnamedParameter1.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Drift") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Drift") 
                                                [| _SquareRootProcess.source
                                                ;  _UnnamedParameter1.source
                                                ;  _x.source
@@ -120,7 +120,7 @@ module SquareRootProcessFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -154,7 +154,7 @@ module SquareRootProcessFunction =
                 let _a = Helper.toCell<double> a "a" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
-                let builder () = withMnemonic mnemonic (Fun.SquareRootProcess2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SquareRootProcess2 
                                                             _b.cell 
                                                             _a.cell 
                                                             _sigma.cell 
@@ -162,7 +162,7 @@ module SquareRootProcessFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SquareRootProcess>) l
 
-                let source = Helper.sourceFold "Fun.SquareRootProcess2" 
+                let source () = Helper.sourceFold "Fun.SquareRootProcess2" 
                                                [| _b.source
                                                ;  _a.source
                                                ;  _sigma.source
@@ -175,7 +175,7 @@ module SquareRootProcessFunction =
                                 ;  _x0.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
@@ -212,7 +212,7 @@ module SquareRootProcessFunction =
                 let _sigma = Helper.toCell<double> sigma "sigma" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _disc = Helper.toCell<IDiscretization1D> disc "disc" 
-                let builder () = withMnemonic mnemonic (Fun.SquareRootProcess
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SquareRootProcess
                                                             _b.cell 
                                                             _a.cell 
                                                             _sigma.cell 
@@ -221,7 +221,7 @@ module SquareRootProcessFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SquareRootProcess>) l
 
-                let source = Helper.sourceFold "Fun.SquareRootProcess" 
+                let source () = Helper.sourceFold "Fun.SquareRootProcess" 
                                                [| _b.source
                                                ;  _a.source
                                                ;  _sigma.source
@@ -236,7 +236,7 @@ module SquareRootProcessFunction =
                                 ;  _disc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
@@ -267,14 +267,14 @@ module SquareRootProcessFunction =
                 let _b = Helper.toCell<double> b "b" 
                 let _a = Helper.toCell<double> a "a" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder () = withMnemonic mnemonic (Fun.SquareRootProcess1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SquareRootProcess1
                                                             _b.cell 
                                                             _a.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SquareRootProcess>) l
 
-                let source = Helper.sourceFold "Fun.SquareRootProcess1" 
+                let source () = Helper.sourceFold "Fun.SquareRootProcess1" 
                                                [| _b.source
                                                ;  _a.source
                                                ;  _sigma.source
@@ -285,7 +285,7 @@ module SquareRootProcessFunction =
                                 ;  _sigma.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
@@ -310,18 +310,18 @@ module SquareRootProcessFunction =
             try
 
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).X0
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".X0") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".X0") 
                                                [| _SquareRootProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SquareRootProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -352,13 +352,13 @@ module SquareRootProcessFunction =
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Apply1
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Apply1
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Apply1") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Apply1") 
                                                [| _SquareRootProcess.source
                                                ;  _x0.source
                                                ;  _dx.source
@@ -369,7 +369,7 @@ module SquareRootProcessFunction =
                                 ;  _dx.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
@@ -400,13 +400,13 @@ module SquareRootProcessFunction =
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dx = Helper.toCell<double> dx "dx" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Apply
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Apply") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Apply") 
                                                [| _SquareRootProcess.source
                                                ;  _x0.source
                                                ;  _dx.source
@@ -417,7 +417,7 @@ module SquareRootProcessFunction =
                                 ;  _dx.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -454,7 +454,7 @@ module SquareRootProcessFunction =
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<Vector> dw "dw" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Evolve
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -462,7 +462,7 @@ module SquareRootProcessFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Evolve") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Evolve") 
                                                [| _SquareRootProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -477,7 +477,7 @@ module SquareRootProcessFunction =
                                 ;  _dw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
@@ -514,7 +514,7 @@ module SquareRootProcessFunction =
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<double> dw "dw" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Evolve1
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Evolve1
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -522,7 +522,7 @@ module SquareRootProcessFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Evolve1") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Evolve1") 
                                                [| _SquareRootProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -537,7 +537,7 @@ module SquareRootProcessFunction =
                                 ;  _dw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -571,14 +571,14 @@ module SquareRootProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Expectation
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Expectation") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Expectation") 
                                                [| _SquareRootProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -591,7 +591,7 @@ module SquareRootProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
@@ -625,14 +625,14 @@ module SquareRootProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Expectation1
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Expectation1
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Expectation1") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Expectation1") 
                                                [| _SquareRootProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -645,7 +645,7 @@ module SquareRootProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -670,18 +670,18 @@ module SquareRootProcessFunction =
             try
 
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).InitialValues
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".InitialValues") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".InitialValues") 
                                                [| _SquareRootProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SquareRootProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
@@ -706,18 +706,18 @@ module SquareRootProcessFunction =
             try
 
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Size") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Size") 
                                                [| _SquareRootProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SquareRootProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -751,14 +751,14 @@ module SquareRootProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).StdDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".StdDeviation") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".StdDeviation") 
                                                [| _SquareRootProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -771,7 +771,7 @@ module SquareRootProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
@@ -805,14 +805,14 @@ module SquareRootProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).StdDeviation1
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).StdDeviation1
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".StdDeviation1") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".StdDeviation1") 
                                                [| _SquareRootProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -825,7 +825,7 @@ module SquareRootProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -859,14 +859,14 @@ module SquareRootProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Variance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Variance") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Variance") 
                                                [| _SquareRootProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -879,7 +879,7 @@ module SquareRootProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
@@ -913,14 +913,14 @@ module SquareRootProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Variance1
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Variance1
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Variance1") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Variance1") 
                                                [| _SquareRootProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -933,7 +933,7 @@ module SquareRootProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -967,14 +967,14 @@ module SquareRootProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Covariance
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Covariance") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Covariance") 
                                                [| _SquareRootProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -987,7 +987,7 @@ module SquareRootProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SquareRootProcess> format
                     ; source = source 
@@ -1012,18 +1012,18 @@ module SquareRootProcessFunction =
             try
 
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Factors
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Factors") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Factors") 
                                                [| _SquareRootProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SquareRootProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1051,12 +1051,12 @@ module SquareRootProcessFunction =
 
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SquareRootProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".RegisterWith") 
                                                [| _SquareRootProcess.source
                                                ;  _handler.source
                                                |]
@@ -1065,7 +1065,7 @@ module SquareRootProcessFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1093,12 +1093,12 @@ module SquareRootProcessFunction =
 
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Time
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Time
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Time") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Time") 
                                                [| _SquareRootProcess.source
                                                ;  _d.source
                                                |]
@@ -1107,7 +1107,7 @@ module SquareRootProcessFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1135,12 +1135,12 @@ module SquareRootProcessFunction =
 
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SquareRootProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".UnregisterWith") 
                                                [| _SquareRootProcess.source
                                                ;  _handler.source
                                                |]
@@ -1149,7 +1149,7 @@ module SquareRootProcessFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1174,18 +1174,18 @@ module SquareRootProcessFunction =
             try
 
                 let _SquareRootProcess = Helper.toCell<SquareRootProcess> squarerootprocess "SquareRootProcess"  
-                let builder () = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((SquareRootProcessModel.Cast _SquareRootProcess.cell).Update
                                                        ) :> ICell
                 let format (o : SquareRootProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SquareRootProcess.source + ".Update") 
+                let source () = Helper.sourceFold (_SquareRootProcess.source + ".Update") 
                                                [| _SquareRootProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SquareRootProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1214,14 +1214,14 @@ module SquareRootProcessFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SquareRootProcess>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SquareRootProcess>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SquareRootProcess>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SquareRootProcess>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

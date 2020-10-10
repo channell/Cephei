@@ -61,7 +61,7 @@ module MixedLinearMonotonicParabolicFunction =
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _n = Helper.toCell<int> n "n" 
                 let _behavior = Helper.toDefault<Behavior> behavior "behavior" Behavior.ShareRanges
-                let builder () = withMnemonic mnemonic (Fun.MixedLinearMonotonicParabolic 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MixedLinearMonotonicParabolic 
                                                             _xBegin.cell 
                                                             _xEnd.cell 
                                                             _yBegin.cell 
@@ -70,7 +70,7 @@ module MixedLinearMonotonicParabolicFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MixedLinearMonotonicParabolic>) l
 
-                let source = Helper.sourceFold "Fun.MixedLinearMonotonicParabolic" 
+                let source () = Helper.sourceFold "Fun.MixedLinearMonotonicParabolic" 
                                                [| _xBegin.source
                                                ;  _xEnd.source
                                                ;  _yBegin.source
@@ -85,7 +85,7 @@ module MixedLinearMonotonicParabolicFunction =
                                 ;  _behavior.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MixedLinearMonotonicParabolic> format
                     ; source = source 
@@ -116,13 +116,13 @@ module MixedLinearMonotonicParabolicFunction =
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Derivative") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Derivative") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -133,7 +133,7 @@ module MixedLinearMonotonicParabolicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -158,18 +158,18 @@ module MixedLinearMonotonicParabolicFunction =
             try
 
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Empty") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Empty") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearMonotonicParabolic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,13 +200,13 @@ module MixedLinearMonotonicParabolicFunction =
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Primitive") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Primitive") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -217,7 +217,7 @@ module MixedLinearMonotonicParabolicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,13 +248,13 @@ module MixedLinearMonotonicParabolicFunction =
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".SecondDerivative") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -265,7 +265,7 @@ module MixedLinearMonotonicParabolicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,18 +290,18 @@ module MixedLinearMonotonicParabolicFunction =
             try
 
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Update
                                                        ) :> ICell
                 let format (o : MixedLinearMonotonicParabolic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Update") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Update") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearMonotonicParabolic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -332,13 +332,13 @@ module MixedLinearMonotonicParabolicFunction =
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Value1") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Value1") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -349,7 +349,7 @@ module MixedLinearMonotonicParabolicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,12 +377,12 @@ module MixedLinearMonotonicParabolicFunction =
 
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Value") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Value") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                ;  _x.source
                                                |]
@@ -391,7 +391,7 @@ module MixedLinearMonotonicParabolicFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -416,18 +416,18 @@ module MixedLinearMonotonicParabolicFunction =
             try
 
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".XMax") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".XMax") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearMonotonicParabolic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -452,18 +452,18 @@ module MixedLinearMonotonicParabolicFunction =
             try
 
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".XMin") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".XMin") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearMonotonicParabolic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,18 +488,18 @@ module MixedLinearMonotonicParabolicFunction =
             try
 
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".AllowsExtrapolation") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearMonotonicParabolic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -527,12 +527,12 @@ module MixedLinearMonotonicParabolicFunction =
 
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : MixedLinearMonotonicParabolic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".DisableExtrapolation") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                ;  _b.source
                                                |]
@@ -541,7 +541,7 @@ module MixedLinearMonotonicParabolicFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -569,12 +569,12 @@ module MixedLinearMonotonicParabolicFunction =
 
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : MixedLinearMonotonicParabolic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".EnableExtrapolation") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                ;  _b.source
                                                |]
@@ -583,7 +583,7 @@ module MixedLinearMonotonicParabolicFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module MixedLinearMonotonicParabolicFunction =
             try
 
                 let _MixedLinearMonotonicParabolic = Helper.toCell<MixedLinearMonotonicParabolic> mixedlinearmonotonicparabolic "MixedLinearMonotonicParabolic"  
-                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedLinearMonotonicParabolicModel.Cast _MixedLinearMonotonicParabolic.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_MixedLinearMonotonicParabolic.source + ".Extrapolate") 
                                                [| _MixedLinearMonotonicParabolic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearMonotonicParabolic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -648,14 +648,14 @@ module MixedLinearMonotonicParabolicFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MixedLinearMonotonicParabolic>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MixedLinearMonotonicParabolic>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MixedLinearMonotonicParabolic>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MixedLinearMonotonicParabolic>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

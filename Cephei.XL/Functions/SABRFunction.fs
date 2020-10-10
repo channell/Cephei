@@ -58,14 +58,14 @@ module SABRFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _xEnd = Helper.toCell<int> xEnd "xEnd" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((SABRModel.Cast _SABR.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRModel.Cast _SABR.cell).Interpolate
                                                             _xBegin.cell 
                                                             _xEnd.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_SABR.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_SABR.source + ".Interpolate") 
                                                [| _SABR.source
                                                ;  _xBegin.source
                                                ;  _xEnd.source
@@ -78,7 +78,7 @@ module SABRFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SABR> format
                     ; source = source 
@@ -157,7 +157,7 @@ module SABRFunction =
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let _volatilityType = Helper.toDefault<VolatilityType> volatilityType "volatilityType" VolatilityType.ShiftedLognormal
                 let _approximationModel = Helper.toDefault<SabrApproximationModel> approximationModel "approximationModel" SabrApproximationModel.Hagan2002
-                let builder () = withMnemonic mnemonic (Fun.SABR 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SABR 
                                                             _t.cell 
                                                             _forward.cell 
                                                             _alpha.cell 
@@ -180,7 +180,7 @@ module SABRFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SABR>) l
 
-                let source = Helper.sourceFold "Fun.SABR" 
+                let source () = Helper.sourceFold "Fun.SABR" 
                                                [| _t.source
                                                ;  _forward.source
                                                ;  _alpha.source
@@ -223,7 +223,7 @@ module SABRFunction =
                                 ;  _approximationModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SABR> format
                     ; source = source 
@@ -252,14 +252,14 @@ module SABRFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SABR>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SABR>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SABR>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SABR>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

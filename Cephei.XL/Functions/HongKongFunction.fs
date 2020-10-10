@@ -67,16 +67,16 @@ module HongKongFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.HongKong ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.HongKong ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HongKong>) l
 
-                let source = Helper.sourceFold "Fun.HongKong" 
+                let source () = Helper.sourceFold "Fun.HongKong" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<HongKong> format
                     ; source = source 
@@ -101,18 +101,18 @@ module HongKongFunction =
             try
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).AddedHolidays
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_HongKong.source + ".AddedHolidays") 
+                let source () = Helper.sourceFold (_HongKong.source + ".AddedHolidays") 
                                                [| _HongKong.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -140,12 +140,12 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).AddHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : HongKong) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".AddHoliday") 
+                let source () = Helper.sourceFold (_HongKong.source + ".AddHoliday") 
                                                [| _HongKong.source
                                                ;  _d.source
                                                |]
@@ -154,7 +154,7 @@ module HongKongFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -185,13 +185,13 @@ module HongKongFunction =
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Adjust
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".Adjust") 
+                let source () = Helper.sourceFold (_HongKong.source + ".Adjust") 
                                                [| _HongKong.source
                                                ;  _d.source
                                                ;  _c.source
@@ -202,7 +202,7 @@ module HongKongFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,7 +242,7 @@ module HongKongFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Advance1
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -251,7 +251,7 @@ module HongKongFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".Advance1") 
+                let source () = Helper.sourceFold (_HongKong.source + ".Advance1") 
                                                [| _HongKong.source
                                                ;  _d.source
                                                ;  _n.source
@@ -268,7 +268,7 @@ module HongKongFunction =
                                 ;  _endOfMonth.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -305,7 +305,7 @@ module HongKongFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Advance
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -313,7 +313,7 @@ module HongKongFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".Advance") 
+                let source () = Helper.sourceFold (_HongKong.source + ".Advance") 
                                                [| _HongKong.source
                                                ;  _d.source
                                                ;  _p.source
@@ -328,7 +328,7 @@ module HongKongFunction =
                                 ;  _endOfMonth.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -365,7 +365,7 @@ module HongKongFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).BusinessDaysBetween
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -373,7 +373,7 @@ module HongKongFunction =
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".BusinessDaysBetween") 
+                let source () = Helper.sourceFold (_HongKong.source + ".BusinessDaysBetween") 
                                                [| _HongKong.source
                                                ;  _from.source
                                                ;  _To.source
@@ -388,7 +388,7 @@ module HongKongFunction =
                                 ;  _includeLast.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -413,18 +413,18 @@ module HongKongFunction =
             try
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_HongKong.source + ".Calendar") 
+                let source () = Helper.sourceFold (_HongKong.source + ".Calendar") 
                                                [| _HongKong.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<HongKong> format
                     ; source = source 
@@ -449,18 +449,18 @@ module HongKongFunction =
             try
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".Empty") 
+                let source () = Helper.sourceFold (_HongKong.source + ".Empty") 
                                                [| _HongKong.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,12 +488,12 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_HongKong.source + ".EndOfMonth") 
                                                [| _HongKong.source
                                                ;  _d.source
                                                |]
@@ -502,7 +502,7 @@ module HongKongFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -530,12 +530,12 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".Equals") 
+                let source () = Helper.sourceFold (_HongKong.source + ".Equals") 
                                                [| _HongKong.source
                                                ;  _o.source
                                                |]
@@ -544,7 +544,7 @@ module HongKongFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -572,12 +572,12 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsBusinessDay
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".IsBusinessDay") 
+                let source () = Helper.sourceFold (_HongKong.source + ".IsBusinessDay") 
                                                [| _HongKong.source
                                                ;  _d.source
                                                |]
@@ -586,7 +586,7 @@ module HongKongFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -614,12 +614,12 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsEndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".IsEndOfMonth") 
+                let source () = Helper.sourceFold (_HongKong.source + ".IsEndOfMonth") 
                                                [| _HongKong.source
                                                ;  _d.source
                                                |]
@@ -628,7 +628,7 @@ module HongKongFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -656,12 +656,12 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".IsHoliday") 
+                let source () = Helper.sourceFold (_HongKong.source + ".IsHoliday") 
                                                [| _HongKong.source
                                                ;  _d.source
                                                |]
@@ -670,7 +670,7 @@ module HongKongFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -698,12 +698,12 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsWeekend
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".IsWeekend") 
+                let source () = Helper.sourceFold (_HongKong.source + ".IsWeekend") 
                                                [| _HongKong.source
                                                ;  _w.source
                                                |]
@@ -712,7 +712,7 @@ module HongKongFunction =
                                 ;  _w.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -739,18 +739,18 @@ module HongKongFunction =
             try
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".Name") 
+                let source () = Helper.sourceFold (_HongKong.source + ".Name") 
                                                [| _HongKong.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -775,18 +775,18 @@ module HongKongFunction =
             try
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).RemovedHolidays
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_HongKong.source + ".RemovedHolidays") 
+                let source () = Helper.sourceFold (_HongKong.source + ".RemovedHolidays") 
                                                [| _HongKong.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -814,12 +814,12 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).RemoveHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : HongKong) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HongKong.source + ".RemoveHoliday") 
+                let source () = Helper.sourceFold (_HongKong.source + ".RemoveHoliday") 
                                                [| _HongKong.source
                                                ;  _d.source
                                                |]
@@ -828,7 +828,7 @@ module HongKongFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -857,14 +857,14 @@ module HongKongFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HongKong>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<HongKong>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<HongKong>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<HongKong>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

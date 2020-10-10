@@ -73,7 +73,7 @@ module CommercialPaperFunction =
                 let _paymentConvention = Helper.toNullable<BusinessDayConvention> paymentConvention "paymentConvention"
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.CommercialPaper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CommercialPaper 
                                                             _Type.cell 
                                                             _nominal.cell 
                                                             _fixedSchedule.cell 
@@ -86,7 +86,7 @@ module CommercialPaperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CommercialPaper>) l
 
-                let source = Helper.sourceFold "Fun.CommercialPaper" 
+                let source () = Helper.sourceFold "Fun.CommercialPaper" 
                                                [| _Type.source
                                                ;  _nominal.source
                                                ;  _fixedSchedule.source
@@ -109,7 +109,7 @@ module CommercialPaperFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CommercialPaper> format
                     ; source = source 
@@ -134,18 +134,18 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).FixedLeg
+                let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).FixedLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CommercialPaper.source + ".FixedLeg") 
+                let source () = Helper.sourceFold (_CommercialPaper.source + ".FixedLeg") 
                                                [| _CommercialPaper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -170,18 +170,18 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).PrincipalLeg
+                let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).PrincipalLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CommercialPaper.source + ".PrincipalLeg") 
+                let source () = Helper.sourceFold (_CommercialPaper.source + ".PrincipalLeg") 
                                                [| _CommercialPaper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -206,18 +206,18 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CommercialPaper.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_CommercialPaper.source + ".IsExpired") 
                                                [| _CommercialPaper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CommercialPaper.source + ".CASH") 
+                let source () = Helper.sourceFold (_CommercialPaper.source + ".CASH") 
                                                [| _CommercialPaper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -278,18 +278,18 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CommercialPaper.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_CommercialPaper.source + ".ErrorEstimate") 
                                                [| _CommercialPaper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -314,18 +314,18 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CommercialPaper.source + ".NPV") 
+                let source () = Helper.sourceFold (_CommercialPaper.source + ".NPV") 
                                                [| _CommercialPaper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -353,12 +353,12 @@ module CommercialPaperFunction =
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CommercialPaper.source + ".Result") 
+                let source () = Helper.sourceFold (_CommercialPaper.source + ".Result") 
                                                [| _CommercialPaper.source
                                                ;  _tag.source
                                                |]
@@ -367,7 +367,7 @@ module CommercialPaperFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -395,12 +395,12 @@ module CommercialPaperFunction =
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CommercialPaper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CommercialPaper.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_CommercialPaper.source + ".SetPricingEngine") 
                                                [| _CommercialPaper.source
                                                ;  _e.source
                                                |]
@@ -409,7 +409,7 @@ module CommercialPaperFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -434,18 +434,18 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CommercialPaper.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_CommercialPaper.source + ".ValuationDate") 
                                                [| _CommercialPaper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -474,14 +474,14 @@ module CommercialPaperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CommercialPaper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CommercialPaper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CommercialPaper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CommercialPaper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

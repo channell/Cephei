@@ -41,9 +41,10 @@ type ExcelInterface (f : string -> string-> obj[,] -> unit) =
             ExcelDnaUtil.IsInFunctionWizard()
 
         member this.ModelRTD  (mnemonic : string) (hashcode : string) = 
-            XlCall.RTD ("Cephei.XL.ModelRTD", null, mnemonic, hashcode) 
+            XlCall.RTD ("Cephei.XL.ModelRTD", null, mnemonic, hashcode)
 
         member this.ValueRTD  (mnemonic : string) (layout : string) = 
-            XlCall.RTD ("Cephei.XL.ValueRTD", null, mnemonic, layout) 
+            XlCall.RTD ("Cephei.XL.ValueRTD", null, mnemonic, layout)
+            
 
  

@@ -58,7 +58,7 @@ module FlatForwardFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward4 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward4 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _forward.cell 
@@ -66,7 +66,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward4" 
+                let source () = Helper.sourceFold "Fun.FlatForward4" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _forward.source
@@ -79,7 +79,7 @@ module FlatForwardFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -116,7 +116,7 @@ module FlatForwardFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward10
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward10
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
@@ -125,7 +125,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward10" 
+                let source () = Helper.sourceFold "Fun.FlatForward10" 
                                                [| _referenceDate.source
                                                ;  _forward.source
                                                ;  _dayCounter.source
@@ -140,7 +140,7 @@ module FlatForwardFunction =
                                 ;  _frequency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -171,14 +171,14 @@ module FlatForwardFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward9
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward9
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward9" 
+                let source () = Helper.sourceFold "Fun.FlatForward9" 
                                                [| _referenceDate.source
                                                ;  _forward.source
                                                ;  _dayCounter.source
@@ -189,7 +189,7 @@ module FlatForwardFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -223,7 +223,7 @@ module FlatForwardFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward8
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward8
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
@@ -231,7 +231,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward8" 
+                let source () = Helper.sourceFold "Fun.FlatForward8" 
                                                [| _referenceDate.source
                                                ;  _forward.source
                                                ;  _dayCounter.source
@@ -244,7 +244,7 @@ module FlatForwardFunction =
                                 ;  _compounding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -281,7 +281,7 @@ module FlatForwardFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward7
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward7
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
@@ -290,7 +290,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward7" 
+                let source () = Helper.sourceFold "Fun.FlatForward7" 
                                                [| _referenceDate.source
                                                ;  _forward.source
                                                ;  _dayCounter.source
@@ -305,7 +305,7 @@ module FlatForwardFunction =
                                 ;  _frequency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -339,7 +339,7 @@ module FlatForwardFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _forward = Helper.toCell<Quote> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward1
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _forward.cell 
@@ -347,7 +347,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward1" 
+                let source () = Helper.sourceFold "Fun.FlatForward1" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _forward.source
@@ -360,7 +360,7 @@ module FlatForwardFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -394,7 +394,7 @@ module FlatForwardFunction =
                 let _forward = Helper.toCell<Quote> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward11 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward11 
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
@@ -402,7 +402,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward11" 
+                let source () = Helper.sourceFold "Fun.FlatForward11" 
                                                [| _referenceDate.source
                                                ;  _forward.source
                                                ;  _dayCounter.source
@@ -415,7 +415,7 @@ module FlatForwardFunction =
                                 ;  _compounding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -455,7 +455,7 @@ module FlatForwardFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward5
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward5
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _forward.cell 
@@ -465,7 +465,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward5" 
+                let source () = Helper.sourceFold "Fun.FlatForward5" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _forward.source
@@ -482,7 +482,7 @@ module FlatForwardFunction =
                                 ;  _frequency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -513,14 +513,14 @@ module FlatForwardFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _forward = Helper.toCell<Quote> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward" 
+                let source () = Helper.sourceFold "Fun.FlatForward" 
                                                [| _referenceDate.source
                                                ;  _forward.source
                                                ;  _dayCounter.source
@@ -531,7 +531,7 @@ module FlatForwardFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -568,7 +568,7 @@ module FlatForwardFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _forward.cell 
@@ -577,7 +577,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward3" 
+                let source () = Helper.sourceFold "Fun.FlatForward3" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _forward.source
@@ -592,7 +592,7 @@ module FlatForwardFunction =
                                 ;  _compounding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -632,7 +632,7 @@ module FlatForwardFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward2
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _forward.cell 
@@ -642,7 +642,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward2" 
+                let source () = Helper.sourceFold "Fun.FlatForward2" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _forward.source
@@ -659,7 +659,7 @@ module FlatForwardFunction =
                                 ;  _frequency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -696,7 +696,7 @@ module FlatForwardFunction =
                 let _forward = Helper.toCell<Quote> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
-                let builder () = withMnemonic mnemonic (Fun.FlatForward6 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward6 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _forward.cell 
@@ -705,7 +705,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
-                let source = Helper.sourceFold "Fun.FlatForward6" 
+                let source () = Helper.sourceFold "Fun.FlatForward6" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _forward.source
@@ -720,7 +720,7 @@ module FlatForwardFunction =
                                 ;  _compounding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -745,18 +745,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".MaxDate") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -787,13 +787,13 @@ module FlatForwardFunction =
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Discount
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".Discount") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".Discount") 
                                                [| _FlatForward.source
                                                ;  _t.source
                                                ;  _extrapolate.source
@@ -804,7 +804,7 @@ module FlatForwardFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -835,13 +835,13 @@ module FlatForwardFunction =
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Discount1
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Discount1
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".Discount1") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".Discount1") 
                                                [| _FlatForward.source
                                                ;  _d.source
                                                ;  _extrapolate.source
@@ -852,7 +852,7 @@ module FlatForwardFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -895,7 +895,7 @@ module FlatForwardFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ForwardRate
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ForwardRate
                                                             _d.cell 
                                                             _p.cell 
                                                             _dayCounter.cell 
@@ -905,7 +905,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_FlatForward.source + ".ForwardRate") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".ForwardRate") 
                                                [| _FlatForward.source
                                                ;  _d.source
                                                ;  _p.source
@@ -924,7 +924,7 @@ module FlatForwardFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -967,7 +967,7 @@ module FlatForwardFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ForwardRate1
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ForwardRate1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _dayCounter.cell 
@@ -977,7 +977,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_FlatForward.source + ".ForwardRate1") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".ForwardRate1") 
                                                [| _FlatForward.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -996,7 +996,7 @@ module FlatForwardFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -1036,7 +1036,7 @@ module FlatForwardFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ForwardRate2
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ForwardRate2
                                                             _t1.cell 
                                                             _t2.cell 
                                                             _comp.cell 
@@ -1045,7 +1045,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_FlatForward.source + ".ForwardRate2") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".ForwardRate2") 
                                                [| _FlatForward.source
                                                ;  _t1.source
                                                ;  _t2.source
@@ -1062,7 +1062,7 @@ module FlatForwardFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -1087,18 +1087,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).JumpDates
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_FlatForward.source + ".JumpDates") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".JumpDates") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -1123,18 +1123,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).JumpTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FlatForward.source + ".JumpTimes") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".JumpTimes") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1159,18 +1159,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Update
                                                        ) :> ICell
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".Update") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".Update") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1210,7 +1210,7 @@ module FlatForwardFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ZeroRate1
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ZeroRate1
                                                             _d.cell 
                                                             _dayCounter.cell 
                                                             _comp.cell 
@@ -1219,7 +1219,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_FlatForward.source + ".ZeroRate1") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".ZeroRate1") 
                                                [| _FlatForward.source
                                                ;  _d.source
                                                ;  _dayCounter.source
@@ -1236,7 +1236,7 @@ module FlatForwardFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -1273,7 +1273,7 @@ module FlatForwardFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ZeroRate
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ZeroRate
                                                             _t.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1281,7 +1281,7 @@ module FlatForwardFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_FlatForward.source + ".ZeroRate") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".ZeroRate") 
                                                [| _FlatForward.source
                                                ;  _t.source
                                                ;  _comp.source
@@ -1296,7 +1296,7 @@ module FlatForwardFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -1321,18 +1321,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_FlatForward.source + ".Calendar") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".Calendar") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -1357,18 +1357,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_FlatForward.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".DayCounter") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatForward> format
                     ; source = source 
@@ -1393,18 +1393,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".MaxTime") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1429,18 +1429,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".ReferenceDate") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1465,18 +1465,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".SettlementDays") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1504,12 +1504,12 @@ module FlatForwardFunction =
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".TimeFromReference") 
                                                [| _FlatForward.source
                                                ;  _date.source
                                                |]
@@ -1518,7 +1518,7 @@ module FlatForwardFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1543,18 +1543,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".AllowsExtrapolation") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1582,12 +1582,12 @@ module FlatForwardFunction =
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".DisableExtrapolation") 
                                                [| _FlatForward.source
                                                ;  _b.source
                                                |]
@@ -1596,7 +1596,7 @@ module FlatForwardFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1624,12 +1624,12 @@ module FlatForwardFunction =
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".EnableExtrapolation") 
                                                [| _FlatForward.source
                                                ;  _b.source
                                                |]
@@ -1638,7 +1638,7 @@ module FlatForwardFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1663,18 +1663,18 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FlatForward.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_FlatForward.source + ".Extrapolate") 
                                                [| _FlatForward.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1703,14 +1703,14 @@ module FlatForwardFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FlatForward>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FlatForward>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FlatForward>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FlatForward>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

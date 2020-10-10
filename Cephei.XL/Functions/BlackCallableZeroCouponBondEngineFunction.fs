@@ -52,13 +52,13 @@ module BlackCallableZeroCouponBondEngineFunction =
 
                 let _yieldVolStructure = Helper.toHandle<CallableBondVolatilityStructure> yieldVolStructure "yieldVolStructure" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic (Fun.BlackCallableZeroCouponBondEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCallableZeroCouponBondEngine 
                                                             _yieldVolStructure.cell 
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCallableZeroCouponBondEngine>) l
 
-                let source = Helper.sourceFold "Fun.BlackCallableZeroCouponBondEngine" 
+                let source () = Helper.sourceFold "Fun.BlackCallableZeroCouponBondEngine" 
                                                [| _yieldVolStructure.source
                                                ;  _discountCurve.source
                                                |]
@@ -67,7 +67,7 @@ module BlackCallableZeroCouponBondEngineFunction =
                                 ;  _discountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackCallableZeroCouponBondEngine> format
                     ; source = source 
@@ -95,13 +95,13 @@ module BlackCallableZeroCouponBondEngineFunction =
 
                 let _fwdYieldVol = Helper.toHandle<Quote> fwdYieldVol "fwdYieldVol" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic (Fun.BlackCallableZeroCouponBondEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCallableZeroCouponBondEngine1 
                                                             _fwdYieldVol.cell 
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCallableZeroCouponBondEngine>) l
 
-                let source = Helper.sourceFold "Fun.BlackCallableZeroCouponBondEngine1" 
+                let source () = Helper.sourceFold "Fun.BlackCallableZeroCouponBondEngine1" 
                                                [| _fwdYieldVol.source
                                                ;  _discountCurve.source
                                                |]
@@ -110,7 +110,7 @@ module BlackCallableZeroCouponBondEngineFunction =
                                 ;  _discountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackCallableZeroCouponBondEngine> format
                     ; source = source 
@@ -140,14 +140,14 @@ module BlackCallableZeroCouponBondEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackCallableZeroCouponBondEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackCallableZeroCouponBondEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackCallableZeroCouponBondEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackCallableZeroCouponBondEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

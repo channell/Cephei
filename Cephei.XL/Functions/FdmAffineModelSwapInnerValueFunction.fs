@@ -55,13 +55,13 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).AvgInnerValue
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmAffineModelSwapInnerValue.source + ".AvgInnerValue") 
+                let source () = Helper.sourceFold (_FdmAffineModelSwapInnerValue.source + ".AvgInnerValue") 
                                                [| _FdmAffineModelSwapInnerValue.source
                                                ;  _iter.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module FdmAffineModelSwapInnerValueFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -112,7 +112,7 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _exerciseDates = Helper.toCell<Dictionary<double,Date>> exerciseDates "exerciseDates" 
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder () = withMnemonic mnemonic (Fun.FdmAffineModelSwapInnerValue 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmAffineModelSwapInnerValue 
                                                             _disModel.cell 
                                                             _fwdModel.cell 
                                                             _swap.cell 
@@ -122,7 +122,7 @@ module FdmAffineModelSwapInnerValueFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmAffineModelSwapInnerValue>) l
 
-                let source = Helper.sourceFold "Fun.FdmAffineModelSwapInnerValue" 
+                let source () = Helper.sourceFold "Fun.FdmAffineModelSwapInnerValue" 
                                                [| _disModel.source
                                                ;  _fwdModel.source
                                                ;  _swap.source
@@ -139,7 +139,7 @@ module FdmAffineModelSwapInnerValueFunction =
                                 ;  _direction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmAffineModelSwapInnerValue> format
                     ; source = source 
@@ -173,14 +173,14 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _model = Helper.toCell<'ModelType> model "model" 
                 let _t = Helper.toCell<double> t "t" 
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
-                let builder () = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).GetState
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).GetState
                                                             _model.cell 
                                                             _t.cell 
                                                             _iter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FdmAffineModelSwapInnerValue.source + ".GetState") 
+                let source () = Helper.sourceFold (_FdmAffineModelSwapInnerValue.source + ".GetState") 
                                                [| _FdmAffineModelSwapInnerValue.source
                                                ;  _model.source
                                                ;  _t.source
@@ -193,7 +193,7 @@ module FdmAffineModelSwapInnerValueFunction =
                                 ;  _iter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmAffineModelSwapInnerValue> format
                     ; source = source 
@@ -224,13 +224,13 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).InnerValue
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmAffineModelSwapInnerValue.source + ".InnerValue") 
+                let source () = Helper.sourceFold (_FdmAffineModelSwapInnerValue.source + ".InnerValue") 
                                                [| _FdmAffineModelSwapInnerValue.source
                                                ;  _iter.source
                                                ;  _t.source
@@ -241,7 +241,7 @@ module FdmAffineModelSwapInnerValueFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -270,14 +270,14 @@ module FdmAffineModelSwapInnerValueFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmAffineModelSwapInnerValue>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmAffineModelSwapInnerValue>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmAffineModelSwapInnerValue>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmAffineModelSwapInnerValue>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

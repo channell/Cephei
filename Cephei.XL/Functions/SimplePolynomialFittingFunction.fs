@@ -49,18 +49,18 @@ module SimplePolynomialFittingFunction =
             try
 
                 let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
-                let builder () = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
-                let source = Helper.sourceFold (_SimplePolynomialFitting.source + ".Clone") 
+                let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".Clone") 
                                                [| _SimplePolynomialFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimplePolynomialFitting> format
                     ; source = source 
@@ -94,7 +94,7 @@ module SimplePolynomialFittingFunction =
                 let _constrainAtZero = Helper.toDefault<bool> constrainAtZero "constrainAtZero" true
                 let _weights = Helper.toDefault<Vector> weights "weights" null
                 let _optimizationMethod = Helper.toDefault<OptimizationMethod> optimizationMethod "optimizationMethod" null
-                let builder () = withMnemonic mnemonic (Fun.SimplePolynomialFitting 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimplePolynomialFitting 
                                                             _degree.cell 
                                                             _constrainAtZero.cell 
                                                             _weights.cell 
@@ -102,7 +102,7 @@ module SimplePolynomialFittingFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SimplePolynomialFitting>) l
 
-                let source = Helper.sourceFold "Fun.SimplePolynomialFitting" 
+                let source () = Helper.sourceFold "Fun.SimplePolynomialFitting" 
                                                [| _degree.source
                                                ;  _constrainAtZero.source
                                                ;  _weights.source
@@ -115,7 +115,7 @@ module SimplePolynomialFittingFunction =
                                 ;  _optimizationMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimplePolynomialFitting> format
                     ; source = source 
@@ -140,18 +140,18 @@ module SimplePolynomialFittingFunction =
             try
 
                 let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
-                let builder () = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimplePolynomialFitting.source + ".Size") 
+                let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".Size") 
                                                [| _SimplePolynomialFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,18 +176,18 @@ module SimplePolynomialFittingFunction =
             try
 
                 let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
-                let builder () = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).ConstrainAtZero
+                let builder (current : ICell) = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimplePolynomialFitting.source + ".ConstrainAtZero") 
+                let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".ConstrainAtZero") 
                                                [| _SimplePolynomialFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -218,13 +218,13 @@ module SimplePolynomialFittingFunction =
                 let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Discount
                                                             _x.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimplePolynomialFitting.source + ".Discount") 
+                let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".Discount") 
                                                [| _SimplePolynomialFitting.source
                                                ;  _x.source
                                                ;  _t.source
@@ -235,7 +235,7 @@ module SimplePolynomialFittingFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,18 +260,18 @@ module SimplePolynomialFittingFunction =
             try
 
                 let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
-                let builder () = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).MinimumCostValue
+                let builder (current : ICell) = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimplePolynomialFitting.source + ".MinimumCostValue") 
+                let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".MinimumCostValue") 
                                                [| _SimplePolynomialFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,18 +296,18 @@ module SimplePolynomialFittingFunction =
             try
 
                 let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
-                let builder () = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).NumberOfIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimplePolynomialFitting.source + ".NumberOfIterations") 
+                let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".NumberOfIterations") 
                                                [| _SimplePolynomialFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -332,18 +332,18 @@ module SimplePolynomialFittingFunction =
             try
 
                 let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
-                let builder () = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).OptimizationMethod
+                let builder (current : ICell) = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
-                let source = Helper.sourceFold (_SimplePolynomialFitting.source + ".OptimizationMethod") 
+                let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".OptimizationMethod") 
                                                [| _SimplePolynomialFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimplePolynomialFitting> format
                     ; source = source 
@@ -368,18 +368,18 @@ module SimplePolynomialFittingFunction =
             try
 
                 let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
-                let builder () = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Solution
+                let builder (current : ICell) = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SimplePolynomialFitting.source + ".Solution") 
+                let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".Solution") 
                                                [| _SimplePolynomialFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimplePolynomialFitting> format
                     ; source = source 
@@ -404,18 +404,18 @@ module SimplePolynomialFittingFunction =
             try
 
                 let _SimplePolynomialFitting = Helper.toCell<SimplePolynomialFitting> simplepolynomialfitting "SimplePolynomialFitting"  
-                let builder () = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((SimplePolynomialFittingModel.Cast _SimplePolynomialFitting.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SimplePolynomialFitting.source + ".Weights") 
+                let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".Weights") 
                                                [| _SimplePolynomialFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimplePolynomialFitting> format
                     ; source = source 
@@ -444,14 +444,14 @@ module SimplePolynomialFittingFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SimplePolynomialFitting>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SimplePolynomialFitting>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SimplePolynomialFitting>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SimplePolynomialFitting>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module TypePayoffFunction =
             try
 
                 let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
-                let builder () = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TypePayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_TypePayoff.source + ".Description") 
                                                [| _TypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module TypePayoffFunction =
             try
 
                 let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
-                let builder () = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).OptionType
+                let builder (current : ICell) = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TypePayoff.source + ".OptionType") 
+                let source () = Helper.sourceFold (_TypePayoff.source + ".OptionType") 
                                                [| _TypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,19 +121,19 @@ module TypePayoffFunction =
             try
 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic (Fun.TypePayoff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TypePayoff 
                                                             _Type.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TypePayoff>) l
 
-                let source = Helper.sourceFold "Fun.TypePayoff" 
+                let source () = Helper.sourceFold "Fun.TypePayoff" 
                                                [| _Type.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TypePayoff> format
                     ; source = source 
@@ -161,12 +161,12 @@ module TypePayoffFunction =
 
                 let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : TypePayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TypePayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_TypePayoff.source + ".Accept") 
                                                [| _TypePayoff.source
                                                ;  _v.source
                                                |]
@@ -175,7 +175,7 @@ module TypePayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module TypePayoffFunction =
             try
 
                 let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
-                let builder () = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TypePayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_TypePayoff.source + ".Name") 
                                                [| _TypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -239,12 +239,12 @@ module TypePayoffFunction =
 
                 let _TypePayoff = Helper.toCell<TypePayoff> typepayoff "TypePayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((TypePayoffModel.Cast _TypePayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TypePayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_TypePayoff.source + ".Value") 
                                                [| _TypePayoff.source
                                                ;  _price.source
                                                |]
@@ -253,7 +253,7 @@ module TypePayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -282,14 +282,14 @@ module TypePayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TypePayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TypePayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TypePayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TypePayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

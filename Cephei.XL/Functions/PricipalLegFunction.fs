@@ -52,13 +52,13 @@ module PricipalLegFunction =
 
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
-                let builder () = withMnemonic mnemonic (Fun.PricipalLeg 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PricipalLeg 
                                                             _schedule.cell 
                                                             _paymentDayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PricipalLeg>) l
 
-                let source = Helper.sourceFold "Fun.PricipalLeg" 
+                let source () = Helper.sourceFold "Fun.PricipalLeg" 
                                                [| _schedule.source
                                                ;  _paymentDayCounter.source
                                                |]
@@ -67,7 +67,7 @@ module PricipalLegFunction =
                                 ;  _paymentDayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
@@ -92,18 +92,18 @@ module PricipalLegFunction =
             try
 
                 let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
-                let builder () = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_PricipalLeg.source + ".Value") 
+                let source () = Helper.sourceFold (_PricipalLeg.source + ".Value") 
                                                [| _PricipalLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricipalLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -131,12 +131,12 @@ module PricipalLegFunction =
 
                 let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).WithNotionals
+                let builder (current : ICell) = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).WithNotionals
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
-                let source = Helper.sourceFold (_PricipalLeg.source + ".WithNotionals") 
+                let source () = Helper.sourceFold (_PricipalLeg.source + ".WithNotionals") 
                                                [| _PricipalLeg.source
                                                ;  _notionals.source
                                                |]
@@ -145,7 +145,7 @@ module PricipalLegFunction =
                                 ;  _notionals.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
@@ -173,12 +173,12 @@ module PricipalLegFunction =
 
                 let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).WithNotionals1
+                let builder (current : ICell) = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).WithNotionals1
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
-                let source = Helper.sourceFold (_PricipalLeg.source + ".WithNotionals1") 
+                let source () = Helper.sourceFold (_PricipalLeg.source + ".WithNotionals1") 
                                                [| _PricipalLeg.source
                                                ;  _notional.source
                                                |]
@@ -187,7 +187,7 @@ module PricipalLegFunction =
                                 ;  _notional.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
@@ -215,12 +215,12 @@ module PricipalLegFunction =
 
                 let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).WithPaymentAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
-                let source = Helper.sourceFold (_PricipalLeg.source + ".WithPaymentAdjustment") 
+                let source () = Helper.sourceFold (_PricipalLeg.source + ".WithPaymentAdjustment") 
                                                [| _PricipalLeg.source
                                                ;  _convention.source
                                                |]
@@ -229,7 +229,7 @@ module PricipalLegFunction =
                                 ;  _convention.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
@@ -257,12 +257,12 @@ module PricipalLegFunction =
 
                 let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).WithPaymentDayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
-                let source = Helper.sourceFold (_PricipalLeg.source + ".WithPaymentDayCounter") 
+                let source () = Helper.sourceFold (_PricipalLeg.source + ".WithPaymentDayCounter") 
                                                [| _PricipalLeg.source
                                                ;  _dayCounter.source
                                                |]
@@ -271,7 +271,7 @@ module PricipalLegFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
@@ -299,12 +299,12 @@ module PricipalLegFunction =
 
                 let _PricipalLeg = Helper.toCell<PricipalLeg> pricipalleg "PricipalLeg"  
                 let _sign = Helper.toCell<int> sign "sign" 
-                let builder () = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).WithSign
+                let builder (current : ICell) = withMnemonic mnemonic ((PricipalLegModel.Cast _PricipalLeg.cell).WithSign
                                                             _sign.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
-                let source = Helper.sourceFold (_PricipalLeg.source + ".WithSign") 
+                let source () = Helper.sourceFold (_PricipalLeg.source + ".WithSign") 
                                                [| _PricipalLeg.source
                                                ;  _sign.source
                                                |]
@@ -313,7 +313,7 @@ module PricipalLegFunction =
                                 ;  _sign.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PricipalLeg> format
                     ; source = source 
@@ -342,14 +342,14 @@ module PricipalLegFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PricipalLeg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PricipalLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PricipalLeg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PricipalLeg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

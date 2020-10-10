@@ -56,13 +56,13 @@ module DiscrepancyStatisticsFunction =
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let _weight = Helper.toCell<double> weight "weight" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Add
                                                             _Begin.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : DiscrepancyStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Add") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Add") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _Begin.source
                                                ;  _weight.source
@@ -73,7 +73,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -102,12 +102,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Add1
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Add1
                                                             _Begin.cell 
                                                        ) :> ICell
                 let format (o : DiscrepancyStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Add") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Add") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _Begin.source
                                                |]
@@ -116,7 +116,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _Begin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -141,18 +141,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Discrepancy
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Discrepancy
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Discrepancy") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Discrepancy") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -177,19 +177,19 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _dimension = Helper.toCell<int> dimension "dimension" 
-                let builder () = withMnemonic mnemonic (Fun.DiscrepancyStatistics 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscrepancyStatistics 
                                                             _dimension.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscrepancyStatistics>) l
 
-                let source = Helper.sourceFold "Fun.DiscrepancyStatistics" 
+                let source () = Helper.sourceFold "Fun.DiscrepancyStatistics" 
                                                [| _dimension.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _dimension.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscrepancyStatistics> format
                     ; source = source 
@@ -217,12 +217,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _dimension = Helper.toCell<int> dimension "dimension" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Reset
                                                             _dimension.cell 
                                                        ) :> ICell
                 let format (o : DiscrepancyStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Reset") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Reset") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _dimension.source
                                                |]
@@ -231,7 +231,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _dimension.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -259,12 +259,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).AverageShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).AverageShortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".AverageShortfall") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".AverageShortfall") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -273,7 +273,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -298,18 +298,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Correlation
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Correlation
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Correlation") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Correlation") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscrepancyStatistics> format
                     ; source = source 
@@ -334,18 +334,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Covariance
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Covariance
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Covariance") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Covariance") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscrepancyStatistics> format
                     ; source = source 
@@ -370,18 +370,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).DownsideDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).DownsideDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".DownsideDeviation") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".DownsideDeviation") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -406,18 +406,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).DownsideVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).DownsideVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".DownsideVariance") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".DownsideVariance") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -442,18 +442,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".ErrorEstimate") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -481,12 +481,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).ExpectedShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).ExpectedShortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".ExpectedShortfall") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".ExpectedShortfall") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -495,7 +495,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -523,12 +523,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianAverageShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianAverageShortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianAverageShortfall") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianAverageShortfall") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -537,7 +537,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -565,12 +565,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianExpectedShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianExpectedShortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianExpectedShortfall") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianExpectedShortfall") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -579,7 +579,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -607,12 +607,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianPercentile
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianPercentile
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianPercentile") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianPercentile") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -621,7 +621,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -649,12 +649,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianPotentialUpside
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianPotentialUpside
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianPotentialUpside") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianPotentialUpside") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -663,7 +663,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -691,12 +691,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianShortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianShortfall") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianShortfall") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -705,7 +705,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -733,12 +733,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianValueAtRisk
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).GaussianValueAtRisk
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianValueAtRisk") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianValueAtRisk") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -747,7 +747,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -772,18 +772,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Kurtosis
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Kurtosis") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Kurtosis") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -808,18 +808,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Max
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Max
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Max") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Max") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -844,18 +844,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Mean
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Mean
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Mean") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Mean") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -880,18 +880,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Min
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Min
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Min") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Min") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -919,12 +919,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Percentile
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Percentile
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Percentile") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Percentile") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -933,7 +933,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -961,12 +961,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).PotentialUpside
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).PotentialUpside
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".PotentialUpside") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".PotentialUpside") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -975,7 +975,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1003,12 +1003,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Regret
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Regret
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Regret") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Regret") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -1017,7 +1017,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1042,18 +1042,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Samples
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Samples") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Samples") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1078,18 +1078,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).SemiDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).SemiDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".SemiDeviation") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".SemiDeviation") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1114,18 +1114,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).SemiVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).SemiVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".SemiVariance") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".SemiVariance") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1153,12 +1153,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Shortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Shortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Shortfall") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Shortfall") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -1167,7 +1167,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1192,18 +1192,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Size") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Size") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1228,18 +1228,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Skewness
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Skewness") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Skewness") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1264,18 +1264,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).StandardDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".StandardDeviation") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".StandardDeviation") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1303,12 +1303,12 @@ module DiscrepancyStatisticsFunction =
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).ValueAtRisk
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).ValueAtRisk
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".ValueAtRisk") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".ValueAtRisk") 
                                                [| _DiscrepancyStatistics.source
                                                ;  _x.source
                                                |]
@@ -1317,7 +1317,7 @@ module DiscrepancyStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1342,18 +1342,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).Variance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".Variance") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Variance") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1378,18 +1378,18 @@ module DiscrepancyStatisticsFunction =
             try
 
                 let _DiscrepancyStatistics = Helper.toCell<DiscrepancyStatistics> discrepancystatistics "DiscrepancyStatistics"  
-                let builder () = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).WeightSum
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscrepancyStatisticsModel.Cast _DiscrepancyStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscrepancyStatistics.source + ".WeightSum") 
+                let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".WeightSum") 
                                                [| _DiscrepancyStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1418,14 +1418,14 @@ module DiscrepancyStatisticsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscrepancyStatistics>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscrepancyStatistics>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscrepancyStatistics>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscrepancyStatistics>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

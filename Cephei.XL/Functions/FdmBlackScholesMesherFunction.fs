@@ -82,7 +82,7 @@ module FdmBlackScholesMesherFunction =
                 let _dividendSchedule = Helper.toDefault<DividendSchedule> dividendSchedule "dividendSchedule" null
                 let _fdmQuantoHelper = Helper.toDefault<FdmQuantoHelper> fdmQuantoHelper "fdmQuantoHelper" null
                 let _spotAdjustment = Helper.toDefault<double> spotAdjustment "spotAdjustment" 0.0
-                let builder () = withMnemonic mnemonic (Fun.FdmBlackScholesMesher 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmBlackScholesMesher 
                                                             _size.cell 
                                                             _Process.cell 
                                                             _maturity.cell 
@@ -98,7 +98,7 @@ module FdmBlackScholesMesherFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmBlackScholesMesher>) l
 
-                let source = Helper.sourceFold "Fun.FdmBlackScholesMesher" 
+                let source () = Helper.sourceFold "Fun.FdmBlackScholesMesher" 
                                                [| _size.source
                                                ;  _Process.source
                                                ;  _maturity.source
@@ -127,7 +127,7 @@ module FdmBlackScholesMesherFunction =
                                 ;  _spotAdjustment.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmBlackScholesMesher> format
                     ; source = source 
@@ -155,12 +155,12 @@ module FdmBlackScholesMesherFunction =
 
                 let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Dminus
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Dminus
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmBlackScholesMesher.source + ".Dminus") 
+                let source () = Helper.sourceFold (_FdmBlackScholesMesher.source + ".Dminus") 
                                                [| _FdmBlackScholesMesher.source
                                                ;  _index.source
                                                |]
@@ -169,7 +169,7 @@ module FdmBlackScholesMesherFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -197,12 +197,12 @@ module FdmBlackScholesMesherFunction =
 
                 let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Dplus
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Dplus
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmBlackScholesMesher.source + ".Dplus") 
+                let source () = Helper.sourceFold (_FdmBlackScholesMesher.source + ".Dplus") 
                                                [| _FdmBlackScholesMesher.source
                                                ;  _index.source
                                                |]
@@ -211,7 +211,7 @@ module FdmBlackScholesMesherFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -239,12 +239,12 @@ module FdmBlackScholesMesherFunction =
 
                 let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Location
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Location
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmBlackScholesMesher.source + ".Location") 
+                let source () = Helper.sourceFold (_FdmBlackScholesMesher.source + ".Location") 
                                                [| _FdmBlackScholesMesher.source
                                                ;  _index.source
                                                |]
@@ -253,7 +253,7 @@ module FdmBlackScholesMesherFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -278,18 +278,18 @@ module FdmBlackScholesMesherFunction =
             try
 
                 let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
-                let builder () = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Locations
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FdmBlackScholesMesher.source + ".Locations") 
+                let source () = Helper.sourceFold (_FdmBlackScholesMesher.source + ".Locations") 
                                                [| _FdmBlackScholesMesher.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmBlackScholesMesher.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -314,18 +314,18 @@ module FdmBlackScholesMesherFunction =
             try
 
                 let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
-                let builder () = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmBlackScholesMesher.source + ".Size") 
+                let source () = Helper.sourceFold (_FdmBlackScholesMesher.source + ".Size") 
                                                [| _FdmBlackScholesMesher.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmBlackScholesMesher.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -354,14 +354,14 @@ module FdmBlackScholesMesherFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmBlackScholesMesher>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmBlackScholesMesher>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmBlackScholesMesher>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmBlackScholesMesher>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

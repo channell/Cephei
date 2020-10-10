@@ -50,18 +50,18 @@ module MonteCarloCatBondEngineFunction =
             try
 
                 let _MonteCarloCatBondEngine = Helper.toCell<MonteCarloCatBondEngine> montecarlocatbondengine "MonteCarloCatBondEngine"  
-                let builder () = withMnemonic mnemonic ((MonteCarloCatBondEngineModel.Cast _MonteCarloCatBondEngine.cell).DiscountCurve
+                let builder (current : ICell) = withMnemonic mnemonic ((MonteCarloCatBondEngineModel.Cast _MonteCarloCatBondEngine.cell).DiscountCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_MonteCarloCatBondEngine.source + ".DiscountCurve") 
+                let source () = Helper.sourceFold (_MonteCarloCatBondEngine.source + ".DiscountCurve") 
                                                [| _MonteCarloCatBondEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MonteCarloCatBondEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MonteCarloCatBondEngine> format
                     ; source = source 
@@ -92,14 +92,14 @@ module MonteCarloCatBondEngineFunction =
                 let _catRisk = Helper.toCell<CatRisk> catRisk "catRisk" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
-                let builder () = withMnemonic mnemonic (Fun.MonteCarloCatBondEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MonteCarloCatBondEngine 
                                                             _catRisk.cell 
                                                             _discountCurve.cell 
                                                             _includeSettlementDateFlows.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MonteCarloCatBondEngine>) l
 
-                let source = Helper.sourceFold "Fun.MonteCarloCatBondEngine" 
+                let source () = Helper.sourceFold "Fun.MonteCarloCatBondEngine" 
                                                [| _catRisk.source
                                                ;  _discountCurve.source
                                                ;  _includeSettlementDateFlows.source
@@ -110,7 +110,7 @@ module MonteCarloCatBondEngineFunction =
                                 ;  _includeSettlementDateFlows.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MonteCarloCatBondEngine> format
                     ; source = source 
@@ -139,14 +139,14 @@ module MonteCarloCatBondEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MonteCarloCatBondEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MonteCarloCatBondEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MonteCarloCatBondEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MonteCarloCatBondEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

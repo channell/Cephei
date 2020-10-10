@@ -58,14 +58,14 @@ module FaceValueClaimFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _notional = Helper.toCell<double> notional "notional" 
                 let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
-                let builder () = withMnemonic mnemonic ((FaceValueClaimModel.Cast _FaceValueClaim.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((FaceValueClaimModel.Cast _FaceValueClaim.cell).Amount
                                                             _d.cell 
                                                             _notional.cell 
                                                             _recoveryRate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FaceValueClaim.source + ".Amount") 
+                let source () = Helper.sourceFold (_FaceValueClaim.source + ".Amount") 
                                                [| _FaceValueClaim.source
                                                ;  _d.source
                                                ;  _notional.source
@@ -78,7 +78,7 @@ module FaceValueClaimFunction =
                                 ;  _recoveryRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -106,12 +106,12 @@ module FaceValueClaimFunction =
 
                 let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FaceValueClaimModel.Cast _FaceValueClaim.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FaceValueClaimModel.Cast _FaceValueClaim.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FaceValueClaim) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FaceValueClaim.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FaceValueClaim.source + ".RegisterWith") 
                                                [| _FaceValueClaim.source
                                                ;  _handler.source
                                                |]
@@ -120,7 +120,7 @@ module FaceValueClaimFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -148,12 +148,12 @@ module FaceValueClaimFunction =
 
                 let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FaceValueClaimModel.Cast _FaceValueClaim.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FaceValueClaimModel.Cast _FaceValueClaim.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FaceValueClaim) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FaceValueClaim.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FaceValueClaim.source + ".UnregisterWith") 
                                                [| _FaceValueClaim.source
                                                ;  _handler.source
                                                |]
@@ -162,7 +162,7 @@ module FaceValueClaimFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -187,18 +187,18 @@ module FaceValueClaimFunction =
             try
 
                 let _FaceValueClaim = Helper.toCell<FaceValueClaim> facevalueclaim "FaceValueClaim"  
-                let builder () = withMnemonic mnemonic ((FaceValueClaimModel.Cast _FaceValueClaim.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FaceValueClaimModel.Cast _FaceValueClaim.cell).Update
                                                        ) :> ICell
                 let format (o : FaceValueClaim) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FaceValueClaim.source + ".Update") 
+                let source () = Helper.sourceFold (_FaceValueClaim.source + ".Update") 
                                                [| _FaceValueClaim.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FaceValueClaim.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -227,14 +227,14 @@ module FaceValueClaimFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FaceValueClaim>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FaceValueClaim>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FaceValueClaim>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FaceValueClaim>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

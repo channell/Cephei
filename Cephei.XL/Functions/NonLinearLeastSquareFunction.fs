@@ -49,18 +49,18 @@ module NonLinearLeastSquareFunction =
             try
 
                 let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
-                let builder () = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).ExitFlag
+                let builder (current : ICell) = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).ExitFlag
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NonLinearLeastSquare.source + ".ExitFlag") 
+                let source () = Helper.sourceFold (_NonLinearLeastSquare.source + ".ExitFlag") 
                                                [| _NonLinearLeastSquare.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NonLinearLeastSquare.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module NonLinearLeastSquareFunction =
             try
 
                 let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
-                let builder () = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).LastValue
+                let builder (current : ICell) = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).LastValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NonLinearLeastSquare.source + ".LastValue") 
+                let source () = Helper.sourceFold (_NonLinearLeastSquare.source + ".LastValue") 
                                                [| _NonLinearLeastSquare.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NonLinearLeastSquare.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,13 +124,13 @@ module NonLinearLeastSquareFunction =
 
                 let _c = Helper.toCell<Constraint> c "c" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic (Fun.NonLinearLeastSquare1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonLinearLeastSquare1 
                                                             _c.cell 
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NonLinearLeastSquare>) l
 
-                let source = Helper.sourceFold "Fun.NonLinearLeastSquare1" 
+                let source () = Helper.sourceFold "Fun.NonLinearLeastSquare1" 
                                                [| _c.source
                                                ;  _accuracy.source
                                                |]
@@ -139,7 +139,7 @@ module NonLinearLeastSquareFunction =
                                 ;  _accuracy.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonLinearLeastSquare> format
                     ; source = source 
@@ -173,7 +173,7 @@ module NonLinearLeastSquareFunction =
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxiter = Helper.toCell<int> maxiter "maxiter" 
                 let _om = Helper.toCell<OptimizationMethod> om "om" 
-                let builder () = withMnemonic mnemonic (Fun.NonLinearLeastSquare
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonLinearLeastSquare
                                                             _c.cell 
                                                             _accuracy.cell 
                                                             _maxiter.cell 
@@ -181,7 +181,7 @@ module NonLinearLeastSquareFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NonLinearLeastSquare>) l
 
-                let source = Helper.sourceFold "Fun.NonLinearLeastSquare" 
+                let source () = Helper.sourceFold "Fun.NonLinearLeastSquare" 
                                                [| _c.source
                                                ;  _accuracy.source
                                                ;  _maxiter.source
@@ -194,7 +194,7 @@ module NonLinearLeastSquareFunction =
                                 ;  _om.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonLinearLeastSquare> format
                     ; source = source 
@@ -219,19 +219,19 @@ module NonLinearLeastSquareFunction =
             try
 
                 let _c = Helper.toCell<Constraint> c "c" 
-                let builder () = withMnemonic mnemonic (Fun.NonLinearLeastSquare3
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonLinearLeastSquare3
                                                             _c.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NonLinearLeastSquare>) l
 
-                let source = Helper.sourceFold "Fun.NonLinearLeastSquare3" 
+                let source () = Helper.sourceFold "Fun.NonLinearLeastSquare3" 
                                                [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonLinearLeastSquare> format
                     ; source = source 
@@ -262,14 +262,14 @@ module NonLinearLeastSquareFunction =
                 let _c = Helper.toCell<Constraint> c "c" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxiter = Helper.toCell<int> maxiter "maxiter" 
-                let builder () = withMnemonic mnemonic (Fun.NonLinearLeastSquare2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonLinearLeastSquare2
                                                             _c.cell 
                                                             _accuracy.cell 
                                                             _maxiter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NonLinearLeastSquare>) l
 
-                let source = Helper.sourceFold "Fun.NonLinearLeastSquare2" 
+                let source () = Helper.sourceFold "Fun.NonLinearLeastSquare2" 
                                                [| _c.source
                                                ;  _accuracy.source
                                                ;  _maxiter.source
@@ -280,7 +280,7 @@ module NonLinearLeastSquareFunction =
                                 ;  _maxiter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonLinearLeastSquare> format
                     ; source = source 
@@ -308,12 +308,12 @@ module NonLinearLeastSquareFunction =
 
                 let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
                 let _lsProblem = Helper.toCell<LeastSquareProblem> lsProblem "lsProblem" 
-                let builder () = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).Perform
+                let builder (current : ICell) = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).Perform
                                                             _lsProblem.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NonLinearLeastSquare.source + ".Perform") 
+                let source () = Helper.sourceFold (_NonLinearLeastSquare.source + ".Perform") 
                                                [| _NonLinearLeastSquare.source
                                                ;  _lsProblem.source
                                                |]
@@ -322,7 +322,7 @@ module NonLinearLeastSquareFunction =
                                 ;  _lsProblem.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonLinearLeastSquare> format
                     ; source = source 
@@ -347,18 +347,18 @@ module NonLinearLeastSquareFunction =
             try
 
                 let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
-                let builder () = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).ResidualNorm
+                let builder (current : ICell) = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).ResidualNorm
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NonLinearLeastSquare.source + ".ResidualNorm") 
+                let source () = Helper.sourceFold (_NonLinearLeastSquare.source + ".ResidualNorm") 
                                                [| _NonLinearLeastSquare.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NonLinearLeastSquare.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,12 +386,12 @@ module NonLinearLeastSquareFunction =
 
                 let _NonLinearLeastSquare = Helper.toCell<NonLinearLeastSquare> nonlinearleastsquare "NonLinearLeastSquare"  
                 let _initialValue = Helper.toCell<Vector> initialValue "initialValue" 
-                let builder () = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).SetInitialValue
+                let builder (current : ICell) = withMnemonic mnemonic ((NonLinearLeastSquareModel.Cast _NonLinearLeastSquare.cell).SetInitialValue
                                                             _initialValue.cell 
                                                        ) :> ICell
                 let format (o : NonLinearLeastSquare) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NonLinearLeastSquare.source + ".SetInitialValue") 
+                let source () = Helper.sourceFold (_NonLinearLeastSquare.source + ".SetInitialValue") 
                                                [| _NonLinearLeastSquare.source
                                                ;  _initialValue.source
                                                |]
@@ -400,7 +400,7 @@ module NonLinearLeastSquareFunction =
                                 ;  _initialValue.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -429,14 +429,14 @@ module NonLinearLeastSquareFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NonLinearLeastSquare>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NonLinearLeastSquare>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NonLinearLeastSquare>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NonLinearLeastSquare>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

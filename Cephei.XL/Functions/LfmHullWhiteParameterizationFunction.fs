@@ -52,12 +52,12 @@ module LfmHullWhiteParameterizationFunction =
 
                 let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Covariance1
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Covariance1
                                                             _t.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Covariance1") 
+                let source () = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Covariance1") 
                                                [| _LfmHullWhiteParameterization.source
                                                ;  _t.source
                                                |]
@@ -66,7 +66,7 @@ module LfmHullWhiteParameterizationFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
@@ -97,13 +97,13 @@ module LfmHullWhiteParameterizationFunction =
                 let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Covariance
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Covariance
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Covariance") 
+                let source () = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Covariance") 
                                                [| _LfmHullWhiteParameterization.source
                                                ;  _t.source
                                                ;  _x.source
@@ -114,7 +114,7 @@ module LfmHullWhiteParameterizationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
@@ -142,12 +142,12 @@ module LfmHullWhiteParameterizationFunction =
 
                 let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Diffusion
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Diffusion
                                                             _t.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Diffusion") 
+                let source () = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Diffusion") 
                                                [| _LfmHullWhiteParameterization.source
                                                ;  _t.source
                                                |]
@@ -156,7 +156,7 @@ module LfmHullWhiteParameterizationFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
@@ -187,13 +187,13 @@ module LfmHullWhiteParameterizationFunction =
                 let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Diffusion1
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Diffusion1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Diffusion1") 
+                let source () = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Diffusion1") 
                                                [| _LfmHullWhiteParameterization.source
                                                ;  _t.source
                                                ;  _x.source
@@ -204,7 +204,7 @@ module LfmHullWhiteParameterizationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
@@ -235,13 +235,13 @@ module LfmHullWhiteParameterizationFunction =
                 let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).IntegratedCovariance
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).IntegratedCovariance
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".IntegratedCovariance") 
+                let source () = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".IntegratedCovariance") 
                                                [| _LfmHullWhiteParameterization.source
                                                ;  _t.source
                                                ;  _x.source
@@ -252,7 +252,7 @@ module LfmHullWhiteParameterizationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
@@ -280,13 +280,13 @@ module LfmHullWhiteParameterizationFunction =
 
                 let _Process = Helper.toCell<LiborForwardModelProcess> Process "Process" 
                 let _capletVol = Helper.toCell<OptionletVolatilityStructure> capletVol "capletVol" 
-                let builder () = withMnemonic mnemonic (Fun.LfmHullWhiteParameterization1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LfmHullWhiteParameterization1 
                                                             _Process.cell 
                                                             _capletVol.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LfmHullWhiteParameterization>) l
 
-                let source = Helper.sourceFold "Fun.LfmHullWhiteParameterization1" 
+                let source () = Helper.sourceFold "Fun.LfmHullWhiteParameterization1" 
                                                [| _Process.source
                                                ;  _capletVol.source
                                                |]
@@ -295,7 +295,7 @@ module LfmHullWhiteParameterizationFunction =
                                 ;  _capletVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
@@ -329,7 +329,7 @@ module LfmHullWhiteParameterizationFunction =
                 let _capletVol = Helper.toCell<OptionletVolatilityStructure> capletVol "capletVol" 
                 let _correlation = Helper.toCell<Matrix> correlation "correlation" 
                 let _factors = Helper.toCell<int> factors "factors" 
-                let builder () = withMnemonic mnemonic (Fun.LfmHullWhiteParameterization
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LfmHullWhiteParameterization
                                                             _Process.cell 
                                                             _capletVol.cell 
                                                             _correlation.cell 
@@ -337,7 +337,7 @@ module LfmHullWhiteParameterizationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LfmHullWhiteParameterization>) l
 
-                let source = Helper.sourceFold "Fun.LfmHullWhiteParameterization" 
+                let source () = Helper.sourceFold "Fun.LfmHullWhiteParameterization" 
                                                [| _Process.source
                                                ;  _capletVol.source
                                                ;  _correlation.source
@@ -350,7 +350,7 @@ module LfmHullWhiteParameterizationFunction =
                                 ;  _factors.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LfmHullWhiteParameterization> format
                     ; source = source 
@@ -375,18 +375,18 @@ module LfmHullWhiteParameterizationFunction =
             try
 
                 let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
-                let builder () = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Factors
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Factors") 
+                let source () = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Factors") 
                                                [| _LfmHullWhiteParameterization.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LfmHullWhiteParameterization.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -411,18 +411,18 @@ module LfmHullWhiteParameterizationFunction =
             try
 
                 let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
-                let builder () = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmHullWhiteParameterizationModel.Cast _LfmHullWhiteParameterization.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Size") 
+                let source () = Helper.sourceFold (_LfmHullWhiteParameterization.source + ".Size") 
                                                [| _LfmHullWhiteParameterization.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LfmHullWhiteParameterization.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -451,14 +451,14 @@ module LfmHullWhiteParameterizationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LfmHullWhiteParameterization>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LfmHullWhiteParameterization>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LfmHullWhiteParameterization>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LfmHullWhiteParameterization>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

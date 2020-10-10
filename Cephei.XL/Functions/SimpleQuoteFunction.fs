@@ -49,18 +49,18 @@ module SimpleQuoteFunction =
             try
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
-                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).IsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpleQuote.source + ".IsValid") 
+                let source () = Helper.sourceFold (_SimpleQuote.source + ".IsValid") 
                                                [| _SimpleQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module SimpleQuoteFunction =
             try
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
-                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).Reset
                                                        ) :> ICell
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpleQuote.source + ".Reset") 
+                let source () = Helper.sourceFold (_SimpleQuote.source + ".Reset") 
                                                [| _SimpleQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,12 +124,12 @@ module SimpleQuoteFunction =
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
                 let _value = Helper.toNullable<double> value "value"
-                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).SetValue
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).SetValue
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimpleQuote.source + ".SetValue") 
+                let source () = Helper.sourceFold (_SimpleQuote.source + ".SetValue") 
                                                [| _SimpleQuote.source
                                                ;  _value.source
                                                |]
@@ -138,7 +138,7 @@ module SimpleQuoteFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -163,19 +163,19 @@ module SimpleQuoteFunction =
             try
 
                 let _value = Helper.toNullable<double> value "value"
-                let builder () = withMnemonic mnemonic (Fun.SimpleQuote1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimpleQuote1 
                                                             _value.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SimpleQuote>) l
 
-                let source = Helper.sourceFold "Fun.SimpleQuote1" 
+                let source () = Helper.sourceFold "Fun.SimpleQuote1" 
                                                [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimpleQuote> format
                     ; source = source 
@@ -197,16 +197,16 @@ module SimpleQuoteFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.SimpleQuote ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimpleQuote ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SimpleQuote>) l
 
-                let source = Helper.sourceFold "Fun.SimpleQuote" 
+                let source () = Helper.sourceFold "Fun.SimpleQuote" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimpleQuote> format
                     ; source = source 
@@ -231,18 +231,18 @@ module SimpleQuoteFunction =
             try
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
-                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimpleQuote.source + ".Value") 
+                let source () = Helper.sourceFold (_SimpleQuote.source + ".Value") 
                                                [| _SimpleQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -270,12 +270,12 @@ module SimpleQuoteFunction =
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpleQuote.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_SimpleQuote.source + ".RegisterWith") 
                                                [| _SimpleQuote.source
                                                ;  _handler.source
                                                |]
@@ -284,7 +284,7 @@ module SimpleQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -312,12 +312,12 @@ module SimpleQuoteFunction =
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpleQuote.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_SimpleQuote.source + ".UnregisterWith") 
                                                [| _SimpleQuote.source
                                                ;  _handler.source
                                                |]
@@ -326,7 +326,7 @@ module SimpleQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -355,14 +355,14 @@ module SimpleQuoteFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SimpleQuote>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SimpleQuote>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SimpleQuote>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SimpleQuote>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -58,7 +58,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                 let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
                 let _exercise = Helper.toCell<AmericanExercise> exercise "exercise" 
                 let _arguments = Helper.toCell<BarrierOption.Arguments> arguments "arguments" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticBinaryBarrierEngine_helper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticBinaryBarrierEngine_helper 
                                                             _Process.cell 
                                                             _payoff.cell 
                                                             _exercise.cell 
@@ -66,7 +66,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticBinaryBarrierEngine_helper>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticBinaryBarrierEngine_helper" 
+                let source () = Helper.sourceFold "Fun.AnalyticBinaryBarrierEngine_helper" 
                                                [| _Process.source
                                                ;  _payoff.source
                                                ;  _exercise.source
@@ -79,7 +79,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                                 ;  _arguments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticBinaryBarrierEngine_helper> format
                     ; source = source 
@@ -113,14 +113,14 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                 let _spot = Helper.toCell<double> spot "spot" 
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic ((AnalyticBinaryBarrierEngine_helperModel.Cast _AnalyticBinaryBarrierEngine_helper.cell).PayoffAtExpiry
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBinaryBarrierEngine_helperModel.Cast _AnalyticBinaryBarrierEngine_helper.cell).PayoffAtExpiry
                                                             _spot.cell 
                                                             _variance.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AnalyticBinaryBarrierEngine_helper.source + ".PayoffAtExpiry") 
+                let source () = Helper.sourceFold (_AnalyticBinaryBarrierEngine_helper.source + ".PayoffAtExpiry") 
                                                [| _AnalyticBinaryBarrierEngine_helper.source
                                                ;  _spot.source
                                                ;  _variance.source
@@ -133,7 +133,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -162,14 +162,14 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticBinaryBarrierEngine_helper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticBinaryBarrierEngine_helper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticBinaryBarrierEngine_helper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticBinaryBarrierEngine_helper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

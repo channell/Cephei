@@ -58,7 +58,7 @@ module CoxIngersollRossFunction =
                 let _theta = Helper.toDefault<double> theta "theta" 0.1
                 let _k = Helper.toDefault<double> k "k" 0.1
                 let _sigma = Helper.toDefault<double> sigma "sigma" 0.1
-                let builder () = withMnemonic mnemonic (Fun.CoxIngersollRoss 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CoxIngersollRoss 
                                                             _r0.cell 
                                                             _theta.cell 
                                                             _k.cell 
@@ -66,7 +66,7 @@ module CoxIngersollRossFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CoxIngersollRoss>) l
 
-                let source = Helper.sourceFold "Fun.CoxIngersollRoss" 
+                let source () = Helper.sourceFold "Fun.CoxIngersollRoss" 
                                                [| _r0.source
                                                ;  _theta.source
                                                ;  _k.source
@@ -79,7 +79,7 @@ module CoxIngersollRossFunction =
                                 ;  _sigma.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CoxIngersollRoss> format
                     ; source = source 
@@ -116,7 +116,7 @@ module CoxIngersollRossFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" 
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).DiscountBondOption
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).DiscountBondOption
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _maturity.cell 
@@ -124,7 +124,7 @@ module CoxIngersollRossFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".DiscountBondOption") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".DiscountBondOption") 
                                                [| _CoxIngersollRoss.source
                                                ;  _Type.source
                                                ;  _strike.source
@@ -139,7 +139,7 @@ module CoxIngersollRossFunction =
                                 ;  _bondMaturity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Dynamics
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".Dynamics") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Dynamics") 
                                                [| _CoxIngersollRoss.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,12 +203,12 @@ module CoxIngersollRossFunction =
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _grid = Helper.toCell<TimeGrid> grid "grid" 
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Tree
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Tree
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".Tree") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Tree") 
                                                [| _CoxIngersollRoss.source
                                                ;  _grid.source
                                                |]
@@ -217,7 +217,7 @@ module CoxIngersollRossFunction =
                                 ;  _grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CoxIngersollRoss> format
                     ; source = source 
@@ -245,12 +245,12 @@ module CoxIngersollRossFunction =
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Discount
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".Discount") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Discount") 
                                                [| _CoxIngersollRoss.source
                                                ;  _t.source
                                                |]
@@ -259,7 +259,7 @@ module CoxIngersollRossFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -293,14 +293,14 @@ module CoxIngersollRossFunction =
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _rate = Helper.toCell<double> rate "rate" 
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).DiscountBond1
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).DiscountBond1
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _rate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".DiscountBond1") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".DiscountBond1") 
                                                [| _CoxIngersollRoss.source
                                                ;  _now.source
                                                ;  _maturity.source
@@ -313,7 +313,7 @@ module CoxIngersollRossFunction =
                                 ;  _rate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -347,14 +347,14 @@ module CoxIngersollRossFunction =
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _factors = Helper.toCell<Vector> factors "factors" 
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).DiscountBond
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).DiscountBond
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _factors.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".DiscountBond") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".DiscountBond") 
                                                [| _CoxIngersollRoss.source
                                                ;  _now.source
                                                ;  _maturity.source
@@ -367,7 +367,7 @@ module CoxIngersollRossFunction =
                                 ;  _factors.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -410,7 +410,7 @@ module CoxIngersollRossFunction =
                 let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
                 let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
                 let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Calibrate
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
                                                             _endCriteria.cell 
@@ -420,7 +420,7 @@ module CoxIngersollRossFunction =
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".Calibrate") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Calibrate") 
                                                [| _CoxIngersollRoss.source
                                                ;  _instruments.source
                                                ;  _Method.source
@@ -439,7 +439,7 @@ module CoxIngersollRossFunction =
                                 ;  _fixParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -464,18 +464,18 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Constraint
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".CONSTRAINT") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".CONSTRAINT") 
                                                [| _CoxIngersollRoss.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CoxIngersollRoss> format
                     ; source = source 
@@ -500,18 +500,18 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).EndCriteria
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".EndCriteria") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".EndCriteria") 
                                                [| _CoxIngersollRoss.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -536,18 +536,18 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).NotifyObservers
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".NotifyObservers") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".NotifyObservers") 
                                                [| _CoxIngersollRoss.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -572,18 +572,18 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".Parameters") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Parameters") 
                                                [| _CoxIngersollRoss.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CoxIngersollRoss> format
                     ; source = source 
@@ -611,12 +611,12 @@ module CoxIngersollRossFunction =
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".RegisterWith") 
                                                [| _CoxIngersollRoss.source
                                                ;  _handler.source
                                                |]
@@ -625,7 +625,7 @@ module CoxIngersollRossFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -653,12 +653,12 @@ module CoxIngersollRossFunction =
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".SetParams") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".SetParams") 
                                                [| _CoxIngersollRoss.source
                                                ;  _parameters.source
                                                |]
@@ -667,7 +667,7 @@ module CoxIngersollRossFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -695,12 +695,12 @@ module CoxIngersollRossFunction =
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".UnregisterWith") 
                                                [| _CoxIngersollRoss.source
                                                ;  _handler.source
                                                |]
@@ -709,7 +709,7 @@ module CoxIngersollRossFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -734,18 +734,18 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Update
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".Update") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Update") 
                                                [| _CoxIngersollRoss.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -776,13 +776,13 @@ module CoxIngersollRossFunction =
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
-                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CoxIngersollRoss.source + ".Value") 
+                let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Value") 
                                                [| _CoxIngersollRoss.source
                                                ;  _parameters.source
                                                ;  _instruments.source
@@ -793,7 +793,7 @@ module CoxIngersollRossFunction =
                                 ;  _instruments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -822,14 +822,14 @@ module CoxIngersollRossFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CoxIngersollRoss>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CoxIngersollRoss>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CoxIngersollRoss>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CoxIngersollRoss>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -85,7 +85,7 @@ module ConvertibleFixedCouponBondFunction =
                 let _redemption = Helper.toDefault<double> redemption "redemption" 100.0
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.ConvertibleFixedCouponBond 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConvertibleFixedCouponBond 
                                                             _exercise.cell 
                                                             _conversionRatio.cell 
                                                             _dividends.cell 
@@ -102,7 +102,7 @@ module ConvertibleFixedCouponBondFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConvertibleFixedCouponBond>) l
 
-                let source = Helper.sourceFold "Fun.ConvertibleFixedCouponBond" 
+                let source () = Helper.sourceFold "Fun.ConvertibleFixedCouponBond" 
                                                [| _exercise.source
                                                ;  _conversionRatio.source
                                                ;  _dividends.source
@@ -133,7 +133,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConvertibleFixedCouponBond> format
                     ; source = source 
@@ -158,18 +158,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Callability
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Callability
                                                        ) :> ICell
                 let format (o : CallabilitySchedule) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Callability") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Callability") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).ConversionRatio
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).ConversionRatio
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".ConversionRatio") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".ConversionRatio") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CreditSpread
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CreditSpread
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CreditSpread") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CreditSpread") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConvertibleFixedCouponBond> format
                     ; source = source 
@@ -266,18 +266,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Dividends
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Dividends
                                                        ) :> ICell
                 let format (o : DividendSchedule) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Dividends") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Dividends") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -305,12 +305,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".AccruedAmount") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _settlement.source
                                                |]
@@ -319,7 +319,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,18 +344,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Calendar") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Calendar") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConvertibleFixedCouponBond> format
                     ; source = source 
@@ -380,18 +380,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Cashflows
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Cashflows") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Cashflows") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -416,18 +416,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CleanPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CleanPrice") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CleanPrice") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -467,7 +467,7 @@ module ConvertibleFixedCouponBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CleanPrice1
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -476,7 +476,7 @@ module ConvertibleFixedCouponBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CleanPrice1") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CleanPrice1") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _Yield.source
                                                ;  _dc.source
@@ -493,7 +493,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -533,7 +533,7 @@ module ConvertibleFixedCouponBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).DirtyPrice1
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -542,7 +542,7 @@ module ConvertibleFixedCouponBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".DirtyPrice1") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".DirtyPrice1") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _Yield.source
                                                ;  _dc.source
@@ -559,7 +559,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -584,18 +584,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).DirtyPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".DirtyPrice") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".DirtyPrice") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -620,18 +620,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".IsExpired") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -656,18 +656,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).IssueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".IssueDate") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".IssueDate") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -695,12 +695,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).IsTradable
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".IsTradable") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".IsTradable") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _d.source
                                                |]
@@ -709,7 +709,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -734,18 +734,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".MaturityDate") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -773,12 +773,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).NextCashFlowDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".NextCashFlowDate") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".NextCashFlowDate") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _settlement.source
                                                |]
@@ -787,7 +787,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -815,12 +815,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).NextCouponRate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".NextCouponRate") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".NextCouponRate") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _settlement.source
                                                |]
@@ -829,7 +829,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -857,12 +857,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Notional
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Notional
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Notional") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Notional") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _d.source
                                                |]
@@ -871,7 +871,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -896,18 +896,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Notionals
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Notionals") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Notionals") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -935,12 +935,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).PreviousCashFlowDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".PreviousCashFlowDate") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".PreviousCashFlowDate") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _settlement.source
                                                |]
@@ -949,7 +949,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -977,12 +977,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).PreviousCouponRate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".PreviousCouponRate") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".PreviousCouponRate") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _settlement.source
                                                |]
@@ -991,7 +991,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1016,18 +1016,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Redemption
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Redemption") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Redemption") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConvertibleFixedCouponBond> format
                     ; source = source 
@@ -1052,18 +1052,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Redemptions
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Redemptions") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Redemptions") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -1091,12 +1091,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementDate") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementDate") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _date.source
                                                |]
@@ -1105,7 +1105,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1130,18 +1130,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementDays") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1169,12 +1169,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementValue
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementValue") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementValue") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _cleanPrice.source
                                                |]
@@ -1183,7 +1183,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _cleanPrice.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1208,18 +1208,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementValue1
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementValue1") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementValue1") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1244,18 +1244,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).StartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".StartDate") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".StartDate") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1301,7 +1301,7 @@ module ConvertibleFixedCouponBondFunction =
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Yield1
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1312,7 +1312,7 @@ module ConvertibleFixedCouponBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Yield1") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Yield1") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _cleanPrice.source
                                                ;  _dc.source
@@ -1333,7 +1333,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1373,7 +1373,7 @@ module ConvertibleFixedCouponBondFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Yield
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Yield
                                                             _dc.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1382,7 +1382,7 @@ module ConvertibleFixedCouponBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Yield") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Yield") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _dc.source
                                                ;  _comp.source
@@ -1399,7 +1399,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1424,18 +1424,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CASH") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CASH") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1460,18 +1460,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".ErrorEstimate") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1496,18 +1496,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".NPV") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".NPV") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1535,12 +1535,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Result") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Result") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _tag.source
                                                |]
@@ -1549,7 +1549,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1577,12 +1577,12 @@ module ConvertibleFixedCouponBondFunction =
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : ConvertibleFixedCouponBond) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SetPricingEngine") 
                                                [| _ConvertibleFixedCouponBond.source
                                                ;  _e.source
                                                |]
@@ -1591,7 +1591,7 @@ module ConvertibleFixedCouponBondFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1616,18 +1616,18 @@ module ConvertibleFixedCouponBondFunction =
             try
 
                 let _ConvertibleFixedCouponBond = Helper.toCell<ConvertibleFixedCouponBond> convertiblefixedcouponbond "ConvertibleFixedCouponBond"  
-                let builder () = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvertibleFixedCouponBondModel.Cast _ConvertibleFixedCouponBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".ValuationDate") 
                                                [| _ConvertibleFixedCouponBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1656,14 +1656,14 @@ module ConvertibleFixedCouponBondFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConvertibleFixedCouponBond>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ConvertibleFixedCouponBond>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ConvertibleFixedCouponBond>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ConvertibleFixedCouponBond>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

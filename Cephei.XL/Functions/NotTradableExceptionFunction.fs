@@ -52,13 +52,13 @@ module NotTradableExceptionFunction =
 
                 let _message = Helper.toCell<string> message "message" 
                 let _inner = Helper.toCell<Exception> inner "inner" 
-                let builder () = withMnemonic mnemonic (Fun.NotTradableException 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NotTradableException 
                                                             _message.cell 
                                                             _inner.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NotTradableException>) l
 
-                let source = Helper.sourceFold "Fun.NotTradableException" 
+                let source () = Helper.sourceFold "Fun.NotTradableException" 
                                                [| _message.source
                                                ;  _inner.source
                                                |]
@@ -67,7 +67,7 @@ module NotTradableExceptionFunction =
                                 ;  _inner.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NotTradableException> format
                     ; source = source 
@@ -92,19 +92,19 @@ module NotTradableExceptionFunction =
             try
 
                 let _message = Helper.toCell<string> message "message" 
-                let builder () = withMnemonic mnemonic (Fun.NotTradableException1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NotTradableException1 
                                                             _message.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NotTradableException>) l
 
-                let source = Helper.sourceFold "Fun.NotTradableException1" 
+                let source () = Helper.sourceFold "Fun.NotTradableException1" 
                                                [| _message.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _message.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NotTradableException> format
                     ; source = source 
@@ -126,16 +126,16 @@ module NotTradableExceptionFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.NotTradableException2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NotTradableException2 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NotTradableException>) l
 
-                let source = Helper.sourceFold "Fun.NotTradableException2" 
+                let source () = Helper.sourceFold "Fun.NotTradableException2" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NotTradableException> format
                     ; source = source 
@@ -164,14 +164,14 @@ module NotTradableExceptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NotTradableException>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NotTradableException>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NotTradableException>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NotTradableException>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

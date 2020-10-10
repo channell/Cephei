@@ -58,7 +58,7 @@ module BiCGStabFunction =
                 let _maxIter = Helper.toCell<int> maxIter "maxIter" 
                 let _relTol = Helper.toCell<double> relTol "relTol" 
                 let _preConditioner = Helper.toDefault<BiCGStab.MatrixMult> preConditioner "preConditioner" null
-                let builder () = withMnemonic mnemonic (Fun.BiCGStab 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BiCGStab 
                                                             _A.cell 
                                                             _maxIter.cell 
                                                             _relTol.cell 
@@ -66,7 +66,7 @@ module BiCGStabFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BiCGStab>) l
 
-                let source = Helper.sourceFold "Fun.BiCGStab" 
+                let source () = Helper.sourceFold "Fun.BiCGStab" 
                                                [| _A.source
                                                ;  _maxIter.source
                                                ;  _relTol.source
@@ -79,7 +79,7 @@ module BiCGStabFunction =
                                 ;  _preConditioner.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BiCGStab> format
                     ; source = source 
@@ -108,12 +108,12 @@ module BiCGStabFunction =
 
                 let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((BiCGStabModel.Cast _BiCGStab.cell).MatrixMult
+                let builder (current : ICell) = withMnemonic mnemonic ((BiCGStabModel.Cast _BiCGStab.cell).MatrixMult
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_BiCGStab.source + ".MatrixMult") 
+                let source () = Helper.sourceFold (_BiCGStab.source + ".MatrixMult") 
                                                [| _BiCGStab.source
                                                ;  _x.source
                                                |]
@@ -122,7 +122,7 @@ module BiCGStabFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BiCGStab> format
                     ; source = source 
@@ -154,13 +154,13 @@ module BiCGStabFunction =
                 let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab"  
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null
-                let builder () = withMnemonic mnemonic ((BiCGStabModel.Cast _BiCGStab.cell).Solve
+                let builder (current : ICell) = withMnemonic mnemonic ((BiCGStabModel.Cast _BiCGStab.cell).Solve
                                                             _b.cell 
                                                             _x0.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BiCGStabResult>) l
 
-                let source = Helper.sourceFold (_BiCGStab.source + ".Solve") 
+                let source () = Helper.sourceFold (_BiCGStab.source + ".Solve") 
                                                [| _BiCGStab.source
                                                ;  _b.source
                                                ;  _x0.source
@@ -171,7 +171,7 @@ module BiCGStabFunction =
                                 ;  _x0.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BiCGStab> format
                     ; source = source 
@@ -200,14 +200,14 @@ module BiCGStabFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BiCGStab>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BiCGStab>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BiCGStab>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BiCGStab>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

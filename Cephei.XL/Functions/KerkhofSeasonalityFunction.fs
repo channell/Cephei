@@ -52,13 +52,13 @@ module KerkhofSeasonalityFunction =
 
                 let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" 
                 let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" 
-                let builder () = withMnemonic mnemonic (Fun.KerkhofSeasonality 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.KerkhofSeasonality 
                                                             _seasonalityBaseDate.cell 
                                                             _seasonalityFactors.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<KerkhofSeasonality>) l
 
-                let source = Helper.sourceFold "Fun.KerkhofSeasonality" 
+                let source () = Helper.sourceFold "Fun.KerkhofSeasonality" 
                                                [| _seasonalityBaseDate.source
                                                ;  _seasonalityFactors.source
                                                |]
@@ -67,7 +67,7 @@ module KerkhofSeasonalityFunction =
                                 ;  _seasonalityFactors.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<KerkhofSeasonality> format
                     ; source = source 
@@ -95,12 +95,12 @@ module KerkhofSeasonalityFunction =
 
                 let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let _To = Helper.toCell<Date> To "To" 
-                let builder () = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).SeasonalityFactor
+                let builder (current : ICell) = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).SeasonalityFactor
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KerkhofSeasonality.source + ".SeasonalityFactor") 
+                let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".SeasonalityFactor") 
                                                [| _KerkhofSeasonality.source
                                                ;  _To.source
                                                |]
@@ -109,7 +109,7 @@ module KerkhofSeasonalityFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -143,14 +143,14 @@ module KerkhofSeasonalityFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).CorrectYoYRate
+                let builder (current : ICell) = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).CorrectYoYRate
                                                             _d.cell 
                                                             _r.cell 
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KerkhofSeasonality.source + ".CorrectYoYRate") 
+                let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".CorrectYoYRate") 
                                                [| _KerkhofSeasonality.source
                                                ;  _d.source
                                                ;  _r.source
@@ -163,7 +163,7 @@ module KerkhofSeasonalityFunction =
                                 ;  _iTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -197,14 +197,14 @@ module KerkhofSeasonalityFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).CorrectZeroRate
+                let builder (current : ICell) = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).CorrectZeroRate
                                                             _d.cell 
                                                             _r.cell 
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KerkhofSeasonality.source + ".CorrectZeroRate") 
+                let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".CorrectZeroRate") 
                                                [| _KerkhofSeasonality.source
                                                ;  _d.source
                                                ;  _r.source
@@ -217,7 +217,7 @@ module KerkhofSeasonalityFunction =
                                 ;  _iTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module KerkhofSeasonalityFunction =
             try
 
                 let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
-                let builder () = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KerkhofSeasonality.source + ".Frequency") 
+                let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".Frequency") 
                                                [| _KerkhofSeasonality.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KerkhofSeasonality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -281,12 +281,12 @@ module KerkhofSeasonalityFunction =
 
                 let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).IsConsistent
+                let builder (current : ICell) = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).IsConsistent
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KerkhofSeasonality.source + ".IsConsistent") 
+                let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".IsConsistent") 
                                                [| _KerkhofSeasonality.source
                                                ;  _iTS.source
                                                |]
@@ -295,7 +295,7 @@ module KerkhofSeasonalityFunction =
                                 ;  _iTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module KerkhofSeasonalityFunction =
             try
 
                 let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
-                let builder () = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).SeasonalityBaseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).SeasonalityBaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_KerkhofSeasonality.source + ".SeasonalityBaseDate") 
+                let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".SeasonalityBaseDate") 
                                                [| _KerkhofSeasonality.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KerkhofSeasonality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,18 +356,18 @@ module KerkhofSeasonalityFunction =
             try
 
                 let _KerkhofSeasonality = Helper.toCell<KerkhofSeasonality> kerkhofseasonality "KerkhofSeasonality"  
-                let builder () = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).SeasonalityFactors
+                let builder (current : ICell) = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).SeasonalityFactors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_KerkhofSeasonality.source + ".SeasonalityFactors") 
+                let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".SeasonalityFactors") 
                                                [| _KerkhofSeasonality.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KerkhofSeasonality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -401,14 +401,14 @@ module KerkhofSeasonalityFunction =
                 let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" 
-                let builder () = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).Set
+                let builder (current : ICell) = withMnemonic mnemonic ((KerkhofSeasonalityModel.Cast _KerkhofSeasonality.cell).Set
                                                             _seasonalityBaseDate.cell 
                                                             _frequency.cell 
                                                             _seasonalityFactors.cell 
                                                        ) :> ICell
                 let format (o : KerkhofSeasonality) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KerkhofSeasonality.source + ".Set") 
+                let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".Set") 
                                                [| _KerkhofSeasonality.source
                                                ;  _seasonalityBaseDate.source
                                                ;  _frequency.source
@@ -421,7 +421,7 @@ module KerkhofSeasonalityFunction =
                                 ;  _seasonalityFactors.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -450,14 +450,14 @@ module KerkhofSeasonalityFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<KerkhofSeasonality>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<KerkhofSeasonality>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<KerkhofSeasonality>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<KerkhofSeasonality>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

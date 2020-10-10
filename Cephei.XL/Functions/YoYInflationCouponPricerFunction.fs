@@ -52,12 +52,12 @@ module YoYInflationCouponPricerFunction =
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).CapletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".CapletPrice") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".CapletPrice") 
                                                [| _YoYInflationCouponPricer.source
                                                ;  _effectiveCap.source
                                                |]
@@ -66,7 +66,7 @@ module YoYInflationCouponPricerFunction =
                                 ;  _effectiveCap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module YoYInflationCouponPricerFunction =
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).CapletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".CapletRate") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".CapletRate") 
                                                [| _YoYInflationCouponPricer.source
                                                ;  _effectiveCap.source
                                                |]
@@ -108,7 +108,7 @@ module YoYInflationCouponPricerFunction =
                                 ;  _effectiveCap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -133,18 +133,18 @@ module YoYInflationCouponPricerFunction =
             try
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).CapletVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).CapletVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".CapletVolatility") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".CapletVolatility") 
                                                [| _YoYInflationCouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationCouponPricer> format
                     ; source = source 
@@ -172,12 +172,12 @@ module YoYInflationCouponPricerFunction =
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).FloorletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".FloorletPrice") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".FloorletPrice") 
                                                [| _YoYInflationCouponPricer.source
                                                ;  _effectiveFloor.source
                                                |]
@@ -186,7 +186,7 @@ module YoYInflationCouponPricerFunction =
                                 ;  _effectiveFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -214,12 +214,12 @@ module YoYInflationCouponPricerFunction =
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).FloorletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".FloorletRate") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".FloorletRate") 
                                                [| _YoYInflationCouponPricer.source
                                                ;  _effectiveFloor.source
                                                |]
@@ -228,7 +228,7 @@ module YoYInflationCouponPricerFunction =
                                 ;  _effectiveFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -256,12 +256,12 @@ module YoYInflationCouponPricerFunction =
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let _coupon = Helper.toCell<InflationCoupon> coupon "coupon" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).Initialize
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationCouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".Initialize") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".Initialize") 
                                                [| _YoYInflationCouponPricer.source
                                                ;  _coupon.source
                                                |]
@@ -270,7 +270,7 @@ module YoYInflationCouponPricerFunction =
                                 ;  _coupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -298,12 +298,12 @@ module YoYInflationCouponPricerFunction =
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let _capletVol = Helper.toHandle<YoYOptionletVolatilitySurface> capletVol "capletVol" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).SetCapletVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).SetCapletVolatility
                                                             _capletVol.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationCouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".SetCapletVolatility") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".SetCapletVolatility") 
                                                [| _YoYInflationCouponPricer.source
                                                ;  _capletVol.source
                                                |]
@@ -312,7 +312,7 @@ module YoYInflationCouponPricerFunction =
                                 ;  _capletVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,18 +337,18 @@ module YoYInflationCouponPricerFunction =
             try
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).SwapletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".SwapletPrice") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".SwapletPrice") 
                                                [| _YoYInflationCouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -373,18 +373,18 @@ module YoYInflationCouponPricerFunction =
             try
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).SwapletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".SwapletRate") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".SwapletRate") 
                                                [| _YoYInflationCouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -409,19 +409,19 @@ module YoYInflationCouponPricerFunction =
             try
 
                 let _capletVol = Helper.toHandle<YoYOptionletVolatilitySurface> capletVol "capletVol" 
-                let builder () = withMnemonic mnemonic (Fun.YoYInflationCouponPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.YoYInflationCouponPricer 
                                                             _capletVol.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCouponPricer>) l
 
-                let source = Helper.sourceFold "Fun.YoYInflationCouponPricer" 
+                let source () = Helper.sourceFold "Fun.YoYInflationCouponPricer" 
                                                [| _capletVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _capletVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationCouponPricer> format
                     ; source = source 
@@ -449,12 +449,12 @@ module YoYInflationCouponPricerFunction =
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationCouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".RegisterWith") 
                                                [| _YoYInflationCouponPricer.source
                                                ;  _handler.source
                                                |]
@@ -463,7 +463,7 @@ module YoYInflationCouponPricerFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -491,12 +491,12 @@ module YoYInflationCouponPricerFunction =
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationCouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".UnregisterWith") 
                                                [| _YoYInflationCouponPricer.source
                                                ;  _handler.source
                                                |]
@@ -505,7 +505,7 @@ module YoYInflationCouponPricerFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -530,18 +530,18 @@ module YoYInflationCouponPricerFunction =
             try
 
                 let _YoYInflationCouponPricer = Helper.toCell<YoYInflationCouponPricer> yoyinflationcouponpricer "YoYInflationCouponPricer"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCouponPricerModel.Cast _YoYInflationCouponPricer.cell).Update
                                                        ) :> ICell
                 let format (o : YoYInflationCouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCouponPricer.source + ".Update") 
+                let source () = Helper.sourceFold (_YoYInflationCouponPricer.source + ".Update") 
                                                [| _YoYInflationCouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -570,14 +570,14 @@ module YoYInflationCouponPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<YoYInflationCouponPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<YoYInflationCouponPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<YoYInflationCouponPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<YoYInflationCouponPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

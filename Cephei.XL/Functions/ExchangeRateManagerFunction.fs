@@ -62,7 +62,7 @@ module ExchangeRateManagerFunction =
                                                        ) :> ICell
                 let format (o : ExchangeRateManager) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ExchangeRateManager.source + ".Add") 
+                let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Add") 
                                                [| _ExchangeRateManager.source
                                                ;  _rate.source
                                                ;  _startDate.source
@@ -73,7 +73,7 @@ module ExchangeRateManagerFunction =
                                 ;  _startDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -108,7 +108,7 @@ module ExchangeRateManagerFunction =
                                                        ) :> ICell
                 let format (o : ExchangeRateManager) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ExchangeRateManager.source + ".Add") 
+                let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Add") 
                                                [| _ExchangeRateManager.source
                                                ;  _rate.source
                                                |]
@@ -117,7 +117,7 @@ module ExchangeRateManagerFunction =
                                 ;  _rate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -147,14 +147,14 @@ module ExchangeRateManagerFunction =
                                                        ) :> ICell
                 let format (o : ExchangeRateManager) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ExchangeRateManager.source + ".Clear") 
+                let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Clear") 
                                                [| _ExchangeRateManager.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ExchangeRateManager.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -199,7 +199,7 @@ module ExchangeRateManagerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ExchangeRate>) l
 
-                let source = Helper.sourceFold (_ExchangeRateManager.source + ".Lookup") 
+                let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Lookup") 
                                                [| _ExchangeRateManager.source
                                                ;  _source.source
                                                ;  _target.source
@@ -214,7 +214,7 @@ module ExchangeRateManagerFunction =
                                 ;  _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ExchangeRateManager> format
                     ; source = source 
@@ -255,7 +255,7 @@ module ExchangeRateManagerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ExchangeRate>) l
 
-                let source = Helper.sourceFold (_ExchangeRateManager.source + ".Lookup") 
+                let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Lookup") 
                                                [| _ExchangeRateManager.source
                                                ;  _source.source
                                                ;  _target.source
@@ -268,7 +268,7 @@ module ExchangeRateManagerFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ExchangeRateManager> format
                     ; source = source 
@@ -305,7 +305,7 @@ module ExchangeRateManagerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ExchangeRate>) l
 
-                let source = Helper.sourceFold (_ExchangeRateManager.source + ".Lookup") 
+                let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Lookup") 
                                                [| _ExchangeRateManager.source
                                                ;  _source.source
                                                ;  _target.source
@@ -316,7 +316,7 @@ module ExchangeRateManagerFunction =
                                 ;  _target.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ExchangeRateManager> format
                     ; source = source 
@@ -349,10 +349,10 @@ module ExchangeRateManagerFunction =
                 let format (i : Generic.List<ICell<ExchangeRateManager>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ExchangeRateManager>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ExchangeRateManager>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

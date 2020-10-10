@@ -52,12 +52,12 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).ClosestIndex
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).ClosestIndex
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".ClosestIndex") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".ClosestIndex") 
                                                [| _TimeGrid.source
                                                ;  _t.source
                                                |]
@@ -66,7 +66,7 @@ module TimeGridFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).ClosestTime
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).ClosestTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".ClosestTime") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".ClosestTime") 
                                                [| _TimeGrid.source
                                                ;  _t.source
                                                |]
@@ -108,7 +108,7 @@ module TimeGridFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -136,12 +136,12 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Dt
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Dt
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".Dt") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".Dt") 
                                                [| _TimeGrid.source
                                                ;  _i.source
                                                |]
@@ -150,7 +150,7 @@ module TimeGridFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -175,18 +175,18 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".Empty") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".Empty") 
                                                [| _TimeGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -211,18 +211,18 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).First
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).First
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".First") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".First") 
                                                [| _TimeGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -250,12 +250,12 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Index
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".Index") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".Index") 
                                                [| _TimeGrid.source
                                                ;  _t.source
                                                |]
@@ -264,7 +264,7 @@ module TimeGridFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,18 +289,18 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Last
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Last
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".Last") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".Last") 
                                                [| _TimeGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -325,18 +325,18 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).MandatoryTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".MandatoryTimes") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".MandatoryTimes") 
                                                [| _TimeGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -361,18 +361,18 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".Size") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".Size") 
                                                [| _TimeGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -400,12 +400,12 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).This
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).This
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".This") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".This") 
                                                [| _TimeGrid.source
                                                ;  _i.source
                                                |]
@@ -414,7 +414,7 @@ module TimeGridFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -445,14 +445,14 @@ module TimeGridFunction =
                 let _times = Helper.toCell<Generic.List<double>> times "times" 
                 let _offset = Helper.toCell<int> offset "offset" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder () = withMnemonic mnemonic (Fun.TimeGrid3
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeGrid3
                                                             _times.cell 
                                                             _offset.cell 
                                                             _steps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
-                let source = Helper.sourceFold "Fun.TimeGrid3" 
+                let source () = Helper.sourceFold "Fun.TimeGrid3" 
                                                [| _times.source
                                                ;  _offset.source
                                                ;  _steps.source
@@ -463,7 +463,7 @@ module TimeGridFunction =
                                 ;  _steps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TimeGrid> format
                     ; source = source 
@@ -491,13 +491,13 @@ module TimeGridFunction =
 
                 let _times = Helper.toCell<Generic.List<double>> times "times" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder () = withMnemonic mnemonic (Fun.TimeGrid2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeGrid2
                                                             _times.cell 
                                                             _steps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
-                let source = Helper.sourceFold "Fun.TimeGrid2" 
+                let source () = Helper.sourceFold "Fun.TimeGrid2" 
                                                [| _times.source
                                                ;  _steps.source
                                                |]
@@ -506,7 +506,7 @@ module TimeGridFunction =
                                 ;  _steps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TimeGrid> format
                     ; source = source 
@@ -531,19 +531,19 @@ module TimeGridFunction =
             try
 
                 let _times = Helper.toCell<Generic.List<double>> times "times" 
-                let builder () = withMnemonic mnemonic (Fun.TimeGrid1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeGrid1
                                                             _times.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
-                let source = Helper.sourceFold "Fun.TimeGrid1" 
+                let source () = Helper.sourceFold "Fun.TimeGrid1" 
                                                [| _times.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _times.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TimeGrid> format
                     ; source = source 
@@ -571,13 +571,13 @@ module TimeGridFunction =
 
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder () = withMnemonic mnemonic (Fun.TimeGrid
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TimeGrid
                                                             _End.cell 
                                                             _steps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
-                let source = Helper.sourceFold "Fun.TimeGrid" 
+                let source () = Helper.sourceFold "Fun.TimeGrid" 
                                                [| _End.source
                                                ;  _steps.source
                                                |]
@@ -586,7 +586,7 @@ module TimeGridFunction =
                                 ;  _steps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TimeGrid> format
                     ; source = source 
@@ -611,18 +611,18 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Times
+                let builder (current : ICell) = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_TimeGrid.source + ".Times") 
+                let source () = Helper.sourceFold (_TimeGrid.source + ".Times") 
                                                [| _TimeGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -651,14 +651,14 @@ module TimeGridFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TimeGrid>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TimeGrid>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TimeGrid>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TimeGrid>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

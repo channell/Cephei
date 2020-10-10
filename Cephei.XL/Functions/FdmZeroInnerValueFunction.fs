@@ -55,13 +55,13 @@ module FdmZeroInnerValueFunction =
                 let _FdmZeroInnerValue = Helper.toCell<FdmZeroInnerValue> fdmzeroinnervalue "FdmZeroInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmZeroInnerValueModel.Cast _FdmZeroInnerValue.cell).AvgInnerValue
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmZeroInnerValueModel.Cast _FdmZeroInnerValue.cell).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmZeroInnerValue.source + ".AvgInnerValue") 
+                let source () = Helper.sourceFold (_FdmZeroInnerValue.source + ".AvgInnerValue") 
                                                [| _FdmZeroInnerValue.source
                                                ;  _iter.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module FdmZeroInnerValueFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module FdmZeroInnerValueFunction =
                 let _FdmZeroInnerValue = Helper.toCell<FdmZeroInnerValue> fdmzeroinnervalue "FdmZeroInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmZeroInnerValueModel.Cast _FdmZeroInnerValue.cell).InnerValue
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmZeroInnerValueModel.Cast _FdmZeroInnerValue.cell).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmZeroInnerValue.source + ".InnerValue") 
+                let source () = Helper.sourceFold (_FdmZeroInnerValue.source + ".InnerValue") 
                                                [| _FdmZeroInnerValue.source
                                                ;  _iter.source
                                                ;  _t.source
@@ -120,7 +120,7 @@ module FdmZeroInnerValueFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -149,14 +149,14 @@ module FdmZeroInnerValueFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmZeroInnerValue>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmZeroInnerValue>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmZeroInnerValue>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmZeroInnerValue>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

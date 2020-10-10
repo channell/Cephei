@@ -49,18 +49,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).A_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).A_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".A_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".A_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -106,7 +106,7 @@ module AbcdCoeffHolderFunction =
                 let _bIsFixed = Helper.toCell<bool> bIsFixed "bIsFixed" 
                 let _cIsFixed = Helper.toCell<bool> cIsFixed "cIsFixed" 
                 let _dIsFixed = Helper.toCell<bool> dIsFixed "dIsFixed" 
-                let builder () = withMnemonic mnemonic (Fun.AbcdCoeffHolder 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AbcdCoeffHolder 
                                                             _a.cell 
                                                             _b.cell 
                                                             _c.cell 
@@ -118,7 +118,7 @@ module AbcdCoeffHolderFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AbcdCoeffHolder>) l
 
-                let source = Helper.sourceFold "Fun.AbcdCoeffHolder" 
+                let source () = Helper.sourceFold "Fun.AbcdCoeffHolder" 
                                                [| _a.source
                                                ;  _b.source
                                                ;  _c.source
@@ -139,7 +139,7 @@ module AbcdCoeffHolderFunction =
                                 ;  _dIsFixed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AbcdCoeffHolder> format
                     ; source = source 
@@ -164,18 +164,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).AbcdEndCriteria_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).AbcdEndCriteria_
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".AbcdEndCriteria_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".AbcdEndCriteria_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).AIsFixed_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).AIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".AIsFixed_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".AIsFixed_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,18 +236,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).B_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).B_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".B_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".B_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,18 +272,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).BIsFixed_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).BIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".BIsFixed_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".BIsFixed_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,18 +308,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).C_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).C_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".C_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".C_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,18 +344,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).CIsFixed_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).CIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".CIsFixed_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".CIsFixed_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,18 +380,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).D_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).D_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".D_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".D_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -416,18 +416,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).DIsFixed_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).DIsFixed_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".DIsFixed_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".DIsFixed_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -452,18 +452,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).Error_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).Error_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".Error_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".Error_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,18 +488,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).K_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).K_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".K_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".K_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -524,18 +524,18 @@ module AbcdCoeffHolderFunction =
             try
 
                 let _AbcdCoeffHolder = Helper.toCell<AbcdCoeffHolder> abcdcoeffholder "AbcdCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).MaxError_
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdCoeffHolderModel.Cast _AbcdCoeffHolder.cell).MaxError_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdCoeffHolder.source + ".MaxError_") 
+                let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".MaxError_") 
                                                [| _AbcdCoeffHolder.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -564,14 +564,14 @@ module AbcdCoeffHolderFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AbcdCoeffHolder>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AbcdCoeffHolder>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AbcdCoeffHolder>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AbcdCoeffHolder>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

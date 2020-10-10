@@ -52,12 +52,12 @@ module MersenneTwisterUniformRngFunction =
 
                 let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).Factory
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNGTraits>) l
 
-                let source = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".Factory") 
+                let source () = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".Factory") 
                                                [| _MersenneTwisterUniformRng.source
                                                ;  _seed.source
                                                |]
@@ -66,7 +66,7 @@ module MersenneTwisterUniformRngFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MersenneTwisterUniformRng> format
                     ; source = source 
@@ -91,19 +91,19 @@ module MersenneTwisterUniformRngFunction =
             try
 
                 let _seeds = Helper.toCell<Generic.List<uint64>> seeds "seeds" 
-                let builder () = withMnemonic mnemonic (Fun.MersenneTwisterUniformRng2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MersenneTwisterUniformRng2
                                                             _seeds.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MersenneTwisterUniformRng>) l
 
-                let source = Helper.sourceFold "Fun.MersenneTwisterUniformRng2" 
+                let source () = Helper.sourceFold "Fun.MersenneTwisterUniformRng2" 
                                                [| _seeds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _seeds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MersenneTwisterUniformRng> format
                     ; source = source 
@@ -128,19 +128,19 @@ module MersenneTwisterUniformRngFunction =
             try
 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic (Fun.MersenneTwisterUniformRng
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MersenneTwisterUniformRng
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MersenneTwisterUniformRng>) l
 
-                let source = Helper.sourceFold "Fun.MersenneTwisterUniformRng" 
+                let source () = Helper.sourceFold "Fun.MersenneTwisterUniformRng" 
                                                [| _seed.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MersenneTwisterUniformRng> format
                     ; source = source 
@@ -162,16 +162,16 @@ module MersenneTwisterUniformRngFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.MersenneTwisterUniformRng1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MersenneTwisterUniformRng1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MersenneTwisterUniformRng>) l
 
-                let source = Helper.sourceFold "Fun.MersenneTwisterUniformRng1" 
+                let source () = Helper.sourceFold "Fun.MersenneTwisterUniformRng1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MersenneTwisterUniformRng> format
                     ; source = source 
@@ -196,18 +196,18 @@ module MersenneTwisterUniformRngFunction =
             try
 
                 let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
-                let builder () = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).Next
+                let builder (current : ICell) = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).Next
                                                        ) :> ICell
                 let format (o : Sample<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".Next") 
+                let source () = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".Next") 
                                                [| _MersenneTwisterUniformRng.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MersenneTwisterUniformRng.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -232,18 +232,18 @@ module MersenneTwisterUniformRngFunction =
             try
 
                 let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
-                let builder () = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).NextInt32
+                let builder (current : ICell) = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).NextInt32
                                                        ) :> ICell
                 let format (o : uint64) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".NextInt32") 
+                let source () = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".NextInt32") 
                                                [| _MersenneTwisterUniformRng.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MersenneTwisterUniformRng.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -268,18 +268,18 @@ module MersenneTwisterUniformRngFunction =
             try
 
                 let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
-                let builder () = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).NextReal
+                let builder (current : ICell) = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).NextReal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".NextReal") 
+                let source () = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".NextReal") 
                                                [| _MersenneTwisterUniformRng.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MersenneTwisterUniformRng.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,14 +308,14 @@ module MersenneTwisterUniformRngFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MersenneTwisterUniformRng>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MersenneTwisterUniformRng>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MersenneTwisterUniformRng>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MersenneTwisterUniformRng>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

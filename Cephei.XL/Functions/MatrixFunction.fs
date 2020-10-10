@@ -52,12 +52,12 @@ module MatrixFunction =
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _c = Helper.toCell<int> c "c" 
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Column
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Column
                                                             _c.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Matrix.source + ".Column") 
+                let source () = Helper.sourceFold (_Matrix.source + ".Column") 
                                                [| _Matrix.source
                                                ;  _c.source
                                                |]
@@ -66,7 +66,7 @@ module MatrixFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Matrix> format
                     ; source = source 
@@ -91,18 +91,18 @@ module MatrixFunction =
             try
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Columns
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Matrix.source + ".Columns") 
+                let source () = Helper.sourceFold (_Matrix.source + ".Columns") 
                                                [| _Matrix.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Matrix.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -127,18 +127,18 @@ module MatrixFunction =
             try
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Diagonal
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Matrix.source + ".Diagonal") 
+                let source () = Helper.sourceFold (_Matrix.source + ".Diagonal") 
                                                [| _Matrix.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Matrix.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Matrix> format
                     ; source = source 
@@ -163,18 +163,18 @@ module MatrixFunction =
             try
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Matrix.source + ".Empty") 
+                let source () = Helper.sourceFold (_Matrix.source + ".Empty") 
                                                [| _Matrix.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Matrix.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -202,12 +202,12 @@ module MatrixFunction =
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Fill
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Fill
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : Matrix) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Matrix.source + ".Fill") 
+                let source () = Helper.sourceFold (_Matrix.source + ".Fill") 
                                                [| _Matrix.source
                                                ;  _value.source
                                                |]
@@ -216,7 +216,7 @@ module MatrixFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -247,13 +247,13 @@ module MatrixFunction =
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _start = Helper.toCell<int> start "start" 
                 let _length = Helper.toCell<int> length "length" 
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).GetRange
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).GetRange
                                                             _start.cell 
                                                             _length.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Matrix.source + ".GetRange") 
+                let source () = Helper.sourceFold (_Matrix.source + ".GetRange") 
                                                [| _Matrix.source
                                                ;  _start.source
                                                ;  _length.source
@@ -264,7 +264,7 @@ module MatrixFunction =
                                 ;  _length.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Matrix> format
                     ; source = source 
@@ -289,19 +289,19 @@ module MatrixFunction =
             try
 
                 let _from = Helper.toCell<Matrix> from "from" 
-                let builder () = withMnemonic mnemonic (Fun.Matrix2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Matrix2
                                                             _from.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold "Fun.Matrix2" 
+                let source () = Helper.sourceFold "Fun.Matrix2" 
                                                [| _from.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _from.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Matrix> format
                     ; source = source 
@@ -332,14 +332,14 @@ module MatrixFunction =
                 let _rows = Helper.toCell<int> rows "rows" 
                 let _columns = Helper.toCell<int> columns "columns" 
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic (Fun.Matrix
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Matrix
                                                             _rows.cell 
                                                             _columns.cell 
                                                             _value.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold "Fun.Matrix" 
+                let source () = Helper.sourceFold "Fun.Matrix" 
                                                [| _rows.source
                                                ;  _columns.source
                                                ;  _value.source
@@ -350,7 +350,7 @@ module MatrixFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Matrix> format
                     ; source = source 
@@ -378,13 +378,13 @@ module MatrixFunction =
 
                 let _rows = Helper.toCell<int> rows "rows" 
                 let _columns = Helper.toCell<int> columns "columns" 
-                let builder () = withMnemonic mnemonic (Fun.Matrix1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Matrix1
                                                             _rows.cell 
                                                             _columns.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold "Fun.Matrix1" 
+                let source () = Helper.sourceFold "Fun.Matrix1" 
                                                [| _rows.source
                                                ;  _columns.source
                                                |]
@@ -393,7 +393,7 @@ module MatrixFunction =
                                 ;  _columns.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Matrix> format
                     ; source = source 
@@ -415,16 +415,16 @@ module MatrixFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Matrix3 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Matrix3 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold "Fun.Matrix3" 
+                let source () = Helper.sourceFold "Fun.Matrix3" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Matrix> format
                     ; source = source 
@@ -452,12 +452,12 @@ module MatrixFunction =
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _r = Helper.toCell<int> r "r" 
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Row
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Row
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Matrix.source + ".Row") 
+                let source () = Helper.sourceFold (_Matrix.source + ".Row") 
                                                [| _Matrix.source
                                                ;  _r.source
                                                |]
@@ -466,7 +466,7 @@ module MatrixFunction =
                                 ;  _r.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Matrix> format
                     ; source = source 
@@ -491,18 +491,18 @@ module MatrixFunction =
             try
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Rows
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Rows
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Matrix.source + ".Rows") 
+                let source () = Helper.sourceFold (_Matrix.source + ".Rows") 
                                                [| _Matrix.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Matrix.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -539,7 +539,7 @@ module MatrixFunction =
                 let _j1 = Helper.toCell<int> j1 "j1" 
                 let _i2 = Helper.toCell<int> i2 "i2" 
                 let _j2 = Helper.toCell<int> j2 "j2" 
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Swap
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Swap
                                                             _i1.cell 
                                                             _j1.cell 
                                                             _i2.cell 
@@ -547,7 +547,7 @@ module MatrixFunction =
                                                        ) :> ICell
                 let format (o : Matrix) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Matrix.source + ".Swap") 
+                let source () = Helper.sourceFold (_Matrix.source + ".Swap") 
                                                [| _Matrix.source
                                                ;  _i1.source
                                                ;  _j1.source
@@ -562,7 +562,7 @@ module MatrixFunction =
                                 ;  _j2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -593,13 +593,13 @@ module MatrixFunction =
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _r1 = Helper.toCell<int> r1 "r1" 
                 let _r2 = Helper.toCell<int> r2 "r2" 
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).SwapRow
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).SwapRow
                                                             _r1.cell 
                                                             _r2.cell 
                                                        ) :> ICell
                 let format (o : Matrix) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Matrix.source + ".SwapRow") 
+                let source () = Helper.sourceFold (_Matrix.source + ".SwapRow") 
                                                [| _Matrix.source
                                                ;  _r1.source
                                                ;  _r2.source
@@ -610,7 +610,7 @@ module MatrixFunction =
                                 ;  _r2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -638,12 +638,12 @@ module MatrixFunction =
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).This
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).This
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Matrix.source + ".This") 
+                let source () = Helper.sourceFold (_Matrix.source + ".This") 
                                                [| _Matrix.source
                                                ;  _i.source
                                                |]
@@ -652,7 +652,7 @@ module MatrixFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -683,13 +683,13 @@ module MatrixFunction =
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).This1
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).This1
                                                             _i.cell 
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Matrix.source + ".This1") 
+                let source () = Helper.sourceFold (_Matrix.source + ".This1") 
                                                [| _Matrix.source
                                                ;  _i.source
                                                ;  _j.source
@@ -700,7 +700,7 @@ module MatrixFunction =
                                 ;  _j.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -725,18 +725,18 @@ module MatrixFunction =
             try
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
-                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Matrix.source + ".ToString") 
+                let source () = Helper.sourceFold (_Matrix.source + ".ToString") 
                                                [| _Matrix.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Matrix.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -765,14 +765,14 @@ module MatrixFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Matrix>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Matrix>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Matrix>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Matrix>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

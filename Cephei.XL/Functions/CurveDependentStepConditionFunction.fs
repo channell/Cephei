@@ -55,13 +55,13 @@ module CurveDependentStepConditionFunction =
                 let _CurveDependentStepCondition = Helper.toCell<CurveDependentStepCondition> curvedependentstepcondition "CurveDependentStepCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((CurveDependentStepConditionModel.Cast _CurveDependentStepCondition.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((CurveDependentStepConditionModel.Cast _CurveDependentStepCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : CurveDependentStepCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CurveDependentStepCondition.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_CurveDependentStepCondition.source + ".ApplyTo") 
                                                [| _CurveDependentStepCondition.source
                                                ;  _o.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module CurveDependentStepConditionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -101,14 +101,14 @@ module CurveDependentStepConditionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CurveDependentStepCondition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CurveDependentStepCondition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CurveDependentStepCondition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CurveDependentStepCondition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

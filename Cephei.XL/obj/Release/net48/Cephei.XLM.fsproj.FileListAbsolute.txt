@@ -31,3 +31,5 @@ C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Release\net48\Cephei.XLM.fspro
 C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Release\net48\Cephei.XLM.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.XL\obj\Release\net48\Cephei.XLM.pdb
 C:\Users\steve\Source\Repos\Cephei2\Cephei.XL\bin\Release\net48\Serilog.dll
+C:\Users\steve\Source\Repos\Cephei2\bin\Release\net48\Cephei.XLM.dll
+C:\Users\steve\Source\Repos\Cephei2\bin\Release\net48\Cephei.XLM.pdb

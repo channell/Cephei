@@ -49,18 +49,18 @@ module simple_eventFunction =
             try
 
                 let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
-                let builder () = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_simple_event.source + ".Date") 
+                let source () = Helper.sourceFold (_simple_event.source + ".Date") 
                                                [| _simple_event.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _simple_event.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,19 +85,19 @@ module simple_eventFunction =
             try
 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic (Fun.simple_event 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.simple_event 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<simple_event>) l
 
-                let source = Helper.sourceFold "Fun.simple_event" 
+                let source () = Helper.sourceFold "Fun.simple_event" 
                                                [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<simple_event> format
                     ; source = source 
@@ -125,12 +125,12 @@ module simple_eventFunction =
 
                 let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : simple_event) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_simple_event.source + ".Accept") 
+                let source () = Helper.sourceFold (_simple_event.source + ".Accept") 
                                                [| _simple_event.source
                                                ;  _v.source
                                                |]
@@ -139,7 +139,7 @@ module simple_eventFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,13 +170,13 @@ module simple_eventFunction =
                 let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).HasOccurred
                                                             _d.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_simple_event.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_simple_event.source + ".HasOccurred") 
                                                [| _simple_event.source
                                                ;  _d.source
                                                ;  _includeRefDate.source
@@ -187,7 +187,7 @@ module simple_eventFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -215,12 +215,12 @@ module simple_eventFunction =
 
                 let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : simple_event) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_simple_event.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_simple_event.source + ".RegisterWith") 
                                                [| _simple_event.source
                                                ;  _handler.source
                                                |]
@@ -229,7 +229,7 @@ module simple_eventFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -257,12 +257,12 @@ module simple_eventFunction =
 
                 let _simple_event = Helper.toCell<simple_event> simple_event "simple_event"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((simple_eventModel.Cast _simple_event.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : simple_event) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_simple_event.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_simple_event.source + ".UnregisterWith") 
                                                [| _simple_event.source
                                                ;  _handler.source
                                                |]
@@ -271,7 +271,7 @@ module simple_eventFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -300,14 +300,14 @@ module simple_eventFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<simple_event>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<simple_event>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<simple_event>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<simple_event>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

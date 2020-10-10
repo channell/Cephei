@@ -64,7 +64,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
                 let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" 
                 let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
-                let builder () = withMnemonic mnemonic (Fun.BlackDeltaPremiumAdjustedMaxStrikeClass 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackDeltaPremiumAdjustedMaxStrikeClass 
                                                             _ot.cell 
                                                             _dt.cell 
                                                             _spot.cell 
@@ -74,7 +74,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackDeltaPremiumAdjustedMaxStrikeClass>) l
 
-                let source = Helper.sourceFold "Fun.BlackDeltaPremiumAdjustedMaxStrikeClass" 
+                let source () = Helper.sourceFold "Fun.BlackDeltaPremiumAdjustedMaxStrikeClass" 
                                                [| _ot.source
                                                ;  _dt.source
                                                ;  _spot.source
@@ -91,7 +91,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
                                 ;  _stdDev.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackDeltaPremiumAdjustedMaxStrikeClass> format
                     ; source = source 
@@ -119,12 +119,12 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
                 let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Value
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaPremiumAdjustedMaxStrikeClass.source + ".Value") 
+                let source () = Helper.sourceFold (_BlackDeltaPremiumAdjustedMaxStrikeClass.source + ".Value") 
                                                [| _BlackDeltaPremiumAdjustedMaxStrikeClass.source
                                                ;  _strike.source
                                                |]
@@ -133,7 +133,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -161,12 +161,12 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
                 let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaPremiumAdjustedMaxStrikeClass.source + ".Derivative") 
+                let source () = Helper.sourceFold (_BlackDeltaPremiumAdjustedMaxStrikeClass.source + ".Derivative") 
                                                [| _BlackDeltaPremiumAdjustedMaxStrikeClass.source
                                                ;  _x.source
                                                |]
@@ -175,7 +175,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -204,14 +204,14 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackDeltaPremiumAdjustedMaxStrikeClass>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackDeltaPremiumAdjustedMaxStrikeClass>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackDeltaPremiumAdjustedMaxStrikeClass>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackDeltaPremiumAdjustedMaxStrikeClass>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

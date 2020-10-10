@@ -49,18 +49,18 @@ module IndexManagerFunction =
             try
 
                 let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
-                let builder () = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).ClearHistories
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).ClearHistories
                                                        ) :> ICell
                 let format (o : IndexManager) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexManager.source + ".ClearHistories") 
+                let source () = Helper.sourceFold (_IndexManager.source + ".ClearHistories") 
                                                [| _IndexManager.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexManager.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -88,12 +88,12 @@ module IndexManagerFunction =
 
                 let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
-                let builder () = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).ClearHistory
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).ClearHistory
                                                             _name.cell 
                                                        ) :> ICell
                 let format (o : IndexManager) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexManager.source + ".ClearHistory") 
+                let source () = Helper.sourceFold (_IndexManager.source + ".ClearHistory") 
                                                [| _IndexManager.source
                                                ;  _name.source
                                                |]
@@ -102,7 +102,7 @@ module IndexManagerFunction =
                                 ;  _name.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -130,12 +130,12 @@ module IndexManagerFunction =
 
                 let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
-                let builder () = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).GetHistory
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).GetHistory
                                                             _name.cell 
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexManager.source + ".GetHistory") 
+                let source () = Helper.sourceFold (_IndexManager.source + ".GetHistory") 
                                                [| _IndexManager.source
                                                ;  _name.source
                                                |]
@@ -144,7 +144,7 @@ module IndexManagerFunction =
                                 ;  _name.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -172,12 +172,12 @@ module IndexManagerFunction =
 
                 let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
-                let builder () = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).HasHistory
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).HasHistory
                                                             _name.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexManager.source + ".HasHistory") 
+                let source () = Helper.sourceFold (_IndexManager.source + ".HasHistory") 
                                                [| _IndexManager.source
                                                ;  _name.source
                                                |]
@@ -186,7 +186,7 @@ module IndexManagerFunction =
                                 ;  _name.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -211,18 +211,18 @@ module IndexManagerFunction =
             try
 
                 let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
-                let builder () = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).Histories
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).Histories
                                                        ) :> ICell
                 let format (i : Generic.List<string>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_IndexManager.source + ".Histories") 
+                let source () = Helper.sourceFold (_IndexManager.source + ".Histories") 
                                                [| _IndexManager.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexManager.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -250,12 +250,12 @@ module IndexManagerFunction =
 
                 let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
-                let builder () = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).Notifier
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).Notifier
                                                             _name.cell 
                                                        ) :> ICell
                 let format (o : ObservableValue<TimeSeries<Nullable<double>>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexManager.source + ".Notifier") 
+                let source () = Helper.sourceFold (_IndexManager.source + ".Notifier") 
                                                [| _IndexManager.source
                                                ;  _name.source
                                                |]
@@ -264,7 +264,7 @@ module IndexManagerFunction =
                                 ;  _name.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -295,13 +295,13 @@ module IndexManagerFunction =
                 let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
                 let _history = Helper.toCell<TimeSeries<Nullable<double>>> history "history" 
-                let builder () = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).SetHistory
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).SetHistory
                                                             _name.cell 
                                                             _history.cell 
                                                        ) :> ICell
                 let format (o : IndexManager) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexManager.source + ".SetHistory") 
+                let source () = Helper.sourceFold (_IndexManager.source + ".SetHistory") 
                                                [| _IndexManager.source
                                                ;  _name.source
                                                ;  _history.source
@@ -312,7 +312,7 @@ module IndexManagerFunction =
                                 ;  _history.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -343,13 +343,13 @@ module IndexManagerFunction =
                 let _IndexManager = Helper.toCell<IndexManager> indexmanager "IndexManager"  
                 let _name = Helper.toCell<string> name "name" 
                 let _history = Helper.toCell<TimeSeries<Nullable<double>>> history "history" 
-                let builder () = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).TryGetHistory
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexManagerModel.Cast _IndexManager.cell).TryGetHistory
                                                             _name.cell 
                                                             _history.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexManager.source + ".TryGetHistory") 
+                let source () = Helper.sourceFold (_IndexManager.source + ".TryGetHistory") 
                                                [| _IndexManager.source
                                                ;  _name.source
                                                ;  _history.source
@@ -360,7 +360,7 @@ module IndexManagerFunction =
                                 ;  _history.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -389,14 +389,14 @@ module IndexManagerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IndexManager>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<IndexManager>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<IndexManager>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<IndexManager>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

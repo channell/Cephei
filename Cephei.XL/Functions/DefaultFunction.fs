@@ -64,7 +64,7 @@ module DefaultFunction =
                 let _b = Helper.toCell<double> b "b" 
                 let _I = Helper.toCell<double> I "I" 
                 let _N = Helper.toCell<int> N "N" 
-                let builder () = withMnemonic mnemonic ((DefaultModel.Cast _Default.cell).Integrate
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultModel.Cast _Default.cell).Integrate
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 
@@ -73,7 +73,7 @@ module DefaultFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Default.source + ".Integrate") 
+                let source () = Helper.sourceFold (_Default.source + ".Integrate") 
                                                [| _Default.source
                                                ;  _f.source
                                                ;  _a.source
@@ -90,7 +90,7 @@ module DefaultFunction =
                                 ;  _N.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -115,18 +115,18 @@ module DefaultFunction =
             try
 
                 let _Default = Helper.toCell<Default> defaulT "Default"  
-                let builder () = withMnemonic mnemonic ((DefaultModel.Cast _Default.cell).NbEvalutions
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultModel.Cast _Default.cell).NbEvalutions
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Default.source + ".NbEvalutions") 
+                let source () = Helper.sourceFold (_Default.source + ".NbEvalutions") 
                                                [| _Default.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Default.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,14 +155,14 @@ module DefaultFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Default>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Default>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Default>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Default>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

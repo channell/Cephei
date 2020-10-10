@@ -52,13 +52,13 @@ module CmsSpreadLegFunction =
 
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let _swapSpreadIndex = Helper.toCell<SwapSpreadIndex> swapSpreadIndex "swapSpreadIndex" 
-                let builder () = withMnemonic mnemonic (Fun.CmsSpreadLeg 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CmsSpreadLeg 
                                                             _schedule.cell 
                                                             _swapSpreadIndex.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CmsSpreadLeg>) l
 
-                let source = Helper.sourceFold "Fun.CmsSpreadLeg" 
+                let source () = Helper.sourceFold "Fun.CmsSpreadLeg" 
                                                [| _schedule.source
                                                ;  _swapSpreadIndex.source
                                                |]
@@ -67,7 +67,7 @@ module CmsSpreadLegFunction =
                                 ;  _swapSpreadIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -92,18 +92,18 @@ module CmsSpreadLegFunction =
             try
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".Value") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".Value") 
                                                [| _CmsSpreadLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -131,12 +131,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).InArrears1
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).InArrears1
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".InArrears1") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".InArrears1") 
                                                [| _CmsSpreadLeg.source
                                                ;  _flag.source
                                                |]
@@ -145,7 +145,7 @@ module CmsSpreadLegFunction =
                                 ;  _flag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -170,18 +170,18 @@ module CmsSpreadLegFunction =
             try
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).InArrears
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).InArrears
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".InArrears") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".InArrears") 
                                                [| _CmsSpreadLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -209,12 +209,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithCaps
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithCaps
                                                             _caps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithCaps") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithCaps") 
                                                [| _CmsSpreadLeg.source
                                                ;  _caps.source
                                                |]
@@ -223,7 +223,7 @@ module CmsSpreadLegFunction =
                                 ;  _caps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -251,12 +251,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _cap = Helper.toNullable<double> cap "cap"
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithCaps1
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithCaps1
                                                             _cap.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithCaps1") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithCaps1") 
                                                [| _CmsSpreadLeg.source
                                                ;  _cap.source
                                                |]
@@ -265,7 +265,7 @@ module CmsSpreadLegFunction =
                                 ;  _cap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -293,12 +293,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithFixingDays1
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithFixingDays1") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithFixingDays1") 
                                                [| _CmsSpreadLeg.source
                                                ;  _fixingDays.source
                                                |]
@@ -307,7 +307,7 @@ module CmsSpreadLegFunction =
                                 ;  _fixingDays.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -335,12 +335,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithFixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithFixingDays") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithFixingDays") 
                                                [| _CmsSpreadLeg.source
                                                ;  _fixingDays.source
                                                |]
@@ -349,7 +349,7 @@ module CmsSpreadLegFunction =
                                 ;  _fixingDays.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -377,12 +377,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithFloors1
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithFloors1") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithFloors1") 
                                                [| _CmsSpreadLeg.source
                                                ;  _floors.source
                                                |]
@@ -391,7 +391,7 @@ module CmsSpreadLegFunction =
                                 ;  _floors.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -419,12 +419,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _floor = Helper.toNullable<double> floor "floor"
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithFloors
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithFloors
                                                             _floor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithFloors") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithFloors") 
                                                [| _CmsSpreadLeg.source
                                                ;  _floor.source
                                                |]
@@ -433,7 +433,7 @@ module CmsSpreadLegFunction =
                                 ;  _floor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -461,12 +461,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithGearings
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithGearings
                                                             _gearing.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithGearings") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithGearings") 
                                                [| _CmsSpreadLeg.source
                                                ;  _gearing.source
                                                |]
@@ -475,7 +475,7 @@ module CmsSpreadLegFunction =
                                 ;  _gearing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -503,12 +503,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithGearings1
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithGearings1
                                                             _gearings.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithGearings1") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithGearings1") 
                                                [| _CmsSpreadLeg.source
                                                ;  _gearings.source
                                                |]
@@ -517,7 +517,7 @@ module CmsSpreadLegFunction =
                                 ;  _gearings.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -545,12 +545,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithPaymentDayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithPaymentDayCounter") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithPaymentDayCounter") 
                                                [| _CmsSpreadLeg.source
                                                ;  _dayCounter.source
                                                |]
@@ -559,7 +559,7 @@ module CmsSpreadLegFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -587,12 +587,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithSpreads1
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithSpreads1
                                                             _spreads.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithSpreads1") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithSpreads1") 
                                                [| _CmsSpreadLeg.source
                                                ;  _spreads.source
                                                |]
@@ -601,7 +601,7 @@ module CmsSpreadLegFunction =
                                 ;  _spreads.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -629,12 +629,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithSpreads
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithSpreads
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithSpreads") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithSpreads") 
                                                [| _CmsSpreadLeg.source
                                                ;  _spread.source
                                                |]
@@ -643,7 +643,7 @@ module CmsSpreadLegFunction =
                                 ;  _spread.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -671,12 +671,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithZeroPayments1
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithZeroPayments1
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithZeroPayments1") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithZeroPayments1") 
                                                [| _CmsSpreadLeg.source
                                                ;  _flag.source
                                                |]
@@ -685,7 +685,7 @@ module CmsSpreadLegFunction =
                                 ;  _flag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -710,18 +710,18 @@ module CmsSpreadLegFunction =
             try
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithZeroPayments
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithZeroPayments
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithZeroPayments") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithZeroPayments") 
                                                [| _CmsSpreadLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -749,12 +749,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithNotionals1
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithNotionals1") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithNotionals1") 
                                                [| _CmsSpreadLeg.source
                                                ;  _notionals.source
                                                |]
@@ -763,7 +763,7 @@ module CmsSpreadLegFunction =
                                 ;  _notionals.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -791,12 +791,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithNotionals
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithNotionals") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithNotionals") 
                                                [| _CmsSpreadLeg.source
                                                ;  _notional.source
                                                |]
@@ -805,7 +805,7 @@ module CmsSpreadLegFunction =
                                 ;  _notional.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -833,12 +833,12 @@ module CmsSpreadLegFunction =
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithPaymentAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
-                let source = Helper.sourceFold (_CmsSpreadLeg.source + ".WithPaymentAdjustment") 
+                let source () = Helper.sourceFold (_CmsSpreadLeg.source + ".WithPaymentAdjustment") 
                                                [| _CmsSpreadLeg.source
                                                ;  _convention.source
                                                |]
@@ -847,7 +847,7 @@ module CmsSpreadLegFunction =
                                 ;  _convention.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CmsSpreadLeg> format
                     ; source = source 
@@ -876,14 +876,14 @@ module CmsSpreadLegFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CmsSpreadLeg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CmsSpreadLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CmsSpreadLeg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CmsSpreadLeg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

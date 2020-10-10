@@ -49,19 +49,19 @@ module BulletPricipalLegFunction =
             try
 
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
-                let builder () = withMnemonic mnemonic (Fun.BulletPricipalLeg 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BulletPricipalLeg 
                                                             _schedule.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BulletPricipalLeg>) l
 
-                let source = Helper.sourceFold "Fun.BulletPricipalLeg" 
+                let source () = Helper.sourceFold "Fun.BulletPricipalLeg" 
                                                [| _schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
@@ -86,18 +86,18 @@ module BulletPricipalLegFunction =
             try
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
-                let builder () = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_BulletPricipalLeg.source + ".Value") 
+                let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".Value") 
                                                [| _BulletPricipalLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BulletPricipalLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -125,12 +125,12 @@ module BulletPricipalLegFunction =
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithNotionals
+                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithNotionals
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
-                let source = Helper.sourceFold (_BulletPricipalLeg.source + ".WithNotionals") 
+                let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".WithNotionals") 
                                                [| _BulletPricipalLeg.source
                                                ;  _notionals.source
                                                |]
@@ -139,7 +139,7 @@ module BulletPricipalLegFunction =
                                 ;  _notionals.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
@@ -167,12 +167,12 @@ module BulletPricipalLegFunction =
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithNotionals1
+                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithNotionals1
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
-                let source = Helper.sourceFold (_BulletPricipalLeg.source + ".WithNotionals1") 
+                let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".WithNotionals1") 
                                                [| _BulletPricipalLeg.source
                                                ;  _notional.source
                                                |]
@@ -181,7 +181,7 @@ module BulletPricipalLegFunction =
                                 ;  _notional.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
@@ -209,12 +209,12 @@ module BulletPricipalLegFunction =
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithPaymentAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
-                let source = Helper.sourceFold (_BulletPricipalLeg.source + ".WithPaymentAdjustment") 
+                let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".WithPaymentAdjustment") 
                                                [| _BulletPricipalLeg.source
                                                ;  _convention.source
                                                |]
@@ -223,7 +223,7 @@ module BulletPricipalLegFunction =
                                 ;  _convention.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
@@ -251,12 +251,12 @@ module BulletPricipalLegFunction =
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithPaymentDayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
-                let source = Helper.sourceFold (_BulletPricipalLeg.source + ".WithPaymentDayCounter") 
+                let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".WithPaymentDayCounter") 
                                                [| _BulletPricipalLeg.source
                                                ;  _dayCounter.source
                                                |]
@@ -265,7 +265,7 @@ module BulletPricipalLegFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
@@ -293,12 +293,12 @@ module BulletPricipalLegFunction =
 
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let _sign = Helper.toCell<int> sign "sign" 
-                let builder () = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithSign
+                let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).WithSign
                                                             _sign.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
-                let source = Helper.sourceFold (_BulletPricipalLeg.source + ".WithSign") 
+                let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".WithSign") 
                                                [| _BulletPricipalLeg.source
                                                ;  _sign.source
                                                |]
@@ -307,7 +307,7 @@ module BulletPricipalLegFunction =
                                 ;  _sign.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BulletPricipalLeg> format
                     ; source = source 
@@ -336,14 +336,14 @@ module BulletPricipalLegFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BulletPricipalLeg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BulletPricipalLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BulletPricipalLeg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BulletPricipalLeg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

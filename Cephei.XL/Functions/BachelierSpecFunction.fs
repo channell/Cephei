@@ -46,16 +46,16 @@ module BachelierSpecFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.BachelierSpec ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSpec ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierSpec>) l
 
-                let source = Helper.sourceFold "Fun.BachelierSpec" 
+                let source () = Helper.sourceFold "Fun.BachelierSpec" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierSpec> format
                     ; source = source 
@@ -80,18 +80,18 @@ module BachelierSpecFunction =
             try
 
                 let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec"  
-                let builder () = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Type
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BachelierSpec.source + ".TYPE") 
+                let source () = Helper.sourceFold (_BachelierSpec.source + ".TYPE") 
                                                [| _BachelierSpec.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BachelierSpec.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -134,7 +134,7 @@ module BachelierSpecFunction =
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Value
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _atmForward.cell 
@@ -144,7 +144,7 @@ module BachelierSpecFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BachelierSpec.source + ".Value") 
+                let source () = Helper.sourceFold (_BachelierSpec.source + ".Value") 
                                                [| _BachelierSpec.source
                                                ;  _Type.source
                                                ;  _strike.source
@@ -163,7 +163,7 @@ module BachelierSpecFunction =
                                 ;  _displacement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,7 +206,7 @@ module BachelierSpecFunction =
                 let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Vega
                                                             _strike.cell 
                                                             _atmForward.cell 
                                                             _stdDev.cell 
@@ -216,7 +216,7 @@ module BachelierSpecFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BachelierSpec.source + ".Vega") 
+                let source () = Helper.sourceFold (_BachelierSpec.source + ".Vega") 
                                                [| _BachelierSpec.source
                                                ;  _strike.source
                                                ;  _atmForward.source
@@ -235,7 +235,7 @@ module BachelierSpecFunction =
                                 ;  _displacement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -264,14 +264,14 @@ module BachelierSpecFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BachelierSpec>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BachelierSpec>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BachelierSpec>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BachelierSpec>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

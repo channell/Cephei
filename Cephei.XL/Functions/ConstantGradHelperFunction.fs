@@ -61,7 +61,7 @@ module ConstantGradHelperFunction =
                 let _xPrev = Helper.toCell<double> xPrev "xPrev" 
                 let _xNext = Helper.toCell<double> xNext "xNext" 
                 let _fNext = Helper.toCell<double> fNext "fNext" 
-                let builder () = withMnemonic mnemonic (Fun.ConstantGradHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConstantGradHelper 
                                                             _fPrev.cell 
                                                             _prevPrimitive.cell 
                                                             _xPrev.cell 
@@ -70,7 +70,7 @@ module ConstantGradHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConstantGradHelper>) l
 
-                let source = Helper.sourceFold "Fun.ConstantGradHelper" 
+                let source () = Helper.sourceFold "Fun.ConstantGradHelper" 
                                                [| _fPrev.source
                                                ;  _prevPrimitive.source
                                                ;  _xPrev.source
@@ -85,7 +85,7 @@ module ConstantGradHelperFunction =
                                 ;  _fNext.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantGradHelper> format
                     ; source = source 
@@ -110,18 +110,18 @@ module ConstantGradHelperFunction =
             try
 
                 let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper"  
-                let builder () = withMnemonic mnemonic ((ConstantGradHelperModel.Cast _ConstantGradHelper.cell).FNext
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantGradHelperModel.Cast _ConstantGradHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantGradHelper.source + ".FNext") 
+                let source () = Helper.sourceFold (_ConstantGradHelper.source + ".FNext") 
                                                [| _ConstantGradHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantGradHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -149,12 +149,12 @@ module ConstantGradHelperFunction =
 
                 let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((ConstantGradHelperModel.Cast _ConstantGradHelper.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantGradHelperModel.Cast _ConstantGradHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantGradHelper.source + ".Primitive") 
+                let source () = Helper.sourceFold (_ConstantGradHelper.source + ".Primitive") 
                                                [| _ConstantGradHelper.source
                                                ;  _x.source
                                                |]
@@ -163,7 +163,7 @@ module ConstantGradHelperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -191,12 +191,12 @@ module ConstantGradHelperFunction =
 
                 let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((ConstantGradHelperModel.Cast _ConstantGradHelper.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantGradHelperModel.Cast _ConstantGradHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantGradHelper.source + ".Value") 
+                let source () = Helper.sourceFold (_ConstantGradHelper.source + ".Value") 
                                                [| _ConstantGradHelper.source
                                                ;  _x.source
                                                |]
@@ -205,7 +205,7 @@ module ConstantGradHelperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -234,14 +234,14 @@ module ConstantGradHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConstantGradHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ConstantGradHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ConstantGradHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ConstantGradHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

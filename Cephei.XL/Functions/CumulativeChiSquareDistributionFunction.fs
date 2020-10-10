@@ -49,19 +49,19 @@ module CumulativeChiSquareDistributionFunction =
             try
 
                 let _df = Helper.toCell<double> df "df" 
-                let builder () = withMnemonic mnemonic (Fun.CumulativeChiSquareDistribution 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CumulativeChiSquareDistribution 
                                                             _df.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CumulativeChiSquareDistribution>) l
 
-                let source = Helper.sourceFold "Fun.CumulativeChiSquareDistribution" 
+                let source () = Helper.sourceFold "Fun.CumulativeChiSquareDistribution" 
                                                [| _df.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _df.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CumulativeChiSquareDistribution> format
                     ; source = source 
@@ -89,12 +89,12 @@ module CumulativeChiSquareDistributionFunction =
 
                 let _CumulativeChiSquareDistribution = Helper.toCell<CumulativeChiSquareDistribution> cumulativechisquaredistribution "CumulativeChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((CumulativeChiSquareDistributionModel.Cast _CumulativeChiSquareDistribution.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((CumulativeChiSquareDistributionModel.Cast _CumulativeChiSquareDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CumulativeChiSquareDistribution.source + ".Value") 
+                let source () = Helper.sourceFold (_CumulativeChiSquareDistribution.source + ".Value") 
                                                [| _CumulativeChiSquareDistribution.source
                                                ;  _x.source
                                                |]
@@ -103,7 +103,7 @@ module CumulativeChiSquareDistributionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -132,14 +132,14 @@ module CumulativeChiSquareDistributionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CumulativeChiSquareDistribution>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CumulativeChiSquareDistribution>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CumulativeChiSquareDistribution>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CumulativeChiSquareDistribution>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

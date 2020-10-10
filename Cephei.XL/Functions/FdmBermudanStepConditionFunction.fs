@@ -55,13 +55,13 @@ module FdmBermudanStepConditionFunction =
                 let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FdmBermudanStepCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmBermudanStepCondition.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_FdmBermudanStepCondition.source + ".ApplyTo") 
                                                [| _FdmBermudanStepCondition.source
                                                ;  _o.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module FdmBermudanStepConditionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,18 +97,18 @@ module FdmBermudanStepConditionFunction =
             try
 
                 let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
-                let builder () = withMnemonic mnemonic ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ExerciseTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ExerciseTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FdmBermudanStepCondition.source + ".ExerciseTimes") 
+                let source () = Helper.sourceFold (_FdmBermudanStepCondition.source + ".ExerciseTimes") 
                                                [| _FdmBermudanStepCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmBermudanStepCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -145,7 +145,7 @@ module FdmBermudanStepConditionFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let _calculator = Helper.toCell<FdmInnerValueCalculator> calculator "calculator" 
-                let builder () = withMnemonic mnemonic (Fun.FdmBermudanStepCondition 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmBermudanStepCondition 
                                                             _exerciseDates.cell 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
@@ -154,7 +154,7 @@ module FdmBermudanStepConditionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmBermudanStepCondition>) l
 
-                let source = Helper.sourceFold "Fun.FdmBermudanStepCondition" 
+                let source () = Helper.sourceFold "Fun.FdmBermudanStepCondition" 
                                                [| _exerciseDates.source
                                                ;  _referenceDate.source
                                                ;  _dayCounter.source
@@ -169,7 +169,7 @@ module FdmBermudanStepConditionFunction =
                                 ;  _calculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmBermudanStepCondition> format
                     ; source = source 
@@ -198,14 +198,14 @@ module FdmBermudanStepConditionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmBermudanStepCondition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmBermudanStepCondition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmBermudanStepCondition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmBermudanStepCondition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

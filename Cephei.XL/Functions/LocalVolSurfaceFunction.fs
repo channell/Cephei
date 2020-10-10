@@ -49,18 +49,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".DayCounter") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalVolSurface> format
                     ; source = source 
@@ -94,7 +94,7 @@ module LocalVolSurfaceFunction =
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _dividendTS = Helper.toHandle<YieldTermStructure> dividendTS "dividendTS" 
                 let _underlying = Helper.toCell<double> underlying "underlying" 
-                let builder () = withMnemonic mnemonic (Fun.LocalVolSurface1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalVolSurface1 
                                                             _blackTS.cell 
                                                             _riskFreeTS.cell 
                                                             _dividendTS.cell 
@@ -102,7 +102,7 @@ module LocalVolSurfaceFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LocalVolSurface>) l
 
-                let source = Helper.sourceFold "Fun.LocalVolSurface1" 
+                let source () = Helper.sourceFold "Fun.LocalVolSurface1" 
                                                [| _blackTS.source
                                                ;  _riskFreeTS.source
                                                ;  _dividendTS.source
@@ -115,7 +115,7 @@ module LocalVolSurfaceFunction =
                                 ;  _underlying.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalVolSurface> format
                     ; source = source 
@@ -149,7 +149,7 @@ module LocalVolSurfaceFunction =
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _dividendTS = Helper.toHandle<YieldTermStructure> dividendTS "dividendTS" 
                 let _underlying = Helper.toHandle<Quote> underlying "underlying" 
-                let builder () = withMnemonic mnemonic (Fun.LocalVolSurface
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalVolSurface
                                                             _blackTS.cell 
                                                             _riskFreeTS.cell 
                                                             _dividendTS.cell 
@@ -157,7 +157,7 @@ module LocalVolSurfaceFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LocalVolSurface>) l
 
-                let source = Helper.sourceFold "Fun.LocalVolSurface" 
+                let source () = Helper.sourceFold "Fun.LocalVolSurface" 
                                                [| _blackTS.source
                                                ;  _riskFreeTS.source
                                                ;  _dividendTS.source
@@ -170,7 +170,7 @@ module LocalVolSurfaceFunction =
                                 ;  _underlying.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalVolSurface> format
                     ; source = source 
@@ -195,18 +195,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".MaxDate") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -231,18 +231,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".MaxStrike") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -267,18 +267,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".MinStrike") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -303,18 +303,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".ReferenceDate") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -348,14 +348,14 @@ module LocalVolSurfaceFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).LocalVol
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).LocalVol
                                                             _t.cell 
                                                             _underlyingLevel.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".LocalVol") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".LocalVol") 
                                                [| _LocalVolSurface.source
                                                ;  _t.source
                                                ;  _underlyingLevel.source
@@ -368,7 +368,7 @@ module LocalVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -402,14 +402,14 @@ module LocalVolSurfaceFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).LocalVol1
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).LocalVol1
                                                             _d.cell 
                                                             _underlyingLevel.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".LocalVol1") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".LocalVol1") 
                                                [| _LocalVolSurface.source
                                                ;  _d.source
                                                ;  _underlyingLevel.source
@@ -422,7 +422,7 @@ module LocalVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -447,18 +447,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".BusinessDayConvention") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -486,12 +486,12 @@ module LocalVolSurfaceFunction =
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).OptionDateFromTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".OptionDateFromTenor") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".OptionDateFromTenor") 
                                                [| _LocalVolSurface.source
                                                ;  _p.source
                                                |]
@@ -500,7 +500,7 @@ module LocalVolSurfaceFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -525,18 +525,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".Calendar") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".Calendar") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalVolSurface> format
                     ; source = source 
@@ -561,18 +561,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".MaxTime") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -597,18 +597,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".SettlementDays") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -636,12 +636,12 @@ module LocalVolSurfaceFunction =
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".TimeFromReference") 
                                                [| _LocalVolSurface.source
                                                ;  _date.source
                                                |]
@@ -650,7 +650,7 @@ module LocalVolSurfaceFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -675,18 +675,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Update
                                                        ) :> ICell
                 let format (o : LocalVolSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".Update") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".Update") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -711,18 +711,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".AllowsExtrapolation") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -750,12 +750,12 @@ module LocalVolSurfaceFunction =
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LocalVolSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".DisableExtrapolation") 
                                                [| _LocalVolSurface.source
                                                ;  _b.source
                                                |]
@@ -764,7 +764,7 @@ module LocalVolSurfaceFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -792,12 +792,12 @@ module LocalVolSurfaceFunction =
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LocalVolSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".EnableExtrapolation") 
                                                [| _LocalVolSurface.source
                                                ;  _b.source
                                                |]
@@ -806,7 +806,7 @@ module LocalVolSurfaceFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -831,18 +831,18 @@ module LocalVolSurfaceFunction =
             try
 
                 let _LocalVolSurface = Helper.toCell<LocalVolSurface> localvolsurface "LocalVolSurface"  
-                let builder () = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolSurfaceModel.Cast _LocalVolSurface.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolSurface.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_LocalVolSurface.source + ".Extrapolate") 
                                                [| _LocalVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -871,14 +871,14 @@ module LocalVolSurfaceFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LocalVolSurface>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LocalVolSurface>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LocalVolSurface>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LocalVolSurface>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

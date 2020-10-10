@@ -49,18 +49,18 @@ module FlatSmileSectionFunction =
             try
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).AtmLevel
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".AtmLevel") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".AtmLevel") 
                                                [| _FlatSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -100,7 +100,7 @@ module FlatSmileSectionFunction =
                 let _atmLevel = Helper.toNullable<double> atmLevel "atmLevel"
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
-                let builder () = withMnemonic mnemonic (Fun.FlatSmileSection 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatSmileSection 
                                                             _exerciseTime.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -110,7 +110,7 @@ module FlatSmileSectionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatSmileSection>) l
 
-                let source = Helper.sourceFold "Fun.FlatSmileSection" 
+                let source () = Helper.sourceFold "Fun.FlatSmileSection" 
                                                [| _exerciseTime.source
                                                ;  _vol.source
                                                ;  _dc.source
@@ -127,7 +127,7 @@ module FlatSmileSectionFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatSmileSection> format
                     ; source = source 
@@ -170,7 +170,7 @@ module FlatSmileSectionFunction =
                 let _atmLevel = Helper.toNullable<double> atmLevel "atmLevel"
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
-                let builder () = withMnemonic mnemonic (Fun.FlatSmileSection1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatSmileSection1 
                                                             _d.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -181,7 +181,7 @@ module FlatSmileSectionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatSmileSection>) l
 
-                let source = Helper.sourceFold "Fun.FlatSmileSection1" 
+                let source () = Helper.sourceFold "Fun.FlatSmileSection1" 
                                                [| _d.source
                                                ;  _vol.source
                                                ;  _dc.source
@@ -200,7 +200,7 @@ module FlatSmileSectionFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatSmileSection> format
                     ; source = source 
@@ -225,18 +225,18 @@ module FlatSmileSectionFunction =
             try
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".MaxStrike") 
                                                [| _FlatSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -261,18 +261,18 @@ module FlatSmileSectionFunction =
             try
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".MinStrike") 
                                                [| _FlatSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -297,18 +297,18 @@ module FlatSmileSectionFunction =
             try
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".DayCounter") 
                                                [| _FlatSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FlatSmileSection> format
                     ; source = source 
@@ -342,14 +342,14 @@ module FlatSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Density
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Density
                                                             _strike.cell 
                                                             _discount.cell 
                                                             _gap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".Density") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".Density") 
                                                [| _FlatSmileSection.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -362,7 +362,7 @@ module FlatSmileSectionFunction =
                                 ;  _gap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -399,7 +399,7 @@ module FlatSmileSectionFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).DigitalOptionPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).DigitalOptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -407,7 +407,7 @@ module FlatSmileSectionFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".DigitalOptionPrice") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".DigitalOptionPrice") 
                                                [| _FlatSmileSection.source
                                                ;  _strike.source
                                                ;  _Type.source
@@ -422,7 +422,7 @@ module FlatSmileSectionFunction =
                                 ;  _gap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -447,18 +447,18 @@ module FlatSmileSectionFunction =
             try
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).ExerciseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".ExerciseDate") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".ExerciseDate") 
                                                [| _FlatSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -483,18 +483,18 @@ module FlatSmileSectionFunction =
             try
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).ExerciseTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".ExerciseTime") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".ExerciseTime") 
                                                [| _FlatSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -528,14 +528,14 @@ module FlatSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).OptionPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).OptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".OptionPrice") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".OptionPrice") 
                                                [| _FlatSmileSection.source
                                                ;  _strike.source
                                                ;  _Type.source
@@ -548,7 +548,7 @@ module FlatSmileSectionFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -573,18 +573,18 @@ module FlatSmileSectionFunction =
             try
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".ReferenceDate") 
                                                [| _FlatSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -609,18 +609,18 @@ module FlatSmileSectionFunction =
             try
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Shift
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".Shift") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".Shift") 
                                                [| _FlatSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -645,18 +645,18 @@ module FlatSmileSectionFunction =
             try
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : FlatSmileSection) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".Update") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".Update") 
                                                [| _FlatSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -684,12 +684,12 @@ module FlatSmileSectionFunction =
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Variance
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".Variance") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".Variance") 
                                                [| _FlatSmileSection.source
                                                ;  _strike.source
                                                |]
@@ -698,7 +698,7 @@ module FlatSmileSectionFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -729,13 +729,13 @@ module FlatSmileSectionFunction =
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Vega
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".Vega") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".Vega") 
                                                [| _FlatSmileSection.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -746,7 +746,7 @@ module FlatSmileSectionFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -780,14 +780,14 @@ module FlatSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 
                                                             _shift.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".Volatility") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".Volatility") 
                                                [| _FlatSmileSection.source
                                                ;  _strike.source
                                                ;  _volatilityType.source
@@ -800,7 +800,7 @@ module FlatSmileSectionFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -828,12 +828,12 @@ module FlatSmileSectionFunction =
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).Volatility1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".Volatility1") 
                                                [| _FlatSmileSection.source
                                                ;  _strike.source
                                                |]
@@ -842,7 +842,7 @@ module FlatSmileSectionFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -867,18 +867,18 @@ module FlatSmileSectionFunction =
             try
 
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
-                let builder () = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).VolatilityType
+                let builder (current : ICell) = withMnemonic mnemonic ((FlatSmileSectionModel.Cast _FlatSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FlatSmileSection.source + ".VolatilityType") 
+                let source () = Helper.sourceFold (_FlatSmileSection.source + ".VolatilityType") 
                                                [| _FlatSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -907,14 +907,14 @@ module FlatSmileSectionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FlatSmileSection>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FlatSmileSection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FlatSmileSection>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FlatSmileSection>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

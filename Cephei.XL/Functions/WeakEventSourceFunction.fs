@@ -49,18 +49,18 @@ module WeakEventSourceFunction =
             try
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
-                let builder () = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Clear
+                let builder (current : ICell) = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Clear
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_WeakEventSource.source + ".Clear") 
+                let source () = Helper.sourceFold (_WeakEventSource.source + ".Clear") 
                                                [| _WeakEventSource.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeakEventSource.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module WeakEventSourceFunction =
             try
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
-                let builder () = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Raise
+                let builder (current : ICell) = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Raise
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_WeakEventSource.source + ".Raise") 
+                let source () = Helper.sourceFold (_WeakEventSource.source + ".Raise") 
                                                [| _WeakEventSource.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeakEventSource.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,12 +124,12 @@ module WeakEventSourceFunction =
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Subscribe
+                let builder (current : ICell) = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Subscribe
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_WeakEventSource.source + ".Subscribe") 
+                let source () = Helper.sourceFold (_WeakEventSource.source + ".Subscribe") 
                                                [| _WeakEventSource.source
                                                ;  _handler.source
                                                |]
@@ -138,7 +138,7 @@ module WeakEventSourceFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -166,12 +166,12 @@ module WeakEventSourceFunction =
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Unsubscribe
+                let builder (current : ICell) = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Unsubscribe
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_WeakEventSource.source + ".Unsubscribe") 
+                let source () = Helper.sourceFold (_WeakEventSource.source + ".Unsubscribe") 
                                                [| _WeakEventSource.source
                                                ;  _handler.source
                                                |]
@@ -180,7 +180,7 @@ module WeakEventSourceFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -202,16 +202,16 @@ module WeakEventSourceFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.WeakEventSource ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.WeakEventSource ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<WeakEventSource>) l
 
-                let source = Helper.sourceFold "Fun.WeakEventSource" 
+                let source () = Helper.sourceFold "Fun.WeakEventSource" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<WeakEventSource> format
                     ; source = source 
@@ -240,14 +240,14 @@ module WeakEventSourceFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<WeakEventSource>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<WeakEventSource>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<WeakEventSource>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<WeakEventSource>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

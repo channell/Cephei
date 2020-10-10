@@ -49,18 +49,18 @@ module CalendarFunction =
             try
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).AddedHolidays
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_Calendar.source + ".AddedHolidays") 
+                let source () = Helper.sourceFold (_Calendar.source + ".AddedHolidays") 
                                                [| _Calendar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -88,12 +88,12 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).AddHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Calendar) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".AddHoliday") 
+                let source () = Helper.sourceFold (_Calendar.source + ".AddHoliday") 
                                                [| _Calendar.source
                                                ;  _d.source
                                                |]
@@ -102,7 +102,7 @@ module CalendarFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -133,13 +133,13 @@ module CalendarFunction =
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Adjust
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".Adjust") 
+                let source () = Helper.sourceFold (_Calendar.source + ".Adjust") 
                                                [| _Calendar.source
                                                ;  _d.source
                                                ;  _c.source
@@ -150,7 +150,7 @@ module CalendarFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -190,7 +190,7 @@ module CalendarFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
                 let _endOfMonth = Helper.toDefault<bool> endOfMonth "endOfMonth" false
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Advance1
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -199,7 +199,7 @@ module CalendarFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".Advance1") 
+                let source () = Helper.sourceFold (_Calendar.source + ".Advance1") 
                                                [| _Calendar.source
                                                ;  _d.source
                                                ;  _n.source
@@ -216,7 +216,7 @@ module CalendarFunction =
                                 ;  _endOfMonth.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -253,7 +253,7 @@ module CalendarFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
                 let _endOfMonth = Helper.toDefault<bool> endOfMonth "endOfMonth" false
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Advance
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -261,7 +261,7 @@ module CalendarFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".Advance") 
+                let source () = Helper.sourceFold (_Calendar.source + ".Advance") 
                                                [| _Calendar.source
                                                ;  _d.source
                                                ;  _p.source
@@ -276,7 +276,7 @@ module CalendarFunction =
                                 ;  _endOfMonth.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -313,7 +313,7 @@ module CalendarFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toDefault<bool> includeFirst "includeFirst" true
                 let _includeLast = Helper.toDefault<bool> includeLast "includeLast" false
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).BusinessDaysBetween
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -321,7 +321,7 @@ module CalendarFunction =
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".BusinessDaysBetween") 
+                let source () = Helper.sourceFold (_Calendar.source + ".BusinessDaysBetween") 
                                                [| _Calendar.source
                                                ;  _from.source
                                                ;  _To.source
@@ -336,7 +336,7 @@ module CalendarFunction =
                                 ;  _includeLast.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -361,18 +361,18 @@ module CalendarFunction =
             try
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_Calendar.source + ".Calendar") 
+                let source () = Helper.sourceFold (_Calendar.source + ".Calendar") 
                                                [| _Calendar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Calendar> format
                     ; source = source 
@@ -394,16 +394,16 @@ module CalendarFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Calendar ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Calendar ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold "Fun.Calendar" 
+                let source () = Helper.sourceFold "Fun.Calendar" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Calendar> format
                     ; source = source 
@@ -428,19 +428,19 @@ module CalendarFunction =
             try
 
                 let _c = Helper.toCell<Calendar> c "c" 
-                let builder () = withMnemonic mnemonic (Fun.Calendar1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Calendar1 
                                                             _c.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold "Fun.Calendar1" 
+                let source () = Helper.sourceFold "Fun.Calendar1" 
                                                [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Calendar> format
                     ; source = source 
@@ -465,18 +465,18 @@ module CalendarFunction =
             try
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".Empty") 
+                let source () = Helper.sourceFold (_Calendar.source + ".Empty") 
                                                [| _Calendar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -504,12 +504,12 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_Calendar.source + ".EndOfMonth") 
                                                [| _Calendar.source
                                                ;  _d.source
                                                |]
@@ -518,7 +518,7 @@ module CalendarFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -546,12 +546,12 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".Equals") 
+                let source () = Helper.sourceFold (_Calendar.source + ".Equals") 
                                                [| _Calendar.source
                                                ;  _o.source
                                                |]
@@ -560,7 +560,7 @@ module CalendarFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -588,12 +588,12 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsBusinessDay
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".IsBusinessDay") 
+                let source () = Helper.sourceFold (_Calendar.source + ".IsBusinessDay") 
                                                [| _Calendar.source
                                                ;  _d.source
                                                |]
@@ -602,7 +602,7 @@ module CalendarFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -630,12 +630,12 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsEndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".IsEndOfMonth") 
+                let source () = Helper.sourceFold (_Calendar.source + ".IsEndOfMonth") 
                                                [| _Calendar.source
                                                ;  _d.source
                                                |]
@@ -644,7 +644,7 @@ module CalendarFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -672,12 +672,12 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".IsHoliday") 
+                let source () = Helper.sourceFold (_Calendar.source + ".IsHoliday") 
                                                [| _Calendar.source
                                                ;  _d.source
                                                |]
@@ -686,7 +686,7 @@ module CalendarFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -714,12 +714,12 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsWeekend
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".IsWeekend") 
+                let source () = Helper.sourceFold (_Calendar.source + ".IsWeekend") 
                                                [| _Calendar.source
                                                ;  _w.source
                                                |]
@@ -728,7 +728,7 @@ module CalendarFunction =
                                 ;  _w.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -755,18 +755,18 @@ module CalendarFunction =
             try
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".Name") 
+                let source () = Helper.sourceFold (_Calendar.source + ".Name") 
                                                [| _Calendar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -791,18 +791,18 @@ module CalendarFunction =
             try
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).RemovedHolidays
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_Calendar.source + ".RemovedHolidays") 
+                let source () = Helper.sourceFold (_Calendar.source + ".RemovedHolidays") 
                                                [| _Calendar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -830,12 +830,12 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).RemoveHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Calendar) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Calendar.source + ".RemoveHoliday") 
+                let source () = Helper.sourceFold (_Calendar.source + ".RemoveHoliday") 
                                                [| _Calendar.source
                                                ;  _d.source
                                                |]
@@ -844,7 +844,7 @@ module CalendarFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -873,14 +873,14 @@ module CalendarFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Calendar>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Calendar>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Calendar>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Calendar>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

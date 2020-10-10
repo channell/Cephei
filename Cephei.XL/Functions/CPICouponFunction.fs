@@ -49,18 +49,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AdjustedFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".AdjustedFixing") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".AdjustedFixing") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).BaseCPI
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).BaseCPI
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".BaseCPI") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".BaseCPI") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -163,7 +163,7 @@ module CPICouponFunction =
                 let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _exCouponDate = Helper.toDefault<Date> exCouponDate "exCouponDate" null
-                let builder () = withMnemonic mnemonic (Fun.CPICoupon 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CPICoupon 
                                                             _baseCPI.cell 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
@@ -182,7 +182,7 @@ module CPICouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPICoupon>) l
 
-                let source = Helper.sourceFold "Fun.CPICoupon" 
+                let source () = Helper.sourceFold "Fun.CPICoupon" 
                                                [| _baseCPI.source
                                                ;  _paymentDate.source
                                                ;  _nominal.source
@@ -217,7 +217,7 @@ module CPICouponFunction =
                                 ;  _exCouponDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICoupon> format
                     ; source = source 
@@ -242,18 +242,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).CpiIndex
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).CpiIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".CpiIndex") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".CpiIndex") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICoupon> format
                     ; source = source 
@@ -278,18 +278,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).FixedRate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).FixedRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".FixedRate") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".FixedRate") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -314,18 +314,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).IndexFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".IndexFixing") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".IndexFixing") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -353,12 +353,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _onDate = Helper.toCell<Date> onDate "onDate" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).IndexObservation
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).IndexObservation
                                                             _onDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".IndexObservation") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".IndexObservation") 
                                                [| _CPICoupon.source
                                                ;  _onDate.source
                                                |]
@@ -367,7 +367,7 @@ module CPICouponFunction =
                                 ;  _onDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -392,18 +392,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ObservationInterpolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ObservationInterpolation
                                                        ) :> ICell
                 let format (o : InterpolationType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".ObservationInterpolation") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".ObservationInterpolation") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -428,18 +428,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Spread
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Spread") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Spread") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -467,12 +467,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".AccruedAmount") 
                                                [| _CPICoupon.source
                                                ;  _d.source
                                                |]
@@ -481,7 +481,7 @@ module CPICouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -506,18 +506,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Amount") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Amount") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -542,18 +542,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".DayCounter") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICoupon> format
                     ; source = source 
@@ -578,18 +578,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".FixingDate") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -614,18 +614,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".FixingDays") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -650,18 +650,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationIndex>) l
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Index") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Index") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICoupon> format
                     ; source = source 
@@ -686,18 +686,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ObservationLag
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".ObservationLag") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".ObservationLag") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICoupon> format
                     ; source = source 
@@ -725,12 +725,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _discountingCurve = Helper.toHandle<YieldTermStructure> discountingCurve "discountingCurve" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Price
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Price
                                                             _discountingCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Price") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Price") 
                                                [| _CPICoupon.source
                                                ;  _discountingCurve.source
                                                |]
@@ -739,7 +739,7 @@ module CPICouponFunction =
                                 ;  _discountingCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -764,18 +764,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Pricer
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationCouponPricer>) l
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Pricer") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Pricer") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICoupon> format
                     ; source = source 
@@ -800,18 +800,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Rate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Rate") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Rate") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -839,12 +839,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _pricer = Helper.toCell<InflationCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).SetPricer
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : CPICoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".SetPricer") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".SetPricer") 
                                                [| _CPICoupon.source
                                                ;  _pricer.source
                                                |]
@@ -853,7 +853,7 @@ module CPICouponFunction =
                                 ;  _pricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -878,18 +878,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Update
                                                        ) :> ICell
                 let format (o : CPICoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Update") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Update") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -914,18 +914,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".AccrualDays") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".AccrualDays") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -950,18 +950,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualEndDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".AccrualEndDate") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".AccrualEndDate") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -986,18 +986,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".AccrualPeriod") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".AccrualPeriod") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1022,18 +1022,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualStartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".AccrualStartDate") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".AccrualStartDate") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1061,12 +1061,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccruedDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".AccruedDays") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".AccruedDays") 
                                                [| _CPICoupon.source
                                                ;  _d.source
                                                |]
@@ -1075,7 +1075,7 @@ module CPICouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1103,12 +1103,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccruedPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".AccruedPeriod") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".AccruedPeriod") 
                                                [| _CPICoupon.source
                                                ;  _d.source
                                                |]
@@ -1117,7 +1117,7 @@ module CPICouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1142,18 +1142,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Date") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Date") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1178,18 +1178,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".ExCouponDate") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1214,18 +1214,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Nominal") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Nominal") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1250,18 +1250,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".ReferencePeriodEnd") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".ReferencePeriodEnd") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1286,18 +1286,18 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".ReferencePeriodStart") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".ReferencePeriodStart") 
                                                [| _CPICoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1325,12 +1325,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".CompareTo") 
                                                [| _CPICoupon.source
                                                ;  _cf.source
                                                |]
@@ -1339,7 +1339,7 @@ module CPICouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1367,12 +1367,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Equals") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Equals") 
                                                [| _CPICoupon.source
                                                ;  _cf.source
                                                |]
@@ -1381,7 +1381,7 @@ module CPICouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1412,13 +1412,13 @@ module CPICouponFunction =
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".HasOccurred") 
                                                [| _CPICoupon.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -1429,7 +1429,7 @@ module CPICouponFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1457,12 +1457,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".TradingExCoupon") 
                                                [| _CPICoupon.source
                                                ;  _refDate.source
                                                |]
@@ -1471,7 +1471,7 @@ module CPICouponFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1499,12 +1499,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : CPICoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".Accept") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".Accept") 
                                                [| _CPICoupon.source
                                                ;  _v.source
                                                |]
@@ -1513,7 +1513,7 @@ module CPICouponFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1541,12 +1541,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPICoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".RegisterWith") 
                                                [| _CPICoupon.source
                                                ;  _handler.source
                                                |]
@@ -1555,7 +1555,7 @@ module CPICouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1583,12 +1583,12 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPICoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICoupon.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_CPICoupon.source + ".UnregisterWith") 
                                                [| _CPICoupon.source
                                                ;  _handler.source
                                                |]
@@ -1597,7 +1597,7 @@ module CPICouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1626,14 +1626,14 @@ module CPICouponFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CPICoupon>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CPICoupon>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CPICoupon>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CPICoupon>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

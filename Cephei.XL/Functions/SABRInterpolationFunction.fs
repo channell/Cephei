@@ -49,18 +49,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Alpha
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Alpha
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Alpha") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Alpha") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Beta
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Beta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Beta") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Beta") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).EndCriteria
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".EndCriteria") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".EndCriteria") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Expiry
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Expiry
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Expiry") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Expiry") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Forward
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Forward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Forward") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Forward") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,18 +229,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).InterpolationWeights
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).InterpolationWeights
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".InterpolationWeights") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".InterpolationWeights") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -265,18 +265,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).MaxError
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".MaxError") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".MaxError") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -301,18 +301,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Nu
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Nu
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Nu") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Nu") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,18 +337,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Rho") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Rho") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -373,18 +373,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).RmsError
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).RmsError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".RmsError") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".RmsError") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -472,7 +472,7 @@ module SABRInterpolationFunction =
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let _volatilityType = Helper.toDefault<VolatilityType> volatilityType "volatilityType" VolatilityType.ShiftedLognormal
                 let _approximationModel = Helper.toDefault<SabrApproximationModel> approximationModel "approximationModel" SabrApproximationModel.Hagan2002
-                let builder () = withMnemonic mnemonic (Fun.SABRInterpolation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SABRInterpolation 
                                                             _xBegin.cell 
                                                             _xEnd.cell 
                                                             _yBegin.cell 
@@ -498,7 +498,7 @@ module SABRInterpolationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SABRInterpolation>) l
 
-                let source = Helper.sourceFold "Fun.SABRInterpolation" 
+                let source () = Helper.sourceFold "Fun.SABRInterpolation" 
                                                [| _xBegin.source
                                                ;  _xEnd.source
                                                ;  _yBegin.source
@@ -547,7 +547,7 @@ module SABRInterpolationFunction =
                                 ;  _approximationModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SABRInterpolation> format
                     ; source = source 
@@ -578,13 +578,13 @@ module SABRInterpolationFunction =
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Derivative") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Derivative") 
                                                [| _SABRInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -595,7 +595,7 @@ module SABRInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -620,18 +620,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Empty") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Empty") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -662,13 +662,13 @@ module SABRInterpolationFunction =
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Primitive") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Primitive") 
                                                [| _SABRInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -679,7 +679,7 @@ module SABRInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -710,13 +710,13 @@ module SABRInterpolationFunction =
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".SecondDerivative") 
                                                [| _SABRInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -727,7 +727,7 @@ module SABRInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -752,18 +752,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : SABRInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Update") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Update") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -794,13 +794,13 @@ module SABRInterpolationFunction =
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Value1") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Value1") 
                                                [| _SABRInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -811,7 +811,7 @@ module SABRInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -839,12 +839,12 @@ module SABRInterpolationFunction =
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Value") 
                                                [| _SABRInterpolation.source
                                                ;  _x.source
                                                |]
@@ -853,7 +853,7 @@ module SABRInterpolationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -878,18 +878,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".XMax") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".XMax") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -914,18 +914,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".XMin") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".XMin") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -950,18 +950,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".AllowsExtrapolation") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -989,12 +989,12 @@ module SABRInterpolationFunction =
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : SABRInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".DisableExtrapolation") 
                                                [| _SABRInterpolation.source
                                                ;  _b.source
                                                |]
@@ -1003,7 +1003,7 @@ module SABRInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1031,12 +1031,12 @@ module SABRInterpolationFunction =
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : SABRInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".EnableExtrapolation") 
                                                [| _SABRInterpolation.source
                                                ;  _b.source
                                                |]
@@ -1045,7 +1045,7 @@ module SABRInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1070,18 +1070,18 @@ module SABRInterpolationFunction =
             try
 
                 let _SABRInterpolation = Helper.toCell<SABRInterpolation> sabrinterpolation "SABRInterpolation"  
-                let builder () = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRInterpolationModel.Cast _SABRInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SABRInterpolation.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_SABRInterpolation.source + ".Extrapolate") 
                                                [| _SABRInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1110,14 +1110,14 @@ module SABRInterpolationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SABRInterpolation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SABRInterpolation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SABRInterpolation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SABRInterpolation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

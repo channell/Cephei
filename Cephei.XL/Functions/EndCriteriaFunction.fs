@@ -55,13 +55,13 @@ module EndCriteriaFunction =
                 let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
                 let _iteration = Helper.toCell<int> iteration "iteration" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).CheckMaxIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).CheckMaxIterations
                                                             _iteration.cell 
                                                             _ecType.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".CheckMaxIterations") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".CheckMaxIterations") 
                                                [| _EndCriteria.source
                                                ;  _iteration.source
                                                ;  _ecType.source
@@ -72,7 +72,7 @@ module EndCriteriaFunction =
                                 ;  _ecType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -106,14 +106,14 @@ module EndCriteriaFunction =
                 let _f = Helper.toCell<double> f "f" 
                 let _positiveOptimization = Helper.toCell<bool> positiveOptimization "positiveOptimization" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).CheckStationaryFunctionAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).CheckStationaryFunctionAccuracy
                                                             _f.cell 
                                                             _positiveOptimization.cell 
                                                             _ecType.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".CheckStationaryFunctionAccuracy") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".CheckStationaryFunctionAccuracy") 
                                                [| _EndCriteria.source
                                                ;  _f.source
                                                ;  _positiveOptimization.source
@@ -126,7 +126,7 @@ module EndCriteriaFunction =
                                 ;  _ecType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -163,7 +163,7 @@ module EndCriteriaFunction =
                 let _fxNew = Helper.toCell<double> fxNew "fxNew" 
                 let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).CheckStationaryFunctionValue
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).CheckStationaryFunctionValue
                                                             _fxOld.cell 
                                                             _fxNew.cell 
                                                             _statStateIterations.cell 
@@ -171,7 +171,7 @@ module EndCriteriaFunction =
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".CheckStationaryFunctionValue") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".CheckStationaryFunctionValue") 
                                                [| _EndCriteria.source
                                                ;  _fxOld.source
                                                ;  _fxNew.source
@@ -186,7 +186,7 @@ module EndCriteriaFunction =
                                 ;  _ecType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -223,7 +223,7 @@ module EndCriteriaFunction =
                 let _xNew = Helper.toCell<double> xNew "xNew" 
                 let _statStateIterations = Helper.toCell<int> statStateIterations "statStateIterations" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).CheckStationaryPoint
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).CheckStationaryPoint
                                                             _xOld.cell 
                                                             _xNew.cell 
                                                             _statStateIterations.cell 
@@ -231,7 +231,7 @@ module EndCriteriaFunction =
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".CheckStationaryPoint") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".CheckStationaryPoint") 
                                                [| _EndCriteria.source
                                                ;  _xOld.source
                                                ;  _xNew.source
@@ -246,7 +246,7 @@ module EndCriteriaFunction =
                                 ;  _ecType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -277,13 +277,13 @@ module EndCriteriaFunction =
                 let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
                 let _gradientNorm = Helper.toCell<double> gradientNorm "gradientNorm" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).CheckZeroGradientNorm
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).CheckZeroGradientNorm
                                                             _gradientNorm.cell 
                                                             _ecType.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".CheckZeroGradientNorm") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".CheckZeroGradientNorm") 
                                                [| _EndCriteria.source
                                                ;  _gradientNorm.source
                                                ;  _ecType.source
@@ -294,7 +294,7 @@ module EndCriteriaFunction =
                                 ;  _ecType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -331,7 +331,7 @@ module EndCriteriaFunction =
                 let _rootEpsilon = Helper.toCell<double> rootEpsilon "rootEpsilon" 
                 let _functionEpsilon = Helper.toCell<double> functionEpsilon "functionEpsilon" 
                 let _gradientNormEpsilon = Helper.toNullable<double> gradientNormEpsilon "gradientNormEpsilon"
-                let builder () = withMnemonic mnemonic (Fun.EndCriteria 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EndCriteria 
                                                             _maxIterations.cell 
                                                             _maxStationaryStateIterations.cell 
                                                             _rootEpsilon.cell 
@@ -340,7 +340,7 @@ module EndCriteriaFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EndCriteria>) l
 
-                let source = Helper.sourceFold "Fun.EndCriteria" 
+                let source () = Helper.sourceFold "Fun.EndCriteria" 
                                                [| _maxIterations.source
                                                ;  _maxStationaryStateIterations.source
                                                ;  _rootEpsilon.source
@@ -355,7 +355,7 @@ module EndCriteriaFunction =
                                 ;  _gradientNormEpsilon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EndCriteria> format
                     ; source = source 
@@ -380,18 +380,18 @@ module EndCriteriaFunction =
             try
 
                 let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).FunctionEpsilon
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).FunctionEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".FunctionEpsilon") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".FunctionEpsilon") 
                                                [| _EndCriteria.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EndCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -416,18 +416,18 @@ module EndCriteriaFunction =
             try
 
                 let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).GradientNormEpsilon
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).GradientNormEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".GradientNormEpsilon") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".GradientNormEpsilon") 
                                                [| _EndCriteria.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EndCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -452,18 +452,18 @@ module EndCriteriaFunction =
             try
 
                 let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).MaxIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".MaxIterations") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".MaxIterations") 
                                                [| _EndCriteria.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EndCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,18 +488,18 @@ module EndCriteriaFunction =
             try
 
                 let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).MaxStationaryStateIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).MaxStationaryStateIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".MaxStationaryStateIterations") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".MaxStationaryStateIterations") 
                                                [| _EndCriteria.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EndCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -524,18 +524,18 @@ module EndCriteriaFunction =
             try
 
                 let _EndCriteria = Helper.toCell<EndCriteria> endcriteria "EndCriteria"  
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).RootEpsilon
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).RootEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".RootEpsilon") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".RootEpsilon") 
                                                [| _EndCriteria.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EndCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -584,7 +584,7 @@ module EndCriteriaFunction =
                 let _fnew = Helper.toCell<double> fnew "fnew" 
                 let _normgnew = Helper.toCell<double> normgnew "normgnew" 
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
-                let builder () = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((EndCriteriaModel.Cast _EndCriteria.cell).Value
                                                             _iteration.cell 
                                                             _statStateIterations.cell 
                                                             _positiveOptimization.cell 
@@ -596,7 +596,7 @@ module EndCriteriaFunction =
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EndCriteria.source + ".Value") 
+                let source () = Helper.sourceFold (_EndCriteria.source + ".Value") 
                                                [| _EndCriteria.source
                                                ;  _iteration.source
                                                ;  _statStateIterations.source
@@ -619,7 +619,7 @@ module EndCriteriaFunction =
                                 ;  _ecType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -648,14 +648,14 @@ module EndCriteriaFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EndCriteria>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EndCriteria>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EndCriteria>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EndCriteria>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

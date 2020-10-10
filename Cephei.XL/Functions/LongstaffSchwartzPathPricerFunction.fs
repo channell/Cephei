@@ -49,18 +49,18 @@ module LongstaffSchwartzPathPricerFunction =
             try
 
                 let _LongstaffSchwartzPathPricer = Helper.toCell<LongstaffSchwartzPathPricer> longstaffschwartzpathpricer "LongstaffSchwartzPathPricer"  
-                let builder () = withMnemonic mnemonic ((LongstaffSchwartzPathPricerModel.Cast _LongstaffSchwartzPathPricer.cell).Calibrate
+                let builder (current : ICell) = withMnemonic mnemonic ((LongstaffSchwartzPathPricerModel.Cast _LongstaffSchwartzPathPricer.cell).Calibrate
                                                        ) :> ICell
                 let format (o : LongstaffSchwartzPathPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LongstaffSchwartzPathPricer.source + ".Calibrate") 
+                let source () = Helper.sourceFold (_LongstaffSchwartzPathPricer.source + ".Calibrate") 
                                                [| _LongstaffSchwartzPathPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LongstaffSchwartzPathPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,14 +91,14 @@ module LongstaffSchwartzPathPricerFunction =
                 let _times = Helper.toCell<TimeGrid> times "times" 
                 let _pathPricer = Helper.toCell<IEarlyExercisePathPricer<PathType,double>> pathPricer "pathPricer" 
                 let _termStructure = Helper.toCell<YieldTermStructure> termStructure "termStructure" 
-                let builder () = withMnemonic mnemonic (Fun.LongstaffSchwartzPathPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LongstaffSchwartzPathPricer 
                                                             _times.cell 
                                                             _pathPricer.cell 
                                                             _termStructure.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LongstaffSchwartzPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.LongstaffSchwartzPathPricer" 
+                let source () = Helper.sourceFold "Fun.LongstaffSchwartzPathPricer" 
                                                [| _times.source
                                                ;  _pathPricer.source
                                                ;  _termStructure.source
@@ -109,7 +109,7 @@ module LongstaffSchwartzPathPricerFunction =
                                 ;  _termStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LongstaffSchwartzPathPricer> format
                     ; source = source 
@@ -137,12 +137,12 @@ module LongstaffSchwartzPathPricerFunction =
 
                 let _LongstaffSchwartzPathPricer = Helper.toCell<LongstaffSchwartzPathPricer> longstaffschwartzpathpricer "LongstaffSchwartzPathPricer"  
                 let _path = Helper.toCell<'PathType> path "path" 
-                let builder () = withMnemonic mnemonic ((LongstaffSchwartzPathPricerModel.Cast _LongstaffSchwartzPathPricer.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((LongstaffSchwartzPathPricerModel.Cast _LongstaffSchwartzPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LongstaffSchwartzPathPricer.source + ".Value") 
+                let source () = Helper.sourceFold (_LongstaffSchwartzPathPricer.source + ".Value") 
                                                [| _LongstaffSchwartzPathPricer.source
                                                ;  _path.source
                                                |]
@@ -151,7 +151,7 @@ module LongstaffSchwartzPathPricerFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -180,14 +180,14 @@ module LongstaffSchwartzPathPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LongstaffSchwartzPathPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LongstaffSchwartzPathPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LongstaffSchwartzPathPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LongstaffSchwartzPathPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

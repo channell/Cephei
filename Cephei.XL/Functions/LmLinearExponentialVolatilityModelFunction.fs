@@ -61,7 +61,7 @@ module LmLinearExponentialVolatilityModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).IntegratedVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 
                                                             _u.cell 
@@ -69,7 +69,7 @@ module LmLinearExponentialVolatilityModelFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".IntegratedVariance") 
+                let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".IntegratedVariance") 
                                                [| _LmLinearExponentialVolatilityModel.source
                                                ;  _i.source
                                                ;  _j.source
@@ -84,7 +84,7 @@ module LmLinearExponentialVolatilityModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,7 +121,7 @@ module LmLinearExponentialVolatilityModelFunction =
                 let _b = Helper.toCell<double> b "b" 
                 let _c = Helper.toCell<double> c "c" 
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic (Fun.LmLinearExponentialVolatilityModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LmLinearExponentialVolatilityModel 
                                                             _fixingTimes.cell 
                                                             _a.cell 
                                                             _b.cell 
@@ -130,7 +130,7 @@ module LmLinearExponentialVolatilityModelFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmLinearExponentialVolatilityModel>) l
 
-                let source = Helper.sourceFold "Fun.LmLinearExponentialVolatilityModel" 
+                let source () = Helper.sourceFold "Fun.LmLinearExponentialVolatilityModel" 
                                                [| _fixingTimes.source
                                                ;  _a.source
                                                ;  _b.source
@@ -145,7 +145,7 @@ module LmLinearExponentialVolatilityModelFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmLinearExponentialVolatilityModel> format
                     ; source = source 
@@ -179,14 +179,14 @@ module LmLinearExponentialVolatilityModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Volatility
                                                             _i.cell 
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Volatility") 
+                let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Volatility") 
                                                [| _LmLinearExponentialVolatilityModel.source
                                                ;  _i.source
                                                ;  _t.source
@@ -199,7 +199,7 @@ module LmLinearExponentialVolatilityModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,13 +230,13 @@ module LmLinearExponentialVolatilityModelFunction =
                 let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Volatility1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Volatility1") 
                                                [| _LmLinearExponentialVolatilityModel.source
                                                ;  _t.source
                                                ;  _x.source
@@ -247,7 +247,7 @@ module LmLinearExponentialVolatilityModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmLinearExponentialVolatilityModel> format
                     ; source = source 
@@ -272,18 +272,18 @@ module LmLinearExponentialVolatilityModelFunction =
             try
 
                 let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
-                let builder () = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Parameters") 
+                let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Parameters") 
                                                [| _LmLinearExponentialVolatilityModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmLinearExponentialVolatilityModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -311,12 +311,12 @@ module LmLinearExponentialVolatilityModelFunction =
 
                 let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder () = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmLinearExponentialVolatilityModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".SetParams") 
+                let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".SetParams") 
                                                [| _LmLinearExponentialVolatilityModel.source
                                                ;  _arguments.source
                                                |]
@@ -325,7 +325,7 @@ module LmLinearExponentialVolatilityModelFunction =
                                 ;  _arguments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -350,18 +350,18 @@ module LmLinearExponentialVolatilityModelFunction =
             try
 
                 let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
-                let builder () = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((LmLinearExponentialVolatilityModelModel.Cast _LmLinearExponentialVolatilityModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Size") 
+                let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Size") 
                                                [| _LmLinearExponentialVolatilityModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmLinearExponentialVolatilityModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -390,14 +390,14 @@ module LmLinearExponentialVolatilityModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LmLinearExponentialVolatilityModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LmLinearExponentialVolatilityModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LmLinearExponentialVolatilityModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LmLinearExponentialVolatilityModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,12 +52,12 @@ module BoundaryConditionSchemeHelperFunction =
 
                 let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyAfterApplying
+                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyAfterApplying
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : BoundaryConditionSchemeHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BoundaryConditionSchemeHelper.source + ".ApplyAfterApplying") 
+                let source () = Helper.sourceFold (_BoundaryConditionSchemeHelper.source + ".ApplyAfterApplying") 
                                                [| _BoundaryConditionSchemeHelper.source
                                                ;  _a.source
                                                |]
@@ -66,7 +66,7 @@ module BoundaryConditionSchemeHelperFunction =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module BoundaryConditionSchemeHelperFunction =
 
                 let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyAfterSolving
+                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyAfterSolving
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : BoundaryConditionSchemeHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BoundaryConditionSchemeHelper.source + ".ApplyAfterSolving") 
+                let source () = Helper.sourceFold (_BoundaryConditionSchemeHelper.source + ".ApplyAfterSolving") 
                                                [| _BoundaryConditionSchemeHelper.source
                                                ;  _a.source
                                                |]
@@ -108,7 +108,7 @@ module BoundaryConditionSchemeHelperFunction =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -136,12 +136,12 @@ module BoundaryConditionSchemeHelperFunction =
 
                 let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _op = Helper.toCell<IOperator> op "op" 
-                let builder () = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyBeforeApplying
+                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyBeforeApplying
                                                             _op.cell 
                                                        ) :> ICell
                 let format (o : BoundaryConditionSchemeHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BoundaryConditionSchemeHelper.source + ".ApplyBeforeApplying") 
+                let source () = Helper.sourceFold (_BoundaryConditionSchemeHelper.source + ".ApplyBeforeApplying") 
                                                [| _BoundaryConditionSchemeHelper.source
                                                ;  _op.source
                                                |]
@@ -150,7 +150,7 @@ module BoundaryConditionSchemeHelperFunction =
                                 ;  _op.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -181,13 +181,13 @@ module BoundaryConditionSchemeHelperFunction =
                 let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _op = Helper.toCell<IOperator> op "op" 
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyBeforeSolving
+                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).ApplyBeforeSolving
                                                             _op.cell 
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : BoundaryConditionSchemeHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BoundaryConditionSchemeHelper.source + ".ApplyBeforeSolving") 
+                let source () = Helper.sourceFold (_BoundaryConditionSchemeHelper.source + ".ApplyBeforeSolving") 
                                                [| _BoundaryConditionSchemeHelper.source
                                                ;  _op.source
                                                ;  _a.source
@@ -198,7 +198,7 @@ module BoundaryConditionSchemeHelperFunction =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -223,19 +223,19 @@ module BoundaryConditionSchemeHelperFunction =
             try
 
                 let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
-                let builder () = withMnemonic mnemonic (Fun.BoundaryConditionSchemeHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BoundaryConditionSchemeHelper 
                                                             _bcSet.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BoundaryConditionSchemeHelper>) l
 
-                let source = Helper.sourceFold "Fun.BoundaryConditionSchemeHelper" 
+                let source () = Helper.sourceFold "Fun.BoundaryConditionSchemeHelper" 
                                                [| _bcSet.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _bcSet.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BoundaryConditionSchemeHelper> format
                     ; source = source 
@@ -263,12 +263,12 @@ module BoundaryConditionSchemeHelperFunction =
 
                 let _BoundaryConditionSchemeHelper = Helper.toCell<BoundaryConditionSchemeHelper> boundaryconditionschemehelper "BoundaryConditionSchemeHelper"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConditionSchemeHelperModel.Cast _BoundaryConditionSchemeHelper.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : BoundaryConditionSchemeHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BoundaryConditionSchemeHelper.source + ".SetTime") 
+                let source () = Helper.sourceFold (_BoundaryConditionSchemeHelper.source + ".SetTime") 
                                                [| _BoundaryConditionSchemeHelper.source
                                                ;  _t.source
                                                |]
@@ -277,7 +277,7 @@ module BoundaryConditionSchemeHelperFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -306,14 +306,14 @@ module BoundaryConditionSchemeHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BoundaryConditionSchemeHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BoundaryConditionSchemeHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BoundaryConditionSchemeHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BoundaryConditionSchemeHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

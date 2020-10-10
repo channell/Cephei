@@ -46,16 +46,16 @@ module EEKCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.EEKCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EEKCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EEKCurrency>) l
 
-                let source = Helper.sourceFold "Fun.EEKCurrency" 
+                let source () = Helper.sourceFold "Fun.EEKCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EEKCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".Code") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".Empty") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module EEKCurrencyFunction =
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".Equals") 
                                                [| _EEKCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module EEKCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".Format") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".FractionsPerUnit") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".FractionSymbol") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".Name") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".NumericCode") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".Rounding") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EEKCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".Symbol") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".ToString") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module EEKCurrencyFunction =
             try
 
                 let _EEKCurrency = Helper.toCell<EEKCurrency> eekcurrency "EEKCurrency"  
-                let builder () = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((EEKCurrencyModel.Cast _EEKCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_EEKCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_EEKCurrency.source + ".TriangulationCurrency") 
                                                [| _EEKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EEKCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module EEKCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EEKCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EEKCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EEKCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EEKCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -79,7 +79,7 @@ module AbcdFunction =
                 let _vegaWeighted = Helper.toDefault<bool> vegaWeighted "vegaWeighted" false
                 let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _optMethod = Helper.toDefault<OptimizationMethod> optMethod "optMethod" null
-                let builder () = withMnemonic mnemonic (Fun.Abcd 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Abcd 
                                                             _a.cell 
                                                             _b.cell 
                                                             _c.cell 
@@ -94,7 +94,7 @@ module AbcdFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Abcd>) l
 
-                let source = Helper.sourceFold "Fun.Abcd" 
+                let source () = Helper.sourceFold "Fun.Abcd" 
                                                [| _a.source
                                                ;  _b.source
                                                ;  _c.source
@@ -121,7 +121,7 @@ module AbcdFunction =
                                 ;  _optMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Abcd> format
                     ; source = source 
@@ -146,18 +146,18 @@ module AbcdFunction =
             try
 
                 let _Abcd = Helper.toCell<Abcd> abcd "Abcd"  
-                let builder () = withMnemonic mnemonic ((AbcdModel.Cast _Abcd.cell).Global
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdModel.Cast _Abcd.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Abcd.source + ".GLOBAL") 
+                let source () = Helper.sourceFold (_Abcd.source + ".GLOBAL") 
                                                [| _Abcd.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Abcd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -191,14 +191,14 @@ module AbcdFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((AbcdModel.Cast _Abcd.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdModel.Cast _Abcd.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_Abcd.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_Abcd.source + ".Interpolate") 
                                                [| _Abcd.source
                                                ;  _xBegin.source
                                                ;  _size.source
@@ -211,7 +211,7 @@ module AbcdFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Abcd> format
                     ; source = source 
@@ -240,14 +240,14 @@ module AbcdFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Abcd>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Abcd>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Abcd>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Abcd>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,13 +52,13 @@ module OvernightLegFunction =
 
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let _overnightIndex = Helper.toCell<OvernightIndex> overnightIndex "overnightIndex" 
-                let builder () = withMnemonic mnemonic (Fun.OvernightLeg 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.OvernightLeg 
                                                             _schedule.cell 
                                                             _overnightIndex.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
-                let source = Helper.sourceFold "Fun.OvernightLeg" 
+                let source () = Helper.sourceFold "Fun.OvernightLeg" 
                                                [| _schedule.source
                                                ;  _overnightIndex.source
                                                |]
@@ -67,7 +67,7 @@ module OvernightLegFunction =
                                 ;  _overnightIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OvernightLeg> format
                     ; source = source 
@@ -92,18 +92,18 @@ module OvernightLegFunction =
             try
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
-                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_OvernightLeg.source + ".Value") 
+                let source () = Helper.sourceFold (_OvernightLeg.source + ".Value") 
                                                [| _OvernightLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -131,12 +131,12 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
-                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithGearings
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithGearings
                                                             _gearings.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
-                let source = Helper.sourceFold (_OvernightLeg.source + ".WithGearings") 
+                let source () = Helper.sourceFold (_OvernightLeg.source + ".WithGearings") 
                                                [| _OvernightLeg.source
                                                ;  _gearings.source
                                                |]
@@ -145,7 +145,7 @@ module OvernightLegFunction =
                                 ;  _gearings.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OvernightLeg> format
                     ; source = source 
@@ -173,12 +173,12 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
-                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithGearings1
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithGearings1
                                                             _gearing.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
-                let source = Helper.sourceFold (_OvernightLeg.source + ".WithGearings1") 
+                let source () = Helper.sourceFold (_OvernightLeg.source + ".WithGearings1") 
                                                [| _OvernightLeg.source
                                                ;  _gearing.source
                                                |]
@@ -187,7 +187,7 @@ module OvernightLegFunction =
                                 ;  _gearing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OvernightLeg> format
                     ; source = source 
@@ -215,12 +215,12 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithNotionals
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithNotionals
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
-                let source = Helper.sourceFold (_OvernightLeg.source + ".WithNotionals") 
+                let source () = Helper.sourceFold (_OvernightLeg.source + ".WithNotionals") 
                                                [| _OvernightLeg.source
                                                ;  _notionals.source
                                                |]
@@ -229,7 +229,7 @@ module OvernightLegFunction =
                                 ;  _notionals.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OvernightLeg> format
                     ; source = source 
@@ -257,12 +257,12 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithNotionals1
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithNotionals1
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
-                let source = Helper.sourceFold (_OvernightLeg.source + ".WithNotionals1") 
+                let source () = Helper.sourceFold (_OvernightLeg.source + ".WithNotionals1") 
                                                [| _OvernightLeg.source
                                                ;  _notional.source
                                                |]
@@ -271,7 +271,7 @@ module OvernightLegFunction =
                                 ;  _notional.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OvernightLeg> format
                     ; source = source 
@@ -299,12 +299,12 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithPaymentAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
-                let source = Helper.sourceFold (_OvernightLeg.source + ".WithPaymentAdjustment") 
+                let source () = Helper.sourceFold (_OvernightLeg.source + ".WithPaymentAdjustment") 
                                                [| _OvernightLeg.source
                                                ;  _convention.source
                                                |]
@@ -313,7 +313,7 @@ module OvernightLegFunction =
                                 ;  _convention.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OvernightLeg> format
                     ; source = source 
@@ -341,12 +341,12 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithPaymentDayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
-                let source = Helper.sourceFold (_OvernightLeg.source + ".WithPaymentDayCounter") 
+                let source () = Helper.sourceFold (_OvernightLeg.source + ".WithPaymentDayCounter") 
                                                [| _OvernightLeg.source
                                                ;  _dayCounter.source
                                                |]
@@ -355,7 +355,7 @@ module OvernightLegFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OvernightLeg> format
                     ; source = source 
@@ -383,12 +383,12 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithSpreads1
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithSpreads1
                                                             _spreads.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
-                let source = Helper.sourceFold (_OvernightLeg.source + ".WithSpreads1") 
+                let source () = Helper.sourceFold (_OvernightLeg.source + ".WithSpreads1") 
                                                [| _OvernightLeg.source
                                                ;  _spreads.source
                                                |]
@@ -397,7 +397,7 @@ module OvernightLegFunction =
                                 ;  _spreads.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OvernightLeg> format
                     ; source = source 
@@ -425,12 +425,12 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
-                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithSpreads
+                let builder (current : ICell) = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithSpreads
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
-                let source = Helper.sourceFold (_OvernightLeg.source + ".WithSpreads") 
+                let source () = Helper.sourceFold (_OvernightLeg.source + ".WithSpreads") 
                                                [| _OvernightLeg.source
                                                ;  _spread.source
                                                |]
@@ -439,7 +439,7 @@ module OvernightLegFunction =
                                 ;  _spread.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OvernightLeg> format
                     ; source = source 
@@ -468,14 +468,14 @@ module OvernightLegFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<OvernightLeg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<OvernightLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<OvernightLeg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<OvernightLeg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

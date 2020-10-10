@@ -61,7 +61,7 @@ module Concentrating1dMesherFunction =
                 let _size = Helper.toCell<int> size "size" 
                 let _cPoints = Helper.toDefault<Pair<Nullable<double>,Nullable<double>>> cPoints "cPoints" null
                 let _requireCPoint = Helper.toDefault<bool> requireCPoint "requireCPoint" false
-                let builder () = withMnemonic mnemonic (Fun.Concentrating1dMesher1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Concentrating1dMesher1 
                                                             _start.cell 
                                                             _End.cell 
                                                             _size.cell 
@@ -70,7 +70,7 @@ module Concentrating1dMesherFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Concentrating1dMesher>) l
 
-                let source = Helper.sourceFold "Fun.Concentrating1dMesher1" 
+                let source () = Helper.sourceFold "Fun.Concentrating1dMesher1" 
                                                [| _start.source
                                                ;  _End.source
                                                ;  _size.source
@@ -85,7 +85,7 @@ module Concentrating1dMesherFunction =
                                 ;  _requireCPoint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Concentrating1dMesher> format
                     ; source = source 
@@ -122,7 +122,7 @@ module Concentrating1dMesherFunction =
                 let _size = Helper.toCell<int> size "size" 
                 let _cPoints = Helper.toDefault<Generic.List<Tuple<Nullable<double>,Nullable<double>,bool>>> cPoints "cPoints" null
                 let _tol = Helper.toDefault<double> tol "tol" 1e-8
-                let builder () = withMnemonic mnemonic (Fun.Concentrating1dMesher
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Concentrating1dMesher
                                                             _start.cell 
                                                             _End.cell 
                                                             _size.cell 
@@ -131,7 +131,7 @@ module Concentrating1dMesherFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Concentrating1dMesher>) l
 
-                let source = Helper.sourceFold "Fun.Concentrating1dMesher" 
+                let source () = Helper.sourceFold "Fun.Concentrating1dMesher" 
                                                [| _start.source
                                                ;  _End.source
                                                ;  _size.source
@@ -146,7 +146,7 @@ module Concentrating1dMesherFunction =
                                 ;  _tol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Concentrating1dMesher> format
                     ; source = source 
@@ -174,12 +174,12 @@ module Concentrating1dMesherFunction =
 
                 let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Dminus
+                let builder (current : ICell) = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Dminus
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Concentrating1dMesher.source + ".Dminus") 
+                let source () = Helper.sourceFold (_Concentrating1dMesher.source + ".Dminus") 
                                                [| _Concentrating1dMesher.source
                                                ;  _index.source
                                                |]
@@ -188,7 +188,7 @@ module Concentrating1dMesherFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -216,12 +216,12 @@ module Concentrating1dMesherFunction =
 
                 let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Dplus
+                let builder (current : ICell) = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Dplus
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Concentrating1dMesher.source + ".Dplus") 
+                let source () = Helper.sourceFold (_Concentrating1dMesher.source + ".Dplus") 
                                                [| _Concentrating1dMesher.source
                                                ;  _index.source
                                                |]
@@ -230,7 +230,7 @@ module Concentrating1dMesherFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -258,12 +258,12 @@ module Concentrating1dMesherFunction =
 
                 let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Location
+                let builder (current : ICell) = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Location
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Concentrating1dMesher.source + ".Location") 
+                let source () = Helper.sourceFold (_Concentrating1dMesher.source + ".Location") 
                                                [| _Concentrating1dMesher.source
                                                ;  _index.source
                                                |]
@@ -272,7 +272,7 @@ module Concentrating1dMesherFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -297,18 +297,18 @@ module Concentrating1dMesherFunction =
             try
 
                 let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
-                let builder () = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Locations
+                let builder (current : ICell) = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_Concentrating1dMesher.source + ".Locations") 
+                let source () = Helper.sourceFold (_Concentrating1dMesher.source + ".Locations") 
                                                [| _Concentrating1dMesher.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Concentrating1dMesher.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -333,18 +333,18 @@ module Concentrating1dMesherFunction =
             try
 
                 let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
-                let builder () = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Concentrating1dMesher.source + ".Size") 
+                let source () = Helper.sourceFold (_Concentrating1dMesher.source + ".Size") 
                                                [| _Concentrating1dMesher.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Concentrating1dMesher.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -373,14 +373,14 @@ module Concentrating1dMesherFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Concentrating1dMesher>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Concentrating1dMesher>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Concentrating1dMesher>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Concentrating1dMesher>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

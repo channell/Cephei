@@ -85,7 +85,7 @@ module IborCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 
                                                             _startDate.cell 
@@ -101,7 +101,7 @@ module IborCouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Factory") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Factory") 
                                                [| _IborCoupon.source
                                                ;  _nominal.source
                                                ;  _paymentDate.source
@@ -132,7 +132,7 @@ module IborCouponFunction =
                                 ;  _isInArrears.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborCoupon> format
                     ; source = source 
@@ -190,7 +190,7 @@ module IborCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
-                let builder () = withMnemonic mnemonic (Fun.IborCoupon 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.IborCoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
                                                             _startDate.cell 
@@ -206,7 +206,7 @@ module IborCouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborCoupon>) l
 
-                let source = Helper.sourceFold "Fun.IborCoupon" 
+                let source () = Helper.sourceFold "Fun.IborCoupon" 
                                                [| _paymentDate.source
                                                ;  _nominal.source
                                                ;  _startDate.source
@@ -235,7 +235,7 @@ module IborCouponFunction =
                                 ;  _isInArrears.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborCoupon> format
                     ; source = source 
@@ -257,16 +257,16 @@ module IborCouponFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.IborCoupon1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.IborCoupon1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborCoupon>) l
 
-                let source = Helper.sourceFold "Fun.IborCoupon1" 
+                let source () = Helper.sourceFold "Fun.IborCoupon1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborCoupon> format
                     ; source = source 
@@ -291,18 +291,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).IborIndex
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".IborIndex") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".IborIndex") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborCoupon> format
                     ; source = source 
@@ -327,18 +327,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).IndexFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".IndexFixing") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".IndexFixing") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -366,12 +366,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".AccruedAmount") 
                                                [| _IborCoupon.source
                                                ;  _d.source
                                                |]
@@ -380,7 +380,7 @@ module IborCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -405,18 +405,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AdjustedFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".AdjustedFixing") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".AdjustedFixing") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -441,18 +441,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Amount") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Amount") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -477,18 +477,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).ConvexityAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".ConvexityAdjustment") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".ConvexityAdjustment") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -513,18 +513,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".DayCounter") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborCoupon> format
                     ; source = source 
@@ -549,18 +549,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".FixingDate") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -585,18 +585,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".FixingDays") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -621,18 +621,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Gearing
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Gearing") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Gearing") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -657,18 +657,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Index") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Index") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborCoupon> format
                     ; source = source 
@@ -693,18 +693,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).IsInArrears
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".IsInArrears") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".IsInArrears") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -732,12 +732,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Price
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Price") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Price") 
                                                [| _IborCoupon.source
                                                ;  _yts.source
                                                |]
@@ -746,7 +746,7 @@ module IborCouponFunction =
                                 ;  _yts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -771,18 +771,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Pricer
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Pricer") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Pricer") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborCoupon> format
                     ; source = source 
@@ -807,18 +807,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Rate
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Rate") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Rate") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -846,12 +846,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).SetPricer
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : IborCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".SetPricer") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".SetPricer") 
                                                [| _IborCoupon.source
                                                ;  _pricer.source
                                                |]
@@ -860,7 +860,7 @@ module IborCouponFunction =
                                 ;  _pricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -885,18 +885,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Spread
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Spread") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Spread") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -921,18 +921,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : IborCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Update") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Update") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -957,18 +957,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccrualDays
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".AccrualDays") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".AccrualDays") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -993,18 +993,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccrualEndDate
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".AccrualEndDate") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".AccrualEndDate") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1029,18 +1029,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccrualPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".AccrualPeriod") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".AccrualPeriod") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1065,18 +1065,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccrualStartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".AccrualStartDate") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".AccrualStartDate") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1104,12 +1104,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccruedDays
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".AccruedDays") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".AccruedDays") 
                                                [| _IborCoupon.source
                                                ;  _d.source
                                                |]
@@ -1118,7 +1118,7 @@ module IborCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1146,12 +1146,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccruedPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".AccruedPeriod") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".AccruedPeriod") 
                                                [| _IborCoupon.source
                                                ;  _d.source
                                                |]
@@ -1160,7 +1160,7 @@ module IborCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1185,18 +1185,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Date") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Date") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1221,18 +1221,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".ExCouponDate") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1257,18 +1257,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Nominal") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Nominal") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1293,18 +1293,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".ReferencePeriodEnd") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".ReferencePeriodEnd") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1329,18 +1329,18 @@ module IborCouponFunction =
             try
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".ReferencePeriodStart") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".ReferencePeriodStart") 
                                                [| _IborCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1368,12 +1368,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".CompareTo") 
                                                [| _IborCoupon.source
                                                ;  _cf.source
                                                |]
@@ -1382,7 +1382,7 @@ module IborCouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1410,12 +1410,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Equals") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Equals") 
                                                [| _IborCoupon.source
                                                ;  _cf.source
                                                |]
@@ -1424,7 +1424,7 @@ module IborCouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1455,13 +1455,13 @@ module IborCouponFunction =
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".HasOccurred") 
                                                [| _IborCoupon.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -1472,7 +1472,7 @@ module IborCouponFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1500,12 +1500,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".TradingExCoupon") 
                                                [| _IborCoupon.source
                                                ;  _refDate.source
                                                |]
@@ -1514,7 +1514,7 @@ module IborCouponFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1542,12 +1542,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : IborCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".Accept") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".Accept") 
                                                [| _IborCoupon.source
                                                ;  _v.source
                                                |]
@@ -1556,7 +1556,7 @@ module IborCouponFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1584,12 +1584,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : IborCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".RegisterWith") 
                                                [| _IborCoupon.source
                                                ;  _handler.source
                                                |]
@@ -1598,7 +1598,7 @@ module IborCouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1626,12 +1626,12 @@ module IborCouponFunction =
 
                 let _IborCoupon = Helper.toCell<IborCoupon> iborcoupon "IborCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((IborCouponModel.Cast _IborCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : IborCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IborCoupon.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_IborCoupon.source + ".UnregisterWith") 
                                                [| _IborCoupon.source
                                                ;  _handler.source
                                                |]
@@ -1640,7 +1640,7 @@ module IborCouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1669,14 +1669,14 @@ module IborCouponFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IborCoupon>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<IborCoupon>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<IborCoupon>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<IborCoupon>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

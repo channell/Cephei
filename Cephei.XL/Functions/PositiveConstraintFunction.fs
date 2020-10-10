@@ -46,16 +46,16 @@ module PositiveConstraintFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.PositiveConstraint ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PositiveConstraint ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PositiveConstraint>) l
 
-                let source = Helper.sourceFold "Fun.PositiveConstraint" 
+                let source () = Helper.sourceFold "Fun.PositiveConstraint" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PositiveConstraint> format
                     ; source = source 
@@ -80,18 +80,18 @@ module PositiveConstraintFunction =
             try
 
                 let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
-                let builder () = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PositiveConstraint.source + ".Empty") 
+                let source () = Helper.sourceFold (_PositiveConstraint.source + ".Empty") 
                                                [| _PositiveConstraint.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PositiveConstraint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -119,12 +119,12 @@ module PositiveConstraintFunction =
 
                 let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).LowerBound
+                let builder (current : ICell) = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_PositiveConstraint.source + ".LowerBound") 
+                let source () = Helper.sourceFold (_PositiveConstraint.source + ".LowerBound") 
                                                [| _PositiveConstraint.source
                                                ;  _parameters.source
                                                |]
@@ -133,7 +133,7 @@ module PositiveConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PositiveConstraint> format
                     ; source = source 
@@ -161,12 +161,12 @@ module PositiveConstraintFunction =
 
                 let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Test
+                let builder (current : ICell) = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PositiveConstraint.source + ".Test") 
+                let source () = Helper.sourceFold (_PositiveConstraint.source + ".Test") 
                                                [| _PositiveConstraint.source
                                                ;  _p.source
                                                |]
@@ -175,7 +175,7 @@ module PositiveConstraintFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,14 +209,14 @@ module PositiveConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PositiveConstraint.source + ".Update") 
+                let source () = Helper.sourceFold (_PositiveConstraint.source + ".Update") 
                                                [| _PositiveConstraint.source
                                                ;  _p.source
                                                ;  _direction.source
@@ -229,7 +229,7 @@ module PositiveConstraintFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -257,12 +257,12 @@ module PositiveConstraintFunction =
 
                 let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).UpperBound
+                let builder (current : ICell) = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_PositiveConstraint.source + ".UpperBound") 
+                let source () = Helper.sourceFold (_PositiveConstraint.source + ".UpperBound") 
                                                [| _PositiveConstraint.source
                                                ;  _parameters.source
                                                |]
@@ -271,7 +271,7 @@ module PositiveConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PositiveConstraint> format
                     ; source = source 
@@ -300,14 +300,14 @@ module PositiveConstraintFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PositiveConstraint>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PositiveConstraint>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PositiveConstraint>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PositiveConstraint>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

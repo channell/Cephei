@@ -55,14 +55,14 @@ module BiCGStabResultFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _e = Helper.toCell<double> e "e" 
                 let _xx = Helper.toCell<Vector> xx "xx" 
-                let builder () = withMnemonic mnemonic (Fun.BiCGStabResult 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BiCGStabResult 
                                                             _i.cell 
                                                             _e.cell 
                                                             _xx.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BiCGStabResult>) l
 
-                let source = Helper.sourceFold "Fun.BiCGStabResult" 
+                let source () = Helper.sourceFold "Fun.BiCGStabResult" 
                                                [| _i.source
                                                ;  _e.source
                                                ;  _xx.source
@@ -73,7 +73,7 @@ module BiCGStabResultFunction =
                                 ;  _xx.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BiCGStabResult> format
                     ; source = source 
@@ -98,18 +98,18 @@ module BiCGStabResultFunction =
             try
 
                 let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
-                let builder () = withMnemonic mnemonic ((BiCGStabResultModel.Cast _BiCGStabResult.cell).Error
+                let builder (current : ICell) = withMnemonic mnemonic ((BiCGStabResultModel.Cast _BiCGStabResult.cell).Error
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BiCGStabResult.source + ".Error") 
+                let source () = Helper.sourceFold (_BiCGStabResult.source + ".Error") 
                                                [| _BiCGStabResult.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BiCGStabResult.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -134,18 +134,18 @@ module BiCGStabResultFunction =
             try
 
                 let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
-                let builder () = withMnemonic mnemonic ((BiCGStabResultModel.Cast _BiCGStabResult.cell).Iterations
+                let builder (current : ICell) = withMnemonic mnemonic ((BiCGStabResultModel.Cast _BiCGStabResult.cell).Iterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BiCGStabResult.source + ".Iterations") 
+                let source () = Helper.sourceFold (_BiCGStabResult.source + ".Iterations") 
                                                [| _BiCGStabResult.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BiCGStabResult.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module BiCGStabResultFunction =
             try
 
                 let _BiCGStabResult = Helper.toCell<BiCGStabResult> bicgstabresult "BiCGStabResult"  
-                let builder () = withMnemonic mnemonic ((BiCGStabResultModel.Cast _BiCGStabResult.cell).X
+                let builder (current : ICell) = withMnemonic mnemonic ((BiCGStabResultModel.Cast _BiCGStabResult.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_BiCGStabResult.source + ".X") 
+                let source () = Helper.sourceFold (_BiCGStabResult.source + ".X") 
                                                [| _BiCGStabResult.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BiCGStabResult.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BiCGStabResult> format
                     ; source = source 
@@ -210,14 +210,14 @@ module BiCGStabResultFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BiCGStabResult>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BiCGStabResult>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BiCGStabResult>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BiCGStabResult>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -46,16 +46,16 @@ module GaussChebyshev2ndPolynomialFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.GaussChebyshev2ndPolynomial 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussChebyshev2ndPolynomial 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussChebyshev2ndPolynomial>) l
 
-                let source = Helper.sourceFold "Fun.GaussChebyshev2ndPolynomial" 
+                let source () = Helper.sourceFold "Fun.GaussChebyshev2ndPolynomial" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussChebyshev2ndPolynomial> format
                     ; source = source 
@@ -83,12 +83,12 @@ module GaussChebyshev2ndPolynomialFunction =
 
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Alpha
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".Alpha") 
+                let source () = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".Alpha") 
                                                [| _GaussChebyshev2ndPolynomial.source
                                                ;  _i.source
                                                |]
@@ -97,7 +97,7 @@ module GaussChebyshev2ndPolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -125,12 +125,12 @@ module GaussChebyshev2ndPolynomialFunction =
 
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Beta
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".Beta") 
+                let source () = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".Beta") 
                                                [| _GaussChebyshev2ndPolynomial.source
                                                ;  _i.source
                                                |]
@@ -139,7 +139,7 @@ module GaussChebyshev2ndPolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module GaussChebyshev2ndPolynomialFunction =
             try
 
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
-                let builder () = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Mu_0
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".Mu_0") 
+                let source () = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".Mu_0") 
                                                [| _GaussChebyshev2ndPolynomial.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshev2ndPolynomial.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,12 +203,12 @@ module GaussChebyshev2ndPolynomialFunction =
 
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).W
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".W") 
+                let source () = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".W") 
                                                [| _GaussChebyshev2ndPolynomial.source
                                                ;  _x.source
                                                |]
@@ -217,7 +217,7 @@ module GaussChebyshev2ndPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,13 +248,13 @@ module GaussChebyshev2ndPolynomialFunction =
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".Value") 
                                                [| _GaussChebyshev2ndPolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -265,7 +265,7 @@ module GaussChebyshev2ndPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,13 +296,13 @@ module GaussChebyshev2ndPolynomialFunction =
                 let _GaussChebyshev2ndPolynomial = Helper.toCell<GaussChebyshev2ndPolynomial> gausschebyshev2ndpolynomial "GaussChebyshev2ndPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).WeightedValue
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndPolynomialModel.Cast _GaussChebyshev2ndPolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".WeightedValue") 
+                let source () = Helper.sourceFold (_GaussChebyshev2ndPolynomial.source + ".WeightedValue") 
                                                [| _GaussChebyshev2ndPolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -313,7 +313,7 @@ module GaussChebyshev2ndPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -342,14 +342,14 @@ module GaussChebyshev2ndPolynomialFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussChebyshev2ndPolynomial>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussChebyshev2ndPolynomial>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussChebyshev2ndPolynomial>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussChebyshev2ndPolynomial>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -61,7 +61,7 @@ module YoYInflationCollarFunction =
                 let _floorRates = Helper.toCell<Generic.List<double>> floorRates "floorRates" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.YoYInflationCollar 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.YoYInflationCollar 
                                                             _yoyLeg.cell 
                                                             _capRates.cell 
                                                             _floorRates.cell 
@@ -70,7 +70,7 @@ module YoYInflationCollarFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCollar>) l
 
-                let source = Helper.sourceFold "Fun.YoYInflationCollar" 
+                let source () = Helper.sourceFold "Fun.YoYInflationCollar" 
                                                [| _yoyLeg.source
                                                ;  _capRates.source
                                                ;  _floorRates.source
@@ -85,7 +85,7 @@ module YoYInflationCollarFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationCollar> format
                     ; source = source 
@@ -113,12 +113,12 @@ module YoYInflationCollarFunction =
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
                 let _discountCurve = Helper.toCell<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).AtmRate
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).AtmRate
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".AtmRate") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".AtmRate") 
                                                [| _YoYInflationCollar.source
                                                ;  _discountCurve.source
                                                |]
@@ -127,7 +127,7 @@ module YoYInflationCollarFunction =
                                 ;  _discountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -152,18 +152,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).CapRates
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).CapRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".CapRates") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".CapRates") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -188,18 +188,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).FloorRates
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).FloorRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".FloorRates") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".FloorRates") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -245,7 +245,7 @@ module YoYInflationCollarFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).ImpliedVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).ImpliedVolatility
                                                             _price.cell 
                                                             _yoyCurve.cell 
                                                             _guess.cell 
@@ -256,7 +256,7 @@ module YoYInflationCollarFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".ImpliedVolatility") 
                                                [| _YoYInflationCollar.source
                                                ;  _price.source
                                                ;  _yoyCurve.source
@@ -277,7 +277,7 @@ module YoYInflationCollarFunction =
                                 ;  _maxVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".IsExpired") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).LastYoYInflationCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).LastYoYInflationCoupon
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCoupon>) l
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".LastYoYInflationCoupon") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".LastYoYInflationCoupon") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationCollar> format
                     ; source = source 
@@ -374,18 +374,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".MaturityDate") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -413,12 +413,12 @@ module YoYInflationCollarFunction =
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).Optionlet
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).Optionlet
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCapFloor>) l
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".Optionlet") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".Optionlet") 
                                                [| _YoYInflationCollar.source
                                                ;  _i.source
                                                |]
@@ -427,7 +427,7 @@ module YoYInflationCollarFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationCollar> format
                     ; source = source 
@@ -452,18 +452,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).StartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".StartDate") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".StartDate") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,18 +488,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).Type
                                                        ) :> ICell
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".TYPE") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".TYPE") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -524,18 +524,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).YoyLeg
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).YoyLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".YoyLeg") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".YoyLeg") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -560,18 +560,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".CASH") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".CASH") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -596,18 +596,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".ErrorEstimate") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -632,18 +632,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".NPV") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".NPV") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -671,12 +671,12 @@ module YoYInflationCollarFunction =
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".Result") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".Result") 
                                                [| _YoYInflationCollar.source
                                                ;  _tag.source
                                                |]
@@ -685,7 +685,7 @@ module YoYInflationCollarFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -713,12 +713,12 @@ module YoYInflationCollarFunction =
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationCollar) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".SetPricingEngine") 
                                                [| _YoYInflationCollar.source
                                                ;  _e.source
                                                |]
@@ -727,7 +727,7 @@ module YoYInflationCollarFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -752,18 +752,18 @@ module YoYInflationCollarFunction =
             try
 
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
-                let builder () = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationCollar.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_YoYInflationCollar.source + ".ValuationDate") 
                                                [| _YoYInflationCollar.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -792,14 +792,14 @@ module YoYInflationCollarFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<YoYInflationCollar>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<YoYInflationCollar>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<YoYInflationCollar>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<YoYInflationCollar>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

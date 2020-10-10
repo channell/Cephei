@@ -61,7 +61,7 @@ module AmericanPayoffAtHitFunction =
                 let _dividendDiscount = Helper.toCell<double> dividendDiscount "dividendDiscount" 
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
-                let builder () = withMnemonic mnemonic (Fun.AmericanPayoffAtHit 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmericanPayoffAtHit 
                                                             _spot.cell 
                                                             _discount.cell 
                                                             _dividendDiscount.cell 
@@ -70,7 +70,7 @@ module AmericanPayoffAtHitFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AmericanPayoffAtHit>) l
 
-                let source = Helper.sourceFold "Fun.AmericanPayoffAtHit" 
+                let source () = Helper.sourceFold "Fun.AmericanPayoffAtHit" 
                                                [| _spot.source
                                                ;  _discount.source
                                                ;  _dividendDiscount.source
@@ -85,7 +85,7 @@ module AmericanPayoffAtHitFunction =
                                 ;  _payoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AmericanPayoffAtHit> format
                     ; source = source 
@@ -110,18 +110,18 @@ module AmericanPayoffAtHitFunction =
             try
 
                 let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
-                let builder () = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Delta") 
+                let source () = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Delta") 
                                                [| _AmericanPayoffAtHit.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmericanPayoffAtHit.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -146,18 +146,18 @@ module AmericanPayoffAtHitFunction =
             try
 
                 let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
-                let builder () = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Gamma") 
+                let source () = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Gamma") 
                                                [| _AmericanPayoffAtHit.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmericanPayoffAtHit.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -185,12 +185,12 @@ module AmericanPayoffAtHitFunction =
 
                 let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder () = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Rho
                                                             _maturity.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Rho") 
+                let source () = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Rho") 
                                                [| _AmericanPayoffAtHit.source
                                                ;  _maturity.source
                                                |]
@@ -199,7 +199,7 @@ module AmericanPayoffAtHitFunction =
                                 ;  _maturity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -224,18 +224,18 @@ module AmericanPayoffAtHitFunction =
             try
 
                 let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
-                let builder () = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Value") 
+                let source () = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Value") 
                                                [| _AmericanPayoffAtHit.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmericanPayoffAtHit.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -264,14 +264,14 @@ module AmericanPayoffAtHitFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AmericanPayoffAtHit>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AmericanPayoffAtHit>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AmericanPayoffAtHit>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AmericanPayoffAtHit>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

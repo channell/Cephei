@@ -49,19 +49,19 @@ module BootstrapHelperFunction =
             try
 
                 let _quote = Helper.toCell<double> quote "quote" 
-                let builder () = withMnemonic mnemonic (Fun.BootstrapHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BootstrapHelper 
                                                             _quote.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BootstrapHelper>) l
 
-                let source = Helper.sourceFold "Fun.BootstrapHelper" 
+                let source () = Helper.sourceFold "Fun.BootstrapHelper" 
                                                [| _quote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _quote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BootstrapHelper> format
                     ; source = source 
@@ -83,16 +83,16 @@ module BootstrapHelperFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.BootstrapHelper1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BootstrapHelper1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BootstrapHelper>) l
 
-                let source = Helper.sourceFold "Fun.BootstrapHelper1" 
+                let source () = Helper.sourceFold "Fun.BootstrapHelper1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BootstrapHelper> format
                     ; source = source 
@@ -117,19 +117,19 @@ module BootstrapHelperFunction =
             try
 
                 let _quote = Helper.toHandle<Quote> quote "quote" 
-                let builder () = withMnemonic mnemonic (Fun.BootstrapHelper2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BootstrapHelper2 
                                                             _quote.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BootstrapHelper>) l
 
-                let source = Helper.sourceFold "Fun.BootstrapHelper2" 
+                let source () = Helper.sourceFold "Fun.BootstrapHelper2" 
                                                [| _quote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _quote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BootstrapHelper> format
                     ; source = source 
@@ -154,18 +154,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).EarliestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".EarliestDate") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".EarliestDate") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -190,18 +190,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).ImpliedQuote
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".ImpliedQuote") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".ImpliedQuote") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -226,18 +226,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).LatestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".LatestDate") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".LatestDate") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -262,18 +262,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).LatestRelevantDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".LatestRelevantDate") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".LatestRelevantDate") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -298,18 +298,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".MaturityDate") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -334,18 +334,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).PillarDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".PillarDate") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".PillarDate") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -370,18 +370,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).Quote
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".Quote") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".Quote") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BootstrapHelper> format
                     ; source = source 
@@ -406,18 +406,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteError
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".QuoteError") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".QuoteError") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -442,18 +442,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteIsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".QuoteIsValid") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".QuoteIsValid") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -478,18 +478,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteValue
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".QuoteValue") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".QuoteValue") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -517,12 +517,12 @@ module BootstrapHelperFunction =
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".RegisterWith") 
                                                [| _BootstrapHelper.source
                                                ;  _handler.source
                                                |]
@@ -531,7 +531,7 @@ module BootstrapHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -559,12 +559,12 @@ module BootstrapHelperFunction =
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
                 let _ts = Helper.toCell<'TS> ts "ts" 
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).SetTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).SetTermStructure
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".SetTermStructure") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".SetTermStructure") 
                                                [| _BootstrapHelper.source
                                                ;  _ts.source
                                                |]
@@ -573,7 +573,7 @@ module BootstrapHelperFunction =
                                 ;  _ts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -601,12 +601,12 @@ module BootstrapHelperFunction =
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".UnregisterWith") 
                                                [| _BootstrapHelper.source
                                                ;  _handler.source
                                                |]
@@ -615,7 +615,7 @@ module BootstrapHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -640,18 +640,18 @@ module BootstrapHelperFunction =
             try
 
                 let _BootstrapHelper = Helper.toCell<BootstrapHelper> bootstraphelper "BootstrapHelper"  
-                let builder () = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((BootstrapHelperModel.Cast _BootstrapHelper.cell).Update
                                                        ) :> ICell
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BootstrapHelper.source + ".Update") 
+                let source () = Helper.sourceFold (_BootstrapHelper.source + ".Update") 
                                                [| _BootstrapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -680,14 +680,14 @@ module BootstrapHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BootstrapHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BootstrapHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BootstrapHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BootstrapHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

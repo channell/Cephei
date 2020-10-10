@@ -55,14 +55,14 @@ module EqualJumpsBinomialTreeFunction =
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder () = withMnemonic mnemonic (Fun.EqualJumpsBinomialTree 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EqualJumpsBinomialTree 
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EqualJumpsBinomialTree>) l
 
-                let source = Helper.sourceFold "Fun.EqualJumpsBinomialTree" 
+                let source () = Helper.sourceFold "Fun.EqualJumpsBinomialTree" 
                                                [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
@@ -73,7 +73,7 @@ module EqualJumpsBinomialTreeFunction =
                                 ;  _steps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EqualJumpsBinomialTree> format
                     ; source = source 
@@ -95,16 +95,16 @@ module EqualJumpsBinomialTreeFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.EqualJumpsBinomialTree1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EqualJumpsBinomialTree1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EqualJumpsBinomialTree>) l
 
-                let source = Helper.sourceFold "Fun.EqualJumpsBinomialTree1" 
+                let source () = Helper.sourceFold "Fun.EqualJumpsBinomialTree1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EqualJumpsBinomialTree> format
                     ; source = source 
@@ -138,14 +138,14 @@ module EqualJumpsBinomialTreeFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Probability
+                let builder (current : ICell) = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Probability
                                                             _x.cell 
                                                             _y.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EqualJumpsBinomialTree.source + ".Probability") 
+                let source () = Helper.sourceFold (_EqualJumpsBinomialTree.source + ".Probability") 
                                                [| _EqualJumpsBinomialTree.source
                                                ;  _x.source
                                                ;  _y.source
@@ -158,7 +158,7 @@ module EqualJumpsBinomialTreeFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -189,13 +189,13 @@ module EqualJumpsBinomialTreeFunction =
                 let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Underlying
+                let builder (current : ICell) = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EqualJumpsBinomialTree.source + ".Underlying") 
+                let source () = Helper.sourceFold (_EqualJumpsBinomialTree.source + ".Underlying") 
                                                [| _EqualJumpsBinomialTree.source
                                                ;  _i.source
                                                ;  _index.source
@@ -206,7 +206,7 @@ module EqualJumpsBinomialTreeFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,14 +240,14 @@ module EqualJumpsBinomialTreeFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Descendant
+                let builder (current : ICell) = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EqualJumpsBinomialTree.source + ".Descendant") 
+                let source () = Helper.sourceFold (_EqualJumpsBinomialTree.source + ".Descendant") 
                                                [| _EqualJumpsBinomialTree.source
                                                ;  _x.source
                                                ;  _index.source
@@ -260,7 +260,7 @@ module EqualJumpsBinomialTreeFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -288,12 +288,12 @@ module EqualJumpsBinomialTreeFunction =
 
                 let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EqualJumpsBinomialTree.source + ".Size") 
+                let source () = Helper.sourceFold (_EqualJumpsBinomialTree.source + ".Size") 
                                                [| _EqualJumpsBinomialTree.source
                                                ;  _i.source
                                                |]
@@ -302,7 +302,7 @@ module EqualJumpsBinomialTreeFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -327,18 +327,18 @@ module EqualJumpsBinomialTreeFunction =
             try
 
                 let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
-                let builder () = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Columns
+                let builder (current : ICell) = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EqualJumpsBinomialTree.source + ".Columns") 
+                let source () = Helper.sourceFold (_EqualJumpsBinomialTree.source + ".Columns") 
                                                [| _EqualJumpsBinomialTree.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EqualJumpsBinomialTree.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -367,14 +367,14 @@ module EqualJumpsBinomialTreeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EqualJumpsBinomialTree>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EqualJumpsBinomialTree>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EqualJumpsBinomialTree>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EqualJumpsBinomialTree>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

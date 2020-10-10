@@ -46,16 +46,16 @@ module NOKCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.NOKCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NOKCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NOKCurrency>) l
 
-                let source = Helper.sourceFold "Fun.NOKCurrency" 
+                let source () = Helper.sourceFold "Fun.NOKCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NOKCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".Code") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".Empty") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module NOKCurrencyFunction =
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".Equals") 
                                                [| _NOKCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module NOKCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".Format") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".FractionsPerUnit") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".FractionSymbol") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".Name") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".NumericCode") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".Rounding") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NOKCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".Symbol") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".ToString") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_NOKCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_NOKCurrency.source + ".TriangulationCurrency") 
                                                [| _NOKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NOKCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module NOKCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NOKCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NOKCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NOKCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NOKCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

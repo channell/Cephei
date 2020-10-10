@@ -58,7 +58,7 @@ module SABRWrapperFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic (Fun.SABRWrapper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SABRWrapper 
                                                             _t.cell 
                                                             _forward.cell 
                                                             _param.cell 
@@ -66,7 +66,7 @@ module SABRWrapperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SABRWrapper>) l
 
-                let source = Helper.sourceFold "Fun.SABRWrapper" 
+                let source () = Helper.sourceFold "Fun.SABRWrapper" 
                                                [| _t.source
                                                ;  _forward.source
                                                ;  _param.source
@@ -79,7 +79,7 @@ module SABRWrapperFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SABRWrapper> format
                     ; source = source 
@@ -107,12 +107,12 @@ module SABRWrapperFunction =
 
                 let _SABRWrapper = Helper.toCell<SABRWrapper> sabrwrapper "SABRWrapper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((SABRWrapperModel.Cast _SABRWrapper.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRWrapperModel.Cast _SABRWrapper.cell).Volatility
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRWrapper.source + ".Volatility") 
+                let source () = Helper.sourceFold (_SABRWrapper.source + ".Volatility") 
                                                [| _SABRWrapper.source
                                                ;  _x.source
                                                |]
@@ -121,7 +121,7 @@ module SABRWrapperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -150,14 +150,14 @@ module SABRWrapperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SABRWrapper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SABRWrapper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SABRWrapper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SABRWrapper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

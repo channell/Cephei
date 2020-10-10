@@ -52,13 +52,13 @@ module DigitalCmsLegFunction =
 
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let _index = Helper.toCell<SwapIndex> index "index" 
-                let builder () = withMnemonic mnemonic (Fun.DigitalCmsLeg 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalCmsLeg 
                                                             _schedule.cell 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold "Fun.DigitalCmsLeg" 
+                let source () = Helper.sourceFold "Fun.DigitalCmsLeg" 
                                                [| _schedule.source
                                                ;  _index.source
                                                |]
@@ -67,7 +67,7 @@ module DigitalCmsLegFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -95,12 +95,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).InArrears1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).InArrears1
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".InArrears1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".InArrears1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _flag.source
                                                |]
@@ -109,7 +109,7 @@ module DigitalCmsLegFunction =
                                 ;  _flag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -134,18 +134,18 @@ module DigitalCmsLegFunction =
             try
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).InArrears
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).InArrears
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".InArrears") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".InArrears") 
                                                [| _DigitalCmsLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -170,18 +170,18 @@ module DigitalCmsLegFunction =
             try
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".Value") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".Value") 
                                                [| _DigitalCmsLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -206,18 +206,18 @@ module DigitalCmsLegFunction =
             try
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallATM
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallATM
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallATM") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallATM") 
                                                [| _DigitalCmsLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -245,12 +245,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallATM1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallATM1
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallATM1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallATM1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _flag.source
                                                |]
@@ -259,7 +259,7 @@ module DigitalCmsLegFunction =
                                 ;  _flag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -287,12 +287,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _payoffs = Helper.toCell<Generic.List<double>> payoffs "payoffs" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallPayoffs1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallPayoffs1
                                                             _payoffs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallPayoffs1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallPayoffs1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _payoffs.source
                                                |]
@@ -301,7 +301,7 @@ module DigitalCmsLegFunction =
                                 ;  _payoffs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -329,12 +329,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _payoff = Helper.toCell<double> payoff "payoff" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallPayoffs
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallPayoffs
                                                             _payoff.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallPayoffs") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallPayoffs") 
                                                [| _DigitalCmsLeg.source
                                                ;  _payoff.source
                                                |]
@@ -343,7 +343,7 @@ module DigitalCmsLegFunction =
                                 ;  _payoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -371,12 +371,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallStrikes1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallStrikes1
                                                             _strikes.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallStrikes1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallStrikes1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _strikes.source
                                                |]
@@ -385,7 +385,7 @@ module DigitalCmsLegFunction =
                                 ;  _strikes.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -413,12 +413,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallStrikes
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithCallStrikes
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallStrikes") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallStrikes") 
                                                [| _DigitalCmsLeg.source
                                                ;  _strike.source
                                                |]
@@ -427,7 +427,7 @@ module DigitalCmsLegFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -455,12 +455,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithFixingDays1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithFixingDays1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithFixingDays1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _fixingDays.source
                                                |]
@@ -469,7 +469,7 @@ module DigitalCmsLegFunction =
                                 ;  _fixingDays.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -497,12 +497,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithFixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithFixingDays") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithFixingDays") 
                                                [| _DigitalCmsLeg.source
                                                ;  _fixingDays.source
                                                |]
@@ -511,7 +511,7 @@ module DigitalCmsLegFunction =
                                 ;  _fixingDays.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -539,12 +539,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithGearings
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithGearings
                                                             _gearings.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithGearings") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithGearings") 
                                                [| _DigitalCmsLeg.source
                                                ;  _gearings.source
                                                |]
@@ -553,7 +553,7 @@ module DigitalCmsLegFunction =
                                 ;  _gearings.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -581,12 +581,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithGearings1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithGearings1
                                                             _gearing.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithGearings1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithGearings1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _gearing.source
                                                |]
@@ -595,7 +595,7 @@ module DigitalCmsLegFunction =
                                 ;  _gearing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -623,12 +623,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _Type = Helper.toCell<Position.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithLongCallOption
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithLongCallOption
                                                             _Type.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithLongCallOption") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithLongCallOption") 
                                                [| _DigitalCmsLeg.source
                                                ;  _Type.source
                                                |]
@@ -637,7 +637,7 @@ module DigitalCmsLegFunction =
                                 ;  _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -665,12 +665,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _Type = Helper.toCell<Position.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithLongPutOption
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithLongPutOption
                                                             _Type.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithLongPutOption") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithLongPutOption") 
                                                [| _DigitalCmsLeg.source
                                                ;  _Type.source
                                                |]
@@ -679,7 +679,7 @@ module DigitalCmsLegFunction =
                                 ;  _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -707,12 +707,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithNotionals1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithNotionals1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithNotionals1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _notionals.source
                                                |]
@@ -721,7 +721,7 @@ module DigitalCmsLegFunction =
                                 ;  _notionals.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -749,12 +749,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithNotionals
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithNotionals") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithNotionals") 
                                                [| _DigitalCmsLeg.source
                                                ;  _notional.source
                                                |]
@@ -763,7 +763,7 @@ module DigitalCmsLegFunction =
                                 ;  _notional.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -791,12 +791,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPaymentAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPaymentAdjustment") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPaymentAdjustment") 
                                                [| _DigitalCmsLeg.source
                                                ;  _convention.source
                                                |]
@@ -805,7 +805,7 @@ module DigitalCmsLegFunction =
                                 ;  _convention.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -833,12 +833,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPaymentDayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPaymentDayCounter") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPaymentDayCounter") 
                                                [| _DigitalCmsLeg.source
                                                ;  _dayCounter.source
                                                |]
@@ -847,7 +847,7 @@ module DigitalCmsLegFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -875,12 +875,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutATM
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutATM
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutATM") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutATM") 
                                                [| _DigitalCmsLeg.source
                                                ;  _flag.source
                                                |]
@@ -889,7 +889,7 @@ module DigitalCmsLegFunction =
                                 ;  _flag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -914,18 +914,18 @@ module DigitalCmsLegFunction =
             try
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutATM1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutATM1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutATM1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutATM1") 
                                                [| _DigitalCmsLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -953,12 +953,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _payoffs = Helper.toCell<Generic.List<double>> payoffs "payoffs" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutPayoffs
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutPayoffs
                                                             _payoffs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutPayoffs") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutPayoffs") 
                                                [| _DigitalCmsLeg.source
                                                ;  _payoffs.source
                                                |]
@@ -967,7 +967,7 @@ module DigitalCmsLegFunction =
                                 ;  _payoffs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -995,12 +995,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _payoff = Helper.toCell<double> payoff "payoff" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutPayoffs1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutPayoffs1
                                                             _payoff.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutPayoffs1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutPayoffs1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _payoff.source
                                                |]
@@ -1009,7 +1009,7 @@ module DigitalCmsLegFunction =
                                 ;  _payoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -1037,12 +1037,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutStrikes
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutStrikes
                                                             _strikes.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutStrikes") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutStrikes") 
                                                [| _DigitalCmsLeg.source
                                                ;  _strikes.source
                                                |]
@@ -1051,7 +1051,7 @@ module DigitalCmsLegFunction =
                                 ;  _strikes.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -1079,12 +1079,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutStrikes1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithPutStrikes1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutStrikes1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutStrikes1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _strike.source
                                                |]
@@ -1093,7 +1093,7 @@ module DigitalCmsLegFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -1121,12 +1121,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _replication = Helper.toCell<DigitalReplication> replication "replication" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithReplication
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithReplication
                                                             _replication.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithReplication") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithReplication") 
                                                [| _DigitalCmsLeg.source
                                                ;  _replication.source
                                                |]
@@ -1135,7 +1135,7 @@ module DigitalCmsLegFunction =
                                 ;  _replication.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -1160,18 +1160,18 @@ module DigitalCmsLegFunction =
             try
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithReplication1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithReplication1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithReplication1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithReplication1") 
                                                [| _DigitalCmsLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -1199,12 +1199,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithSpreads1
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithSpreads1
                                                             _spreads.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithSpreads1") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithSpreads1") 
                                                [| _DigitalCmsLeg.source
                                                ;  _spreads.source
                                                |]
@@ -1213,7 +1213,7 @@ module DigitalCmsLegFunction =
                                 ;  _spreads.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -1241,12 +1241,12 @@ module DigitalCmsLegFunction =
 
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
-                let builder () = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithSpreads
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).WithSpreads
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
-                let source = Helper.sourceFold (_DigitalCmsLeg.source + ".WithSpreads") 
+                let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithSpreads") 
                                                [| _DigitalCmsLeg.source
                                                ;  _spread.source
                                                |]
@@ -1255,7 +1255,7 @@ module DigitalCmsLegFunction =
                                 ;  _spread.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCmsLeg> format
                     ; source = source 
@@ -1284,14 +1284,14 @@ module DigitalCmsLegFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DigitalCmsLeg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DigitalCmsLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DigitalCmsLeg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DigitalCmsLeg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

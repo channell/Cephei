@@ -52,13 +52,13 @@ module BlackCallableFixedRateBondEngineFunction =
 
                 let _fwdYieldVol = Helper.toHandle<Quote> fwdYieldVol "fwdYieldVol" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic (Fun.BlackCallableFixedRateBondEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCallableFixedRateBondEngine 
                                                             _fwdYieldVol.cell 
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCallableFixedRateBondEngine>) l
 
-                let source = Helper.sourceFold "Fun.BlackCallableFixedRateBondEngine" 
+                let source () = Helper.sourceFold "Fun.BlackCallableFixedRateBondEngine" 
                                                [| _fwdYieldVol.source
                                                ;  _discountCurve.source
                                                |]
@@ -67,7 +67,7 @@ module BlackCallableFixedRateBondEngineFunction =
                                 ;  _discountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackCallableFixedRateBondEngine> format
                     ; source = source 
@@ -95,13 +95,13 @@ module BlackCallableFixedRateBondEngineFunction =
 
                 let _yieldVolStructure = Helper.toHandle<CallableBondVolatilityStructure> yieldVolStructure "yieldVolStructure" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic (Fun.BlackCallableFixedRateBondEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCallableFixedRateBondEngine1 
                                                             _yieldVolStructure.cell 
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCallableFixedRateBondEngine>) l
 
-                let source = Helper.sourceFold "Fun.BlackCallableFixedRateBondEngine1" 
+                let source () = Helper.sourceFold "Fun.BlackCallableFixedRateBondEngine1" 
                                                [| _yieldVolStructure.source
                                                ;  _discountCurve.source
                                                |]
@@ -110,7 +110,7 @@ module BlackCallableFixedRateBondEngineFunction =
                                 ;  _discountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackCallableFixedRateBondEngine> format
                     ; source = source 
@@ -140,14 +140,14 @@ module BlackCallableFixedRateBondEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackCallableFixedRateBondEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackCallableFixedRateBondEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackCallableFixedRateBondEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackCallableFixedRateBondEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

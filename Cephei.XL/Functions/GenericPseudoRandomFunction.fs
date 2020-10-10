@@ -49,18 +49,18 @@ module GenericPseudoRandomFunction =
             try
 
                 let _GenericPseudoRandom = Helper.toCell<GenericPseudoRandom> genericpseudorandom "GenericPseudoRandom"  
-                let builder () = withMnemonic mnemonic ((GenericPseudoRandomModel.Cast _GenericPseudoRandom.cell).AllowsErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericPseudoRandomModel.Cast _GenericPseudoRandom.cell).AllowsErrorEstimate
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericPseudoRandom.source + ".AllowsErrorEstimate") 
+                let source () = Helper.sourceFold (_GenericPseudoRandom.source + ".AllowsErrorEstimate") 
                                                [| _GenericPseudoRandom.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericPseudoRandom.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,13 +91,13 @@ module GenericPseudoRandomFunction =
                 let _GenericPseudoRandom = Helper.toCell<GenericPseudoRandom> genericpseudorandom "GenericPseudoRandom"  
                 let _dimension = Helper.toCell<int> dimension "dimension" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic ((GenericPseudoRandomModel.Cast _GenericPseudoRandom.cell).Make_sequence_generator
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericPseudoRandomModel.Cast _GenericPseudoRandom.cell).Make_sequence_generator
                                                             _dimension.cell 
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
-                let source = Helper.sourceFold (_GenericPseudoRandom.source + ".Make_sequence_generator") 
+                let source () = Helper.sourceFold (_GenericPseudoRandom.source + ".Make_sequence_generator") 
                                                [| _GenericPseudoRandom.source
                                                ;  _dimension.source
                                                ;  _seed.source
@@ -108,7 +108,7 @@ module GenericPseudoRandomFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericPseudoRandom> format
                     ; source = source 
@@ -137,14 +137,14 @@ module GenericPseudoRandomFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GenericPseudoRandom>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GenericPseudoRandom>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GenericPseudoRandom>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GenericPseudoRandom>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

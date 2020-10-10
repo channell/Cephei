@@ -55,14 +55,14 @@ module CashOrNothingPayoffFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _cashPayoff = Helper.toCell<double> cashPayoff "cashPayoff" 
-                let builder () = withMnemonic mnemonic (Fun.CashOrNothingPayoff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CashOrNothingPayoff 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _cashPayoff.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashOrNothingPayoff>) l
 
-                let source = Helper.sourceFold "Fun.CashOrNothingPayoff" 
+                let source () = Helper.sourceFold "Fun.CashOrNothingPayoff" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _cashPayoff.source
@@ -73,7 +73,7 @@ module CashOrNothingPayoffFunction =
                                 ;  _cashPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CashOrNothingPayoff> format
                     ; source = source 
@@ -98,18 +98,18 @@ module CashOrNothingPayoffFunction =
             try
 
                 let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
-                let builder () = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).CashPayoff
+                let builder (current : ICell) = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).CashPayoff
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CashOrNothingPayoff.source + ".CashPayoff") 
+                let source () = Helper.sourceFold (_CashOrNothingPayoff.source + ".CashPayoff") 
                                                [| _CashOrNothingPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CashOrNothingPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -134,18 +134,18 @@ module CashOrNothingPayoffFunction =
             try
 
                 let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
-                let builder () = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CashOrNothingPayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_CashOrNothingPayoff.source + ".Description") 
                                                [| _CashOrNothingPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CashOrNothingPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module CashOrNothingPayoffFunction =
             try
 
                 let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
-                let builder () = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CashOrNothingPayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_CashOrNothingPayoff.source + ".Name") 
                                                [| _CashOrNothingPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CashOrNothingPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module CashOrNothingPayoffFunction =
 
                 let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CashOrNothingPayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_CashOrNothingPayoff.source + ".Value") 
                                                [| _CashOrNothingPayoff.source
                                                ;  _price.source
                                                |]
@@ -223,7 +223,7 @@ module CashOrNothingPayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module CashOrNothingPayoffFunction =
             try
 
                 let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
-                let builder () = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Strike
+                let builder (current : ICell) = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CashOrNothingPayoff.source + ".Strike") 
+                let source () = Helper.sourceFold (_CashOrNothingPayoff.source + ".Strike") 
                                                [| _CashOrNothingPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CashOrNothingPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module CashOrNothingPayoffFunction =
             try
 
                 let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
-                let builder () = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).OptionType
+                let builder (current : ICell) = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CashOrNothingPayoff.source + ".OptionType") 
+                let source () = Helper.sourceFold (_CashOrNothingPayoff.source + ".OptionType") 
                                                [| _CashOrNothingPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CashOrNothingPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -323,12 +323,12 @@ module CashOrNothingPayoffFunction =
 
                 let _CashOrNothingPayoff = Helper.toCell<CashOrNothingPayoff> cashornothingpayoff "CashOrNothingPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((CashOrNothingPayoffModel.Cast _CashOrNothingPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : CashOrNothingPayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CashOrNothingPayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_CashOrNothingPayoff.source + ".Accept") 
                                                [| _CashOrNothingPayoff.source
                                                ;  _v.source
                                                |]
@@ -337,7 +337,7 @@ module CashOrNothingPayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -366,14 +366,14 @@ module CashOrNothingPayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CashOrNothingPayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CashOrNothingPayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CashOrNothingPayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CashOrNothingPayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

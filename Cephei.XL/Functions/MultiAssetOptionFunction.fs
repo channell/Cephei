@@ -49,18 +49,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".Delta") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".DividendRho") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".Gamma") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".IsExpired") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -202,7 +202,7 @@ module MultiAssetOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.MultiAssetOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiAssetOption 
                                                             _payoff.cell 
                                                             _exercise.cell 
                                                             _pricingEngine.cell 
@@ -210,7 +210,7 @@ module MultiAssetOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MultiAssetOption>) l
 
-                let source = Helper.sourceFold "Fun.MultiAssetOption" 
+                let source () = Helper.sourceFold "Fun.MultiAssetOption" 
                                                [| _payoff.source
                                                ;  _exercise.source
                                                ;  _pricingEngine.source
@@ -223,7 +223,7 @@ module MultiAssetOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiAssetOption> format
                     ; source = source 
@@ -248,18 +248,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".Rho") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".Theta") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".Vega") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,18 +356,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".Exercise") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiAssetOption> format
                     ; source = source 
@@ -392,18 +392,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".Payoff") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiAssetOption> format
                     ; source = source 
@@ -428,18 +428,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".CASH") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -464,18 +464,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".ErrorEstimate") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -500,18 +500,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".NPV") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -539,12 +539,12 @@ module MultiAssetOptionFunction =
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".Result") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".Result") 
                                                [| _MultiAssetOption.source
                                                ;  _tag.source
                                                |]
@@ -553,7 +553,7 @@ module MultiAssetOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -581,12 +581,12 @@ module MultiAssetOptionFunction =
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : MultiAssetOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".SetPricingEngine") 
                                                [| _MultiAssetOption.source
                                                ;  _e.source
                                                |]
@@ -595,7 +595,7 @@ module MultiAssetOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -620,18 +620,18 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_MultiAssetOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_MultiAssetOption.source + ".ValuationDate") 
                                                [| _MultiAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -660,14 +660,14 @@ module MultiAssetOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MultiAssetOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MultiAssetOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MultiAssetOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MultiAssetOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

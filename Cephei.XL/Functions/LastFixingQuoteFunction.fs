@@ -49,18 +49,18 @@ module LastFixingQuoteFunction =
             try
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
-                let builder () = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).IsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LastFixingQuote.source + ".IsValid") 
+                let source () = Helper.sourceFold (_LastFixingQuote.source + ".IsValid") 
                                                [| _LastFixingQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LastFixingQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,19 +85,19 @@ module LastFixingQuoteFunction =
             try
 
                 let _index = Helper.toCell<Index> index "index" 
-                let builder () = withMnemonic mnemonic (Fun.LastFixingQuote 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LastFixingQuote 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LastFixingQuote>) l
 
-                let source = Helper.sourceFold "Fun.LastFixingQuote" 
+                let source () = Helper.sourceFold "Fun.LastFixingQuote" 
                                                [| _index.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LastFixingQuote> format
                     ; source = source 
@@ -122,18 +122,18 @@ module LastFixingQuoteFunction =
             try
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
-                let builder () = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_LastFixingQuote.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_LastFixingQuote.source + ".ReferenceDate") 
                                                [| _LastFixingQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LastFixingQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -158,18 +158,18 @@ module LastFixingQuoteFunction =
             try
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
-                let builder () = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).Update
                                                        ) :> ICell
                 let format (o : LastFixingQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LastFixingQuote.source + ".Update") 
+                let source () = Helper.sourceFold (_LastFixingQuote.source + ".Update") 
                                                [| _LastFixingQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LastFixingQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module LastFixingQuoteFunction =
             try
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
-                let builder () = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LastFixingQuote.source + ".Value") 
+                let source () = Helper.sourceFold (_LastFixingQuote.source + ".Value") 
                                                [| _LastFixingQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LastFixingQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -233,12 +233,12 @@ module LastFixingQuoteFunction =
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LastFixingQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LastFixingQuote.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_LastFixingQuote.source + ".RegisterWith") 
                                                [| _LastFixingQuote.source
                                                ;  _handler.source
                                                |]
@@ -247,7 +247,7 @@ module LastFixingQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -275,12 +275,12 @@ module LastFixingQuoteFunction =
 
                 let _LastFixingQuote = Helper.toCell<LastFixingQuote> lastfixingquote "LastFixingQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((LastFixingQuoteModel.Cast _LastFixingQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LastFixingQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LastFixingQuote.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_LastFixingQuote.source + ".UnregisterWith") 
                                                [| _LastFixingQuote.source
                                                ;  _handler.source
                                                |]
@@ -289,7 +289,7 @@ module LastFixingQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -318,14 +318,14 @@ module LastFixingQuoteFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LastFixingQuote>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LastFixingQuote>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LastFixingQuote>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LastFixingQuote>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

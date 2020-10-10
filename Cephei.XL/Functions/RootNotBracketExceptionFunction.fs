@@ -52,13 +52,13 @@ module RootNotBracketExceptionFunction =
 
                 let _message = Helper.toCell<string> message "message" 
                 let _inner = Helper.toCell<Exception> inner "inner" 
-                let builder () = withMnemonic mnemonic (Fun.RootNotBracketException 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RootNotBracketException 
                                                             _message.cell 
                                                             _inner.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RootNotBracketException>) l
 
-                let source = Helper.sourceFold "Fun.RootNotBracketException" 
+                let source () = Helper.sourceFold "Fun.RootNotBracketException" 
                                                [| _message.source
                                                ;  _inner.source
                                                |]
@@ -67,7 +67,7 @@ module RootNotBracketExceptionFunction =
                                 ;  _inner.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RootNotBracketException> format
                     ; source = source 
@@ -89,16 +89,16 @@ module RootNotBracketExceptionFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.RootNotBracketException1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RootNotBracketException1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RootNotBracketException>) l
 
-                let source = Helper.sourceFold "Fun.RootNotBracketException1" 
+                let source () = Helper.sourceFold "Fun.RootNotBracketException1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RootNotBracketException> format
                     ; source = source 
@@ -123,19 +123,19 @@ module RootNotBracketExceptionFunction =
             try
 
                 let _message = Helper.toCell<string> message "message" 
-                let builder () = withMnemonic mnemonic (Fun.RootNotBracketException2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RootNotBracketException2 
                                                             _message.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RootNotBracketException>) l
 
-                let source = Helper.sourceFold "Fun.RootNotBracketException2" 
+                let source () = Helper.sourceFold "Fun.RootNotBracketException2" 
                                                [| _message.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _message.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RootNotBracketException> format
                     ; source = source 
@@ -164,14 +164,14 @@ module RootNotBracketExceptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RootNotBracketException>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RootNotBracketException>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RootNotBracketException>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RootNotBracketException>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

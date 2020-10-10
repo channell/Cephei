@@ -49,18 +49,18 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".Calendar") 
+                let source () = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".Calendar") 
                                                [| _InterpolatedPiecewiseZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedPiecewiseZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedPiecewiseZeroSpreadedTermStructure> format
                     ; source = source 
@@ -85,18 +85,18 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".DayCounter") 
                                                [| _InterpolatedPiecewiseZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedPiecewiseZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedPiecewiseZeroSpreadedTermStructure> format
                     ; source = source 
@@ -139,7 +139,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                 let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.NoFrequency
                 let _dc = Helper.toDefault<DayCounter> dc "dc" default(DayCounter)
                 let _factory = Helper.toDefault<'Interpolator> factory "factory" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedPiecewiseZeroSpreadedTermStructure 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedPiecewiseZeroSpreadedTermStructure 
                                                             _h.cell 
                                                             _spreads.cell 
                                                             _dates.cell 
@@ -150,7 +150,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedPiecewiseZeroSpreadedTermStructure>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedPiecewiseZeroSpreadedTermStructure" 
+                let source () = Helper.sourceFold "Fun.InterpolatedPiecewiseZeroSpreadedTermStructure" 
                                                [| _h.source
                                                ;  _spreads.source
                                                ;  _dates.source
@@ -169,7 +169,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                                 ;  _factory.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedPiecewiseZeroSpreadedTermStructure> format
                     ; source = source 
@@ -194,18 +194,18 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".MaxDate") 
                                                [| _InterpolatedPiecewiseZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedPiecewiseZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".ReferenceDate") 
                                                [| _InterpolatedPiecewiseZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedPiecewiseZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".SettlementDays") 
                                                [| _InterpolatedPiecewiseZeroSpreadedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedPiecewiseZeroSpreadedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -306,14 +306,14 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatedPiecewiseZeroSpreadedTermStructure>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InterpolatedPiecewiseZeroSpreadedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InterpolatedPiecewiseZeroSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InterpolatedPiecewiseZeroSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

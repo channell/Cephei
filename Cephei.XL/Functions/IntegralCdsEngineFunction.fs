@@ -62,7 +62,7 @@ module IntegralCdsEngineFunction =
                 let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
-                let builder () = withMnemonic mnemonic (Fun.IntegralCdsEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.IntegralCdsEngine 
                                                             _step.cell 
                                                             _probability.cell 
                                                             _recoveryRate.cell 
@@ -71,7 +71,7 @@ module IntegralCdsEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IntegralCdsEngine>) l
 
-                let source = Helper.sourceFold "Fun.IntegralCdsEngine" 
+                let source () = Helper.sourceFold "Fun.IntegralCdsEngine" 
                                                [| _step.source
                                                ;  _probability.source
                                                ;  _recoveryRate.source
@@ -86,7 +86,7 @@ module IntegralCdsEngineFunction =
                                 ;  _includeSettlementDateFlows.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IntegralCdsEngine> format
                     ; source = source 
@@ -115,14 +115,14 @@ module IntegralCdsEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IntegralCdsEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<IntegralCdsEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<IntegralCdsEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<IntegralCdsEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

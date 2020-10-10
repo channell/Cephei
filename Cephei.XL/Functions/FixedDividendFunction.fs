@@ -52,12 +52,12 @@ module FixedDividendFunction =
 
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).Amount1
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).Amount1
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".Amount1") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".Amount1") 
                                                [| _FixedDividend.source
                                                ;  _d.source
                                                |]
@@ -66,7 +66,7 @@ module FixedDividendFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,18 +91,18 @@ module FixedDividendFunction =
             try
 
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".Amount") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".Amount") 
                                                [| _FixedDividend.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -130,13 +130,13 @@ module FixedDividendFunction =
 
                 let _amount = Helper.toCell<double> amount "amount" 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic (Fun.FixedDividend 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FixedDividend 
                                                             _amount.cell 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedDividend>) l
 
-                let source = Helper.sourceFold "Fun.FixedDividend" 
+                let source () = Helper.sourceFold "Fun.FixedDividend" 
                                                [| _amount.source
                                                ;  _date.source
                                                |]
@@ -145,7 +145,7 @@ module FixedDividendFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedDividend> format
                     ; source = source 
@@ -170,18 +170,18 @@ module FixedDividendFunction =
             try
 
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".Date") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".Date") 
                                                [| _FixedDividend.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module FixedDividendFunction =
 
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".CompareTo") 
                                                [| _FixedDividend.source
                                                ;  _cf.source
                                                |]
@@ -223,7 +223,7 @@ module FixedDividendFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -251,12 +251,12 @@ module FixedDividendFunction =
 
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".Equals") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".Equals") 
                                                [| _FixedDividend.source
                                                ;  _cf.source
                                                |]
@@ -265,7 +265,7 @@ module FixedDividendFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,18 +290,18 @@ module FixedDividendFunction =
             try
 
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".ExCouponDate") 
                                                [| _FixedDividend.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -332,13 +332,13 @@ module FixedDividendFunction =
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".HasOccurred") 
                                                [| _FixedDividend.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -349,7 +349,7 @@ module FixedDividendFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,12 +377,12 @@ module FixedDividendFunction =
 
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".TradingExCoupon") 
                                                [| _FixedDividend.source
                                                ;  _refDate.source
                                                |]
@@ -391,7 +391,7 @@ module FixedDividendFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -419,12 +419,12 @@ module FixedDividendFunction =
 
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : FixedDividend) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".Accept") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".Accept") 
                                                [| _FixedDividend.source
                                                ;  _v.source
                                                |]
@@ -433,7 +433,7 @@ module FixedDividendFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -461,12 +461,12 @@ module FixedDividendFunction =
 
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FixedDividend) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".RegisterWith") 
                                                [| _FixedDividend.source
                                                ;  _handler.source
                                                |]
@@ -475,7 +475,7 @@ module FixedDividendFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -503,12 +503,12 @@ module FixedDividendFunction =
 
                 let _FixedDividend = Helper.toCell<FixedDividend> fixeddividend "FixedDividend"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedDividendModel.Cast _FixedDividend.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FixedDividend) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedDividend.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FixedDividend.source + ".UnregisterWith") 
                                                [| _FixedDividend.source
                                                ;  _handler.source
                                                |]
@@ -517,7 +517,7 @@ module FixedDividendFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -546,14 +546,14 @@ module FixedDividendFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FixedDividend>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FixedDividend>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FixedDividend>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FixedDividend>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -46,16 +46,16 @@ module ESPCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ESPCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ESPCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ESPCurrency>) l
 
-                let source = Helper.sourceFold "Fun.ESPCurrency" 
+                let source () = Helper.sourceFold "Fun.ESPCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ESPCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".Code") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".Empty") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module ESPCurrencyFunction =
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".Equals") 
                                                [| _ESPCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module ESPCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".Format") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".FractionsPerUnit") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".FractionSymbol") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".Name") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".NumericCode") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".Rounding") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ESPCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".Symbol") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".ToString") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module ESPCurrencyFunction =
             try
 
                 let _ESPCurrency = Helper.toCell<ESPCurrency> espcurrency "ESPCurrency"  
-                let builder () = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((ESPCurrencyModel.Cast _ESPCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_ESPCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_ESPCurrency.source + ".TriangulationCurrency") 
                                                [| _ESPCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ESPCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module ESPCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ESPCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ESPCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ESPCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ESPCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

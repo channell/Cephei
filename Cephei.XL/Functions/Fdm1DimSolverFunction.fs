@@ -52,12 +52,12 @@ module Fdm1DimSolverFunction =
 
                 let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).DerivativeX
+                let builder (current : ICell) = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).DerivativeX
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Fdm1DimSolver.source + ".DerivativeX") 
+                let source () = Helper.sourceFold (_Fdm1DimSolver.source + ".DerivativeX") 
                                                [| _Fdm1DimSolver.source
                                                ;  _x.source
                                                |]
@@ -66,7 +66,7 @@ module Fdm1DimSolverFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module Fdm1DimSolverFunction =
 
                 let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).DerivativeXX
+                let builder (current : ICell) = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).DerivativeXX
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Fdm1DimSolver.source + ".DerivativeXX") 
+                let source () = Helper.sourceFold (_Fdm1DimSolver.source + ".DerivativeXX") 
                                                [| _Fdm1DimSolver.source
                                                ;  _x.source
                                                |]
@@ -108,7 +108,7 @@ module Fdm1DimSolverFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -139,14 +139,14 @@ module Fdm1DimSolverFunction =
                 let _solverDesc = Helper.toCell<FdmSolverDesc> solverDesc "solverDesc" 
                 let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
                 let _op = Helper.toCell<FdmLinearOpComposite> op "op" 
-                let builder () = withMnemonic mnemonic (Fun.Fdm1DimSolver 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Fdm1DimSolver 
                                                             _solverDesc.cell 
                                                             _schemeDesc.cell 
                                                             _op.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Fdm1DimSolver>) l
 
-                let source = Helper.sourceFold "Fun.Fdm1DimSolver" 
+                let source () = Helper.sourceFold "Fun.Fdm1DimSolver" 
                                                [| _solverDesc.source
                                                ;  _schemeDesc.source
                                                ;  _op.source
@@ -157,7 +157,7 @@ module Fdm1DimSolverFunction =
                                 ;  _op.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Fdm1DimSolver> format
                     ; source = source 
@@ -185,12 +185,12 @@ module Fdm1DimSolverFunction =
 
                 let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).InterpolateAt
+                let builder (current : ICell) = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).InterpolateAt
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Fdm1DimSolver.source + ".InterpolateAt") 
+                let source () = Helper.sourceFold (_Fdm1DimSolver.source + ".InterpolateAt") 
                                                [| _Fdm1DimSolver.source
                                                ;  _x.source
                                                |]
@@ -199,7 +199,7 @@ module Fdm1DimSolverFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -227,12 +227,12 @@ module Fdm1DimSolverFunction =
 
                 let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).ThetaAt
+                let builder (current : ICell) = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).ThetaAt
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Fdm1DimSolver.source + ".ThetaAt") 
+                let source () = Helper.sourceFold (_Fdm1DimSolver.source + ".ThetaAt") 
                                                [| _Fdm1DimSolver.source
                                                ;  _x.source
                                                |]
@@ -241,7 +241,7 @@ module Fdm1DimSolverFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -270,14 +270,14 @@ module Fdm1DimSolverFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Fdm1DimSolver>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Fdm1DimSolver>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Fdm1DimSolver>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Fdm1DimSolver>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -18,12 +18,12 @@ String.Format ("
   try
 
     let _{0} = Helper.toCell<{0}> {0} \"{0}\"  
-let builder () = withMnemonic mnemonic (_{0}.cell :> {0}).{1}) :> ICell
+let builder (current : ICell) = withMnemonic mnemonic (_{0}.cell :> {0}).{1}) :> ICell
 let format (o : {2}) (l:string) = o.Helper.Range.fromModel (i :?> {1}) l
-let source = (_{0}.source + \".{1}\")
+let source () = (_{0}.source + \".{1}\")
 let hash = Helper.hashFold [| _{0}.cell |]
 Model.specify 
-{ mnemonic = mnemonic
+{ mnemonic = Model.formatMnemonic mnemonic
 ; creator = builder
 ; subscriber = Helper.subscriber format
 ; source = source 
@@ -43,12 +43,12 @@ String.Format ("
             try
 
             let _{0} = Helper.toCell<{0}> {0} \"{0}\"  
-            let builder () = withMnemonic mnemonic (_{0}.cell :> {0}).{1}) :> ICell
+            let builder (current : ICell) = withMnemonic mnemonic (_{0}.cell :> {0}).{1}) :> ICell
             let format (o : {2}) (l:string) = o.Helper.Range.fromModel (i :?> {1}) l
-            let source = (_{0}.source + \".{1}\")
+            let source () = (_{0}.source + \".{1}\")
             let hash = Helper.hashFold [| _{0}.cell |]
             Model.specify 
-            {{ mnemonic = mnemonic
+            {{ mnemonic = Model.formatMnemonic mnemonic
             ; creator = builder
             ; subscriber = Helper.subscriber format
             ; source = source 

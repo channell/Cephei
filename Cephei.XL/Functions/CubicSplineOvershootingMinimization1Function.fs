@@ -55,14 +55,14 @@ module CubicSplineOvershootingMinimization1Function =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic (Fun.CubicSplineOvershootingMinimization1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CubicSplineOvershootingMinimization1 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CubicSplineOvershootingMinimization1>) l
 
-                let source = Helper.sourceFold "Fun.CubicSplineOvershootingMinimization1" 
+                let source () = Helper.sourceFold "Fun.CubicSplineOvershootingMinimization1" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -73,7 +73,7 @@ module CubicSplineOvershootingMinimization1Function =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CubicSplineOvershootingMinimization1> format
                     ; source = source 
@@ -98,18 +98,18 @@ module CubicSplineOvershootingMinimization1Function =
             try
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).ACoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".ACoefficients") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".ACoefficients") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicSplineOvershootingMinimization1.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -134,18 +134,18 @@ module CubicSplineOvershootingMinimization1Function =
             try
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).BCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".BCoefficients") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".BCoefficients") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicSplineOvershootingMinimization1.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -170,18 +170,18 @@ module CubicSplineOvershootingMinimization1Function =
             try
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).CCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".CCoefficients") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".CCoefficients") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicSplineOvershootingMinimization1.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -212,13 +212,13 @@ module CubicSplineOvershootingMinimization1Function =
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Derivative") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Derivative") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -229,7 +229,7 @@ module CubicSplineOvershootingMinimization1Function =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,18 +254,18 @@ module CubicSplineOvershootingMinimization1Function =
             try
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Empty") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Empty") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicSplineOvershootingMinimization1.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,13 +296,13 @@ module CubicSplineOvershootingMinimization1Function =
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Primitive") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Primitive") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -313,7 +313,7 @@ module CubicSplineOvershootingMinimization1Function =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,13 +344,13 @@ module CubicSplineOvershootingMinimization1Function =
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".SecondDerivative") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -361,7 +361,7 @@ module CubicSplineOvershootingMinimization1Function =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,18 +386,18 @@ module CubicSplineOvershootingMinimization1Function =
             try
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Update
                                                        ) :> ICell
                 let format (o : CubicSplineOvershootingMinimization1) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Update") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Update") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicSplineOvershootingMinimization1.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -428,13 +428,13 @@ module CubicSplineOvershootingMinimization1Function =
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Value1") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Value1") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -445,7 +445,7 @@ module CubicSplineOvershootingMinimization1Function =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -473,12 +473,12 @@ module CubicSplineOvershootingMinimization1Function =
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Value") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Value") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                ;  _x.source
                                                |]
@@ -487,7 +487,7 @@ module CubicSplineOvershootingMinimization1Function =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -512,18 +512,18 @@ module CubicSplineOvershootingMinimization1Function =
             try
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".XMax") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".XMax") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicSplineOvershootingMinimization1.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -548,18 +548,18 @@ module CubicSplineOvershootingMinimization1Function =
             try
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".XMin") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".XMin") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicSplineOvershootingMinimization1.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -584,18 +584,18 @@ module CubicSplineOvershootingMinimization1Function =
             try
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".AllowsExtrapolation") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicSplineOvershootingMinimization1.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -623,12 +623,12 @@ module CubicSplineOvershootingMinimization1Function =
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CubicSplineOvershootingMinimization1) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".DisableExtrapolation") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                ;  _b.source
                                                |]
@@ -637,7 +637,7 @@ module CubicSplineOvershootingMinimization1Function =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -665,12 +665,12 @@ module CubicSplineOvershootingMinimization1Function =
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CubicSplineOvershootingMinimization1) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".EnableExtrapolation") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                ;  _b.source
                                                |]
@@ -679,7 +679,7 @@ module CubicSplineOvershootingMinimization1Function =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -704,18 +704,18 @@ module CubicSplineOvershootingMinimization1Function =
             try
 
                 let _CubicSplineOvershootingMinimization1 = Helper.toCell<CubicSplineOvershootingMinimization1> cubicsplineovershootingminimization1 "CubicSplineOvershootingMinimization1"  
-                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicSplineOvershootingMinimization1Model.Cast _CubicSplineOvershootingMinimization1.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_CubicSplineOvershootingMinimization1.source + ".Extrapolate") 
                                                [| _CubicSplineOvershootingMinimization1.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicSplineOvershootingMinimization1.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -744,14 +744,14 @@ module CubicSplineOvershootingMinimization1Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CubicSplineOvershootingMinimization1>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CubicSplineOvershootingMinimization1>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CubicSplineOvershootingMinimization1>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CubicSplineOvershootingMinimization1>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

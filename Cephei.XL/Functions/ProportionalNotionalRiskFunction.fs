@@ -55,14 +55,14 @@ module ProportionalNotionalRiskFunction =
                 let _paymentOffset = Helper.toCell<EventPaymentOffset> paymentOffset "paymentOffset" 
                 let _attachement = Helper.toCell<double> attachement "attachement" 
                 let _exhaustion = Helper.toCell<double> exhaustion "exhaustion" 
-                let builder () = withMnemonic mnemonic (Fun.ProportionalNotionalRisk 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ProportionalNotionalRisk 
                                                             _paymentOffset.cell 
                                                             _attachement.cell 
                                                             _exhaustion.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ProportionalNotionalRisk>) l
 
-                let source = Helper.sourceFold "Fun.ProportionalNotionalRisk" 
+                let source () = Helper.sourceFold "Fun.ProportionalNotionalRisk" 
                                                [| _paymentOffset.source
                                                ;  _attachement.source
                                                ;  _exhaustion.source
@@ -73,7 +73,7 @@ module ProportionalNotionalRiskFunction =
                                 ;  _exhaustion.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ProportionalNotionalRisk> format
                     ; source = source 
@@ -104,13 +104,13 @@ module ProportionalNotionalRiskFunction =
                 let _ProportionalNotionalRisk = Helper.toCell<ProportionalNotionalRisk> proportionalnotionalrisk "ProportionalNotionalRisk"  
                 let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
                 let _path = Helper.toCell<NotionalPath> path "path" 
-                let builder () = withMnemonic mnemonic ((ProportionalNotionalRiskModel.Cast _ProportionalNotionalRisk.cell).UpdatePath
+                let builder (current : ICell) = withMnemonic mnemonic ((ProportionalNotionalRiskModel.Cast _ProportionalNotionalRisk.cell).UpdatePath
                                                             _events.cell 
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : ProportionalNotionalRisk) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ProportionalNotionalRisk.source + ".UpdatePath") 
+                let source () = Helper.sourceFold (_ProportionalNotionalRisk.source + ".UpdatePath") 
                                                [| _ProportionalNotionalRisk.source
                                                ;  _events.source
                                                ;  _path.source
@@ -121,7 +121,7 @@ module ProportionalNotionalRiskFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -150,14 +150,14 @@ module ProportionalNotionalRiskFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ProportionalNotionalRisk>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ProportionalNotionalRisk>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ProportionalNotionalRisk>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ProportionalNotionalRisk>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

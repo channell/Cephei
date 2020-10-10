@@ -55,14 +55,14 @@ module BachelierCapFloorEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.BachelierCapFloorEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierCapFloorEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierCapFloorEngine>) l
 
-                let source = Helper.sourceFold "Fun.BachelierCapFloorEngine1" 
+                let source () = Helper.sourceFold "Fun.BachelierCapFloorEngine1" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _dc.source
@@ -73,7 +73,7 @@ module BachelierCapFloorEngineFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierCapFloorEngine> format
                     ; source = source 
@@ -104,14 +104,14 @@ module BachelierCapFloorEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toCell<double> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.BachelierCapFloorEngine2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierCapFloorEngine2
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierCapFloorEngine>) l
 
-                let source = Helper.sourceFold "Fun.BachelierCapFloorEngine12" 
+                let source () = Helper.sourceFold "Fun.BachelierCapFloorEngine12" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _dc.source
@@ -122,7 +122,7 @@ module BachelierCapFloorEngineFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierCapFloorEngine> format
                     ; source = source 
@@ -150,13 +150,13 @@ module BachelierCapFloorEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<OptionletVolatilityStructure> vol "vol" 
-                let builder () = withMnemonic mnemonic (Fun.BachelierCapFloorEngine
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierCapFloorEngine
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierCapFloorEngine>) l
 
-                let source = Helper.sourceFold "Fun.BachelierCapFloorEngine2" 
+                let source () = Helper.sourceFold "Fun.BachelierCapFloorEngine2" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                |]
@@ -165,7 +165,7 @@ module BachelierCapFloorEngineFunction =
                                 ;  _vol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierCapFloorEngine> format
                     ; source = source 
@@ -190,18 +190,18 @@ module BachelierCapFloorEngineFunction =
             try
 
                 let _BachelierCapFloorEngine = Helper.toCell<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((BachelierCapFloorEngineModel.Cast _BachelierCapFloorEngine.cell).TermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((BachelierCapFloorEngineModel.Cast _BachelierCapFloorEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_BachelierCapFloorEngine.source + ".TermStructure") 
+                let source () = Helper.sourceFold (_BachelierCapFloorEngine.source + ".TermStructure") 
                                                [| _BachelierCapFloorEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BachelierCapFloorEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierCapFloorEngine> format
                     ; source = source 
@@ -226,18 +226,18 @@ module BachelierCapFloorEngineFunction =
             try
 
                 let _BachelierCapFloorEngine = Helper.toCell<BachelierCapFloorEngine> bacheliercapfloorengine "BachelierCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((BachelierCapFloorEngineModel.Cast _BachelierCapFloorEngine.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((BachelierCapFloorEngineModel.Cast _BachelierCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l
 
-                let source = Helper.sourceFold (_BachelierCapFloorEngine.source + ".Volatility") 
+                let source () = Helper.sourceFold (_BachelierCapFloorEngine.source + ".Volatility") 
                                                [| _BachelierCapFloorEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BachelierCapFloorEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierCapFloorEngine> format
                     ; source = source 
@@ -266,14 +266,14 @@ module BachelierCapFloorEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BachelierCapFloorEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BachelierCapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BachelierCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BachelierCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

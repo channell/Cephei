@@ -70,7 +70,7 @@ module BarrierPathPricerFunction =
                 let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
                 let _diffProcess = Helper.toCell<StochasticProcess1D> diffProcess "diffProcess" 
                 let _sequenceGen = Helper.toCell<IRNG> sequenceGen "sequenceGen" 
-                let builder () = withMnemonic mnemonic (Fun.BarrierPathPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BarrierPathPricer 
                                                             _barrierType.cell 
                                                             _barrier.cell 
                                                             _rebate.cell 
@@ -82,7 +82,7 @@ module BarrierPathPricerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BarrierPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.BarrierPathPricer" 
+                let source () = Helper.sourceFold "Fun.BarrierPathPricer" 
                                                [| _barrierType.source
                                                ;  _barrier.source
                                                ;  _rebate.source
@@ -103,7 +103,7 @@ module BarrierPathPricerFunction =
                                 ;  _sequenceGen.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BarrierPathPricer> format
                     ; source = source 
@@ -131,12 +131,12 @@ module BarrierPathPricerFunction =
 
                 let _BarrierPathPricer = Helper.toCell<BarrierPathPricer> barrierpathpricer "BarrierPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder () = withMnemonic mnemonic ((BarrierPathPricerModel.Cast _BarrierPathPricer.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BarrierPathPricerModel.Cast _BarrierPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BarrierPathPricer.source + ".Value") 
+                let source () = Helper.sourceFold (_BarrierPathPricer.source + ".Value") 
                                                [| _BarrierPathPricer.source
                                                ;  _path.source
                                                |]
@@ -145,7 +145,7 @@ module BarrierPathPricerFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -174,14 +174,14 @@ module BarrierPathPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BarrierPathPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BarrierPathPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BarrierPathPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BarrierPathPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -67,7 +67,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
                 let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _delta = Helper.toCell<double> delta "delta" 
-                let builder () = withMnemonic mnemonic (Fun.BlackDeltaPremiumAdjustedSolverClass 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackDeltaPremiumAdjustedSolverClass 
                                                             _ot.cell 
                                                             _dt.cell 
                                                             _spot.cell 
@@ -78,7 +78,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackDeltaPremiumAdjustedSolverClass>) l
 
-                let source = Helper.sourceFold "Fun.BlackDeltaPremiumAdjustedSolverClass" 
+                let source () = Helper.sourceFold "Fun.BlackDeltaPremiumAdjustedSolverClass" 
                                                [| _ot.source
                                                ;  _dt.source
                                                ;  _spot.source
@@ -97,7 +97,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
                                 ;  _delta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackDeltaPremiumAdjustedSolverClass> format
                     ; source = source 
@@ -125,12 +125,12 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
 
                 let _BlackDeltaPremiumAdjustedSolverClass = Helper.toCell<BlackDeltaPremiumAdjustedSolverClass> blackdeltapremiumadjustedsolverclass "BlackDeltaPremiumAdjustedSolverClass"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Value
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaPremiumAdjustedSolverClass.source + ".Value") 
+                let source () = Helper.sourceFold (_BlackDeltaPremiumAdjustedSolverClass.source + ".Value") 
                                                [| _BlackDeltaPremiumAdjustedSolverClass.source
                                                ;  _strike.source
                                                |]
@@ -139,7 +139,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -167,12 +167,12 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
 
                 let _BlackDeltaPremiumAdjustedSolverClass = Helper.toCell<BlackDeltaPremiumAdjustedSolverClass> blackdeltapremiumadjustedsolverclass "BlackDeltaPremiumAdjustedSolverClass"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaPremiumAdjustedSolverClass.source + ".Derivative") 
+                let source () = Helper.sourceFold (_BlackDeltaPremiumAdjustedSolverClass.source + ".Derivative") 
                                                [| _BlackDeltaPremiumAdjustedSolverClass.source
                                                ;  _x.source
                                                |]
@@ -181,7 +181,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -210,14 +210,14 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackDeltaPremiumAdjustedSolverClass>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackDeltaPremiumAdjustedSolverClass>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackDeltaPremiumAdjustedSolverClass>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackDeltaPremiumAdjustedSolverClass>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

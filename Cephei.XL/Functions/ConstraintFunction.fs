@@ -49,19 +49,19 @@ module ConstraintFunction =
             try
 
                 let _impl = Helper.toCell<IConstraint> impl "impl" 
-                let builder () = withMnemonic mnemonic (Fun.Constraint 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Constraint 
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold "Fun.Constraint" 
+                let source () = Helper.sourceFold "Fun.Constraint" 
                                                [| _impl.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _impl.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Constraint> format
                     ; source = source 
@@ -83,16 +83,16 @@ module ConstraintFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Constraint1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Constraint1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold "Fun.Constraint1" 
+                let source () = Helper.sourceFold "Fun.Constraint1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Constraint> format
                     ; source = source 
@@ -117,18 +117,18 @@ module ConstraintFunction =
             try
 
                 let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
-                let builder () = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Constraint.source + ".Empty") 
+                let source () = Helper.sourceFold (_Constraint.source + ".Empty") 
                                                [| _Constraint.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Constraint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -156,12 +156,12 @@ module ConstraintFunction =
 
                 let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).LowerBound
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Constraint.source + ".LowerBound") 
+                let source () = Helper.sourceFold (_Constraint.source + ".LowerBound") 
                                                [| _Constraint.source
                                                ;  _parameters.source
                                                |]
@@ -170,7 +170,7 @@ module ConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Constraint> format
                     ; source = source 
@@ -198,12 +198,12 @@ module ConstraintFunction =
 
                 let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).Test
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Constraint.source + ".Test") 
+                let source () = Helper.sourceFold (_Constraint.source + ".Test") 
                                                [| _Constraint.source
                                                ;  _p.source
                                                |]
@@ -212,7 +212,7 @@ module ConstraintFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -246,14 +246,14 @@ module ConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Constraint.source + ".Update") 
+                let source () = Helper.sourceFold (_Constraint.source + ".Update") 
                                                [| _Constraint.source
                                                ;  _p.source
                                                ;  _direction.source
@@ -266,7 +266,7 @@ module ConstraintFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -294,12 +294,12 @@ module ConstraintFunction =
 
                 let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).UpperBound
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Constraint.source + ".UpperBound") 
+                let source () = Helper.sourceFold (_Constraint.source + ".UpperBound") 
                                                [| _Constraint.source
                                                ;  _parameters.source
                                                |]
@@ -308,7 +308,7 @@ module ConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Constraint> format
                     ; source = source 
@@ -337,14 +337,14 @@ module ConstraintFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Constraint>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Constraint>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Constraint>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Constraint>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

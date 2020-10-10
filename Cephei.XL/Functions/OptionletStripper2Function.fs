@@ -49,18 +49,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).AtmCapFloorPrices
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).AtmCapFloorPrices
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".AtmCapFloorPrices") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".AtmCapFloorPrices") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -85,18 +85,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).AtmCapFloorStrikes
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).AtmCapFloorStrikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".AtmCapFloorStrikes") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".AtmCapFloorStrikes") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -124,13 +124,13 @@ module OptionletStripper2Function =
 
                 let _optionletStripper1 = Helper.toCell<OptionletStripper1> optionletStripper1 "optionletStripper1" 
                 let _atmCapFloorTermVolCurve = Helper.toHandle<CapFloorTermVolCurve> atmCapFloorTermVolCurve "atmCapFloorTermVolCurve" 
-                let builder () = withMnemonic mnemonic (Fun.OptionletStripper2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.OptionletStripper2 
                                                             _optionletStripper1.cell 
                                                             _atmCapFloorTermVolCurve.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptionletStripper2>) l
 
-                let source = Helper.sourceFold "Fun.OptionletStripper2" 
+                let source () = Helper.sourceFold "Fun.OptionletStripper2" 
                                                [| _optionletStripper1.source
                                                ;  _atmCapFloorTermVolCurve.source
                                                |]
@@ -139,7 +139,7 @@ module OptionletStripper2Function =
                                 ;  _atmCapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OptionletStripper2> format
                     ; source = source 
@@ -164,18 +164,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).SpreadsVol
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).SpreadsVol
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".SpreadsVol") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".SpreadsVol") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -200,18 +200,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).AtmOptionletRates
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).AtmOptionletRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".AtmOptionletRates") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".AtmOptionletRates") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -236,18 +236,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".BusinessDayConvention") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,18 +272,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".Calendar") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".Calendar") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OptionletStripper2> format
                     ; source = source 
@@ -308,18 +308,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".DayCounter") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OptionletStripper2> format
                     ; source = source 
@@ -344,18 +344,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).Displacement
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".Displacement") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".Displacement") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,18 +380,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).IborIndex
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".IborIndex") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".IborIndex") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OptionletStripper2> format
                     ; source = source 
@@ -416,18 +416,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletAccrualPeriods
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletAccrualPeriods
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".OptionletAccrualPeriods") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletAccrualPeriods") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -452,18 +452,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletFixingDates
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletFixingDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingDates") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingDates") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -488,18 +488,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletFixingTenors
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletFixingTenors
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingTenors") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingTenors") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -524,18 +524,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletFixingTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletFixingTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingTimes") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingTimes") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -560,18 +560,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletMaturities
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletMaturities
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".OptionletMaturities") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletMaturities") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -596,18 +596,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletPaymentDates
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletPaymentDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".OptionletPaymentDates") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletPaymentDates") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -635,12 +635,12 @@ module OptionletStripper2Function =
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletStrikes
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletStrikes
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".OptionletStrikes") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletStrikes") 
                                                [| _OptionletStripper2.source
                                                ;  _i.source
                                                |]
@@ -649,7 +649,7 @@ module OptionletStripper2Function =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -677,12 +677,12 @@ module OptionletStripper2Function =
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletVolatilities
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletVolatilities
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".OptionletVolatilities") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletVolatilities") 
                                                [| _OptionletStripper2.source
                                                ;  _i.source
                                                |]
@@ -691,7 +691,7 @@ module OptionletStripper2Function =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -716,18 +716,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".SettlementDays") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -752,18 +752,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).TermVolSurface
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).TermVolSurface
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolSurface>) l
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".TermVolSurface") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".TermVolSurface") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OptionletStripper2> format
                     ; source = source 
@@ -788,18 +788,18 @@ module OptionletStripper2Function =
             try
 
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
-                let builder () = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).VolatilityType
+                let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OptionletStripper2.source + ".VolatilityType") 
+                let source () = Helper.sourceFold (_OptionletStripper2.source + ".VolatilityType") 
                                                [| _OptionletStripper2.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -828,14 +828,14 @@ module OptionletStripper2Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<OptionletStripper2>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<OptionletStripper2>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<OptionletStripper2>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<OptionletStripper2>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -54,13 +54,13 @@ module GaussKronrodAdaptiveFunction =
 
                 let _absoluteAccuracy = Helper.toCell<double> absoluteAccuracy "absoluteAccuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic (Fun.GaussKronrodAdaptive 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussKronrodAdaptive 
                                                             _absoluteAccuracy.cell 
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussKronrodAdaptive>) l
 
-                let source = Helper.sourceFold "Fun.GaussKronrodAdaptive" 
+                let source () = Helper.sourceFold "Fun.GaussKronrodAdaptive" 
                                                [| _absoluteAccuracy.source
                                                ;  _maxEvaluations.source
                                                |]
@@ -69,7 +69,7 @@ module GaussKronrodAdaptiveFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussKronrodAdaptive> format
                     ; source = source 
@@ -94,18 +94,18 @@ module GaussKronrodAdaptiveFunction =
             try
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
-                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).AbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GaussKronrodAdaptive.source + ".AbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_GaussKronrodAdaptive.source + ".AbsoluteAccuracy") 
                                                [| _GaussKronrodAdaptive.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodAdaptive.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -130,18 +130,18 @@ module GaussKronrodAdaptiveFunction =
             try
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
-                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).AbsoluteError
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussKronrodAdaptive.source + ".AbsoluteError") 
+                let source () = Helper.sourceFold (_GaussKronrodAdaptive.source + ".AbsoluteError") 
                                                [| _GaussKronrodAdaptive.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodAdaptive.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -166,18 +166,18 @@ module GaussKronrodAdaptiveFunction =
             try
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
-                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).IntegrationSuccess
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GaussKronrodAdaptive.source + ".IntegrationSuccess") 
+                let source () = Helper.sourceFold (_GaussKronrodAdaptive.source + ".IntegrationSuccess") 
                                                [| _GaussKronrodAdaptive.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodAdaptive.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -202,18 +202,18 @@ module GaussKronrodAdaptiveFunction =
             try
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
-                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).MaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussKronrodAdaptive.source + ".MaxEvaluations") 
+                let source () = Helper.sourceFold (_GaussKronrodAdaptive.source + ".MaxEvaluations") 
                                                [| _GaussKronrodAdaptive.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodAdaptive.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -238,18 +238,18 @@ module GaussKronrodAdaptiveFunction =
             try
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
-                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).NumberOfEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussKronrodAdaptive.source + ".NumberOfEvaluations") 
+                let source () = Helper.sourceFold (_GaussKronrodAdaptive.source + ".NumberOfEvaluations") 
                                                [| _GaussKronrodAdaptive.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodAdaptive.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -277,12 +277,12 @@ module GaussKronrodAdaptiveFunction =
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).SetAbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : GaussKronrodAdaptive) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GaussKronrodAdaptive.source + ".SetAbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_GaussKronrodAdaptive.source + ".SetAbsoluteAccuracy") 
                                                [| _GaussKronrodAdaptive.source
                                                ;  _accuracy.source
                                                |]
@@ -291,7 +291,7 @@ module GaussKronrodAdaptiveFunction =
                                 ;  _accuracy.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -319,12 +319,12 @@ module GaussKronrodAdaptiveFunction =
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).SetMaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : GaussKronrodAdaptive) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GaussKronrodAdaptive.source + ".SetMaxEvaluations") 
+                let source () = Helper.sourceFold (_GaussKronrodAdaptive.source + ".SetMaxEvaluations") 
                                                [| _GaussKronrodAdaptive.source
                                                ;  _maxEvaluations.source
                                                |]
@@ -333,7 +333,7 @@ module GaussKronrodAdaptiveFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -367,14 +367,14 @@ module GaussKronrodAdaptiveFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussKronrodAdaptive.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussKronrodAdaptive.source + ".Value") 
                                                [| _GaussKronrodAdaptive.source
                                                ;  _f.source
                                                ;  _a.source
@@ -387,7 +387,7 @@ module GaussKronrodAdaptiveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -416,14 +416,14 @@ module GaussKronrodAdaptiveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussKronrodAdaptive>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussKronrodAdaptive>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussKronrodAdaptive>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussKronrodAdaptive>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

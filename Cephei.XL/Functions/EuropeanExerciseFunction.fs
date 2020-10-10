@@ -49,19 +49,19 @@ module EuropeanExerciseFunction =
             try
 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic (Fun.EuropeanExercise 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EuropeanExercise 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EuropeanExercise>) l
 
-                let source = Helper.sourceFold "Fun.EuropeanExercise" 
+                let source () = Helper.sourceFold "Fun.EuropeanExercise" 
                                                [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuropeanExercise> format
                     ; source = source 
@@ -89,12 +89,12 @@ module EuropeanExerciseFunction =
 
                 let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Date
                                                             _index.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EuropeanExercise.source + ".Date") 
+                let source () = Helper.sourceFold (_EuropeanExercise.source + ".Date") 
                                                [| _EuropeanExercise.source
                                                ;  _index.source
                                                |]
@@ -103,7 +103,7 @@ module EuropeanExerciseFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module EuropeanExerciseFunction =
             try
 
                 let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
-                let builder () = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Dates
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_EuropeanExercise.source + ".Dates") 
+                let source () = Helper.sourceFold (_EuropeanExercise.source + ".Dates") 
                                                [| _EuropeanExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -164,18 +164,18 @@ module EuropeanExerciseFunction =
             try
 
                 let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
-                let builder () = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).LastDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EuropeanExercise.source + ".LastDate") 
+                let source () = Helper.sourceFold (_EuropeanExercise.source + ".LastDate") 
                                                [| _EuropeanExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module EuropeanExerciseFunction =
             try
 
                 let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
-                let builder () = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuropeanExercise.source + ".TYPE") 
+                let source () = Helper.sourceFold (_EuropeanExercise.source + ".TYPE") 
                                                [| _EuropeanExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,14 +240,14 @@ module EuropeanExerciseFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EuropeanExercise>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EuropeanExercise>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EuropeanExercise>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EuropeanExercise>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

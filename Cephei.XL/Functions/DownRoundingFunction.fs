@@ -49,19 +49,19 @@ module DownRoundingFunction =
             try
 
                 let _precision = Helper.toCell<int> precision "precision" 
-                let builder () = withMnemonic mnemonic (Fun.DownRounding1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DownRounding1 
                                                             _precision.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DownRounding>) l
 
-                let source = Helper.sourceFold "Fun.DownRounding1" 
+                let source () = Helper.sourceFold "Fun.DownRounding1" 
                                                [| _precision.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _precision.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DownRounding> format
                     ; source = source 
@@ -89,13 +89,13 @@ module DownRoundingFunction =
 
                 let _precision = Helper.toCell<int> precision "precision" 
                 let _digit = Helper.toCell<int> digit "digit" 
-                let builder () = withMnemonic mnemonic (Fun.DownRounding
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DownRounding
                                                             _precision.cell 
                                                             _digit.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DownRounding>) l
 
-                let source = Helper.sourceFold "Fun.DownRounding" 
+                let source () = Helper.sourceFold "Fun.DownRounding" 
                                                [| _precision.source
                                                ;  _digit.source
                                                |]
@@ -104,7 +104,7 @@ module DownRoundingFunction =
                                 ;  _digit.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DownRounding> format
                     ; source = source 
@@ -129,18 +129,18 @@ module DownRoundingFunction =
             try
 
                 let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
-                let builder () = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).Digit
+                let builder (current : ICell) = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DownRounding.source + ".Digit") 
+                let source () = Helper.sourceFold (_DownRounding.source + ".Digit") 
                                                [| _DownRounding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DownRounding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -165,18 +165,18 @@ module DownRoundingFunction =
             try
 
                 let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
-                let builder () = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).GetType
+                let builder (current : ICell) = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DownRounding.source + ".GetType") 
+                let source () = Helper.sourceFold (_DownRounding.source + ".GetType") 
                                                [| _DownRounding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DownRounding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -201,18 +201,18 @@ module DownRoundingFunction =
             try
 
                 let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
-                let builder () = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).Precision
+                let builder (current : ICell) = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DownRounding.source + ".Precision") 
+                let source () = Helper.sourceFold (_DownRounding.source + ".Precision") 
                                                [| _DownRounding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DownRounding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,12 +240,12 @@ module DownRoundingFunction =
 
                 let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).Round
+                let builder (current : ICell) = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DownRounding.source + ".Round") 
+                let source () = Helper.sourceFold (_DownRounding.source + ".Round") 
                                                [| _DownRounding.source
                                                ;  _value.source
                                                |]
@@ -254,7 +254,7 @@ module DownRoundingFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -283,14 +283,14 @@ module DownRoundingFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DownRounding>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DownRounding>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DownRounding>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DownRounding>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

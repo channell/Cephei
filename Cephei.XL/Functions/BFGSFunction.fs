@@ -49,19 +49,19 @@ module BFGSFunction =
             try
 
                 let _lineSearch = Helper.toDefault<LineSearch> lineSearch "lineSearch" null
-                let builder () = withMnemonic mnemonic (Fun.BFGS 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BFGS 
                                                             _lineSearch.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BFGS>) l
 
-                let source = Helper.sourceFold "Fun.BFGS" 
+                let source () = Helper.sourceFold "Fun.BFGS" 
                                                [| _lineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _lineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BFGS> format
                     ; source = source 
@@ -92,13 +92,13 @@ module BFGSFunction =
                 let _BFGS = Helper.toCell<BFGS> bfgs "BFGS"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((BFGSModel.Cast _BFGS.cell).Minimize
+                let builder (current : ICell) = withMnemonic mnemonic ((BFGSModel.Cast _BFGS.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BFGS.source + ".Minimize") 
+                let source () = Helper.sourceFold (_BFGS.source + ".Minimize") 
                                                [| _BFGS.source
                                                ;  _P.source
                                                ;  _endCriteria.source
@@ -109,7 +109,7 @@ module BFGSFunction =
                                 ;  _endCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -138,14 +138,14 @@ module BFGSFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BFGS>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BFGS>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BFGS>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BFGS>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

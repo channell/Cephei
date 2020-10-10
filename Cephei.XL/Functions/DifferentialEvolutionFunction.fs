@@ -49,18 +49,18 @@ module DifferentialEvolutionFunction =
             try
 
                 let _DifferentialEvolution = Helper.toCell<DifferentialEvolution> differentialevolution "DifferentialEvolution"  
-                let builder () = withMnemonic mnemonic ((DifferentialEvolutionModel.Cast _DifferentialEvolution.cell).Configuration
+                let builder (current : ICell) = withMnemonic mnemonic ((DifferentialEvolutionModel.Cast _DifferentialEvolution.cell).Configuration
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DifferentialEvolution.Configuration>) l
 
-                let source = Helper.sourceFold (_DifferentialEvolution.source + ".Configuration") 
+                let source () = Helper.sourceFold (_DifferentialEvolution.source + ".Configuration") 
                                                [| _DifferentialEvolution.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DifferentialEvolution.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DifferentialEvolution> format
                     ; source = source 
@@ -85,19 +85,19 @@ module DifferentialEvolutionFunction =
             try
 
                 let _configuration = Helper.toDefault<DifferentialEvolution.Configuration> configuration "configuration" null
-                let builder () = withMnemonic mnemonic (Fun.DifferentialEvolution 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DifferentialEvolution 
                                                             _configuration.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DifferentialEvolution>) l
 
-                let source = Helper.sourceFold "Fun.DifferentialEvolution" 
+                let source () = Helper.sourceFold "Fun.DifferentialEvolution" 
                                                [| _configuration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _configuration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DifferentialEvolution> format
                     ; source = source 
@@ -128,13 +128,13 @@ module DifferentialEvolutionFunction =
                 let _DifferentialEvolution = Helper.toCell<DifferentialEvolution> differentialevolution "DifferentialEvolution"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((DifferentialEvolutionModel.Cast _DifferentialEvolution.cell).Minimize
+                let builder (current : ICell) = withMnemonic mnemonic ((DifferentialEvolutionModel.Cast _DifferentialEvolution.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DifferentialEvolution.source + ".Minimize") 
+                let source () = Helper.sourceFold (_DifferentialEvolution.source + ".Minimize") 
                                                [| _DifferentialEvolution.source
                                                ;  _P.source
                                                ;  _endCriteria.source
@@ -145,7 +145,7 @@ module DifferentialEvolutionFunction =
                                 ;  _endCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -174,14 +174,14 @@ module DifferentialEvolutionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DifferentialEvolution>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DifferentialEvolution>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DifferentialEvolution>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DifferentialEvolution>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

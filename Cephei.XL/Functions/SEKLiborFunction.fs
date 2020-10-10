@@ -52,13 +52,13 @@ module SEKLiborFunction =
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.SEKLibor1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SEKLibor1 
                                                             _tenor.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SEKLibor>) l
 
-                let source = Helper.sourceFold "Fun.SEKLibor1" 
+                let source () = Helper.sourceFold "Fun.SEKLibor1" 
                                                [| _tenor.source
                                                ;  _h.source
                                                |]
@@ -67,7 +67,7 @@ module SEKLiborFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SEKLibor> format
                     ; source = source 
@@ -92,19 +92,19 @@ module SEKLiborFunction =
             try
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic (Fun.SEKLibor
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SEKLibor
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SEKLibor>) l
 
-                let source = Helper.sourceFold "Fun.SEKLibor" 
+                let source () = Helper.sourceFold "Fun.SEKLibor" 
                                                [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _tenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SEKLibor> format
                     ; source = source 
@@ -132,12 +132,12 @@ module SEKLiborFunction =
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".Clone") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".Clone") 
                                                [| _SEKLibor.source
                                                ;  _h.source
                                                |]
@@ -146,7 +146,7 @@ module SEKLiborFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SEKLibor> format
                     ; source = source 
@@ -174,12 +174,12 @@ module SEKLiborFunction =
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".MaturityDate") 
                                                [| _SEKLibor.source
                                                ;  _valueDate.source
                                                |]
@@ -188,7 +188,7 @@ module SEKLiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -216,12 +216,12 @@ module SEKLiborFunction =
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".ValueDate") 
                                                [| _SEKLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -230,7 +230,7 @@ module SEKLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,18 +255,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".BusinessDayConvention") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -291,18 +291,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".EndOfMonth") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -336,14 +336,14 @@ module SEKLiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".ForecastFixing") 
                                                [| _SEKLibor.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -356,7 +356,7 @@ module SEKLiborFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -384,12 +384,12 @@ module SEKLiborFunction =
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".ForecastFixing") 
                                                [| _SEKLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -398,7 +398,7 @@ module SEKLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -423,18 +423,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".ForwardingTermStructure") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SEKLibor> format
                     ; source = source 
@@ -459,18 +459,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".Currency") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".Currency") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SEKLibor> format
                     ; source = source 
@@ -495,18 +495,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".DayCounter") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SEKLibor> format
                     ; source = source 
@@ -531,18 +531,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".FamilyName") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -573,13 +573,13 @@ module SEKLiborFunction =
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".Fixing") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".Fixing") 
                                                [| _SEKLibor.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -590,7 +590,7 @@ module SEKLiborFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,18 +615,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".FixingCalendar") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SEKLibor> format
                     ; source = source 
@@ -654,12 +654,12 @@ module SEKLiborFunction =
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".FixingDate") 
                                                [| _SEKLibor.source
                                                ;  _valueDate.source
                                                |]
@@ -668,7 +668,7 @@ module SEKLiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -693,18 +693,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".FixingDays") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -732,12 +732,12 @@ module SEKLiborFunction =
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".IsValidFixingDate") 
                                                [| _SEKLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -746,7 +746,7 @@ module SEKLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -771,18 +771,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".Name") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".Name") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -810,12 +810,12 @@ module SEKLiborFunction =
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".PastFixing") 
                                                [| _SEKLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -824,7 +824,7 @@ module SEKLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -849,18 +849,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".Tenor") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".Tenor") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SEKLibor> format
                     ; source = source 
@@ -885,18 +885,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).Update
                                                        ) :> ICell
                 let format (o : SEKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".Update") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".Update") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -930,14 +930,14 @@ module SEKLiborFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : SEKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".AddFixing") 
                                                [| _SEKLibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -950,7 +950,7 @@ module SEKLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -984,14 +984,14 @@ module SEKLiborFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : SEKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".AddFixings") 
                                                [| _SEKLibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1004,7 +1004,7 @@ module SEKLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1035,13 +1035,13 @@ module SEKLiborFunction =
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : SEKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".AddFixings1") 
                                                [| _SEKLibor.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1052,7 +1052,7 @@ module SEKLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1077,18 +1077,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".AllowsNativeFixings") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1113,18 +1113,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : SEKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".ClearFixings") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1152,12 +1152,12 @@ module SEKLiborFunction =
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SEKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".RegisterWith") 
                                                [| _SEKLibor.source
                                                ;  _handler.source
                                                |]
@@ -1166,7 +1166,7 @@ module SEKLiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1191,18 +1191,18 @@ module SEKLiborFunction =
             try
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".TimeSeries") 
                                                [| _SEKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1230,12 +1230,12 @@ module SEKLiborFunction =
 
                 let _SEKLibor = Helper.toCell<SEKLibor> seklibor "SEKLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SEKLiborModel.Cast _SEKLibor.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SEKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SEKLibor.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_SEKLibor.source + ".UnregisterWith") 
                                                [| _SEKLibor.source
                                                ;  _handler.source
                                                |]
@@ -1244,7 +1244,7 @@ module SEKLiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1273,14 +1273,14 @@ module SEKLiborFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SEKLibor>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SEKLibor>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SEKLibor>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SEKLibor>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

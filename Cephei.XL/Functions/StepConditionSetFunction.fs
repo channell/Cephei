@@ -55,13 +55,13 @@ module StepConditionSetFunction =
                 let _StepConditionSet = Helper.toCell<StepConditionSet> stepconditionset "StepConditionSet"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((StepConditionSetModel.Cast _StepConditionSet.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((StepConditionSetModel.Cast _StepConditionSet.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : StepConditionSet) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StepConditionSet.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_StepConditionSet.source + ".ApplyTo") 
                                                [| _StepConditionSet.source
                                                ;  _o.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module StepConditionSetFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -101,14 +101,14 @@ module StepConditionSetFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<StepConditionSet>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<StepConditionSet>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<StepConditionSet>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<StepConditionSet>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

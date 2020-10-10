@@ -81,7 +81,7 @@ module MCBarrierEngineFunction =
                 let _maxSamples = Helper.toNullable<int> maxSamples "maxSamples"
                 let _isBiased = Helper.toCell<bool> isBiased "isBiased" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic (Fun.MCBarrierEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MCBarrierEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _timeStepsPerYear.cell 
@@ -95,7 +95,7 @@ module MCBarrierEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MCBarrierEngine>) l
 
-                let source = Helper.sourceFold "Fun.MCBarrierEngine" 
+                let source () = Helper.sourceFold "Fun.MCBarrierEngine" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _timeStepsPerYear.source
@@ -120,7 +120,7 @@ module MCBarrierEngineFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MCBarrierEngine> format
                     ; source = source 
@@ -148,12 +148,12 @@ module MCBarrierEngineFunction =
 
                 let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCBarrierEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_MCBarrierEngine.source + ".RegisterWith") 
                                                [| _MCBarrierEngine.source
                                                ;  _handler.source
                                                |]
@@ -162,7 +162,7 @@ module MCBarrierEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -187,18 +187,18 @@ module MCBarrierEngineFunction =
             try
 
                 let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
-                let builder () = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCBarrierEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_MCBarrierEngine.source + ".Reset") 
                                                [| _MCBarrierEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -226,12 +226,12 @@ module MCBarrierEngineFunction =
 
                 let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCBarrierEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_MCBarrierEngine.source + ".UnregisterWith") 
                                                [| _MCBarrierEngine.source
                                                ;  _handler.source
                                                |]
@@ -240,7 +240,7 @@ module MCBarrierEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -265,18 +265,18 @@ module MCBarrierEngineFunction =
             try
 
                 let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
-                let builder () = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).Update
                                                        ) :> ICell
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCBarrierEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_MCBarrierEngine.source + ".Update") 
                                                [| _MCBarrierEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -301,18 +301,18 @@ module MCBarrierEngineFunction =
             try
 
                 let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
-                let builder () = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MCBarrierEngine.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_MCBarrierEngine.source + ".ErrorEstimate") 
                                                [| _MCBarrierEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,18 +337,18 @@ module MCBarrierEngineFunction =
             try
 
                 let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
-                let builder () = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).SampleAccumulator
+                let builder (current : ICell) = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCBarrierEngine.source + ".SampleAccumulator") 
+                let source () = Helper.sourceFold (_MCBarrierEngine.source + ".SampleAccumulator") 
                                                [| _MCBarrierEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -382,14 +382,14 @@ module MCBarrierEngineFunction =
                 let _tolerance = Helper.toCell<double> tolerance "tolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _minSamples = Helper.toCell<int> minSamples "minSamples" 
-                let builder () = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).Value
                                                             _tolerance.cell 
                                                             _maxSamples.cell 
                                                             _minSamples.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MCBarrierEngine.source + ".Value") 
+                let source () = Helper.sourceFold (_MCBarrierEngine.source + ".Value") 
                                                [| _MCBarrierEngine.source
                                                ;  _tolerance.source
                                                ;  _maxSamples.source
@@ -402,7 +402,7 @@ module MCBarrierEngineFunction =
                                 ;  _minSamples.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -430,12 +430,12 @@ module MCBarrierEngineFunction =
 
                 let _MCBarrierEngine = Helper.toCell<MCBarrierEngine> mcbarrierengine "MCBarrierEngine"  
                 let _samples = Helper.toCell<int> samples "samples" 
-                let builder () = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).ValueWithSamples
+                let builder (current : ICell) = withMnemonic mnemonic ((MCBarrierEngineModel.Cast _MCBarrierEngine.cell).ValueWithSamples
                                                             _samples.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MCBarrierEngine.source + ".ValueWithSamples") 
+                let source () = Helper.sourceFold (_MCBarrierEngine.source + ".ValueWithSamples") 
                                                [| _MCBarrierEngine.source
                                                ;  _samples.source
                                                |]
@@ -444,7 +444,7 @@ module MCBarrierEngineFunction =
                                 ;  _samples.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -473,14 +473,14 @@ module MCBarrierEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MCBarrierEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MCBarrierEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MCBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MCBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

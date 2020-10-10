@@ -49,18 +49,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).BmaLeg
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).BmaLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_BMASwap.source + ".BmaLeg") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".BmaLeg") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -85,18 +85,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).BmaLegBPS
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).BmaLegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".BmaLegBPS") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".BmaLegBPS") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).BmaLegNPV
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).BmaLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".BmaLegNPV") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".BmaLegNPV") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -190,7 +190,7 @@ module BMASwapFunction =
                 let _bmaDayCount = Helper.toCell<DayCounter> bmaDayCount "bmaDayCount" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.BMASwap 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BMASwap 
                                                             _Type.cell 
                                                             _nominal.cell 
                                                             _liborSchedule.cell 
@@ -206,7 +206,7 @@ module BMASwapFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BMASwap>) l
 
-                let source = Helper.sourceFold "Fun.BMASwap" 
+                let source () = Helper.sourceFold "Fun.BMASwap" 
                                                [| _Type.source
                                                ;  _nominal.source
                                                ;  _liborSchedule.source
@@ -235,7 +235,7 @@ module BMASwapFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BMASwap> format
                     ; source = source 
@@ -260,18 +260,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).FairLiborFraction
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).FairLiborFraction
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".FairLiborFraction") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".FairLiborFraction") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,18 +296,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).FairLiborSpread
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).FairLiborSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".FairLiborSpread") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".FairLiborSpread") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -332,18 +332,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborFraction
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborFraction
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".LiborFraction") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".LiborFraction") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -368,18 +368,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborLeg
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_BMASwap.source + ".LiborLeg") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".LiborLeg") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -404,18 +404,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborLegBPS
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborLegBPS
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".LiborLegBPS") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".LiborLegBPS") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -440,18 +440,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborLegNPV
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".LiborLegNPV") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".LiborLegNPV") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -476,18 +476,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborSpread
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".LiborSpread") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".LiborSpread") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -512,18 +512,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".Nominal") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".Nominal") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -548,18 +548,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".TYPE") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".TYPE") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -587,12 +587,12 @@ module BMASwapFunction =
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).EndDiscounts
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).EndDiscounts
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".EndDiscounts") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".EndDiscounts") 
                                                [| _BMASwap.source
                                                ;  _j.source
                                                |]
@@ -601,7 +601,7 @@ module BMASwapFunction =
                                 ;  _j.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -627,18 +627,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Engine
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Engine
                                                        ) :> ICell
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".Engine") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".Engine") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -664,18 +664,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".IsExpired") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -703,12 +703,12 @@ module BMASwapFunction =
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Leg
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_BMASwap.source + ".Leg") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".Leg") 
                                                [| _BMASwap.source
                                                ;  _j.source
                                                |]
@@ -717,7 +717,7 @@ module BMASwapFunction =
                                 ;  _j.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -745,12 +745,12 @@ module BMASwapFunction =
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LegBPS
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LegBPS
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".LegBPS") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".LegBPS") 
                                                [| _BMASwap.source
                                                ;  _j.source
                                                |]
@@ -759,7 +759,7 @@ module BMASwapFunction =
                                 ;  _j.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -787,12 +787,12 @@ module BMASwapFunction =
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LegNPV
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LegNPV
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".LegNPV") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".LegNPV") 
                                                [| _BMASwap.source
                                                ;  _j.source
                                                |]
@@ -801,7 +801,7 @@ module BMASwapFunction =
                                 ;  _j.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -826,18 +826,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".MaturityDate") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -862,18 +862,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).NpvDateDiscount
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".NpvDateDiscount") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".NpvDateDiscount") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -901,12 +901,12 @@ module BMASwapFunction =
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Payer
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Payer
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".Payer") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".Payer") 
                                                [| _BMASwap.source
                                                ;  _j.source
                                                |]
@@ -915,7 +915,7 @@ module BMASwapFunction =
                                 ;  _j.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -940,18 +940,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).StartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".StartDate") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".StartDate") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -979,12 +979,12 @@ module BMASwapFunction =
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).StartDiscounts
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).StartDiscounts
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".StartDiscounts") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".StartDiscounts") 
                                                [| _BMASwap.source
                                                ;  _j.source
                                                |]
@@ -993,7 +993,7 @@ module BMASwapFunction =
                                 ;  _j.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1018,18 +1018,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".CASH") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".CASH") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1054,18 +1054,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".ErrorEstimate") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1090,18 +1090,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".NPV") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".NPV") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1129,12 +1129,12 @@ module BMASwapFunction =
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".Result") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".Result") 
                                                [| _BMASwap.source
                                                ;  _tag.source
                                                |]
@@ -1143,7 +1143,7 @@ module BMASwapFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1171,12 +1171,12 @@ module BMASwapFunction =
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : BMASwap) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".SetPricingEngine") 
                                                [| _BMASwap.source
                                                ;  _e.source
                                                |]
@@ -1185,7 +1185,7 @@ module BMASwapFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1210,18 +1210,18 @@ module BMASwapFunction =
             try
 
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
-                let builder () = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BMASwap.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_BMASwap.source + ".ValuationDate") 
                                                [| _BMASwap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1250,14 +1250,14 @@ module BMASwapFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BMASwap>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BMASwap>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BMASwap>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BMASwap>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

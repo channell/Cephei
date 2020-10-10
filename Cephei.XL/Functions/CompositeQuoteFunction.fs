@@ -55,14 +55,14 @@ module CompositeQuoteFunction =
                 let _element1 = Helper.toHandle<Quote> element1 "element1" 
                 let _element2 = Helper.toHandle<Quote> element2 "element2" 
                 let _f = Helper.toCell<Func<double,double,double>> f "f" 
-                let builder () = withMnemonic mnemonic (Fun.CompositeQuote 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CompositeQuote 
                                                             _element1.cell 
                                                             _element2.cell 
                                                             _f.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CompositeQuote>) l
 
-                let source = Helper.sourceFold "Fun.CompositeQuote" 
+                let source () = Helper.sourceFold "Fun.CompositeQuote" 
                                                [| _element1.source
                                                ;  _element2.source
                                                ;  _f.source
@@ -73,7 +73,7 @@ module CompositeQuoteFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CompositeQuote> format
                     ; source = source 
@@ -98,18 +98,18 @@ module CompositeQuoteFunction =
             try
 
                 let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
-                let builder () = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).IsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CompositeQuote.source + ".IsValid") 
+                let source () = Helper.sourceFold (_CompositeQuote.source + ".IsValid") 
                                                [| _CompositeQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -134,18 +134,18 @@ module CompositeQuoteFunction =
             try
 
                 let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
-                let builder () = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).Update
                                                        ) :> ICell
                 let format (o : CompositeQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CompositeQuote.source + ".Update") 
+                let source () = Helper.sourceFold (_CompositeQuote.source + ".Update") 
                                                [| _CompositeQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module CompositeQuoteFunction =
             try
 
                 let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
-                let builder () = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CompositeQuote.source + ".Value") 
+                let source () = Helper.sourceFold (_CompositeQuote.source + ".Value") 
                                                [| _CompositeQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,18 +206,18 @@ module CompositeQuoteFunction =
             try
 
                 let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
-                let builder () = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).Value1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CompositeQuote.source + ".Value1") 
+                let source () = Helper.sourceFold (_CompositeQuote.source + ".Value1") 
                                                [| _CompositeQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module CompositeQuoteFunction =
             try
 
                 let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
-                let builder () = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).Value2
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).Value2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CompositeQuote.source + ".Value2") 
+                let source () = Helper.sourceFold (_CompositeQuote.source + ".Value2") 
                                                [| _CompositeQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -281,12 +281,12 @@ module CompositeQuoteFunction =
 
                 let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CompositeQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CompositeQuote.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_CompositeQuote.source + ".RegisterWith") 
                                                [| _CompositeQuote.source
                                                ;  _handler.source
                                                |]
@@ -295,7 +295,7 @@ module CompositeQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -323,12 +323,12 @@ module CompositeQuoteFunction =
 
                 let _CompositeQuote = Helper.toCell<CompositeQuote> compositequote "CompositeQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CompositeQuoteModel.Cast _CompositeQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CompositeQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CompositeQuote.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_CompositeQuote.source + ".UnregisterWith") 
                                                [| _CompositeQuote.source
                                                ;  _handler.source
                                                |]
@@ -337,7 +337,7 @@ module CompositeQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -366,14 +366,14 @@ module CompositeQuoteFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CompositeQuote>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CompositeQuote>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CompositeQuote>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CompositeQuote>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

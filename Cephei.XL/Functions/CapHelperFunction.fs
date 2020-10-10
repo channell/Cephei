@@ -52,12 +52,12 @@ module CapHelperFunction =
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
                 let _times = Helper.toCell<Generic.List<double>> times "times" 
-                let builder () = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).AddTimesTo
+                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).AddTimesTo
                                                             _times.cell 
                                                        ) :> ICell
                 let format (o : CapHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapHelper.source + ".AddTimesTo") 
+                let source () = Helper.sourceFold (_CapHelper.source + ".AddTimesTo") 
                                                [| _CapHelper.source
                                                ;  _times.source
                                                |]
@@ -66,7 +66,7 @@ module CapHelperFunction =
                                 ;  _times.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module CapHelperFunction =
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder () = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).BlackPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).BlackPrice
                                                             _sigma.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapHelper.source + ".BlackPrice") 
+                let source () = Helper.sourceFold (_CapHelper.source + ".BlackPrice") 
                                                [| _CapHelper.source
                                                ;  _sigma.source
                                                |]
@@ -108,7 +108,7 @@ module CapHelperFunction =
                                 ;  _sigma.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -160,7 +160,7 @@ module CapHelperFunction =
                 let _errorType = Helper.toDefault<CalibrationHelper.CalibrationErrorType> errorType "errorType" CalibrationHelper.CalibrationErrorType.RelativePriceError
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.CapHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapHelper 
                                                             _length.cell 
                                                             _volatility.cell 
                                                             _index.cell 
@@ -174,7 +174,7 @@ module CapHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapHelper>) l
 
-                let source = Helper.sourceFold "Fun.CapHelper" 
+                let source () = Helper.sourceFold "Fun.CapHelper" 
                                                [| _length.source
                                                ;  _volatility.source
                                                ;  _index.source
@@ -199,7 +199,7 @@ module CapHelperFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapHelper> format
                     ; source = source 
@@ -224,18 +224,18 @@ module CapHelperFunction =
             try
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
-                let builder () = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).ModelValue
+                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).ModelValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapHelper.source + ".ModelValue") 
+                let source () = Helper.sourceFold (_CapHelper.source + ".ModelValue") 
                                                [| _CapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,18 +260,18 @@ module CapHelperFunction =
             try
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
-                let builder () = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).CalibrationError
+                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).CalibrationError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapHelper.source + ".CalibrationError") 
+                let source () = Helper.sourceFold (_CapHelper.source + ".CalibrationError") 
                                                [| _CapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -311,7 +311,7 @@ module CapHelperFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder () = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).ImpliedVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _accuracy.cell 
                                                             _maxEvaluations.cell 
@@ -320,7 +320,7 @@ module CapHelperFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapHelper.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_CapHelper.source + ".ImpliedVolatility") 
                                                [| _CapHelper.source
                                                ;  _targetValue.source
                                                ;  _accuracy.source
@@ -337,7 +337,7 @@ module CapHelperFunction =
                                 ;  _maxVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -362,18 +362,18 @@ module CapHelperFunction =
             try
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
-                let builder () = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).MarketValue
+                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).MarketValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapHelper.source + ".MarketValue") 
+                let source () = Helper.sourceFold (_CapHelper.source + ".MarketValue") 
                                                [| _CapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -401,12 +401,12 @@ module CapHelperFunction =
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
                 let _engine = Helper.toCell<IPricingEngine> engine "engine" 
-                let builder () = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).SetPricingEngine
                                                             _engine.cell 
                                                        ) :> ICell
                 let format (o : CapHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapHelper.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_CapHelper.source + ".SetPricingEngine") 
                                                [| _CapHelper.source
                                                ;  _engine.source
                                                |]
@@ -415,7 +415,7 @@ module CapHelperFunction =
                                 ;  _engine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -440,18 +440,18 @@ module CapHelperFunction =
             try
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
-                let builder () = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
-                let source = Helper.sourceFold (_CapHelper.source + ".Volatility") 
+                let source () = Helper.sourceFold (_CapHelper.source + ".Volatility") 
                                                [| _CapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapHelper> format
                     ; source = source 
@@ -476,18 +476,18 @@ module CapHelperFunction =
             try
 
                 let _CapHelper = Helper.toCell<CapHelper> caphelper "CapHelper"  
-                let builder () = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).VolatilityType
+                let builder (current : ICell) = withMnemonic mnemonic ((CapHelperModel.Cast _CapHelper.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapHelper.source + ".VolatilityType") 
+                let source () = Helper.sourceFold (_CapHelper.source + ".VolatilityType") 
                                                [| _CapHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -516,14 +516,14 @@ module CapHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CapHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CapHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CapHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CapHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

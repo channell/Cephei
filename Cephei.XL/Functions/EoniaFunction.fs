@@ -49,19 +49,19 @@ module EoniaFunction =
             try
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.Eonia 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Eonia 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Eonia>) l
 
-                let source = Helper.sourceFold "Fun.Eonia" 
+                let source () = Helper.sourceFold "Fun.Eonia" 
                                                [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Eonia> format
                     ; source = source 
@@ -83,16 +83,16 @@ module EoniaFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Eonia1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Eonia1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Eonia>) l
 
-                let source = Helper.sourceFold "Fun.Eonia1" 
+                let source () = Helper.sourceFold "Fun.Eonia1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Eonia> format
                     ; source = source 
@@ -120,12 +120,12 @@ module EoniaFunction =
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
 
-                let source = Helper.sourceFold (_Eonia.source + ".Clone") 
+                let source () = Helper.sourceFold (_Eonia.source + ".Clone") 
                                                [| _Eonia.source
                                                ;  _h.source
                                                |]
@@ -134,7 +134,7 @@ module EoniaFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Eonia> format
                     ; source = source 
@@ -159,18 +159,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_Eonia.source + ".BusinessDayConvention") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -195,18 +195,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_Eonia.source + ".EndOfMonth") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,14 +240,14 @@ module EoniaFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".ForecastFixing1") 
+                let source () = Helper.sourceFold (_Eonia.source + ".ForecastFixing1") 
                                                [| _Eonia.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -260,7 +260,7 @@ module EoniaFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -288,12 +288,12 @@ module EoniaFunction =
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_Eonia.source + ".ForecastFixing") 
                                                [| _Eonia.source
                                                ;  _fixingDate.source
                                                |]
@@ -302,7 +302,7 @@ module EoniaFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -327,18 +327,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_Eonia.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_Eonia.source + ".ForwardingTermStructure") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Eonia> format
                     ; source = source 
@@ -366,12 +366,12 @@ module EoniaFunction =
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_Eonia.source + ".MaturityDate") 
                                                [| _Eonia.source
                                                ;  _valueDate.source
                                                |]
@@ -380,7 +380,7 @@ module EoniaFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -405,18 +405,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_Eonia.source + ".Currency") 
+                let source () = Helper.sourceFold (_Eonia.source + ".Currency") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Eonia> format
                     ; source = source 
@@ -441,18 +441,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Eonia.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Eonia.source + ".DayCounter") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Eonia> format
                     ; source = source 
@@ -477,18 +477,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_Eonia.source + ".FamilyName") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -519,13 +519,13 @@ module EoniaFunction =
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".Fixing") 
+                let source () = Helper.sourceFold (_Eonia.source + ".Fixing") 
                                                [| _Eonia.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -536,7 +536,7 @@ module EoniaFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -561,18 +561,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_Eonia.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_Eonia.source + ".FixingCalendar") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Eonia> format
                     ; source = source 
@@ -600,12 +600,12 @@ module EoniaFunction =
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_Eonia.source + ".FixingDate") 
                                                [| _Eonia.source
                                                ;  _valueDate.source
                                                |]
@@ -614,7 +614,7 @@ module EoniaFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -639,18 +639,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_Eonia.source + ".FixingDays") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -678,12 +678,12 @@ module EoniaFunction =
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_Eonia.source + ".IsValidFixingDate") 
                                                [| _Eonia.source
                                                ;  _fixingDate.source
                                                |]
@@ -692,7 +692,7 @@ module EoniaFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -717,18 +717,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".Name") 
+                let source () = Helper.sourceFold (_Eonia.source + ".Name") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -756,12 +756,12 @@ module EoniaFunction =
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_Eonia.source + ".PastFixing") 
                                                [| _Eonia.source
                                                ;  _fixingDate.source
                                                |]
@@ -770,7 +770,7 @@ module EoniaFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -795,18 +795,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_Eonia.source + ".Tenor") 
+                let source () = Helper.sourceFold (_Eonia.source + ".Tenor") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Eonia> format
                     ; source = source 
@@ -831,18 +831,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).Update
                                                        ) :> ICell
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".Update") 
+                let source () = Helper.sourceFold (_Eonia.source + ".Update") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -870,12 +870,12 @@ module EoniaFunction =
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_Eonia.source + ".ValueDate") 
                                                [| _Eonia.source
                                                ;  _fixingDate.source
                                                |]
@@ -884,7 +884,7 @@ module EoniaFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -918,14 +918,14 @@ module EoniaFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_Eonia.source + ".AddFixing") 
                                                [| _Eonia.source
                                                ;  _d.source
                                                ;  _v.source
@@ -938,7 +938,7 @@ module EoniaFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -972,14 +972,14 @@ module EoniaFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_Eonia.source + ".AddFixings") 
                                                [| _Eonia.source
                                                ;  _d.source
                                                ;  _v.source
@@ -992,7 +992,7 @@ module EoniaFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1023,13 +1023,13 @@ module EoniaFunction =
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_Eonia.source + ".AddFixings1") 
                                                [| _Eonia.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1040,7 +1040,7 @@ module EoniaFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1065,18 +1065,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_Eonia.source + ".AllowsNativeFixings") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1101,18 +1101,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_Eonia.source + ".ClearFixings") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1140,12 +1140,12 @@ module EoniaFunction =
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Eonia.source + ".RegisterWith") 
                                                [| _Eonia.source
                                                ;  _handler.source
                                                |]
@@ -1154,7 +1154,7 @@ module EoniaFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1179,18 +1179,18 @@ module EoniaFunction =
             try
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_Eonia.source + ".TimeSeries") 
                                                [| _Eonia.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1218,12 +1218,12 @@ module EoniaFunction =
 
                 let _Eonia = Helper.toCell<Eonia> eonia "Eonia"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((EoniaModel.Cast _Eonia.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Eonia.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Eonia.source + ".UnregisterWith") 
                                                [| _Eonia.source
                                                ;  _handler.source
                                                |]
@@ -1232,7 +1232,7 @@ module EoniaFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1261,14 +1261,14 @@ module EoniaFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Eonia>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Eonia>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Eonia>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Eonia>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

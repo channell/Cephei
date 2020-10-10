@@ -52,13 +52,13 @@ module FRHICPFunction =
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
                 let _ts = Helper.toHandle<ZeroInflationTermStructure> ts "ts" 
-                let builder () = withMnemonic mnemonic (Fun.FRHICP 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FRHICP 
                                                             _interpolated.cell 
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FRHICP>) l
 
-                let source = Helper.sourceFold "Fun.FRHICP" 
+                let source () = Helper.sourceFold "Fun.FRHICP" 
                                                [| _interpolated.source
                                                ;  _ts.source
                                                |]
@@ -67,7 +67,7 @@ module FRHICPFunction =
                                 ;  _ts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FRHICP> format
                     ; source = source 
@@ -92,19 +92,19 @@ module FRHICPFunction =
             try
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
-                let builder () = withMnemonic mnemonic (Fun.FRHICP1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FRHICP1 
                                                             _interpolated.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FRHICP>) l
 
-                let source = Helper.sourceFold "Fun.FRHICP1" 
+                let source () = Helper.sourceFold "Fun.FRHICP1" 
                                                [| _interpolated.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _interpolated.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FRHICP> format
                     ; source = source 
@@ -132,12 +132,12 @@ module FRHICPFunction =
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
                 let _h = Helper.toHandle<ZeroInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
-                let source = Helper.sourceFold (_FRHICP.source + ".Clone") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".Clone") 
                                                [| _FRHICP.source
                                                ;  _h.source
                                                |]
@@ -146,7 +146,7 @@ module FRHICPFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FRHICP> format
                     ; source = source 
@@ -177,13 +177,13 @@ module FRHICPFunction =
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
                 let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Fixing
                                                             _aFixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".Fixing") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".Fixing") 
                                                [| _FRHICP.source
                                                ;  _aFixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -194,7 +194,7 @@ module FRHICPFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -219,18 +219,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).ZeroInflationTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).ZeroInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
-                let source = Helper.sourceFold (_FRHICP.source + ".ZeroInflationTermStructure") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".ZeroInflationTermStructure") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FRHICP> format
                     ; source = source 
@@ -264,14 +264,14 @@ module FRHICPFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".AddFixing") 
                                                [| _FRHICP.source
                                                ;  _fixingDate.source
                                                ;  _fixing.source
@@ -284,7 +284,7 @@ module FRHICPFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -310,18 +310,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).AvailabilityLag
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_FRHICP.source + ".AvailabilityLag") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".AvailabilityLag") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FRHICP> format
                     ; source = source 
@@ -346,18 +346,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_FRHICP.source + ".Currency") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".Currency") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FRHICP> format
                     ; source = source 
@@ -382,18 +382,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".FamilyName") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -418,18 +418,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_FRHICP.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".FixingCalendar") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FRHICP> format
                     ; source = source 
@@ -454,18 +454,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".Frequency") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".Frequency") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -490,18 +490,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Interpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".Interpolated") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".Interpolated") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -529,12 +529,12 @@ module FRHICPFunction =
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".IsValidFixingDate") 
                                                [| _FRHICP.source
                                                ;  _fixingDate.source
                                                |]
@@ -543,7 +543,7 @@ module FRHICPFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -568,18 +568,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".Name") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".Name") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -604,18 +604,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Region
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
-                let source = Helper.sourceFold (_FRHICP.source + ".Region") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".Region") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FRHICP> format
                     ; source = source 
@@ -640,18 +640,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Revised
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".Revised") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".Revised") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -676,18 +676,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).Update
                                                        ) :> ICell
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".Update") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".Update") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -721,14 +721,14 @@ module FRHICPFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".AddFixings") 
                                                [| _FRHICP.source
                                                ;  _d.source
                                                ;  _v.source
@@ -741,7 +741,7 @@ module FRHICPFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -772,13 +772,13 @@ module FRHICPFunction =
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".AddFixings1") 
                                                [| _FRHICP.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -789,7 +789,7 @@ module FRHICPFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -814,18 +814,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".AllowsNativeFixings") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -850,18 +850,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".ClearFixings") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -889,12 +889,12 @@ module FRHICPFunction =
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".RegisterWith") 
                                                [| _FRHICP.source
                                                ;  _handler.source
                                                |]
@@ -903,7 +903,7 @@ module FRHICPFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -928,18 +928,18 @@ module FRHICPFunction =
             try
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".TimeSeries") 
                                                [| _FRHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -967,12 +967,12 @@ module FRHICPFunction =
 
                 let _FRHICP = Helper.toCell<FRHICP> frhicp "FRHICP"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FRHICPModel.Cast _FRHICP.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FRHICP.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FRHICP.source + ".UnregisterWith") 
                                                [| _FRHICP.source
                                                ;  _handler.source
                                                |]
@@ -981,7 +981,7 @@ module FRHICPFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1010,14 +1010,14 @@ module FRHICPFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FRHICP>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FRHICP>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FRHICP>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FRHICP>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

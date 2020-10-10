@@ -55,13 +55,13 @@ module ZeroInflationTraitsFunction =
                 let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).DiscountImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroInflationTraits.source + ".DiscountImpl") 
+                let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".DiscountImpl") 
                                                [| _ZeroInflationTraits.source
                                                ;  _i.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module ZeroInflationTraitsFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module ZeroInflationTraitsFunction =
                 let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).ForwardImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroInflationTraits.source + ".ForwardImpl") 
+                let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".ForwardImpl") 
                                                [| _ZeroInflationTraits.source
                                                ;  _i.source
                                                ;  _t.source
@@ -120,7 +120,7 @@ module ZeroInflationTraitsFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,7 +157,7 @@ module ZeroInflationTraitsFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).Guess
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -165,7 +165,7 @@ module ZeroInflationTraitsFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroInflationTraits.source + ".Guess") 
+                let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".Guess") 
                                                [| _ZeroInflationTraits.source
                                                ;  _i.source
                                                ;  _c.source
@@ -180,7 +180,7 @@ module ZeroInflationTraitsFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -208,12 +208,12 @@ module ZeroInflationTraitsFunction =
 
                 let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _t = Helper.toCell<ZeroInflationTermStructure> t "t" 
-                let builder () = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).InitialDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).InitialDate
                                                             _t.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ZeroInflationTraits.source + ".InitialDate") 
+                let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".InitialDate") 
                                                [| _ZeroInflationTraits.source
                                                ;  _t.source
                                                |]
@@ -222,7 +222,7 @@ module ZeroInflationTraitsFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -250,12 +250,12 @@ module ZeroInflationTraitsFunction =
 
                 let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _t = Helper.toCell<ZeroInflationTermStructure> t "t" 
-                let builder () = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).InitialValue
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).InitialValue
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroInflationTraits.source + ".InitialValue") 
+                let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".InitialValue") 
                                                [| _ZeroInflationTraits.source
                                                ;  _t.source
                                                |]
@@ -264,7 +264,7 @@ module ZeroInflationTraitsFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,18 +289,18 @@ module ZeroInflationTraitsFunction =
             try
 
                 let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
-                let builder () = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).MaxIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroInflationTraits.source + ".MaxIterations") 
+                let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".MaxIterations") 
                                                [| _ZeroInflationTraits.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationTraits.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,7 +337,7 @@ module ZeroInflationTraitsFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).MaxValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -345,7 +345,7 @@ module ZeroInflationTraitsFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroInflationTraits.source + ".MaxValueAfter") 
+                let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".MaxValueAfter") 
                                                [| _ZeroInflationTraits.source
                                                ;  _i.source
                                                ;  _c.source
@@ -360,7 +360,7 @@ module ZeroInflationTraitsFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -397,7 +397,7 @@ module ZeroInflationTraitsFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).MinValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -405,7 +405,7 @@ module ZeroInflationTraitsFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroInflationTraits.source + ".MinValueAfter") 
+                let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".MinValueAfter") 
                                                [| _ZeroInflationTraits.source
                                                ;  _i.source
                                                ;  _c.source
@@ -420,7 +420,7 @@ module ZeroInflationTraitsFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -454,14 +454,14 @@ module ZeroInflationTraitsFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).UpdateGuess
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).UpdateGuess
                                                             _data.cell 
                                                             _discount.cell 
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : ZeroInflationTraits) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZeroInflationTraits.source + ".UpdateGuess") 
+                let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".UpdateGuess") 
                                                [| _ZeroInflationTraits.source
                                                ;  _data.source
                                                ;  _discount.source
@@ -474,7 +474,7 @@ module ZeroInflationTraitsFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -505,13 +505,13 @@ module ZeroInflationTraitsFunction =
                 let _ZeroInflationTraits = Helper.toCell<ZeroInflationTraits> zeroinflationtraits "ZeroInflationTraits"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).ZeroYieldImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroInflationTraitsModel.Cast _ZeroInflationTraits.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroInflationTraits.source + ".ZeroYieldImpl") 
+                let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".ZeroYieldImpl") 
                                                [| _ZeroInflationTraits.source
                                                ;  _i.source
                                                ;  _t.source
@@ -522,7 +522,7 @@ module ZeroInflationTraitsFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -551,14 +551,14 @@ module ZeroInflationTraitsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZeroInflationTraits>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ZeroInflationTraits>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ZeroInflationTraits>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ZeroInflationTraits>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

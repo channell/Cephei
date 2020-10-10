@@ -55,14 +55,14 @@ module HestonHullWhitePathPricerFunction =
                 let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
                 let _payoff = Helper.toCell<Payoff> payoff "payoff" 
                 let _Process = Helper.toCell<HybridHestonHullWhiteProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic (Fun.HestonHullWhitePathPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.HestonHullWhitePathPricer 
                                                             _exerciseTime.cell 
                                                             _payoff.cell 
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HestonHullWhitePathPricer>) l
 
-                let source = Helper.sourceFold "Fun.HestonHullWhitePathPricer" 
+                let source () = Helper.sourceFold "Fun.HestonHullWhitePathPricer" 
                                                [| _exerciseTime.source
                                                ;  _payoff.source
                                                ;  _Process.source
@@ -73,7 +73,7 @@ module HestonHullWhitePathPricerFunction =
                                 ;  _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<HestonHullWhitePathPricer> format
                     ; source = source 
@@ -101,12 +101,12 @@ module HestonHullWhitePathPricerFunction =
 
                 let _HestonHullWhitePathPricer = Helper.toCell<HestonHullWhitePathPricer> hestonhullwhitepathpricer "HestonHullWhitePathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder () = withMnemonic mnemonic ((HestonHullWhitePathPricerModel.Cast _HestonHullWhitePathPricer.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonHullWhitePathPricerModel.Cast _HestonHullWhitePathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonHullWhitePathPricer.source + ".Value") 
+                let source () = Helper.sourceFold (_HestonHullWhitePathPricer.source + ".Value") 
                                                [| _HestonHullWhitePathPricer.source
                                                ;  _path.source
                                                |]
@@ -115,7 +115,7 @@ module HestonHullWhitePathPricerFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -144,14 +144,14 @@ module HestonHullWhitePathPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HestonHullWhitePathPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<HestonHullWhitePathPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<HestonHullWhitePathPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<HestonHullWhitePathPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

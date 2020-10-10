@@ -52,13 +52,13 @@ module NonhomogeneousBoundaryConstraintFunction =
 
                 let _low = Helper.toCell<Vector> low "low" 
                 let _high = Helper.toCell<Vector> high "high" 
-                let builder () = withMnemonic mnemonic (Fun.NonhomogeneousBoundaryConstraint 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonhomogeneousBoundaryConstraint 
                                                             _low.cell 
                                                             _high.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NonhomogeneousBoundaryConstraint>) l
 
-                let source = Helper.sourceFold "Fun.NonhomogeneousBoundaryConstraint" 
+                let source () = Helper.sourceFold "Fun.NonhomogeneousBoundaryConstraint" 
                                                [| _low.source
                                                ;  _high.source
                                                |]
@@ -67,7 +67,7 @@ module NonhomogeneousBoundaryConstraintFunction =
                                 ;  _high.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonhomogeneousBoundaryConstraint> format
                     ; source = source 
@@ -92,18 +92,18 @@ module NonhomogeneousBoundaryConstraintFunction =
             try
 
                 let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint"  
-                let builder () = withMnemonic mnemonic ((NonhomogeneousBoundaryConstraintModel.Cast _NonhomogeneousBoundaryConstraint.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((NonhomogeneousBoundaryConstraintModel.Cast _NonhomogeneousBoundaryConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".Empty") 
+                let source () = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".Empty") 
                                                [| _NonhomogeneousBoundaryConstraint.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NonhomogeneousBoundaryConstraint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,12 +131,12 @@ module NonhomogeneousBoundaryConstraintFunction =
 
                 let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((NonhomogeneousBoundaryConstraintModel.Cast _NonhomogeneousBoundaryConstraint.cell).LowerBound
+                let builder (current : ICell) = withMnemonic mnemonic ((NonhomogeneousBoundaryConstraintModel.Cast _NonhomogeneousBoundaryConstraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".LowerBound") 
+                let source () = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".LowerBound") 
                                                [| _NonhomogeneousBoundaryConstraint.source
                                                ;  _parameters.source
                                                |]
@@ -145,7 +145,7 @@ module NonhomogeneousBoundaryConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonhomogeneousBoundaryConstraint> format
                     ; source = source 
@@ -173,12 +173,12 @@ module NonhomogeneousBoundaryConstraintFunction =
 
                 let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((NonhomogeneousBoundaryConstraintModel.Cast _NonhomogeneousBoundaryConstraint.cell).Test
+                let builder (current : ICell) = withMnemonic mnemonic ((NonhomogeneousBoundaryConstraintModel.Cast _NonhomogeneousBoundaryConstraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".Test") 
+                let source () = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".Test") 
                                                [| _NonhomogeneousBoundaryConstraint.source
                                                ;  _p.source
                                                |]
@@ -187,7 +187,7 @@ module NonhomogeneousBoundaryConstraintFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -221,14 +221,14 @@ module NonhomogeneousBoundaryConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic ((NonhomogeneousBoundaryConstraintModel.Cast _NonhomogeneousBoundaryConstraint.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((NonhomogeneousBoundaryConstraintModel.Cast _NonhomogeneousBoundaryConstraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".Update") 
+                let source () = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".Update") 
                                                [| _NonhomogeneousBoundaryConstraint.source
                                                ;  _p.source
                                                ;  _direction.source
@@ -241,7 +241,7 @@ module NonhomogeneousBoundaryConstraintFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -269,12 +269,12 @@ module NonhomogeneousBoundaryConstraintFunction =
 
                 let _NonhomogeneousBoundaryConstraint = Helper.toCell<NonhomogeneousBoundaryConstraint> nonhomogeneousboundaryconstraint "NonhomogeneousBoundaryConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((NonhomogeneousBoundaryConstraintModel.Cast _NonhomogeneousBoundaryConstraint.cell).UpperBound
+                let builder (current : ICell) = withMnemonic mnemonic ((NonhomogeneousBoundaryConstraintModel.Cast _NonhomogeneousBoundaryConstraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".UpperBound") 
+                let source () = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".UpperBound") 
                                                [| _NonhomogeneousBoundaryConstraint.source
                                                ;  _parameters.source
                                                |]
@@ -283,7 +283,7 @@ module NonhomogeneousBoundaryConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonhomogeneousBoundaryConstraint> format
                     ; source = source 
@@ -312,14 +312,14 @@ module NonhomogeneousBoundaryConstraintFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NonhomogeneousBoundaryConstraint>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NonhomogeneousBoundaryConstraint>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NonhomogeneousBoundaryConstraint>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NonhomogeneousBoundaryConstraint>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

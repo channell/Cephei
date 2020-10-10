@@ -58,14 +58,14 @@ module ImplicitEulerSchemeFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalFields = Helper.toDefault<Object[]> additionalFields "additionalFields" null
-                let builder () = withMnemonic mnemonic ((ImplicitEulerSchemeModel.Cast _ImplicitEulerScheme.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((ImplicitEulerSchemeModel.Cast _ImplicitEulerScheme.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalFields.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
-                let source = Helper.sourceFold (_ImplicitEulerScheme.source + ".Factory") 
+                let source () = Helper.sourceFold (_ImplicitEulerScheme.source + ".Factory") 
                                                [| _ImplicitEulerScheme.source
                                                ;  _L.source
                                                ;  _bcs.source
@@ -78,7 +78,7 @@ module ImplicitEulerSchemeFunction =
                                 ;  _additionalFields.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImplicitEulerScheme> format
                     ; source = source 
@@ -112,7 +112,7 @@ module ImplicitEulerSchemeFunction =
                 let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
                 let _relTol = Helper.toDefault<double> relTol "relTol" 1e-8
                 let _solverType = Helper.toCell<ImplicitEulerScheme.SolverType> solverType "solverType" 
-                let builder () = withMnemonic mnemonic (Fun.ImplicitEulerScheme 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ImplicitEulerScheme 
                                                             _map.cell 
                                                             _bcSet.cell 
                                                             _relTol.cell 
@@ -120,7 +120,7 @@ module ImplicitEulerSchemeFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ImplicitEulerScheme>) l
 
-                let source = Helper.sourceFold "Fun.ImplicitEulerScheme" 
+                let source () = Helper.sourceFold "Fun.ImplicitEulerScheme" 
                                                [| _map.source
                                                ;  _bcSet.source
                                                ;  _relTol.source
@@ -133,7 +133,7 @@ module ImplicitEulerSchemeFunction =
                                 ;  _solverType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImplicitEulerScheme> format
                     ; source = source 
@@ -155,16 +155,16 @@ module ImplicitEulerSchemeFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ImplicitEulerScheme1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ImplicitEulerScheme1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ImplicitEulerScheme>) l
 
-                let source = Helper.sourceFold "Fun.ImplicitEulerScheme1" 
+                let source () = Helper.sourceFold "Fun.ImplicitEulerScheme1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImplicitEulerScheme> format
                     ; source = source 
@@ -189,18 +189,18 @@ module ImplicitEulerSchemeFunction =
             try
 
                 let _ImplicitEulerScheme = Helper.toCell<ImplicitEulerScheme> impliciteulerscheme "ImplicitEulerScheme"  
-                let builder () = withMnemonic mnemonic ((ImplicitEulerSchemeModel.Cast _ImplicitEulerScheme.cell).NumberOfIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((ImplicitEulerSchemeModel.Cast _ImplicitEulerScheme.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ImplicitEulerScheme.source + ".NumberOfIterations") 
+                let source () = Helper.sourceFold (_ImplicitEulerScheme.source + ".NumberOfIterations") 
                                                [| _ImplicitEulerScheme.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImplicitEulerScheme.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -228,12 +228,12 @@ module ImplicitEulerSchemeFunction =
 
                 let _ImplicitEulerScheme = Helper.toCell<ImplicitEulerScheme> impliciteulerscheme "ImplicitEulerScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((ImplicitEulerSchemeModel.Cast _ImplicitEulerScheme.cell).SetStep
+                let builder (current : ICell) = withMnemonic mnemonic ((ImplicitEulerSchemeModel.Cast _ImplicitEulerScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : ImplicitEulerScheme) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ImplicitEulerScheme.source + ".SetStep") 
+                let source () = Helper.sourceFold (_ImplicitEulerScheme.source + ".SetStep") 
                                                [| _ImplicitEulerScheme.source
                                                ;  _dt.source
                                                |]
@@ -242,7 +242,7 @@ module ImplicitEulerSchemeFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -276,14 +276,14 @@ module ImplicitEulerSchemeFunction =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((ImplicitEulerSchemeModel.Cast _ImplicitEulerScheme.cell).Step
+                let builder (current : ICell) = withMnemonic mnemonic ((ImplicitEulerSchemeModel.Cast _ImplicitEulerScheme.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 
                                                        ) :> ICell
                 let format (o : ImplicitEulerScheme) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ImplicitEulerScheme.source + ".Step") 
+                let source () = Helper.sourceFold (_ImplicitEulerScheme.source + ".Step") 
                                                [| _ImplicitEulerScheme.source
                                                ;  _a.source
                                                ;  _t.source
@@ -296,7 +296,7 @@ module ImplicitEulerSchemeFunction =
                                 ;  _theta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -325,14 +325,14 @@ module ImplicitEulerSchemeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ImplicitEulerScheme>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ImplicitEulerScheme>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ImplicitEulerScheme>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ImplicitEulerScheme>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

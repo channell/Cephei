@@ -61,7 +61,7 @@ module ContinuousFixedLookbackOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.ContinuousFixedLookbackOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ContinuousFixedLookbackOption 
                                                             _minmax.cell 
                                                             _payoff.cell 
                                                             _exercise.cell 
@@ -70,7 +70,7 @@ module ContinuousFixedLookbackOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ContinuousFixedLookbackOption>) l
 
-                let source = Helper.sourceFold "Fun.ContinuousFixedLookbackOption" 
+                let source () = Helper.sourceFold "Fun.ContinuousFixedLookbackOption" 
                                                [| _minmax.source
                                                ;  _payoff.source
                                                ;  _exercise.source
@@ -85,7 +85,7 @@ module ContinuousFixedLookbackOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ContinuousFixedLookbackOption> format
                     ; source = source 
@@ -110,18 +110,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Delta") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -146,18 +146,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".DeltaForward") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,18 +182,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".DividendRho") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -218,18 +218,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Elasticity") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,18 +254,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Gamma") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,18 +290,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".IsExpired") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,18 +326,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".ItmCashProbability") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -362,18 +362,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Rho") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -398,18 +398,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".StrikeSensitivity") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -434,18 +434,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Theta") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -470,18 +470,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".ThetaPerDay") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -506,18 +506,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Vega") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -542,18 +542,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Exercise") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ContinuousFixedLookbackOption> format
                     ; source = source 
@@ -578,18 +578,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Payoff") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ContinuousFixedLookbackOption> format
                     ; source = source 
@@ -614,18 +614,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".CASH") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -650,18 +650,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".ErrorEstimate") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -686,18 +686,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".NPV") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -725,12 +725,12 @@ module ContinuousFixedLookbackOptionFunction =
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Result") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".Result") 
                                                [| _ContinuousFixedLookbackOption.source
                                                ;  _tag.source
                                                |]
@@ -739,7 +739,7 @@ module ContinuousFixedLookbackOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -767,12 +767,12 @@ module ContinuousFixedLookbackOptionFunction =
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : ContinuousFixedLookbackOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".SetPricingEngine") 
                                                [| _ContinuousFixedLookbackOption.source
                                                ;  _e.source
                                                |]
@@ -781,7 +781,7 @@ module ContinuousFixedLookbackOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -806,18 +806,18 @@ module ContinuousFixedLookbackOptionFunction =
             try
 
                 let _ContinuousFixedLookbackOption = Helper.toCell<ContinuousFixedLookbackOption> continuousfixedlookbackoption "ContinuousFixedLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFixedLookbackOptionModel.Cast _ContinuousFixedLookbackOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_ContinuousFixedLookbackOption.source + ".ValuationDate") 
                                                [| _ContinuousFixedLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFixedLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -846,14 +846,14 @@ module ContinuousFixedLookbackOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ContinuousFixedLookbackOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ContinuousFixedLookbackOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ContinuousFixedLookbackOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ContinuousFixedLookbackOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

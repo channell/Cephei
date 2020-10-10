@@ -138,13 +138,13 @@ module <#= NetClass.Name #>Function =
         if (m.Name == NetClass.Name)
         {
 #>
-                let builder () = withMnemonic mnemonic (Fun.<#= NetClass.Name + (version > 0 ? version.ToString() : "") #> 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.<#= NetClass.Name + (version > 0 ? version.ToString() : "") #> 
 <#
         }
         else
         {
 #>
-                let builder () = withMnemonic mnemonic ((_<#= NetClass.Name #>.cell :?> <#= NetClass.Name #>Model).<#= m.CapFSName #>
+                let builder (current : ICell) = withMnemonic mnemonic ((_<#= NetClass.Name #>.cell :?> <#= NetClass.Name #>Model).<#= m.CapFSName #>
 <#
         }
         foreach (var pam in m.Parameters)
@@ -223,13 +223,13 @@ module <#= NetClass.Name #>Function =
         if (m.Name == NetClass.Name)
         {
 #>
-                let source = Helper.sourceFold "Fun.<#= NetClass.Name + (version > 0 ? version.ToString() : "") #>" 
+                let source () = Helper.sourceFold "Fun.<#= NetClass.Name + (version > 0 ? version.ToString() : "") #>" 
 <#
         }
         else
         {
 #>
-                let source = Helper.sourceFold (_<#= NetClass.Name #>.source + ".<#= (Context.Keywords.Contains(m.Name) ? m.Name.ToUpper() : m.CapFSName) #>") 
+                let source () = Helper.sourceFold (_<#= NetClass.Name #>.source + ".<#= (Context.Keywords.Contains(m.Name) ? m.Name.ToUpper() : m.CapFSName) #>") 
 <#
         }
         var delim = "[|";
@@ -315,7 +315,7 @@ module <#= NetClass.Name #>Function =
             subscriber = "subscriberRange";
 #>
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.<#= subscriber #> format
                     ; source = source 
@@ -347,14 +347,14 @@ module <#= NetClass.Name #>Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<<#= NetClass.Name #>>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<<#= NetClass.Name #>>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<<#= NetClass.Name #>>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<<#= NetClass.Name #>>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

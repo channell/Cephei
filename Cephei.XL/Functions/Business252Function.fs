@@ -49,19 +49,19 @@ module Business252Function =
             try
 
                 let _c = Helper.toDefault<Calendar> c "c" null
-                let builder () = withMnemonic mnemonic (Fun.Business252 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Business252 
                                                             _c.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Business252>) l
 
-                let source = Helper.sourceFold "Fun.Business252" 
+                let source () = Helper.sourceFold "Fun.Business252" 
                                                [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Business252> format
                     ; source = source 
@@ -92,13 +92,13 @@ module Business252Function =
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).DayCount
+                let builder (current : ICell) = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Business252.source + ".DayCount") 
+                let source () = Helper.sourceFold (_Business252.source + ".DayCount") 
                                                [| _Business252.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -109,7 +109,7 @@ module Business252Function =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -134,18 +134,18 @@ module Business252Function =
             try
 
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
-                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Business252.source + ".Name") 
+                let source () = Helper.sourceFold (_Business252.source + ".Name") 
                                                [| _Business252.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Business252.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,7 +182,7 @@ module Business252Function =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _d3 = Helper.toCell<Date> d3 "d3" 
                 let _d4 = Helper.toCell<Date> d4 "d4" 
-                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).YearFraction
+                let builder (current : ICell) = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _d3.cell 
@@ -190,7 +190,7 @@ module Business252Function =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Business252.source + ".YearFraction") 
+                let source () = Helper.sourceFold (_Business252.source + ".YearFraction") 
                                                [| _Business252.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -205,7 +205,7 @@ module Business252Function =
                                 ;  _d4.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module Business252Function =
             try
 
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
-                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Business252.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Business252.source + ".DayCounter") 
                                                [| _Business252.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Business252.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Business252> format
                     ; source = source 
@@ -266,18 +266,18 @@ module Business252Function =
             try
 
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
-                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Business252.source + ".Empty") 
+                let source () = Helper.sourceFold (_Business252.source + ".Empty") 
                                                [| _Business252.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Business252.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -305,12 +305,12 @@ module Business252Function =
 
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Business252.source + ".Equals") 
+                let source () = Helper.sourceFold (_Business252.source + ".Equals") 
                                                [| _Business252.source
                                                ;  _o.source
                                                |]
@@ -319,7 +319,7 @@ module Business252Function =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,18 +344,18 @@ module Business252Function =
             try
 
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
-                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Business252.source + ".ToString") 
+                let source () = Helper.sourceFold (_Business252.source + ".ToString") 
                                                [| _Business252.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Business252.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -384,14 +384,14 @@ module Business252Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Business252>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Business252>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Business252>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Business252>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

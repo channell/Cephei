@@ -49,18 +49,18 @@ module StrikedTypePayoffFunction =
             try
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
-                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StrikedTypePayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".Description") 
                                                [| _StrikedTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StrikedTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module StrikedTypePayoffFunction =
             try
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
-                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Strike
+                let builder (current : ICell) = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StrikedTypePayoff.source + ".Strike") 
+                let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".Strike") 
                                                [| _StrikedTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StrikedTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,19 +121,19 @@ module StrikedTypePayoffFunction =
             try
 
                 let _p = Helper.toCell<Payoff> p "p" 
-                let builder () = withMnemonic mnemonic (Fun.StrikedTypePayoff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.StrikedTypePayoff 
                                                             _p.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<StrikedTypePayoff>) l
 
-                let source = Helper.sourceFold "Fun.StrikedTypePayoff" 
+                let source () = Helper.sourceFold "Fun.StrikedTypePayoff" 
                                                [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StrikedTypePayoff> format
                     ; source = source 
@@ -161,13 +161,13 @@ module StrikedTypePayoffFunction =
 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic (Fun.StrikedTypePayoff1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.StrikedTypePayoff1 
                                                             _Type.cell 
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<StrikedTypePayoff>) l
 
-                let source = Helper.sourceFold "Fun.StrikedTypePayoff1" 
+                let source () = Helper.sourceFold "Fun.StrikedTypePayoff1" 
                                                [| _Type.source
                                                ;  _strike.source
                                                |]
@@ -176,7 +176,7 @@ module StrikedTypePayoffFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StrikedTypePayoff> format
                     ; source = source 
@@ -201,18 +201,18 @@ module StrikedTypePayoffFunction =
             try
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
-                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).OptionType
+                let builder (current : ICell) = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StrikedTypePayoff.source + ".OptionType") 
+                let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".OptionType") 
                                                [| _StrikedTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StrikedTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,12 +240,12 @@ module StrikedTypePayoffFunction =
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : StrikedTypePayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StrikedTypePayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".Accept") 
                                                [| _StrikedTypePayoff.source
                                                ;  _v.source
                                                |]
@@ -254,7 +254,7 @@ module StrikedTypePayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -279,18 +279,18 @@ module StrikedTypePayoffFunction =
             try
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
-                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StrikedTypePayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".Name") 
                                                [| _StrikedTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StrikedTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -318,12 +318,12 @@ module StrikedTypePayoffFunction =
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StrikedTypePayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".Value") 
                                                [| _StrikedTypePayoff.source
                                                ;  _price.source
                                                |]
@@ -332,7 +332,7 @@ module StrikedTypePayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -361,14 +361,14 @@ module StrikedTypePayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<StrikedTypePayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<StrikedTypePayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<StrikedTypePayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<StrikedTypePayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

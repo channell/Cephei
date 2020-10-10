@@ -52,12 +52,12 @@ module pair_doubleFunction =
 
                 let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
                 let _other = Helper.toCell<Pair<double,double>> other "other" 
-                let builder () = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).CompareTo
                                                             _other.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_pair_double.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_pair_double.source + ".CompareTo") 
                                                [| _pair_double.source
                                                ;  _other.source
                                                |]
@@ -66,7 +66,7 @@ module pair_doubleFunction =
                                 ;  _other.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,13 +94,13 @@ module pair_doubleFunction =
 
                 let _first = Helper.toCell<double> first "first" 
                 let _second = Helper.toCell<double> second "second" 
-                let builder () = withMnemonic mnemonic (Fun.pair_double 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.pair_double 
                                                             _first.cell 
                                                             _second.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<pair_double>) l
 
-                let source = Helper.sourceFold "Fun.pair_double" 
+                let source () = Helper.sourceFold "Fun.pair_double" 
                                                [| _first.source
                                                ;  _second.source
                                                |]
@@ -109,7 +109,7 @@ module pair_doubleFunction =
                                 ;  _second.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<pair_double> format
                     ; source = source 
@@ -134,18 +134,18 @@ module pair_doubleFunction =
             try
 
                 let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
-                let builder () = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).First
+                let builder (current : ICell) = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).First
                                                        ) :> ICell
                 let format (o : double) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_pair_double.source + ".First") 
+                let source () = Helper.sourceFold (_pair_double.source + ".First") 
                                                [| _pair_double.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _pair_double.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module pair_doubleFunction =
             try
 
                 let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
-                let builder () = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).Second
+                let builder (current : ICell) = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).Second
                                                        ) :> ICell
                 let format (o : double) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_pair_double.source + ".Second") 
+                let source () = Helper.sourceFold (_pair_double.source + ".Second") 
                                                [| _pair_double.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _pair_double.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -212,13 +212,13 @@ module pair_doubleFunction =
                 let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
                 let _first = Helper.toCell<double> first "first" 
                 let _second = Helper.toCell<double> second "second" 
-                let builder () = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).Set
+                let builder (current : ICell) = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).Set
                                                             _first.cell 
                                                             _second.cell 
                                                        ) :> ICell
                 let format (o : pair_double) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_pair_double.source + ".Set") 
+                let source () = Helper.sourceFold (_pair_double.source + ".Set") 
                                                [| _pair_double.source
                                                ;  _first.source
                                                ;  _second.source
@@ -229,7 +229,7 @@ module pair_doubleFunction =
                                 ;  _second.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -258,14 +258,14 @@ module pair_doubleFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<pair_double>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<pair_double>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<pair_double>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<pair_double>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

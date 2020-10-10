@@ -37,3 +37,5 @@ C:\Users\steve\source\repos\Cephei2\Cephei.XLC\obj\Release\Cephei.XL.pdb
 C:\Users\steve\Source\Repos\Cephei2\Cephei.XLC\bin\Release\Serilog.dll
 C:\Users\steve\Source\Repos\Cephei2\Cephei.XLC\bin\Release\FSharp.Core.xml
 C:\Users\steve\Source\Repos\Cephei2\Cephei.XLC\bin\Release\Serilog.xml
+C:\Users\steve\Source\Repos\Cephei2\bin\Release\Cephei.XL.dll
+C:\Users\steve\Source\Repos\Cephei2\bin\Release\Cephei.XL.pdb

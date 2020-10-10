@@ -55,13 +55,13 @@ module DiscreteTrapezoidIntegralFunction =
                 let _DiscreteTrapezoidIntegral = Helper.toCell<DiscreteTrapezoidIntegral> discretetrapezoidintegral "DiscreteTrapezoidIntegral"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _f = Helper.toCell<Vector> f "f" 
-                let builder () = withMnemonic mnemonic ((DiscreteTrapezoidIntegralModel.Cast _DiscreteTrapezoidIntegral.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteTrapezoidIntegralModel.Cast _DiscreteTrapezoidIntegral.cell).Value
                                                             _x.cell 
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteTrapezoidIntegral.source + ".Value") 
+                let source () = Helper.sourceFold (_DiscreteTrapezoidIntegral.source + ".Value") 
                                                [| _DiscreteTrapezoidIntegral.source
                                                ;  _x.source
                                                ;  _f.source
@@ -72,7 +72,7 @@ module DiscreteTrapezoidIntegralFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -101,14 +101,14 @@ module DiscreteTrapezoidIntegralFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscreteTrapezoidIntegral>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscreteTrapezoidIntegral>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscreteTrapezoidIntegral>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscreteTrapezoidIntegral>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

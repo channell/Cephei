@@ -52,13 +52,13 @@ module LmFixedVolatilityModelFunction =
 
                 let _volatilities = Helper.toCell<Vector> volatilities "volatilities" 
                 let _startTimes = Helper.toCell<Generic.List<double>> startTimes "startTimes" 
-                let builder () = withMnemonic mnemonic (Fun.LmFixedVolatilityModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LmFixedVolatilityModel 
                                                             _volatilities.cell 
                                                             _startTimes.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmFixedVolatilityModel>) l
 
-                let source = Helper.sourceFold "Fun.LmFixedVolatilityModel" 
+                let source () = Helper.sourceFold "Fun.LmFixedVolatilityModel" 
                                                [| _volatilities.source
                                                ;  _startTimes.source
                                                |]
@@ -67,7 +67,7 @@ module LmFixedVolatilityModelFunction =
                                 ;  _startTimes.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmFixedVolatilityModel> format
                     ; source = source 
@@ -101,14 +101,14 @@ module LmFixedVolatilityModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Volatility
                                                             _i.cell 
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Volatility") 
+                let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Volatility") 
                                                [| _LmFixedVolatilityModel.source
                                                ;  _i.source
                                                ;  _t.source
@@ -121,7 +121,7 @@ module LmFixedVolatilityModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -152,13 +152,13 @@ module LmFixedVolatilityModelFunction =
                 let _LmFixedVolatilityModel = Helper.toCell<LmFixedVolatilityModel> lmfixedvolatilitymodel "LmFixedVolatilityModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Volatility1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Volatility1") 
                                                [| _LmFixedVolatilityModel.source
                                                ;  _t.source
                                                ;  _x.source
@@ -169,7 +169,7 @@ module LmFixedVolatilityModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmFixedVolatilityModel> format
                     ; source = source 
@@ -206,7 +206,7 @@ module LmFixedVolatilityModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).IntegratedVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 
                                                             _u.cell 
@@ -214,7 +214,7 @@ module LmFixedVolatilityModelFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmFixedVolatilityModel.source + ".IntegratedVariance") 
+                let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".IntegratedVariance") 
                                                [| _LmFixedVolatilityModel.source
                                                ;  _i.source
                                                ;  _j.source
@@ -229,7 +229,7 @@ module LmFixedVolatilityModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,18 +254,18 @@ module LmFixedVolatilityModelFunction =
             try
 
                 let _LmFixedVolatilityModel = Helper.toCell<LmFixedVolatilityModel> lmfixedvolatilitymodel "LmFixedVolatilityModel"  
-                let builder () = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Parameters") 
+                let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Parameters") 
                                                [| _LmFixedVolatilityModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmFixedVolatilityModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -293,12 +293,12 @@ module LmFixedVolatilityModelFunction =
 
                 let _LmFixedVolatilityModel = Helper.toCell<LmFixedVolatilityModel> lmfixedvolatilitymodel "LmFixedVolatilityModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder () = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmFixedVolatilityModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LmFixedVolatilityModel.source + ".SetParams") 
+                let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".SetParams") 
                                                [| _LmFixedVolatilityModel.source
                                                ;  _arguments.source
                                                |]
@@ -307,7 +307,7 @@ module LmFixedVolatilityModelFunction =
                                 ;  _arguments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -332,18 +332,18 @@ module LmFixedVolatilityModelFunction =
             try
 
                 let _LmFixedVolatilityModel = Helper.toCell<LmFixedVolatilityModel> lmfixedvolatilitymodel "LmFixedVolatilityModel"  
-                let builder () = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((LmFixedVolatilityModelModel.Cast _LmFixedVolatilityModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Size") 
+                let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Size") 
                                                [| _LmFixedVolatilityModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmFixedVolatilityModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -372,14 +372,14 @@ module LmFixedVolatilityModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LmFixedVolatilityModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LmFixedVolatilityModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LmFixedVolatilityModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LmFixedVolatilityModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

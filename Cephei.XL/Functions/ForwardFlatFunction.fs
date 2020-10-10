@@ -49,18 +49,18 @@ module ForwardFlatFunction =
             try
 
                 let _ForwardFlat = Helper.toCell<ForwardFlat> forwardflat "ForwardFlat"  
-                let builder () = withMnemonic mnemonic ((ForwardFlatModel.Cast _ForwardFlat.cell).Global
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardFlatModel.Cast _ForwardFlat.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardFlat.source + ".GLOBAL") 
+                let source () = Helper.sourceFold (_ForwardFlat.source + ".GLOBAL") 
                                                [| _ForwardFlat.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardFlat.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,14 +94,14 @@ module ForwardFlatFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((ForwardFlatModel.Cast _ForwardFlat.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardFlatModel.Cast _ForwardFlat.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_ForwardFlat.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_ForwardFlat.source + ".Interpolate") 
                                                [| _ForwardFlat.source
                                                ;  _xBegin.source
                                                ;  _size.source
@@ -114,7 +114,7 @@ module ForwardFlatFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ForwardFlat> format
                     ; source = source 
@@ -139,18 +139,18 @@ module ForwardFlatFunction =
             try
 
                 let _ForwardFlat = Helper.toCell<ForwardFlat> forwardflat "ForwardFlat"  
-                let builder () = withMnemonic mnemonic ((ForwardFlatModel.Cast _ForwardFlat.cell).RequiredPoints
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardFlatModel.Cast _ForwardFlat.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardFlat.source + ".RequiredPoints") 
+                let source () = Helper.sourceFold (_ForwardFlat.source + ".RequiredPoints") 
                                                [| _ForwardFlat.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardFlat.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -179,14 +179,14 @@ module ForwardFlatFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardFlat>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ForwardFlat>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ForwardFlat>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ForwardFlat>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

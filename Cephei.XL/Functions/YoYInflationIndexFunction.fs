@@ -52,12 +52,12 @@ module YoYInflationIndexFunction =
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _h = Helper.toHandle<YoYInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".Clone") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Clone") 
                                                [| _YoYInflationIndex.source
                                                ;  _h.source
                                                |]
@@ -66,7 +66,7 @@ module YoYInflationIndexFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationIndex> format
                     ; source = source 
@@ -97,13 +97,13 @@ module YoYInflationIndexFunction =
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toDefault<bool> forecastTodaysFixing "forecastTodaysFixing" false
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".Fixing") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Fixing") 
                                                [| _YoYInflationIndex.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -114,7 +114,7 @@ module YoYInflationIndexFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -139,18 +139,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Ratio
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Ratio
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".Ratio") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Ratio") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -199,7 +199,7 @@ module YoYInflationIndexFunction =
                 let _availabilityLag = Helper.toCell<Period> availabilityLag "availabilityLag" 
                 let _currency = Helper.toCell<Currency> currency "currency" 
                 let _yoyInflation = Helper.toHandle<YoYInflationTermStructure> yoyInflation "yoyInflation" 
-                let builder () = withMnemonic mnemonic (Fun.YoYInflationIndex 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.YoYInflationIndex 
                                                             _familyName.cell 
                                                             _region.cell 
                                                             _revised.cell 
@@ -212,7 +212,7 @@ module YoYInflationIndexFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
-                let source = Helper.sourceFold "Fun.YoYInflationIndex" 
+                let source () = Helper.sourceFold "Fun.YoYInflationIndex" 
                                                [| _familyName.source
                                                ;  _region.source
                                                ;  _revised.source
@@ -235,7 +235,7 @@ module YoYInflationIndexFunction =
                                 ;  _yoyInflation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationIndex> format
                     ; source = source 
@@ -260,18 +260,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).YoyInflationTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).YoyInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".YoyInflationTermStructure") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".YoyInflationTermStructure") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationIndex> format
                     ; source = source 
@@ -305,14 +305,14 @@ module YoYInflationIndexFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".AddFixing") 
                                                [| _YoYInflationIndex.source
                                                ;  _fixingDate.source
                                                ;  _fixing.source
@@ -325,7 +325,7 @@ module YoYInflationIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -351,18 +351,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AvailabilityLag
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".AvailabilityLag") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".AvailabilityLag") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationIndex> format
                     ; source = source 
@@ -387,18 +387,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".Currency") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Currency") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationIndex> format
                     ; source = source 
@@ -423,18 +423,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".FamilyName") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -459,18 +459,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".FixingCalendar") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationIndex> format
                     ; source = source 
@@ -495,18 +495,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".Frequency") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Frequency") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -531,18 +531,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Interpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".Interpolated") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Interpolated") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -570,12 +570,12 @@ module YoYInflationIndexFunction =
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".IsValidFixingDate") 
                                                [| _YoYInflationIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -584,7 +584,7 @@ module YoYInflationIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -609,18 +609,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".Name") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Name") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -645,18 +645,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Region
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".Region") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Region") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YoYInflationIndex> format
                     ; source = source 
@@ -681,18 +681,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Revised
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".Revised") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Revised") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -717,18 +717,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Update
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".Update") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Update") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -762,14 +762,14 @@ module YoYInflationIndexFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".AddFixings") 
                                                [| _YoYInflationIndex.source
                                                ;  _d.source
                                                ;  _v.source
@@ -782,7 +782,7 @@ module YoYInflationIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -813,13 +813,13 @@ module YoYInflationIndexFunction =
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".AddFixings1") 
                                                [| _YoYInflationIndex.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -830,7 +830,7 @@ module YoYInflationIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -855,18 +855,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".AllowsNativeFixings") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -891,18 +891,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".ClearFixings") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -930,12 +930,12 @@ module YoYInflationIndexFunction =
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".RegisterWith") 
                                                [| _YoYInflationIndex.source
                                                ;  _handler.source
                                                |]
@@ -944,7 +944,7 @@ module YoYInflationIndexFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -969,18 +969,18 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".TimeSeries") 
                                                [| _YoYInflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1008,12 +1008,12 @@ module YoYInflationIndexFunction =
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YoYInflationIndex.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_YoYInflationIndex.source + ".UnregisterWith") 
                                                [| _YoYInflationIndex.source
                                                ;  _handler.source
                                                |]
@@ -1022,7 +1022,7 @@ module YoYInflationIndexFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1051,14 +1051,14 @@ module YoYInflationIndexFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<YoYInflationIndex>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<YoYInflationIndex>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<YoYInflationIndex>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<YoYInflationIndex>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

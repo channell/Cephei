@@ -52,13 +52,13 @@ module LatticeShortRateModelEngineFunction =
 
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
-                let builder () = withMnemonic mnemonic (Fun.LatticeShortRateModelEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LatticeShortRateModelEngine 
                                                             _model.cell 
                                                             _timeSteps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LatticeShortRateModelEngine>) l
 
-                let source = Helper.sourceFold "Fun.LatticeShortRateModelEngine" 
+                let source () = Helper.sourceFold "Fun.LatticeShortRateModelEngine" 
                                                [| _model.source
                                                ;  _timeSteps.source
                                                |]
@@ -67,7 +67,7 @@ module LatticeShortRateModelEngineFunction =
                                 ;  _timeSteps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LatticeShortRateModelEngine> format
                     ; source = source 
@@ -95,13 +95,13 @@ module LatticeShortRateModelEngineFunction =
 
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
-                let builder () = withMnemonic mnemonic (Fun.LatticeShortRateModelEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LatticeShortRateModelEngine1 
                                                             _model.cell 
                                                             _timeGrid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LatticeShortRateModelEngine>) l
 
-                let source = Helper.sourceFold "Fun.LatticeShortRateModelEngine1" 
+                let source () = Helper.sourceFold "Fun.LatticeShortRateModelEngine1" 
                                                [| _model.source
                                                ;  _timeGrid.source
                                                |]
@@ -110,7 +110,7 @@ module LatticeShortRateModelEngineFunction =
                                 ;  _timeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LatticeShortRateModelEngine> format
                     ; source = source 
@@ -135,18 +135,18 @@ module LatticeShortRateModelEngineFunction =
             try
 
                 let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
-                let builder () = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).Update
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".Update") 
                                                [| _LatticeShortRateModelEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LatticeShortRateModelEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -174,12 +174,12 @@ module LatticeShortRateModelEngineFunction =
 
                 let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
-                let builder () = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".SetModel") 
                                                [| _LatticeShortRateModelEngine.source
                                                ;  _model.source
                                                |]
@@ -188,7 +188,7 @@ module LatticeShortRateModelEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -217,12 +217,12 @@ module LatticeShortRateModelEngineFunction =
 
                 let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".RegisterWith") 
                                                [| _LatticeShortRateModelEngine.source
                                                ;  _handler.source
                                                |]
@@ -231,7 +231,7 @@ module LatticeShortRateModelEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -256,18 +256,18 @@ module LatticeShortRateModelEngineFunction =
             try
 
                 let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
-                let builder () = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".Reset") 
                                                [| _LatticeShortRateModelEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LatticeShortRateModelEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -295,12 +295,12 @@ module LatticeShortRateModelEngineFunction =
 
                 let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".UnregisterWith") 
                                                [| _LatticeShortRateModelEngine.source
                                                ;  _handler.source
                                                |]
@@ -309,7 +309,7 @@ module LatticeShortRateModelEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,14 +338,14 @@ module LatticeShortRateModelEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LatticeShortRateModelEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LatticeShortRateModelEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LatticeShortRateModelEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LatticeShortRateModelEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -61,7 +61,7 @@ module EventSetSimulationFunction =
                 let _eventsEnd = Helper.toCell<Date> eventsEnd "eventsEnd" 
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
-                let builder () = withMnemonic mnemonic (Fun.EventSetSimulation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EventSetSimulation 
                                                             _events.cell 
                                                             _eventsStart.cell 
                                                             _eventsEnd.cell 
@@ -70,7 +70,7 @@ module EventSetSimulationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EventSetSimulation>) l
 
-                let source = Helper.sourceFold "Fun.EventSetSimulation" 
+                let source () = Helper.sourceFold "Fun.EventSetSimulation" 
                                                [| _events.source
                                                ;  _eventsStart.source
                                                ;  _eventsEnd.source
@@ -85,7 +85,7 @@ module EventSetSimulationFunction =
                                 ;  _End.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EventSetSimulation> format
                     ; source = source 
@@ -113,12 +113,12 @@ module EventSetSimulationFunction =
 
                 let _EventSetSimulation = Helper.toCell<EventSetSimulation> eventsetsimulation "EventSetSimulation"  
                 let _path = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> path "path" 
-                let builder () = withMnemonic mnemonic ((EventSetSimulationModel.Cast _EventSetSimulation.cell).NextPath
+                let builder (current : ICell) = withMnemonic mnemonic ((EventSetSimulationModel.Cast _EventSetSimulation.cell).NextPath
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EventSetSimulation.source + ".NextPath") 
+                let source () = Helper.sourceFold (_EventSetSimulation.source + ".NextPath") 
                                                [| _EventSetSimulation.source
                                                ;  _path.source
                                                |]
@@ -127,7 +127,7 @@ module EventSetSimulationFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -156,14 +156,14 @@ module EventSetSimulationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EventSetSimulation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EventSetSimulation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EventSetSimulation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EventSetSimulation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

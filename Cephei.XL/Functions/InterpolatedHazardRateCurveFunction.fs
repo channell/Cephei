@@ -49,18 +49,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Clone") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Clone") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Data
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Data") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Data") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -121,18 +121,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Data_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Data_") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Data_") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -157,18 +157,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Dates
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Dates") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Dates") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -193,18 +193,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Dates_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Dates_") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Dates_") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -229,18 +229,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Discounts
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Discounts
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Discounts") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Discounts") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -265,18 +265,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).HazardRates
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).HazardRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".HazardRates") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".HazardRates") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -313,7 +313,7 @@ module InterpolatedHazardRateCurveFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedHazardRateCurve 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedHazardRateCurve 
                                                             _dates.cell 
                                                             _hazardRates.cell 
                                                             _dayCounter.cell 
@@ -322,7 +322,7 @@ module InterpolatedHazardRateCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedHazardRateCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedHazardRateCurve" 
+                let source () = Helper.sourceFold "Fun.InterpolatedHazardRateCurve" 
                                                [| _dates.source
                                                ;  _hazardRates.source
                                                ;  _dayCounter.source
@@ -337,7 +337,7 @@ module InterpolatedHazardRateCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedHazardRateCurve> format
                     ; source = source 
@@ -371,7 +371,7 @@ module InterpolatedHazardRateCurveFunction =
                 let _hazardRates = Helper.toCell<Generic.List<double>> hazardRates "hazardRates" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedHazardRateCurve1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedHazardRateCurve1 
                                                             _dates.cell 
                                                             _hazardRates.cell 
                                                             _dayCounter.cell 
@@ -379,7 +379,7 @@ module InterpolatedHazardRateCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedHazardRateCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedHazardRateCurve1" 
+                let source () = Helper.sourceFold "Fun.InterpolatedHazardRateCurve1" 
                                                [| _dates.source
                                                ;  _hazardRates.source
                                                ;  _dayCounter.source
@@ -392,7 +392,7 @@ module InterpolatedHazardRateCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedHazardRateCurve> format
                     ; source = source 
@@ -435,7 +435,7 @@ module InterpolatedHazardRateCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedHazardRateCurve2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedHazardRateCurve2 
                                                             _dates.cell 
                                                             _hazardRates.cell 
                                                             _dayCounter.cell 
@@ -446,7 +446,7 @@ module InterpolatedHazardRateCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedHazardRateCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedHazardRateCurve2" 
+                let source () = Helper.sourceFold "Fun.InterpolatedHazardRateCurve2" 
                                                [| _dates.source
                                                ;  _hazardRates.source
                                                ;  _dayCounter.source
@@ -465,7 +465,7 @@ module InterpolatedHazardRateCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedHazardRateCurve> format
                     ; source = source 
@@ -490,18 +490,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Interpolation_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Interpolation_") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Interpolation_") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedHazardRateCurve> format
                     ; source = source 
@@ -526,18 +526,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Interpolator_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Interpolator_") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Interpolator_") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedHazardRateCurve> format
                     ; source = source 
@@ -562,18 +562,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".MaxDate") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -598,18 +598,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).MaxDate_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".MaxDate_") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".MaxDate_") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -634,18 +634,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Nodes
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Nodes") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Nodes") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -670,18 +670,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).SetupInterpolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedHazardRateCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".SetupInterpolation") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".SetupInterpolation") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -706,18 +706,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Times
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Times") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Times") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -742,18 +742,18 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Times_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Times_") 
+                let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Times_") 
                                                [| _InterpolatedHazardRateCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -782,14 +782,14 @@ module InterpolatedHazardRateCurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatedHazardRateCurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InterpolatedHazardRateCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InterpolatedHazardRateCurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InterpolatedHazardRateCurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

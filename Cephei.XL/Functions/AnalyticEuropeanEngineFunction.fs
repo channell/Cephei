@@ -49,19 +49,19 @@ module AnalyticEuropeanEngineFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticEuropeanEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticEuropeanEngine 
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticEuropeanEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticEuropeanEngine" 
+                let source () = Helper.sourceFold "Fun.AnalyticEuropeanEngine" 
                                                [| _Process.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticEuropeanEngine> format
                     ; source = source 
@@ -94,14 +94,14 @@ module AnalyticEuropeanEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticEuropeanEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticEuropeanEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticEuropeanEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticEuropeanEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

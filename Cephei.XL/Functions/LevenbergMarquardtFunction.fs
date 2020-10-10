@@ -62,7 +62,7 @@ module LevenbergMarquardtFunction =
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let _iflag = Helper.toCell<int> iflag "iflag" 
-                let builder () = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Fcn
+                let builder (current : ICell) = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Fcn
                                                             _m.cell 
                                                             _n.cell 
                                                             _x.cell 
@@ -70,7 +70,7 @@ module LevenbergMarquardtFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LevenbergMarquardt.source + ".Fcn") 
+                let source () = Helper.sourceFold (_LevenbergMarquardt.source + ".Fcn") 
                                                [| _LevenbergMarquardt.source
                                                ;  _m.source
                                                ;  _n.source
@@ -85,7 +85,7 @@ module LevenbergMarquardtFunction =
                                 ;  _iflag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LevenbergMarquardt> format
                     ; source = source 
@@ -110,18 +110,18 @@ module LevenbergMarquardtFunction =
             try
 
                 let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
-                let builder () = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).GetInfo
+                let builder (current : ICell) = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).GetInfo
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LevenbergMarquardt.source + ".GetInfo") 
+                let source () = Helper.sourceFold (_LevenbergMarquardt.source + ".GetInfo") 
                                                [| _LevenbergMarquardt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LevenbergMarquardt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -158,7 +158,7 @@ module LevenbergMarquardtFunction =
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let _iflag = Helper.toCell<int> iflag "iflag" 
-                let builder () = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).JacFcn
+                let builder (current : ICell) = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).JacFcn
                                                             _m.cell 
                                                             _n.cell 
                                                             _x.cell 
@@ -166,7 +166,7 @@ module LevenbergMarquardtFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LevenbergMarquardt.source + ".JacFcn") 
+                let source () = Helper.sourceFold (_LevenbergMarquardt.source + ".JacFcn") 
                                                [| _LevenbergMarquardt.source
                                                ;  _m.source
                                                ;  _n.source
@@ -181,7 +181,7 @@ module LevenbergMarquardtFunction =
                                 ;  _iflag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LevenbergMarquardt> format
                     ; source = source 
@@ -203,16 +203,16 @@ module LevenbergMarquardtFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.LevenbergMarquardt ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LevenbergMarquardt ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LevenbergMarquardt>) l
 
-                let source = Helper.sourceFold "Fun.LevenbergMarquardt" 
+                let source () = Helper.sourceFold "Fun.LevenbergMarquardt" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LevenbergMarquardt> format
                     ; source = source 
@@ -246,7 +246,7 @@ module LevenbergMarquardtFunction =
                 let _xtol = Helper.toCell<double> xtol "xtol" 
                 let _gtol = Helper.toCell<double> gtol "gtol" 
                 let _useCostFunctionsJacobian = Helper.toDefault<bool> useCostFunctionsJacobian "useCostFunctionsJacobian" false
-                let builder () = withMnemonic mnemonic (Fun.LevenbergMarquardt1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LevenbergMarquardt1 
                                                             _epsfcn.cell 
                                                             _xtol.cell 
                                                             _gtol.cell 
@@ -254,7 +254,7 @@ module LevenbergMarquardtFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LevenbergMarquardt>) l
 
-                let source = Helper.sourceFold "Fun.LevenbergMarquardt1" 
+                let source () = Helper.sourceFold "Fun.LevenbergMarquardt1" 
                                                [| _epsfcn.source
                                                ;  _xtol.source
                                                ;  _gtol.source
@@ -267,7 +267,7 @@ module LevenbergMarquardtFunction =
                                 ;  _useCostFunctionsJacobian.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LevenbergMarquardt> format
                     ; source = source 
@@ -298,13 +298,13 @@ module LevenbergMarquardtFunction =
                 let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Minimize
+                let builder (current : ICell) = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LevenbergMarquardt.source + ".Minimize") 
+                let source () = Helper.sourceFold (_LevenbergMarquardt.source + ".Minimize") 
                                                [| _LevenbergMarquardt.source
                                                ;  _P.source
                                                ;  _endCriteria.source
@@ -315,7 +315,7 @@ module LevenbergMarquardtFunction =
                                 ;  _endCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,14 +344,14 @@ module LevenbergMarquardtFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LevenbergMarquardt>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LevenbergMarquardt>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LevenbergMarquardt>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LevenbergMarquardt>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

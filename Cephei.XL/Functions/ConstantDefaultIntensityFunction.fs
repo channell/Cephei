@@ -52,13 +52,13 @@ module ConstantDefaultIntensityFunction =
 
                 let _constant = Helper.toCell<double> constant "constant" 
                 let _recovery = Helper.toCell<double> recovery "recovery" 
-                let builder () = withMnemonic mnemonic (Fun.ConstantDefaultIntensity 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConstantDefaultIntensity 
                                                             _constant.cell 
                                                             _recovery.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConstantDefaultIntensity>) l
 
-                let source = Helper.sourceFold "Fun.ConstantDefaultIntensity" 
+                let source () = Helper.sourceFold "Fun.ConstantDefaultIntensity" 
                                                [| _constant.source
                                                ;  _recovery.source
                                                |]
@@ -67,7 +67,7 @@ module ConstantDefaultIntensityFunction =
                                 ;  _recovery.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantDefaultIntensity> format
                     ; source = source 
@@ -92,19 +92,19 @@ module ConstantDefaultIntensityFunction =
             try
 
                 let _constant = Helper.toCell<double> constant "constant" 
-                let builder () = withMnemonic mnemonic (Fun.ConstantDefaultIntensity1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConstantDefaultIntensity1 
                                                             _constant.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConstantDefaultIntensity>) l
 
-                let source = Helper.sourceFold "Fun.ConstantDefaultIntensity1" 
+                let source () = Helper.sourceFold "Fun.ConstantDefaultIntensity1" 
                                                [| _constant.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _constant.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantDefaultIntensity> format
                     ; source = source 
@@ -135,13 +135,13 @@ module ConstantDefaultIntensityFunction =
                 let _ConstantDefaultIntensity = Helper.toCell<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((ConstantDefaultIntensityModel.Cast _ConstantDefaultIntensity.cell).DefaultRecovery
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantDefaultIntensityModel.Cast _ConstantDefaultIntensity.cell).DefaultRecovery
                                                             _t.cell 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantDefaultIntensity.source + ".DefaultRecovery") 
+                let source () = Helper.sourceFold (_ConstantDefaultIntensity.source + ".DefaultRecovery") 
                                                [| _ConstantDefaultIntensity.source
                                                ;  _t.source
                                                ;  _s.source
@@ -152,7 +152,7 @@ module ConstantDefaultIntensityFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -183,13 +183,13 @@ module ConstantDefaultIntensityFunction =
                 let _ConstantDefaultIntensity = Helper.toCell<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((ConstantDefaultIntensityModel.Cast _ConstantDefaultIntensity.cell).HazardRate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantDefaultIntensityModel.Cast _ConstantDefaultIntensity.cell).HazardRate
                                                             _t.cell 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantDefaultIntensity.source + ".HazardRate") 
+                let source () = Helper.sourceFold (_ConstantDefaultIntensity.source + ".HazardRate") 
                                                [| _ConstantDefaultIntensity.source
                                                ;  _t.source
                                                ;  _s.source
@@ -200,7 +200,7 @@ module ConstantDefaultIntensityFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,14 +229,14 @@ module ConstantDefaultIntensityFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConstantDefaultIntensity>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ConstantDefaultIntensity>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ConstantDefaultIntensity>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ConstantDefaultIntensity>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

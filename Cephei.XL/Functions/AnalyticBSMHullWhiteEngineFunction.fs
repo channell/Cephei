@@ -55,14 +55,14 @@ module AnalyticBSMHullWhiteEngineFunction =
                 let _equityShortRateCorrelation = Helper.toCell<double> equityShortRateCorrelation "equityShortRateCorrelation" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _model = Helper.toCell<HullWhite> model "model" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticBSMHullWhiteEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticBSMHullWhiteEngine 
                                                             _equityShortRateCorrelation.cell 
                                                             _Process.cell 
                                                             _model.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticBSMHullWhiteEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticBSMHullWhiteEngine" 
+                let source () = Helper.sourceFold "Fun.AnalyticBSMHullWhiteEngine" 
                                                [| _equityShortRateCorrelation.source
                                                ;  _Process.source
                                                ;  _model.source
@@ -73,7 +73,7 @@ module AnalyticBSMHullWhiteEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticBSMHullWhiteEngine> format
                     ; source = source 
@@ -101,12 +101,12 @@ module AnalyticBSMHullWhiteEngineFunction =
 
                 let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
                 let _model = Helper.toHandle<HullWhite> model "model" 
-                let builder () = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".SetModel") 
                                                [| _AnalyticBSMHullWhiteEngine.source
                                                ;  _model.source
                                                |]
@@ -115,7 +115,7 @@ module AnalyticBSMHullWhiteEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -143,12 +143,12 @@ module AnalyticBSMHullWhiteEngineFunction =
 
                 let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".RegisterWith") 
                                                [| _AnalyticBSMHullWhiteEngine.source
                                                ;  _handler.source
                                                |]
@@ -157,7 +157,7 @@ module AnalyticBSMHullWhiteEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,18 +182,18 @@ module AnalyticBSMHullWhiteEngineFunction =
             try
 
                 let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
-                let builder () = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".Reset") 
                                                [| _AnalyticBSMHullWhiteEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticBSMHullWhiteEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -221,12 +221,12 @@ module AnalyticBSMHullWhiteEngineFunction =
 
                 let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".UnregisterWith") 
                                                [| _AnalyticBSMHullWhiteEngine.source
                                                ;  _handler.source
                                                |]
@@ -235,7 +235,7 @@ module AnalyticBSMHullWhiteEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,18 +260,18 @@ module AnalyticBSMHullWhiteEngineFunction =
             try
 
                 let _AnalyticBSMHullWhiteEngine = Helper.toCell<AnalyticBSMHullWhiteEngine> analyticbsmhullwhiteengine "AnalyticBSMHullWhiteEngine"  
-                let builder () = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticBSMHullWhiteEngineModel.Cast _AnalyticBSMHullWhiteEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".Update") 
                                                [| _AnalyticBSMHullWhiteEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticBSMHullWhiteEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -300,14 +300,14 @@ module AnalyticBSMHullWhiteEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticBSMHullWhiteEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticBSMHullWhiteEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticBSMHullWhiteEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticBSMHullWhiteEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

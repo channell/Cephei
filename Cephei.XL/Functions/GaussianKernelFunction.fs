@@ -52,12 +52,12 @@ module GaussianKernelFunction =
 
                 let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussianKernelModel.Cast _GaussianKernel.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussianKernelModel.Cast _GaussianKernel.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussianKernel.source + ".Derivative") 
+                let source () = Helper.sourceFold (_GaussianKernel.source + ".Derivative") 
                                                [| _GaussianKernel.source
                                                ;  _x.source
                                                |]
@@ -66,7 +66,7 @@ module GaussianKernelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,13 +94,13 @@ module GaussianKernelFunction =
 
                 let _average = Helper.toCell<double> average "average" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder () = withMnemonic mnemonic (Fun.GaussianKernel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussianKernel 
                                                             _average.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussianKernel>) l
 
-                let source = Helper.sourceFold "Fun.GaussianKernel" 
+                let source () = Helper.sourceFold "Fun.GaussianKernel" 
                                                [| _average.source
                                                ;  _sigma.source
                                                |]
@@ -109,7 +109,7 @@ module GaussianKernelFunction =
                                 ;  _sigma.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussianKernel> format
                     ; source = source 
@@ -137,12 +137,12 @@ module GaussianKernelFunction =
 
                 let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussianKernelModel.Cast _GaussianKernel.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussianKernelModel.Cast _GaussianKernel.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussianKernel.source + ".Primitive") 
+                let source () = Helper.sourceFold (_GaussianKernel.source + ".Primitive") 
                                                [| _GaussianKernel.source
                                                ;  _x.source
                                                |]
@@ -151,7 +151,7 @@ module GaussianKernelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -179,12 +179,12 @@ module GaussianKernelFunction =
 
                 let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussianKernelModel.Cast _GaussianKernel.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussianKernelModel.Cast _GaussianKernel.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussianKernel.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussianKernel.source + ".Value") 
                                                [| _GaussianKernel.source
                                                ;  _x.source
                                                |]
@@ -193,7 +193,7 @@ module GaussianKernelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -222,14 +222,14 @@ module GaussianKernelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussianKernel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussianKernel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussianKernel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussianKernel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

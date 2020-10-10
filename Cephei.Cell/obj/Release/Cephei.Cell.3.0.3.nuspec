@@ -24,9 +24,9 @@ Cells can be grouped into a Model to encapsulate the implementation of the model
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\bin\Release\netstandard2.0\Cephei.Cell.dll" target="lib\netstandard2.0\Cephei.Cell.dll" />
-    <file src="C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\bin\Release\netstandard2.0\Cephei.Cell.xml" target="lib\netstandard2.0\Cephei.Cell.xml" />
-    <file src="C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\Licence.txt" target="Licence.txt" />
-    <file src="C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\Logo.png" target="Logo.png" />
+    <file src="C:\Users\steve\source\repos\Cephei2\Cephei.Cell\bin\Release\netstandard2.0\Cephei.Cell.dll" target="lib\netstandard2.0\Cephei.Cell.dll" />
+    <file src="C:\Users\steve\source\repos\Cephei2\Cephei.Cell\bin\Release\netstandard2.0\Cephei.Cell.xml" target="lib\netstandard2.0\Cephei.Cell.xml" />
+    <file src="C:\Users\steve\source\repos\Cephei2\Cephei.Cell\Licence.txt" target="Licence.txt" />
+    <file src="C:\Users\steve\source\repos\Cephei2\Cephei.Cell\Logo.png" target="Logo.png" />
   </files>
 </package>

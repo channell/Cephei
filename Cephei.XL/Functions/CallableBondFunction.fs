@@ -49,18 +49,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Callability
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Callability
                                                        ) :> ICell
                 let format (o : CallabilitySchedule) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".Callability") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".Callability") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,7 +103,7 @@ module CallableBondFunction =
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CleanPriceOAS
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CleanPriceOAS
                                                             _oas.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -113,7 +113,7 @@ module CallableBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".CleanPriceOAS") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".CleanPriceOAS") 
                                                [| _CallableBond.source
                                                ;  _oas.source
                                                ;  _engineTS.source
@@ -132,7 +132,7 @@ module CallableBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -175,7 +175,7 @@ module CallableBondFunction =
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _bump = Helper.toDefault<double> bump "bump" 2e-4
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).EffectiveConvexity
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).EffectiveConvexity
                                                             _oas.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -185,7 +185,7 @@ module CallableBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".EffectiveConvexity") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".EffectiveConvexity") 
                                                [| _CallableBond.source
                                                ;  _oas.source
                                                ;  _engineTS.source
@@ -204,7 +204,7 @@ module CallableBondFunction =
                                 ;  _bump.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -247,7 +247,7 @@ module CallableBondFunction =
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _bump = Helper.toDefault<double> bump "bump" 2e-4
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).EffectiveDuration
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).EffectiveDuration
                                                             _oas.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -257,7 +257,7 @@ module CallableBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".EffectiveDuration") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".EffectiveDuration") 
                                                [| _CallableBond.source
                                                ;  _oas.source
                                                ;  _engineTS.source
@@ -276,7 +276,7 @@ module CallableBondFunction =
                                 ;  _bump.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -319,7 +319,7 @@ module CallableBondFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).ImpliedVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _accuracy.cell 
@@ -329,7 +329,7 @@ module CallableBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".ImpliedVolatility") 
                                                [| _CallableBond.source
                                                ;  _targetValue.source
                                                ;  _discountCurve.source
@@ -348,7 +348,7 @@ module CallableBondFunction =
                                 ;  _maxVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -400,7 +400,7 @@ module CallableBondFunction =
                 let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-10
                 let _maxIterations = Helper.toDefault<int> maxIterations "maxIterations" 100
                 let _guess = Helper.toDefault<double> guess "guess" 0.0
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).OAS
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).OAS
                                                             _cleanPrice.cell 
                                                             _engineTS.cell 
                                                             _dayCounter.cell 
@@ -413,7 +413,7 @@ module CallableBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".OAS") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".OAS") 
                                                [| _CallableBond.source
                                                ;  _cleanPrice.source
                                                ;  _engineTS.source
@@ -438,7 +438,7 @@ module CallableBondFunction =
                                 ;  _guess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -466,12 +466,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".AccruedAmount") 
                                                [| _CallableBond.source
                                                ;  _settlement.source
                                                |]
@@ -480,7 +480,7 @@ module CallableBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -505,18 +505,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_CallableBond.source + ".Calendar") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".Calendar") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CallableBond> format
                     ; source = source 
@@ -541,18 +541,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Cashflows
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CallableBond.source + ".Cashflows") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".Cashflows") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -577,18 +577,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CleanPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".CleanPrice") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".CleanPrice") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -628,7 +628,7 @@ module CallableBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CleanPrice1
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -637,7 +637,7 @@ module CallableBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".CleanPrice") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".CleanPrice") 
                                                [| _CallableBond.source
                                                ;  _Yield.source
                                                ;  _dc.source
@@ -654,7 +654,7 @@ module CallableBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -694,7 +694,7 @@ module CallableBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).DirtyPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).DirtyPrice
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -703,7 +703,7 @@ module CallableBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".DirtyPrice") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".DirtyPrice") 
                                                [| _CallableBond.source
                                                ;  _Yield.source
                                                ;  _dc.source
@@ -720,7 +720,7 @@ module CallableBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -745,18 +745,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).DirtyPrice1
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).DirtyPrice1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".DirtyPrice") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".DirtyPrice") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -781,18 +781,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".IsExpired") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -817,18 +817,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).IssueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".IssueDate") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".IssueDate") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -856,12 +856,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).IsTradable
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".IsTradable") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".IsTradable") 
                                                [| _CallableBond.source
                                                ;  _d.source
                                                |]
@@ -870,7 +870,7 @@ module CallableBondFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -895,18 +895,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".MaturityDate") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -934,12 +934,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).NextCashFlowDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".NextCashFlowDate") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".NextCashFlowDate") 
                                                [| _CallableBond.source
                                                ;  _settlement.source
                                                |]
@@ -948,7 +948,7 @@ module CallableBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -976,12 +976,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).NextCouponRate
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".NextCouponRate") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".NextCouponRate") 
                                                [| _CallableBond.source
                                                ;  _settlement.source
                                                |]
@@ -990,7 +990,7 @@ module CallableBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1018,12 +1018,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Notional
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Notional
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".Notional") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".Notional") 
                                                [| _CallableBond.source
                                                ;  _d.source
                                                |]
@@ -1032,7 +1032,7 @@ module CallableBondFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1057,18 +1057,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Notionals
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CallableBond.source + ".Notionals") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".Notionals") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1096,12 +1096,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).PreviousCashFlowDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".PreviousCashFlowDate") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".PreviousCashFlowDate") 
                                                [| _CallableBond.source
                                                ;  _settlement.source
                                                |]
@@ -1110,7 +1110,7 @@ module CallableBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1138,12 +1138,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).PreviousCouponRate
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".PreviousCouponRate") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".PreviousCouponRate") 
                                                [| _CallableBond.source
                                                ;  _settlement.source
                                                |]
@@ -1152,7 +1152,7 @@ module CallableBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1177,18 +1177,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Redemption
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
-                let source = Helper.sourceFold (_CallableBond.source + ".Redemption") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".Redemption") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CallableBond> format
                     ; source = source 
@@ -1213,18 +1213,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Redemptions
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CallableBond.source + ".Redemptions") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".Redemptions") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -1252,12 +1252,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".SettlementDate") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".SettlementDate") 
                                                [| _CallableBond.source
                                                ;  _date.source
                                                |]
@@ -1266,7 +1266,7 @@ module CallableBondFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1291,18 +1291,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".SettlementDays") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1330,12 +1330,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementValue
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".SettlementValue") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".SettlementValue") 
                                                [| _CallableBond.source
                                                ;  _cleanPrice.source
                                                |]
@@ -1344,7 +1344,7 @@ module CallableBondFunction =
                                 ;  _cleanPrice.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1369,18 +1369,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementValue1
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".SettlementValue") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".SettlementValue") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1405,18 +1405,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).StartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".StartDate") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".StartDate") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1462,7 +1462,7 @@ module CallableBondFunction =
                 let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-10
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Yield
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Yield
                                                             _cleanPrice.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1473,7 +1473,7 @@ module CallableBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".Yield") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".Yield") 
                                                [| _CallableBond.source
                                                ;  _cleanPrice.source
                                                ;  _dc.source
@@ -1494,7 +1494,7 @@ module CallableBondFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1534,7 +1534,7 @@ module CallableBondFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-10
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Yield1
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Yield1
                                                             _dc.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1543,7 +1543,7 @@ module CallableBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".Yield") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".Yield") 
                                                [| _CallableBond.source
                                                ;  _dc.source
                                                ;  _comp.source
@@ -1560,7 +1560,7 @@ module CallableBondFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1585,18 +1585,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".CASH") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".CASH") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1621,18 +1621,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".ErrorEstimate") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1657,18 +1657,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".NPV") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".NPV") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1696,12 +1696,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".Result") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".Result") 
                                                [| _CallableBond.source
                                                ;  _tag.source
                                                |]
@@ -1710,7 +1710,7 @@ module CallableBondFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1738,12 +1738,12 @@ module CallableBondFunction =
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CallableBond) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".SetPricingEngine") 
                                                [| _CallableBond.source
                                                ;  _e.source
                                                |]
@@ -1752,7 +1752,7 @@ module CallableBondFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1777,18 +1777,18 @@ module CallableBondFunction =
             try
 
                 let _CallableBond = Helper.toCell<CallableBond> callablebond "CallableBond"  
-                let builder () = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CallableBondModel.Cast _CallableBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CallableBond.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_CallableBond.source + ".ValuationDate") 
                                                [| _CallableBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1817,14 +1817,14 @@ module CallableBondFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CallableBond>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CallableBond>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CallableBond>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CallableBond>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

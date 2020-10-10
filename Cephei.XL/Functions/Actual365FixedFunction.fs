@@ -46,16 +46,16 @@ module Actual365FixedFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Actual365Fixed ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Actual365Fixed ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Actual365Fixed>) l
 
-                let source = Helper.sourceFold "Fun.Actual365Fixed" 
+                let source () = Helper.sourceFold "Fun.Actual365Fixed" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Actual365Fixed> format
                     ; source = source 
@@ -86,13 +86,13 @@ module Actual365FixedFunction =
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).DayCount
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Actual365Fixed.source + ".DayCount") 
+                let source () = Helper.sourceFold (_Actual365Fixed.source + ".DayCount") 
                                                [| _Actual365Fixed.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -103,7 +103,7 @@ module Actual365FixedFunction =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module Actual365FixedFunction =
             try
 
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
-                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Actual365Fixed.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Actual365Fixed.source + ".DayCounter") 
                                                [| _Actual365Fixed.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Actual365Fixed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Actual365Fixed> format
                     ; source = source 
@@ -164,18 +164,18 @@ module Actual365FixedFunction =
             try
 
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
-                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Actual365Fixed.source + ".Empty") 
+                let source () = Helper.sourceFold (_Actual365Fixed.source + ".Empty") 
                                                [| _Actual365Fixed.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Actual365Fixed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,12 +203,12 @@ module Actual365FixedFunction =
 
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Actual365Fixed.source + ".Equals") 
+                let source () = Helper.sourceFold (_Actual365Fixed.source + ".Equals") 
                                                [| _Actual365Fixed.source
                                                ;  _o.source
                                                |]
@@ -217,7 +217,7 @@ module Actual365FixedFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module Actual365FixedFunction =
             try
 
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
-                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Actual365Fixed.source + ".Name") 
+                let source () = Helper.sourceFold (_Actual365Fixed.source + ".Name") 
                                                [| _Actual365Fixed.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Actual365Fixed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -278,18 +278,18 @@ module Actual365FixedFunction =
             try
 
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
-                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Actual365Fixed.source + ".ToString") 
+                let source () = Helper.sourceFold (_Actual365Fixed.source + ".ToString") 
                                                [| _Actual365Fixed.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Actual365Fixed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,7 +326,7 @@ module Actual365FixedFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).YearFraction
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -334,7 +334,7 @@ module Actual365FixedFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Actual365Fixed.source + ".YearFraction") 
+                let source () = Helper.sourceFold (_Actual365Fixed.source + ".YearFraction") 
                                                [| _Actual365Fixed.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -349,7 +349,7 @@ module Actual365FixedFunction =
                                 ;  _refPeriodEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,13 +380,13 @@ module Actual365FixedFunction =
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).YearFraction1
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Actual365Fixed.source + ".YearFraction") 
+                let source () = Helper.sourceFold (_Actual365Fixed.source + ".YearFraction") 
                                                [| _Actual365Fixed.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -397,7 +397,7 @@ module Actual365FixedFunction =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -426,14 +426,14 @@ module Actual365FixedFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Actual365Fixed>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Actual365Fixed>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Actual365Fixed>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Actual365Fixed>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

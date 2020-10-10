@@ -55,13 +55,13 @@ module PdeBSMFunction =
                 let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Diffusion
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PdeBSM.source + ".Diffusion") 
+                let source () = Helper.sourceFold (_PdeBSM.source + ".Diffusion") 
                                                [| _PdeBSM.source
                                                ;  _t.source
                                                ;  _x.source
@@ -72,7 +72,7 @@ module PdeBSMFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module PdeBSMFunction =
                 let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Discount
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PdeBSM.source + ".Discount") 
+                let source () = Helper.sourceFold (_PdeBSM.source + ".Discount") 
                                                [| _PdeBSM.source
                                                ;  _t.source
                                                ;  _x.source
@@ -120,7 +120,7 @@ module PdeBSMFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -151,13 +151,13 @@ module PdeBSMFunction =
                 let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Drift
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PdeBSM.source + ".Drift") 
+                let source () = Helper.sourceFold (_PdeBSM.source + ".Drift") 
                                                [| _PdeBSM.source
                                                ;  _t.source
                                                ;  _x.source
@@ -168,7 +168,7 @@ module PdeBSMFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -196,12 +196,12 @@ module PdeBSMFunction =
 
                 let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Factory
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeSecondOrderParabolic>) l
 
-                let source = Helper.sourceFold (_PdeBSM.source + ".Factory") 
+                let source () = Helper.sourceFold (_PdeBSM.source + ".Factory") 
                                                [| _PdeBSM.source
                                                ;  _Process.source
                                                |]
@@ -210,7 +210,7 @@ module PdeBSMFunction =
                                 ;  _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PdeBSM> format
                     ; source = source 
@@ -235,19 +235,19 @@ module PdeBSMFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic (Fun.PdeBSM1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PdeBSM1 
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeBSM>) l
 
-                let source = Helper.sourceFold "Fun.PdeBSM1" 
+                let source () = Helper.sourceFold "Fun.PdeBSM1" 
                                                [| _Process.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PdeBSM> format
                     ; source = source 
@@ -269,16 +269,16 @@ module PdeBSMFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.PdeBSM ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PdeBSM ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeBSM>) l
 
-                let source = Helper.sourceFold "Fun.PdeBSM" 
+                let source () = Helper.sourceFold "Fun.PdeBSM" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PdeBSM> format
                     ; source = source 
@@ -312,14 +312,14 @@ module PdeBSMFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _tg = Helper.toCell<TransformedGrid> tg "tg" 
                 let _L = Helper.toCell<TridiagonalOperator> L "L" 
-                let builder () = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).GenerateOperator
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).GenerateOperator
                                                             _t.cell 
                                                             _tg.cell 
                                                             _L.cell 
                                                        ) :> ICell
                 let format (o : PdeBSM) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PdeBSM.source + ".GenerateOperator") 
+                let source () = Helper.sourceFold (_PdeBSM.source + ".GenerateOperator") 
                                                [| _PdeBSM.source
                                                ;  _t.source
                                                ;  _tg.source
@@ -332,7 +332,7 @@ module PdeBSMFunction =
                                 ;  _L.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -361,14 +361,14 @@ module PdeBSMFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PdeBSM>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PdeBSM>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PdeBSM>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PdeBSM>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

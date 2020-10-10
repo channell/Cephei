@@ -49,19 +49,19 @@ module InverseCumulativePoissonFunction =
             try
 
                 let _lambda = Helper.toCell<double> lambda "lambda" 
-                let builder () = withMnemonic mnemonic (Fun.InverseCumulativePoisson1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativePoisson1 
                                                             _lambda.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseCumulativePoisson>) l
 
-                let source = Helper.sourceFold "Fun.InverseCumulativePoisson1" 
+                let source () = Helper.sourceFold "Fun.InverseCumulativePoisson1" 
                                                [| _lambda.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _lambda.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InverseCumulativePoisson> format
                     ; source = source 
@@ -83,16 +83,16 @@ module InverseCumulativePoissonFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.InverseCumulativePoisson () 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativePoisson () 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseCumulativePoisson>) l
 
-                let source = Helper.sourceFold "Fun.InverseCumulativePoisson" 
+                let source () = Helper.sourceFold "Fun.InverseCumulativePoisson" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InverseCumulativePoisson> format
                     ; source = source 
@@ -120,12 +120,12 @@ module InverseCumulativePoissonFunction =
 
                 let _InverseCumulativePoisson = Helper.toCell<InverseCumulativePoisson> inversecumulativepoisson "InverseCumulativePoisson"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((InverseCumulativePoissonModel.Cast _InverseCumulativePoisson.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((InverseCumulativePoissonModel.Cast _InverseCumulativePoisson.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InverseCumulativePoisson.source + ".Value") 
+                let source () = Helper.sourceFold (_InverseCumulativePoisson.source + ".Value") 
                                                [| _InverseCumulativePoisson.source
                                                ;  _x.source
                                                |]
@@ -134,7 +134,7 @@ module InverseCumulativePoissonFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -163,14 +163,14 @@ module InverseCumulativePoissonFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InverseCumulativePoisson>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InverseCumulativePoisson>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InverseCumulativePoisson>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InverseCumulativePoisson>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -54,13 +54,13 @@ module CeilingTruncationFunction =
 
                 let _precision = Helper.toCell<int> precision "precision" 
                 let _digit = Helper.toCell<int> digit "digit" 
-                let builder () = withMnemonic mnemonic (Fun.CeilingTruncation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CeilingTruncation 
                                                             _precision.cell 
                                                             _digit.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CeilingTruncation>) l
 
-                let source = Helper.sourceFold "Fun.CeilingTruncation" 
+                let source () = Helper.sourceFold "Fun.CeilingTruncation" 
                                                [| _precision.source
                                                ;  _digit.source
                                                |]
@@ -69,7 +69,7 @@ module CeilingTruncationFunction =
                                 ;  _digit.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CeilingTruncation> format
                     ; source = source 
@@ -94,19 +94,19 @@ module CeilingTruncationFunction =
             try
 
                 let _precision = Helper.toCell<int> precision "precision" 
-                let builder () = withMnemonic mnemonic (Fun.CeilingTruncation1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CeilingTruncation1 
                                                             _precision.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CeilingTruncation>) l
 
-                let source = Helper.sourceFold "Fun.CeilingTruncation1" 
+                let source () = Helper.sourceFold "Fun.CeilingTruncation1" 
                                                [| _precision.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _precision.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CeilingTruncation> format
                     ; source = source 
@@ -131,18 +131,18 @@ module CeilingTruncationFunction =
             try
 
                 let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
-                let builder () = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Digit
+                let builder (current : ICell) = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CeilingTruncation.source + ".Digit") 
+                let source () = Helper.sourceFold (_CeilingTruncation.source + ".Digit") 
                                                [| _CeilingTruncation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CeilingTruncation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -167,18 +167,18 @@ module CeilingTruncationFunction =
             try
 
                 let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
-                let builder () = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).GetType
+                let builder (current : ICell) = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CeilingTruncation.source + ".GetType") 
+                let source () = Helper.sourceFold (_CeilingTruncation.source + ".GetType") 
                                                [| _CeilingTruncation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CeilingTruncation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,18 +203,18 @@ module CeilingTruncationFunction =
             try
 
                 let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
-                let builder () = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Precision
+                let builder (current : ICell) = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CeilingTruncation.source + ".Precision") 
+                let source () = Helper.sourceFold (_CeilingTruncation.source + ".Precision") 
                                                [| _CeilingTruncation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CeilingTruncation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,12 +242,12 @@ module CeilingTruncationFunction =
 
                 let _CeilingTruncation = Helper.toCell<CeilingTruncation> ceilingtruncation "CeilingTruncation"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Round
+                let builder (current : ICell) = withMnemonic mnemonic ((CeilingTruncationModel.Cast _CeilingTruncation.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CeilingTruncation.source + ".Round") 
+                let source () = Helper.sourceFold (_CeilingTruncation.source + ".Round") 
                                                [| _CeilingTruncation.source
                                                ;  _value.source
                                                |]
@@ -256,7 +256,7 @@ module CeilingTruncationFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -285,14 +285,14 @@ module CeilingTruncationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CeilingTruncation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CeilingTruncation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CeilingTruncation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CeilingTruncation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

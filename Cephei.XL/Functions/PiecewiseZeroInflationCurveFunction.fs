@@ -49,18 +49,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Accuracy_
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Accuracy_
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Accuracy_") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Accuracy_") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).BaseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".BaseDate") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".BaseDate") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Clone") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Clone") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Data
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Data") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Data") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -193,18 +193,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Data_
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Data_") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Data_") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -229,18 +229,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Dates
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Dates") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Dates") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -265,18 +265,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Dates_
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Dates_") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Dates_") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -307,13 +307,13 @@ module PiecewiseZeroInflationCurveFunction =
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).DiscountImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".DiscountImpl") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".DiscountImpl") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _i.source
                                                ;  _t.source
@@ -324,7 +324,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -355,13 +355,13 @@ module PiecewiseZeroInflationCurveFunction =
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ForwardImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ForwardImpl") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ForwardImpl") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _i.source
                                                ;  _t.source
@@ -372,7 +372,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -397,18 +397,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Forwards
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Forwards
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Forwards") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Forwards") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -445,7 +445,7 @@ module PiecewiseZeroInflationCurveFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _first = Helper.toCell<int> first "first" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Guess
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -453,7 +453,7 @@ module PiecewiseZeroInflationCurveFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Guess") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Guess") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _i.source
                                                ;  _c.source
@@ -468,7 +468,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _first.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -493,18 +493,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).InitialDate1
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).InitialDate1
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".InitialDate1") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".InitialDate1") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -532,12 +532,12 @@ module PiecewiseZeroInflationCurveFunction =
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _c = Helper.toCell<ZeroInflationTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).InitialDate
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".InitialDate") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".InitialDate") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _c.source
                                                |]
@@ -546,7 +546,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -571,18 +571,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).InitialValue
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).InitialValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".InitialValue") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".InitialValue") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -610,12 +610,12 @@ module PiecewiseZeroInflationCurveFunction =
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _c = Helper.toCell<ZeroInflationTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).InitialValue1
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).InitialValue1
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".InitialValue1") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".InitialValue1") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _c.source
                                                |]
@@ -624,7 +624,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -649,18 +649,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Instruments_
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Instruments_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<BootstrapHelper<ZeroInflationTermStructure>>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Instruments_") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Instruments_") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -685,18 +685,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Interpolation_
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Interpolation_") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Interpolation_") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -721,18 +721,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Interpolator_
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Interpolator_") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Interpolator_") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -757,18 +757,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MaxDate") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -793,18 +793,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MaxDate_
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MaxDate_") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MaxDate_") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -829,18 +829,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MaxIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MaxIterations") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MaxIterations") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -877,7 +877,7 @@ module PiecewiseZeroInflationCurveFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _first = Helper.toCell<int> first "first" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MaxValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -885,7 +885,7 @@ module PiecewiseZeroInflationCurveFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MaxValueAfter") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MaxValueAfter") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _i.source
                                                ;  _c.source
@@ -900,7 +900,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _first.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -937,7 +937,7 @@ module PiecewiseZeroInflationCurveFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _first = Helper.toCell<int> first "first" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MinValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -945,7 +945,7 @@ module PiecewiseZeroInflationCurveFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MinValueAfter") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MinValueAfter") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _i.source
                                                ;  _c.source
@@ -960,7 +960,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _first.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -985,18 +985,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Moving_
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Moving_
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Moving_") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Moving_") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1021,18 +1021,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Nodes
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Generic.Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Nodes") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Nodes") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1054,16 +1054,16 @@ module PiecewiseZeroInflationCurveFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.PiecewiseZeroInflationCurve3 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PiecewiseZeroInflationCurve3 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PiecewiseZeroInflationCurve>) l
 
-                let source = Helper.sourceFold "Fun.PiecewiseZeroInflationCurve3" 
+                let source () = Helper.sourceFold "Fun.PiecewiseZeroInflationCurve3" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -1109,7 +1109,7 @@ module PiecewiseZeroInflationCurveFunction =
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" 
                 let _yTS = Helper.toHandle<YieldTermStructure> yTS "yTS" 
-                let builder () = withMnemonic mnemonic (Fun.PiecewiseZeroInflationCurve1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PiecewiseZeroInflationCurve1 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _dayCounter.cell 
@@ -1121,7 +1121,7 @@ module PiecewiseZeroInflationCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PiecewiseZeroInflationCurve>) l
 
-                let source = Helper.sourceFold "Fun.PiecewiseZeroInflationCurve1" 
+                let source () = Helper.sourceFold "Fun.PiecewiseZeroInflationCurve1" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _dayCounter.source
@@ -1142,7 +1142,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _yTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -1188,7 +1188,7 @@ module PiecewiseZeroInflationCurveFunction =
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" 
                 let _yTS = Helper.toHandle<YieldTermStructure> yTS "yTS" 
-                let builder () = withMnemonic mnemonic (Fun.PiecewiseZeroInflationCurve
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PiecewiseZeroInflationCurve
                                                             _referenceDate.cell 
                                                             _calendar.cell 
                                                             _dayCounter.cell 
@@ -1200,7 +1200,7 @@ module PiecewiseZeroInflationCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PiecewiseZeroInflationCurve>) l
 
-                let source = Helper.sourceFold "Fun.PiecewiseZeroInflationCurve1" 
+                let source () = Helper.sourceFold "Fun.PiecewiseZeroInflationCurve1" 
                                                [| _referenceDate.source
                                                ;  _calendar.source
                                                ;  _dayCounter.source
@@ -1221,7 +1221,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _yTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -1261,7 +1261,7 @@ module PiecewiseZeroInflationCurveFunction =
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" 
                 let _yTS = Helper.toHandle<YieldTermStructure> yTS "yTS" 
-                let builder () = withMnemonic mnemonic (Fun.PiecewiseZeroInflationCurve2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PiecewiseZeroInflationCurve2
                                                             _dayCounter.cell 
                                                             _baseZeroRate.cell 
                                                             _observationLag.cell 
@@ -1271,7 +1271,7 @@ module PiecewiseZeroInflationCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PiecewiseZeroInflationCurve>) l
 
-                let source = Helper.sourceFold "Fun.PiecewiseZeroInflationCurve2" 
+                let source () = Helper.sourceFold "Fun.PiecewiseZeroInflationCurve2" 
                                                [| _dayCounter.source
                                                ;  _baseZeroRate.source
                                                ;  _observationLag.source
@@ -1288,7 +1288,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _yTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -1313,18 +1313,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Rates
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Rates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Rates") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Rates") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1352,12 +1352,12 @@ module PiecewiseZeroInflationCurveFunction =
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _helper = Helper.toCell<BootstrapHelper<ZeroInflationTermStructure>> helper "helper" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).RegisterWith
                                                             _helper.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".RegisterWith") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _helper.source
                                                |]
@@ -1366,7 +1366,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _helper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1394,12 +1394,12 @@ module PiecewiseZeroInflationCurveFunction =
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _helper = Helper.toCell<BootstrapHelper<ZeroInflationTermStructure>> helper "helper" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).SetTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).SetTermStructure
                                                             _helper.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".SetTermStructure") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".SetTermStructure") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _helper.source
                                                |]
@@ -1408,7 +1408,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _helper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1433,18 +1433,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).SetupInterpolation
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : PiecewiseZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".SetupInterpolation") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".SetupInterpolation") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1469,18 +1469,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Times
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Times") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Times") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1505,18 +1505,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Times_
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Times_") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Times_") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1541,18 +1541,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Traits_
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Traits_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ITraits<ZeroInflationTermStructure>>) l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Traits_") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Traits_") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -1586,14 +1586,14 @@ module PiecewiseZeroInflationCurveFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).UpdateGuess
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).UpdateGuess
                                                             _data.cell 
                                                             _discount.cell 
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".UpdateGuess") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".UpdateGuess") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _data.source
                                                ;  _discount.source
@@ -1606,7 +1606,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1637,13 +1637,13 @@ module PiecewiseZeroInflationCurveFunction =
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ZeroYieldImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ZeroYieldImpl") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ZeroYieldImpl") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _i.source
                                                ;  _t.source
@@ -1654,7 +1654,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1691,7 +1691,7 @@ module PiecewiseZeroInflationCurveFunction =
                 let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
                 let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ZeroRate3
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ZeroRate3
                                                             _d.cell 
                                                             _instObsLag.cell 
                                                             _forceLinearInterpolation.cell 
@@ -1699,7 +1699,7 @@ module PiecewiseZeroInflationCurveFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ZeroRate3") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ZeroRate3") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _d.source
                                                ;  _instObsLag.source
@@ -1714,7 +1714,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1748,14 +1748,14 @@ module PiecewiseZeroInflationCurveFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
                 let _forceLinearInterpolation = Helper.toCell<bool> forceLinearInterpolation "forceLinearInterpolation" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ZeroRate
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ZeroRate
                                                             _d.cell 
                                                             _instObsLag.cell 
                                                             _forceLinearInterpolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ZeroRate") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ZeroRate") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _d.source
                                                ;  _instObsLag.source
@@ -1768,7 +1768,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _forceLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1799,13 +1799,13 @@ module PiecewiseZeroInflationCurveFunction =
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _instObsLag = Helper.toCell<Period> instObsLag "instObsLag" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ZeroRate1
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ZeroRate1
                                                             _d.cell 
                                                             _instObsLag.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ZeroRate1") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ZeroRate1") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _d.source
                                                ;  _instObsLag.source
@@ -1816,7 +1816,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _instObsLag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1844,12 +1844,12 @@ module PiecewiseZeroInflationCurveFunction =
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ZeroRate2
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ZeroRate2
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ZeroRate2") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ZeroRate2") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _d.source
                                                |]
@@ -1858,7 +1858,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1883,18 +1883,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).BaseRate
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).BaseRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".BaseRate") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".BaseRate") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1919,18 +1919,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Frequency") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Frequency") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1955,18 +1955,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).HasSeasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).HasSeasonality
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".HasSeasonality") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".HasSeasonality") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1991,18 +1991,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).IndexIsInterpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).IndexIsInterpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".IndexIsInterpolated") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".IndexIsInterpolated") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2027,18 +2027,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).NominalTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).NominalTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".NominalTermStructure") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".NominalTermStructure") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -2063,18 +2063,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ObservationLag
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ObservationLag") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ObservationLag") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -2099,18 +2099,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Seasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Seasonality
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Seasonality>) l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Seasonality") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Seasonality") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -2138,12 +2138,12 @@ module PiecewiseZeroInflationCurveFunction =
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _seasonality = Helper.toCell<Seasonality> seasonality "seasonality" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).SetSeasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).SetSeasonality
                                                             _seasonality.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".SetSeasonality") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".SetSeasonality") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _seasonality.source
                                                |]
@@ -2152,7 +2152,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _seasonality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2177,18 +2177,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Calendar") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Calendar") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -2213,18 +2213,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".DayCounter") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PiecewiseZeroInflationCurve> format
                     ; source = source 
@@ -2249,18 +2249,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".MaxTime") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2285,18 +2285,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".ReferenceDate") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2321,18 +2321,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".SettlementDays") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2360,12 +2360,12 @@ module PiecewiseZeroInflationCurveFunction =
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".TimeFromReference") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _date.source
                                                |]
@@ -2374,7 +2374,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2399,18 +2399,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Update
                                                        ) :> ICell
                 let format (o : PiecewiseZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Update") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Update") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2435,18 +2435,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".AllowsExtrapolation") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2474,12 +2474,12 @@ module PiecewiseZeroInflationCurveFunction =
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".DisableExtrapolation") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _b.source
                                                |]
@@ -2488,7 +2488,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2516,12 +2516,12 @@ module PiecewiseZeroInflationCurveFunction =
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseZeroInflationCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".EnableExtrapolation") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                ;  _b.source
                                                |]
@@ -2530,7 +2530,7 @@ module PiecewiseZeroInflationCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2555,18 +2555,18 @@ module PiecewiseZeroInflationCurveFunction =
             try
 
                 let _PiecewiseZeroInflationCurve = Helper.toCell<PiecewiseZeroInflationCurve> piecewisezeroinflationcurve "PiecewiseZeroInflationCurve"  
-                let builder () = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseZeroInflationCurveModel.Cast _PiecewiseZeroInflationCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_PiecewiseZeroInflationCurve.source + ".Extrapolate") 
                                                [| _PiecewiseZeroInflationCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroInflationCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2595,14 +2595,14 @@ module PiecewiseZeroInflationCurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PiecewiseZeroInflationCurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PiecewiseZeroInflationCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PiecewiseZeroInflationCurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PiecewiseZeroInflationCurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -56,13 +56,13 @@ module GenericGaussianStatisticsFunction =
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Add
                                                             _value.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : GenericGaussianStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".Add") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Add") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _value.source
                                                ;  _weight.source
@@ -73,7 +73,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -105,13 +105,13 @@ module GenericGaussianStatisticsFunction =
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).AddSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).AddSequence
                                                             _data.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : GenericGaussianStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".AddSequence") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".AddSequence") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _data.source
                                                ;  _weight.source
@@ -122,7 +122,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -147,18 +147,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".ErrorEstimate") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -189,13 +189,13 @@ module GenericGaussianStatisticsFunction =
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).ExpectationValue
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
                                                        ) :> ICell
                 let format (o : KeyValuePair<double,int>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".ExpectationValue") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".ExpectationValue") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _f.source
                                                ;  _inRange.source
@@ -206,7 +206,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _inRange.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -234,12 +234,12 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _target = Helper.toCell<double> target "target" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianAverageShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianAverageShortfall
                                                             _target.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianAverageShortfall") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianAverageShortfall") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _target.source
                                                |]
@@ -248,7 +248,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _target.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -273,18 +273,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianDownsideDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianDownsideDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianDownsideDeviation") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianDownsideDeviation") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -309,18 +309,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianDownsideVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianDownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianDownsideVariance") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianDownsideVariance") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -348,12 +348,12 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianExpectedShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianExpectedShortfall
                                                             _percentile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianExpectedShortfall") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianExpectedShortfall") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _percentile.source
                                                |]
@@ -362,7 +362,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _percentile.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -390,12 +390,12 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianPercentile
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianPercentile
                                                             _percentile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianPercentile") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianPercentile") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _percentile.source
                                                |]
@@ -404,7 +404,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _percentile.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -432,12 +432,12 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianPotentialUpside
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianPotentialUpside
                                                             _percentile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianPotentialUpside") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianPotentialUpside") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _percentile.source
                                                |]
@@ -446,7 +446,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _percentile.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -474,12 +474,12 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _target = Helper.toCell<double> target "target" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianRegret
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianRegret
                                                             _target.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianRegret") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianRegret") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _target.source
                                                |]
@@ -488,7 +488,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _target.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -516,12 +516,12 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _target = Helper.toCell<double> target "target" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianShortfall
                                                             _target.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianShortfall") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianShortfall") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _target.source
                                                |]
@@ -530,7 +530,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _target.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -558,12 +558,12 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianTopPercentile
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianTopPercentile
                                                             _percentile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianTopPercentile") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianTopPercentile") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _percentile.source
                                                |]
@@ -572,7 +572,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _percentile.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -600,12 +600,12 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianValueAtRisk
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianValueAtRisk
                                                             _percentile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianValueAtRisk") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianValueAtRisk") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _percentile.source
                                                |]
@@ -614,7 +614,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _percentile.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -639,19 +639,19 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _s = Helper.toCell<'Stat> s "s" 
-                let builder () = withMnemonic mnemonic (Fun.GenericGaussianStatistics 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericGaussianStatistics 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GenericGaussianStatistics>) l
 
-                let source = Helper.sourceFold "Fun.GenericGaussianStatistics" 
+                let source () = Helper.sourceFold "Fun.GenericGaussianStatistics" 
                                                [| _s.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericGaussianStatistics> format
                     ; source = source 
@@ -673,16 +673,16 @@ module GenericGaussianStatisticsFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.GenericGaussianStatistics1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericGaussianStatistics1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GenericGaussianStatistics>) l
 
-                let source = Helper.sourceFold "Fun.GenericGaussianStatistics1" 
+                let source () = Helper.sourceFold "Fun.GenericGaussianStatistics1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericGaussianStatistics> format
                     ; source = source 
@@ -707,18 +707,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Kurtosis
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".Kurtosis") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Kurtosis") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -743,18 +743,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Max
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".Max") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Max") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -779,18 +779,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Mean
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".Mean") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Mean") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -815,18 +815,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Min
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".Min") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Min") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -854,12 +854,12 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Percentile
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".Percentile") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Percentile") 
                                                [| _GenericGaussianStatistics.source
                                                ;  _percent.source
                                                |]
@@ -868,7 +868,7 @@ module GenericGaussianStatisticsFunction =
                                 ;  _percent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -893,18 +893,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Reset
                                                        ) :> ICell
                 let format (o : GenericGaussianStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".Reset") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Reset") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -929,18 +929,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Samples
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".Samples") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Samples") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -965,18 +965,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Skewness
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".Skewness") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Skewness") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1001,18 +1001,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).StandardDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".StandardDeviation") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".StandardDeviation") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1037,18 +1037,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".Variance") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Variance") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1073,18 +1073,18 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).WeightSum
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericGaussianStatistics.source + ".WeightSum") 
+                let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".WeightSum") 
                                                [| _GenericGaussianStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1113,14 +1113,14 @@ module GenericGaussianStatisticsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GenericGaussianStatistics>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GenericGaussianStatistics>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GenericGaussianStatistics>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GenericGaussianStatistics>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

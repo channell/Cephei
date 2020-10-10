@@ -55,13 +55,13 @@ module PdeShortRateFunction =
                 let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Diffusion
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PdeShortRate.source + ".Diffusion") 
+                let source () = Helper.sourceFold (_PdeShortRate.source + ".Diffusion") 
                                                [| _PdeShortRate.source
                                                ;  _t.source
                                                ;  _x.source
@@ -72,7 +72,7 @@ module PdeShortRateFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module PdeShortRateFunction =
                 let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Discount
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PdeShortRate.source + ".Discount") 
+                let source () = Helper.sourceFold (_PdeShortRate.source + ".Discount") 
                                                [| _PdeShortRate.source
                                                ;  _t.source
                                                ;  _x.source
@@ -120,7 +120,7 @@ module PdeShortRateFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -151,13 +151,13 @@ module PdeShortRateFunction =
                 let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Drift
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PdeShortRate.source + ".Drift") 
+                let source () = Helper.sourceFold (_PdeShortRate.source + ".Drift") 
                                                [| _PdeShortRate.source
                                                ;  _t.source
                                                ;  _x.source
@@ -168,7 +168,7 @@ module PdeShortRateFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -196,12 +196,12 @@ module PdeShortRateFunction =
 
                 let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Factory
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeSecondOrderParabolic>) l
 
-                let source = Helper.sourceFold (_PdeShortRate.source + ".Factory") 
+                let source () = Helper.sourceFold (_PdeShortRate.source + ".Factory") 
                                                [| _PdeShortRate.source
                                                ;  _Process.source
                                                |]
@@ -210,7 +210,7 @@ module PdeShortRateFunction =
                                 ;  _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PdeShortRate> format
                     ; source = source 
@@ -235,19 +235,19 @@ module PdeShortRateFunction =
             try
 
                 let _d = Helper.toCell<OneFactorModel.ShortRateDynamics> d "d" 
-                let builder () = withMnemonic mnemonic (Fun.PdeShortRate 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PdeShortRate 
                                                             _d.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeShortRate>) l
 
-                let source = Helper.sourceFold "Fun.PdeShortRate" 
+                let source () = Helper.sourceFold "Fun.PdeShortRate" 
                                                [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PdeShortRate> format
                     ; source = source 
@@ -269,16 +269,16 @@ module PdeShortRateFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.PdeShortRate1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PdeShortRate1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeShortRate>) l
 
-                let source = Helper.sourceFold "Fun.PdeShortRate1" 
+                let source () = Helper.sourceFold "Fun.PdeShortRate1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PdeShortRate> format
                     ; source = source 
@@ -312,14 +312,14 @@ module PdeShortRateFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _tg = Helper.toCell<TransformedGrid> tg "tg" 
                 let _L = Helper.toCell<TridiagonalOperator> L "L" 
-                let builder () = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).GenerateOperator
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).GenerateOperator
                                                             _t.cell 
                                                             _tg.cell 
                                                             _L.cell 
                                                        ) :> ICell
                 let format (o : PdeShortRate) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PdeShortRate.source + ".GenerateOperator") 
+                let source () = Helper.sourceFold (_PdeShortRate.source + ".GenerateOperator") 
                                                [| _PdeShortRate.source
                                                ;  _t.source
                                                ;  _tg.source
@@ -332,7 +332,7 @@ module PdeShortRateFunction =
                                 ;  _L.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -361,14 +361,14 @@ module PdeShortRateFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PdeShortRate>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PdeShortRate>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PdeShortRate>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PdeShortRate>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

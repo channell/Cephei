@@ -16,7 +16,7 @@ let rec allFiles directory pattern =
 
         let edit (s : string) = 
 
-            if s.Contains ("let builder () =") && s.Contains (":?>") && not (s.Contains("(Fun.")) then
+            if s.Contains ("let builder (current : ICell) =") && s.Contains (":?>") && not (s.Contains("(Fun.")) then
 //                Console.WriteLine("Replacing |{0}|", s)
                 let sn = s.Substring(s.LastIndexOf("(") + 1)
                 let pat = sn.Substring(0, sn.LastIndexOf(")"))

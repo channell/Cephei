@@ -49,18 +49,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).A
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".A") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".A") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).B
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".B") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".B") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).EndCriteria
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".EndCriteria") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".EndCriteria") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Expiry
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Expiry
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Expiry") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Expiry") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Forward
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Forward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Forward") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Forward") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,18 +229,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).InterpolationWeights
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).InterpolationWeights
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".InterpolationWeights") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".InterpolationWeights") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -265,18 +265,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).M
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).M
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".M") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".M") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -301,18 +301,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).MaxError
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".MaxError") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".MaxError") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,18 +337,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Rho") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Rho") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -373,18 +373,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).RmsError
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).RmsError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".RmsError") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".RmsError") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -409,18 +409,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Sigma
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Sigma") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Sigma") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -508,7 +508,7 @@ module SviInterpolationFunction =
                 let _useMaxError = Helper.toDefault<bool> useMaxError "useMaxError" false
                 let _maxGuesses = Helper.toDefault<int> maxGuesses "maxGuesses" 50
                 let _addParams = Helper.toDefault<Generic.List<Nullable<double>>> addParams "addParams" null
-                let builder () = withMnemonic mnemonic (Fun.SviInterpolation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SviInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -534,7 +534,7 @@ module SviInterpolationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SviInterpolation>) l
 
-                let source = Helper.sourceFold "Fun.SviInterpolation" 
+                let source () = Helper.sourceFold "Fun.SviInterpolation" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -583,7 +583,7 @@ module SviInterpolationFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SviInterpolation> format
                     ; source = source 
@@ -614,13 +614,13 @@ module SviInterpolationFunction =
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Derivative") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Derivative") 
                                                [| _SviInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -631,7 +631,7 @@ module SviInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -656,18 +656,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Empty") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Empty") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -698,13 +698,13 @@ module SviInterpolationFunction =
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Primitive") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Primitive") 
                                                [| _SviInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -715,7 +715,7 @@ module SviInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -746,13 +746,13 @@ module SviInterpolationFunction =
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".SecondDerivative") 
                                                [| _SviInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -763,7 +763,7 @@ module SviInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -788,18 +788,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : SviInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Update") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Update") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -830,13 +830,13 @@ module SviInterpolationFunction =
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Value1") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Value1") 
                                                [| _SviInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -847,7 +847,7 @@ module SviInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -875,12 +875,12 @@ module SviInterpolationFunction =
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Value") 
                                                [| _SviInterpolation.source
                                                ;  _x.source
                                                |]
@@ -889,7 +889,7 @@ module SviInterpolationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -914,18 +914,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".XMax") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".XMax") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -950,18 +950,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".XMin") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".XMin") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -986,18 +986,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".AllowsExtrapolation") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1025,12 +1025,12 @@ module SviInterpolationFunction =
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : SviInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".DisableExtrapolation") 
                                                [| _SviInterpolation.source
                                                ;  _b.source
                                                |]
@@ -1039,7 +1039,7 @@ module SviInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1067,12 +1067,12 @@ module SviInterpolationFunction =
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : SviInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".EnableExtrapolation") 
                                                [| _SviInterpolation.source
                                                ;  _b.source
                                                |]
@@ -1081,7 +1081,7 @@ module SviInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1106,18 +1106,18 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SviInterpolation.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_SviInterpolation.source + ".Extrapolate") 
                                                [| _SviInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1146,14 +1146,14 @@ module SviInterpolationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SviInterpolation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SviInterpolation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SviInterpolation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SviInterpolation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

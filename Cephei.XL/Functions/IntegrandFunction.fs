@@ -58,7 +58,7 @@ module IntegrandFunction =
                 let _s0 = Helper.toCell<double> s0 "s0" 
                 let _drift = Helper.toCell<double> drift "drift" 
                 let _variance = Helper.toCell<double> variance "variance" 
-                let builder () = withMnemonic mnemonic (Fun.Integrand 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Integrand 
                                                             _payoff.cell 
                                                             _s0.cell 
                                                             _drift.cell 
@@ -66,7 +66,7 @@ module IntegrandFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Integrand>) l
 
-                let source = Helper.sourceFold "Fun.Integrand" 
+                let source () = Helper.sourceFold "Fun.Integrand" 
                                                [| _payoff.source
                                                ;  _s0.source
                                                ;  _drift.source
@@ -79,7 +79,7 @@ module IntegrandFunction =
                                 ;  _variance.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Integrand> format
                     ; source = source 
@@ -107,12 +107,12 @@ module IntegrandFunction =
 
                 let _Integrand = Helper.toCell<Integrand> integrand "Integrand"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((IntegrandModel.Cast _Integrand.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((IntegrandModel.Cast _Integrand.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Integrand.source + ".Value") 
+                let source () = Helper.sourceFold (_Integrand.source + ".Value") 
                                                [| _Integrand.source
                                                ;  _x.source
                                                |]
@@ -121,7 +121,7 @@ module IntegrandFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -150,14 +150,14 @@ module IntegrandFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Integrand>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Integrand>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Integrand>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Integrand>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

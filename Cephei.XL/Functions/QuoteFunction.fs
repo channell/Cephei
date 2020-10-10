@@ -49,18 +49,18 @@ module QuoteFunction =
             try
 
                 let _Quote = Helper.toCell<Quote> quote "Quote"  
-                let builder () = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).IsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Quote.source + ".IsValid") 
+                let source () = Helper.sourceFold (_Quote.source + ".IsValid") 
                                                [| _Quote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Quote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -88,12 +88,12 @@ module QuoteFunction =
 
                 let _Quote = Helper.toCell<Quote> quote "Quote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Quote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Quote.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Quote.source + ".RegisterWith") 
                                                [| _Quote.source
                                                ;  _handler.source
                                                |]
@@ -102,7 +102,7 @@ module QuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -130,12 +130,12 @@ module QuoteFunction =
 
                 let _Quote = Helper.toCell<Quote> quote "Quote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Quote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Quote.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Quote.source + ".UnregisterWith") 
                                                [| _Quote.source
                                                ;  _handler.source
                                                |]
@@ -144,7 +144,7 @@ module QuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -169,18 +169,18 @@ module QuoteFunction =
             try
 
                 let _Quote = Helper.toCell<Quote> quote "Quote"  
-                let builder () = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((QuoteModel.Cast _Quote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Quote.source + ".Value") 
+                let source () = Helper.sourceFold (_Quote.source + ".Value") 
                                                [| _Quote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Quote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,14 +209,14 @@ module QuoteFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Quote>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Quote>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Quote>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Quote>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

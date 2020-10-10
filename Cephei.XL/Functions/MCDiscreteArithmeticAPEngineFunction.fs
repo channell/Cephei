@@ -73,7 +73,7 @@ module MCDiscreteArithmeticAPEngineFunction =
                 let _requiredTolerance = Helper.toCell<double> requiredTolerance "requiredTolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic (Fun.MCDiscreteArithmeticAPEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MCDiscreteArithmeticAPEngine 
                                                             _Process.cell 
                                                             _maxTimeStepPerYear.cell 
                                                             _brownianBridge.cell 
@@ -86,7 +86,7 @@ module MCDiscreteArithmeticAPEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MCDiscreteArithmeticAPEngine>) l
 
-                let source = Helper.sourceFold "Fun.MCDiscreteArithmeticAPEngine" 
+                let source () = Helper.sourceFold "Fun.MCDiscreteArithmeticAPEngine" 
                                                [| _Process.source
                                                ;  _maxTimeStepPerYear.source
                                                ;  _brownianBridge.source
@@ -109,7 +109,7 @@ module MCDiscreteArithmeticAPEngineFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MCDiscreteArithmeticAPEngine> format
                     ; source = source 
@@ -138,12 +138,12 @@ module MCDiscreteArithmeticAPEngineFunction =
 
                 let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : MCDiscreteArithmeticAPEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".RegisterWith") 
                                                [| _MCDiscreteArithmeticAPEngine.source
                                                ;  _handler.source
                                                |]
@@ -152,7 +152,7 @@ module MCDiscreteArithmeticAPEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -177,18 +177,18 @@ module MCDiscreteArithmeticAPEngineFunction =
             try
 
                 let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
-                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : MCDiscreteArithmeticAPEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".Reset") 
                                                [| _MCDiscreteArithmeticAPEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticAPEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -216,12 +216,12 @@ module MCDiscreteArithmeticAPEngineFunction =
 
                 let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : MCDiscreteArithmeticAPEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".UnregisterWith") 
                                                [| _MCDiscreteArithmeticAPEngine.source
                                                ;  _handler.source
                                                |]
@@ -230,7 +230,7 @@ module MCDiscreteArithmeticAPEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,18 +255,18 @@ module MCDiscreteArithmeticAPEngineFunction =
             try
 
                 let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
-                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).Update
                                                        ) :> ICell
                 let format (o : MCDiscreteArithmeticAPEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".Update") 
                                                [| _MCDiscreteArithmeticAPEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticAPEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -291,18 +291,18 @@ module MCDiscreteArithmeticAPEngineFunction =
             try
 
                 let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
-                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".ErrorEstimate") 
                                                [| _MCDiscreteArithmeticAPEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticAPEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -327,18 +327,18 @@ module MCDiscreteArithmeticAPEngineFunction =
             try
 
                 let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
-                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).SampleAccumulator
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".SampleAccumulator") 
+                let source () = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".SampleAccumulator") 
                                                [| _MCDiscreteArithmeticAPEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticAPEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -372,14 +372,14 @@ module MCDiscreteArithmeticAPEngineFunction =
                 let _tolerance = Helper.toCell<double> tolerance "tolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _minSamples = Helper.toCell<int> minSamples "minSamples" 
-                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).Value
                                                             _tolerance.cell 
                                                             _maxSamples.cell 
                                                             _minSamples.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".Value") 
+                let source () = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".Value") 
                                                [| _MCDiscreteArithmeticAPEngine.source
                                                ;  _tolerance.source
                                                ;  _maxSamples.source
@@ -392,7 +392,7 @@ module MCDiscreteArithmeticAPEngineFunction =
                                 ;  _minSamples.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -420,12 +420,12 @@ module MCDiscreteArithmeticAPEngineFunction =
 
                 let _MCDiscreteArithmeticAPEngine = Helper.toCell<MCDiscreteArithmeticAPEngine> mcdiscretearithmeticapengine "MCDiscreteArithmeticAPEngine"  
                 let _samples = Helper.toCell<int> samples "samples" 
-                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).ValueWithSamples
+                let builder (current : ICell) = withMnemonic mnemonic ((MCDiscreteArithmeticAPEngineModel.Cast _MCDiscreteArithmeticAPEngine.cell).ValueWithSamples
                                                             _samples.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".ValueWithSamples") 
+                let source () = Helper.sourceFold (_MCDiscreteArithmeticAPEngine.source + ".ValueWithSamples") 
                                                [| _MCDiscreteArithmeticAPEngine.source
                                                ;  _samples.source
                                                |]
@@ -434,7 +434,7 @@ module MCDiscreteArithmeticAPEngineFunction =
                                 ;  _samples.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -463,14 +463,14 @@ module MCDiscreteArithmeticAPEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MCDiscreteArithmeticAPEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MCDiscreteArithmeticAPEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MCDiscreteArithmeticAPEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MCDiscreteArithmeticAPEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

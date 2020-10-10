@@ -58,14 +58,14 @@ module TrinomialTreeFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Descendant
+                let builder (current : ICell) = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Descendant
                                                             _i.cell 
                                                             _index.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TrinomialTree.source + ".Descendant") 
+                let source () = Helper.sourceFold (_TrinomialTree.source + ".Descendant") 
                                                [| _TrinomialTree.source
                                                ;  _i.source
                                                ;  _index.source
@@ -78,7 +78,7 @@ module TrinomialTreeFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -106,12 +106,12 @@ module TrinomialTreeFunction =
 
                 let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Dx
+                let builder (current : ICell) = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Dx
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TrinomialTree.source + ".Dx") 
+                let source () = Helper.sourceFold (_TrinomialTree.source + ".Dx") 
                                                [| _TrinomialTree.source
                                                ;  _i.source
                                                |]
@@ -120,7 +120,7 @@ module TrinomialTreeFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -154,14 +154,14 @@ module TrinomialTreeFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Probability
+                let builder (current : ICell) = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Probability
                                                             _i.cell 
                                                             _index.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TrinomialTree.source + ".Probability") 
+                let source () = Helper.sourceFold (_TrinomialTree.source + ".Probability") 
                                                [| _TrinomialTree.source
                                                ;  _i.source
                                                ;  _index.source
@@ -174,7 +174,7 @@ module TrinomialTreeFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -202,12 +202,12 @@ module TrinomialTreeFunction =
 
                 let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TrinomialTree.source + ".Size") 
+                let source () = Helper.sourceFold (_TrinomialTree.source + ".Size") 
                                                [| _TrinomialTree.source
                                                ;  _i.source
                                                |]
@@ -216,7 +216,7 @@ module TrinomialTreeFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -241,18 +241,18 @@ module TrinomialTreeFunction =
             try
 
                 let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
-                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).TimeGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).TimeGrid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
-                let source = Helper.sourceFold (_TrinomialTree.source + ".TimeGrid") 
+                let source () = Helper.sourceFold (_TrinomialTree.source + ".TimeGrid") 
                                                [| _TrinomialTree.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrinomialTree.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TrinomialTree> format
                     ; source = source 
@@ -280,13 +280,13 @@ module TrinomialTreeFunction =
 
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
-                let builder () = withMnemonic mnemonic (Fun.TrinomialTree 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TrinomialTree 
                                                             _Process.cell 
                                                             _timeGrid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TrinomialTree>) l
 
-                let source = Helper.sourceFold "Fun.TrinomialTree" 
+                let source () = Helper.sourceFold "Fun.TrinomialTree" 
                                                [| _Process.source
                                                ;  _timeGrid.source
                                                |]
@@ -295,7 +295,7 @@ module TrinomialTreeFunction =
                                 ;  _timeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TrinomialTree> format
                     ; source = source 
@@ -326,14 +326,14 @@ module TrinomialTreeFunction =
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _isPositive = Helper.toCell<bool> isPositive "isPositive" 
-                let builder () = withMnemonic mnemonic (Fun.TrinomialTree1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TrinomialTree1 
                                                             _Process.cell 
                                                             _timeGrid.cell 
                                                             _isPositive.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TrinomialTree>) l
 
-                let source = Helper.sourceFold "Fun.TrinomialTree1" 
+                let source () = Helper.sourceFold "Fun.TrinomialTree1" 
                                                [| _Process.source
                                                ;  _timeGrid.source
                                                ;  _isPositive.source
@@ -344,7 +344,7 @@ module TrinomialTreeFunction =
                                 ;  _isPositive.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TrinomialTree> format
                     ; source = source 
@@ -375,13 +375,13 @@ module TrinomialTreeFunction =
                 let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Underlying
+                let builder (current : ICell) = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TrinomialTree.source + ".Underlying") 
+                let source () = Helper.sourceFold (_TrinomialTree.source + ".Underlying") 
                                                [| _TrinomialTree.source
                                                ;  _i.source
                                                ;  _index.source
@@ -392,7 +392,7 @@ module TrinomialTreeFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -417,18 +417,18 @@ module TrinomialTreeFunction =
             try
 
                 let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
-                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Columns
+                let builder (current : ICell) = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TrinomialTree.source + ".Columns") 
+                let source () = Helper.sourceFold (_TrinomialTree.source + ".Columns") 
                                                [| _TrinomialTree.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrinomialTree.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -457,14 +457,14 @@ module TrinomialTreeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TrinomialTree>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TrinomialTree>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TrinomialTree>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TrinomialTree>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

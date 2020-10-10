@@ -52,13 +52,13 @@ module DigitalReplicationFunction =
 
                 let _t = Helper.toDefault<Replication.Type> t "t" Replication.Type.Central
                 let _gap = Helper.toDefault<double> gap "gap" 1e-4
-                let builder () = withMnemonic mnemonic (Fun.DigitalReplication 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalReplication 
                                                             _t.cell 
                                                             _gap.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalReplication>) l
 
-                let source = Helper.sourceFold "Fun.DigitalReplication" 
+                let source () = Helper.sourceFold "Fun.DigitalReplication" 
                                                [| _t.source
                                                ;  _gap.source
                                                |]
@@ -67,7 +67,7 @@ module DigitalReplicationFunction =
                                 ;  _gap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalReplication> format
                     ; source = source 
@@ -92,18 +92,18 @@ module DigitalReplicationFunction =
             try
 
                 let _DigitalReplication = Helper.toCell<DigitalReplication> digitalreplication "DigitalReplication"  
-                let builder () = withMnemonic mnemonic ((DigitalReplicationModel.Cast _DigitalReplication.cell).Gap
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalReplicationModel.Cast _DigitalReplication.cell).Gap
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalReplication.source + ".Gap") 
+                let source () = Helper.sourceFold (_DigitalReplication.source + ".Gap") 
                                                [| _DigitalReplication.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalReplication.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module DigitalReplicationFunction =
             try
 
                 let _DigitalReplication = Helper.toCell<DigitalReplication> digitalreplication "DigitalReplication"  
-                let builder () = withMnemonic mnemonic ((DigitalReplicationModel.Cast _DigitalReplication.cell).ReplicationType
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalReplicationModel.Cast _DigitalReplication.cell).ReplicationType
                                                        ) :> ICell
                 let format (o : Replication.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalReplication.source + ".ReplicationType") 
+                let source () = Helper.sourceFold (_DigitalReplication.source + ".ReplicationType") 
                                                [| _DigitalReplication.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalReplication.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -168,14 +168,14 @@ module DigitalReplicationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DigitalReplication>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DigitalReplication>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DigitalReplication>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DigitalReplication>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

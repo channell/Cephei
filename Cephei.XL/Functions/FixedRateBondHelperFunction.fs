@@ -49,18 +49,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).FixedRateBond
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).FixedRateBond
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateBond>) l
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".FixedRateBond") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".FixedRateBond") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateBondHelper> format
                     ; source = source 
@@ -127,7 +127,7 @@ module FixedRateBondHelperFunction =
                 let _exCouponConvention = Helper.toDefault<BusinessDayConvention> exCouponConvention "exCouponConvention" BusinessDayConvention.Unadjusted
                 let _exCouponEndOfMonth = Helper.toDefault<bool> exCouponEndOfMonth "exCouponEndOfMonth" false
                 let _useCleanPrice = Helper.toDefault<bool> useCleanPrice "useCleanPrice" true
-                let builder () = withMnemonic mnemonic (Fun.FixedRateBondHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FixedRateBondHelper 
                                                             _price.cell 
                                                             _settlementDays.cell 
                                                             _faceAmount.cell 
@@ -146,7 +146,7 @@ module FixedRateBondHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateBondHelper>) l
 
-                let source = Helper.sourceFold "Fun.FixedRateBondHelper" 
+                let source () = Helper.sourceFold "Fun.FixedRateBondHelper" 
                                                [| _price.source
                                                ;  _settlementDays.source
                                                ;  _faceAmount.source
@@ -181,7 +181,7 @@ module FixedRateBondHelperFunction =
                                 ;  _useCleanPrice.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateBondHelper> format
                     ; source = source 
@@ -206,18 +206,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).Bond
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).Bond
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bond>) l
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".Bond") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".Bond") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateBondHelper> format
                     ; source = source 
@@ -242,18 +242,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).ImpliedQuote
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".ImpliedQuote") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".ImpliedQuote") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -281,12 +281,12 @@ module FixedRateBondHelperFunction =
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).SetTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FixedRateBondHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".SetTermStructure") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".SetTermStructure") 
                                                [| _FixedRateBondHelper.source
                                                ;  _t.source
                                                |]
@@ -295,7 +295,7 @@ module FixedRateBondHelperFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).UseCleanPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).UseCleanPrice
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".UseCleanPrice") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".UseCleanPrice") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,18 +356,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).EarliestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".EarliestDate") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".EarliestDate") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -392,18 +392,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).LatestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".LatestDate") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".LatestDate") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -428,18 +428,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).LatestRelevantDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".LatestRelevantDate") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".LatestRelevantDate") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -464,18 +464,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".MaturityDate") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -500,18 +500,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).PillarDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".PillarDate") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".PillarDate") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -536,18 +536,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).Quote
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".Quote") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".Quote") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedRateBondHelper> format
                     ; source = source 
@@ -572,18 +572,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).QuoteError
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".QuoteError") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".QuoteError") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).QuoteIsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".QuoteIsValid") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".QuoteIsValid") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -644,18 +644,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).QuoteValue
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".QuoteValue") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".QuoteValue") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -683,12 +683,12 @@ module FixedRateBondHelperFunction =
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FixedRateBondHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".RegisterWith") 
                                                [| _FixedRateBondHelper.source
                                                ;  _handler.source
                                                |]
@@ -697,7 +697,7 @@ module FixedRateBondHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -725,12 +725,12 @@ module FixedRateBondHelperFunction =
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FixedRateBondHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".UnregisterWith") 
                                                [| _FixedRateBondHelper.source
                                                ;  _handler.source
                                                |]
@@ -739,7 +739,7 @@ module FixedRateBondHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -764,18 +764,18 @@ module FixedRateBondHelperFunction =
             try
 
                 let _FixedRateBondHelper = Helper.toCell<FixedRateBondHelper> fixedratebondhelper "FixedRateBondHelper"  
-                let builder () = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedRateBondHelperModel.Cast _FixedRateBondHelper.cell).Update
                                                        ) :> ICell
                 let format (o : FixedRateBondHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedRateBondHelper.source + ".Update") 
+                let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".Update") 
                                                [| _FixedRateBondHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -804,14 +804,14 @@ module FixedRateBondHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FixedRateBondHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FixedRateBondHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FixedRateBondHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FixedRateBondHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

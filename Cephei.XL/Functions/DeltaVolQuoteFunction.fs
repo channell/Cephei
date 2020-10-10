@@ -49,18 +49,18 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).AtmType
+                let builder (current : ICell) = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).AtmType
                                                        ) :> ICell
                 let format (o : DeltaVolQuote.AtmType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DeltaVolQuote.source + ".AtmType") 
+                let source () = Helper.sourceFold (_DeltaVolQuote.source + ".AtmType") 
                                                [| _DeltaVolQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DeltaVolQuote.source + ".Delta") 
+                let source () = Helper.sourceFold (_DeltaVolQuote.source + ".Delta") 
                                                [| _DeltaVolQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -122,18 +122,18 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).DeltaType
+                let builder (current : ICell) = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).DeltaType
                                                        ) :> ICell
                 let format (o : DeltaType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DeltaVolQuote.source + ".DeltaType") 
+                let source () = Helper.sourceFold (_DeltaVolQuote.source + ".DeltaType") 
                                                [| _DeltaVolQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -168,7 +168,7 @@ module DeltaVolQuoteFunction =
                 let _deltaType = Helper.toCell<DeltaVolQuote.DeltaType> deltaType "deltaType" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _atmType = Helper.toCell<DeltaVolQuote.AtmType> atmType "atmType" 
-                let builder () = withMnemonic mnemonic (Fun.DeltaVolQuote 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DeltaVolQuote 
                                                             _vol.cell 
                                                             _deltaType.cell 
                                                             _maturity.cell 
@@ -176,7 +176,7 @@ module DeltaVolQuoteFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DeltaVolQuote>) l
 
-                let source = Helper.sourceFold "Fun.DeltaVolQuote" 
+                let source () = Helper.sourceFold "Fun.DeltaVolQuote" 
                                                [| _vol.source
                                                ;  _deltaType.source
                                                ;  _maturity.source
@@ -189,7 +189,7 @@ module DeltaVolQuoteFunction =
                                 ;  _atmType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DeltaVolQuote> format
                     ; source = source 
@@ -223,7 +223,7 @@ module DeltaVolQuoteFunction =
                 let _vol = Helper.toHandle<Quote> vol "vol" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _deltaType = Helper.toCell<DeltaVolQuote.DeltaType> deltaType "deltaType" 
-                let builder () = withMnemonic mnemonic (Fun.DeltaVolQuote1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DeltaVolQuote1 
                                                             _delta.cell 
                                                             _vol.cell 
                                                             _maturity.cell 
@@ -231,7 +231,7 @@ module DeltaVolQuoteFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DeltaVolQuote>) l
 
-                let source = Helper.sourceFold "Fun.DeltaVolQuote1" 
+                let source () = Helper.sourceFold "Fun.DeltaVolQuote1" 
                                                [| _delta.source
                                                ;  _vol.source
                                                ;  _maturity.source
@@ -244,7 +244,7 @@ module DeltaVolQuoteFunction =
                                 ;  _deltaType.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DeltaVolQuote> format
                     ; source = source 
@@ -269,18 +269,18 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).IsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DeltaVolQuote.source + ".IsValid") 
+                let source () = Helper.sourceFold (_DeltaVolQuote.source + ".IsValid") 
                                                [| _DeltaVolQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -305,18 +305,18 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Maturity
+                let builder (current : ICell) = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Maturity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DeltaVolQuote.source + ".Maturity") 
+                let source () = Helper.sourceFold (_DeltaVolQuote.source + ".Maturity") 
                                                [| _DeltaVolQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -341,18 +341,18 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Update
                                                        ) :> ICell
                 let format (o : DeltaVolQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DeltaVolQuote.source + ".Update") 
+                let source () = Helper.sourceFold (_DeltaVolQuote.source + ".Update") 
                                                [| _DeltaVolQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,18 +377,18 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DeltaVolQuote.source + ".Value") 
+                let source () = Helper.sourceFold (_DeltaVolQuote.source + ".Value") 
                                                [| _DeltaVolQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -416,12 +416,12 @@ module DeltaVolQuoteFunction =
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DeltaVolQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DeltaVolQuote.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_DeltaVolQuote.source + ".RegisterWith") 
                                                [| _DeltaVolQuote.source
                                                ;  _handler.source
                                                |]
@@ -430,7 +430,7 @@ module DeltaVolQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -458,12 +458,12 @@ module DeltaVolQuoteFunction =
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DeltaVolQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DeltaVolQuote.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_DeltaVolQuote.source + ".UnregisterWith") 
                                                [| _DeltaVolQuote.source
                                                ;  _handler.source
                                                |]
@@ -472,7 +472,7 @@ module DeltaVolQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -501,14 +501,14 @@ module DeltaVolQuoteFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DeltaVolQuote>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DeltaVolQuote>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DeltaVolQuote>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DeltaVolQuote>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

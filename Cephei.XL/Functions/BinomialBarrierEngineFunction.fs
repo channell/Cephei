@@ -61,7 +61,7 @@ module BinomialBarrierEngineFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _maxTimeSteps = Helper.toDefault<int> maxTimeSteps "maxTimeSteps" 0
-                let builder () = withMnemonic mnemonic (Fun.BinomialBarrierEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BinomialBarrierEngine 
                                                             _getTree.cell 
                                                             _getAsset.cell 
                                                             _Process.cell 
@@ -70,7 +70,7 @@ module BinomialBarrierEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BinomialBarrierEngine>) l
 
-                let source = Helper.sourceFold "Fun.BinomialBarrierEngine" 
+                let source () = Helper.sourceFold "Fun.BinomialBarrierEngine" 
                                                [| _getTree.source
                                                ;  _getAsset.source
                                                ;  _Process.source
@@ -85,7 +85,7 @@ module BinomialBarrierEngineFunction =
                                 ;  _maxTimeSteps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BinomialBarrierEngine> format
                     ; source = source 
@@ -121,14 +121,14 @@ module BinomialBarrierEngineFunction =
                 let _args = Helper.toCell<BarrierOption.Arguments> args "args" 
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
                 let _grid = Helper.toDefault<TimeGrid> grid "grid" null
-                let builder () = withMnemonic mnemonic ((BinomialBarrierEngineModel.Cast _BinomialBarrierEngine.cell).getAsset
+                let builder (current : ICell) = withMnemonic mnemonic ((BinomialBarrierEngineModel.Cast _BinomialBarrierEngine.cell).getAsset
                                                             _args.cell 
                                                             _Process.cell 
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscretizedAsset>) l
 
-                let source = Helper.sourceFold (_BinomialBarrierEngine.source + ".getAsset") 
+                let source () = Helper.sourceFold (_BinomialBarrierEngine.source + ".getAsset") 
                                                [| _BinomialBarrierEngine.source
                                                ;  _args.source
                                                ;  _Process.source
@@ -141,7 +141,7 @@ module BinomialBarrierEngineFunction =
                                 ;  _grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BinomialBarrierEngine> format
                     ; source = source 
@@ -180,7 +180,7 @@ module BinomialBarrierEngineFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((BinomialBarrierEngineModel.Cast _BinomialBarrierEngine.cell).getTree
+                let builder (current : ICell) = withMnemonic mnemonic ((BinomialBarrierEngineModel.Cast _BinomialBarrierEngine.cell).getTree
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -188,7 +188,7 @@ module BinomialBarrierEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ITree>) l
 
-                let source = Helper.sourceFold (_BinomialBarrierEngine.source + ".getTree") 
+                let source () = Helper.sourceFold (_BinomialBarrierEngine.source + ".getTree") 
                                                [| _BinomialBarrierEngine.source
                                                ;  _Process.source
                                                ;  _End.source
@@ -203,7 +203,7 @@ module BinomialBarrierEngineFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BinomialBarrierEngine> format
                     ; source = source 
@@ -233,14 +233,14 @@ module BinomialBarrierEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BinomialBarrierEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BinomialBarrierEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BinomialBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BinomialBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

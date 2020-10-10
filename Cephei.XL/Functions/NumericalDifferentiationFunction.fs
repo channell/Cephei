@@ -61,7 +61,7 @@ module NumericalDifferentiationFunction =
                 let _stepSize = Helper.toCell<double> stepSize "stepSize" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _scheme = Helper.toCell<NumericalDifferentiation.Scheme> scheme "scheme" 
-                let builder () = withMnemonic mnemonic (Fun.NumericalDifferentiation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NumericalDifferentiation 
                                                             _f.cell 
                                                             _orderOfDerivative.cell 
                                                             _stepSize.cell 
@@ -70,7 +70,7 @@ module NumericalDifferentiationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NumericalDifferentiation>) l
 
-                let source = Helper.sourceFold "Fun.NumericalDifferentiation" 
+                let source () = Helper.sourceFold "Fun.NumericalDifferentiation" 
                                                [| _f.source
                                                ;  _orderOfDerivative.source
                                                ;  _stepSize.source
@@ -85,7 +85,7 @@ module NumericalDifferentiationFunction =
                                 ;  _scheme.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NumericalDifferentiation> format
                     ; source = source 
@@ -116,14 +116,14 @@ module NumericalDifferentiationFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _orderOfDerivative = Helper.toCell<int> orderOfDerivative "orderOfDerivative" 
                 let _x_offsets = Helper.toCell<Vector> x_offsets "x_offsets" 
-                let builder () = withMnemonic mnemonic (Fun.NumericalDifferentiation1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NumericalDifferentiation1 
                                                             _f.cell 
                                                             _orderOfDerivative.cell 
                                                             _x_offsets.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NumericalDifferentiation>) l
 
-                let source = Helper.sourceFold "Fun.NumericalDifferentiation1" 
+                let source () = Helper.sourceFold "Fun.NumericalDifferentiation1" 
                                                [| _f.source
                                                ;  _orderOfDerivative.source
                                                ;  _x_offsets.source
@@ -134,7 +134,7 @@ module NumericalDifferentiationFunction =
                                 ;  _x_offsets.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NumericalDifferentiation> format
                     ; source = source 
@@ -159,18 +159,18 @@ module NumericalDifferentiationFunction =
             try
 
                 let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation"  
-                let builder () = withMnemonic mnemonic ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Offsets
+                let builder (current : ICell) = withMnemonic mnemonic ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Offsets
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NumericalDifferentiation.source + ".Offsets") 
+                let source () = Helper.sourceFold (_NumericalDifferentiation.source + ".Offsets") 
                                                [| _NumericalDifferentiation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericalDifferentiation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NumericalDifferentiation> format
                     ; source = source 
@@ -198,12 +198,12 @@ module NumericalDifferentiationFunction =
 
                 let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NumericalDifferentiation.source + ".Value") 
+                let source () = Helper.sourceFold (_NumericalDifferentiation.source + ".Value") 
                                                [| _NumericalDifferentiation.source
                                                ;  _x.source
                                                |]
@@ -212,7 +212,7 @@ module NumericalDifferentiationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -237,18 +237,18 @@ module NumericalDifferentiationFunction =
             try
 
                 let _NumericalDifferentiation = Helper.toCell<NumericalDifferentiation> numericaldifferentiation "NumericalDifferentiation"  
-                let builder () = withMnemonic mnemonic ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((NumericalDifferentiationModel.Cast _NumericalDifferentiation.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NumericalDifferentiation.source + ".Weights") 
+                let source () = Helper.sourceFold (_NumericalDifferentiation.source + ".Weights") 
                                                [| _NumericalDifferentiation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericalDifferentiation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NumericalDifferentiation> format
                     ; source = source 
@@ -277,14 +277,14 @@ module NumericalDifferentiationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NumericalDifferentiation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NumericalDifferentiation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NumericalDifferentiation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NumericalDifferentiation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

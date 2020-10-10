@@ -56,13 +56,13 @@ module TridiagonalOperatorFunction =
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".Add") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".Add") 
                                                [| _TridiagonalOperator.source
                                                ;  _A.source
                                                ;  _B.source
@@ -73,7 +73,7 @@ module TridiagonalOperatorFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -102,12 +102,12 @@ module TridiagonalOperatorFunction =
 
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".ApplyTo") 
                                                [| _TridiagonalOperator.source
                                                ;  _v.source
                                                |]
@@ -116,7 +116,7 @@ module TridiagonalOperatorFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -141,18 +141,18 @@ module TridiagonalOperatorFunction =
             try
 
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".Clone") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".Clone") 
                                                [| _TridiagonalOperator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TridiagonalOperator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -177,18 +177,18 @@ module TridiagonalOperatorFunction =
             try
 
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Diagonal
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".Diagonal") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".Diagonal") 
                                                [| _TridiagonalOperator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TridiagonalOperator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -216,12 +216,12 @@ module TridiagonalOperatorFunction =
 
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Identity
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".Identity") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".Identity") 
                                                [| _TridiagonalOperator.source
                                                ;  _size.source
                                                |]
@@ -230,7 +230,7 @@ module TridiagonalOperatorFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -255,18 +255,18 @@ module TridiagonalOperatorFunction =
             try
 
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).IsTimeDependent
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".IsTimeDependent") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".IsTimeDependent") 
                                                [| _TridiagonalOperator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TridiagonalOperator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -291,18 +291,18 @@ module TridiagonalOperatorFunction =
             try
 
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).LowerDiagonal
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".LowerDiagonal") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".LowerDiagonal") 
                                                [| _TridiagonalOperator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TridiagonalOperator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -333,13 +333,13 @@ module TridiagonalOperatorFunction =
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let _a = Helper.toCell<double> a "a" 
                 let _o = Helper.toCell<IOperator> o "o" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Multiply
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Multiply
                                                             _a.cell 
                                                             _o.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".Multiply") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".Multiply") 
                                                [| _TridiagonalOperator.source
                                                ;  _a.source
                                                ;  _o.source
@@ -350,7 +350,7 @@ module TridiagonalOperatorFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -381,13 +381,13 @@ module TridiagonalOperatorFunction =
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SetFirstRow
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SetFirstRow
                                                             _valB.cell 
                                                             _valC.cell 
                                                        ) :> ICell
                 let format (o : TridiagonalOperator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".SetFirstRow") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".SetFirstRow") 
                                                [| _TridiagonalOperator.source
                                                ;  _valB.source
                                                ;  _valC.source
@@ -398,7 +398,7 @@ module TridiagonalOperatorFunction =
                                 ;  _valC.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -429,13 +429,13 @@ module TridiagonalOperatorFunction =
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SetLastRow
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SetLastRow
                                                             _valA.cell 
                                                             _valB.cell 
                                                        ) :> ICell
                 let format (o : TridiagonalOperator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".SetLastRow") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".SetLastRow") 
                                                [| _TridiagonalOperator.source
                                                ;  _valA.source
                                                ;  _valB.source
@@ -446,7 +446,7 @@ module TridiagonalOperatorFunction =
                                 ;  _valB.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -483,7 +483,7 @@ module TridiagonalOperatorFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SetMidRow
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SetMidRow
                                                             _i.cell 
                                                             _valA.cell 
                                                             _valB.cell 
@@ -491,7 +491,7 @@ module TridiagonalOperatorFunction =
                                                        ) :> ICell
                 let format (o : TridiagonalOperator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".SetMidRow") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".SetMidRow") 
                                                [| _TridiagonalOperator.source
                                                ;  _i.source
                                                ;  _valA.source
@@ -506,7 +506,7 @@ module TridiagonalOperatorFunction =
                                 ;  _valC.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -540,14 +540,14 @@ module TridiagonalOperatorFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SetMidRows
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SetMidRows
                                                             _valA.cell 
                                                             _valB.cell 
                                                             _valC.cell 
                                                        ) :> ICell
                 let format (o : TridiagonalOperator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".SetMidRows") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".SetMidRows") 
                                                [| _TridiagonalOperator.source
                                                ;  _valA.source
                                                ;  _valB.source
@@ -560,7 +560,7 @@ module TridiagonalOperatorFunction =
                                 ;  _valC.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -588,12 +588,12 @@ module TridiagonalOperatorFunction =
 
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : TridiagonalOperator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".SetTime") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".SetTime") 
                                                [| _TridiagonalOperator.source
                                                ;  _t.source
                                                |]
@@ -602,7 +602,7 @@ module TridiagonalOperatorFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -627,18 +627,18 @@ module TridiagonalOperatorFunction =
             try
 
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".Size") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".Size") 
                                                [| _TridiagonalOperator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TridiagonalOperator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -666,12 +666,12 @@ module TridiagonalOperatorFunction =
 
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SolveFor
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".SolveFor") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".SolveFor") 
                                                [| _TridiagonalOperator.source
                                                ;  _rhs.source
                                                |]
@@ -680,7 +680,7 @@ module TridiagonalOperatorFunction =
                                 ;  _rhs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -711,13 +711,13 @@ module TridiagonalOperatorFunction =
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let _tol = Helper.toCell<double> tol "tol" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SOR
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).SOR
                                                             _rhs.cell 
                                                             _tol.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".SOR") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".SOR") 
                                                [| _TridiagonalOperator.source
                                                ;  _rhs.source
                                                ;  _tol.source
@@ -728,7 +728,7 @@ module TridiagonalOperatorFunction =
                                 ;  _tol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -759,13 +759,13 @@ module TridiagonalOperatorFunction =
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Subtract
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".Subtract") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".Subtract") 
                                                [| _TridiagonalOperator.source
                                                ;  _A.source
                                                ;  _B.source
@@ -776,7 +776,7 @@ module TridiagonalOperatorFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -807,14 +807,14 @@ module TridiagonalOperatorFunction =
                 let _low = Helper.toCell<Vector> low "low" 
                 let _mid = Helper.toCell<Vector> mid "mid" 
                 let _high = Helper.toCell<Vector> high "high" 
-                let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TridiagonalOperator1 
                                                             _low.cell 
                                                             _mid.cell 
                                                             _high.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TridiagonalOperator>) l
 
-                let source = Helper.sourceFold "Fun.TridiagonalOperator1" 
+                let source () = Helper.sourceFold "Fun.TridiagonalOperator1" 
                                                [| _low.source
                                                ;  _mid.source
                                                ;  _high.source
@@ -825,7 +825,7 @@ module TridiagonalOperatorFunction =
                                 ;  _high.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -850,19 +850,19 @@ module TridiagonalOperatorFunction =
             try
 
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TridiagonalOperator2
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TridiagonalOperator>) l
 
-                let source = Helper.sourceFold "Fun.TridiagonalOperator2" 
+                let source () = Helper.sourceFold "Fun.TridiagonalOperator2" 
                                                [| _size.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -884,16 +884,16 @@ module TridiagonalOperatorFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.TridiagonalOperator ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TridiagonalOperator ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TridiagonalOperator>) l
 
-                let source = Helper.sourceFold "Fun.TridiagonalOperator" 
+                let source () = Helper.sourceFold "Fun.TridiagonalOperator" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -918,18 +918,18 @@ module TridiagonalOperatorFunction =
             try
 
                 let _TridiagonalOperator = Helper.toCell<TridiagonalOperator> tridiagonaloperator "TridiagonalOperator"  
-                let builder () = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).UpperDiagonal
+                let builder (current : ICell) = withMnemonic mnemonic ((TridiagonalOperatorModel.Cast _TridiagonalOperator.cell).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_TridiagonalOperator.source + ".UpperDiagonal") 
+                let source () = Helper.sourceFold (_TridiagonalOperator.source + ".UpperDiagonal") 
                                                [| _TridiagonalOperator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TridiagonalOperator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TridiagonalOperator> format
                     ; source = source 
@@ -958,14 +958,14 @@ module TridiagonalOperatorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TridiagonalOperator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TridiagonalOperator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TridiagonalOperator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TridiagonalOperator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

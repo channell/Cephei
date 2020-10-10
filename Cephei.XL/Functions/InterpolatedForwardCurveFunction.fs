@@ -50,18 +50,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Clone") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Clone") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -86,18 +86,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Data
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Data") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Data") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -122,18 +122,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Data_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Data_") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Data_") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -158,18 +158,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Dates
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Dates") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Dates") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -194,18 +194,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Dates_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Dates_") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Dates_") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -230,18 +230,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Forwards
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Forwards
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Forwards") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Forwards") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -275,7 +275,7 @@ module InterpolatedForwardCurveFunction =
                 let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedForwardCurve 
                                                             _dates.cell 
                                                             _forwards.cell 
                                                             _dayCounter.cell 
@@ -283,7 +283,7 @@ module InterpolatedForwardCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedForwardCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedForwardCurve" 
+                let source () = Helper.sourceFold "Fun.InterpolatedForwardCurve" 
                                                [| _dates.source
                                                ;  _forwards.source
                                                ;  _dayCounter.source
@@ -296,7 +296,7 @@ module InterpolatedForwardCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
@@ -333,7 +333,7 @@ module InterpolatedForwardCurveFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedForwardCurve1 
                                                             _dates.cell 
                                                             _forwards.cell 
                                                             _dayCounter.cell 
@@ -342,7 +342,7 @@ module InterpolatedForwardCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedForwardCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedForwardCurve1" 
+                let source () = Helper.sourceFold "Fun.InterpolatedForwardCurve1" 
                                                [| _dates.source
                                                ;  _forwards.source
                                                ;  _dayCounter.source
@@ -357,7 +357,7 @@ module InterpolatedForwardCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
@@ -400,7 +400,7 @@ module InterpolatedForwardCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedForwardCurve2 
                                                             _dates.cell 
                                                             _forwards.cell 
                                                             _dayCounter.cell 
@@ -411,7 +411,7 @@ module InterpolatedForwardCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedForwardCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedForwardCurve2" 
+                let source () = Helper.sourceFold "Fun.InterpolatedForwardCurve2" 
                                                [| _dates.source
                                                ;  _forwards.source
                                                ;  _dayCounter.source
@@ -430,7 +430,7 @@ module InterpolatedForwardCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
@@ -470,7 +470,7 @@ module InterpolatedForwardCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedForwardCurve3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _dayCounter.cell 
@@ -480,7 +480,7 @@ module InterpolatedForwardCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedForwardCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedForwardCurve3" 
+                let source () = Helper.sourceFold "Fun.InterpolatedForwardCurve3" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _dayCounter.source
@@ -497,7 +497,7 @@ module InterpolatedForwardCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
@@ -531,7 +531,7 @@ module InterpolatedForwardCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve4 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedForwardCurve4 
                                                             _dayCounter.cell 
                                                             _jumps.cell 
                                                             _jumpDates.cell 
@@ -539,7 +539,7 @@ module InterpolatedForwardCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedForwardCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedForwardCurve4" 
+                let source () = Helper.sourceFold "Fun.InterpolatedForwardCurve4" 
                                                [| _dayCounter.source
                                                ;  _jumps.source
                                                ;  _jumpDates.source
@@ -552,7 +552,7 @@ module InterpolatedForwardCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
@@ -589,7 +589,7 @@ module InterpolatedForwardCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve5 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedForwardCurve5 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
                                                             _jumps.cell 
@@ -598,7 +598,7 @@ module InterpolatedForwardCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedForwardCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedForwardCurve5" 
+                let source () = Helper.sourceFold "Fun.InterpolatedForwardCurve5" 
                                                [| _referenceDate.source
                                                ;  _dayCounter.source
                                                ;  _jumps.source
@@ -613,7 +613,7 @@ module InterpolatedForwardCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
@@ -653,7 +653,7 @@ module InterpolatedForwardCurveFunction =
                 let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve6 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedForwardCurve6 
                                                             _dates.cell 
                                                             _forwards.cell 
                                                             _dayCounter.cell 
@@ -663,7 +663,7 @@ module InterpolatedForwardCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedForwardCurve>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedForwardCurve6" 
+                let source () = Helper.sourceFold "Fun.InterpolatedForwardCurve6" 
                                                [| _dates.source
                                                ;  _forwards.source
                                                ;  _dayCounter.source
@@ -680,7 +680,7 @@ module InterpolatedForwardCurveFunction =
                                 ;  _interpolator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
@@ -705,18 +705,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Interpolation_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Interpolation_") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Interpolation_") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
@@ -741,18 +741,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Interpolator_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Interpolator_") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Interpolator_") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedForwardCurve> format
                     ; source = source 
@@ -777,18 +777,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".MaxDate") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -813,18 +813,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).MaxDate_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".MaxDate_") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".MaxDate_") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -849,18 +849,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Nodes
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Nodes") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Nodes") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -885,18 +885,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).SetupInterpolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedForwardCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".SetupInterpolation") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".SetupInterpolation") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -921,18 +921,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Times
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Times") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Times") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -957,18 +957,18 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Times_
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Times_") 
+                let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Times_") 
                                                [| _InterpolatedForwardCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -997,14 +997,14 @@ module InterpolatedForwardCurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatedForwardCurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InterpolatedForwardCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InterpolatedForwardCurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InterpolatedForwardCurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -55,13 +55,13 @@ module FdmDividendHandlerFunction =
                 let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FdmDividendHandler) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmDividendHandler.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_FdmDividendHandler.source + ".ApplyTo") 
                                                [| _FdmDividendHandler.source
                                                ;  _o.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module FdmDividendHandlerFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,18 +97,18 @@ module FdmDividendHandlerFunction =
             try
 
                 let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
-                let builder () = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).DividendDates
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).DividendDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_FdmDividendHandler.source + ".DividendDates") 
+                let source () = Helper.sourceFold (_FdmDividendHandler.source + ".DividendDates") 
                                                [| _FdmDividendHandler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmDividendHandler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -133,18 +133,18 @@ module FdmDividendHandlerFunction =
             try
 
                 let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
-                let builder () = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).Dividends
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).Dividends
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FdmDividendHandler.source + ".Dividends") 
+                let source () = Helper.sourceFold (_FdmDividendHandler.source + ".Dividends") 
                                                [| _FdmDividendHandler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmDividendHandler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -169,18 +169,18 @@ module FdmDividendHandlerFunction =
             try
 
                 let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
-                let builder () = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).DividendTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).DividendTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FdmDividendHandler.source + ".DividendTimes") 
+                let source () = Helper.sourceFold (_FdmDividendHandler.source + ".DividendTimes") 
                                                [| _FdmDividendHandler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmDividendHandler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -217,7 +217,7 @@ module FdmDividendHandlerFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _equityDirection = Helper.toCell<int> equityDirection "equityDirection" 
-                let builder () = withMnemonic mnemonic (Fun.FdmDividendHandler 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmDividendHandler 
                                                             _schedule.cell 
                                                             _mesher.cell 
                                                             _referenceDate.cell 
@@ -226,7 +226,7 @@ module FdmDividendHandlerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmDividendHandler>) l
 
-                let source = Helper.sourceFold "Fun.FdmDividendHandler" 
+                let source () = Helper.sourceFold "Fun.FdmDividendHandler" 
                                                [| _schedule.source
                                                ;  _mesher.source
                                                ;  _referenceDate.source
@@ -241,7 +241,7 @@ module FdmDividendHandlerFunction =
                                 ;  _equityDirection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmDividendHandler> format
                     ; source = source 
@@ -270,14 +270,14 @@ module FdmDividendHandlerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmDividendHandler>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmDividendHandler>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmDividendHandler>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmDividendHandler>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

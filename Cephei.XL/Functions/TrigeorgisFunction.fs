@@ -61,7 +61,7 @@ module TrigeorgisFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Factory
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -69,7 +69,7 @@ module TrigeorgisFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Trigeorgis>) l
 
-                let source = Helper.sourceFold (_Trigeorgis.source + ".Factory") 
+                let source () = Helper.sourceFold (_Trigeorgis.source + ".Factory") 
                                                [| _Trigeorgis.source
                                                ;  _Process.source
                                                ;  _End.source
@@ -84,7 +84,7 @@ module TrigeorgisFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Trigeorgis> format
                     ; source = source 
@@ -118,7 +118,7 @@ module TrigeorgisFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic (Fun.Trigeorgis1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Trigeorgis1 
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -126,7 +126,7 @@ module TrigeorgisFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Trigeorgis>) l
 
-                let source = Helper.sourceFold "Fun.Trigeorgis1" 
+                let source () = Helper.sourceFold "Fun.Trigeorgis1" 
                                                [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
@@ -139,7 +139,7 @@ module TrigeorgisFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Trigeorgis> format
                     ; source = source 
@@ -161,16 +161,16 @@ module TrigeorgisFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Trigeorgis ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Trigeorgis ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Trigeorgis>) l
 
-                let source = Helper.sourceFold "Fun.Trigeorgis" 
+                let source () = Helper.sourceFold "Fun.Trigeorgis" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Trigeorgis> format
                     ; source = source 
@@ -204,14 +204,14 @@ module TrigeorgisFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Probability
+                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Probability
                                                             _x.cell 
                                                             _y.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Trigeorgis.source + ".Probability") 
+                let source () = Helper.sourceFold (_Trigeorgis.source + ".Probability") 
                                                [| _Trigeorgis.source
                                                ;  _x.source
                                                ;  _y.source
@@ -224,7 +224,7 @@ module TrigeorgisFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,13 +255,13 @@ module TrigeorgisFunction =
                 let _Trigeorgis = Helper.toCell<Trigeorgis> trigeorgis "Trigeorgis"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Underlying
+                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Trigeorgis.source + ".Underlying") 
+                let source () = Helper.sourceFold (_Trigeorgis.source + ".Underlying") 
                                                [| _Trigeorgis.source
                                                ;  _i.source
                                                ;  _index.source
@@ -272,7 +272,7 @@ module TrigeorgisFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -306,14 +306,14 @@ module TrigeorgisFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Descendant
+                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Trigeorgis.source + ".Descendant") 
+                let source () = Helper.sourceFold (_Trigeorgis.source + ".Descendant") 
                                                [| _Trigeorgis.source
                                                ;  _x.source
                                                ;  _index.source
@@ -326,7 +326,7 @@ module TrigeorgisFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -354,12 +354,12 @@ module TrigeorgisFunction =
 
                 let _Trigeorgis = Helper.toCell<Trigeorgis> trigeorgis "Trigeorgis"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Trigeorgis.source + ".Size") 
+                let source () = Helper.sourceFold (_Trigeorgis.source + ".Size") 
                                                [| _Trigeorgis.source
                                                ;  _i.source
                                                |]
@@ -368,7 +368,7 @@ module TrigeorgisFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -393,18 +393,18 @@ module TrigeorgisFunction =
             try
 
                 let _Trigeorgis = Helper.toCell<Trigeorgis> trigeorgis "Trigeorgis"  
-                let builder () = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Columns
+                let builder (current : ICell) = withMnemonic mnemonic ((TrigeorgisModel.Cast _Trigeorgis.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Trigeorgis.source + ".Columns") 
+                let source () = Helper.sourceFold (_Trigeorgis.source + ".Columns") 
                                                [| _Trigeorgis.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Trigeorgis.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -433,14 +433,14 @@ module TrigeorgisFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Trigeorgis>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Trigeorgis>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Trigeorgis>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Trigeorgis>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

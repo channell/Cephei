@@ -55,13 +55,13 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _k = Helper.toCell<double> k "k" 
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).CapPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).CapPrice
                                                             _d.cell 
                                                             _k.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".CapPrice") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".CapPrice") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                ;  _d.source
                                                ;  _k.source
@@ -72,7 +72,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                                 ;  _k.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _k = Helper.toCell<double> k "k" 
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).FloorPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).FloorPrice
                                                             _d.cell 
                                                             _k.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".FloorPrice") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".FloorPrice") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                ;  _d.source
                                                ;  _k.source
@@ -120,7 +120,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                                 ;  _k.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -181,7 +181,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 let _cfMaturities = Helper.toCell<Generic.List<Period>> cfMaturities "cfMaturities" 
                 let _cPrice = Helper.toCell<Matrix> cPrice "cPrice" 
                 let _fPrice = Helper.toCell<Matrix> fPrice "fPrice" 
-                let builder () = withMnemonic mnemonic (Fun.InterpolatedCPICapFloorTermPriceSurface 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedCPICapFloorTermPriceSurface 
                                                             _nominal.cell 
                                                             _startRate.cell 
                                                             _observationLag.cell 
@@ -198,7 +198,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedCPICapFloorTermPriceSurface>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatedCPICapFloorTermPriceSurface" 
+                let source () = Helper.sourceFold "Fun.InterpolatedCPICapFloorTermPriceSurface" 
                                                [| _nominal.source
                                                ;  _startRate.source
                                                ;  _observationLag.source
@@ -229,7 +229,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                                 ;  _fPrice.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
@@ -260,13 +260,13 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _k = Helper.toCell<double> k "k" 
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Price
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Price
                                                             _d.cell 
                                                             _k.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Price") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Price") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                ;  _d.source
                                                ;  _k.source
@@ -277,7 +277,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                                 ;  _k.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Update
                                                        ) :> ICell
                 let format (o : InterpolatedCPICapFloorTermPriceSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Update") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Update") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).BaseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".BaseDate") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".BaseDate") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".BusinessDayConvention") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -410,18 +410,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).CapPrices
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).CapPrices
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".CapPrices") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".CapPrices") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
@@ -446,18 +446,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).CapStrikes
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).CapStrikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".CapStrikes") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".CapStrikes") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -485,12 +485,12 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).CpiOptionDateFromTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).CpiOptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".CpiOptionDateFromTenor") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".CpiOptionDateFromTenor") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                ;  _p.source
                                                |]
@@ -499,7 +499,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -524,18 +524,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).FloorPrices
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).FloorPrices
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".FloorPrices") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".FloorPrices") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
@@ -560,18 +560,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).FloorStrikes
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).FloorStrikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".FloorStrikes") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".FloorStrikes") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -596,18 +596,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Maturities
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Maturities
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Maturities") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Maturities") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -632,18 +632,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".MaxDate") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -668,18 +668,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".MaxStrike") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -704,18 +704,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).MinDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).MinDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".MinDate") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".MinDate") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -740,18 +740,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".MinStrike") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -776,18 +776,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Nominal") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Nominal") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -812,18 +812,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).ObservationLag
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".ObservationLag") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".ObservationLag") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
@@ -848,18 +848,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Strikes
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Strikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Strikes") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Strikes") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -884,18 +884,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).ZeroInflationIndex
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).ZeroInflationIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationIndex>>) l
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".ZeroInflationIndex") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".ZeroInflationIndex") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
@@ -920,18 +920,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).BaseRate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).BaseRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".BaseRate") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".BaseRate") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -956,18 +956,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Frequency") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Frequency") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -992,18 +992,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).HasSeasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).HasSeasonality
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".HasSeasonality") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".HasSeasonality") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1028,18 +1028,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).IndexIsInterpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).IndexIsInterpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".IndexIsInterpolated") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".IndexIsInterpolated") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1064,18 +1064,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).NominalTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).NominalTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".NominalTermStructure") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".NominalTermStructure") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
@@ -1100,18 +1100,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Seasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Seasonality
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Seasonality>) l
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Seasonality") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Seasonality") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
@@ -1139,12 +1139,12 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let _seasonality = Helper.toCell<Seasonality> seasonality "seasonality" 
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).SetSeasonality
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).SetSeasonality
                                                             _seasonality.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedCPICapFloorTermPriceSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".SetSeasonality") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".SetSeasonality") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                ;  _seasonality.source
                                                |]
@@ -1153,7 +1153,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                                 ;  _seasonality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1178,18 +1178,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Calendar") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Calendar") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
@@ -1214,18 +1214,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".DayCounter") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatedCPICapFloorTermPriceSurface> format
                     ; source = source 
@@ -1250,18 +1250,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".MaxTime") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1286,18 +1286,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".ReferenceDate") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1322,18 +1322,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".SettlementDays") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1361,12 +1361,12 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".TimeFromReference") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                ;  _date.source
                                                |]
@@ -1375,7 +1375,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1400,18 +1400,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".AllowsExtrapolation") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1439,12 +1439,12 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedCPICapFloorTermPriceSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".DisableExtrapolation") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                ;  _b.source
                                                |]
@@ -1453,7 +1453,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1481,12 +1481,12 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedCPICapFloorTermPriceSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".EnableExtrapolation") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                ;  _b.source
                                                |]
@@ -1495,7 +1495,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1520,18 +1520,18 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
             try
 
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
-                let builder () = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Extrapolate") 
                                                [| _InterpolatedCPICapFloorTermPriceSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedCPICapFloorTermPriceSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1560,14 +1560,14 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatedCPICapFloorTermPriceSurface>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InterpolatedCPICapFloorTermPriceSurface>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InterpolatedCPICapFloorTermPriceSurface>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InterpolatedCPICapFloorTermPriceSurface>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -55,13 +55,13 @@ module ZeroYieldFunction =
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).DiscountImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroYield.source + ".DiscountImpl") 
+                let source () = Helper.sourceFold (_ZeroYield.source + ".DiscountImpl") 
                                                [| _ZeroYield.source
                                                ;  _i.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module ZeroYieldFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module ZeroYieldFunction =
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).ForwardImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroYield.source + ".ForwardImpl") 
+                let source () = Helper.sourceFold (_ZeroYield.source + ".ForwardImpl") 
                                                [| _ZeroYield.source
                                                ;  _i.source
                                                ;  _t.source
@@ -120,7 +120,7 @@ module ZeroYieldFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,7 +157,7 @@ module ZeroYieldFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).Guess
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -165,7 +165,7 @@ module ZeroYieldFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroYield.source + ".Guess") 
+                let source () = Helper.sourceFold (_ZeroYield.source + ".Guess") 
                                                [| _ZeroYield.source
                                                ;  _i.source
                                                ;  _c.source
@@ -180,7 +180,7 @@ module ZeroYieldFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -208,12 +208,12 @@ module ZeroYieldFunction =
 
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).InitialDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ZeroYield.source + ".InitialDate") 
+                let source () = Helper.sourceFold (_ZeroYield.source + ".InitialDate") 
                                                [| _ZeroYield.source
                                                ;  _c.source
                                                |]
@@ -222,7 +222,7 @@ module ZeroYieldFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -250,12 +250,12 @@ module ZeroYieldFunction =
 
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).InitialValue
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroYield.source + ".InitialValue") 
+                let source () = Helper.sourceFold (_ZeroYield.source + ".InitialValue") 
                                                [| _ZeroYield.source
                                                ;  _c.source
                                                |]
@@ -264,7 +264,7 @@ module ZeroYieldFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,18 +289,18 @@ module ZeroYieldFunction =
             try
 
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
-                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).MaxIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroYield.source + ".MaxIterations") 
+                let source () = Helper.sourceFold (_ZeroYield.source + ".MaxIterations") 
                                                [| _ZeroYield.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroYield.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,7 +337,7 @@ module ZeroYieldFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).MaxValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -345,7 +345,7 @@ module ZeroYieldFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroYield.source + ".MaxValueAfter") 
+                let source () = Helper.sourceFold (_ZeroYield.source + ".MaxValueAfter") 
                                                [| _ZeroYield.source
                                                ;  _i.source
                                                ;  _c.source
@@ -360,7 +360,7 @@ module ZeroYieldFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -397,7 +397,7 @@ module ZeroYieldFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).MinValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -405,7 +405,7 @@ module ZeroYieldFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroYield.source + ".MinValueAfter") 
+                let source () = Helper.sourceFold (_ZeroYield.source + ".MinValueAfter") 
                                                [| _ZeroYield.source
                                                ;  _i.source
                                                ;  _c.source
@@ -420,7 +420,7 @@ module ZeroYieldFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -454,14 +454,14 @@ module ZeroYieldFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _rate = Helper.toCell<double> rate "rate" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).UpdateGuess
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).UpdateGuess
                                                             _data.cell 
                                                             _rate.cell 
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : ZeroYield) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZeroYield.source + ".UpdateGuess") 
+                let source () = Helper.sourceFold (_ZeroYield.source + ".UpdateGuess") 
                                                [| _ZeroYield.source
                                                ;  _data.source
                                                ;  _rate.source
@@ -474,7 +474,7 @@ module ZeroYieldFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -505,13 +505,13 @@ module ZeroYieldFunction =
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).ZeroYieldImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZeroYield.source + ".ZeroYieldImpl") 
+                let source () = Helper.sourceFold (_ZeroYield.source + ".ZeroYieldImpl") 
                                                [| _ZeroYield.source
                                                ;  _i.source
                                                ;  _t.source
@@ -522,7 +522,7 @@ module ZeroYieldFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -551,14 +551,14 @@ module ZeroYieldFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZeroYield>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ZeroYield>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ZeroYield>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ZeroYield>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

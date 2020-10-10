@@ -61,7 +61,7 @@ module FDShoutConditionFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -69,7 +69,7 @@ module FDShoutConditionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
-                let source = Helper.sourceFold (_FDShoutCondition.source + ".Factory") 
+                let source () = Helper.sourceFold (_FDShoutCondition.source + ".Factory") 
                                                [| _FDShoutCondition.source
                                                ;  _Process.source
                                                ;  _timeSteps.source
@@ -84,7 +84,7 @@ module FDShoutConditionFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDShoutCondition> format
                     ; source = source 
@@ -118,7 +118,7 @@ module FDShoutConditionFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic (Fun.FDShoutCondition 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDShoutCondition 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -126,7 +126,7 @@ module FDShoutConditionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDShoutCondition>) l
 
-                let source = Helper.sourceFold "Fun.FDShoutCondition" 
+                let source () = Helper.sourceFold "Fun.FDShoutCondition" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
@@ -139,7 +139,7 @@ module FDShoutConditionFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDShoutCondition> format
                     ; source = source 
@@ -161,16 +161,16 @@ module FDShoutConditionFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.FDShoutCondition1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDShoutCondition1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDShoutCondition>) l
 
-                let source = Helper.sourceFold "Fun.FDShoutCondition1" 
+                let source () = Helper.sourceFold "Fun.FDShoutCondition1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDShoutCondition> format
                     ; source = source 
@@ -199,12 +199,12 @@ module FDShoutConditionFunction =
 
                 let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder () = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).SetStepCondition
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDShoutCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDShoutCondition.source + ".SetStepCondition") 
+                let source () = Helper.sourceFold (_FDShoutCondition.source + ".SetStepCondition") 
                                                [| _FDShoutCondition.source
                                                ;  _impl.source
                                                |]
@@ -213,7 +213,7 @@ module FDShoutConditionFunction =
                                 ;  _impl.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -238,18 +238,18 @@ module FDShoutConditionFunction =
             try
 
                 let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
-                let builder () = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).EnsureStrikeInGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDShoutCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDShoutCondition.source + ".EnsureStrikeInGrid") 
+                let source () = Helper.sourceFold (_FDShoutCondition.source + ".EnsureStrikeInGrid") 
                                                [| _FDShoutCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDShoutCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -274,18 +274,18 @@ module FDShoutConditionFunction =
             try
 
                 let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
-                let builder () = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).GetResidualTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FDShoutCondition.source + ".GetResidualTime") 
+                let source () = Helper.sourceFold (_FDShoutCondition.source + ".GetResidualTime") 
                                                [| _FDShoutCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDShoutCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -310,18 +310,18 @@ module FDShoutConditionFunction =
             try
 
                 let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
-                let builder () = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FDShoutCondition.source + ".Grid") 
+                let source () = Helper.sourceFold (_FDShoutCondition.source + ".Grid") 
                                                [| _FDShoutCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDShoutCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDShoutCondition> format
                     ; source = source 
@@ -346,18 +346,18 @@ module FDShoutConditionFunction =
             try
 
                 let _FDShoutCondition = Helper.toCell<FDShoutCondition> fdshoutcondition "FDShoutCondition"  
-                let builder () = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).IntrinsicValues_
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutConditionModel.Cast _FDShoutCondition.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold (_FDShoutCondition.source + ".IntrinsicValues_") 
+                let source () = Helper.sourceFold (_FDShoutCondition.source + ".IntrinsicValues_") 
                                                [| _FDShoutCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDShoutCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDShoutCondition> format
                     ; source = source 
@@ -386,14 +386,14 @@ module FDShoutConditionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDShoutCondition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FDShoutCondition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FDShoutCondition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FDShoutCondition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

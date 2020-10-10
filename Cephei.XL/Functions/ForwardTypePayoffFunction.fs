@@ -49,18 +49,18 @@ module ForwardTypePayoffFunction =
             try
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
-                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardTypePayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".Description") 
                                                [| _ForwardTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module ForwardTypePayoffFunction =
             try
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
-                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).ForwardType
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).ForwardType
                                                        ) :> ICell
                 let format (o : Position.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardTypePayoff.source + ".ForwardType") 
+                let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".ForwardType") 
                                                [| _ForwardTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,13 +124,13 @@ module ForwardTypePayoffFunction =
 
                 let _Type = Helper.toCell<Position.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic (Fun.ForwardTypePayoff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ForwardTypePayoff 
                                                             _Type.cell 
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ForwardTypePayoff>) l
 
-                let source = Helper.sourceFold "Fun.ForwardTypePayoff" 
+                let source () = Helper.sourceFold "Fun.ForwardTypePayoff" 
                                                [| _Type.source
                                                ;  _strike.source
                                                |]
@@ -139,7 +139,7 @@ module ForwardTypePayoffFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ForwardTypePayoff> format
                     ; source = source 
@@ -164,18 +164,18 @@ module ForwardTypePayoffFunction =
             try
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
-                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardTypePayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".Name") 
                                                [| _ForwardTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module ForwardTypePayoffFunction =
             try
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
-                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Strike
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardTypePayoff.source + ".Strike") 
+                let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".Strike") 
                                                [| _ForwardTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -239,12 +239,12 @@ module ForwardTypePayoffFunction =
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardTypePayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".Value") 
                                                [| _ForwardTypePayoff.source
                                                ;  _price.source
                                                |]
@@ -253,7 +253,7 @@ module ForwardTypePayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -281,12 +281,12 @@ module ForwardTypePayoffFunction =
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : ForwardTypePayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardTypePayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".Accept") 
                                                [| _ForwardTypePayoff.source
                                                ;  _v.source
                                                |]
@@ -295,7 +295,7 @@ module ForwardTypePayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -324,14 +324,14 @@ module ForwardTypePayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardTypePayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ForwardTypePayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ForwardTypePayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ForwardTypePayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

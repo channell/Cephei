@@ -58,14 +58,14 @@ module FaceValueAccrualClaimFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _notional = Helper.toCell<double> notional "notional" 
                 let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
-                let builder () = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).Amount
                                                             _d.cell 
                                                             _notional.cell 
                                                             _recoveryRate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FaceValueAccrualClaim.source + ".Amount") 
+                let source () = Helper.sourceFold (_FaceValueAccrualClaim.source + ".Amount") 
                                                [| _FaceValueAccrualClaim.source
                                                ;  _d.source
                                                ;  _notional.source
@@ -78,7 +78,7 @@ module FaceValueAccrualClaimFunction =
                                 ;  _recoveryRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,19 +103,19 @@ module FaceValueAccrualClaimFunction =
             try
 
                 let _referenceSecurity = Helper.toCell<Bond> referenceSecurity "referenceSecurity" 
-                let builder () = withMnemonic mnemonic (Fun.FaceValueAccrualClaim 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FaceValueAccrualClaim 
                                                             _referenceSecurity.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FaceValueAccrualClaim>) l
 
-                let source = Helper.sourceFold "Fun.FaceValueAccrualClaim" 
+                let source () = Helper.sourceFold "Fun.FaceValueAccrualClaim" 
                                                [| _referenceSecurity.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _referenceSecurity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FaceValueAccrualClaim> format
                     ; source = source 
@@ -143,12 +143,12 @@ module FaceValueAccrualClaimFunction =
 
                 let _FaceValueAccrualClaim = Helper.toCell<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FaceValueAccrualClaim) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FaceValueAccrualClaim.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FaceValueAccrualClaim.source + ".RegisterWith") 
                                                [| _FaceValueAccrualClaim.source
                                                ;  _handler.source
                                                |]
@@ -157,7 +157,7 @@ module FaceValueAccrualClaimFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -185,12 +185,12 @@ module FaceValueAccrualClaimFunction =
 
                 let _FaceValueAccrualClaim = Helper.toCell<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FaceValueAccrualClaim) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FaceValueAccrualClaim.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FaceValueAccrualClaim.source + ".UnregisterWith") 
                                                [| _FaceValueAccrualClaim.source
                                                ;  _handler.source
                                                |]
@@ -199,7 +199,7 @@ module FaceValueAccrualClaimFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -224,18 +224,18 @@ module FaceValueAccrualClaimFunction =
             try
 
                 let _FaceValueAccrualClaim = Helper.toCell<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
-                let builder () = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).Update
                                                        ) :> ICell
                 let format (o : FaceValueAccrualClaim) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FaceValueAccrualClaim.source + ".Update") 
+                let source () = Helper.sourceFold (_FaceValueAccrualClaim.source + ".Update") 
                                                [| _FaceValueAccrualClaim.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FaceValueAccrualClaim.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -264,14 +264,14 @@ module FaceValueAccrualClaimFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FaceValueAccrualClaim>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FaceValueAccrualClaim>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FaceValueAccrualClaim>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FaceValueAccrualClaim>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

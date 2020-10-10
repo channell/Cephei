@@ -49,19 +49,19 @@ module FedFundsFunction =
             try
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.FedFunds 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FedFunds 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FedFunds>) l
 
-                let source = Helper.sourceFold "Fun.FedFunds" 
+                let source () = Helper.sourceFold "Fun.FedFunds" 
                                                [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FedFunds> format
                     ; source = source 
@@ -89,12 +89,12 @@ module FedFundsFunction =
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
 
-                let source = Helper.sourceFold (_FedFunds.source + ".Clone") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".Clone") 
                                                [| _FedFunds.source
                                                ;  _h.source
                                                |]
@@ -103,7 +103,7 @@ module FedFundsFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FedFunds> format
                     ; source = source 
@@ -128,18 +128,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".BusinessDayConvention") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".EndOfMonth") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,14 +209,14 @@ module FedFundsFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".ForecastFixing") 
                                                [| _FedFunds.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -229,7 +229,7 @@ module FedFundsFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -257,12 +257,12 @@ module FedFundsFunction =
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".ForecastFixing") 
                                                [| _FedFunds.source
                                                ;  _fixingDate.source
                                                |]
@@ -271,7 +271,7 @@ module FedFundsFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,18 +296,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_FedFunds.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".ForwardingTermStructure") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FedFunds> format
                     ; source = source 
@@ -335,12 +335,12 @@ module FedFundsFunction =
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".MaturityDate") 
                                                [| _FedFunds.source
                                                ;  _valueDate.source
                                                |]
@@ -349,7 +349,7 @@ module FedFundsFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_FedFunds.source + ".Currency") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".Currency") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FedFunds> format
                     ; source = source 
@@ -410,18 +410,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_FedFunds.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".DayCounter") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FedFunds> format
                     ; source = source 
@@ -446,18 +446,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".FamilyName") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,13 +488,13 @@ module FedFundsFunction =
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".Fixing") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".Fixing") 
                                                [| _FedFunds.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -505,7 +505,7 @@ module FedFundsFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -530,18 +530,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_FedFunds.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".FixingCalendar") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FedFunds> format
                     ; source = source 
@@ -569,12 +569,12 @@ module FedFundsFunction =
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".FixingDate") 
                                                [| _FedFunds.source
                                                ;  _valueDate.source
                                                |]
@@ -583,7 +583,7 @@ module FedFundsFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".FixingDays") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -647,12 +647,12 @@ module FedFundsFunction =
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".IsValidFixingDate") 
                                                [| _FedFunds.source
                                                ;  _fixingDate.source
                                                |]
@@ -661,7 +661,7 @@ module FedFundsFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -686,18 +686,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".Name") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".Name") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -725,12 +725,12 @@ module FedFundsFunction =
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".PastFixing") 
                                                [| _FedFunds.source
                                                ;  _fixingDate.source
                                                |]
@@ -739,7 +739,7 @@ module FedFundsFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -764,18 +764,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_FedFunds.source + ".Tenor") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".Tenor") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FedFunds> format
                     ; source = source 
@@ -800,18 +800,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).Update
                                                        ) :> ICell
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".Update") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".Update") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -839,12 +839,12 @@ module FedFundsFunction =
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".ValueDate") 
                                                [| _FedFunds.source
                                                ;  _fixingDate.source
                                                |]
@@ -853,7 +853,7 @@ module FedFundsFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -887,14 +887,14 @@ module FedFundsFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".AddFixing") 
                                                [| _FedFunds.source
                                                ;  _d.source
                                                ;  _v.source
@@ -907,7 +907,7 @@ module FedFundsFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -941,14 +941,14 @@ module FedFundsFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".AddFixings") 
                                                [| _FedFunds.source
                                                ;  _d.source
                                                ;  _v.source
@@ -961,7 +961,7 @@ module FedFundsFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -992,13 +992,13 @@ module FedFundsFunction =
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".AddFixings1") 
                                                [| _FedFunds.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1009,7 +1009,7 @@ module FedFundsFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1034,18 +1034,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".AllowsNativeFixings") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1070,18 +1070,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".ClearFixings") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1109,12 +1109,12 @@ module FedFundsFunction =
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".RegisterWith") 
                                                [| _FedFunds.source
                                                ;  _handler.source
                                                |]
@@ -1123,7 +1123,7 @@ module FedFundsFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1148,18 +1148,18 @@ module FedFundsFunction =
             try
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".TimeSeries") 
                                                [| _FedFunds.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1187,12 +1187,12 @@ module FedFundsFunction =
 
                 let _FedFunds = Helper.toCell<FedFunds> fedfunds "FedFunds"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FedFundsModel.Cast _FedFunds.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FedFunds.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FedFunds.source + ".UnregisterWith") 
                                                [| _FedFunds.source
                                                ;  _handler.source
                                                |]
@@ -1201,7 +1201,7 @@ module FedFundsFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1230,14 +1230,14 @@ module FedFundsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FedFunds>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FedFunds>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FedFunds>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FedFunds>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

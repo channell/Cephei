@@ -49,18 +49,18 @@ module AbcdMathFunctionFunction =
             try
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).A
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".A") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".A") 
                                                [| _AbcdMathFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,19 +85,19 @@ module AbcdMathFunctionFunction =
             try
 
                 let _abcd = Helper.toCell<Generic.List<double>> abcd "abcd" 
-                let builder () = withMnemonic mnemonic (Fun.AbcdMathFunction 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AbcdMathFunction 
                                                             _abcd.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AbcdMathFunction>) l
 
-                let source = Helper.sourceFold "Fun.AbcdMathFunction" 
+                let source () = Helper.sourceFold "Fun.AbcdMathFunction" 
                                                [| _abcd.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _abcd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AbcdMathFunction> format
                     ; source = source 
@@ -131,7 +131,7 @@ module AbcdMathFunctionFunction =
                 let _b = Helper.toDefault<double> b "b" 0.001
                 let _c = Helper.toDefault<double> c "c" 0.16
                 let _d = Helper.toDefault<double> d "d" 0.0005
-                let builder () = withMnemonic mnemonic (Fun.AbcdMathFunction1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AbcdMathFunction1 
                                                             _a.cell 
                                                             _b.cell 
                                                             _c.cell 
@@ -139,7 +139,7 @@ module AbcdMathFunctionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AbcdMathFunction>) l
 
-                let source = Helper.sourceFold "Fun.AbcdMathFunction1" 
+                let source () = Helper.sourceFold "Fun.AbcdMathFunction1" 
                                                [| _a.source
                                                ;  _b.source
                                                ;  _c.source
@@ -152,7 +152,7 @@ module AbcdMathFunctionFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AbcdMathFunction> format
                     ; source = source 
@@ -177,18 +177,18 @@ module AbcdMathFunctionFunction =
             try
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).B
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".B") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".B") 
                                                [| _AbcdMathFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -213,18 +213,18 @@ module AbcdMathFunctionFunction =
             try
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).C
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).C
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".C") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".C") 
                                                [| _AbcdMathFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -249,18 +249,18 @@ module AbcdMathFunctionFunction =
             try
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Coefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Coefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".Coefficients") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".Coefficients") 
                                                [| _AbcdMathFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -285,18 +285,18 @@ module AbcdMathFunctionFunction =
             try
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).D
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).D
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".D") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".D") 
                                                [| _AbcdMathFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -327,13 +327,13 @@ module AbcdMathFunctionFunction =
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DefiniteDerivativeCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DefiniteDerivativeCoefficients
                                                             _t.cell 
                                                             _t2.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".DefiniteDerivativeCoefficients") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".DefiniteDerivativeCoefficients") 
                                                [| _AbcdMathFunction.source
                                                ;  _t.source
                                                ;  _t2.source
@@ -344,7 +344,7 @@ module AbcdMathFunctionFunction =
                                 ;  _t2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -375,13 +375,13 @@ module AbcdMathFunctionFunction =
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DefiniteIntegral
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DefiniteIntegral
                                                             _t1.cell 
                                                             _t2.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".DefiniteIntegral") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".DefiniteIntegral") 
                                                [| _AbcdMathFunction.source
                                                ;  _t1.source
                                                ;  _t2.source
@@ -392,7 +392,7 @@ module AbcdMathFunctionFunction =
                                 ;  _t2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -423,13 +423,13 @@ module AbcdMathFunctionFunction =
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DefiniteIntegralCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DefiniteIntegralCoefficients
                                                             _t.cell 
                                                             _t2.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".DefiniteIntegralCoefficients") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".DefiniteIntegralCoefficients") 
                                                [| _AbcdMathFunction.source
                                                ;  _t.source
                                                ;  _t2.source
@@ -440,7 +440,7 @@ module AbcdMathFunctionFunction =
                                 ;  _t2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -468,12 +468,12 @@ module AbcdMathFunctionFunction =
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Derivative
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".Derivative") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".Derivative") 
                                                [| _AbcdMathFunction.source
                                                ;  _t.source
                                                |]
@@ -482,7 +482,7 @@ module AbcdMathFunctionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -507,18 +507,18 @@ module AbcdMathFunctionFunction =
             try
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DerivativeCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).DerivativeCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".DerivativeCoefficients") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".DerivativeCoefficients") 
                                                [| _AbcdMathFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -543,18 +543,18 @@ module AbcdMathFunctionFunction =
             try
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).LongTermValue
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).LongTermValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".LongTermValue") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".LongTermValue") 
                                                [| _AbcdMathFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -579,18 +579,18 @@ module AbcdMathFunctionFunction =
             try
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).MaximumLocation
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).MaximumLocation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".MaximumLocation") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".MaximumLocation") 
                                                [| _AbcdMathFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,18 +615,18 @@ module AbcdMathFunctionFunction =
             try
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).MaximumValue
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).MaximumValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".MaximumValue") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".MaximumValue") 
                                                [| _AbcdMathFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -654,12 +654,12 @@ module AbcdMathFunctionFunction =
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Primitive
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".Primitive") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".Primitive") 
                                                [| _AbcdMathFunction.source
                                                ;  _t.source
                                                |]
@@ -668,7 +668,7 @@ module AbcdMathFunctionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -696,12 +696,12 @@ module AbcdMathFunctionFunction =
 
                 let _AbcdMathFunction = Helper.toCell<AbcdMathFunction> abcdmathfunction "AbcdMathFunction"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdMathFunctionModel.Cast _AbcdMathFunction.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdMathFunction.source + ".Value") 
+                let source () = Helper.sourceFold (_AbcdMathFunction.source + ".Value") 
                                                [| _AbcdMathFunction.source
                                                ;  _t.source
                                                |]
@@ -710,7 +710,7 @@ module AbcdMathFunctionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -739,14 +739,14 @@ module AbcdMathFunctionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AbcdMathFunction>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AbcdMathFunction>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AbcdMathFunction>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AbcdMathFunction>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

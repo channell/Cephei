@@ -49,18 +49,18 @@ module SampledCurveFunction =
             try
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".Clone") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".Clone") 
                                                [| _SampledCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module SampledCurveFunction =
             try
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".Empty") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".Empty") 
                                                [| _SampledCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module SampledCurveFunction =
             try
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).FirstDerivativeAtCenter
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).FirstDerivativeAtCenter
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".FirstDerivativeAtCenter") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".FirstDerivativeAtCenter") 
                                                [| _SampledCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module SampledCurveFunction =
             try
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".Grid") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".Grid") 
                                                [| _SampledCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SampledCurve> format
                     ; source = source 
@@ -196,12 +196,12 @@ module SampledCurveFunction =
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).GridValue
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).GridValue
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".GridValue") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".GridValue") 
                                                [| _SampledCurve.source
                                                ;  _i.source
                                                |]
@@ -210,7 +210,7 @@ module SampledCurveFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -241,13 +241,13 @@ module SampledCurveFunction =
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _new_grid = Helper.toCell<Vector> new_grid "new_grid" 
                 let _func = Helper.toCell<Func<double,double>> func "func" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Regrid
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Regrid
                                                             _new_grid.cell 
                                                             _func.cell 
                                                        ) :> ICell
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".Regrid") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".Regrid") 
                                                [| _SampledCurve.source
                                                ;  _new_grid.source
                                                ;  _func.source
@@ -258,7 +258,7 @@ module SampledCurveFunction =
                                 ;  _func.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -286,12 +286,12 @@ module SampledCurveFunction =
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _new_grid = Helper.toCell<Vector> new_grid "new_grid" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Regrid1
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Regrid1
                                                             _new_grid.cell 
                                                        ) :> ICell
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".Regrid1") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".Regrid1") 
                                                [| _SampledCurve.source
                                                ;  _new_grid.source
                                                |]
@@ -300,7 +300,7 @@ module SampledCurveFunction =
                                 ;  _new_grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -331,13 +331,13 @@ module SampledCurveFunction =
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _min = Helper.toCell<double> min "min" 
                 let _max = Helper.toCell<double> max "max" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).RegridLogGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).RegridLogGrid
                                                             _min.cell 
                                                             _max.cell 
                                                        ) :> ICell
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".RegridLogGrid") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".RegridLogGrid") 
                                                [| _SampledCurve.source
                                                ;  _min.source
                                                ;  _max.source
@@ -348,7 +348,7 @@ module SampledCurveFunction =
                                 ;  _max.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -376,12 +376,12 @@ module SampledCurveFunction =
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Sample
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Sample
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".Sample") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".Sample") 
                                                [| _SampledCurve.source
                                                ;  _f.source
                                                |]
@@ -390,7 +390,7 @@ module SampledCurveFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -415,19 +415,19 @@ module SampledCurveFunction =
             try
 
                 let _grid = Helper.toCell<Vector> grid "grid" 
-                let builder () = withMnemonic mnemonic (Fun.SampledCurve 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SampledCurve 
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold "Fun.SampledCurve" 
+                let source () = Helper.sourceFold "Fun.SampledCurve" 
                                                [| _grid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SampledCurve> format
                     ; source = source 
@@ -452,19 +452,19 @@ module SampledCurveFunction =
             try
 
                 let _gridSize = Helper.toCell<int> gridSize "gridSize" 
-                let builder () = withMnemonic mnemonic (Fun.SampledCurve1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SampledCurve1 
                                                             _gridSize.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold "Fun.SampledCurve1" 
+                let source () = Helper.sourceFold "Fun.SampledCurve1" 
                                                [| _gridSize.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _gridSize.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SampledCurve> format
                     ; source = source 
@@ -492,12 +492,12 @@ module SampledCurveFunction =
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).ScaleGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).ScaleGrid
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".ScaleGrid") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".ScaleGrid") 
                                                [| _SampledCurve.source
                                                ;  _s.source
                                                |]
@@ -506,7 +506,7 @@ module SampledCurveFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -531,18 +531,18 @@ module SampledCurveFunction =
             try
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).SecondDerivativeAtCenter
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).SecondDerivativeAtCenter
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".SecondDerivativeAtCenter") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".SecondDerivativeAtCenter") 
                                                [| _SampledCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -570,12 +570,12 @@ module SampledCurveFunction =
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _g = Helper.toCell<Vector> g "g" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).SetGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).SetGrid
                                                             _g.cell 
                                                        ) :> ICell
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".SetGrid") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".SetGrid") 
                                                [| _SampledCurve.source
                                                ;  _g.source
                                                |]
@@ -584,7 +584,7 @@ module SampledCurveFunction =
                                 ;  _g.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,13 +615,13 @@ module SampledCurveFunction =
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _min = Helper.toCell<double> min "min" 
                 let _max = Helper.toCell<double> max "max" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).SetLogGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).SetLogGrid
                                                             _min.cell 
                                                             _max.cell 
                                                        ) :> ICell
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".SetLogGrid") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".SetLogGrid") 
                                                [| _SampledCurve.source
                                                ;  _min.source
                                                ;  _max.source
@@ -632,7 +632,7 @@ module SampledCurveFunction =
                                 ;  _max.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -663,13 +663,13 @@ module SampledCurveFunction =
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _i = Helper.toCell<int> i "i" 
                 let _v = Helper.toCell<double> v "v" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).SetValue
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).SetValue
                                                             _i.cell 
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".SetValue") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".SetValue") 
                                                [| _SampledCurve.source
                                                ;  _i.source
                                                ;  _v.source
@@ -680,7 +680,7 @@ module SampledCurveFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -708,12 +708,12 @@ module SampledCurveFunction =
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _g = Helper.toCell<Vector> g "g" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).SetValues
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).SetValues
                                                             _g.cell 
                                                        ) :> ICell
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".SetValues") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".SetValues") 
                                                [| _SampledCurve.source
                                                ;  _g.source
                                                |]
@@ -722,7 +722,7 @@ module SampledCurveFunction =
                                 ;  _g.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -750,12 +750,12 @@ module SampledCurveFunction =
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).ShiftGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).ShiftGrid
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".ShiftGrid") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".ShiftGrid") 
                                                [| _SampledCurve.source
                                                ;  _s.source
                                                |]
@@ -764,7 +764,7 @@ module SampledCurveFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -789,18 +789,18 @@ module SampledCurveFunction =
             try
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".Size") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".Size") 
                                                [| _SampledCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -828,12 +828,12 @@ module SampledCurveFunction =
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _x = Helper.toCell<Func<double,double>> x "x" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Transform
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Transform
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".Transform") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".Transform") 
                                                [| _SampledCurve.source
                                                ;  _x.source
                                                |]
@@ -842,7 +842,7 @@ module SampledCurveFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SampledCurve> format
                     ; source = source 
@@ -870,12 +870,12 @@ module SampledCurveFunction =
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _x = Helper.toCell<Func<double,double>> x "x" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).TransformGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).TransformGrid
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".TransformGrid") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".TransformGrid") 
                                                [| _SampledCurve.source
                                                ;  _x.source
                                                |]
@@ -884,7 +884,7 @@ module SampledCurveFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SampledCurve> format
                     ; source = source 
@@ -912,12 +912,12 @@ module SampledCurveFunction =
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Value
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".Value") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".Value") 
                                                [| _SampledCurve.source
                                                ;  _i.source
                                                |]
@@ -926,7 +926,7 @@ module SampledCurveFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -951,18 +951,18 @@ module SampledCurveFunction =
             try
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).ValueAtCenter
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).ValueAtCenter
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".ValueAtCenter") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".ValueAtCenter") 
                                                [| _SampledCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -987,18 +987,18 @@ module SampledCurveFunction =
             try
 
                 let _SampledCurve = Helper.toCell<SampledCurve> sampledcurve "SampledCurve"  
-                let builder () = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Values
+                let builder (current : ICell) = withMnemonic mnemonic ((SampledCurveModel.Cast _SampledCurve.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SampledCurve.source + ".Values") 
+                let source () = Helper.sourceFold (_SampledCurve.source + ".Values") 
                                                [| _SampledCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SampledCurve> format
                     ; source = source 
@@ -1027,14 +1027,14 @@ module SampledCurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SampledCurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SampledCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SampledCurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SampledCurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

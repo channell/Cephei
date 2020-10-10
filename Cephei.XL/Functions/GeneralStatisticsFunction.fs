@@ -56,13 +56,13 @@ module GeneralStatisticsFunction =
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Add
                                                             _value.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : GeneralStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Add") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Add") 
                                                [| _GeneralStatistics.source
                                                ;  _value.source
                                                ;  _weight.source
@@ -73,7 +73,7 @@ module GeneralStatisticsFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,12 +103,12 @@ module GeneralStatisticsFunction =
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Add1
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Add1
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : GeneralStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Add") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Add") 
                                                [| _GeneralStatistics.source
                                                ;  _value.source
                                                |]
@@ -117,7 +117,7 @@ module GeneralStatisticsFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -146,12 +146,12 @@ module GeneralStatisticsFunction =
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _list = Helper.toCell<Generic.List<double>> list "list" 
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).AddSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).AddSequence
                                                             _list.cell 
                                                        ) :> ICell
                 let format (o : GeneralStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".AddSequence") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".AddSequence") 
                                                [| _GeneralStatistics.source
                                                ;  _list.source
                                                |]
@@ -160,7 +160,7 @@ module GeneralStatisticsFunction =
                                 ;  _list.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -191,13 +191,13 @@ module GeneralStatisticsFunction =
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).AddSequence1
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).AddSequence1
                                                             _data.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : GeneralStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".AddSequence1") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".AddSequence1") 
                                                [| _GeneralStatistics.source
                                                ;  _data.source
                                                ;  _weight.source
@@ -208,7 +208,7 @@ module GeneralStatisticsFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -233,18 +233,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Data
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<Generic.KeyValuePair<double,double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Data") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Data") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -269,18 +269,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".ErrorEstimate") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -312,13 +312,13 @@ module GeneralStatisticsFunction =
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).ExpectationValue
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
                                                        ) :> ICell
                 let format (o : Generic.KeyValuePair<double,int>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".ExpectationValue") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".ExpectationValue") 
                                                [| _GeneralStatistics.source
                                                ;  _f.source
                                                ;  _inRange.source
@@ -329,7 +329,7 @@ module GeneralStatisticsFunction =
                                 ;  _inRange.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -351,16 +351,16 @@ module GeneralStatisticsFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.GeneralStatistics ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GeneralStatistics ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GeneralStatistics>) l
 
-                let source = Helper.sourceFold "Fun.GeneralStatistics" 
+                let source () = Helper.sourceFold "Fun.GeneralStatistics" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeneralStatistics> format
                     ; source = source 
@@ -385,18 +385,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Kurtosis
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Kurtosis") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Kurtosis") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -421,18 +421,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Max
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Max") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Max") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -457,18 +457,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Mean
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Mean") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Mean") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -493,18 +493,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Min
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Min") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Min") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -532,12 +532,12 @@ module GeneralStatisticsFunction =
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Percentile
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Percentile") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Percentile") 
                                                [| _GeneralStatistics.source
                                                ;  _percent.source
                                                |]
@@ -546,7 +546,7 @@ module GeneralStatisticsFunction =
                                 ;  _percent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -571,18 +571,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Reset
                                                        ) :> ICell
                 let format (o : GeneralStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Reset") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Reset") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -607,18 +607,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Samples
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Samples") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Samples") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -643,18 +643,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Skewness
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Skewness") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Skewness") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -679,18 +679,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Sort
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Sort
                                                        ) :> ICell
                 let format (o : GeneralStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Sort") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Sort") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -715,18 +715,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).StandardDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".StandardDeviation") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".StandardDeviation") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -754,12 +754,12 @@ module GeneralStatisticsFunction =
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).TopPercentile
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).TopPercentile
                                                             _percent.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".TopPercentile") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".TopPercentile") 
                                                [| _GeneralStatistics.source
                                                ;  _percent.source
                                                |]
@@ -768,7 +768,7 @@ module GeneralStatisticsFunction =
                                 ;  _percent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -793,18 +793,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".Variance") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".Variance") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -829,18 +829,18 @@ module GeneralStatisticsFunction =
             try
 
                 let _GeneralStatistics = Helper.toCell<GeneralStatistics> generalstatistics "GeneralStatistics"  
-                let builder () = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).WeightSum
+                let builder (current : ICell) = withMnemonic mnemonic ((GeneralStatisticsModel.Cast _GeneralStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeneralStatistics.source + ".WeightSum") 
+                let source () = Helper.sourceFold (_GeneralStatistics.source + ".WeightSum") 
                                                [| _GeneralStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeneralStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -869,14 +869,14 @@ module GeneralStatisticsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GeneralStatistics>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GeneralStatistics>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GeneralStatistics>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GeneralStatistics>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

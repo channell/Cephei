@@ -49,18 +49,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).CraigSneyd
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).CraigSneyd
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".CraigSneyd") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".CraigSneyd") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -85,18 +85,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).CrankNicolson
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).CrankNicolson
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".CrankNicolson") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".CrankNicolson") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -121,18 +121,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Douglas
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Douglas
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".Douglas") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".Douglas") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -157,18 +157,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ExplicitEuler
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ExplicitEuler
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".ExplicitEuler") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".ExplicitEuler") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -199,14 +199,14 @@ module FdmSchemeDescFunction =
                 let _Type = Helper.toCell<FdmSchemeDesc.FdmSchemeType> Type "Type" 
                 let _theta = Helper.toCell<double> theta "theta" 
                 let _mu = Helper.toCell<double> mu "mu" 
-                let builder () = withMnemonic mnemonic (Fun.FdmSchemeDesc 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmSchemeDesc 
                                                             _Type.cell 
                                                             _theta.cell 
                                                             _mu.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold "Fun.FdmSchemeDesc" 
+                let source () = Helper.sourceFold "Fun.FdmSchemeDesc" 
                                                [| _Type.source
                                                ;  _theta.source
                                                ;  _mu.source
@@ -217,7 +217,7 @@ module FdmSchemeDescFunction =
                                 ;  _mu.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -239,16 +239,16 @@ module FdmSchemeDescFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.FdmSchemeDesc1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmSchemeDesc1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold "Fun.FdmSchemeDesc1" 
+                let source () = Helper.sourceFold "Fun.FdmSchemeDesc1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -273,18 +273,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Hundsdorfer
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Hundsdorfer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".Hundsdorfer") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".Hundsdorfer") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -309,18 +309,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ImplicitEuler
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ImplicitEuler
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".ImplicitEuler") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".ImplicitEuler") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -351,13 +351,13 @@ module FdmSchemeDescFunction =
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
                 let _eps = Helper.toDefault<double> eps "eps" 0.001
                 let _relInitStepSize = Helper.toDefault<double> relInitStepSize "relInitStepSize" 0.01
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).MethodOfLines
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).MethodOfLines
                                                             _eps.cell 
                                                             _relInitStepSize.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".MethodOfLines") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".MethodOfLines") 
                                                [| _FdmSchemeDesc.source
                                                ;  _eps.source
                                                ;  _relInitStepSize.source
@@ -368,7 +368,7 @@ module FdmSchemeDescFunction =
                                 ;  _relInitStepSize.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -393,18 +393,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ModifiedCraigSneyd
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ModifiedCraigSneyd
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".ModifiedCraigSneyd") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".ModifiedCraigSneyd") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -429,18 +429,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ModifiedHundsdorfer
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).ModifiedHundsdorfer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".ModifiedHundsdorfer") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".ModifiedHundsdorfer") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -465,18 +465,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Mu
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Mu
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".Mu") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".Mu") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -501,18 +501,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".Theta") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".Theta") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -537,18 +537,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).TrBDF2
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).TrBDF2
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSchemeDesc>) l
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".TrBDF2") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".TrBDF2") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSchemeDesc> format
                     ; source = source 
@@ -573,18 +573,18 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let builder () = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSchemeDescModel.Cast _FdmSchemeDesc.cell).Type
                                                        ) :> ICell
                 let format (o : FdmSchemeDesc.FdmSchemeType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmSchemeDesc.source + ".TYPE") 
+                let source () = Helper.sourceFold (_FdmSchemeDesc.source + ".TYPE") 
                                                [| _FdmSchemeDesc.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSchemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -613,14 +613,14 @@ module FdmSchemeDescFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmSchemeDesc>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmSchemeDesc>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmSchemeDesc>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmSchemeDesc>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

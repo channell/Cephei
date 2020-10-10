@@ -56,14 +56,14 @@ module G2SwaptionEngineFunction =
                 let _model = Helper.toCell<G2> model "model" 
                 let _range = Helper.toCell<double> range "range" 
                 let _intervals = Helper.toCell<int> intervals "intervals" 
-                let builder () = withMnemonic mnemonic (Fun.G2SwaptionEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.G2SwaptionEngine 
                                                             _model.cell 
                                                             _range.cell 
                                                             _intervals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<G2SwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.G2SwaptionEngine" 
+                let source () = Helper.sourceFold "Fun.G2SwaptionEngine" 
                                                [| _model.source
                                                ;  _range.source
                                                ;  _intervals.source
@@ -74,7 +74,7 @@ module G2SwaptionEngineFunction =
                                 ;  _intervals.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<G2SwaptionEngine> format
                     ; source = source 
@@ -103,12 +103,12 @@ module G2SwaptionEngineFunction =
 
                 let _G2SwaptionEngine = Helper.toCell<G2SwaptionEngine> g2swaptionengine "G2SwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2SwaptionEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_G2SwaptionEngine.source + ".SetModel") 
                                                [| _G2SwaptionEngine.source
                                                ;  _model.source
                                                |]
@@ -117,7 +117,7 @@ module G2SwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -146,12 +146,12 @@ module G2SwaptionEngineFunction =
 
                 let _G2SwaptionEngine = Helper.toCell<G2SwaptionEngine> g2swaptionengine "G2SwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2SwaptionEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_G2SwaptionEngine.source + ".RegisterWith") 
                                                [| _G2SwaptionEngine.source
                                                ;  _handler.source
                                                |]
@@ -160,7 +160,7 @@ module G2SwaptionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -185,18 +185,18 @@ module G2SwaptionEngineFunction =
             try
 
                 let _G2SwaptionEngine = Helper.toCell<G2SwaptionEngine> g2swaptionengine "G2SwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2SwaptionEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_G2SwaptionEngine.source + ".Reset") 
                                                [| _G2SwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2SwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -224,12 +224,12 @@ module G2SwaptionEngineFunction =
 
                 let _G2SwaptionEngine = Helper.toCell<G2SwaptionEngine> g2swaptionengine "G2SwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2SwaptionEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_G2SwaptionEngine.source + ".UnregisterWith") 
                                                [| _G2SwaptionEngine.source
                                                ;  _handler.source
                                                |]
@@ -238,7 +238,7 @@ module G2SwaptionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -263,18 +263,18 @@ module G2SwaptionEngineFunction =
             try
 
                 let _G2SwaptionEngine = Helper.toCell<G2SwaptionEngine> g2swaptionengine "G2SwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_G2SwaptionEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_G2SwaptionEngine.source + ".Update") 
                                                [| _G2SwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2SwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -303,14 +303,14 @@ module G2SwaptionEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<G2SwaptionEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<G2SwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<G2SwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<G2SwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

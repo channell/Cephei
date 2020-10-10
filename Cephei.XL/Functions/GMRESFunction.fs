@@ -59,7 +59,7 @@ module GMRESFunction =
                 let _maxIter = Helper.toCell<int> maxIter "maxIter" 
                 let _relTol = Helper.toCell<double> relTol "relTol" 
                 let _preConditioner = Helper.toDefault<MatrixMult> preConditioner "preConditioner" null
-                let builder () = withMnemonic mnemonic (Fun.GMRES 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GMRES 
                                                             _A.cell 
                                                             _maxIter.cell 
                                                             _relTol.cell 
@@ -67,7 +67,7 @@ module GMRESFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GMRES>) l
 
-                let source = Helper.sourceFold "Fun.GMRES" 
+                let source () = Helper.sourceFold "Fun.GMRES" 
                                                [| _A.source
                                                ;  _maxIter.source
                                                ;  _relTol.source
@@ -80,7 +80,7 @@ module GMRESFunction =
                                 ;  _preConditioner.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GMRES> format
                     ; source = source 
@@ -110,12 +110,12 @@ module GMRESFunction =
 
                 let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).MatrixMult
+                let builder (current : ICell) = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).MatrixMult
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GMRES.source + ".MatrixMult") 
+                let source () = Helper.sourceFold (_GMRES.source + ".MatrixMult") 
                                                [| _GMRES.source
                                                ;  _x.source
                                                |]
@@ -124,7 +124,7 @@ module GMRESFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GMRES> format
                     ; source = source 
@@ -156,13 +156,13 @@ module GMRESFunction =
                 let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null
-                let builder () = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).Solve
+                let builder (current : ICell) = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).Solve
                                                             _b.cell 
                                                             _x0.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GMRESResult>) l
 
-                let source = Helper.sourceFold (_GMRES.source + ".Solve") 
+                let source () = Helper.sourceFold (_GMRES.source + ".Solve") 
                                                [| _GMRES.source
                                                ;  _b.source
                                                ;  _x0.source
@@ -173,7 +173,7 @@ module GMRESFunction =
                                 ;  _x0.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GMRES> format
                     ; source = source 
@@ -207,14 +207,14 @@ module GMRESFunction =
                 let _restart = Helper.toCell<int> restart "restart" 
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null
-                let builder () = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).SolveWithRestart
+                let builder (current : ICell) = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).SolveWithRestart
                                                             _restart.cell 
                                                             _b.cell 
                                                             _x0.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GMRESResult>) l
 
-                let source = Helper.sourceFold (_GMRES.source + ".SolveWithRestart") 
+                let source () = Helper.sourceFold (_GMRES.source + ".SolveWithRestart") 
                                                [| _GMRES.source
                                                ;  _restart.source
                                                ;  _b.source
@@ -227,7 +227,7 @@ module GMRESFunction =
                                 ;  _x0.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GMRES> format
                     ; source = source 
@@ -256,14 +256,14 @@ module GMRESFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GMRES>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GMRES>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GMRES>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GMRES>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

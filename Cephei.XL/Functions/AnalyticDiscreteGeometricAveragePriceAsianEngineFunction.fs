@@ -49,19 +49,19 @@ module AnalyticDiscreteGeometricAveragePriceAsianEngineFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticDiscreteGeometricAveragePriceAsianEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticDiscreteGeometricAveragePriceAsianEngine 
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticDiscreteGeometricAveragePriceAsianEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticDiscreteGeometricAveragePriceAsianEngine" 
+                let source () = Helper.sourceFold "Fun.AnalyticDiscreteGeometricAveragePriceAsianEngine" 
                                                [| _Process.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticDiscreteGeometricAveragePriceAsianEngine> format
                     ; source = source 
@@ -91,14 +91,14 @@ module AnalyticDiscreteGeometricAveragePriceAsianEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticDiscreteGeometricAveragePriceAsianEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticDiscreteGeometricAveragePriceAsianEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticDiscreteGeometricAveragePriceAsianEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticDiscreteGeometricAveragePriceAsianEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

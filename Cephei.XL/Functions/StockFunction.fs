@@ -49,18 +49,18 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Stock.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_Stock.source + ".IsExpired") 
                                                [| _Stock.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,14 +91,14 @@ module StockFunction =
                 let _quote = Helper.toHandle<Quote> quote "quote" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.Stock 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Stock 
                                                             _quote.cell 
                                                             _pricingEngine.cell 
                                                             _evaluationDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Stock>) l
 
-                let source = Helper.sourceFold "Fun.Stock" 
+                let source () = Helper.sourceFold "Fun.Stock" 
                                                [| _quote.source
                                                ;  _pricingEngine.source
                                                ;  _evaluationDate.source
@@ -109,7 +109,7 @@ module StockFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Stock> format
                     ; source = source 
@@ -134,18 +134,18 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Stock.source + ".CASH") 
+                let source () = Helper.sourceFold (_Stock.source + ".CASH") 
                                                [| _Stock.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Stock.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_Stock.source + ".ErrorEstimate") 
                                                [| _Stock.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,18 +206,18 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Stock.source + ".NPV") 
+                let source () = Helper.sourceFold (_Stock.source + ".NPV") 
                                                [| _Stock.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -245,12 +245,12 @@ module StockFunction =
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Stock.source + ".Result") 
+                let source () = Helper.sourceFold (_Stock.source + ".Result") 
                                                [| _Stock.source
                                                ;  _tag.source
                                                |]
@@ -259,7 +259,7 @@ module StockFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -287,12 +287,12 @@ module StockFunction =
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Stock) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Stock.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_Stock.source + ".SetPricingEngine") 
                                                [| _Stock.source
                                                ;  _e.source
                                                |]
@@ -301,7 +301,7 @@ module StockFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,18 +326,18 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Stock.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_Stock.source + ".ValuationDate") 
                                                [| _Stock.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -366,14 +366,14 @@ module StockFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Stock>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Stock>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Stock>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Stock>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

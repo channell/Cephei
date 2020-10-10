@@ -74,7 +74,7 @@ module FdBlackScholesVanillaEngineFunction =
                 let _localVol = Helper.toDefault<bool> localVol "localVol" false
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
                 let _cashDividendModel = Helper.toDefault<FdBlackScholesVanillaEngine.CashDividendModel> cashDividendModel "cashDividendModel" FdBlackScholesVanillaEngine.CashDividendModel.Spot
-                let builder () = withMnemonic mnemonic (Fun.FdBlackScholesVanillaEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdBlackScholesVanillaEngine1 
                                                             _Process.cell 
                                                             _quantoHelper.cell 
                                                             _tGrid.cell 
@@ -87,7 +87,7 @@ module FdBlackScholesVanillaEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdBlackScholesVanillaEngine>) l
 
-                let source = Helper.sourceFold "Fun.FdBlackScholesVanillaEngine1" 
+                let source () = Helper.sourceFold "Fun.FdBlackScholesVanillaEngine1" 
                                                [| _Process.source
                                                ;  _quantoHelper.source
                                                ;  _tGrid.source
@@ -110,7 +110,7 @@ module FdBlackScholesVanillaEngineFunction =
                                 ;  _cashDividendModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdBlackScholesVanillaEngine> format
                     ; source = source 
@@ -156,7 +156,7 @@ module FdBlackScholesVanillaEngineFunction =
                 let _localVol = Helper.toDefault<bool> localVol "localVol" false
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
                 let _cashDividendModel = Helper.toDefault<FdBlackScholesVanillaEngine.CashDividendModel> cashDividendModel "cashDividendModel" FdBlackScholesVanillaEngine.CashDividendModel.Spot
-                let builder () = withMnemonic mnemonic (Fun.FdBlackScholesVanillaEngine
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdBlackScholesVanillaEngine
                                                             _Process.cell 
                                                             _tGrid.cell 
                                                             _xGrid.cell 
@@ -168,7 +168,7 @@ module FdBlackScholesVanillaEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdBlackScholesVanillaEngine>) l
 
-                let source = Helper.sourceFold "Fun.FdBlackScholesVanillaEngine" 
+                let source () = Helper.sourceFold "Fun.FdBlackScholesVanillaEngine" 
                                                [| _Process.source
                                                ;  _tGrid.source
                                                ;  _xGrid.source
@@ -189,7 +189,7 @@ module FdBlackScholesVanillaEngineFunction =
                                 ;  _cashDividendModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdBlackScholesVanillaEngine> format
                     ; source = source 
@@ -218,14 +218,14 @@ module FdBlackScholesVanillaEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdBlackScholesVanillaEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdBlackScholesVanillaEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdBlackScholesVanillaEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdBlackScholesVanillaEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

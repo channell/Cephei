@@ -49,18 +49,18 @@ module TabulatedGaussLegendreFunction =
             try
 
                 let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
-                let builder () = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order
+                let builder (current : ICell) = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TabulatedGaussLegendre.source + ".Order") 
+                let source () = Helper.sourceFold (_TabulatedGaussLegendre.source + ".Order") 
                                                [| _TabulatedGaussLegendre.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TabulatedGaussLegendre.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -88,12 +88,12 @@ module TabulatedGaussLegendreFunction =
 
                 let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
                 let _order = Helper.toCell<int> order "order" 
-                let builder () = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order1
+                let builder (current : ICell) = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order1
                                                             _order.cell 
                                                        ) :> ICell
                 let format (o : TabulatedGaussLegendre) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TabulatedGaussLegendre.source + ".Order") 
+                let source () = Helper.sourceFold (_TabulatedGaussLegendre.source + ".Order") 
                                                [| _TabulatedGaussLegendre.source
                                                ;  _order.source
                                                |]
@@ -102,7 +102,7 @@ module TabulatedGaussLegendreFunction =
                                 ;  _order.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -127,19 +127,19 @@ module TabulatedGaussLegendreFunction =
             try
 
                 let _n = Helper.toDefault<int> n "n" 20
-                let builder () = withMnemonic mnemonic (Fun.TabulatedGaussLegendre 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TabulatedGaussLegendre 
                                                             _n.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TabulatedGaussLegendre>) l
 
-                let source = Helper.sourceFold "Fun.TabulatedGaussLegendre" 
+                let source () = Helper.sourceFold "Fun.TabulatedGaussLegendre" 
                                                [| _n.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _n.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TabulatedGaussLegendre> format
                     ; source = source 
@@ -167,12 +167,12 @@ module TabulatedGaussLegendreFunction =
 
                 let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TabulatedGaussLegendre.source + ".Value") 
+                let source () = Helper.sourceFold (_TabulatedGaussLegendre.source + ".Value") 
                                                [| _TabulatedGaussLegendre.source
                                                ;  _f.source
                                                |]
@@ -181,7 +181,7 @@ module TabulatedGaussLegendreFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -210,14 +210,14 @@ module TabulatedGaussLegendreFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TabulatedGaussLegendre>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TabulatedGaussLegendre>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TabulatedGaussLegendre>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TabulatedGaussLegendre>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

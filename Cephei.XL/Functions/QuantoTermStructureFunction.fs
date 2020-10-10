@@ -49,18 +49,18 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder () = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_QuantoTermStructure.source + ".Calendar") 
+                let source () = Helper.sourceFold (_QuantoTermStructure.source + ".Calendar") 
                                                [| _QuantoTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _QuantoTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<QuantoTermStructure> format
                     ; source = source 
@@ -85,18 +85,18 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder () = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_QuantoTermStructure.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_QuantoTermStructure.source + ".DayCounter") 
                                                [| _QuantoTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _QuantoTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<QuantoTermStructure> format
                     ; source = source 
@@ -121,18 +121,18 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder () = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_QuantoTermStructure.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_QuantoTermStructure.source + ".MaxDate") 
                                                [| _QuantoTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _QuantoTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -178,7 +178,7 @@ module QuantoTermStructureFunction =
                 let _exchRateBlackVolTS = Helper.toHandle<BlackVolTermStructure> exchRateBlackVolTS "exchRateBlackVolTS" 
                 let _exchRateATMlevel = Helper.toCell<double> exchRateATMlevel "exchRateATMlevel" 
                 let _underlyingExchRateCorrelation = Helper.toCell<double> underlyingExchRateCorrelation "underlyingExchRateCorrelation" 
-                let builder () = withMnemonic mnemonic (Fun.QuantoTermStructure 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.QuantoTermStructure 
                                                             _underlyingDividendTS.cell 
                                                             _riskFreeTS.cell 
                                                             _foreignRiskFreeTS.cell 
@@ -190,7 +190,7 @@ module QuantoTermStructureFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<QuantoTermStructure>) l
 
-                let source = Helper.sourceFold "Fun.QuantoTermStructure" 
+                let source () = Helper.sourceFold "Fun.QuantoTermStructure" 
                                                [| _underlyingDividendTS.source
                                                ;  _riskFreeTS.source
                                                ;  _foreignRiskFreeTS.source
@@ -211,7 +211,7 @@ module QuantoTermStructureFunction =
                                 ;  _underlyingExchRateCorrelation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<QuantoTermStructure> format
                     ; source = source 
@@ -236,18 +236,18 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder () = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_QuantoTermStructure.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_QuantoTermStructure.source + ".ReferenceDate") 
                                                [| _QuantoTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _QuantoTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,18 +272,18 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder () = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_QuantoTermStructure.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_QuantoTermStructure.source + ".SettlementDays") 
                                                [| _QuantoTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _QuantoTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -312,14 +312,14 @@ module QuantoTermStructureFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<QuantoTermStructure>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<QuantoTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<QuantoTermStructure>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<QuantoTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

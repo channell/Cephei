@@ -52,13 +52,13 @@ module JPYLiborFunction =
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.JPYLibor1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.JPYLibor1 
                                                             _tenor.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JPYLibor>) l
 
-                let source = Helper.sourceFold "Fun.JPYLibor1" 
+                let source () = Helper.sourceFold "Fun.JPYLibor1" 
                                                [| _tenor.source
                                                ;  _h.source
                                                |]
@@ -67,7 +67,7 @@ module JPYLiborFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JPYLibor> format
                     ; source = source 
@@ -92,19 +92,19 @@ module JPYLiborFunction =
             try
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic (Fun.JPYLibor
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.JPYLibor
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JPYLibor>) l
 
-                let source = Helper.sourceFold "Fun.JPYLibor1" 
+                let source () = Helper.sourceFold "Fun.JPYLibor1" 
                                                [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _tenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JPYLibor> format
                     ; source = source 
@@ -132,12 +132,12 @@ module JPYLiborFunction =
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".Clone") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".Clone") 
                                                [| _JPYLibor.source
                                                ;  _h.source
                                                |]
@@ -146,7 +146,7 @@ module JPYLiborFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JPYLibor> format
                     ; source = source 
@@ -174,12 +174,12 @@ module JPYLiborFunction =
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".MaturityDate") 
                                                [| _JPYLibor.source
                                                ;  _valueDate.source
                                                |]
@@ -188,7 +188,7 @@ module JPYLiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -216,12 +216,12 @@ module JPYLiborFunction =
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".ValueDate") 
                                                [| _JPYLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -230,7 +230,7 @@ module JPYLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,18 +255,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".BusinessDayConvention") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -291,18 +291,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".EndOfMonth") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -336,14 +336,14 @@ module JPYLiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".ForecastFixing1") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".ForecastFixing1") 
                                                [| _JPYLibor.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -356,7 +356,7 @@ module JPYLiborFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -384,12 +384,12 @@ module JPYLiborFunction =
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".ForecastFixing") 
                                                [| _JPYLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -398,7 +398,7 @@ module JPYLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -423,18 +423,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".ForwardingTermStructure") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JPYLibor> format
                     ; source = source 
@@ -459,18 +459,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".Currency") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".Currency") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JPYLibor> format
                     ; source = source 
@@ -495,18 +495,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".DayCounter") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JPYLibor> format
                     ; source = source 
@@ -531,18 +531,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".FamilyName") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -573,13 +573,13 @@ module JPYLiborFunction =
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".Fixing") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".Fixing") 
                                                [| _JPYLibor.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -590,7 +590,7 @@ module JPYLiborFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,18 +615,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".FixingCalendar") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JPYLibor> format
                     ; source = source 
@@ -654,12 +654,12 @@ module JPYLiborFunction =
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".FixingDate") 
                                                [| _JPYLibor.source
                                                ;  _valueDate.source
                                                |]
@@ -668,7 +668,7 @@ module JPYLiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -693,18 +693,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".FixingDays") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -732,12 +732,12 @@ module JPYLiborFunction =
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".IsValidFixingDate") 
                                                [| _JPYLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -746,7 +746,7 @@ module JPYLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -771,18 +771,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".Name") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".Name") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -810,12 +810,12 @@ module JPYLiborFunction =
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".PastFixing") 
                                                [| _JPYLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -824,7 +824,7 @@ module JPYLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -849,18 +849,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".Tenor") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".Tenor") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JPYLibor> format
                     ; source = source 
@@ -885,18 +885,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).Update
                                                        ) :> ICell
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".Update") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".Update") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -930,14 +930,14 @@ module JPYLiborFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".AddFixing") 
                                                [| _JPYLibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -950,7 +950,7 @@ module JPYLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -984,14 +984,14 @@ module JPYLiborFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".AddFixings") 
                                                [| _JPYLibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1004,7 +1004,7 @@ module JPYLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1035,13 +1035,13 @@ module JPYLiborFunction =
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".AddFixings1") 
                                                [| _JPYLibor.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1052,7 +1052,7 @@ module JPYLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1077,18 +1077,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".AllowsNativeFixings") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1113,18 +1113,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".ClearFixings") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1152,12 +1152,12 @@ module JPYLiborFunction =
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".RegisterWith") 
                                                [| _JPYLibor.source
                                                ;  _handler.source
                                                |]
@@ -1166,7 +1166,7 @@ module JPYLiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1191,18 +1191,18 @@ module JPYLiborFunction =
             try
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".TimeSeries") 
                                                [| _JPYLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1230,12 +1230,12 @@ module JPYLiborFunction =
 
                 let _JPYLibor = Helper.toCell<JPYLibor> jpylibor "JPYLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((JPYLiborModel.Cast _JPYLibor.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JPYLibor.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_JPYLibor.source + ".UnregisterWith") 
                                                [| _JPYLibor.source
                                                ;  _handler.source
                                                |]
@@ -1244,7 +1244,7 @@ module JPYLiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1273,14 +1273,14 @@ module JPYLiborFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<JPYLibor>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<JPYLibor>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<JPYLibor>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<JPYLibor>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,12 +52,12 @@ module RelinkableHandleFunction =
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _h = Helper.toCell<'T> h "h" 
-                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).LinkTo
+                let builder (current : ICell) = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).LinkTo
                                                             _h.cell 
                                                        ) :> ICell
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RelinkableHandle.source + ".LinkTo") 
+                let source () = Helper.sourceFold (_RelinkableHandle.source + ".LinkTo") 
                                                [| _RelinkableHandle.source
                                                ;  _h.source
                                                |]
@@ -66,7 +66,7 @@ module RelinkableHandleFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,13 +97,13 @@ module RelinkableHandleFunction =
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _h = Helper.toCell<'T> h "h" 
                 let _registerAsObserver = Helper.toCell<bool> registerAsObserver "registerAsObserver" 
-                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).LinkTo1
+                let builder (current : ICell) = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).LinkTo1
                                                             _h.cell 
                                                             _registerAsObserver.cell 
                                                        ) :> ICell
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RelinkableHandle.source + ".LinkTo") 
+                let source () = Helper.sourceFold (_RelinkableHandle.source + ".LinkTo") 
                                                [| _RelinkableHandle.source
                                                ;  _h.source
                                                ;  _registerAsObserver.source
@@ -114,7 +114,7 @@ module RelinkableHandleFunction =
                                 ;  _registerAsObserver.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -136,16 +136,16 @@ module RelinkableHandleFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.RelinkableHandle 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RelinkableHandle 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RelinkableHandle>) l
 
-                let source = Helper.sourceFold "Fun.RelinkableHandle" 
+                let source () = Helper.sourceFold "Fun.RelinkableHandle" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RelinkableHandle> format
                     ; source = source 
@@ -170,19 +170,19 @@ module RelinkableHandleFunction =
             try
 
                 let _h = Helper.toCell<'T> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.RelinkableHandle1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RelinkableHandle1 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RelinkableHandle>) l
 
-                let source = Helper.sourceFold "Fun.RelinkableHandle1" 
+                let source () = Helper.sourceFold "Fun.RelinkableHandle1" 
                                                [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RelinkableHandle> format
                     ; source = source 
@@ -210,13 +210,13 @@ module RelinkableHandleFunction =
 
                 let _h = Helper.toCell<'T> h "h" 
                 let _registerAsObserver = Helper.toCell<bool> registerAsObserver "registerAsObserver" 
-                let builder () = withMnemonic mnemonic (Fun.RelinkableHandle2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RelinkableHandle2 
                                                             _h.cell 
                                                             _registerAsObserver.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RelinkableHandle>) l
 
-                let source = Helper.sourceFold "Fun.RelinkableHandle2" 
+                let source () = Helper.sourceFold "Fun.RelinkableHandle2" 
                                                [| _h.source
                                                ;  _registerAsObserver.source
                                                |]
@@ -225,7 +225,7 @@ module RelinkableHandleFunction =
                                 ;  _registerAsObserver.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RelinkableHandle> format
                     ; source = source 
@@ -250,18 +250,18 @@ module RelinkableHandleFunction =
             try
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
-                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).CurrentLink
+                let builder (current : ICell) = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).CurrentLink
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RelinkableHandle.source + ".CurrentLink") 
+                let source () = Helper.sourceFold (_RelinkableHandle.source + ".CurrentLink") 
                                                [| _RelinkableHandle.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RelinkableHandle.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -286,18 +286,18 @@ module RelinkableHandleFunction =
             try
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
-                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RelinkableHandle.source + ".Empty") 
+                let source () = Helper.sourceFold (_RelinkableHandle.source + ".Empty") 
                                                [| _RelinkableHandle.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RelinkableHandle.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -325,12 +325,12 @@ module RelinkableHandleFunction =
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RelinkableHandle.source + ".Equals") 
+                let source () = Helper.sourceFold (_RelinkableHandle.source + ".Equals") 
                                                [| _RelinkableHandle.source
                                                ;  _o.source
                                                |]
@@ -339,7 +339,7 @@ module RelinkableHandleFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -364,18 +364,18 @@ module RelinkableHandleFunction =
             try
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
-                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Link
+                let builder (current : ICell) = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Link
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RelinkableHandle.source + ".Link") 
+                let source () = Helper.sourceFold (_RelinkableHandle.source + ".Link") 
                                                [| _RelinkableHandle.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RelinkableHandle.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -403,12 +403,12 @@ module RelinkableHandleFunction =
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RelinkableHandle.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_RelinkableHandle.source + ".RegisterWith") 
                                                [| _RelinkableHandle.source
                                                ;  _handler.source
                                                |]
@@ -417,7 +417,7 @@ module RelinkableHandleFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -445,12 +445,12 @@ module RelinkableHandleFunction =
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RelinkableHandle.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_RelinkableHandle.source + ".UnregisterWith") 
                                                [| _RelinkableHandle.source
                                                ;  _handler.source
                                                |]
@@ -459,7 +459,7 @@ module RelinkableHandleFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,14 +488,14 @@ module RelinkableHandleFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RelinkableHandle>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RelinkableHandle>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RelinkableHandle>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RelinkableHandle>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

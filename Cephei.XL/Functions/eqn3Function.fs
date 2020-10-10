@@ -55,14 +55,14 @@ module eqn3Function =
                 let _h = Helper.toCell<double> h "h" 
                 let _k = Helper.toCell<double> k "k" 
                 let _Asr = Helper.toCell<double> Asr "Asr" 
-                let builder () = withMnemonic mnemonic (Fun.eqn3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.eqn3 
                                                             _h.cell 
                                                             _k.cell 
                                                             _Asr.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<eqn3>) l
 
-                let source = Helper.sourceFold "Fun.eqn3" 
+                let source () = Helper.sourceFold "Fun.eqn3" 
                                                [| _h.source
                                                ;  _k.source
                                                ;  _Asr.source
@@ -73,7 +73,7 @@ module eqn3Function =
                                 ;  _Asr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<eqn3> format
                     ; source = source 
@@ -101,12 +101,12 @@ module eqn3Function =
 
                 let _eqn3 = Helper.toCell<eqn3> eqn3 "eqn3"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((eqn3Model.Cast _eqn3.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((eqn3Model.Cast _eqn3.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_eqn3.source + ".Value") 
+                let source () = Helper.sourceFold (_eqn3.source + ".Value") 
                                                [| _eqn3.source
                                                ;  _x.source
                                                |]
@@ -115,7 +115,7 @@ module eqn3Function =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -144,14 +144,14 @@ module eqn3Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<eqn3>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<eqn3>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<eqn3>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<eqn3>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

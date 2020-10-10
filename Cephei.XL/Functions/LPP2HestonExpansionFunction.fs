@@ -55,13 +55,13 @@ module LPP2HestonExpansionFunction =
                 let _LPP2HestonExpansion = Helper.toCell<LPP2HestonExpansion> lpp2hestonexpansion "LPP2HestonExpansion"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _forward = Helper.toCell<double> forward "forward" 
-                let builder () = withMnemonic mnemonic ((LPP2HestonExpansionModel.Cast _LPP2HestonExpansion.cell).ImpliedVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((LPP2HestonExpansionModel.Cast _LPP2HestonExpansion.cell).ImpliedVolatility
                                                             _strike.cell 
                                                             _forward.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LPP2HestonExpansion.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_LPP2HestonExpansion.source + ".ImpliedVolatility") 
                                                [| _LPP2HestonExpansion.source
                                                ;  _strike.source
                                                ;  _forward.source
@@ -72,7 +72,7 @@ module LPP2HestonExpansionFunction =
                                 ;  _forward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -112,7 +112,7 @@ module LPP2HestonExpansionFunction =
                 let _v0 = Helper.toCell<double> v0 "v0" 
                 let _rho = Helper.toCell<double> rho "rho" 
                 let _term = Helper.toCell<double> term "term" 
-                let builder () = withMnemonic mnemonic (Fun.LPP2HestonExpansion 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LPP2HestonExpansion 
                                                             _kappa.cell 
                                                             _theta.cell 
                                                             _sigma.cell 
@@ -122,7 +122,7 @@ module LPP2HestonExpansionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LPP2HestonExpansion>) l
 
-                let source = Helper.sourceFold "Fun.LPP2HestonExpansion" 
+                let source () = Helper.sourceFold "Fun.LPP2HestonExpansion" 
                                                [| _kappa.source
                                                ;  _theta.source
                                                ;  _sigma.source
@@ -139,7 +139,7 @@ module LPP2HestonExpansionFunction =
                                 ;  _term.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LPP2HestonExpansion> format
                     ; source = source 
@@ -168,14 +168,14 @@ module LPP2HestonExpansionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LPP2HestonExpansion>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LPP2HestonExpansion>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LPP2HestonExpansion>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LPP2HestonExpansion>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

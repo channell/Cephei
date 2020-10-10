@@ -52,12 +52,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianAverageShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianAverageShortfall
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".GaussianAverageShortfall") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianAverageShortfall") 
                                                [| _RiskStatistics.source
                                                ;  _value.source
                                                |]
@@ -66,7 +66,7 @@ module RiskStatisticsFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,18 +91,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianDownsideVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianDownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".GaussianDownsideVariance") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianDownsideVariance") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -130,12 +130,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianExpectedShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianExpectedShortfall
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".GaussianExpectedShortfall") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianExpectedShortfall") 
                                                [| _RiskStatistics.source
                                                ;  _value.source
                                                |]
@@ -144,7 +144,7 @@ module RiskStatisticsFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -172,12 +172,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianPercentile
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianPercentile
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".GaussianPercentile") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianPercentile") 
                                                [| _RiskStatistics.source
                                                ;  _value.source
                                                |]
@@ -186,7 +186,7 @@ module RiskStatisticsFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -214,12 +214,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianPotentialUpside
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianPotentialUpside
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".GaussianPotentialUpside") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianPotentialUpside") 
                                                [| _RiskStatistics.source
                                                ;  _value.source
                                                |]
@@ -228,7 +228,7 @@ module RiskStatisticsFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -256,12 +256,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianRegret
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianRegret
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".GaussianRegret") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianRegret") 
                                                [| _RiskStatistics.source
                                                ;  _value.source
                                                |]
@@ -270,7 +270,7 @@ module RiskStatisticsFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -298,12 +298,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianShortfall
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".GaussianShortfall") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianShortfall") 
                                                [| _RiskStatistics.source
                                                ;  _value.source
                                                |]
@@ -312,7 +312,7 @@ module RiskStatisticsFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -340,12 +340,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianValueAtRisk
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).GaussianValueAtRisk
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".GaussianValueAtRisk") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianValueAtRisk") 
                                                [| _RiskStatistics.source
                                                ;  _value.source
                                                |]
@@ -354,7 +354,7 @@ module RiskStatisticsFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,13 +386,13 @@ module RiskStatisticsFunction =
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Add
                                                             _value.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : RiskStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Add") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Add") 
                                                [| _RiskStatistics.source
                                                ;  _value.source
                                                ;  _weight.source
@@ -403,7 +403,7 @@ module RiskStatisticsFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -435,13 +435,13 @@ module RiskStatisticsFunction =
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).AddSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).AddSequence
                                                             _data.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : RiskStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".AddSequence") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".AddSequence") 
                                                [| _RiskStatistics.source
                                                ;  _data.source
                                                ;  _weight.source
@@ -452,7 +452,7 @@ module RiskStatisticsFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -480,12 +480,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _target = Helper.toCell<double> target "target" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).AverageShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).AverageShortfall
                                                             _target.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".AverageShortfall") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".AverageShortfall") 
                                                [| _RiskStatistics.source
                                                ;  _target.source
                                                |]
@@ -494,7 +494,7 @@ module RiskStatisticsFunction =
                                 ;  _target.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -519,18 +519,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).DownsideDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).DownsideDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".DownsideDeviation") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".DownsideDeviation") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -555,18 +555,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).DownsideVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).DownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".DownsideVariance") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".DownsideVariance") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -591,18 +591,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".ErrorEstimate") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -633,13 +633,13 @@ module RiskStatisticsFunction =
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).ExpectationValue
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
                                                        ) :> ICell
                 let format (o : Generic.KeyValuePair<double,int>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".ExpectationValue") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".ExpectationValue") 
                                                [| _RiskStatistics.source
                                                ;  _f.source
                                                ;  _inRange.source
@@ -650,7 +650,7 @@ module RiskStatisticsFunction =
                                 ;  _inRange.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -678,12 +678,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _centile = Helper.toCell<double> centile "centile" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).ExpectedShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).ExpectedShortfall
                                                             _centile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".ExpectedShortfall") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".ExpectedShortfall") 
                                                [| _RiskStatistics.source
                                                ;  _centile.source
                                                |]
@@ -692,7 +692,7 @@ module RiskStatisticsFunction =
                                 ;  _centile.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -717,18 +717,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Kurtosis
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Kurtosis") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Kurtosis") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -753,18 +753,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Max
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Max") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Max") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -789,18 +789,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Mean
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Mean") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Mean") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -825,18 +825,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Min
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Min") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Min") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -864,12 +864,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Percentile
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Percentile") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Percentile") 
                                                [| _RiskStatistics.source
                                                ;  _percent.source
                                                |]
@@ -878,7 +878,7 @@ module RiskStatisticsFunction =
                                 ;  _percent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -906,12 +906,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _centile = Helper.toCell<double> centile "centile" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).PotentialUpside
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).PotentialUpside
                                                             _centile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".PotentialUpside") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".PotentialUpside") 
                                                [| _RiskStatistics.source
                                                ;  _centile.source
                                                |]
@@ -920,7 +920,7 @@ module RiskStatisticsFunction =
                                 ;  _centile.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -948,12 +948,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _target = Helper.toCell<double> target "target" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Regret
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Regret
                                                             _target.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Regret") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Regret") 
                                                [| _RiskStatistics.source
                                                ;  _target.source
                                                |]
@@ -962,7 +962,7 @@ module RiskStatisticsFunction =
                                 ;  _target.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -987,18 +987,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Reset
                                                        ) :> ICell
                 let format (o : RiskStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Reset") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Reset") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1023,18 +1023,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Samples
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Samples") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Samples") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1059,18 +1059,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).SemiDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).SemiDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".SemiDeviation") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".SemiDeviation") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1095,18 +1095,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).SemiVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).SemiVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".SemiVariance") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".SemiVariance") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1134,12 +1134,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _target = Helper.toCell<double> target "target" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Shortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Shortfall
                                                             _target.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Shortfall") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Shortfall") 
                                                [| _RiskStatistics.source
                                                ;  _target.source
                                                |]
@@ -1148,7 +1148,7 @@ module RiskStatisticsFunction =
                                 ;  _target.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1173,18 +1173,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Skewness
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Skewness") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Skewness") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1209,18 +1209,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).StandardDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".StandardDeviation") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".StandardDeviation") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1248,12 +1248,12 @@ module RiskStatisticsFunction =
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
                 let _centile = Helper.toCell<double> centile "centile" 
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).ValueAtRisk
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).ValueAtRisk
                                                             _centile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".ValueAtRisk") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".ValueAtRisk") 
                                                [| _RiskStatistics.source
                                                ;  _centile.source
                                                |]
@@ -1262,7 +1262,7 @@ module RiskStatisticsFunction =
                                 ;  _centile.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1287,18 +1287,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".Variance") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".Variance") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1323,18 +1323,18 @@ module RiskStatisticsFunction =
             try
 
                 let _RiskStatistics = Helper.toCell<RiskStatistics> riskstatistics "RiskStatistics"  
-                let builder () = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).WeightSum
+                let builder (current : ICell) = withMnemonic mnemonic ((RiskStatisticsModel.Cast _RiskStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RiskStatistics.source + ".WeightSum") 
+                let source () = Helper.sourceFold (_RiskStatistics.source + ".WeightSum") 
                                                [| _RiskStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1363,14 +1363,14 @@ module RiskStatisticsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RiskStatistics>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RiskStatistics>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RiskStatistics>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RiskStatistics>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

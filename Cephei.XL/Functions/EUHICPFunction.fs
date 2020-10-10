@@ -52,13 +52,13 @@ module EUHICPFunction =
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
                 let _ts = Helper.toHandle<ZeroInflationTermStructure> ts "ts" 
-                let builder () = withMnemonic mnemonic (Fun.EUHICP1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EUHICP1 
                                                             _interpolated.cell 
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EUHICP>) l
 
-                let source = Helper.sourceFold "Fun.EUHICP" 
+                let source () = Helper.sourceFold "Fun.EUHICP" 
                                                [| _interpolated.source
                                                ;  _ts.source
                                                |]
@@ -67,7 +67,7 @@ module EUHICPFunction =
                                 ;  _ts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EUHICP> format
                     ; source = source 
@@ -92,19 +92,19 @@ module EUHICPFunction =
             try
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
-                let builder () = withMnemonic mnemonic (Fun.EUHICP 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EUHICP 
                                                             _interpolated.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EUHICP>) l
 
-                let source = Helper.sourceFold "Fun.EUHICP" 
+                let source () = Helper.sourceFold "Fun.EUHICP" 
                                                [| _interpolated.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _interpolated.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EUHICP> format
                     ; source = source 
@@ -132,12 +132,12 @@ module EUHICPFunction =
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _h = Helper.toHandle<ZeroInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
-                let source = Helper.sourceFold (_EUHICP.source + ".Clone") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".Clone") 
                                                [| _EUHICP.source
                                                ;  _h.source
                                                |]
@@ -146,7 +146,7 @@ module EUHICPFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EUHICP> format
                     ; source = source 
@@ -177,13 +177,13 @@ module EUHICPFunction =
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Fixing
                                                             _aFixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".Fixing") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".Fixing") 
                                                [| _EUHICP.source
                                                ;  _aFixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -194,7 +194,7 @@ module EUHICPFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -219,18 +219,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).ZeroInflationTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).ZeroInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
-                let source = Helper.sourceFold (_EUHICP.source + ".ZeroInflationTermStructure") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".ZeroInflationTermStructure") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EUHICP> format
                     ; source = source 
@@ -264,14 +264,14 @@ module EUHICPFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".AddFixing") 
                                                [| _EUHICP.source
                                                ;  _fixingDate.source
                                                ;  _fixing.source
@@ -284,7 +284,7 @@ module EUHICPFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -310,18 +310,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AvailabilityLag
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_EUHICP.source + ".AvailabilityLag") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".AvailabilityLag") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EUHICP> format
                     ; source = source 
@@ -346,18 +346,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_EUHICP.source + ".Currency") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".Currency") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EUHICP> format
                     ; source = source 
@@ -382,18 +382,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".FamilyName") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -418,18 +418,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_EUHICP.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".FixingCalendar") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EUHICP> format
                     ; source = source 
@@ -454,18 +454,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".Frequency") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".Frequency") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -490,18 +490,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Interpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".Interpolated") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".Interpolated") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -529,12 +529,12 @@ module EUHICPFunction =
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".IsValidFixingDate") 
                                                [| _EUHICP.source
                                                ;  _fixingDate.source
                                                |]
@@ -543,7 +543,7 @@ module EUHICPFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -568,18 +568,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".Name") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".Name") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -604,18 +604,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Region
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
-                let source = Helper.sourceFold (_EUHICP.source + ".Region") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".Region") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EUHICP> format
                     ; source = source 
@@ -640,18 +640,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Revised
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".Revised") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".Revised") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -676,18 +676,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Update
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".Update") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".Update") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -721,14 +721,14 @@ module EUHICPFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".AddFixings") 
                                                [| _EUHICP.source
                                                ;  _d.source
                                                ;  _v.source
@@ -741,7 +741,7 @@ module EUHICPFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -772,13 +772,13 @@ module EUHICPFunction =
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".AddFixings1") 
                                                [| _EUHICP.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -789,7 +789,7 @@ module EUHICPFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -814,18 +814,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".AllowsNativeFixings") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -850,18 +850,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".ClearFixings") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -889,12 +889,12 @@ module EUHICPFunction =
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".RegisterWith") 
                                                [| _EUHICP.source
                                                ;  _handler.source
                                                |]
@@ -903,7 +903,7 @@ module EUHICPFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -928,18 +928,18 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".TimeSeries") 
                                                [| _EUHICP.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EUHICP.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -967,12 +967,12 @@ module EUHICPFunction =
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EUHICP.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_EUHICP.source + ".UnregisterWith") 
                                                [| _EUHICP.source
                                                ;  _handler.source
                                                |]
@@ -981,7 +981,7 @@ module EUHICPFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1010,14 +1010,14 @@ module EUHICPFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EUHICP>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EUHICP>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EUHICP>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EUHICP>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

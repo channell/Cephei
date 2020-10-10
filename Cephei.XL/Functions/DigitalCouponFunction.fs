@@ -49,18 +49,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallDigitalPayoff
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallDigitalPayoff
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".CallDigitalPayoff") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".CallDigitalPayoff") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallOptionRate
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallOptionRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".CallOptionRate") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".CallOptionRate") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CallStrike
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".CallStrike") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".CallStrike") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ConvexityAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".ConvexityAdjustment") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".ConvexityAdjustment") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -220,7 +220,7 @@ module DigitalCouponFunction =
                 let _isPutATMIncluded = Helper.toDefault<bool> isPutATMIncluded "isPutATMIncluded" false
                 let _putDigitalPayoff = Helper.toNullable<double> putDigitalPayoff "putDigitalPayoff"
                 let _replication = Helper.toDefault<DigitalReplication> replication "replication" null
-                let builder () = withMnemonic mnemonic (Fun.DigitalCoupon 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalCoupon 
                                                             _underlying.cell 
                                                             _callStrike.cell 
                                                             _callPosition.cell 
@@ -234,7 +234,7 @@ module DigitalCouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCoupon>) l
 
-                let source = Helper.sourceFold "Fun.DigitalCoupon" 
+                let source () = Helper.sourceFold "Fun.DigitalCoupon" 
                                                [| _underlying.source
                                                ;  _callStrike.source
                                                ;  _callPosition.source
@@ -259,7 +259,7 @@ module DigitalCouponFunction =
                                 ;  _replication.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCoupon> format
                     ; source = source 
@@ -281,16 +281,16 @@ module DigitalCouponFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.DigitalCoupon1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalCoupon1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCoupon>) l
 
-                let source = Helper.sourceFold "Fun.DigitalCoupon1" 
+                let source () = Helper.sourceFold "Fun.DigitalCoupon1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCoupon> format
                     ; source = source 
@@ -345,7 +345,7 @@ module DigitalCouponFunction =
                 let _isPutATMIncluded = Helper.toDefault<bool> isPutATMIncluded "isPutATMIncluded" false
                 let _putDigitalPayoff = Helper.toNullable<double> putDigitalPayoff "putDigitalPayoff"
                 let _replication = Helper.toDefault<DigitalReplication> replication "replication" null
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Factory
                                                             _underlying.cell 
                                                             _callStrike.cell 
                                                             _callPosition.cell 
@@ -359,7 +359,7 @@ module DigitalCouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Factory") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Factory") 
                                                [| _DigitalCoupon.source
                                                ;  _underlying.source
                                                ;  _callStrike.source
@@ -386,7 +386,7 @@ module DigitalCouponFunction =
                                 ;  _replication.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCoupon> format
                     ; source = source 
@@ -411,18 +411,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasCall
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasCall
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".HasCall") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".HasCall") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -447,18 +447,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasCollar
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasCollar
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".HasCollar") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".HasCollar") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -483,18 +483,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasPut
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasPut
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".HasPut") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".HasPut") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -519,18 +519,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsLongCall
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsLongCall
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".IsLongCall") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".IsLongCall") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -555,18 +555,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsLongPut
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsLongPut
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".IsLongPut") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".IsLongPut") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -591,18 +591,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutDigitalPayoff
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutDigitalPayoff
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".PutDigitalPayoff") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".PutDigitalPayoff") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -627,18 +627,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutOptionRate
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutOptionRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".PutOptionRate") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".PutOptionRate") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -663,18 +663,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).PutStrike
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".PutStrike") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".PutStrike") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -699,18 +699,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Rate
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Rate") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Rate") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -738,12 +738,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).SetPricer
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : DigitalCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".SetPricer") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".SetPricer") 
                                                [| _DigitalCoupon.source
                                                ;  _pricer.source
                                                |]
@@ -752,7 +752,7 @@ module DigitalCouponFunction =
                                 ;  _pricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -777,18 +777,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Underlying
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Underlying
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Underlying") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Underlying") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCoupon> format
                     ; source = source 
@@ -816,12 +816,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".AccruedAmount") 
                                                [| _DigitalCoupon.source
                                                ;  _d.source
                                                |]
@@ -830,7 +830,7 @@ module DigitalCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -855,18 +855,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AdjustedFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".AdjustedFixing") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".AdjustedFixing") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -891,18 +891,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Amount") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Amount") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -927,18 +927,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".DayCounter") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCoupon> format
                     ; source = source 
@@ -963,18 +963,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".FixingDate") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -999,18 +999,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".FixingDays") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1035,18 +1035,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Gearing
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Gearing") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Gearing") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1071,18 +1071,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Index") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Index") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCoupon> format
                     ; source = source 
@@ -1107,18 +1107,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IndexFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".IndexFixing") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".IndexFixing") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1143,18 +1143,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsInArrears
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".IsInArrears") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".IsInArrears") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1182,12 +1182,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Price
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Price") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Price") 
                                                [| _DigitalCoupon.source
                                                ;  _yts.source
                                                |]
@@ -1196,7 +1196,7 @@ module DigitalCouponFunction =
                                 ;  _yts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1221,18 +1221,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Pricer
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Pricer") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Pricer") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DigitalCoupon> format
                     ; source = source 
@@ -1257,18 +1257,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Spread
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Spread") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Spread") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1293,18 +1293,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : DigitalCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Update") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Update") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1329,18 +1329,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualDays
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".AccrualDays") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".AccrualDays") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1365,18 +1365,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualEndDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".AccrualEndDate") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".AccrualEndDate") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1401,18 +1401,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".AccrualPeriod") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".AccrualPeriod") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1437,18 +1437,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualStartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".AccrualStartDate") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".AccrualStartDate") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1476,12 +1476,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedDays
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".AccruedDays") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".AccruedDays") 
                                                [| _DigitalCoupon.source
                                                ;  _d.source
                                                |]
@@ -1490,7 +1490,7 @@ module DigitalCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1518,12 +1518,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".AccruedPeriod") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".AccruedPeriod") 
                                                [| _DigitalCoupon.source
                                                ;  _d.source
                                                |]
@@ -1532,7 +1532,7 @@ module DigitalCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1557,18 +1557,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Date") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Date") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1593,18 +1593,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".ExCouponDate") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1629,18 +1629,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Nominal") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Nominal") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1665,18 +1665,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".ReferencePeriodEnd") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".ReferencePeriodEnd") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1701,18 +1701,18 @@ module DigitalCouponFunction =
             try
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".ReferencePeriodStart") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".ReferencePeriodStart") 
                                                [| _DigitalCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1740,12 +1740,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".CompareTo") 
                                                [| _DigitalCoupon.source
                                                ;  _cf.source
                                                |]
@@ -1754,7 +1754,7 @@ module DigitalCouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1782,12 +1782,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Equals") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Equals") 
                                                [| _DigitalCoupon.source
                                                ;  _cf.source
                                                |]
@@ -1796,7 +1796,7 @@ module DigitalCouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1827,13 +1827,13 @@ module DigitalCouponFunction =
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".HasOccurred") 
                                                [| _DigitalCoupon.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -1844,7 +1844,7 @@ module DigitalCouponFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1872,12 +1872,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".TradingExCoupon") 
                                                [| _DigitalCoupon.source
                                                ;  _refDate.source
                                                |]
@@ -1886,7 +1886,7 @@ module DigitalCouponFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1914,12 +1914,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DigitalCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".Accept") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".Accept") 
                                                [| _DigitalCoupon.source
                                                ;  _v.source
                                                |]
@@ -1928,7 +1928,7 @@ module DigitalCouponFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1956,12 +1956,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DigitalCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".RegisterWith") 
                                                [| _DigitalCoupon.source
                                                ;  _handler.source
                                                |]
@@ -1970,7 +1970,7 @@ module DigitalCouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1998,12 +1998,12 @@ module DigitalCouponFunction =
 
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((DigitalCouponModel.Cast _DigitalCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DigitalCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DigitalCoupon.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_DigitalCoupon.source + ".UnregisterWith") 
                                                [| _DigitalCoupon.source
                                                ;  _handler.source
                                                |]
@@ -2012,7 +2012,7 @@ module DigitalCouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2041,14 +2041,14 @@ module DigitalCouponFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DigitalCoupon>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DigitalCoupon>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DigitalCoupon>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DigitalCoupon>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

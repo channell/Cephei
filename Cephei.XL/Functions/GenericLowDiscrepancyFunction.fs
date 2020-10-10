@@ -49,18 +49,18 @@ module GenericLowDiscrepancyFunction =
             try
 
                 let _GenericLowDiscrepancy = Helper.toCell<GenericLowDiscrepancy> genericlowdiscrepancy "GenericLowDiscrepancy"  
-                let builder () = withMnemonic mnemonic ((GenericLowDiscrepancyModel.Cast _GenericLowDiscrepancy.cell).AllowsErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericLowDiscrepancyModel.Cast _GenericLowDiscrepancy.cell).AllowsErrorEstimate
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericLowDiscrepancy.source + ".AllowsErrorEstimate") 
+                let source () = Helper.sourceFold (_GenericLowDiscrepancy.source + ".AllowsErrorEstimate") 
                                                [| _GenericLowDiscrepancy.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericLowDiscrepancy.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,13 +91,13 @@ module GenericLowDiscrepancyFunction =
                 let _GenericLowDiscrepancy = Helper.toCell<GenericLowDiscrepancy> genericlowdiscrepancy "GenericLowDiscrepancy"  
                 let _dimension = Helper.toCell<int> dimension "dimension" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic ((GenericLowDiscrepancyModel.Cast _GenericLowDiscrepancy.cell).Make_sequence_generator
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericLowDiscrepancyModel.Cast _GenericLowDiscrepancy.cell).Make_sequence_generator
                                                             _dimension.cell 
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
-                let source = Helper.sourceFold (_GenericLowDiscrepancy.source + ".Make_sequence_generator") 
+                let source () = Helper.sourceFold (_GenericLowDiscrepancy.source + ".Make_sequence_generator") 
                                                [| _GenericLowDiscrepancy.source
                                                ;  _dimension.source
                                                ;  _seed.source
@@ -108,7 +108,7 @@ module GenericLowDiscrepancyFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericLowDiscrepancy> format
                     ; source = source 
@@ -137,14 +137,14 @@ module GenericLowDiscrepancyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GenericLowDiscrepancy>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GenericLowDiscrepancy>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GenericLowDiscrepancy>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GenericLowDiscrepancy>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

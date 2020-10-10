@@ -52,12 +52,12 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).CapletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).CapletPrice
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACouponPricer.source + ".CapletPrice") 
+                let source () = Helper.sourceFold (_AverageBMACouponPricer.source + ".CapletPrice") 
                                                [| _AverageBMACouponPricer.source
                                                ;  _d.source
                                                |]
@@ -66,7 +66,7 @@ module AverageBMACouponPricerFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).CapletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).CapletRate
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACouponPricer.source + ".CapletRate") 
+                let source () = Helper.sourceFold (_AverageBMACouponPricer.source + ".CapletRate") 
                                                [| _AverageBMACouponPricer.source
                                                ;  _d.source
                                                |]
@@ -108,7 +108,7 @@ module AverageBMACouponPricerFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -136,12 +136,12 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).FloorletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).FloorletPrice
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACouponPricer.source + ".FloorletPrice") 
+                let source () = Helper.sourceFold (_AverageBMACouponPricer.source + ".FloorletPrice") 
                                                [| _AverageBMACouponPricer.source
                                                ;  _d.source
                                                |]
@@ -150,7 +150,7 @@ module AverageBMACouponPricerFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -178,12 +178,12 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).FloorletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).FloorletRate
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACouponPricer.source + ".FloorletRate") 
+                let source () = Helper.sourceFold (_AverageBMACouponPricer.source + ".FloorletRate") 
                                                [| _AverageBMACouponPricer.source
                                                ;  _d.source
                                                |]
@@ -192,7 +192,7 @@ module AverageBMACouponPricerFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -220,12 +220,12 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).Initialize
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : AverageBMACouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACouponPricer.source + ".Initialize") 
+                let source () = Helper.sourceFold (_AverageBMACouponPricer.source + ".Initialize") 
                                                [| _AverageBMACouponPricer.source
                                                ;  _coupon.source
                                                |]
@@ -234,7 +234,7 @@ module AverageBMACouponPricerFunction =
                                 ;  _coupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -259,18 +259,18 @@ module AverageBMACouponPricerFunction =
             try
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).SwapletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACouponPricer.source + ".SwapletPrice") 
+                let source () = Helper.sourceFold (_AverageBMACouponPricer.source + ".SwapletPrice") 
                                                [| _AverageBMACouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -295,18 +295,18 @@ module AverageBMACouponPricerFunction =
             try
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).SwapletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBMACouponPricer.source + ".SwapletRate") 
+                let source () = Helper.sourceFold (_AverageBMACouponPricer.source + ".SwapletRate") 
                                                [| _AverageBMACouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -334,12 +334,12 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AverageBMACouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACouponPricer.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_AverageBMACouponPricer.source + ".RegisterWith") 
                                                [| _AverageBMACouponPricer.source
                                                ;  _handler.source
                                                |]
@@ -348,7 +348,7 @@ module AverageBMACouponPricerFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -376,12 +376,12 @@ module AverageBMACouponPricerFunction =
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AverageBMACouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACouponPricer.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_AverageBMACouponPricer.source + ".UnregisterWith") 
                                                [| _AverageBMACouponPricer.source
                                                ;  _handler.source
                                                |]
@@ -390,7 +390,7 @@ module AverageBMACouponPricerFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -415,18 +415,18 @@ module AverageBMACouponPricerFunction =
             try
 
                 let _AverageBMACouponPricer = Helper.toCell<AverageBMACouponPricer> averagebmacouponpricer "AverageBMACouponPricer"  
-                let builder () = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponPricerModel.Cast _AverageBMACouponPricer.cell).Update
                                                        ) :> ICell
                 let format (o : AverageBMACouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBMACouponPricer.source + ".Update") 
+                let source () = Helper.sourceFold (_AverageBMACouponPricer.source + ".Update") 
                                                [| _AverageBMACouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -455,14 +455,14 @@ module AverageBMACouponPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AverageBMACouponPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AverageBMACouponPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AverageBMACouponPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AverageBMACouponPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,13 +52,13 @@ module ConstantParameterFunction =
 
                 let _value = Helper.toCell<double> value "value" 
                 let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" 
-                let builder () = withMnemonic mnemonic (Fun.ConstantParameter1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConstantParameter1 
                                                             _value.cell 
                                                             _Constraint.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConstantParameter>) l
 
-                let source = Helper.sourceFold "Fun.ConstantParameter1" 
+                let source () = Helper.sourceFold "Fun.ConstantParameter1" 
                                                [| _value.source
                                                ;  _Constraint.source
                                                |]
@@ -67,7 +67,7 @@ module ConstantParameterFunction =
                                 ;  _Constraint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantParameter> format
                     ; source = source 
@@ -92,19 +92,19 @@ module ConstantParameterFunction =
             try
 
                 let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" 
-                let builder () = withMnemonic mnemonic (Fun.ConstantParameter
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConstantParameter
                                                             _Constraint.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConstantParameter>) l
 
-                let source = Helper.sourceFold "Fun.ConstantParameter" 
+                let source () = Helper.sourceFold "Fun.ConstantParameter" 
                                                [| _Constraint.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Constraint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantParameter> format
                     ; source = source 
@@ -129,18 +129,18 @@ module ConstantParameterFunction =
             try
 
                 let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
-                let builder () = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).Constraint
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold (_ConstantParameter.source + ".CONSTRAINT") 
+                let source () = Helper.sourceFold (_ConstantParameter.source + ".CONSTRAINT") 
                                                [| _ConstantParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantParameter> format
                     ; source = source 
@@ -166,18 +166,18 @@ module ConstantParameterFunction =
             try
 
                 let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
-                let builder () = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).Implementation
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Impl) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConstantParameter.source + ".Implementation") 
+                let source () = Helper.sourceFold (_ConstantParameter.source + ".Implementation") 
                                                [| _ConstantParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,18 +203,18 @@ module ConstantParameterFunction =
             try
 
                 let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
-                let builder () = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_ConstantParameter.source + ".Parameters") 
+                let source () = Helper.sourceFold (_ConstantParameter.source + ".Parameters") 
                                                [| _ConstantParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantParameter> format
                     ; source = source 
@@ -245,13 +245,13 @@ module ConstantParameterFunction =
                 let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).SetParam
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).SetParam
                                                             _i.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : ConstantParameter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConstantParameter.source + ".SetParam") 
+                let source () = Helper.sourceFold (_ConstantParameter.source + ".SetParam") 
                                                [| _ConstantParameter.source
                                                ;  _i.source
                                                ;  _x.source
@@ -262,7 +262,7 @@ module ConstantParameterFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -287,18 +287,18 @@ module ConstantParameterFunction =
             try
 
                 let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
-                let builder () = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantParameter.source + ".Size") 
+                let source () = Helper.sourceFold (_ConstantParameter.source + ".Size") 
                                                [| _ConstantParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,12 +326,12 @@ module ConstantParameterFunction =
 
                 let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).TestParams
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).TestParams
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConstantParameter.source + ".TestParams") 
+                let source () = Helper.sourceFold (_ConstantParameter.source + ".TestParams") 
                                                [| _ConstantParameter.source
                                                ;  _p.source
                                                |]
@@ -340,7 +340,7 @@ module ConstantParameterFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -368,12 +368,12 @@ module ConstantParameterFunction =
 
                 let _ConstantParameter = Helper.toCell<ConstantParameter> constantparameter "ConstantParameter"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantParameterModel.Cast _ConstantParameter.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantParameter.source + ".Value") 
+                let source () = Helper.sourceFold (_ConstantParameter.source + ".Value") 
                                                [| _ConstantParameter.source
                                                ;  _t.source
                                                |]
@@ -382,7 +382,7 @@ module ConstantParameterFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -411,14 +411,14 @@ module ConstantParameterFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConstantParameter>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ConstantParameter>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ConstantParameter>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ConstantParameter>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

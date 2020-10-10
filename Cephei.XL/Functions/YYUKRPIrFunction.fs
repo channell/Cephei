@@ -52,13 +52,13 @@ module YYUKRPIrFunction =
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
                 let _ts = Helper.toHandle<YoYInflationTermStructure> ts "ts" 
-                let builder () = withMnemonic mnemonic (Fun.YYUKRPIr1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.YYUKRPIr1 
                                                             _interpolated.cell 
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YYUKRPIr>) l
 
-                let source = Helper.sourceFold "Fun.YYUKRPIr1" 
+                let source () = Helper.sourceFold "Fun.YYUKRPIr1" 
                                                [| _interpolated.source
                                                ;  _ts.source
                                                |]
@@ -67,7 +67,7 @@ module YYUKRPIrFunction =
                                 ;  _ts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYUKRPIr> format
                     ; source = source 
@@ -92,19 +92,19 @@ module YYUKRPIrFunction =
             try
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
-                let builder () = withMnemonic mnemonic (Fun.YYUKRPIr
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.YYUKRPIr
                                                             _interpolated.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YYUKRPIr>) l
 
-                let source = Helper.sourceFold "Fun.YYUKRPIr" 
+                let source () = Helper.sourceFold "Fun.YYUKRPIr" 
                                                [| _interpolated.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _interpolated.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYUKRPIr> format
                     ; source = source 
@@ -132,12 +132,12 @@ module YYUKRPIrFunction =
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _h = Helper.toHandle<YoYInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".Clone") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".Clone") 
                                                [| _YYUKRPIr.source
                                                ;  _h.source
                                                |]
@@ -146,7 +146,7 @@ module YYUKRPIrFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYUKRPIr> format
                     ; source = source 
@@ -177,13 +177,13 @@ module YYUKRPIrFunction =
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".Fixing") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".Fixing") 
                                                [| _YYUKRPIr.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -194,7 +194,7 @@ module YYUKRPIrFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -219,18 +219,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Ratio
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Ratio
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".Ratio") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".Ratio") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,18 +255,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).YoyInflationTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).YoyInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".YoyInflationTermStructure") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".YoyInflationTermStructure") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYUKRPIr> format
                     ; source = source 
@@ -300,14 +300,14 @@ module YYUKRPIrFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : YYUKRPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".AddFixing") 
                                                [| _YYUKRPIr.source
                                                ;  _fixingDate.source
                                                ;  _fixing.source
@@ -320,7 +320,7 @@ module YYUKRPIrFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -346,18 +346,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AvailabilityLag
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".AvailabilityLag") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".AvailabilityLag") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYUKRPIr> format
                     ; source = source 
@@ -382,18 +382,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".Currency") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".Currency") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYUKRPIr> format
                     ; source = source 
@@ -418,18 +418,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".FamilyName") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -454,18 +454,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".FixingCalendar") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYUKRPIr> format
                     ; source = source 
@@ -490,18 +490,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".Frequency") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".Frequency") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -526,18 +526,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Interpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".Interpolated") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".Interpolated") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -565,12 +565,12 @@ module YYUKRPIrFunction =
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".IsValidFixingDate") 
                                                [| _YYUKRPIr.source
                                                ;  _fixingDate.source
                                                |]
@@ -579,7 +579,7 @@ module YYUKRPIrFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -604,18 +604,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".Name") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".Name") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -640,18 +640,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Region
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".Region") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".Region") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYUKRPIr> format
                     ; source = source 
@@ -676,18 +676,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Revised
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".Revised") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".Revised") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -712,18 +712,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).Update
                                                        ) :> ICell
                 let format (o : YYUKRPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".Update") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".Update") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -757,14 +757,14 @@ module YYUKRPIrFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : YYUKRPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".AddFixings") 
                                                [| _YYUKRPIr.source
                                                ;  _d.source
                                                ;  _v.source
@@ -777,7 +777,7 @@ module YYUKRPIrFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -808,13 +808,13 @@ module YYUKRPIrFunction =
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : YYUKRPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".AddFixings1") 
                                                [| _YYUKRPIr.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -825,7 +825,7 @@ module YYUKRPIrFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -850,18 +850,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".AllowsNativeFixings") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -886,18 +886,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : YYUKRPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".ClearFixings") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -925,12 +925,12 @@ module YYUKRPIrFunction =
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YYUKRPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".RegisterWith") 
                                                [| _YYUKRPIr.source
                                                ;  _handler.source
                                                |]
@@ -939,7 +939,7 @@ module YYUKRPIrFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -964,18 +964,18 @@ module YYUKRPIrFunction =
             try
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".TimeSeries") 
                                                [| _YYUKRPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1003,12 +1003,12 @@ module YYUKRPIrFunction =
 
                 let _YYUKRPIr = Helper.toCell<YYUKRPIr> yyukrpir "YYUKRPIr"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((YYUKRPIrModel.Cast _YYUKRPIr.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YYUKRPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYUKRPIr.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_YYUKRPIr.source + ".UnregisterWith") 
                                                [| _YYUKRPIr.source
                                                ;  _handler.source
                                                |]
@@ -1017,7 +1017,7 @@ module YYUKRPIrFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1046,14 +1046,14 @@ module YYUKRPIrFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<YYUKRPIr>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<YYUKRPIr>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<YYUKRPIr>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<YYUKRPIr>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

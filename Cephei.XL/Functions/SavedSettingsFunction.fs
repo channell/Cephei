@@ -49,18 +49,18 @@ module SavedSettingsFunction =
             try
 
                 let _SavedSettings = Helper.toCell<SavedSettings> savedsettings "SavedSettings"  
-                let builder () = withMnemonic mnemonic ((SavedSettingsModel.Cast _SavedSettings.cell).Dispose
+                let builder (current : ICell) = withMnemonic mnemonic ((SavedSettingsModel.Cast _SavedSettings.cell).Dispose
                                                        ) :> ICell
                 let format (o : SavedSettings) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SavedSettings.source + ".Dispose") 
+                let source () = Helper.sourceFold (_SavedSettings.source + ".Dispose") 
                                                [| _SavedSettings.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SavedSettings.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -82,16 +82,16 @@ module SavedSettingsFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.SavedSettings 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SavedSettings 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SavedSettings>) l
 
-                let source = Helper.sourceFold "Fun.SavedSettings" 
+                let source () = Helper.sourceFold "Fun.SavedSettings" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SavedSettings> format
                     ; source = source 
@@ -120,14 +120,14 @@ module SavedSettingsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SavedSettings>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SavedSettings>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SavedSettings>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SavedSettings>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

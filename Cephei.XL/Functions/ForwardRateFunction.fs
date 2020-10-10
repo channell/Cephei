@@ -55,13 +55,13 @@ module ForwardRateFunction =
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).DiscountImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRate.source + ".DiscountImpl") 
+                let source () = Helper.sourceFold (_ForwardRate.source + ".DiscountImpl") 
                                                [| _ForwardRate.source
                                                ;  _i.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module ForwardRateFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module ForwardRateFunction =
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).ForwardImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRate.source + ".ForwardImpl") 
+                let source () = Helper.sourceFold (_ForwardRate.source + ".ForwardImpl") 
                                                [| _ForwardRate.source
                                                ;  _i.source
                                                ;  _t.source
@@ -120,7 +120,7 @@ module ForwardRateFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,7 +157,7 @@ module ForwardRateFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).Guess
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -165,7 +165,7 @@ module ForwardRateFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRate.source + ".Guess") 
+                let source () = Helper.sourceFold (_ForwardRate.source + ".Guess") 
                                                [| _ForwardRate.source
                                                ;  _i.source
                                                ;  _c.source
@@ -180,7 +180,7 @@ module ForwardRateFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -208,12 +208,12 @@ module ForwardRateFunction =
 
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).InitialDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ForwardRate.source + ".InitialDate") 
+                let source () = Helper.sourceFold (_ForwardRate.source + ".InitialDate") 
                                                [| _ForwardRate.source
                                                ;  _c.source
                                                |]
@@ -222,7 +222,7 @@ module ForwardRateFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -250,12 +250,12 @@ module ForwardRateFunction =
 
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).InitialValue
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRate.source + ".InitialValue") 
+                let source () = Helper.sourceFold (_ForwardRate.source + ".InitialValue") 
                                                [| _ForwardRate.source
                                                ;  _c.source
                                                |]
@@ -264,7 +264,7 @@ module ForwardRateFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,18 +289,18 @@ module ForwardRateFunction =
             try
 
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
-                let builder () = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).MaxIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRate.source + ".MaxIterations") 
+                let source () = Helper.sourceFold (_ForwardRate.source + ".MaxIterations") 
                                                [| _ForwardRate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,7 +337,7 @@ module ForwardRateFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).MaxValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -345,7 +345,7 @@ module ForwardRateFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRate.source + ".MaxValueAfter") 
+                let source () = Helper.sourceFold (_ForwardRate.source + ".MaxValueAfter") 
                                                [| _ForwardRate.source
                                                ;  _i.source
                                                ;  _c.source
@@ -360,7 +360,7 @@ module ForwardRateFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -397,7 +397,7 @@ module ForwardRateFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).MinValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -405,7 +405,7 @@ module ForwardRateFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRate.source + ".MinValueAfter") 
+                let source () = Helper.sourceFold (_ForwardRate.source + ".MinValueAfter") 
                                                [| _ForwardRate.source
                                                ;  _i.source
                                                ;  _c.source
@@ -420,7 +420,7 @@ module ForwardRateFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -454,14 +454,14 @@ module ForwardRateFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).UpdateGuess
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).UpdateGuess
                                                             _data.cell 
                                                             _forward.cell 
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : ForwardRate) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardRate.source + ".UpdateGuess") 
+                let source () = Helper.sourceFold (_ForwardRate.source + ".UpdateGuess") 
                                                [| _ForwardRate.source
                                                ;  _data.source
                                                ;  _forward.source
@@ -474,7 +474,7 @@ module ForwardRateFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -505,13 +505,13 @@ module ForwardRateFunction =
                 let _ForwardRate = Helper.toCell<ForwardRate> forwardrate "ForwardRate"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).ZeroYieldImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateModel.Cast _ForwardRate.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRate.source + ".ZeroYieldImpl") 
+                let source () = Helper.sourceFold (_ForwardRate.source + ".ZeroYieldImpl") 
                                                [| _ForwardRate.source
                                                ;  _i.source
                                                ;  _t.source
@@ -522,7 +522,7 @@ module ForwardRateFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -551,14 +551,14 @@ module ForwardRateFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardRate>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ForwardRate>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ForwardRate>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ForwardRate>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

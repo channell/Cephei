@@ -49,19 +49,19 @@ module CADLiborONFunction =
             try
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.CADLiborON 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CADLiborON 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CADLiborON>) l
 
-                let source = Helper.sourceFold "Fun.CADLiborON" 
+                let source () = Helper.sourceFold "Fun.CADLiborON" 
                                                [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CADLiborON> format
                     ; source = source 
@@ -83,16 +83,16 @@ module CADLiborONFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.CADLiborON1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CADLiborON1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CADLiborON>) l
 
-                let source = Helper.sourceFold "Fun.CADLiborON1" 
+                let source () = Helper.sourceFold "Fun.CADLiborON1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CADLiborON> format
                     ; source = source 
@@ -117,18 +117,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".BusinessDayConvention") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -156,12 +156,12 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".Clone") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".Clone") 
                                                [| _CADLiborON.source
                                                ;  _forwarding.source
                                                |]
@@ -170,7 +170,7 @@ module CADLiborONFunction =
                                 ;  _forwarding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CADLiborON> format
                     ; source = source 
@@ -195,18 +195,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".EndOfMonth") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,14 +240,14 @@ module CADLiborONFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".ForecastFixing1") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".ForecastFixing1") 
                                                [| _CADLiborON.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -260,7 +260,7 @@ module CADLiborONFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -288,12 +288,12 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".ForecastFixing") 
                                                [| _CADLiborON.source
                                                ;  _fixingDate.source
                                                |]
@@ -302,7 +302,7 @@ module CADLiborONFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -327,18 +327,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".ForwardingTermStructure") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CADLiborON> format
                     ; source = source 
@@ -366,12 +366,12 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".MaturityDate") 
                                                [| _CADLiborON.source
                                                ;  _valueDate.source
                                                |]
@@ -380,7 +380,7 @@ module CADLiborONFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -405,18 +405,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".Currency") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".Currency") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CADLiborON> format
                     ; source = source 
@@ -441,18 +441,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".DayCounter") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CADLiborON> format
                     ; source = source 
@@ -477,18 +477,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".FamilyName") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -519,13 +519,13 @@ module CADLiborONFunction =
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".Fixing") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".Fixing") 
                                                [| _CADLiborON.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -536,7 +536,7 @@ module CADLiborONFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -561,18 +561,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".FixingCalendar") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CADLiborON> format
                     ; source = source 
@@ -600,12 +600,12 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".FixingDate") 
                                                [| _CADLiborON.source
                                                ;  _valueDate.source
                                                |]
@@ -614,7 +614,7 @@ module CADLiborONFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -639,18 +639,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".FixingDays") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -678,12 +678,12 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".IsValidFixingDate") 
                                                [| _CADLiborON.source
                                                ;  _fixingDate.source
                                                |]
@@ -692,7 +692,7 @@ module CADLiborONFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -717,18 +717,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".Name") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".Name") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -756,12 +756,12 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".PastFixing") 
                                                [| _CADLiborON.source
                                                ;  _fixingDate.source
                                                |]
@@ -770,7 +770,7 @@ module CADLiborONFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -795,18 +795,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".Tenor") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".Tenor") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CADLiborON> format
                     ; source = source 
@@ -831,18 +831,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Update
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".Update") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".Update") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -870,12 +870,12 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".ValueDate") 
                                                [| _CADLiborON.source
                                                ;  _fixingDate.source
                                                |]
@@ -884,7 +884,7 @@ module CADLiborONFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -918,14 +918,14 @@ module CADLiborONFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".AddFixing") 
                                                [| _CADLiborON.source
                                                ;  _d.source
                                                ;  _v.source
@@ -938,7 +938,7 @@ module CADLiborONFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -972,14 +972,14 @@ module CADLiborONFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".AddFixings") 
                                                [| _CADLiborON.source
                                                ;  _d.source
                                                ;  _v.source
@@ -992,7 +992,7 @@ module CADLiborONFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1023,13 +1023,13 @@ module CADLiborONFunction =
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".AddFixings1") 
                                                [| _CADLiborON.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1040,7 +1040,7 @@ module CADLiborONFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1065,18 +1065,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".AllowsNativeFixings") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1101,18 +1101,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".ClearFixings") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1140,12 +1140,12 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".RegisterWith") 
                                                [| _CADLiborON.source
                                                ;  _handler.source
                                                |]
@@ -1154,7 +1154,7 @@ module CADLiborONFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1179,18 +1179,18 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".TimeSeries") 
                                                [| _CADLiborON.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLiborON.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1218,12 +1218,12 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CADLiborON.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_CADLiborON.source + ".UnregisterWith") 
                                                [| _CADLiborON.source
                                                ;  _handler.source
                                                |]
@@ -1232,7 +1232,7 @@ module CADLiborONFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1261,14 +1261,14 @@ module CADLiborONFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CADLiborON>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CADLiborON>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CADLiborON>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CADLiborON>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

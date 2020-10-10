@@ -59,7 +59,7 @@ module ForwardVanillaEngineFunction =
                 let _getEngine = Helper.toCell<ForwardVanillaEngine.GetOriginalEngine> getEngine "getEngine" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.ForwardVanillaEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ForwardVanillaEngine 
                                                             _Process.cell 
                                                             _getEngine.cell 
                                                             _pricingEngine.cell 
@@ -67,7 +67,7 @@ module ForwardVanillaEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ForwardVanillaEngine>) l
 
-                let source = Helper.sourceFold "Fun.ForwardVanillaEngine" 
+                let source () = Helper.sourceFold "Fun.ForwardVanillaEngine" 
                                                [| _Process.source
                                                ;  _getEngine.source
                                                ;  _pricingEngine.source
@@ -80,7 +80,7 @@ module ForwardVanillaEngineFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ForwardVanillaEngine> format
                     ; source = source 
@@ -109,12 +109,12 @@ module ForwardVanillaEngineFunction =
 
                 let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).GetOriginalEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).GetOriginalEngine
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IPricingEngine>) l
 
-                let source = Helper.sourceFold (_ForwardVanillaEngine.source + ".GetOriginalEngine") 
+                let source () = Helper.sourceFold (_ForwardVanillaEngine.source + ".GetOriginalEngine") 
                                                [| _ForwardVanillaEngine.source
                                                ;  _Process.source
                                                |]
@@ -123,7 +123,7 @@ module ForwardVanillaEngineFunction =
                                 ;  _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ForwardVanillaEngine> format
                     ; source = source 
@@ -152,12 +152,12 @@ module ForwardVanillaEngineFunction =
 
                 let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : ForwardVanillaEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardVanillaEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_ForwardVanillaEngine.source + ".RegisterWith") 
                                                [| _ForwardVanillaEngine.source
                                                ;  _handler.source
                                                |]
@@ -166,7 +166,7 @@ module ForwardVanillaEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -191,18 +191,18 @@ module ForwardVanillaEngineFunction =
             try
 
                 let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
-                let builder () = withMnemonic mnemonic ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : ForwardVanillaEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardVanillaEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_ForwardVanillaEngine.source + ".Reset") 
                                                [| _ForwardVanillaEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,12 +230,12 @@ module ForwardVanillaEngineFunction =
 
                 let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : ForwardVanillaEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardVanillaEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_ForwardVanillaEngine.source + ".UnregisterWith") 
                                                [| _ForwardVanillaEngine.source
                                                ;  _handler.source
                                                |]
@@ -244,7 +244,7 @@ module ForwardVanillaEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -269,18 +269,18 @@ module ForwardVanillaEngineFunction =
             try
 
                 let _ForwardVanillaEngine = Helper.toCell<ForwardVanillaEngine> forwardvanillaengine "ForwardVanillaEngine"  
-                let builder () = withMnemonic mnemonic ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardVanillaEngineModel.Cast _ForwardVanillaEngine.cell).Update
                                                        ) :> ICell
                 let format (o : ForwardVanillaEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardVanillaEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_ForwardVanillaEngine.source + ".Update") 
                                                [| _ForwardVanillaEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -309,14 +309,14 @@ module ForwardVanillaEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardVanillaEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ForwardVanillaEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ForwardVanillaEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ForwardVanillaEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

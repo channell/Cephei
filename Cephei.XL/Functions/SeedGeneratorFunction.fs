@@ -49,18 +49,18 @@ module SeedGeneratorFunction =
             try
 
                 let _SeedGenerator = Helper.toCell<SeedGenerator> seedgenerator "SeedGenerator"  
-                let builder () = withMnemonic mnemonic ((SeedGeneratorModel.Cast _SeedGenerator.cell).Get
+                let builder (current : ICell) = withMnemonic mnemonic ((SeedGeneratorModel.Cast _SeedGenerator.cell).Get
                                                        ) :> ICell
                 let format (o : ulong) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SeedGenerator.source + ".Get") 
+                let source () = Helper.sourceFold (_SeedGenerator.source + ".Get") 
                                                [| _SeedGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SeedGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -89,14 +89,14 @@ module SeedGeneratorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SeedGenerator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SeedGenerator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SeedGenerator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SeedGenerator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

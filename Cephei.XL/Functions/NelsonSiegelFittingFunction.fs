@@ -49,18 +49,18 @@ module NelsonSiegelFittingFunction =
             try
 
                 let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
-                let builder () = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
-                let source = Helper.sourceFold (_NelsonSiegelFitting.source + ".Clone") 
+                let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".Clone") 
                                                [| _NelsonSiegelFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NelsonSiegelFitting> format
                     ; source = source 
@@ -88,13 +88,13 @@ module NelsonSiegelFittingFunction =
 
                 let _weights = Helper.toDefault<Vector> weights "weights" null
                 let _optimizationMethod = Helper.toDefault<OptimizationMethod> optimizationMethod "optimizationMethod" null
-                let builder () = withMnemonic mnemonic (Fun.NelsonSiegelFitting 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NelsonSiegelFitting 
                                                             _weights.cell 
                                                             _optimizationMethod.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NelsonSiegelFitting>) l
 
-                let source = Helper.sourceFold "Fun.NelsonSiegelFitting" 
+                let source () = Helper.sourceFold "Fun.NelsonSiegelFitting" 
                                                [| _weights.source
                                                ;  _optimizationMethod.source
                                                |]
@@ -103,7 +103,7 @@ module NelsonSiegelFittingFunction =
                                 ;  _optimizationMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NelsonSiegelFitting> format
                     ; source = source 
@@ -128,18 +128,18 @@ module NelsonSiegelFittingFunction =
             try
 
                 let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
-                let builder () = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NelsonSiegelFitting.source + ".Size") 
+                let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".Size") 
                                                [| _NelsonSiegelFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module NelsonSiegelFittingFunction =
             try
 
                 let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
-                let builder () = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).ConstrainAtZero
+                let builder (current : ICell) = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NelsonSiegelFitting.source + ".ConstrainAtZero") 
+                let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".ConstrainAtZero") 
                                                [| _NelsonSiegelFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,13 +206,13 @@ module NelsonSiegelFittingFunction =
                 let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Discount
                                                             _x.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NelsonSiegelFitting.source + ".Discount") 
+                let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".Discount") 
                                                [| _NelsonSiegelFitting.source
                                                ;  _x.source
                                                ;  _t.source
@@ -223,7 +223,7 @@ module NelsonSiegelFittingFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module NelsonSiegelFittingFunction =
             try
 
                 let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
-                let builder () = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).MinimumCostValue
+                let builder (current : ICell) = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NelsonSiegelFitting.source + ".MinimumCostValue") 
+                let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".MinimumCostValue") 
                                                [| _NelsonSiegelFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module NelsonSiegelFittingFunction =
             try
 
                 let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
-                let builder () = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).NumberOfIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NelsonSiegelFitting.source + ".NumberOfIterations") 
+                let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".NumberOfIterations") 
                                                [| _NelsonSiegelFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module NelsonSiegelFittingFunction =
             try
 
                 let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
-                let builder () = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).OptimizationMethod
+                let builder (current : ICell) = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
-                let source = Helper.sourceFold (_NelsonSiegelFitting.source + ".OptimizationMethod") 
+                let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".OptimizationMethod") 
                                                [| _NelsonSiegelFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NelsonSiegelFitting> format
                     ; source = source 
@@ -356,18 +356,18 @@ module NelsonSiegelFittingFunction =
             try
 
                 let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
-                let builder () = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Solution
+                let builder (current : ICell) = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NelsonSiegelFitting.source + ".Solution") 
+                let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".Solution") 
                                                [| _NelsonSiegelFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NelsonSiegelFitting> format
                     ; source = source 
@@ -392,18 +392,18 @@ module NelsonSiegelFittingFunction =
             try
 
                 let _NelsonSiegelFitting = Helper.toCell<NelsonSiegelFitting> nelsonsiegelfitting "NelsonSiegelFitting"  
-                let builder () = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((NelsonSiegelFittingModel.Cast _NelsonSiegelFitting.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NelsonSiegelFitting.source + ".Weights") 
+                let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".Weights") 
                                                [| _NelsonSiegelFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NelsonSiegelFitting> format
                     ; source = source 
@@ -432,14 +432,14 @@ module NelsonSiegelFittingFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NelsonSiegelFitting>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NelsonSiegelFitting>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NelsonSiegelFitting>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NelsonSiegelFitting>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

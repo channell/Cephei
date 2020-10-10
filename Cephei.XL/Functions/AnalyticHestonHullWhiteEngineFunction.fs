@@ -55,14 +55,14 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let _hestonModel = Helper.toCell<HestonModel> hestonModel "hestonModel" 
                 let _hullWhiteModel = Helper.toCell<HullWhite> hullWhiteModel "hullWhiteModel" 
                 let _integrationOrder = Helper.toDefault<int> integrationOrder "integrationOrder" 144
-                let builder () = withMnemonic mnemonic (Fun.AnalyticHestonHullWhiteEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticHestonHullWhiteEngine1 
                                                             _hestonModel.cell 
                                                             _hullWhiteModel.cell 
                                                             _integrationOrder.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticHestonHullWhiteEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticHestonHullWhiteEngine" 
+                let source () = Helper.sourceFold "Fun.AnalyticHestonHullWhiteEngine" 
                                                [| _hestonModel.source
                                                ;  _hullWhiteModel.source
                                                ;  _integrationOrder.source
@@ -73,7 +73,7 @@ module AnalyticHestonHullWhiteEngineFunction =
                                 ;  _integrationOrder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticHestonHullWhiteEngine> format
                     ; source = source 
@@ -107,7 +107,7 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let _hullWhiteModel = Helper.toCell<HullWhite> hullWhiteModel "hullWhiteModel" 
                 let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticHestonHullWhiteEngine
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticHestonHullWhiteEngine
                                                             _hestonModel.cell 
                                                             _hullWhiteModel.cell 
                                                             _relTolerance.cell 
@@ -115,7 +115,7 @@ module AnalyticHestonHullWhiteEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticHestonHullWhiteEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticHestonHullWhiteEngine1" 
+                let source () = Helper.sourceFold "Fun.AnalyticHestonHullWhiteEngine1" 
                                                [| _hestonModel.source
                                                ;  _hullWhiteModel.source
                                                ;  _relTolerance.source
@@ -128,7 +128,7 @@ module AnalyticHestonHullWhiteEngineFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticHestonHullWhiteEngine> format
                     ; source = source 
@@ -154,18 +154,18 @@ module AnalyticHestonHullWhiteEngineFunction =
             try
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
-                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".Update") 
                                                [| _AnalyticHestonHullWhiteEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHestonHullWhiteEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -190,18 +190,18 @@ module AnalyticHestonHullWhiteEngineFunction =
             try
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
-                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).NumberOfEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".NumberOfEvaluations") 
+                let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".NumberOfEvaluations") 
                                                [| _AnalyticHestonHullWhiteEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHestonHullWhiteEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,12 +230,12 @@ module AnalyticHestonHullWhiteEngineFunction =
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".SetModel") 
                                                [| _AnalyticHestonHullWhiteEngine.source
                                                ;  _model.source
                                                |]
@@ -244,7 +244,7 @@ module AnalyticHestonHullWhiteEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,12 +272,12 @@ module AnalyticHestonHullWhiteEngineFunction =
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".RegisterWith") 
                                                [| _AnalyticHestonHullWhiteEngine.source
                                                ;  _handler.source
                                                |]
@@ -286,7 +286,7 @@ module AnalyticHestonHullWhiteEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -311,18 +311,18 @@ module AnalyticHestonHullWhiteEngineFunction =
             try
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
-                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".Reset") 
                                                [| _AnalyticHestonHullWhiteEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHestonHullWhiteEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -350,12 +350,12 @@ module AnalyticHestonHullWhiteEngineFunction =
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".UnregisterWith") 
                                                [| _AnalyticHestonHullWhiteEngine.source
                                                ;  _handler.source
                                                |]
@@ -364,7 +364,7 @@ module AnalyticHestonHullWhiteEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -393,14 +393,14 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticHestonHullWhiteEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticHestonHullWhiteEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticHestonHullWhiteEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticHestonHullWhiteEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

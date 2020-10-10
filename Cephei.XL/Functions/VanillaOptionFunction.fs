@@ -67,7 +67,7 @@ module VanillaOptionFunction =
                 let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 100
                 let _minVol = Helper.toDefault<double> minVol "minVol" 1.0e-7
                 let _maxVol = Helper.toDefault<double> maxVol "maxVol" 4.0
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ImpliedVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _Process.cell 
                                                             _accuracy.cell 
@@ -77,7 +77,7 @@ module VanillaOptionFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".ImpliedVolatility") 
                                                [| _VanillaOption.source
                                                ;  _targetValue.source
                                                ;  _Process.source
@@ -96,7 +96,7 @@ module VanillaOptionFunction =
                                 ;  _maxVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -130,7 +130,7 @@ module VanillaOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.VanillaOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.VanillaOption 
                                                             _payoff.cell 
                                                             _exercise.cell 
                                                             _pricingEngine.cell 
@@ -138,7 +138,7 @@ module VanillaOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaOption>) l
 
-                let source = Helper.sourceFold "Fun.VanillaOption" 
+                let source () = Helper.sourceFold "Fun.VanillaOption" 
                                                [| _payoff.source
                                                ;  _exercise.source
                                                ;  _pricingEngine.source
@@ -151,7 +151,7 @@ module VanillaOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VanillaOption> format
                     ; source = source 
@@ -176,18 +176,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".Delta") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -212,18 +212,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".DeltaForward") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".DividendRho") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".Elasticity") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".Gamma") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,18 +356,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".IsExpired") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -392,18 +392,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".ItmCashProbability") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -428,18 +428,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".Rho") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -464,18 +464,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".StrikeSensitivity") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -500,18 +500,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".Theta") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -536,18 +536,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".ThetaPerDay") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -572,18 +572,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".Vega") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".Exercise") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VanillaOption> format
                     ; source = source 
@@ -644,18 +644,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".Payoff") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VanillaOption> format
                     ; source = source 
@@ -680,18 +680,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".CASH") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -716,18 +716,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".ErrorEstimate") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -752,18 +752,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".NPV") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -791,12 +791,12 @@ module VanillaOptionFunction =
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".Result") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".Result") 
                                                [| _VanillaOption.source
                                                ;  _tag.source
                                                |]
@@ -805,7 +805,7 @@ module VanillaOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -833,12 +833,12 @@ module VanillaOptionFunction =
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : VanillaOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".SetPricingEngine") 
                                                [| _VanillaOption.source
                                                ;  _e.source
                                                |]
@@ -847,7 +847,7 @@ module VanillaOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -872,18 +872,18 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_VanillaOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_VanillaOption.source + ".ValuationDate") 
                                                [| _VanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -912,14 +912,14 @@ module VanillaOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<VanillaOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<VanillaOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<VanillaOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<VanillaOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

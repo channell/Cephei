@@ -49,19 +49,19 @@ module BMAIndexFunction =
             try
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.BMAIndex 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BMAIndex 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BMAIndex>) l
 
-                let source = Helper.sourceFold "Fun.BMAIndex" 
+                let source () = Helper.sourceFold "Fun.BMAIndex" 
                                                [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BMAIndex> format
                     ; source = source 
@@ -92,13 +92,13 @@ module BMAIndexFunction =
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).FixingSchedule
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).FixingSchedule
                                                             _start.cell 
                                                             _End.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".FixingSchedule") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".FixingSchedule") 
                                                [| _BMAIndex.source
                                                ;  _start.source
                                                ;  _End.source
@@ -109,7 +109,7 @@ module BMAIndexFunction =
                                 ;  _End.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BMAIndex> format
                     ; source = source 
@@ -137,12 +137,12 @@ module BMAIndexFunction =
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".ForecastFixing") 
                                                [| _BMAIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -151,7 +151,7 @@ module BMAIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,18 +176,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".ForwardingTermStructure") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BMAIndex> format
                     ; source = source 
@@ -215,12 +215,12 @@ module BMAIndexFunction =
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".IsValidFixingDate") 
                                                [| _BMAIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -229,7 +229,7 @@ module BMAIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -257,12 +257,12 @@ module BMAIndexFunction =
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".MaturityDate") 
                                                [| _BMAIndex.source
                                                ;  _valueDate.source
                                                |]
@@ -271,7 +271,7 @@ module BMAIndexFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,18 +296,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".Name") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".Name") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -332,18 +332,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".Currency") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".Currency") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BMAIndex> format
                     ; source = source 
@@ -368,18 +368,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".DayCounter") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BMAIndex> format
                     ; source = source 
@@ -404,18 +404,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".FamilyName") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,13 +446,13 @@ module BMAIndexFunction =
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".Fixing") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".Fixing") 
                                                [| _BMAIndex.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -463,7 +463,7 @@ module BMAIndexFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,18 +488,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".FixingCalendar") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BMAIndex> format
                     ; source = source 
@@ -527,12 +527,12 @@ module BMAIndexFunction =
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".FixingDate") 
                                                [| _BMAIndex.source
                                                ;  _valueDate.source
                                                |]
@@ -541,7 +541,7 @@ module BMAIndexFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -566,18 +566,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".FixingDays") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -605,12 +605,12 @@ module BMAIndexFunction =
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".PastFixing") 
                                                [| _BMAIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -619,7 +619,7 @@ module BMAIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -644,18 +644,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".Tenor") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".Tenor") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BMAIndex> format
                     ; source = source 
@@ -680,18 +680,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).Update
                                                        ) :> ICell
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".Update") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".Update") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -719,12 +719,12 @@ module BMAIndexFunction =
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".ValueDate") 
                                                [| _BMAIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -733,7 +733,7 @@ module BMAIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -767,14 +767,14 @@ module BMAIndexFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".AddFixing") 
                                                [| _BMAIndex.source
                                                ;  _d.source
                                                ;  _v.source
@@ -787,7 +787,7 @@ module BMAIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -821,14 +821,14 @@ module BMAIndexFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".AddFixings") 
                                                [| _BMAIndex.source
                                                ;  _d.source
                                                ;  _v.source
@@ -841,7 +841,7 @@ module BMAIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -872,13 +872,13 @@ module BMAIndexFunction =
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".AddFixings") 
                                                [| _BMAIndex.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -889,7 +889,7 @@ module BMAIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -914,18 +914,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".AllowsNativeFixings") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -950,18 +950,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".ClearFixings") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -989,12 +989,12 @@ module BMAIndexFunction =
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".RegisterWith") 
                                                [| _BMAIndex.source
                                                ;  _handler.source
                                                |]
@@ -1003,7 +1003,7 @@ module BMAIndexFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1028,18 +1028,18 @@ module BMAIndexFunction =
             try
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".TimeSeries") 
                                                [| _BMAIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1067,12 +1067,12 @@ module BMAIndexFunction =
 
                 let _BMAIndex = Helper.toCell<BMAIndex> bmaindex "BMAIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((BMAIndexModel.Cast _BMAIndex.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BMAIndex.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_BMAIndex.source + ".UnregisterWith") 
                                                [| _BMAIndex.source
                                                ;  _handler.source
                                                |]
@@ -1081,7 +1081,7 @@ module BMAIndexFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1110,14 +1110,14 @@ module BMAIndexFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BMAIndex>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BMAIndex>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BMAIndex>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BMAIndex>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

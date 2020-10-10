@@ -49,18 +49,18 @@ module SymmetricSchurDecompositionFunction =
             try
 
                 let _SymmetricSchurDecomposition = Helper.toCell<SymmetricSchurDecomposition> symmetricschurdecomposition "SymmetricSchurDecomposition"  
-                let builder () = withMnemonic mnemonic ((SymmetricSchurDecompositionModel.Cast _SymmetricSchurDecomposition.cell).Eigenvalues
+                let builder (current : ICell) = withMnemonic mnemonic ((SymmetricSchurDecompositionModel.Cast _SymmetricSchurDecomposition.cell).Eigenvalues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SymmetricSchurDecomposition.source + ".Eigenvalues") 
+                let source () = Helper.sourceFold (_SymmetricSchurDecomposition.source + ".Eigenvalues") 
                                                [| _SymmetricSchurDecomposition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SymmetricSchurDecomposition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SymmetricSchurDecomposition> format
                     ; source = source 
@@ -85,18 +85,18 @@ module SymmetricSchurDecompositionFunction =
             try
 
                 let _SymmetricSchurDecomposition = Helper.toCell<SymmetricSchurDecomposition> symmetricschurdecomposition "SymmetricSchurDecomposition"  
-                let builder () = withMnemonic mnemonic ((SymmetricSchurDecompositionModel.Cast _SymmetricSchurDecomposition.cell).Eigenvectors
+                let builder (current : ICell) = withMnemonic mnemonic ((SymmetricSchurDecompositionModel.Cast _SymmetricSchurDecomposition.cell).Eigenvectors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_SymmetricSchurDecomposition.source + ".Eigenvectors") 
+                let source () = Helper.sourceFold (_SymmetricSchurDecomposition.source + ".Eigenvectors") 
                                                [| _SymmetricSchurDecomposition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SymmetricSchurDecomposition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SymmetricSchurDecomposition> format
                     ; source = source 
@@ -121,19 +121,19 @@ module SymmetricSchurDecompositionFunction =
             try
 
                 let _s = Helper.toCell<Matrix> s "s" 
-                let builder () = withMnemonic mnemonic (Fun.SymmetricSchurDecomposition 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SymmetricSchurDecomposition 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SymmetricSchurDecomposition>) l
 
-                let source = Helper.sourceFold "Fun.SymmetricSchurDecomposition" 
+                let source () = Helper.sourceFold "Fun.SymmetricSchurDecomposition" 
                                                [| _s.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SymmetricSchurDecomposition> format
                     ; source = source 
@@ -162,14 +162,14 @@ module SymmetricSchurDecompositionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SymmetricSchurDecomposition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SymmetricSchurDecomposition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SymmetricSchurDecomposition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SymmetricSchurDecomposition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

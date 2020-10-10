@@ -70,7 +70,7 @@ module DiscreteAveragingAsianOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.DiscreteAveragingAsianOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscreteAveragingAsianOption 
                                                             _averageType.cell 
                                                             _runningAccumulator.cell 
                                                             _pastFixings.cell 
@@ -82,7 +82,7 @@ module DiscreteAveragingAsianOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscreteAveragingAsianOption>) l
 
-                let source = Helper.sourceFold "Fun.DiscreteAveragingAsianOption" 
+                let source () = Helper.sourceFold "Fun.DiscreteAveragingAsianOption" 
                                                [| _averageType.source
                                                ;  _runningAccumulator.source
                                                ;  _pastFixings.source
@@ -103,7 +103,7 @@ module DiscreteAveragingAsianOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscreteAveragingAsianOption> format
                     ; source = source 
@@ -128,18 +128,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Delta") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".DeltaForward") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".DividendRho") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,18 +236,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Elasticity") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,18 +272,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Gamma") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,18 +308,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".IsExpired") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,18 +344,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ItmCashProbability") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,18 +380,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Rho") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -416,18 +416,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".StrikeSensitivity") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -452,18 +452,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Theta") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,18 +488,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ThetaPerDay") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -524,18 +524,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Vega") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -560,18 +560,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Exercise") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscreteAveragingAsianOption> format
                     ; source = source 
@@ -596,18 +596,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Payoff") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscreteAveragingAsianOption> format
                     ; source = source 
@@ -632,18 +632,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".CASH") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -668,18 +668,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ErrorEstimate") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -704,18 +704,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".NPV") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -743,12 +743,12 @@ module DiscreteAveragingAsianOptionFunction =
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Result") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Result") 
                                                [| _DiscreteAveragingAsianOption.source
                                                ;  _tag.source
                                                |]
@@ -757,7 +757,7 @@ module DiscreteAveragingAsianOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -785,12 +785,12 @@ module DiscreteAveragingAsianOptionFunction =
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : DiscreteAveragingAsianOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".SetPricingEngine") 
                                                [| _DiscreteAveragingAsianOption.source
                                                ;  _e.source
                                                |]
@@ -799,7 +799,7 @@ module DiscreteAveragingAsianOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -824,18 +824,18 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ValuationDate") 
                                                [| _DiscreteAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -864,14 +864,14 @@ module DiscreteAveragingAsianOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscreteAveragingAsianOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscreteAveragingAsianOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscreteAveragingAsianOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscreteAveragingAsianOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

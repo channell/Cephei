@@ -56,13 +56,13 @@ module equal_on_firstFunction =
                 let _equal_on_first = Helper.toCell<equal_on_first> equal_on_first "equal_on_first"  
                 let _p1 = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> p1 "p1" 
                 let _p2 = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> p2 "p2" 
-                let builder () = withMnemonic mnemonic ((equal_on_firstModel.Cast _equal_on_first.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((equal_on_firstModel.Cast _equal_on_first.cell).Equals
                                                             _p1.cell 
                                                             _p2.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_equal_on_first.source + ".Equals") 
+                let source () = Helper.sourceFold (_equal_on_first.source + ".Equals") 
                                                [| _equal_on_first.source
                                                ;  _p1.source
                                                ;  _p2.source
@@ -73,7 +73,7 @@ module equal_on_firstFunction =
                                 ;  _p2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,14 +103,14 @@ module equal_on_firstFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<equal_on_first>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<equal_on_first>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<equal_on_first>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<equal_on_first>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

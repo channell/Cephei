@@ -61,7 +61,7 @@ module PenaltyFunctionFunction =
                 let _rateHelpers = Helper.toCell<Generic.List<BootstrapHelper<'U>>> rateHelpers "rateHelpers" 
                 let _start = Helper.toCell<int> start "start" 
                 let _End = Helper.toCell<int> End "End" 
-                let builder () = withMnemonic mnemonic (Fun.PenaltyFunction 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PenaltyFunction 
                                                             _curve.cell 
                                                             _initialIndex.cell 
                                                             _rateHelpers.cell 
@@ -70,7 +70,7 @@ module PenaltyFunctionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PenaltyFunction>) l
 
-                let source = Helper.sourceFold "Fun.PenaltyFunction" 
+                let source () = Helper.sourceFold "Fun.PenaltyFunction" 
                                                [| _curve.source
                                                ;  _initialIndex.source
                                                ;  _rateHelpers.source
@@ -85,7 +85,7 @@ module PenaltyFunctionFunction =
                                 ;  _End.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PenaltyFunction> format
                     ; source = source 
@@ -113,12 +113,12 @@ module PenaltyFunctionFunction =
 
                 let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PenaltyFunction.source + ".Value") 
+                let source () = Helper.sourceFold (_PenaltyFunction.source + ".Value") 
                                                [| _PenaltyFunction.source
                                                ;  _x.source
                                                |]
@@ -127,7 +127,7 @@ module PenaltyFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module PenaltyFunctionFunction =
 
                 let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Values
+                let builder (current : ICell) = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Values
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_PenaltyFunction.source + ".Values") 
+                let source () = Helper.sourceFold (_PenaltyFunction.source + ".Values") 
                                                [| _PenaltyFunction.source
                                                ;  _x.source
                                                |]
@@ -169,7 +169,7 @@ module PenaltyFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PenaltyFunction> format
                     ; source = source 
@@ -194,18 +194,18 @@ module PenaltyFunctionFunction =
             try
 
                 let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
-                let builder () = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).FiniteDifferenceEpsilon
+                let builder (current : ICell) = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).FiniteDifferenceEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PenaltyFunction.source + ".FiniteDifferenceEpsilon") 
+                let source () = Helper.sourceFold (_PenaltyFunction.source + ".FiniteDifferenceEpsilon") 
                                                [| _PenaltyFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PenaltyFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,13 +236,13 @@ module PenaltyFunctionFunction =
                 let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _grad = Helper.toCell<Vector> grad "grad" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Gradient
+                let builder (current : ICell) = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Gradient
                                                             _grad.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : PenaltyFunction) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PenaltyFunction.source + ".Gradient") 
+                let source () = Helper.sourceFold (_PenaltyFunction.source + ".Gradient") 
                                                [| _PenaltyFunction.source
                                                ;  _grad.source
                                                ;  _x.source
@@ -253,7 +253,7 @@ module PenaltyFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,13 +284,13 @@ module PenaltyFunctionFunction =
                 let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Jacobian
+                let builder (current : ICell) = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).Jacobian
                                                             _jac.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : PenaltyFunction) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PenaltyFunction.source + ".Jacobian") 
+                let source () = Helper.sourceFold (_PenaltyFunction.source + ".Jacobian") 
                                                [| _PenaltyFunction.source
                                                ;  _jac.source
                                                ;  _x.source
@@ -301,7 +301,7 @@ module PenaltyFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -332,13 +332,13 @@ module PenaltyFunctionFunction =
                 let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _grad = Helper.toCell<Vector> grad "grad" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).ValueAndGradient
+                let builder (current : ICell) = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).ValueAndGradient
                                                             _grad.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PenaltyFunction.source + ".ValueAndGradient") 
+                let source () = Helper.sourceFold (_PenaltyFunction.source + ".ValueAndGradient") 
                                                [| _PenaltyFunction.source
                                                ;  _grad.source
                                                ;  _x.source
@@ -349,7 +349,7 @@ module PenaltyFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,13 +380,13 @@ module PenaltyFunctionFunction =
                 let _PenaltyFunction = Helper.toCell<PenaltyFunction> penaltyfunction "PenaltyFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).ValuesAndJacobian
+                let builder (current : ICell) = withMnemonic mnemonic ((PenaltyFunctionModel.Cast _PenaltyFunction.cell).ValuesAndJacobian
                                                             _jac.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_PenaltyFunction.source + ".ValuesAndJacobian") 
+                let source () = Helper.sourceFold (_PenaltyFunction.source + ".ValuesAndJacobian") 
                                                [| _PenaltyFunction.source
                                                ;  _jac.source
                                                ;  _x.source
@@ -397,7 +397,7 @@ module PenaltyFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PenaltyFunction> format
                     ; source = source 
@@ -426,14 +426,14 @@ module PenaltyFunctionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PenaltyFunction>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PenaltyFunction>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PenaltyFunction>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PenaltyFunction>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

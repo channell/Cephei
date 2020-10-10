@@ -49,18 +49,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".Delta") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".DeltaForward") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".DividendRho") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".Elasticity") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".Gamma") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,18 +229,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".IsExpired") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -265,18 +265,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".ItmCashProbability") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -310,7 +310,7 @@ module OneAssetOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.OneAssetOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.OneAssetOption 
                                                             _payoff.cell 
                                                             _exercise.cell 
                                                             _pricingEngine.cell 
@@ -318,7 +318,7 @@ module OneAssetOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OneAssetOption>) l
 
-                let source = Helper.sourceFold "Fun.OneAssetOption" 
+                let source () = Helper.sourceFold "Fun.OneAssetOption" 
                                                [| _payoff.source
                                                ;  _exercise.source
                                                ;  _pricingEngine.source
@@ -331,7 +331,7 @@ module OneAssetOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OneAssetOption> format
                     ; source = source 
@@ -356,18 +356,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".Rho") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -392,18 +392,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".StrikeSensitivity") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -428,18 +428,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".Theta") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -464,18 +464,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".ThetaPerDay") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -500,18 +500,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".Vega") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -536,18 +536,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".Exercise") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OneAssetOption> format
                     ; source = source 
@@ -572,18 +572,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".Payoff") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OneAssetOption> format
                     ; source = source 
@@ -608,18 +608,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".CASH") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -644,18 +644,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".ErrorEstimate") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -680,18 +680,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".NPV") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -719,12 +719,12 @@ module OneAssetOptionFunction =
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".Result") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".Result") 
                                                [| _OneAssetOption.source
                                                ;  _tag.source
                                                |]
@@ -733,7 +733,7 @@ module OneAssetOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -761,12 +761,12 @@ module OneAssetOptionFunction =
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : OneAssetOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".SetPricingEngine") 
                                                [| _OneAssetOption.source
                                                ;  _e.source
                                                |]
@@ -775,7 +775,7 @@ module OneAssetOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -800,18 +800,18 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_OneAssetOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_OneAssetOption.source + ".ValuationDate") 
                                                [| _OneAssetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -840,14 +840,14 @@ module OneAssetOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<OneAssetOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<OneAssetOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<OneAssetOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<OneAssetOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

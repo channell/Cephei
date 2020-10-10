@@ -49,18 +49,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".Amount") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".Amount") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).BaseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".BaseDate") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".BaseDate") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).BaseFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).BaseFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".BaseFixing") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".BaseFixing") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -181,7 +181,7 @@ module CPICashFlowFunction =
                 let _growthOnly = Helper.toDefault<bool> growthOnly "growthOnly" false
                 let _interpolation = Helper.toDefault<InterpolationType> interpolation "interpolation" InterpolationType.AsIndex
                 let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.NoFrequency
-                let builder () = withMnemonic mnemonic (Fun.CPICashFlow 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CPICashFlow 
                                                             _notional.cell 
                                                             _index.cell 
                                                             _baseDate.cell 
@@ -194,7 +194,7 @@ module CPICashFlowFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPICashFlow>) l
 
-                let source = Helper.sourceFold "Fun.CPICashFlow" 
+                let source () = Helper.sourceFold "Fun.CPICashFlow" 
                                                [| _notional.source
                                                ;  _index.source
                                                ;  _baseDate.source
@@ -217,7 +217,7 @@ module CPICashFlowFunction =
                                 ;  _frequency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICashFlow> format
                     ; source = source 
@@ -242,18 +242,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".Frequency") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".Frequency") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -278,18 +278,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Interpolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Interpolation
                                                        ) :> ICell
                 let format (o : InterpolationType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".Interpolation") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".Interpolation") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -314,18 +314,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".Date") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".Date") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -350,18 +350,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".FixingDate") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,18 +386,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).GrowthOnly
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).GrowthOnly
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".GrowthOnly") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".GrowthOnly") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -422,18 +422,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Index>) l
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".Index") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".Index") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICashFlow> format
                     ; source = source 
@@ -458,18 +458,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Notional
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Notional
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".Notional") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".Notional") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -497,12 +497,12 @@ module CPICashFlowFunction =
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".CompareTo") 
                                                [| _CPICashFlow.source
                                                ;  _cf.source
                                                |]
@@ -511,7 +511,7 @@ module CPICashFlowFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -539,12 +539,12 @@ module CPICashFlowFunction =
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".Equals") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".Equals") 
                                                [| _CPICashFlow.source
                                                ;  _cf.source
                                                |]
@@ -553,7 +553,7 @@ module CPICashFlowFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -578,18 +578,18 @@ module CPICashFlowFunction =
             try
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".ExCouponDate") 
                                                [| _CPICashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -620,13 +620,13 @@ module CPICashFlowFunction =
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".HasOccurred") 
                                                [| _CPICashFlow.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -637,7 +637,7 @@ module CPICashFlowFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -665,12 +665,12 @@ module CPICashFlowFunction =
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".TradingExCoupon") 
                                                [| _CPICashFlow.source
                                                ;  _refDate.source
                                                |]
@@ -679,7 +679,7 @@ module CPICashFlowFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -707,12 +707,12 @@ module CPICashFlowFunction =
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : CPICashFlow) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".Accept") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".Accept") 
                                                [| _CPICashFlow.source
                                                ;  _v.source
                                                |]
@@ -721,7 +721,7 @@ module CPICashFlowFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -749,12 +749,12 @@ module CPICashFlowFunction =
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPICashFlow) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".RegisterWith") 
                                                [| _CPICashFlow.source
                                                ;  _handler.source
                                                |]
@@ -763,7 +763,7 @@ module CPICashFlowFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -791,12 +791,12 @@ module CPICashFlowFunction =
 
                 let _CPICashFlow = Helper.toCell<CPICashFlow> cpicashflow "CPICashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICashFlowModel.Cast _CPICashFlow.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPICashFlow) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICashFlow.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_CPICashFlow.source + ".UnregisterWith") 
                                                [| _CPICashFlow.source
                                                ;  _handler.source
                                                |]
@@ -805,7 +805,7 @@ module CPICashFlowFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -834,14 +834,14 @@ module CPICashFlowFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CPICashFlow>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CPICashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CPICashFlow>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CPICashFlow>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

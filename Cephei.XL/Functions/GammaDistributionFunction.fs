@@ -49,19 +49,19 @@ module GammaDistributionFunction =
             try
 
                 let _a = Helper.toCell<double> a "a" 
-                let builder () = withMnemonic mnemonic (Fun.GammaDistribution 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GammaDistribution 
                                                             _a.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GammaDistribution>) l
 
-                let source = Helper.sourceFold "Fun.GammaDistribution" 
+                let source () = Helper.sourceFold "Fun.GammaDistribution" 
                                                [| _a.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GammaDistribution> format
                     ; source = source 
@@ -89,12 +89,12 @@ module GammaDistributionFunction =
 
                 let _GammaDistribution = Helper.toCell<GammaDistribution> gammadistribution "GammaDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GammaDistributionModel.Cast _GammaDistribution.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GammaDistributionModel.Cast _GammaDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GammaDistribution.source + ".Value") 
+                let source () = Helper.sourceFold (_GammaDistribution.source + ".Value") 
                                                [| _GammaDistribution.source
                                                ;  _x.source
                                                |]
@@ -103,7 +103,7 @@ module GammaDistributionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -132,14 +132,14 @@ module GammaDistributionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GammaDistribution>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GammaDistribution>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GammaDistribution>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GammaDistribution>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

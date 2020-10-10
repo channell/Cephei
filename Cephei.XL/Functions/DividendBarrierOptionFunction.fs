@@ -73,7 +73,7 @@ module DividendBarrierOptionFunction =
                 let _dividends = Helper.toCell<Generic.List<double>> dividends "dividends" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.DividendBarrierOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DividendBarrierOption 
                                                             _barrierType.cell 
                                                             _barrier.cell 
                                                             _rebate.cell 
@@ -86,7 +86,7 @@ module DividendBarrierOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DividendBarrierOption>) l
 
-                let source = Helper.sourceFold "Fun.DividendBarrierOption" 
+                let source () = Helper.sourceFold "Fun.DividendBarrierOption" 
                                                [| _barrierType.source
                                                ;  _barrier.source
                                                ;  _rebate.source
@@ -109,7 +109,7 @@ module DividendBarrierOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DividendBarrierOption> format
                     ; source = source 
@@ -152,7 +152,7 @@ module DividendBarrierOptionFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ImpliedVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _Process.cell 
                                                             _accuracy.cell 
@@ -162,7 +162,7 @@ module DividendBarrierOptionFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".ImpliedVolatility") 
                                                [| _DividendBarrierOption.source
                                                ;  _targetValue.source
                                                ;  _Process.source
@@ -181,7 +181,7 @@ module DividendBarrierOptionFunction =
                                 ;  _maxVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,18 +206,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".Delta") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".DeltaForward") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -278,18 +278,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".DividendRho") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -314,18 +314,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".Elasticity") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -350,18 +350,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".Gamma") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,18 +386,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".IsExpired") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -422,18 +422,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".ItmCashProbability") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -458,18 +458,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".Rho") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -494,18 +494,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".StrikeSensitivity") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -530,18 +530,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".Theta") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -566,18 +566,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".ThetaPerDay") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -602,18 +602,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".Vega") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -638,18 +638,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".Exercise") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DividendBarrierOption> format
                     ; source = source 
@@ -674,18 +674,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".Payoff") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DividendBarrierOption> format
                     ; source = source 
@@ -710,18 +710,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".CASH") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -746,18 +746,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".ErrorEstimate") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -782,18 +782,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".NPV") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -821,12 +821,12 @@ module DividendBarrierOptionFunction =
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".Result") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".Result") 
                                                [| _DividendBarrierOption.source
                                                ;  _tag.source
                                                |]
@@ -835,7 +835,7 @@ module DividendBarrierOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -863,12 +863,12 @@ module DividendBarrierOptionFunction =
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : DividendBarrierOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".SetPricingEngine") 
                                                [| _DividendBarrierOption.source
                                                ;  _e.source
                                                |]
@@ -877,7 +877,7 @@ module DividendBarrierOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -902,18 +902,18 @@ module DividendBarrierOptionFunction =
             try
 
                 let _DividendBarrierOption = Helper.toCell<DividendBarrierOption> dividendbarrieroption "DividendBarrierOption"  
-                let builder () = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendBarrierOptionModel.Cast _DividendBarrierOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DividendBarrierOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_DividendBarrierOption.source + ".ValuationDate") 
                                                [| _DividendBarrierOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendBarrierOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -942,14 +942,14 @@ module DividendBarrierOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DividendBarrierOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DividendBarrierOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DividendBarrierOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DividendBarrierOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

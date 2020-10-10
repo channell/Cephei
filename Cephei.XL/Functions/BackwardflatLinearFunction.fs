@@ -64,7 +64,7 @@ module BackwardflatLinearFunction =
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _yEnd = Helper.toCell<int> yEnd "yEnd" 
                 let _z = Helper.toCell<Matrix> z "z" 
-                let builder () = withMnemonic mnemonic ((BackwardflatLinearModel.Cast _BackwardflatLinear.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((BackwardflatLinearModel.Cast _BackwardflatLinear.cell).Interpolate
                                                             _xBegin.cell 
                                                             _xEnd.cell 
                                                             _yBegin.cell 
@@ -73,7 +73,7 @@ module BackwardflatLinearFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation2D>) l
 
-                let source = Helper.sourceFold (_BackwardflatLinear.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_BackwardflatLinear.source + ".Interpolate") 
                                                [| _BackwardflatLinear.source
                                                ;  _xBegin.source
                                                ;  _xEnd.source
@@ -90,7 +90,7 @@ module BackwardflatLinearFunction =
                                 ;  _z.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BackwardflatLinear> format
                     ; source = source 
@@ -119,14 +119,14 @@ module BackwardflatLinearFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BackwardflatLinear>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BackwardflatLinear>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BackwardflatLinear>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BackwardflatLinear>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

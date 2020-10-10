@@ -52,13 +52,13 @@ module DKKLiborFunction =
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.DKKLibor 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DKKLibor 
                                                             _tenor.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DKKLibor>) l
 
-                let source = Helper.sourceFold "Fun.DKKLibor" 
+                let source () = Helper.sourceFold "Fun.DKKLibor" 
                                                [| _tenor.source
                                                ;  _h.source
                                                |]
@@ -67,7 +67,7 @@ module DKKLiborFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DKKLibor> format
                     ; source = source 
@@ -92,19 +92,19 @@ module DKKLiborFunction =
             try
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic (Fun.DKKLibor1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DKKLibor1 
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DKKLibor>) l
 
-                let source = Helper.sourceFold "Fun.DKKLibor1" 
+                let source () = Helper.sourceFold "Fun.DKKLibor1" 
                                                [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _tenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DKKLibor> format
                     ; source = source 
@@ -132,12 +132,12 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".Clone") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".Clone") 
                                                [| _DKKLibor.source
                                                ;  _h.source
                                                |]
@@ -146,7 +146,7 @@ module DKKLiborFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DKKLibor> format
                     ; source = source 
@@ -174,12 +174,12 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".MaturityDate") 
                                                [| _DKKLibor.source
                                                ;  _valueDate.source
                                                |]
@@ -188,7 +188,7 @@ module DKKLiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -216,12 +216,12 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".ValueDate") 
                                                [| _DKKLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -230,7 +230,7 @@ module DKKLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,18 +255,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".BusinessDayConvention") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -291,18 +291,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".EndOfMonth") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -336,14 +336,14 @@ module DKKLiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".ForecastFixing") 
                                                [| _DKKLibor.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -356,7 +356,7 @@ module DKKLiborFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -384,12 +384,12 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".ForecastFixing") 
                                                [| _DKKLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -398,7 +398,7 @@ module DKKLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -423,18 +423,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".ForwardingTermStructure") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DKKLibor> format
                     ; source = source 
@@ -459,18 +459,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".Currency") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".Currency") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DKKLibor> format
                     ; source = source 
@@ -495,18 +495,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".DayCounter") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DKKLibor> format
                     ; source = source 
@@ -531,18 +531,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".FamilyName") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -573,13 +573,13 @@ module DKKLiborFunction =
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".Fixing") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".Fixing") 
                                                [| _DKKLibor.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -590,7 +590,7 @@ module DKKLiborFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,18 +615,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".FixingCalendar") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DKKLibor> format
                     ; source = source 
@@ -654,12 +654,12 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".FixingDate") 
                                                [| _DKKLibor.source
                                                ;  _valueDate.source
                                                |]
@@ -668,7 +668,7 @@ module DKKLiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -693,18 +693,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".FixingDays") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -732,12 +732,12 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".IsValidFixingDate") 
                                                [| _DKKLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -746,7 +746,7 @@ module DKKLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -771,18 +771,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".Name") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".Name") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -810,12 +810,12 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".PastFixing") 
                                                [| _DKKLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -824,7 +824,7 @@ module DKKLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -849,18 +849,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".Tenor") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".Tenor") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DKKLibor> format
                     ; source = source 
@@ -885,18 +885,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Update
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".Update") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".Update") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -930,14 +930,14 @@ module DKKLiborFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".AddFixing") 
                                                [| _DKKLibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -950,7 +950,7 @@ module DKKLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -984,14 +984,14 @@ module DKKLiborFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".AddFixings") 
                                                [| _DKKLibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1004,7 +1004,7 @@ module DKKLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1035,13 +1035,13 @@ module DKKLiborFunction =
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".AddFixings") 
                                                [| _DKKLibor.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1052,7 +1052,7 @@ module DKKLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1077,18 +1077,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".AllowsNativeFixings") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1113,18 +1113,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".ClearFixings") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1152,12 +1152,12 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".RegisterWith") 
                                                [| _DKKLibor.source
                                                ;  _handler.source
                                                |]
@@ -1166,7 +1166,7 @@ module DKKLiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1191,18 +1191,18 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".TimeSeries") 
                                                [| _DKKLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DKKLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1230,12 +1230,12 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DKKLibor.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_DKKLibor.source + ".UnregisterWith") 
                                                [| _DKKLibor.source
                                                ;  _handler.source
                                                |]
@@ -1244,7 +1244,7 @@ module DKKLiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1273,14 +1273,14 @@ module DKKLiborFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DKKLibor>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DKKLibor>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DKKLibor>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DKKLibor>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

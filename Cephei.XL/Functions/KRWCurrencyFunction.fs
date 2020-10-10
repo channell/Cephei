@@ -46,16 +46,16 @@ module KRWCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.KRWCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.KRWCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<KRWCurrency>) l
 
-                let source = Helper.sourceFold "Fun.KRWCurrency" 
+                let source () = Helper.sourceFold "Fun.KRWCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<KRWCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".Code") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".Empty") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module KRWCurrencyFunction =
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".Equals") 
                                                [| _KRWCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module KRWCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".Format") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".FractionsPerUnit") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".FractionSymbol") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".Name") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".NumericCode") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".Rounding") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<KRWCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".Symbol") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".ToString") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_KRWCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_KRWCurrency.source + ".TriangulationCurrency") 
                                                [| _KRWCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<KRWCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module KRWCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<KRWCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<KRWCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<KRWCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<KRWCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

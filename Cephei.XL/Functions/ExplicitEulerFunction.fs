@@ -52,13 +52,13 @@ module ExplicitEulerFunction =
 
                 let _L = Helper.toCell<'Operator> L "L" 
                 let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
-                let builder () = withMnemonic mnemonic (Fun.ExplicitEuler 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ExplicitEuler 
                                                             _L.cell 
                                                             _bcs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ExplicitEuler>) l
 
-                let source = Helper.sourceFold "Fun.ExplicitEuler" 
+                let source () = Helper.sourceFold "Fun.ExplicitEuler" 
                                                [| _L.source
                                                ;  _bcs.source
                                                |]
@@ -67,7 +67,7 @@ module ExplicitEulerFunction =
                                 ;  _bcs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ExplicitEuler> format
                     ; source = source 
@@ -89,16 +89,16 @@ module ExplicitEulerFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ExplicitEuler1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ExplicitEuler1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ExplicitEuler>) l
 
-                let source = Helper.sourceFold "Fun.ExplicitEuler1" 
+                let source () = Helper.sourceFold "Fun.ExplicitEuler1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ExplicitEuler> format
                     ; source = source 
@@ -126,12 +126,12 @@ module ExplicitEulerFunction =
 
                 let _ExplicitEuler = Helper.toCell<ExplicitEuler> expliciteuler "ExplicitEuler"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((ExplicitEulerModel.Cast _ExplicitEuler.cell).SetStep
+                let builder (current : ICell) = withMnemonic mnemonic ((ExplicitEulerModel.Cast _ExplicitEuler.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : ExplicitEuler) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ExplicitEuler.source + ".SetStep") 
+                let source () = Helper.sourceFold (_ExplicitEuler.source + ".SetStep") 
                                                [| _ExplicitEuler.source
                                                ;  _dt.source
                                                |]
@@ -140,7 +140,7 @@ module ExplicitEulerFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -174,14 +174,14 @@ module ExplicitEulerFunction =
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toCell<double> theta "theta" 
-                let builder () = withMnemonic mnemonic ((ExplicitEulerModel.Cast _ExplicitEuler.cell).Step
+                let builder (current : ICell) = withMnemonic mnemonic ((ExplicitEulerModel.Cast _ExplicitEuler.cell).Step
                                                             _o.cell 
                                                             _t.cell 
                                                             _theta.cell 
                                                        ) :> ICell
                 let format (o : ExplicitEuler) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ExplicitEuler.source + ".Step") 
+                let source () = Helper.sourceFold (_ExplicitEuler.source + ".Step") 
                                                [| _ExplicitEuler.source
                                                ;  _o.source
                                                ;  _t.source
@@ -194,7 +194,7 @@ module ExplicitEulerFunction =
                                 ;  _theta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -223,14 +223,14 @@ module ExplicitEulerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ExplicitEuler>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ExplicitEuler>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ExplicitEuler>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ExplicitEuler>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

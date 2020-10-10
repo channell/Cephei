@@ -58,7 +58,7 @@ module EuropeanOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.EuropeanOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EuropeanOption 
                                                             _payoff.cell 
                                                             _exercise.cell 
                                                             _pricingEngine.cell 
@@ -66,7 +66,7 @@ module EuropeanOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EuropeanOption>) l
 
-                let source = Helper.sourceFold "Fun.EuropeanOption" 
+                let source () = Helper.sourceFold "Fun.EuropeanOption" 
                                                [| _payoff.source
                                                ;  _exercise.source
                                                ;  _pricingEngine.source
@@ -79,7 +79,7 @@ module EuropeanOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuropeanOption> format
                     ; source = source 
@@ -122,7 +122,7 @@ module EuropeanOptionFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ImpliedVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _Process.cell 
                                                             _accuracy.cell 
@@ -132,7 +132,7 @@ module EuropeanOptionFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".ImpliedVolatility") 
                                                [| _EuropeanOption.source
                                                ;  _targetValue.source
                                                ;  _Process.source
@@ -151,7 +151,7 @@ module EuropeanOptionFunction =
                                 ;  _maxVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,18 +176,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".Delta") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -212,18 +212,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".DeltaForward") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".DividendRho") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".Elasticity") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".Gamma") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,18 +356,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".IsExpired") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -392,18 +392,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".ItmCashProbability") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -428,18 +428,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".Rho") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -464,18 +464,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".StrikeSensitivity") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -500,18 +500,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".Theta") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -536,18 +536,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".ThetaPerDay") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -572,18 +572,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".Vega") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".Exercise") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuropeanOption> format
                     ; source = source 
@@ -644,18 +644,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".Payoff") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuropeanOption> format
                     ; source = source 
@@ -680,18 +680,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".CASH") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -716,18 +716,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".ErrorEstimate") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -752,18 +752,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".NPV") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -791,12 +791,12 @@ module EuropeanOptionFunction =
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".Result") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".Result") 
                                                [| _EuropeanOption.source
                                                ;  _tag.source
                                                |]
@@ -805,7 +805,7 @@ module EuropeanOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -833,12 +833,12 @@ module EuropeanOptionFunction =
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : EuropeanOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".SetPricingEngine") 
                                                [| _EuropeanOption.source
                                                ;  _e.source
                                                |]
@@ -847,7 +847,7 @@ module EuropeanOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -872,18 +872,18 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EuropeanOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_EuropeanOption.source + ".ValuationDate") 
                                                [| _EuropeanOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -912,14 +912,14 @@ module EuropeanOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EuropeanOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EuropeanOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EuropeanOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EuropeanOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

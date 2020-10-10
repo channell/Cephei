@@ -56,13 +56,13 @@ module NinePointLinearOpFunction =
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".Add") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".Add") 
                                                [| _NinePointLinearOp.source
                                                ;  _A.source
                                                ;  _B.source
@@ -73,7 +73,7 @@ module NinePointLinearOpFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -102,12 +102,12 @@ module NinePointLinearOpFunction =
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Apply
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Apply
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".Apply") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".Apply") 
                                                [| _NinePointLinearOp.source
                                                ;  _r.source
                                                |]
@@ -116,7 +116,7 @@ module NinePointLinearOpFunction =
                                 ;  _r.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -144,12 +144,12 @@ module NinePointLinearOpFunction =
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".ApplyTo") 
                                                [| _NinePointLinearOp.source
                                                ;  _v.source
                                                |]
@@ -158,7 +158,7 @@ module NinePointLinearOpFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -183,18 +183,18 @@ module NinePointLinearOpFunction =
             try
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".Clone") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".Clone") 
                                                [| _NinePointLinearOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NinePointLinearOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -222,12 +222,12 @@ module NinePointLinearOpFunction =
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Identity
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".Identity") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".Identity") 
                                                [| _NinePointLinearOp.source
                                                ;  _size.source
                                                |]
@@ -236,7 +236,7 @@ module NinePointLinearOpFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -261,18 +261,18 @@ module NinePointLinearOpFunction =
             try
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).IsTimeDependent
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".IsTimeDependent") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".IsTimeDependent") 
                                                [| _NinePointLinearOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NinePointLinearOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -300,12 +300,12 @@ module NinePointLinearOpFunction =
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Mult
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Mult
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NinePointLinearOp>) l
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".Mult") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".Mult") 
                                                [| _NinePointLinearOp.source
                                                ;  _r.source
                                                |]
@@ -314,7 +314,7 @@ module NinePointLinearOpFunction =
                                 ;  _r.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -345,13 +345,13 @@ module NinePointLinearOpFunction =
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _a = Helper.toCell<double> a "a" 
                 let _D = Helper.toCell<IOperator> D "D" 
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Multiply
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Multiply
                                                             _a.cell 
                                                             _D.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".Multiply") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".Multiply") 
                                                [| _NinePointLinearOp.source
                                                ;  _a.source
                                                ;  _D.source
@@ -362,7 +362,7 @@ module NinePointLinearOpFunction =
                                 ;  _D.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -387,19 +387,19 @@ module NinePointLinearOpFunction =
             try
 
                 let _m = Helper.toCell<NinePointLinearOp> m "m" 
-                let builder () = withMnemonic mnemonic (Fun.NinePointLinearOp 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NinePointLinearOp 
                                                             _m.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NinePointLinearOp>) l
 
-                let source = Helper.sourceFold "Fun.NinePointLinearOp" 
+                let source () = Helper.sourceFold "Fun.NinePointLinearOp" 
                                                [| _m.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _m.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -430,14 +430,14 @@ module NinePointLinearOpFunction =
                 let _d0 = Helper.toCell<int> d0 "d0" 
                 let _d1 = Helper.toCell<int> d1 "d1" 
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
-                let builder () = withMnemonic mnemonic (Fun.NinePointLinearOp1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NinePointLinearOp1 
                                                             _d0.cell 
                                                             _d1.cell 
                                                             _mesher.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NinePointLinearOp>) l
 
-                let source = Helper.sourceFold "Fun.NinePointLinearOp1" 
+                let source () = Helper.sourceFold "Fun.NinePointLinearOp1" 
                                                [| _d0.source
                                                ;  _d1.source
                                                ;  _mesher.source
@@ -448,7 +448,7 @@ module NinePointLinearOpFunction =
                                 ;  _mesher.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -476,12 +476,12 @@ module NinePointLinearOpFunction =
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : NinePointLinearOp) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".SetTime") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".SetTime") 
                                                [| _NinePointLinearOp.source
                                                ;  _t.source
                                                |]
@@ -490,7 +490,7 @@ module NinePointLinearOpFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -515,18 +515,18 @@ module NinePointLinearOpFunction =
             try
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".Size") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".Size") 
                                                [| _NinePointLinearOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NinePointLinearOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -554,12 +554,12 @@ module NinePointLinearOpFunction =
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).SolveFor
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".SolveFor") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".SolveFor") 
                                                [| _NinePointLinearOp.source
                                                ;  _rhs.source
                                                |]
@@ -568,7 +568,7 @@ module NinePointLinearOpFunction =
                                 ;  _rhs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -599,13 +599,13 @@ module NinePointLinearOpFunction =
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Subtract
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".Subtract") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".Subtract") 
                                                [| _NinePointLinearOp.source
                                                ;  _A.source
                                                ;  _B.source
@@ -616,7 +616,7 @@ module NinePointLinearOpFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -644,12 +644,12 @@ module NinePointLinearOpFunction =
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
                 let _m = Helper.toCell<NinePointLinearOp> m "m" 
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Swap
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).Swap
                                                             _m.cell 
                                                        ) :> ICell
                 let format (o : NinePointLinearOp) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".Swap") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".Swap") 
                                                [| _NinePointLinearOp.source
                                                ;  _m.source
                                                |]
@@ -658,7 +658,7 @@ module NinePointLinearOpFunction =
                                 ;  _m.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -683,18 +683,18 @@ module NinePointLinearOpFunction =
             try
 
                 let _NinePointLinearOp = Helper.toCell<NinePointLinearOp> ninepointlinearop "NinePointLinearOp"  
-                let builder () = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).ToMatrix
+                let builder (current : ICell) = withMnemonic mnemonic ((NinePointLinearOpModel.Cast _NinePointLinearOp.cell).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
 
-                let source = Helper.sourceFold (_NinePointLinearOp.source + ".ToMatrix") 
+                let source () = Helper.sourceFold (_NinePointLinearOp.source + ".ToMatrix") 
                                                [| _NinePointLinearOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NinePointLinearOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NinePointLinearOp> format
                     ; source = source 
@@ -723,14 +723,14 @@ module NinePointLinearOpFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NinePointLinearOp>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NinePointLinearOp>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NinePointLinearOp>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NinePointLinearOp>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

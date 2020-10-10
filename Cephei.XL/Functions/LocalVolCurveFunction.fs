@@ -49,18 +49,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".Calendar") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".Calendar") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalVolCurve> format
                     ; source = source 
@@ -85,18 +85,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".DayCounter") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalVolCurve> format
                     ; source = source 
@@ -121,19 +121,19 @@ module LocalVolCurveFunction =
             try
 
                 let _curve = Helper.toHandle<BlackVarianceCurve> curve "curve" 
-                let builder () = withMnemonic mnemonic (Fun.LocalVolCurve 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LocalVolCurve 
                                                             _curve.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LocalVolCurve>) l
 
-                let source = Helper.sourceFold "Fun.LocalVolCurve" 
+                let source () = Helper.sourceFold "Fun.LocalVolCurve" 
                                                [| _curve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _curve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LocalVolCurve> format
                     ; source = source 
@@ -158,18 +158,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".MaxDate") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".MaxStrike") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".MinStrike") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".ReferenceDate") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -311,14 +311,14 @@ module LocalVolCurveFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).LocalVol
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).LocalVol
                                                             _t.cell 
                                                             _underlyingLevel.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".LocalVol") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".LocalVol") 
                                                [| _LocalVolCurve.source
                                                ;  _t.source
                                                ;  _underlyingLevel.source
@@ -331,7 +331,7 @@ module LocalVolCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -365,14 +365,14 @@ module LocalVolCurveFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _underlyingLevel = Helper.toCell<double> underlyingLevel "underlyingLevel" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).LocalVol1
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).LocalVol1
                                                             _d.cell 
                                                             _underlyingLevel.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".LocalVol1") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".LocalVol1") 
                                                [| _LocalVolCurve.source
                                                ;  _d.source
                                                ;  _underlyingLevel.source
@@ -385,7 +385,7 @@ module LocalVolCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -410,18 +410,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".BusinessDayConvention") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -449,12 +449,12 @@ module LocalVolCurveFunction =
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).OptionDateFromTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".OptionDateFromTenor") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".OptionDateFromTenor") 
                                                [| _LocalVolCurve.source
                                                ;  _p.source
                                                |]
@@ -463,7 +463,7 @@ module LocalVolCurveFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,18 +488,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".MaxTime") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -524,18 +524,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".SettlementDays") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -563,12 +563,12 @@ module LocalVolCurveFunction =
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".TimeFromReference") 
                                                [| _LocalVolCurve.source
                                                ;  _date.source
                                                |]
@@ -577,7 +577,7 @@ module LocalVolCurveFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -602,18 +602,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).Update
                                                        ) :> ICell
                 let format (o : LocalVolCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".Update") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".Update") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -638,18 +638,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".AllowsExtrapolation") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -677,12 +677,12 @@ module LocalVolCurveFunction =
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LocalVolCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".DisableExtrapolation") 
                                                [| _LocalVolCurve.source
                                                ;  _b.source
                                                |]
@@ -691,7 +691,7 @@ module LocalVolCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -719,12 +719,12 @@ module LocalVolCurveFunction =
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LocalVolCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".EnableExtrapolation") 
                                                [| _LocalVolCurve.source
                                                ;  _b.source
                                                |]
@@ -733,7 +733,7 @@ module LocalVolCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -758,18 +758,18 @@ module LocalVolCurveFunction =
             try
 
                 let _LocalVolCurve = Helper.toCell<LocalVolCurve> localvolcurve "LocalVolCurve"  
-                let builder () = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((LocalVolCurveModel.Cast _LocalVolCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LocalVolCurve.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_LocalVolCurve.source + ".Extrapolate") 
                                                [| _LocalVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -798,14 +798,14 @@ module LocalVolCurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LocalVolCurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LocalVolCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LocalVolCurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LocalVolCurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

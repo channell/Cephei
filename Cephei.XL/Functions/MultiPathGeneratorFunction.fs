@@ -49,18 +49,18 @@ module MultiPathGeneratorFunction =
             try
 
                 let _MultiPathGenerator = Helper.toCell<MultiPathGenerator> multipathgenerator "MultiPathGenerator"  
-                let builder () = withMnemonic mnemonic ((MultiPathGeneratorModel.Cast _MultiPathGenerator.cell).Antithetic
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathGeneratorModel.Cast _MultiPathGenerator.cell).Antithetic
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
-                let source = Helper.sourceFold (_MultiPathGenerator.source + ".Antithetic") 
+                let source () = Helper.sourceFold (_MultiPathGenerator.source + ".Antithetic") 
                                                [| _MultiPathGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiPathGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiPathGenerator> format
                     ; source = source 
@@ -94,7 +94,7 @@ module MultiPathGeneratorFunction =
                 let _times = Helper.toCell<TimeGrid> times "times" 
                 let _generator = Helper.toCell<'GSG> generator "generator" 
                 let _brownianBridge = Helper.toCell<bool> brownianBridge "brownianBridge" 
-                let builder () = withMnemonic mnemonic (Fun.MultiPathGenerator 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiPathGenerator 
                                                             _Process.cell 
                                                             _times.cell 
                                                             _generator.cell 
@@ -102,7 +102,7 @@ module MultiPathGeneratorFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MultiPathGenerator>) l
 
-                let source = Helper.sourceFold "Fun.MultiPathGenerator" 
+                let source () = Helper.sourceFold "Fun.MultiPathGenerator" 
                                                [| _Process.source
                                                ;  _times.source
                                                ;  _generator.source
@@ -115,7 +115,7 @@ module MultiPathGeneratorFunction =
                                 ;  _brownianBridge.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiPathGenerator> format
                     ; source = source 
@@ -140,18 +140,18 @@ module MultiPathGeneratorFunction =
             try
 
                 let _MultiPathGenerator = Helper.toCell<MultiPathGenerator> multipathgenerator "MultiPathGenerator"  
-                let builder () = withMnemonic mnemonic ((MultiPathGeneratorModel.Cast _MultiPathGenerator.cell).Next
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiPathGeneratorModel.Cast _MultiPathGenerator.cell).Next
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
-                let source = Helper.sourceFold (_MultiPathGenerator.source + ".Next") 
+                let source () = Helper.sourceFold (_MultiPathGenerator.source + ".Next") 
                                                [| _MultiPathGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiPathGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiPathGenerator> format
                     ; source = source 
@@ -180,14 +180,14 @@ module MultiPathGeneratorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MultiPathGenerator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MultiPathGenerator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MultiPathGenerator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MultiPathGenerator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

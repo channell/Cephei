@@ -55,13 +55,13 @@ module NotionalPathFunction =
                 let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
                 let _date = Helper.toCell<Date> date "date" 
                 let _newRate = Helper.toCell<double> newRate "newRate" 
-                let builder () = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).AddReduction
+                let builder (current : ICell) = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).AddReduction
                                                             _date.cell 
                                                             _newRate.cell 
                                                        ) :> ICell
                 let format (o : NotionalPath) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NotionalPath.source + ".AddReduction") 
+                let source () = Helper.sourceFold (_NotionalPath.source + ".AddReduction") 
                                                [| _NotionalPath.source
                                                ;  _date.source
                                                ;  _newRate.source
@@ -72,7 +72,7 @@ module NotionalPathFunction =
                                 ;  _newRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,18 +97,18 @@ module NotionalPathFunction =
             try
 
                 let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
-                let builder () = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).Loss
+                let builder (current : ICell) = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).Loss
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NotionalPath.source + ".Loss") 
+                let source () = Helper.sourceFold (_NotionalPath.source + ".Loss") 
                                                [| _NotionalPath.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NotionalPath.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -130,16 +130,16 @@ module NotionalPathFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.NotionalPath ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NotionalPath ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NotionalPath>) l
 
-                let source = Helper.sourceFold "Fun.NotionalPath" 
+                let source () = Helper.sourceFold "Fun.NotionalPath" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NotionalPath> format
                     ; source = source 
@@ -167,12 +167,12 @@ module NotionalPathFunction =
 
                 let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).NotionalRate
+                let builder (current : ICell) = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).NotionalRate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NotionalPath.source + ".NotionalRate") 
+                let source () = Helper.sourceFold (_NotionalPath.source + ".NotionalRate") 
                                                [| _NotionalPath.source
                                                ;  _date.source
                                                |]
@@ -181,7 +181,7 @@ module NotionalPathFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,18 +206,18 @@ module NotionalPathFunction =
             try
 
                 let _NotionalPath = Helper.toCell<NotionalPath> notionalpath "NotionalPath"  
-                let builder () = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((NotionalPathModel.Cast _NotionalPath.cell).Reset
                                                        ) :> ICell
                 let format (o : NotionalPath) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NotionalPath.source + ".Reset") 
+                let source () = Helper.sourceFold (_NotionalPath.source + ".Reset") 
                                                [| _NotionalPath.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NotionalPath.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -246,14 +246,14 @@ module NotionalPathFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NotionalPath>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NotionalPath>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NotionalPath>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NotionalPath>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

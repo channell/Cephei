@@ -52,12 +52,12 @@ module ProjectedCostFunctionFunction =
 
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _projectedParameters = Helper.toCell<Vector> projectedParameters "projectedParameters" 
-                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Include
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Include
                                                             _projectedParameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_ProjectedCostFunction.source + ".INCLUDE") 
+                let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".INCLUDE") 
                                                [| _ProjectedCostFunction.source
                                                ;  _projectedParameters.source
                                                |]
@@ -66,7 +66,7 @@ module ProjectedCostFunctionFunction =
                                 ;  _projectedParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ProjectedCostFunction> format
                     ; source = source 
@@ -94,12 +94,12 @@ module ProjectedCostFunctionFunction =
 
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Project
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Project
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_ProjectedCostFunction.source + ".Project") 
+                let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".Project") 
                                                [| _ProjectedCostFunction.source
                                                ;  _parameters.source
                                                |]
@@ -108,7 +108,7 @@ module ProjectedCostFunctionFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ProjectedCostFunction> format
                     ; source = source 
@@ -139,14 +139,14 @@ module ProjectedCostFunctionFunction =
                 let _costFunction = Helper.toCell<CostFunction> costFunction "costFunction" 
                 let _parametersValues = Helper.toCell<Vector> parametersValues "parametersValues" 
                 let _parametersFreedoms = Helper.toCell<Generic.List<bool>> parametersFreedoms "parametersFreedoms" 
-                let builder () = withMnemonic mnemonic (Fun.ProjectedCostFunction 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ProjectedCostFunction 
                                                             _costFunction.cell 
                                                             _parametersValues.cell 
                                                             _parametersFreedoms.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ProjectedCostFunction>) l
 
-                let source = Helper.sourceFold "Fun.ProjectedCostFunction" 
+                let source () = Helper.sourceFold "Fun.ProjectedCostFunction" 
                                                [| _costFunction.source
                                                ;  _parametersValues.source
                                                ;  _parametersFreedoms.source
@@ -157,7 +157,7 @@ module ProjectedCostFunctionFunction =
                                 ;  _parametersFreedoms.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ProjectedCostFunction> format
                     ; source = source 
@@ -185,12 +185,12 @@ module ProjectedCostFunctionFunction =
 
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _freeParameters = Helper.toCell<Vector> freeParameters "freeParameters" 
-                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Value
                                                             _freeParameters.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ProjectedCostFunction.source + ".Value") 
+                let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".Value") 
                                                [| _ProjectedCostFunction.source
                                                ;  _freeParameters.source
                                                |]
@@ -199,7 +199,7 @@ module ProjectedCostFunctionFunction =
                                 ;  _freeParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -227,12 +227,12 @@ module ProjectedCostFunctionFunction =
 
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _freeParameters = Helper.toCell<Vector> freeParameters "freeParameters" 
-                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Values
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Values
                                                             _freeParameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_ProjectedCostFunction.source + ".Values") 
+                let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".Values") 
                                                [| _ProjectedCostFunction.source
                                                ;  _freeParameters.source
                                                |]
@@ -241,7 +241,7 @@ module ProjectedCostFunctionFunction =
                                 ;  _freeParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ProjectedCostFunction> format
                     ; source = source 
@@ -266,18 +266,18 @@ module ProjectedCostFunctionFunction =
             try
 
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
-                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).FiniteDifferenceEpsilon
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).FiniteDifferenceEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ProjectedCostFunction.source + ".FiniteDifferenceEpsilon") 
+                let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".FiniteDifferenceEpsilon") 
                                                [| _ProjectedCostFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ProjectedCostFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,13 +308,13 @@ module ProjectedCostFunctionFunction =
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _grad = Helper.toCell<Vector> grad "grad" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Gradient
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Gradient
                                                             _grad.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : ProjectedCostFunction) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ProjectedCostFunction.source + ".Gradient") 
+                let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".Gradient") 
                                                [| _ProjectedCostFunction.source
                                                ;  _grad.source
                                                ;  _x.source
@@ -325,7 +325,7 @@ module ProjectedCostFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,13 +356,13 @@ module ProjectedCostFunctionFunction =
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Jacobian
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Jacobian
                                                             _jac.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : ProjectedCostFunction) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ProjectedCostFunction.source + ".Jacobian") 
+                let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".Jacobian") 
                                                [| _ProjectedCostFunction.source
                                                ;  _jac.source
                                                ;  _x.source
@@ -373,7 +373,7 @@ module ProjectedCostFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -404,13 +404,13 @@ module ProjectedCostFunctionFunction =
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _grad = Helper.toCell<Vector> grad "grad" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).ValueAndGradient
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).ValueAndGradient
                                                             _grad.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ProjectedCostFunction.source + ".ValueAndGradient") 
+                let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".ValueAndGradient") 
                                                [| _ProjectedCostFunction.source
                                                ;  _grad.source
                                                ;  _x.source
@@ -421,7 +421,7 @@ module ProjectedCostFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -452,13 +452,13 @@ module ProjectedCostFunctionFunction =
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).ValuesAndJacobian
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).ValuesAndJacobian
                                                             _jac.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_ProjectedCostFunction.source + ".ValuesAndJacobian") 
+                let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".ValuesAndJacobian") 
                                                [| _ProjectedCostFunction.source
                                                ;  _jac.source
                                                ;  _x.source
@@ -469,7 +469,7 @@ module ProjectedCostFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ProjectedCostFunction> format
                     ; source = source 
@@ -498,14 +498,14 @@ module ProjectedCostFunctionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ProjectedCostFunction>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ProjectedCostFunction>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ProjectedCostFunction>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ProjectedCostFunction>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,12 +52,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Add
                                                             _Begin.cell 
                                                        ) :> ICell
                 let format (o : GenericSequenceStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Add") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Add") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _Begin.source
                                                |]
@@ -66,7 +66,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _Begin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,13 +97,13 @@ module GenericSequenceStatisticsFunction =
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let _weight = Helper.toCell<double> weight "weight" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Add1
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Add1
                                                             _Begin.cell 
                                                             _weight.cell 
                                                        ) :> ICell
                 let format (o : GenericSequenceStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Add") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Add") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _Begin.source
                                                ;  _weight.source
@@ -114,7 +114,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _weight.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -142,12 +142,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).AverageShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).AverageShortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".AverageShortfall") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".AverageShortfall") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -156,7 +156,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -181,18 +181,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Correlation
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Correlation
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Correlation") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Correlation") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericSequenceStatistics> format
                     ; source = source 
@@ -217,18 +217,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Covariance
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Covariance
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Covariance") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Covariance") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericSequenceStatistics> format
                     ; source = source 
@@ -253,18 +253,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).DownsideDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).DownsideDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".DownsideDeviation") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".DownsideDeviation") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -289,18 +289,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).DownsideVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).DownsideVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".DownsideVariance") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".DownsideVariance") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -325,18 +325,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".ErrorEstimate") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -364,12 +364,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).ExpectedShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).ExpectedShortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".ExpectedShortfall") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".ExpectedShortfall") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -378,7 +378,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -406,12 +406,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianAverageShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianAverageShortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianAverageShortfall") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianAverageShortfall") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -420,7 +420,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -448,12 +448,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianExpectedShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianExpectedShortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianExpectedShortfall") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianExpectedShortfall") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -462,7 +462,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -490,12 +490,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianPercentile
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianPercentile
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianPercentile") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianPercentile") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -504,7 +504,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -532,12 +532,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianPotentialUpside
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianPotentialUpside
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianPotentialUpside") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianPotentialUpside") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -546,7 +546,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -574,12 +574,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianShortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianShortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianShortfall") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianShortfall") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -588,7 +588,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -616,12 +616,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianValueAtRisk
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).GaussianValueAtRisk
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianValueAtRisk") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".GaussianValueAtRisk") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -630,7 +630,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -655,19 +655,19 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _dimension = Helper.toCell<int> dimension "dimension" 
-                let builder () = withMnemonic mnemonic (Fun.GenericSequenceStatistics 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericSequenceStatistics 
                                                             _dimension.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GenericSequenceStatistics>) l
 
-                let source = Helper.sourceFold "Fun.GenericSequenceStatistics" 
+                let source () = Helper.sourceFold "Fun.GenericSequenceStatistics" 
                                                [| _dimension.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _dimension.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericSequenceStatistics> format
                     ; source = source 
@@ -692,18 +692,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Kurtosis
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Kurtosis") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Kurtosis") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -728,18 +728,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Max
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Max
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Max") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Max") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -764,18 +764,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Mean
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Mean
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Mean") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Mean") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -800,18 +800,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Min
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Min
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Min") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Min") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -839,12 +839,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Percentile
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Percentile
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Percentile") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Percentile") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -853,7 +853,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -881,12 +881,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).PotentialUpside
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).PotentialUpside
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".PotentialUpside") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".PotentialUpside") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -895,7 +895,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -923,12 +923,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Regret
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Regret
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Regret") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Regret") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -937,7 +937,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -965,12 +965,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _dimension = Helper.toCell<int> dimension "dimension" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Reset
                                                             _dimension.cell 
                                                        ) :> ICell
                 let format (o : GenericSequenceStatistics) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Reset") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Reset") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _dimension.source
                                                |]
@@ -979,7 +979,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _dimension.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1004,18 +1004,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Samples
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Samples") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Samples") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1040,18 +1040,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).SemiDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).SemiDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".SemiDeviation") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".SemiDeviation") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1076,18 +1076,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).SemiVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).SemiVariance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".SemiVariance") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".SemiVariance") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1115,12 +1115,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Shortfall
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Shortfall
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Shortfall") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Shortfall") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -1129,7 +1129,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1154,18 +1154,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Size") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Size") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1190,18 +1190,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Skewness
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Skewness") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Skewness") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1226,18 +1226,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).StandardDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".StandardDeviation") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".StandardDeviation") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1265,12 +1265,12 @@ module GenericSequenceStatisticsFunction =
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).ValueAtRisk
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).ValueAtRisk
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".ValueAtRisk") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".ValueAtRisk") 
                                                [| _GenericSequenceStatistics.source
                                                ;  _x.source
                                                |]
@@ -1279,7 +1279,7 @@ module GenericSequenceStatisticsFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1304,18 +1304,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).Variance
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".Variance") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".Variance") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1340,18 +1340,18 @@ module GenericSequenceStatisticsFunction =
             try
 
                 let _GenericSequenceStatistics = Helper.toCell<GenericSequenceStatistics> genericsequencestatistics "GenericSequenceStatistics"  
-                let builder () = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).WeightSum
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericSequenceStatisticsModel.Cast _GenericSequenceStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GenericSequenceStatistics.source + ".WeightSum") 
+                let source () = Helper.sourceFold (_GenericSequenceStatistics.source + ".WeightSum") 
                                                [| _GenericSequenceStatistics.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericSequenceStatistics.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1380,14 +1380,14 @@ module GenericSequenceStatisticsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GenericSequenceStatistics>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GenericSequenceStatistics>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GenericSequenceStatistics>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GenericSequenceStatistics>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

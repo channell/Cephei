@@ -55,14 +55,14 @@ module EverywhereConstantHelperFunction =
                 let _value = Helper.toCell<double> value "value" 
                 let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
                 let _xPrev = Helper.toCell<double> xPrev "xPrev" 
-                let builder () = withMnemonic mnemonic (Fun.EverywhereConstantHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EverywhereConstantHelper 
                                                             _value.cell 
                                                             _prevPrimitive.cell 
                                                             _xPrev.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EverywhereConstantHelper>) l
 
-                let source = Helper.sourceFold "Fun.EverywhereConstantHelper" 
+                let source () = Helper.sourceFold "Fun.EverywhereConstantHelper" 
                                                [| _value.source
                                                ;  _prevPrimitive.source
                                                ;  _xPrev.source
@@ -73,7 +73,7 @@ module EverywhereConstantHelperFunction =
                                 ;  _xPrev.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EverywhereConstantHelper> format
                     ; source = source 
@@ -98,18 +98,18 @@ module EverywhereConstantHelperFunction =
             try
 
                 let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
-                let builder () = withMnemonic mnemonic ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).FNext
+                let builder (current : ICell) = withMnemonic mnemonic ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EverywhereConstantHelper.source + ".FNext") 
+                let source () = Helper.sourceFold (_EverywhereConstantHelper.source + ".FNext") 
                                                [| _EverywhereConstantHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EverywhereConstantHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -137,12 +137,12 @@ module EverywhereConstantHelperFunction =
 
                 let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EverywhereConstantHelper.source + ".Primitive") 
+                let source () = Helper.sourceFold (_EverywhereConstantHelper.source + ".Primitive") 
                                                [| _EverywhereConstantHelper.source
                                                ;  _x.source
                                                |]
@@ -151,7 +151,7 @@ module EverywhereConstantHelperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -179,12 +179,12 @@ module EverywhereConstantHelperFunction =
 
                 let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EverywhereConstantHelper.source + ".Value") 
+                let source () = Helper.sourceFold (_EverywhereConstantHelper.source + ".Value") 
                                                [| _EverywhereConstantHelper.source
                                                ;  _x.source
                                                |]
@@ -193,7 +193,7 @@ module EverywhereConstantHelperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -222,14 +222,14 @@ module EverywhereConstantHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EverywhereConstantHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EverywhereConstantHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EverywhereConstantHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EverywhereConstantHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

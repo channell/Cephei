@@ -52,12 +52,12 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".CapletPrice") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".CapletPrice") 
                                                [| _CPICouponPricer.source
                                                ;  _effectiveCap.source
                                                |]
@@ -66,7 +66,7 @@ module CPICouponPricerFunction =
                                 ;  _effectiveCap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".CapletRate") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".CapletRate") 
                                                [| _CPICouponPricer.source
                                                ;  _effectiveCap.source
                                                |]
@@ -108,7 +108,7 @@ module CPICouponPricerFunction =
                                 ;  _effectiveCap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -133,18 +133,18 @@ module CPICouponPricerFunction =
             try
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).CapletVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<CPIVolatilitySurface>>) l
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".CapletVolatility") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".CapletVolatility") 
                                                [| _CPICouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICouponPricer> format
                     ; source = source 
@@ -169,19 +169,19 @@ module CPICouponPricerFunction =
             try
 
                 let _capletVol = Helper.toHandle<CPIVolatilitySurface> capletVol "capletVol" 
-                let builder () = withMnemonic mnemonic (Fun.CPICouponPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CPICouponPricer 
                                                             _capletVol.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPICouponPricer>) l
 
-                let source = Helper.sourceFold "Fun.CPICouponPricer" 
+                let source () = Helper.sourceFold "Fun.CPICouponPricer" 
                                                [| _capletVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _capletVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CPICouponPricer> format
                     ; source = source 
@@ -209,12 +209,12 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).FloorletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".FloorletPrice") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".FloorletPrice") 
                                                [| _CPICouponPricer.source
                                                ;  _effectiveFloor.source
                                                |]
@@ -223,7 +223,7 @@ module CPICouponPricerFunction =
                                 ;  _effectiveFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -251,12 +251,12 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).FloorletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".FloorletRate") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".FloorletRate") 
                                                [| _CPICouponPricer.source
                                                ;  _effectiveFloor.source
                                                |]
@@ -265,7 +265,7 @@ module CPICouponPricerFunction =
                                 ;  _effectiveFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -293,12 +293,12 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _coupon = Helper.toCell<InflationCoupon> coupon "coupon" 
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).Initialize
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".Initialize") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".Initialize") 
                                                [| _CPICouponPricer.source
                                                ;  _coupon.source
                                                |]
@@ -307,7 +307,7 @@ module CPICouponPricerFunction =
                                 ;  _coupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -335,12 +335,12 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _capletVol = Helper.toHandle<CPIVolatilitySurface> capletVol "capletVol" 
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SetCapletVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SetCapletVolatility
                                                             _capletVol.cell 
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".SetCapletVolatility") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".SetCapletVolatility") 
                                                [| _CPICouponPricer.source
                                                ;  _capletVol.source
                                                |]
@@ -349,7 +349,7 @@ module CPICouponPricerFunction =
                                 ;  _capletVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module CPICouponPricerFunction =
             try
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SwapletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".SwapletPrice") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".SwapletPrice") 
                                                [| _CPICouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -410,18 +410,18 @@ module CPICouponPricerFunction =
             try
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SwapletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".SwapletRate") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".SwapletRate") 
                                                [| _CPICouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -449,12 +449,12 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".RegisterWith") 
                                                [| _CPICouponPricer.source
                                                ;  _handler.source
                                                |]
@@ -463,7 +463,7 @@ module CPICouponPricerFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -491,12 +491,12 @@ module CPICouponPricerFunction =
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".UnregisterWith") 
                                                [| _CPICouponPricer.source
                                                ;  _handler.source
                                                |]
@@ -505,7 +505,7 @@ module CPICouponPricerFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -530,18 +530,18 @@ module CPICouponPricerFunction =
             try
 
                 let _CPICouponPricer = Helper.toCell<CPICouponPricer> cpicouponpricer "CPICouponPricer"  
-                let builder () = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CPICouponPricerModel.Cast _CPICouponPricer.cell).Update
                                                        ) :> ICell
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CPICouponPricer.source + ".Update") 
+                let source () = Helper.sourceFold (_CPICouponPricer.source + ".Update") 
                                                [| _CPICouponPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -570,14 +570,14 @@ module CPICouponPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CPICouponPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CPICouponPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CPICouponPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CPICouponPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

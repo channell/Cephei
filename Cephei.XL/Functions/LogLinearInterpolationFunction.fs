@@ -55,14 +55,14 @@ module LogLinearInterpolationFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic (Fun.LogLinearInterpolation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LogLinearInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LogLinearInterpolation>) l
 
-                let source = Helper.sourceFold "Fun.LogLinearInterpolation" 
+                let source () = Helper.sourceFold "Fun.LogLinearInterpolation" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -73,7 +73,7 @@ module LogLinearInterpolationFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogLinearInterpolation> format
                     ; source = source 
@@ -104,13 +104,13 @@ module LogLinearInterpolationFunction =
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".Derivative") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".Derivative") 
                                                [| _LogLinearInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -121,7 +121,7 @@ module LogLinearInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -146,18 +146,18 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".Empty") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".Empty") 
                                                [| _LogLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -188,13 +188,13 @@ module LogLinearInterpolationFunction =
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".Primitive") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".Primitive") 
                                                [| _LogLinearInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -205,7 +205,7 @@ module LogLinearInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,13 +236,13 @@ module LogLinearInterpolationFunction =
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".SecondDerivative") 
                                                [| _LogLinearInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -253,7 +253,7 @@ module LogLinearInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -278,18 +278,18 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : LogLinearInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".Update") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".Update") 
                                                [| _LogLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,13 +320,13 @@ module LogLinearInterpolationFunction =
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".Value1") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".Value1") 
                                                [| _LogLinearInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -337,7 +337,7 @@ module LogLinearInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -365,12 +365,12 @@ module LogLinearInterpolationFunction =
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".Value") 
                                                [| _LogLinearInterpolation.source
                                                ;  _x.source
                                                |]
@@ -379,7 +379,7 @@ module LogLinearInterpolationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -404,18 +404,18 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".XMax") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".XMax") 
                                                [| _LogLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -440,18 +440,18 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".XMin") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".XMin") 
                                                [| _LogLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -476,18 +476,18 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".AllowsExtrapolation") 
                                                [| _LogLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -515,12 +515,12 @@ module LogLinearInterpolationFunction =
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LogLinearInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".DisableExtrapolation") 
                                                [| _LogLinearInterpolation.source
                                                ;  _b.source
                                                |]
@@ -529,7 +529,7 @@ module LogLinearInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -557,12 +557,12 @@ module LogLinearInterpolationFunction =
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LogLinearInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".EnableExtrapolation") 
                                                [| _LogLinearInterpolation.source
                                                ;  _b.source
                                                |]
@@ -571,7 +571,7 @@ module LogLinearInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -596,18 +596,18 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LogLinearInterpolation.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_LogLinearInterpolation.source + ".Extrapolate") 
                                                [| _LogLinearInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogLinearInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -636,14 +636,14 @@ module LogLinearInterpolationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LogLinearInterpolation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LogLinearInterpolation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LogLinearInterpolation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LogLinearInterpolation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

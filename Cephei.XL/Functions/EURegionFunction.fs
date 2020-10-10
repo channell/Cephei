@@ -46,16 +46,16 @@ module EURegionFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.EURegion ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EURegion ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EURegion>) l
 
-                let source = Helper.sourceFold "Fun.EURegion" 
+                let source () = Helper.sourceFold "Fun.EURegion" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EURegion> format
                     ; source = source 
@@ -80,18 +80,18 @@ module EURegionFunction =
             try
 
                 let _EURegion = Helper.toCell<EURegion> euregion "EURegion"  
-                let builder () = withMnemonic mnemonic ((EURegionModel.Cast _EURegion.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((EURegionModel.Cast _EURegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURegion.source + ".Code") 
+                let source () = Helper.sourceFold (_EURegion.source + ".Code") 
                                                [| _EURegion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURegion.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -119,12 +119,12 @@ module EURegionFunction =
 
                 let _EURegion = Helper.toCell<EURegion> euregion "EURegion"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((EURegionModel.Cast _EURegion.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((EURegionModel.Cast _EURegion.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURegion.source + ".Equals") 
+                let source () = Helper.sourceFold (_EURegion.source + ".Equals") 
                                                [| _EURegion.source
                                                ;  _o.source
                                                |]
@@ -133,7 +133,7 @@ module EURegionFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -158,18 +158,18 @@ module EURegionFunction =
             try
 
                 let _EURegion = Helper.toCell<EURegion> euregion "EURegion"  
-                let builder () = withMnemonic mnemonic ((EURegionModel.Cast _EURegion.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((EURegionModel.Cast _EURegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURegion.source + ".Name") 
+                let source () = Helper.sourceFold (_EURegion.source + ".Name") 
                                                [| _EURegion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURegion.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -198,14 +198,14 @@ module EURegionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EURegion>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EURegion>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EURegion>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EURegion>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,13 +52,13 @@ module AnalyticCapFloorEngineFunction =
 
                 let _model = Helper.toCell<IAffineModel> model "model" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticCapFloorEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticCapFloorEngine1 
                                                             _model.cell 
                                                             _termStructure.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticCapFloorEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticCapFloorEngine" 
+                let source () = Helper.sourceFold "Fun.AnalyticCapFloorEngine" 
                                                [| _model.source
                                                ;  _termStructure.source
                                                |]
@@ -67,7 +67,7 @@ module AnalyticCapFloorEngineFunction =
                                 ;  _termStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticCapFloorEngine> format
                     ; source = source 
@@ -92,19 +92,19 @@ module AnalyticCapFloorEngineFunction =
             try
 
                 let _model = Helper.toCell<IAffineModel> model "model" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticCapFloorEngine
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticCapFloorEngine
                                                             _model.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticCapFloorEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticCapFloorEngine1" 
+                let source () = Helper.sourceFold "Fun.AnalyticCapFloorEngine1" 
                                                [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticCapFloorEngine> format
                     ; source = source 
@@ -135,12 +135,12 @@ module AnalyticCapFloorEngineFunction =
 
                 let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let _model = Helper.toHandle<IAffineModel> model "model" 
-                let builder () = withMnemonic mnemonic ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".SetModel") 
                                                [| _AnalyticCapFloorEngine.source
                                                ;  _model.source
                                                |]
@@ -149,7 +149,7 @@ module AnalyticCapFloorEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -177,12 +177,12 @@ module AnalyticCapFloorEngineFunction =
 
                 let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".RegisterWith") 
                                                [| _AnalyticCapFloorEngine.source
                                                ;  _handler.source
                                                |]
@@ -191,7 +191,7 @@ module AnalyticCapFloorEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -216,18 +216,18 @@ module AnalyticCapFloorEngineFunction =
             try
 
                 let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".Reset") 
                                                [| _AnalyticCapFloorEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticCapFloorEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,12 +255,12 @@ module AnalyticCapFloorEngineFunction =
 
                 let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".UnregisterWith") 
                                                [| _AnalyticCapFloorEngine.source
                                                ;  _handler.source
                                                |]
@@ -269,7 +269,7 @@ module AnalyticCapFloorEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -294,18 +294,18 @@ module AnalyticCapFloorEngineFunction =
             try
 
                 let _AnalyticCapFloorEngine = Helper.toCell<AnalyticCapFloorEngine> analyticcapfloorengine "AnalyticCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticCapFloorEngineModel.Cast _AnalyticCapFloorEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".Update") 
                                                [| _AnalyticCapFloorEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticCapFloorEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -334,14 +334,14 @@ module AnalyticCapFloorEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticCapFloorEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticCapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -64,7 +64,7 @@ module AmericanPayoffAtExpiryFunction =
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
                 let _knock_in = Helper.toDefault<bool> knock_in "knock_in" true
-                let builder () = withMnemonic mnemonic (Fun.AmericanPayoffAtExpiry 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AmericanPayoffAtExpiry 
                                                             _spot.cell 
                                                             _discount.cell 
                                                             _dividendDiscount.cell 
@@ -74,7 +74,7 @@ module AmericanPayoffAtExpiryFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AmericanPayoffAtExpiry>) l
 
-                let source = Helper.sourceFold "Fun.AmericanPayoffAtExpiry" 
+                let source () = Helper.sourceFold "Fun.AmericanPayoffAtExpiry" 
                                                [| _spot.source
                                                ;  _discount.source
                                                ;  _dividendDiscount.source
@@ -91,7 +91,7 @@ module AmericanPayoffAtExpiryFunction =
                                 ;  _knock_in.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AmericanPayoffAtExpiry> format
                     ; source = source 
@@ -116,18 +116,18 @@ module AmericanPayoffAtExpiryFunction =
             try
 
                 let _AmericanPayoffAtExpiry = Helper.toCell<AmericanPayoffAtExpiry> americanpayoffatexpiry "AmericanPayoffAtExpiry"  
-                let builder () = withMnemonic mnemonic ((AmericanPayoffAtExpiryModel.Cast _AmericanPayoffAtExpiry.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((AmericanPayoffAtExpiryModel.Cast _AmericanPayoffAtExpiry.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AmericanPayoffAtExpiry.source + ".Value") 
+                let source () = Helper.sourceFold (_AmericanPayoffAtExpiry.source + ".Value") 
                                                [| _AmericanPayoffAtExpiry.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmericanPayoffAtExpiry.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -156,14 +156,14 @@ module AmericanPayoffAtExpiryFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AmericanPayoffAtExpiry>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AmericanPayoffAtExpiry>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AmericanPayoffAtExpiry>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AmericanPayoffAtExpiry>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

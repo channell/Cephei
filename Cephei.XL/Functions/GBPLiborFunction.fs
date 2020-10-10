@@ -52,13 +52,13 @@ module GBPLiborFunction =
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.GBPLibor 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GBPLibor 
                                                             _tenor.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GBPLibor>) l
 
-                let source = Helper.sourceFold "Fun.GBPLibor" 
+                let source () = Helper.sourceFold "Fun.GBPLibor" 
                                                [| _tenor.source
                                                ;  _h.source
                                                |]
@@ -67,7 +67,7 @@ module GBPLiborFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GBPLibor> format
                     ; source = source 
@@ -92,19 +92,19 @@ module GBPLiborFunction =
             try
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic (Fun.GBPLibor1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GBPLibor1 
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GBPLibor>) l
 
-                let source = Helper.sourceFold "Fun.GBPLibor1" 
+                let source () = Helper.sourceFold "Fun.GBPLibor1" 
                                                [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _tenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GBPLibor> format
                     ; source = source 
@@ -132,12 +132,12 @@ module GBPLiborFunction =
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".Clone") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".Clone") 
                                                [| _GBPLibor.source
                                                ;  _h.source
                                                |]
@@ -146,7 +146,7 @@ module GBPLiborFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GBPLibor> format
                     ; source = source 
@@ -174,12 +174,12 @@ module GBPLiborFunction =
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".MaturityDate") 
                                                [| _GBPLibor.source
                                                ;  _valueDate.source
                                                |]
@@ -188,7 +188,7 @@ module GBPLiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -216,12 +216,12 @@ module GBPLiborFunction =
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".ValueDate") 
                                                [| _GBPLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -230,7 +230,7 @@ module GBPLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,18 +255,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".BusinessDayConvention") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -291,18 +291,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".EndOfMonth") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -336,14 +336,14 @@ module GBPLiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".ForecastFixing1") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".ForecastFixing1") 
                                                [| _GBPLibor.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -356,7 +356,7 @@ module GBPLiborFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -384,12 +384,12 @@ module GBPLiborFunction =
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".ForecastFixing") 
                                                [| _GBPLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -398,7 +398,7 @@ module GBPLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -423,18 +423,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".ForwardingTermStructure") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GBPLibor> format
                     ; source = source 
@@ -459,18 +459,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".Currency") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".Currency") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GBPLibor> format
                     ; source = source 
@@ -495,18 +495,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".DayCounter") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GBPLibor> format
                     ; source = source 
@@ -531,18 +531,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".FamilyName") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -573,13 +573,13 @@ module GBPLiborFunction =
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".Fixing") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".Fixing") 
                                                [| _GBPLibor.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -590,7 +590,7 @@ module GBPLiborFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,18 +615,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".FixingCalendar") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GBPLibor> format
                     ; source = source 
@@ -654,12 +654,12 @@ module GBPLiborFunction =
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".FixingDate") 
                                                [| _GBPLibor.source
                                                ;  _valueDate.source
                                                |]
@@ -668,7 +668,7 @@ module GBPLiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -693,18 +693,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".FixingDays") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -732,12 +732,12 @@ module GBPLiborFunction =
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".IsValidFixingDate") 
                                                [| _GBPLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -746,7 +746,7 @@ module GBPLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -771,18 +771,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".Name") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".Name") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -810,12 +810,12 @@ module GBPLiborFunction =
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".PastFixing") 
                                                [| _GBPLibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -824,7 +824,7 @@ module GBPLiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -849,18 +849,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".Tenor") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".Tenor") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GBPLibor> format
                     ; source = source 
@@ -885,18 +885,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).Update
                                                        ) :> ICell
                 let format (o : GBPLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".Update") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".Update") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -930,14 +930,14 @@ module GBPLiborFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : GBPLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".AddFixing") 
                                                [| _GBPLibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -950,7 +950,7 @@ module GBPLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -984,14 +984,14 @@ module GBPLiborFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : GBPLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".AddFixings") 
                                                [| _GBPLibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1004,7 +1004,7 @@ module GBPLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1035,13 +1035,13 @@ module GBPLiborFunction =
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : GBPLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".AddFixings1") 
                                                [| _GBPLibor.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1052,7 +1052,7 @@ module GBPLiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1077,18 +1077,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".AllowsNativeFixings") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1113,18 +1113,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : GBPLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".ClearFixings") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1152,12 +1152,12 @@ module GBPLiborFunction =
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GBPLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".RegisterWith") 
                                                [| _GBPLibor.source
                                                ;  _handler.source
                                                |]
@@ -1166,7 +1166,7 @@ module GBPLiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1191,18 +1191,18 @@ module GBPLiborFunction =
             try
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".TimeSeries") 
                                                [| _GBPLibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GBPLibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1230,12 +1230,12 @@ module GBPLiborFunction =
 
                 let _GBPLibor = Helper.toCell<GBPLibor> gbplibor "GBPLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((GBPLiborModel.Cast _GBPLibor.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GBPLibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GBPLibor.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_GBPLibor.source + ".UnregisterWith") 
                                                [| _GBPLibor.source
                                                ;  _handler.source
                                                |]
@@ -1244,7 +1244,7 @@ module GBPLiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1273,14 +1273,14 @@ module GBPLiborFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GBPLibor>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GBPLibor>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GBPLibor>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GBPLibor>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

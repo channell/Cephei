@@ -52,13 +52,13 @@ module GenericTimeSetterFunction =
 
                 let _grid = Helper.toCell<Vector> grid "grid" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic (Fun.GenericTimeSetter 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GenericTimeSetter 
                                                             _grid.cell 
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GenericTimeSetter>) l
 
-                let source = Helper.sourceFold "Fun.GenericTimeSetter" 
+                let source () = Helper.sourceFold "Fun.GenericTimeSetter" 
                                                [| _grid.source
                                                ;  _Process.source
                                                |]
@@ -67,7 +67,7 @@ module GenericTimeSetterFunction =
                                 ;  _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GenericTimeSetter> format
                     ; source = source 
@@ -98,13 +98,13 @@ module GenericTimeSetterFunction =
                 let _GenericTimeSetter = Helper.toCell<GenericTimeSetter> generictimesetter "GenericTimeSetter"  
                 let _t = Helper.toCell<double> t "t" 
                 let _L = Helper.toCell<IOperator> L "L" 
-                let builder () = withMnemonic mnemonic ((GenericTimeSetterModel.Cast _GenericTimeSetter.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((GenericTimeSetterModel.Cast _GenericTimeSetter.cell).SetTime
                                                             _t.cell 
                                                             _L.cell 
                                                        ) :> ICell
                 let format (o : GenericTimeSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GenericTimeSetter.source + ".SetTime") 
+                let source () = Helper.sourceFold (_GenericTimeSetter.source + ".SetTime") 
                                                [| _GenericTimeSetter.source
                                                ;  _t.source
                                                ;  _L.source
@@ -115,7 +115,7 @@ module GenericTimeSetterFunction =
                                 ;  _L.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -144,14 +144,14 @@ module GenericTimeSetterFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GenericTimeSetter>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GenericTimeSetter>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GenericTimeSetter>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GenericTimeSetter>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

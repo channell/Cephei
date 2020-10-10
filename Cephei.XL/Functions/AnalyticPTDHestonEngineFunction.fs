@@ -55,14 +55,14 @@ module AnalyticPTDHestonEngineFunction =
                 let _model = Helper.toCell<PiecewiseTimeDependentHestonModel> model "model" 
                 let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticPTDHestonEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticPTDHestonEngine 
                                                             _model.cell 
                                                             _relTolerance.cell 
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticPTDHestonEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticPTDHestonEngine" 
+                let source () = Helper.sourceFold "Fun.AnalyticPTDHestonEngine" 
                                                [| _model.source
                                                ;  _relTolerance.source
                                                ;  _maxEvaluations.source
@@ -73,7 +73,7 @@ module AnalyticPTDHestonEngineFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticPTDHestonEngine> format
                     ; source = source 
@@ -101,13 +101,13 @@ module AnalyticPTDHestonEngineFunction =
 
                 let _model = Helper.toCell<PiecewiseTimeDependentHestonModel> model "model" 
                 let _integrationOrder = Helper.toDefault<int> integrationOrder "integrationOrder" 144
-                let builder () = withMnemonic mnemonic (Fun.AnalyticPTDHestonEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticPTDHestonEngine1 
                                                             _model.cell 
                                                             _integrationOrder.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticPTDHestonEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticPTDHestonEngine1" 
+                let source () = Helper.sourceFold "Fun.AnalyticPTDHestonEngine1" 
                                                [| _model.source
                                                ;  _integrationOrder.source
                                                |]
@@ -116,7 +116,7 @@ module AnalyticPTDHestonEngineFunction =
                                 ;  _integrationOrder.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticPTDHestonEngine> format
                     ; source = source 
@@ -146,12 +146,12 @@ module AnalyticPTDHestonEngineFunction =
 
                 let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".SetModel") 
                                                [| _AnalyticPTDHestonEngine.source
                                                ;  _model.source
                                                |]
@@ -160,7 +160,7 @@ module AnalyticPTDHestonEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -188,12 +188,12 @@ module AnalyticPTDHestonEngineFunction =
 
                 let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".RegisterWith") 
                                                [| _AnalyticPTDHestonEngine.source
                                                ;  _handler.source
                                                |]
@@ -202,7 +202,7 @@ module AnalyticPTDHestonEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -227,18 +227,18 @@ module AnalyticPTDHestonEngineFunction =
             try
 
                 let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
-                let builder () = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".Reset") 
                                                [| _AnalyticPTDHestonEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticPTDHestonEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,12 +266,12 @@ module AnalyticPTDHestonEngineFunction =
 
                 let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".UnregisterWith") 
                                                [| _AnalyticPTDHestonEngine.source
                                                ;  _handler.source
                                                |]
@@ -280,7 +280,7 @@ module AnalyticPTDHestonEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -305,18 +305,18 @@ module AnalyticPTDHestonEngineFunction =
             try
 
                 let _AnalyticPTDHestonEngine = Helper.toCell<AnalyticPTDHestonEngine> analyticptdhestonengine "AnalyticPTDHestonEngine"  
-                let builder () = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticPTDHestonEngineModel.Cast _AnalyticPTDHestonEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".Update") 
                                                [| _AnalyticPTDHestonEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticPTDHestonEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -345,14 +345,14 @@ module AnalyticPTDHestonEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticPTDHestonEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticPTDHestonEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticPTDHestonEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticPTDHestonEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

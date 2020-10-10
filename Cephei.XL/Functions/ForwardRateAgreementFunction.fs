@@ -50,18 +50,18 @@ module ForwardRateAgreementFunction =
             try
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ForwardRate
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ForwardRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".ForwardRate") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".ForwardRate") 
                                                [| _ForwardRateAgreement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ForwardRateAgreement> format
                     ; source = source 
@@ -110,7 +110,7 @@ module ForwardRateAgreementFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.ForwardRateAgreement 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ForwardRateAgreement 
                                                             _valueDate.cell 
                                                             _maturityDate.cell 
                                                             _Type.cell 
@@ -123,7 +123,7 @@ module ForwardRateAgreementFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ForwardRateAgreement>) l
 
-                let source = Helper.sourceFold "Fun.ForwardRateAgreement" 
+                let source () = Helper.sourceFold "Fun.ForwardRateAgreement" 
                                                [| _valueDate.source
                                                ;  _maturityDate.source
                                                ;  _Type.source
@@ -146,7 +146,7 @@ module ForwardRateAgreementFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ForwardRateAgreement> format
                     ; source = source 
@@ -171,18 +171,18 @@ module ForwardRateAgreementFunction =
             try
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".IsExpired") 
                                                [| _ForwardRateAgreement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -207,18 +207,18 @@ module ForwardRateAgreementFunction =
             try
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SettlementDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SettlementDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".SettlementDate") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".SettlementDate") 
                                                [| _ForwardRateAgreement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -246,12 +246,12 @@ module ForwardRateAgreementFunction =
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let _t = Helper.toHandle<YieldTermStructure> t "t" 
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SpotIncome
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SpotIncome
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".SpotIncome") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".SpotIncome") 
                                                [| _ForwardRateAgreement.source
                                                ;  _t.source
                                                |]
@@ -260,7 +260,7 @@ module ForwardRateAgreementFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -285,18 +285,18 @@ module ForwardRateAgreementFunction =
             try
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SpotValue
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SpotValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".SpotValue") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".SpotValue") 
                                                [| _ForwardRateAgreement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -321,18 +321,18 @@ module ForwardRateAgreementFunction =
             try
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ForwardValue
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ForwardValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".ForwardValue") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".ForwardValue") 
                                                [| _ForwardRateAgreement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -372,7 +372,7 @@ module ForwardRateAgreementFunction =
                 let _settlementDate = Helper.toCell<Date> settlementDate "settlementDate" 
                 let _compoundingConvention = Helper.toCell<Compounding> compoundingConvention "compoundingConvention" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ImpliedYield
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ImpliedYield
                                                             _underlyingSpotValue.cell 
                                                             _forwardValue.cell 
                                                             _settlementDate.cell 
@@ -381,7 +381,7 @@ module ForwardRateAgreementFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".ImpliedYield") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".ImpliedYield") 
                                                [| _ForwardRateAgreement.source
                                                ;  _underlyingSpotValue.source
                                                ;  _forwardValue.source
@@ -398,7 +398,7 @@ module ForwardRateAgreementFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ForwardRateAgreement> format
                     ; source = source 
@@ -423,18 +423,18 @@ module ForwardRateAgreementFunction =
             try
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".CASH") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".CASH") 
                                                [| _ForwardRateAgreement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -459,18 +459,18 @@ module ForwardRateAgreementFunction =
             try
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".ErrorEstimate") 
                                                [| _ForwardRateAgreement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -495,18 +495,18 @@ module ForwardRateAgreementFunction =
             try
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".NPV") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".NPV") 
                                                [| _ForwardRateAgreement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -534,12 +534,12 @@ module ForwardRateAgreementFunction =
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".Result") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".Result") 
                                                [| _ForwardRateAgreement.source
                                                ;  _tag.source
                                                |]
@@ -548,7 +548,7 @@ module ForwardRateAgreementFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -576,12 +576,12 @@ module ForwardRateAgreementFunction =
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : ForwardRateAgreement) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".SetPricingEngine") 
                                                [| _ForwardRateAgreement.source
                                                ;  _e.source
                                                |]
@@ -590,7 +590,7 @@ module ForwardRateAgreementFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,18 +615,18 @@ module ForwardRateAgreementFunction =
             try
 
                 let _ForwardRateAgreement = Helper.toCell<ForwardRateAgreement> forwardrateagreement "ForwardRateAgreement"  
-                let builder () = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ForwardRateAgreementModel.Cast _ForwardRateAgreement.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ForwardRateAgreement.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".ValuationDate") 
                                                [| _ForwardRateAgreement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -655,14 +655,14 @@ module ForwardRateAgreementFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ForwardRateAgreement>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ForwardRateAgreement>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ForwardRateAgreement>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ForwardRateAgreement>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

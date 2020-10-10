@@ -55,13 +55,13 @@ module LeastSquareFunctionFunction =
                 let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Gradient
+                let builder (current : ICell) = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Gradient
                                                             _grad_f.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : LeastSquareFunction) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LeastSquareFunction.source + ".Gradient") 
+                let source () = Helper.sourceFold (_LeastSquareFunction.source + ".Gradient") 
                                                [| _LeastSquareFunction.source
                                                ;  _grad_f.source
                                                ;  _x.source
@@ -72,7 +72,7 @@ module LeastSquareFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,19 +97,19 @@ module LeastSquareFunctionFunction =
             try
 
                 let _lsp = Helper.toCell<LeastSquareProblem> lsp "lsp" 
-                let builder () = withMnemonic mnemonic (Fun.LeastSquareFunction 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LeastSquareFunction 
                                                             _lsp.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LeastSquareFunction>) l
 
-                let source = Helper.sourceFold "Fun.LeastSquareFunction" 
+                let source () = Helper.sourceFold "Fun.LeastSquareFunction" 
                                                [| _lsp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _lsp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LeastSquareFunction> format
                     ; source = source 
@@ -137,12 +137,12 @@ module LeastSquareFunctionFunction =
 
                 let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LeastSquareFunction.source + ".Value") 
+                let source () = Helper.sourceFold (_LeastSquareFunction.source + ".Value") 
                                                [| _LeastSquareFunction.source
                                                ;  _x.source
                                                |]
@@ -151,7 +151,7 @@ module LeastSquareFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,13 +182,13 @@ module LeastSquareFunctionFunction =
                 let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).ValueAndGradient
+                let builder (current : ICell) = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).ValueAndGradient
                                                             _grad_f.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LeastSquareFunction.source + ".ValueAndGradient") 
+                let source () = Helper.sourceFold (_LeastSquareFunction.source + ".ValueAndGradient") 
                                                [| _LeastSquareFunction.source
                                                ;  _grad_f.source
                                                ;  _x.source
@@ -199,7 +199,7 @@ module LeastSquareFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -227,12 +227,12 @@ module LeastSquareFunctionFunction =
 
                 let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Values
+                let builder (current : ICell) = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Values
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LeastSquareFunction.source + ".Values") 
+                let source () = Helper.sourceFold (_LeastSquareFunction.source + ".Values") 
                                                [| _LeastSquareFunction.source
                                                ;  _x.source
                                                |]
@@ -241,7 +241,7 @@ module LeastSquareFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LeastSquareFunction> format
                     ; source = source 
@@ -266,18 +266,18 @@ module LeastSquareFunctionFunction =
             try
 
                 let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
-                let builder () = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).FiniteDifferenceEpsilon
+                let builder (current : ICell) = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).FiniteDifferenceEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LeastSquareFunction.source + ".FiniteDifferenceEpsilon") 
+                let source () = Helper.sourceFold (_LeastSquareFunction.source + ".FiniteDifferenceEpsilon") 
                                                [| _LeastSquareFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LeastSquareFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,13 +308,13 @@ module LeastSquareFunctionFunction =
                 let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Jacobian
+                let builder (current : ICell) = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).Jacobian
                                                             _jac.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : LeastSquareFunction) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LeastSquareFunction.source + ".Jacobian") 
+                let source () = Helper.sourceFold (_LeastSquareFunction.source + ".Jacobian") 
                                                [| _LeastSquareFunction.source
                                                ;  _jac.source
                                                ;  _x.source
@@ -325,7 +325,7 @@ module LeastSquareFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,13 +356,13 @@ module LeastSquareFunctionFunction =
                 let _LeastSquareFunction = Helper.toCell<LeastSquareFunction> leastsquarefunction "LeastSquareFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).ValuesAndJacobian
+                let builder (current : ICell) = withMnemonic mnemonic ((LeastSquareFunctionModel.Cast _LeastSquareFunction.cell).ValuesAndJacobian
                                                             _jac.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LeastSquareFunction.source + ".ValuesAndJacobian") 
+                let source () = Helper.sourceFold (_LeastSquareFunction.source + ".ValuesAndJacobian") 
                                                [| _LeastSquareFunction.source
                                                ;  _jac.source
                                                ;  _x.source
@@ -373,7 +373,7 @@ module LeastSquareFunctionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LeastSquareFunction> format
                     ; source = source 
@@ -402,14 +402,14 @@ module LeastSquareFunctionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LeastSquareFunction>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LeastSquareFunction>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LeastSquareFunction>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LeastSquareFunction>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

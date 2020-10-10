@@ -46,16 +46,16 @@ module PKRCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.PKRCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PKRCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PKRCurrency>) l
 
-                let source = Helper.sourceFold "Fun.PKRCurrency" 
+                let source () = Helper.sourceFold "Fun.PKRCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PKRCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".Code") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".Empty") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module PKRCurrencyFunction =
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".Equals") 
                                                [| _PKRCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module PKRCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".Format") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".FractionsPerUnit") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".FractionSymbol") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".Name") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".NumericCode") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".Rounding") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PKRCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".Symbol") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".ToString") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module PKRCurrencyFunction =
             try
 
                 let _PKRCurrency = Helper.toCell<PKRCurrency> pkrcurrency "PKRCurrency"  
-                let builder () = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((PKRCurrencyModel.Cast _PKRCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_PKRCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_PKRCurrency.source + ".TriangulationCurrency") 
                                                [| _PKRCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PKRCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module PKRCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PKRCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PKRCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PKRCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PKRCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

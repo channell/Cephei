@@ -1,6 +1,5 @@
 C:\Users\steve\source\repos\Cephei2\Cephei.docfx\bin\Release\Cephei.docfx.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.docfx\bin\Release\Cephei.docfx.pdb
-C:\Users\steve\source\repos\Cephei2\Cephei.docfx\obj\Release\Cephei.docfx.csprojAssemblyReference.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.docfx\obj\Release\Cephei.docfx.csproj.CoreCompileInputs.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.docfx\obj\Release\Cephei.docfx.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.docfx\obj\Release\Cephei.docfx.pdb

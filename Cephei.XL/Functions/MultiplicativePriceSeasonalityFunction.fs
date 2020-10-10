@@ -58,14 +58,14 @@ module MultiplicativePriceSeasonalityFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).CorrectYoYRate
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).CorrectYoYRate
                                                             _d.cell 
                                                             _r.cell 
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".CorrectYoYRate") 
+                let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".CorrectYoYRate") 
                                                [| _MultiplicativePriceSeasonality.source
                                                ;  _d.source
                                                ;  _r.source
@@ -78,7 +78,7 @@ module MultiplicativePriceSeasonalityFunction =
                                 ;  _iTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -112,14 +112,14 @@ module MultiplicativePriceSeasonalityFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).CorrectZeroRate
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).CorrectZeroRate
                                                             _d.cell 
                                                             _r.cell 
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".CorrectZeroRate") 
+                let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".CorrectZeroRate") 
                                                [| _MultiplicativePriceSeasonality.source
                                                ;  _d.source
                                                ;  _r.source
@@ -132,7 +132,7 @@ module MultiplicativePriceSeasonalityFunction =
                                 ;  _iTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module MultiplicativePriceSeasonalityFunction =
             try
 
                 let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
-                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".Frequency") 
+                let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".Frequency") 
                                                [| _MultiplicativePriceSeasonality.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiplicativePriceSeasonality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -196,12 +196,12 @@ module MultiplicativePriceSeasonalityFunction =
 
                 let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).IsConsistent
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).IsConsistent
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".IsConsistent") 
+                let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".IsConsistent") 
                                                [| _MultiplicativePriceSeasonality.source
                                                ;  _iTS.source
                                                |]
@@ -210,7 +210,7 @@ module MultiplicativePriceSeasonalityFunction =
                                 ;  _iTS.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -232,16 +232,16 @@ module MultiplicativePriceSeasonalityFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.MultiplicativePriceSeasonality1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiplicativePriceSeasonality1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MultiplicativePriceSeasonality>) l
 
-                let source = Helper.sourceFold "Fun.MultiplicativePriceSeasonality1" 
+                let source () = Helper.sourceFold "Fun.MultiplicativePriceSeasonality1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiplicativePriceSeasonality> format
                     ; source = source 
@@ -272,14 +272,14 @@ module MultiplicativePriceSeasonalityFunction =
                 let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" 
-                let builder () = withMnemonic mnemonic (Fun.MultiplicativePriceSeasonality
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MultiplicativePriceSeasonality
                                                             _seasonalityBaseDate.cell 
                                                             _frequency.cell 
                                                             _seasonalityFactors.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MultiplicativePriceSeasonality>) l
 
-                let source = Helper.sourceFold "Fun.MultiplicativePriceSeasonality" 
+                let source () = Helper.sourceFold "Fun.MultiplicativePriceSeasonality" 
                                                [| _seasonalityBaseDate.source
                                                ;  _frequency.source
                                                ;  _seasonalityFactors.source
@@ -290,7 +290,7 @@ module MultiplicativePriceSeasonalityFunction =
                                 ;  _seasonalityFactors.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MultiplicativePriceSeasonality> format
                     ; source = source 
@@ -315,18 +315,18 @@ module MultiplicativePriceSeasonalityFunction =
             try
 
                 let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
-                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityBaseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityBaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".SeasonalityBaseDate") 
+                let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".SeasonalityBaseDate") 
                                                [| _MultiplicativePriceSeasonality.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiplicativePriceSeasonality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -354,12 +354,12 @@ module MultiplicativePriceSeasonalityFunction =
 
                 let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let _To = Helper.toCell<Date> To "To" 
-                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityFactor
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityFactor
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".SeasonalityFactor") 
+                let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".SeasonalityFactor") 
                                                [| _MultiplicativePriceSeasonality.source
                                                ;  _To.source
                                                |]
@@ -368,7 +368,7 @@ module MultiplicativePriceSeasonalityFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -393,18 +393,18 @@ module MultiplicativePriceSeasonalityFunction =
             try
 
                 let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
-                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityFactors
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityFactors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".SeasonalityFactors") 
+                let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".SeasonalityFactors") 
                                                [| _MultiplicativePriceSeasonality.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiplicativePriceSeasonality.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -438,14 +438,14 @@ module MultiplicativePriceSeasonalityFunction =
                 let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" 
-                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).Set
+                let builder (current : ICell) = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).Set
                                                             _seasonalityBaseDate.cell 
                                                             _frequency.cell 
                                                             _seasonalityFactors.cell 
                                                        ) :> ICell
                 let format (o : MultiplicativePriceSeasonality) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".Set") 
+                let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".Set") 
                                                [| _MultiplicativePriceSeasonality.source
                                                ;  _seasonalityBaseDate.source
                                                ;  _frequency.source
@@ -458,7 +458,7 @@ module MultiplicativePriceSeasonalityFunction =
                                 ;  _seasonalityFactors.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -487,14 +487,14 @@ module MultiplicativePriceSeasonalityFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MultiplicativePriceSeasonality>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MultiplicativePriceSeasonality>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MultiplicativePriceSeasonality>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MultiplicativePriceSeasonality>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

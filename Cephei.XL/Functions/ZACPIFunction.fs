@@ -52,13 +52,13 @@ module ZACPIFunction =
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
                 let _ts = Helper.toHandle<ZeroInflationTermStructure> ts "ts" 
-                let builder () = withMnemonic mnemonic (Fun.ZACPI1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ZACPI1 
                                                             _interpolated.cell 
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZACPI>) l
 
-                let source = Helper.sourceFold "Fun.ZACPI1" 
+                let source () = Helper.sourceFold "Fun.ZACPI1" 
                                                [| _interpolated.source
                                                ;  _ts.source
                                                |]
@@ -67,7 +67,7 @@ module ZACPIFunction =
                                 ;  _ts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZACPI> format
                     ; source = source 
@@ -92,19 +92,19 @@ module ZACPIFunction =
             try
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
-                let builder () = withMnemonic mnemonic (Fun.ZACPI
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ZACPI
                                                             _interpolated.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZACPI>) l
 
-                let source = Helper.sourceFold "Fun.ZACPI" 
+                let source () = Helper.sourceFold "Fun.ZACPI" 
                                                [| _interpolated.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _interpolated.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZACPI> format
                     ; source = source 
@@ -132,12 +132,12 @@ module ZACPIFunction =
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _h = Helper.toHandle<ZeroInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
-                let source = Helper.sourceFold (_ZACPI.source + ".Clone") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".Clone") 
                                                [| _ZACPI.source
                                                ;  _h.source
                                                |]
@@ -146,7 +146,7 @@ module ZACPIFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZACPI> format
                     ; source = source 
@@ -177,13 +177,13 @@ module ZACPIFunction =
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Fixing
                                                             _aFixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".Fixing") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".Fixing") 
                                                [| _ZACPI.source
                                                ;  _aFixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -194,7 +194,7 @@ module ZACPIFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -219,18 +219,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).ZeroInflationTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).ZeroInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
-                let source = Helper.sourceFold (_ZACPI.source + ".ZeroInflationTermStructure") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".ZeroInflationTermStructure") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZACPI> format
                     ; source = source 
@@ -264,14 +264,14 @@ module ZACPIFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".AddFixing") 
                                                [| _ZACPI.source
                                                ;  _fixingDate.source
                                                ;  _fixing.source
@@ -284,7 +284,7 @@ module ZACPIFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -310,18 +310,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AvailabilityLag
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_ZACPI.source + ".AvailabilityLag") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".AvailabilityLag") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZACPI> format
                     ; source = source 
@@ -346,18 +346,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_ZACPI.source + ".Currency") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".Currency") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZACPI> format
                     ; source = source 
@@ -382,18 +382,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".FamilyName") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -418,18 +418,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_ZACPI.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".FixingCalendar") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZACPI> format
                     ; source = source 
@@ -454,18 +454,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".Frequency") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".Frequency") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -490,18 +490,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Interpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".Interpolated") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".Interpolated") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -529,12 +529,12 @@ module ZACPIFunction =
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".IsValidFixingDate") 
                                                [| _ZACPI.source
                                                ;  _fixingDate.source
                                                |]
@@ -543,7 +543,7 @@ module ZACPIFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -568,18 +568,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".Name") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".Name") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -604,18 +604,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Region
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
-                let source = Helper.sourceFold (_ZACPI.source + ".Region") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".Region") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZACPI> format
                     ; source = source 
@@ -640,18 +640,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Revised
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".Revised") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".Revised") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -676,18 +676,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Update
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".Update") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".Update") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -721,14 +721,14 @@ module ZACPIFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".AddFixings") 
                                                [| _ZACPI.source
                                                ;  _d.source
                                                ;  _v.source
@@ -741,7 +741,7 @@ module ZACPIFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -772,13 +772,13 @@ module ZACPIFunction =
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".AddFixings1") 
                                                [| _ZACPI.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -789,7 +789,7 @@ module ZACPIFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -814,18 +814,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".AllowsNativeFixings") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -850,18 +850,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".ClearFixings") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -889,12 +889,12 @@ module ZACPIFunction =
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".RegisterWith") 
                                                [| _ZACPI.source
                                                ;  _handler.source
                                                |]
@@ -903,7 +903,7 @@ module ZACPIFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -928,18 +928,18 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".TimeSeries") 
                                                [| _ZACPI.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -967,12 +967,12 @@ module ZACPIFunction =
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZACPI.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_ZACPI.source + ".UnregisterWith") 
                                                [| _ZACPI.source
                                                ;  _handler.source
                                                |]
@@ -981,7 +981,7 @@ module ZACPIFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1010,14 +1010,14 @@ module ZACPIFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZACPI>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ZACPI>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ZACPI>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ZACPI>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

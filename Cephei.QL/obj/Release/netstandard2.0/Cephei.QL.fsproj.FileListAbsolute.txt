@@ -9,3 +9,4 @@ C:\Users\steve\Source\Repos\Cephei2\Cephei.QL\obj\Release\netstandard2.0\Cephei.
 C:\Users\steve\Source\Repos\Cephei2\bin\Release\netstandard2.0\Cephei.QL.deps.json
 C:\Users\steve\Source\Repos\Cephei2\bin\Release\netstandard2.0\Cephei.QL.dll
 C:\Users\steve\Source\Repos\Cephei2\bin\Release\netstandard2.0\Cephei.QL.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.QL\obj\Release\netstandard2.0\Cephei.QL.fsproj.CopyComplete

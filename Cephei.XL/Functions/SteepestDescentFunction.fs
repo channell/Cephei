@@ -49,19 +49,19 @@ module SteepestDescentFunction =
             try
 
                 let _lineSearch = Helper.toDefault<LineSearch> lineSearch "lineSearch" null
-                let builder () = withMnemonic mnemonic (Fun.SteepestDescent 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SteepestDescent 
                                                             _lineSearch.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SteepestDescent>) l
 
-                let source = Helper.sourceFold "Fun.SteepestDescent" 
+                let source () = Helper.sourceFold "Fun.SteepestDescent" 
                                                [| _lineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _lineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SteepestDescent> format
                     ; source = source 
@@ -92,13 +92,13 @@ module SteepestDescentFunction =
                 let _SteepestDescent = Helper.toCell<SteepestDescent> steepestdescent "SteepestDescent"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((SteepestDescentModel.Cast _SteepestDescent.cell).Minimize
+                let builder (current : ICell) = withMnemonic mnemonic ((SteepestDescentModel.Cast _SteepestDescent.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SteepestDescent.source + ".Minimize") 
+                let source () = Helper.sourceFold (_SteepestDescent.source + ".Minimize") 
                                                [| _SteepestDescent.source
                                                ;  _P.source
                                                ;  _endCriteria.source
@@ -109,7 +109,7 @@ module SteepestDescentFunction =
                                 ;  _endCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -138,14 +138,14 @@ module SteepestDescentFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SteepestDescent>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SteepestDescent>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SteepestDescent>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SteepestDescent>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

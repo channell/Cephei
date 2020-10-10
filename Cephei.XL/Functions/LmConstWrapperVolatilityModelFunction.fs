@@ -61,7 +61,7 @@ module LmConstWrapperVolatilityModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).IntegratedVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 
                                                             _u.cell 
@@ -69,7 +69,7 @@ module LmConstWrapperVolatilityModelFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".IntegratedVariance") 
+                let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".IntegratedVariance") 
                                                [| _LmConstWrapperVolatilityModel.source
                                                ;  _i.source
                                                ;  _j.source
@@ -84,7 +84,7 @@ module LmConstWrapperVolatilityModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -109,19 +109,19 @@ module LmConstWrapperVolatilityModelFunction =
             try
 
                 let _volaModel = Helper.toCell<LmVolatilityModel> volaModel "volaModel" 
-                let builder () = withMnemonic mnemonic (Fun.LmConstWrapperVolatilityModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LmConstWrapperVolatilityModel 
                                                             _volaModel.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmConstWrapperVolatilityModel>) l
 
-                let source = Helper.sourceFold "Fun.LmConstWrapperVolatilityModel" 
+                let source () = Helper.sourceFold "Fun.LmConstWrapperVolatilityModel" 
                                                [| _volaModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _volaModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmConstWrapperVolatilityModel> format
                     ; source = source 
@@ -155,14 +155,14 @@ module LmConstWrapperVolatilityModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Volatility
                                                             _i.cell 
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Volatility") 
+                let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Volatility") 
                                                [| _LmConstWrapperVolatilityModel.source
                                                ;  _i.source
                                                ;  _t.source
@@ -175,7 +175,7 @@ module LmConstWrapperVolatilityModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,13 +206,13 @@ module LmConstWrapperVolatilityModelFunction =
                 let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Volatility1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Volatility1") 
                                                [| _LmConstWrapperVolatilityModel.source
                                                ;  _t.source
                                                ;  _x.source
@@ -223,7 +223,7 @@ module LmConstWrapperVolatilityModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmConstWrapperVolatilityModel> format
                     ; source = source 
@@ -248,18 +248,18 @@ module LmConstWrapperVolatilityModelFunction =
             try
 
                 let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
-                let builder () = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Parameters") 
+                let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Parameters") 
                                                [| _LmConstWrapperVolatilityModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmConstWrapperVolatilityModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -287,12 +287,12 @@ module LmConstWrapperVolatilityModelFunction =
 
                 let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder () = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmConstWrapperVolatilityModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".SetParams") 
+                let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".SetParams") 
                                                [| _LmConstWrapperVolatilityModel.source
                                                ;  _arguments.source
                                                |]
@@ -301,7 +301,7 @@ module LmConstWrapperVolatilityModelFunction =
                                 ;  _arguments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,18 +326,18 @@ module LmConstWrapperVolatilityModelFunction =
             try
 
                 let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
-                let builder () = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Size") 
+                let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Size") 
                                                [| _LmConstWrapperVolatilityModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmConstWrapperVolatilityModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -366,14 +366,14 @@ module LmConstWrapperVolatilityModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LmConstWrapperVolatilityModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LmConstWrapperVolatilityModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LmConstWrapperVolatilityModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LmConstWrapperVolatilityModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

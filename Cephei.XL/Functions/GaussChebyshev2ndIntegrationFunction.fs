@@ -49,19 +49,19 @@ module GaussChebyshev2ndIntegrationFunction =
             try
 
                 let _n = Helper.toCell<int> n "n" 
-                let builder () = withMnemonic mnemonic (Fun.GaussChebyshev2ndIntegration 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussChebyshev2ndIntegration 
                                                             _n.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussChebyshev2ndIntegration>) l
 
-                let source = Helper.sourceFold "Fun.GaussChebyshev2ndIntegration" 
+                let source () = Helper.sourceFold "Fun.GaussChebyshev2ndIntegration" 
                                                [| _n.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _n.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussChebyshev2ndIntegration> format
                     ; source = source 
@@ -86,18 +86,18 @@ module GaussChebyshev2ndIntegrationFunction =
             try
 
                 let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).Order
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".Order") 
+                let source () = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".Order") 
                                                [| _GaussChebyshev2ndIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshev2ndIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -125,12 +125,12 @@ module GaussChebyshev2ndIntegrationFunction =
 
                 let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".Value") 
                                                [| _GaussChebyshev2ndIntegration.source
                                                ;  _f.source
                                                |]
@@ -139,7 +139,7 @@ module GaussChebyshev2ndIntegrationFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module GaussChebyshev2ndIntegrationFunction =
             try
 
                 let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".Weights") 
+                let source () = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".Weights") 
                                                [| _GaussChebyshev2ndIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshev2ndIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussChebyshev2ndIntegration> format
                     ; source = source 
@@ -200,18 +200,18 @@ module GaussChebyshev2ndIntegrationFunction =
             try
 
                 let _GaussChebyshev2ndIntegration = Helper.toCell<GaussChebyshev2ndIntegration> gausschebyshev2ndintegration "GaussChebyshev2ndIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).X
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussChebyshev2ndIntegrationModel.Cast _GaussChebyshev2ndIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".X") 
+                let source () = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".X") 
                                                [| _GaussChebyshev2ndIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshev2ndIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussChebyshev2ndIntegration> format
                     ; source = source 
@@ -240,14 +240,14 @@ module GaussChebyshev2ndIntegrationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussChebyshev2ndIntegration>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussChebyshev2ndIntegration>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussChebyshev2ndIntegration>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussChebyshev2ndIntegration>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

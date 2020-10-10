@@ -61,7 +61,7 @@ module FDAmericanConditionFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -69,7 +69,7 @@ module FDAmericanConditionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
-                let source = Helper.sourceFold (_FDAmericanCondition.source + ".Factory") 
+                let source () = Helper.sourceFold (_FDAmericanCondition.source + ".Factory") 
                                                [| _FDAmericanCondition.source
                                                ;  _Process.source
                                                ;  _timeSteps.source
@@ -84,7 +84,7 @@ module FDAmericanConditionFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDAmericanCondition> format
                     ; source = source 
@@ -118,7 +118,7 @@ module FDAmericanConditionFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic (Fun.FDAmericanCondition 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDAmericanCondition 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -126,7 +126,7 @@ module FDAmericanConditionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDAmericanCondition>) l
 
-                let source = Helper.sourceFold "Fun.FDAmericanCondition" 
+                let source () = Helper.sourceFold "Fun.FDAmericanCondition" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
@@ -139,7 +139,7 @@ module FDAmericanConditionFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDAmericanCondition> format
                     ; source = source 
@@ -161,16 +161,16 @@ module FDAmericanConditionFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.FDAmericanCondition1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDAmericanCondition1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDAmericanCondition>) l
 
-                let source = Helper.sourceFold "Fun.FDAmericanCondition1" 
+                let source () = Helper.sourceFold "Fun.FDAmericanCondition1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDAmericanCondition> format
                     ; source = source 
@@ -199,12 +199,12 @@ module FDAmericanConditionFunction =
 
                 let _FDAmericanCondition = Helper.toCell<FDAmericanCondition> fdamericancondition "FDAmericanCondition"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder () = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).SetStepCondition
+                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDAmericanCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDAmericanCondition.source + ".SetStepCondition") 
+                let source () = Helper.sourceFold (_FDAmericanCondition.source + ".SetStepCondition") 
                                                [| _FDAmericanCondition.source
                                                ;  _impl.source
                                                |]
@@ -213,7 +213,7 @@ module FDAmericanConditionFunction =
                                 ;  _impl.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -238,18 +238,18 @@ module FDAmericanConditionFunction =
             try
 
                 let _FDAmericanCondition = Helper.toCell<FDAmericanCondition> fdamericancondition "FDAmericanCondition"  
-                let builder () = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).EnsureStrikeInGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDAmericanCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDAmericanCondition.source + ".EnsureStrikeInGrid") 
+                let source () = Helper.sourceFold (_FDAmericanCondition.source + ".EnsureStrikeInGrid") 
                                                [| _FDAmericanCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDAmericanCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -274,18 +274,18 @@ module FDAmericanConditionFunction =
             try
 
                 let _FDAmericanCondition = Helper.toCell<FDAmericanCondition> fdamericancondition "FDAmericanCondition"  
-                let builder () = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).GetResidualTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FDAmericanCondition.source + ".GetResidualTime") 
+                let source () = Helper.sourceFold (_FDAmericanCondition.source + ".GetResidualTime") 
                                                [| _FDAmericanCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDAmericanCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -310,18 +310,18 @@ module FDAmericanConditionFunction =
             try
 
                 let _FDAmericanCondition = Helper.toCell<FDAmericanCondition> fdamericancondition "FDAmericanCondition"  
-                let builder () = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FDAmericanCondition.source + ".Grid") 
+                let source () = Helper.sourceFold (_FDAmericanCondition.source + ".Grid") 
                                                [| _FDAmericanCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDAmericanCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDAmericanCondition> format
                     ; source = source 
@@ -346,18 +346,18 @@ module FDAmericanConditionFunction =
             try
 
                 let _FDAmericanCondition = Helper.toCell<FDAmericanCondition> fdamericancondition "FDAmericanCondition"  
-                let builder () = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).IntrinsicValues_
+                let builder (current : ICell) = withMnemonic mnemonic ((FDAmericanConditionModel.Cast _FDAmericanCondition.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold (_FDAmericanCondition.source + ".IntrinsicValues_") 
+                let source () = Helper.sourceFold (_FDAmericanCondition.source + ".IntrinsicValues_") 
                                                [| _FDAmericanCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDAmericanCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDAmericanCondition> format
                     ; source = source 
@@ -386,14 +386,14 @@ module FDAmericanConditionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDAmericanCondition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FDAmericanCondition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FDAmericanCondition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FDAmericanCondition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

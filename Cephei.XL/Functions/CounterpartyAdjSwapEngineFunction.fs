@@ -71,7 +71,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
                 let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
-                let builder () = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine 
                                                             _discountCurve.cell 
                                                             _blackVol.cell 
                                                             _ctptyDTS.cell 
@@ -81,7 +81,7 @@ module CounterpartyAdjSwapEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CounterpartyAdjSwapEngine>) l
 
-                let source = Helper.sourceFold "Fun.CounterpartyAdjSwapEngine" 
+                let source () = Helper.sourceFold "Fun.CounterpartyAdjSwapEngine" 
                                                [| _discountCurve.source
                                                ;  _blackVol.source
                                                ;  _ctptyDTS.source
@@ -98,7 +98,7 @@ module CounterpartyAdjSwapEngineFunction =
                                 ;  _invstRecoveryRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CounterpartyAdjSwapEngine> format
                     ; source = source 
@@ -144,7 +144,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
                 let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
-                let builder () = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine1 
                                                             _discountCurve.cell 
                                                             _blackVol.cell 
                                                             _ctptyDTS.cell 
@@ -154,7 +154,7 @@ module CounterpartyAdjSwapEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CounterpartyAdjSwapEngine>) l
 
-                let source = Helper.sourceFold "Fun.CounterpartyAdjSwapEngine1" 
+                let source () = Helper.sourceFold "Fun.CounterpartyAdjSwapEngine1" 
                                                [| _discountCurve.source
                                                ;  _blackVol.source
                                                ;  _ctptyDTS.source
@@ -171,7 +171,7 @@ module CounterpartyAdjSwapEngineFunction =
                                 ;  _invstRecoveryRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CounterpartyAdjSwapEngine> format
                     ; source = source 
@@ -217,7 +217,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
                 let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
-                let builder () = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine2 
                                                             _discountCurve.cell 
                                                             _swaptionEngine.cell 
                                                             _ctptyDTS.cell 
@@ -227,7 +227,7 @@ module CounterpartyAdjSwapEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CounterpartyAdjSwapEngine>) l
 
-                let source = Helper.sourceFold "Fun.CounterpartyAdjSwapEngine2" 
+                let source () = Helper.sourceFold "Fun.CounterpartyAdjSwapEngine2" 
                                                [| _discountCurve.source
                                                ;  _swaptionEngine.source
                                                ;  _ctptyDTS.source
@@ -244,7 +244,7 @@ module CounterpartyAdjSwapEngineFunction =
                                 ;  _invstRecoveryRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CounterpartyAdjSwapEngine> format
                     ; source = source 
@@ -273,14 +273,14 @@ module CounterpartyAdjSwapEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CounterpartyAdjSwapEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CounterpartyAdjSwapEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CounterpartyAdjSwapEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CounterpartyAdjSwapEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

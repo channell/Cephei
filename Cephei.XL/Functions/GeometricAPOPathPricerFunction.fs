@@ -55,14 +55,14 @@ module GeometricAPOPathPricerFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic (Fun.GeometricAPOPathPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GeometricAPOPathPricer 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GeometricAPOPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.GeometricAPOPathPricer" 
+                let source () = Helper.sourceFold "Fun.GeometricAPOPathPricer" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -73,7 +73,7 @@ module GeometricAPOPathPricerFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricAPOPathPricer> format
                     ; source = source 
@@ -110,7 +110,7 @@ module GeometricAPOPathPricerFunction =
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _runningProduct = Helper.toCell<double> runningProduct "runningProduct" 
                 let _pastFixings = Helper.toCell<int> pastFixings "pastFixings" 
-                let builder () = withMnemonic mnemonic (Fun.GeometricAPOPathPricer2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GeometricAPOPathPricer2
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -119,7 +119,7 @@ module GeometricAPOPathPricerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GeometricAPOPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.GeometricAPOPathPricer2" 
+                let source () = Helper.sourceFold "Fun.GeometricAPOPathPricer2" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -134,7 +134,7 @@ module GeometricAPOPathPricerFunction =
                                 ;  _pastFixings.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricAPOPathPricer> format
                     ; source = source 
@@ -168,7 +168,7 @@ module GeometricAPOPathPricerFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _runningProduct = Helper.toCell<double> runningProduct "runningProduct" 
-                let builder () = withMnemonic mnemonic (Fun.GeometricAPOPathPricer1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GeometricAPOPathPricer1
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
@@ -176,7 +176,7 @@ module GeometricAPOPathPricerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GeometricAPOPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.GeometricAPOPathPricer1" 
+                let source () = Helper.sourceFold "Fun.GeometricAPOPathPricer1" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -189,7 +189,7 @@ module GeometricAPOPathPricerFunction =
                                 ;  _runningProduct.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricAPOPathPricer> format
                     ; source = source 
@@ -217,12 +217,12 @@ module GeometricAPOPathPricerFunction =
 
                 let _GeometricAPOPathPricer = Helper.toCell<GeometricAPOPathPricer> geometricapopathpricer "GeometricAPOPathPricer"  
                 let _path = Helper.toCell<Path> path "path" 
-                let builder () = withMnemonic mnemonic ((GeometricAPOPathPricerModel.Cast _GeometricAPOPathPricer.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricAPOPathPricerModel.Cast _GeometricAPOPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricAPOPathPricer.source + ".Value") 
+                let source () = Helper.sourceFold (_GeometricAPOPathPricer.source + ".Value") 
                                                [| _GeometricAPOPathPricer.source
                                                ;  _path.source
                                                |]
@@ -231,7 +231,7 @@ module GeometricAPOPathPricerFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,14 +260,14 @@ module GeometricAPOPathPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GeometricAPOPathPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GeometricAPOPathPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GeometricAPOPathPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GeometricAPOPathPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

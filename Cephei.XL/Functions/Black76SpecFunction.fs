@@ -46,16 +46,16 @@ module Black76SpecFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Black76Spec ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Black76Spec ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Black76Spec>) l
 
-                let source = Helper.sourceFold "Fun.Black76Spec" 
+                let source () = Helper.sourceFold "Fun.Black76Spec" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Black76Spec> format
                     ; source = source 
@@ -80,18 +80,18 @@ module Black76SpecFunction =
             try
 
                 let _Black76Spec = Helper.toCell<Black76Spec> black76spec "Black76Spec"  
-                let builder () = withMnemonic mnemonic ((Black76SpecModel.Cast _Black76Spec.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((Black76SpecModel.Cast _Black76Spec.cell).Type
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Black76Spec.source + ".TYPE") 
+                let source () = Helper.sourceFold (_Black76Spec.source + ".TYPE") 
                                                [| _Black76Spec.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Black76Spec.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -134,7 +134,7 @@ module Black76SpecFunction =
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic ((Black76SpecModel.Cast _Black76Spec.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((Black76SpecModel.Cast _Black76Spec.cell).Value
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _atmForward.cell 
@@ -144,7 +144,7 @@ module Black76SpecFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Black76Spec.source + ".Value") 
+                let source () = Helper.sourceFold (_Black76Spec.source + ".Value") 
                                                [| _Black76Spec.source
                                                ;  _Type.source
                                                ;  _strike.source
@@ -163,7 +163,7 @@ module Black76SpecFunction =
                                 ;  _displacement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,7 +206,7 @@ module Black76SpecFunction =
                 let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic ((Black76SpecModel.Cast _Black76Spec.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((Black76SpecModel.Cast _Black76Spec.cell).Vega
                                                             _strike.cell 
                                                             _atmForward.cell 
                                                             _stdDev.cell 
@@ -216,7 +216,7 @@ module Black76SpecFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Black76Spec.source + ".Vega") 
+                let source () = Helper.sourceFold (_Black76Spec.source + ".Vega") 
                                                [| _Black76Spec.source
                                                ;  _strike.source
                                                ;  _atmForward.source
@@ -235,7 +235,7 @@ module Black76SpecFunction =
                                 ;  _displacement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -264,14 +264,14 @@ module Black76SpecFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Black76Spec>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Black76Spec>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Black76Spec>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Black76Spec>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).BondEquivalentYield
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).BondEquivalentYield
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".BondEquivalentYield") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".BondEquivalentYield") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).BondFactors
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).BondFactors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".BondFactors") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".BondFactors") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -121,18 +121,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).ExpectedCashflows
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).ExpectedCashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".ExpectedCashflows") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".ExpectedCashflows") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -199,7 +199,7 @@ module MBSFixedRateBondFunction =
                 let _issueDate = Helper.toDefault<Date> issueDate "issueDate" null
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.MBSFixedRateBond 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MBSFixedRateBond 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _faceAmount.cell 
@@ -218,7 +218,7 @@ module MBSFixedRateBondFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MBSFixedRateBond>) l
 
-                let source = Helper.sourceFold "Fun.MBSFixedRateBond" 
+                let source () = Helper.sourceFold "Fun.MBSFixedRateBond" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _faceAmount.source
@@ -253,7 +253,7 @@ module MBSFixedRateBondFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MBSFixedRateBond> format
                     ; source = source 
@@ -278,18 +278,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).MonthlyYield
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).MonthlyYield
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".MonthlyYield") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".MonthlyYield") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -317,12 +317,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SMM
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SMM
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".SMM") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".SMM") 
                                                [| _MBSFixedRateBond.source
                                                ;  _d.source
                                                |]
@@ -331,7 +331,7 @@ module MBSFixedRateBondFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,18 +356,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".DayCounter") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MBSFixedRateBond> format
                     ; source = source 
@@ -392,18 +392,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".Frequency") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".Frequency") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -431,12 +431,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".AccruedAmount") 
                                                [| _MBSFixedRateBond.source
                                                ;  _settlement.source
                                                |]
@@ -445,7 +445,7 @@ module MBSFixedRateBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -470,18 +470,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".Calendar") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".Calendar") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MBSFixedRateBond> format
                     ; source = source 
@@ -506,18 +506,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Cashflows
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".Cashflows") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".Cashflows") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -542,18 +542,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).CleanPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".CleanPrice") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".CleanPrice") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -593,7 +593,7 @@ module MBSFixedRateBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).CleanPrice1
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -602,7 +602,7 @@ module MBSFixedRateBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".CleanPrice1") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".CleanPrice1") 
                                                [| _MBSFixedRateBond.source
                                                ;  _Yield.source
                                                ;  _dc.source
@@ -619,7 +619,7 @@ module MBSFixedRateBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -659,7 +659,7 @@ module MBSFixedRateBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).DirtyPrice1
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -668,7 +668,7 @@ module MBSFixedRateBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".DirtyPrice1") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".DirtyPrice1") 
                                                [| _MBSFixedRateBond.source
                                                ;  _Yield.source
                                                ;  _dc.source
@@ -685,7 +685,7 @@ module MBSFixedRateBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -710,18 +710,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).DirtyPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".DirtyPrice") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".DirtyPrice") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -746,18 +746,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".IsExpired") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -782,18 +782,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).IssueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".IssueDate") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".IssueDate") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -821,12 +821,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).IsTradable
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".IsTradable") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".IsTradable") 
                                                [| _MBSFixedRateBond.source
                                                ;  _d.source
                                                |]
@@ -835,7 +835,7 @@ module MBSFixedRateBondFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -860,18 +860,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".MaturityDate") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -899,12 +899,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).NextCashFlowDate
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".NextCashFlowDate") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".NextCashFlowDate") 
                                                [| _MBSFixedRateBond.source
                                                ;  _settlement.source
                                                |]
@@ -913,7 +913,7 @@ module MBSFixedRateBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -941,12 +941,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).NextCouponRate
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".NextCouponRate") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".NextCouponRate") 
                                                [| _MBSFixedRateBond.source
                                                ;  _settlement.source
                                                |]
@@ -955,7 +955,7 @@ module MBSFixedRateBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -983,12 +983,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Notional
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Notional
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".Notional") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".Notional") 
                                                [| _MBSFixedRateBond.source
                                                ;  _d.source
                                                |]
@@ -997,7 +997,7 @@ module MBSFixedRateBondFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1022,18 +1022,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Notionals
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".Notionals") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".Notionals") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -1061,12 +1061,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).PreviousCashFlowDate
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".PreviousCashFlowDate") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".PreviousCashFlowDate") 
                                                [| _MBSFixedRateBond.source
                                                ;  _settlement.source
                                                |]
@@ -1075,7 +1075,7 @@ module MBSFixedRateBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1103,12 +1103,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).PreviousCouponRate
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".PreviousCouponRate") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".PreviousCouponRate") 
                                                [| _MBSFixedRateBond.source
                                                ;  _settlement.source
                                                |]
@@ -1117,7 +1117,7 @@ module MBSFixedRateBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1142,18 +1142,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Redemption
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".Redemption") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".Redemption") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MBSFixedRateBond> format
                     ; source = source 
@@ -1178,18 +1178,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Redemptions
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".Redemptions") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".Redemptions") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -1217,12 +1217,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SettlementDate
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".SettlementDate") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".SettlementDate") 
                                                [| _MBSFixedRateBond.source
                                                ;  _date.source
                                                |]
@@ -1231,7 +1231,7 @@ module MBSFixedRateBondFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1256,18 +1256,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".SettlementDays") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1295,12 +1295,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SettlementValue
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".SettlementValue") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".SettlementValue") 
                                                [| _MBSFixedRateBond.source
                                                ;  _cleanPrice.source
                                                |]
@@ -1309,7 +1309,7 @@ module MBSFixedRateBondFunction =
                                 ;  _cleanPrice.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1334,18 +1334,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SettlementValue1
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".SettlementValue1") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".SettlementValue1") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1370,18 +1370,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).StartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".StartDate") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".StartDate") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1427,7 +1427,7 @@ module MBSFixedRateBondFunction =
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Yield1
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1438,7 +1438,7 @@ module MBSFixedRateBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".Yield1") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".Yield1") 
                                                [| _MBSFixedRateBond.source
                                                ;  _cleanPrice.source
                                                ;  _dc.source
@@ -1459,7 +1459,7 @@ module MBSFixedRateBondFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1499,7 +1499,7 @@ module MBSFixedRateBondFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Yield
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Yield
                                                             _dc.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1508,7 +1508,7 @@ module MBSFixedRateBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".Yield") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".Yield") 
                                                [| _MBSFixedRateBond.source
                                                ;  _dc.source
                                                ;  _comp.source
@@ -1525,7 +1525,7 @@ module MBSFixedRateBondFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1550,18 +1550,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".CASH") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".CASH") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1586,18 +1586,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".ErrorEstimate") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1622,18 +1622,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".NPV") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".NPV") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1661,12 +1661,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".Result") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".Result") 
                                                [| _MBSFixedRateBond.source
                                                ;  _tag.source
                                                |]
@@ -1675,7 +1675,7 @@ module MBSFixedRateBondFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1703,12 +1703,12 @@ module MBSFixedRateBondFunction =
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : MBSFixedRateBond) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".SetPricingEngine") 
                                                [| _MBSFixedRateBond.source
                                                ;  _e.source
                                                |]
@@ -1717,7 +1717,7 @@ module MBSFixedRateBondFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1742,18 +1742,18 @@ module MBSFixedRateBondFunction =
             try
 
                 let _MBSFixedRateBond = Helper.toCell<MBSFixedRateBond> mbsfixedratebond "MBSFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((MBSFixedRateBondModel.Cast _MBSFixedRateBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_MBSFixedRateBond.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_MBSFixedRateBond.source + ".ValuationDate") 
                                                [| _MBSFixedRateBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MBSFixedRateBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1782,14 +1782,14 @@ module MBSFixedRateBondFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MBSFixedRateBond>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MBSFixedRateBond>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MBSFixedRateBond>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MBSFixedRateBond>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

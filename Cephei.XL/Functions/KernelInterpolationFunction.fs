@@ -58,7 +58,7 @@ module KernelInterpolationFunction =
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _kernel = Helper.toCell<IKernelFunction> kernel "kernel" 
-                let builder () = withMnemonic mnemonic (Fun.KernelInterpolation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.KernelInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -66,7 +66,7 @@ module KernelInterpolationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<KernelInterpolation>) l
 
-                let source = Helper.sourceFold "Fun.KernelInterpolation" 
+                let source () = Helper.sourceFold "Fun.KernelInterpolation" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -79,7 +79,7 @@ module KernelInterpolationFunction =
                                 ;  _kernel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<KernelInterpolation> format
                     ; source = source 
@@ -110,13 +110,13 @@ module KernelInterpolationFunction =
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".Derivative") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".Derivative") 
                                                [| _KernelInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -127,7 +127,7 @@ module KernelInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -152,18 +152,18 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".Empty") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".Empty") 
                                                [| _KernelInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KernelInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,13 +194,13 @@ module KernelInterpolationFunction =
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".Primitive") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".Primitive") 
                                                [| _KernelInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -211,7 +211,7 @@ module KernelInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,13 +242,13 @@ module KernelInterpolationFunction =
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".SecondDerivative") 
                                                [| _KernelInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -259,7 +259,7 @@ module KernelInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : KernelInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".Update") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".Update") 
                                                [| _KernelInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KernelInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,13 +326,13 @@ module KernelInterpolationFunction =
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".Value1") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".Value1") 
                                                [| _KernelInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -343,7 +343,7 @@ module KernelInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -371,12 +371,12 @@ module KernelInterpolationFunction =
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".Value") 
                                                [| _KernelInterpolation.source
                                                ;  _x.source
                                                |]
@@ -385,7 +385,7 @@ module KernelInterpolationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -410,18 +410,18 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".XMax") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".XMax") 
                                                [| _KernelInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KernelInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".XMin") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".XMin") 
                                                [| _KernelInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KernelInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".AllowsExtrapolation") 
                                                [| _KernelInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KernelInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -521,12 +521,12 @@ module KernelInterpolationFunction =
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : KernelInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".DisableExtrapolation") 
                                                [| _KernelInterpolation.source
                                                ;  _b.source
                                                |]
@@ -535,7 +535,7 @@ module KernelInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -563,12 +563,12 @@ module KernelInterpolationFunction =
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : KernelInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".EnableExtrapolation") 
                                                [| _KernelInterpolation.source
                                                ;  _b.source
                                                |]
@@ -577,7 +577,7 @@ module KernelInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -602,18 +602,18 @@ module KernelInterpolationFunction =
             try
 
                 let _KernelInterpolation = Helper.toCell<KernelInterpolation> kernelinterpolation "KernelInterpolation"  
-                let builder () = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((KernelInterpolationModel.Cast _KernelInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KernelInterpolation.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_KernelInterpolation.source + ".Extrapolate") 
                                                [| _KernelInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KernelInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -642,14 +642,14 @@ module KernelInterpolationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<KernelInterpolation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<KernelInterpolation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<KernelInterpolation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<KernelInterpolation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

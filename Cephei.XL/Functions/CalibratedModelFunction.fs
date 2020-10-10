@@ -67,7 +67,7 @@ module CalibratedModelFunction =
                 let _additionalConstraint = Helper.toDefault<Constraint> additionalConstraint "additionalConstraint" null
                 let _weights = Helper.toDefault<Generic.List<double>> weights "weights" null
                 let _fixParameters = Helper.toDefault<Generic.List<bool>> fixParameters "fixParameters" null
-                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Calibrate
+                let builder (current : ICell) = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
                                                             _endCriteria.cell 
@@ -77,7 +77,7 @@ module CalibratedModelFunction =
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CalibratedModel.source + ".Calibrate") 
+                let source () = Helper.sourceFold (_CalibratedModel.source + ".Calibrate") 
                                                [| _CalibratedModel.source
                                                ;  _instruments.source
                                                ;  _Method.source
@@ -96,7 +96,7 @@ module CalibratedModelFunction =
                                 ;  _fixParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,19 +121,19 @@ module CalibratedModelFunction =
             try
 
                 let _nArguments = Helper.toCell<int> nArguments "nArguments" 
-                let builder () = withMnemonic mnemonic (Fun.CalibratedModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CalibratedModel 
                                                             _nArguments.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CalibratedModel>) l
 
-                let source = Helper.sourceFold "Fun.CalibratedModel" 
+                let source () = Helper.sourceFold "Fun.CalibratedModel" 
                                                [| _nArguments.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _nArguments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CalibratedModel> format
                     ; source = source 
@@ -158,18 +158,18 @@ module CalibratedModelFunction =
             try
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
-                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Constraint
+                let builder (current : ICell) = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold (_CalibratedModel.source + ".CONSTRAINT") 
+                let source () = Helper.sourceFold (_CalibratedModel.source + ".CONSTRAINT") 
                                                [| _CalibratedModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CalibratedModel> format
                     ; source = source 
@@ -194,18 +194,18 @@ module CalibratedModelFunction =
             try
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
-                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).EndCriteria
+                let builder (current : ICell) = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CalibratedModel.source + ".EndCriteria") 
+                let source () = Helper.sourceFold (_CalibratedModel.source + ".EndCriteria") 
                                                [| _CalibratedModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module CalibratedModelFunction =
             try
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
-                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).NotifyObservers
+                let builder (current : ICell) = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CalibratedModel.source + ".NotifyObservers") 
+                let source () = Helper.sourceFold (_CalibratedModel.source + ".NotifyObservers") 
                                                [| _CalibratedModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module CalibratedModelFunction =
             try
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
-                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_CalibratedModel.source + ".Parameters") 
+                let source () = Helper.sourceFold (_CalibratedModel.source + ".Parameters") 
                                                [| _CalibratedModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CalibratedModel> format
                     ; source = source 
@@ -305,12 +305,12 @@ module CalibratedModelFunction =
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CalibratedModel.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_CalibratedModel.source + ".RegisterWith") 
                                                [| _CalibratedModel.source
                                                ;  _handler.source
                                                |]
@@ -319,7 +319,7 @@ module CalibratedModelFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -347,12 +347,12 @@ module CalibratedModelFunction =
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CalibratedModel.source + ".SetParams") 
+                let source () = Helper.sourceFold (_CalibratedModel.source + ".SetParams") 
                                                [| _CalibratedModel.source
                                                ;  _parameters.source
                                                |]
@@ -361,7 +361,7 @@ module CalibratedModelFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -389,12 +389,12 @@ module CalibratedModelFunction =
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CalibratedModel.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_CalibratedModel.source + ".UnregisterWith") 
                                                [| _CalibratedModel.source
                                                ;  _handler.source
                                                |]
@@ -403,7 +403,7 @@ module CalibratedModelFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -428,18 +428,18 @@ module CalibratedModelFunction =
             try
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
-                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Update
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CalibratedModel.source + ".Update") 
+                let source () = Helper.sourceFold (_CalibratedModel.source + ".Update") 
                                                [| _CalibratedModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -470,13 +470,13 @@ module CalibratedModelFunction =
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
-                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CalibratedModel.source + ".Value") 
+                let source () = Helper.sourceFold (_CalibratedModel.source + ".Value") 
                                                [| _CalibratedModel.source
                                                ;  _parameters.source
                                                ;  _instruments.source
@@ -487,7 +487,7 @@ module CalibratedModelFunction =
                                 ;  _instruments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -516,14 +516,14 @@ module CalibratedModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CalibratedModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CalibratedModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CalibratedModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CalibratedModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

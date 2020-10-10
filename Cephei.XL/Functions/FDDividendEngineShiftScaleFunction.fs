@@ -61,7 +61,7 @@ module FDDividendEngineShiftScaleFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).Factory2
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).Factory2
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -69,7 +69,7 @@ module FDDividendEngineShiftScaleFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
-                let source = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".Factory2") 
+                let source () = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".Factory2") 
                                                [| _FDDividendEngineShiftScale.source
                                                ;  _Process.source
                                                ;  _timeSteps.source
@@ -84,7 +84,7 @@ module FDDividendEngineShiftScaleFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDDividendEngineShiftScale> format
                     ; source = source 
@@ -118,7 +118,7 @@ module FDDividendEngineShiftScaleFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic (Fun.FDDividendEngineShiftScale 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDDividendEngineShiftScale 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -126,7 +126,7 @@ module FDDividendEngineShiftScaleFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDDividendEngineShiftScale>) l
 
-                let source = Helper.sourceFold "Fun.FDDividendEngineShiftScale" 
+                let source () = Helper.sourceFold "Fun.FDDividendEngineShiftScale" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
@@ -139,7 +139,7 @@ module FDDividendEngineShiftScaleFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDDividendEngineShiftScale> format
                     ; source = source 
@@ -176,7 +176,7 @@ module FDDividendEngineShiftScaleFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -184,7 +184,7 @@ module FDDividendEngineShiftScaleFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
-                let source = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".Factory") 
+                let source () = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".Factory") 
                                                [| _FDDividendEngineShiftScale.source
                                                ;  _Process.source
                                                ;  _timeSteps.source
@@ -199,7 +199,7 @@ module FDDividendEngineShiftScaleFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDDividendEngineShiftScale> format
                     ; source = source 
@@ -228,12 +228,12 @@ module FDDividendEngineShiftScaleFunction =
 
                 let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).SetStepCondition
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDDividendEngineShiftScale) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".SetStepCondition") 
+                let source () = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".SetStepCondition") 
                                                [| _FDDividendEngineShiftScale.source
                                                ;  _impl.source
                                                |]
@@ -242,7 +242,7 @@ module FDDividendEngineShiftScaleFunction =
                                 ;  _impl.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -267,18 +267,18 @@ module FDDividendEngineShiftScaleFunction =
             try
 
                 let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
-                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).EnsureStrikeInGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDDividendEngineShiftScale) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".EnsureStrikeInGrid") 
+                let source () = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".EnsureStrikeInGrid") 
                                                [| _FDDividendEngineShiftScale.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDDividendEngineShiftScale.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -303,18 +303,18 @@ module FDDividendEngineShiftScaleFunction =
             try
 
                 let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
-                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).GetResidualTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".GetResidualTime") 
+                let source () = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".GetResidualTime") 
                                                [| _FDDividendEngineShiftScale.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDDividendEngineShiftScale.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -339,18 +339,18 @@ module FDDividendEngineShiftScaleFunction =
             try
 
                 let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
-                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".Grid") 
+                let source () = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".Grid") 
                                                [| _FDDividendEngineShiftScale.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDDividendEngineShiftScale.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDDividendEngineShiftScale> format
                     ; source = source 
@@ -375,18 +375,18 @@ module FDDividendEngineShiftScaleFunction =
             try
 
                 let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
-                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).IntrinsicValues_
+                let builder (current : ICell) = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".IntrinsicValues_") 
+                let source () = Helper.sourceFold (_FDDividendEngineShiftScale.source + ".IntrinsicValues_") 
                                                [| _FDDividendEngineShiftScale.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDDividendEngineShiftScale.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDDividendEngineShiftScale> format
                     ; source = source 
@@ -415,14 +415,14 @@ module FDDividendEngineShiftScaleFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDDividendEngineShiftScale>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FDDividendEngineShiftScale>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FDDividendEngineShiftScale>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FDDividendEngineShiftScale>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

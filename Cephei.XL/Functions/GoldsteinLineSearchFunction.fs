@@ -58,7 +58,7 @@ module GoldsteinLineSearchFunction =
                 let _alpha = Helper.toDefault<double> alpha "alpha" 0.05
                 let _beta = Helper.toDefault<double> beta "beta" 0.65
                 let _extrapolation = Helper.toDefault<double> extrapolation "extrapolation" 1.5
-                let builder () = withMnemonic mnemonic (Fun.GoldsteinLineSearch 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GoldsteinLineSearch 
                                                             _eps.cell 
                                                             _alpha.cell 
                                                             _beta.cell 
@@ -66,7 +66,7 @@ module GoldsteinLineSearchFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GoldsteinLineSearch>) l
 
-                let source = Helper.sourceFold "Fun.GoldsteinLineSearch" 
+                let source () = Helper.sourceFold "Fun.GoldsteinLineSearch" 
                                                [| _eps.source
                                                ;  _alpha.source
                                                ;  _beta.source
@@ -79,7 +79,7 @@ module GoldsteinLineSearchFunction =
                                 ;  _extrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GoldsteinLineSearch> format
                     ; source = source 
@@ -116,7 +116,7 @@ module GoldsteinLineSearchFunction =
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let _t_ini = Helper.toCell<double> t_ini "t_ini" 
-                let builder () = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).Value
                                                             _P.cell 
                                                             _ecType.cell 
                                                             _endCriteria.cell 
@@ -124,7 +124,7 @@ module GoldsteinLineSearchFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GoldsteinLineSearch.source + ".Value") 
+                let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".Value") 
                                                [| _GoldsteinLineSearch.source
                                                ;  _P.source
                                                ;  _ecType.source
@@ -139,7 +139,7 @@ module GoldsteinLineSearchFunction =
                                 ;  _t_ini.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module GoldsteinLineSearchFunction =
             try
 
                 let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
-                let builder () = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastFunctionValue
+                let builder (current : ICell) = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastFunctionValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastFunctionValue") 
+                let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastFunctionValue") 
                                                [| _GoldsteinLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module GoldsteinLineSearchFunction =
             try
 
                 let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
-                let builder () = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastGradient
+                let builder (current : ICell) = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastGradient
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastGradient") 
+                let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastGradient") 
                                                [| _GoldsteinLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GoldsteinLineSearch> format
                     ; source = source 
@@ -236,18 +236,18 @@ module GoldsteinLineSearchFunction =
             try
 
                 let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
-                let builder () = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastGradientNorm2
+                let builder (current : ICell) = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastGradientNorm2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastGradientNorm2") 
+                let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastGradientNorm2") 
                                                [| _GoldsteinLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,18 +272,18 @@ module GoldsteinLineSearchFunction =
             try
 
                 let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
-                let builder () = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastX
+                let builder (current : ICell) = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).LastX
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastX") 
+                let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastX") 
                                                [| _GoldsteinLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GoldsteinLineSearch> format
                     ; source = source 
@@ -308,18 +308,18 @@ module GoldsteinLineSearchFunction =
             try
 
                 let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
-                let builder () = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).SearchDirection
+                let builder (current : ICell) = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).SearchDirection
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GoldsteinLineSearch.source + ".SearchDirection") 
+                let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".SearchDirection") 
                                                [| _GoldsteinLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GoldsteinLineSearch> format
                     ; source = source 
@@ -344,18 +344,18 @@ module GoldsteinLineSearchFunction =
             try
 
                 let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
-                let builder () = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).Succeed
+                let builder (current : ICell) = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).Succeed
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GoldsteinLineSearch.source + ".Succeed") 
+                let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".Succeed") 
                                                [| _GoldsteinLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -392,7 +392,7 @@ module GoldsteinLineSearchFunction =
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toDefault<double> beta "beta" 0.65
                 let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" 
-                let builder () = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((GoldsteinLineSearchModel.Cast _GoldsteinLineSearch.cell).Update
                                                             _data.cell 
                                                             _direction.cell 
                                                             _beta.cell 
@@ -400,7 +400,7 @@ module GoldsteinLineSearchFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GoldsteinLineSearch.source + ".Update") 
+                let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".Update") 
                                                [| _GoldsteinLineSearch.source
                                                ;  _data.source
                                                ;  _direction.source
@@ -415,7 +415,7 @@ module GoldsteinLineSearchFunction =
                                 ;  _Constraint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -444,14 +444,14 @@ module GoldsteinLineSearchFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GoldsteinLineSearch>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GoldsteinLineSearch>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GoldsteinLineSearch>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GoldsteinLineSearch>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

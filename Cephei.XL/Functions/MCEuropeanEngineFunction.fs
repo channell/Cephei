@@ -73,7 +73,7 @@ module MCEuropeanEngineFunction =
                 let _requiredTolerance = Helper.toNullable<double> requiredTolerance "requiredTolerance"
                 let _maxSamples = Helper.toNullable<int> maxSamples "maxSamples"
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic (Fun.MCEuropeanEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MCEuropeanEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _timeStepsPerYear.cell 
@@ -86,7 +86,7 @@ module MCEuropeanEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MCEuropeanEngine>) l
 
-                let source = Helper.sourceFold "Fun.MCEuropeanEngine" 
+                let source () = Helper.sourceFold "Fun.MCEuropeanEngine" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _timeStepsPerYear.source
@@ -109,7 +109,7 @@ module MCEuropeanEngineFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MCEuropeanEngine> format
                     ; source = source 
@@ -138,14 +138,14 @@ module MCEuropeanEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MCEuropeanEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MCEuropeanEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MCEuropeanEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MCEuropeanEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

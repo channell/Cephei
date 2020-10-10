@@ -62,16 +62,16 @@ module CzechRepublicFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.CzechRepublic ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CzechRepublic ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CzechRepublic>) l
 
-                let source = Helper.sourceFold "Fun.CzechRepublic" 
+                let source () = Helper.sourceFold "Fun.CzechRepublic" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CzechRepublic> format
                     ; source = source 
@@ -96,18 +96,18 @@ module CzechRepublicFunction =
             try
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).AddedHolidays
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".AddedHolidays") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".AddedHolidays") 
                                                [| _CzechRepublic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CzechRepublic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -135,12 +135,12 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).AddHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : CzechRepublic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".AddHoliday") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".AddHoliday") 
                                                [| _CzechRepublic.source
                                                ;  _d.source
                                                |]
@@ -149,7 +149,7 @@ module CzechRepublicFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -180,13 +180,13 @@ module CzechRepublicFunction =
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Adjust
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".Adjust") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".Adjust") 
                                                [| _CzechRepublic.source
                                                ;  _d.source
                                                ;  _c.source
@@ -197,7 +197,7 @@ module CzechRepublicFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -237,7 +237,7 @@ module CzechRepublicFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Advance1
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -246,7 +246,7 @@ module CzechRepublicFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".Advance1") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".Advance1") 
                                                [| _CzechRepublic.source
                                                ;  _d.source
                                                ;  _n.source
@@ -263,7 +263,7 @@ module CzechRepublicFunction =
                                 ;  _endOfMonth.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -300,7 +300,7 @@ module CzechRepublicFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Advance
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -308,7 +308,7 @@ module CzechRepublicFunction =
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".Advance") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".Advance") 
                                                [| _CzechRepublic.source
                                                ;  _d.source
                                                ;  _p.source
@@ -323,7 +323,7 @@ module CzechRepublicFunction =
                                 ;  _endOfMonth.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -360,7 +360,7 @@ module CzechRepublicFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).BusinessDaysBetween
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -368,7 +368,7 @@ module CzechRepublicFunction =
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".BusinessDaysBetween") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".BusinessDaysBetween") 
                                                [| _CzechRepublic.source
                                                ;  _from.source
                                                ;  _To.source
@@ -383,7 +383,7 @@ module CzechRepublicFunction =
                                 ;  _includeLast.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -408,18 +408,18 @@ module CzechRepublicFunction =
             try
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".Calendar") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".Calendar") 
                                                [| _CzechRepublic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CzechRepublic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CzechRepublic> format
                     ; source = source 
@@ -444,18 +444,18 @@ module CzechRepublicFunction =
             try
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".Empty") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".Empty") 
                                                [| _CzechRepublic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CzechRepublic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -483,12 +483,12 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".EndOfMonth") 
                                                [| _CzechRepublic.source
                                                ;  _d.source
                                                |]
@@ -497,7 +497,7 @@ module CzechRepublicFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -525,12 +525,12 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".Equals") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".Equals") 
                                                [| _CzechRepublic.source
                                                ;  _o.source
                                                |]
@@ -539,7 +539,7 @@ module CzechRepublicFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -567,12 +567,12 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsBusinessDay
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".IsBusinessDay") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".IsBusinessDay") 
                                                [| _CzechRepublic.source
                                                ;  _d.source
                                                |]
@@ -581,7 +581,7 @@ module CzechRepublicFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -609,12 +609,12 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsEndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".IsEndOfMonth") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".IsEndOfMonth") 
                                                [| _CzechRepublic.source
                                                ;  _d.source
                                                |]
@@ -623,7 +623,7 @@ module CzechRepublicFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -651,12 +651,12 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".IsHoliday") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".IsHoliday") 
                                                [| _CzechRepublic.source
                                                ;  _d.source
                                                |]
@@ -665,7 +665,7 @@ module CzechRepublicFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -693,12 +693,12 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsWeekend
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".IsWeekend") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".IsWeekend") 
                                                [| _CzechRepublic.source
                                                ;  _w.source
                                                |]
@@ -707,7 +707,7 @@ module CzechRepublicFunction =
                                 ;  _w.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -734,18 +734,18 @@ module CzechRepublicFunction =
             try
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".Name") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".Name") 
                                                [| _CzechRepublic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CzechRepublic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -770,18 +770,18 @@ module CzechRepublicFunction =
             try
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).RemovedHolidays
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".RemovedHolidays") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".RemovedHolidays") 
                                                [| _CzechRepublic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CzechRepublic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -809,12 +809,12 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).RemoveHoliday
+                let builder (current : ICell) = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : CzechRepublic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CzechRepublic.source + ".RemoveHoliday") 
+                let source () = Helper.sourceFold (_CzechRepublic.source + ".RemoveHoliday") 
                                                [| _CzechRepublic.source
                                                ;  _d.source
                                                |]
@@ -823,7 +823,7 @@ module CzechRepublicFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -852,14 +852,14 @@ module CzechRepublicFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CzechRepublic>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CzechRepublic>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CzechRepublic>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CzechRepublic>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

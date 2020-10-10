@@ -59,7 +59,7 @@ module DiscountingSwapEngineFunction =
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
                 let _settlementDate = Helper.toDefault<Date> settlementDate "settlementDate" null
                 let _npvDate = Helper.toDefault<Date> npvDate "npvDate" null
-                let builder () = withMnemonic mnemonic (Fun.DiscountingSwapEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscountingSwapEngine 
                                                             _discountCurve.cell 
                                                             _includeSettlementDateFlows.cell 
                                                             _settlementDate.cell 
@@ -67,7 +67,7 @@ module DiscountingSwapEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscountingSwapEngine>) l
 
-                let source = Helper.sourceFold "Fun.DiscountingSwapEngine" 
+                let source () = Helper.sourceFold "Fun.DiscountingSwapEngine" 
                                                [| _discountCurve.source
                                                ;  _includeSettlementDateFlows.source
                                                ;  _settlementDate.source
@@ -80,7 +80,7 @@ module DiscountingSwapEngineFunction =
                                 ;  _npvDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscountingSwapEngine> format
                     ; source = source 
@@ -109,14 +109,14 @@ module DiscountingSwapEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscountingSwapEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscountingSwapEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscountingSwapEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscountingSwapEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

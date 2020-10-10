@@ -58,7 +58,7 @@ module BachelierSwaptionEngineFunction =
                 let _vol = Helper.toCell<double> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
-                let builder () = withMnemonic mnemonic (Fun.BachelierSwaptionEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSwaptionEngine 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -66,7 +66,7 @@ module BachelierSwaptionEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.BachelierSwaptionEngine" 
+                let source () = Helper.sourceFold "Fun.BachelierSwaptionEngine" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _dc.source
@@ -79,7 +79,7 @@ module BachelierSwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierSwaptionEngine> format
                     ; source = source 
@@ -113,7 +113,7 @@ module BachelierSwaptionEngineFunction =
                 let _vol = Helper.toHandle<Quote> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
-                let builder () = withMnemonic mnemonic (Fun.BachelierSwaptionEngine2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -121,7 +121,7 @@ module BachelierSwaptionEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.BachelierSwaptionEngine1" 
+                let source () = Helper.sourceFold "Fun.BachelierSwaptionEngine1" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _dc.source
@@ -134,7 +134,7 @@ module BachelierSwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierSwaptionEngine> format
                     ; source = source 
@@ -165,14 +165,14 @@ module BachelierSwaptionEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<SwaptionVolatilityStructure> vol "vol" 
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
-                let builder () = withMnemonic mnemonic (Fun.BachelierSwaptionEngine1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSwaptionEngine1
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _model.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.BachelierSwaptionEngine2" 
+                let source () = Helper.sourceFold "Fun.BachelierSwaptionEngine2" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _model.source
@@ -183,7 +183,7 @@ module BachelierSwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierSwaptionEngine> format
                     ; source = source 
@@ -209,18 +209,18 @@ module BachelierSwaptionEngineFunction =
             try
 
                 let _BachelierSwaptionEngine = Helper.toCell<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((BachelierSwaptionEngineModel.Cast _BachelierSwaptionEngine.cell).TermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((BachelierSwaptionEngineModel.Cast _BachelierSwaptionEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_BachelierSwaptionEngine.source + ".TermStructure") 
+                let source () = Helper.sourceFold (_BachelierSwaptionEngine.source + ".TermStructure") 
                                                [| _BachelierSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BachelierSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierSwaptionEngine> format
                     ; source = source 
@@ -245,18 +245,18 @@ module BachelierSwaptionEngineFunction =
             try
 
                 let _BachelierSwaptionEngine = Helper.toCell<BachelierSwaptionEngine> bachelierswaptionengine "BachelierSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((BachelierSwaptionEngineModel.Cast _BachelierSwaptionEngine.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((BachelierSwaptionEngineModel.Cast _BachelierSwaptionEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 
-                let source = Helper.sourceFold (_BachelierSwaptionEngine.source + ".Volatility") 
+                let source () = Helper.sourceFold (_BachelierSwaptionEngine.source + ".Volatility") 
                                                [| _BachelierSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BachelierSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BachelierSwaptionEngine> format
                     ; source = source 
@@ -285,14 +285,14 @@ module BachelierSwaptionEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BachelierSwaptionEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BachelierSwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BachelierSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BachelierSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

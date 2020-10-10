@@ -52,12 +52,12 @@ module LiborForwardModelFunction =
 
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Discount
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".Discount") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".Discount") 
                                                [| _LiborForwardModel.source
                                                ;  _t.source
                                                |]
@@ -66,7 +66,7 @@ module LiborForwardModelFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -100,14 +100,14 @@ module LiborForwardModelFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).DiscountBond
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).DiscountBond
                                                             _t.cell 
                                                             _maturity.cell 
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".DiscountBond") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".DiscountBond") 
                                                [| _LiborForwardModel.source
                                                ;  _t.source
                                                ;  _maturity.source
@@ -120,7 +120,7 @@ module LiborForwardModelFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,7 +157,7 @@ module LiborForwardModelFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" 
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).DiscountBondOption
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).DiscountBondOption
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _maturity.cell 
@@ -165,7 +165,7 @@ module LiborForwardModelFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".DiscountBondOption") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".DiscountBondOption") 
                                                [| _LiborForwardModel.source
                                                ;  _Type.source
                                                ;  _strike.source
@@ -180,7 +180,7 @@ module LiborForwardModelFunction =
                                 ;  _bondMaturity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -205,18 +205,18 @@ module LiborForwardModelFunction =
             try
 
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).GetSwaptionVolatilityMatrix
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).GetSwaptionVolatilityMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwaptionVolatilityMatrix>) l
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".GetSwaptionVolatilityMatrix") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".GetSwaptionVolatilityMatrix") 
                                                [| _LiborForwardModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LiborForwardModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LiborForwardModel> format
                     ; source = source 
@@ -247,14 +247,14 @@ module LiborForwardModelFunction =
                 let _Process = Helper.toCell<LiborForwardModelProcess> Process "Process" 
                 let _volaModel = Helper.toCell<LmVolatilityModel> volaModel "volaModel" 
                 let _corrModel = Helper.toCell<LmCorrelationModel> corrModel "corrModel" 
-                let builder () = withMnemonic mnemonic (Fun.LiborForwardModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LiborForwardModel 
                                                             _Process.cell 
                                                             _volaModel.cell 
                                                             _corrModel.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LiborForwardModel>) l
 
-                let source = Helper.sourceFold "Fun.LiborForwardModel" 
+                let source () = Helper.sourceFold "Fun.LiborForwardModel" 
                                                [| _Process.source
                                                ;  _volaModel.source
                                                ;  _corrModel.source
@@ -265,7 +265,7 @@ module LiborForwardModelFunction =
                                 ;  _corrModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LiborForwardModel> format
                     ; source = source 
@@ -296,13 +296,13 @@ module LiborForwardModelFunction =
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _alpha = Helper.toCell<int> alpha "alpha" 
                 let _beta = Helper.toCell<int> beta "beta" 
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).S_0
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).S_0
                                                             _alpha.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".S_0") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".S_0") 
                                                [| _LiborForwardModel.source
                                                ;  _alpha.source
                                                ;  _beta.source
@@ -313,7 +313,7 @@ module LiborForwardModelFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -341,12 +341,12 @@ module LiborForwardModelFunction =
 
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (o : LiborForwardModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".SetParams") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".SetParams") 
                                                [| _LiborForwardModel.source
                                                ;  _parameters.source
                                                |]
@@ -355,7 +355,7 @@ module LiborForwardModelFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,13 +386,13 @@ module LiborForwardModelFunction =
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _alpha = Helper.toCell<int> alpha "alpha" 
                 let _beta = Helper.toCell<int> beta "beta" 
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).W_0
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).W_0
                                                             _alpha.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".W_0") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".W_0") 
                                                [| _LiborForwardModel.source
                                                ;  _alpha.source
                                                ;  _beta.source
@@ -403,7 +403,7 @@ module LiborForwardModelFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LiborForwardModel> format
                     ; source = source 
@@ -446,7 +446,7 @@ module LiborForwardModelFunction =
                 let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
                 let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
                 let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Calibrate
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
                                                             _endCriteria.cell 
@@ -456,7 +456,7 @@ module LiborForwardModelFunction =
                                                        ) :> ICell
                 let format (o : LiborForwardModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".Calibrate") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".Calibrate") 
                                                [| _LiborForwardModel.source
                                                ;  _instruments.source
                                                ;  _Method.source
@@ -475,7 +475,7 @@ module LiborForwardModelFunction =
                                 ;  _fixParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -500,18 +500,18 @@ module LiborForwardModelFunction =
             try
 
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Constraint
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".CONSTRAINT") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".CONSTRAINT") 
                                                [| _LiborForwardModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LiborForwardModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LiborForwardModel> format
                     ; source = source 
@@ -536,18 +536,18 @@ module LiborForwardModelFunction =
             try
 
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).EndCriteria
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".EndCriteria") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".EndCriteria") 
                                                [| _LiborForwardModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LiborForwardModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -572,18 +572,18 @@ module LiborForwardModelFunction =
             try
 
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).NotifyObservers
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : LiborForwardModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".NotifyObservers") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".NotifyObservers") 
                                                [| _LiborForwardModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LiborForwardModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module LiborForwardModelFunction =
             try
 
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".Parameters") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".Parameters") 
                                                [| _LiborForwardModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LiborForwardModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LiborForwardModel> format
                     ; source = source 
@@ -647,12 +647,12 @@ module LiborForwardModelFunction =
 
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LiborForwardModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".RegisterWith") 
                                                [| _LiborForwardModel.source
                                                ;  _handler.source
                                                |]
@@ -661,7 +661,7 @@ module LiborForwardModelFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -689,12 +689,12 @@ module LiborForwardModelFunction =
 
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LiborForwardModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".UnregisterWith") 
                                                [| _LiborForwardModel.source
                                                ;  _handler.source
                                                |]
@@ -703,7 +703,7 @@ module LiborForwardModelFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -728,18 +728,18 @@ module LiborForwardModelFunction =
             try
 
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Update
                                                        ) :> ICell
                 let format (o : LiborForwardModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".Update") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".Update") 
                                                [| _LiborForwardModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LiborForwardModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -770,13 +770,13 @@ module LiborForwardModelFunction =
                 let _LiborForwardModel = Helper.toCell<LiborForwardModel> liborforwardmodel "LiborForwardModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
-                let builder () = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelModel.Cast _LiborForwardModel.cell).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LiborForwardModel.source + ".Value") 
+                let source () = Helper.sourceFold (_LiborForwardModel.source + ".Value") 
                                                [| _LiborForwardModel.source
                                                ;  _parameters.source
                                                ;  _instruments.source
@@ -787,7 +787,7 @@ module LiborForwardModelFunction =
                                 ;  _instruments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -816,14 +816,14 @@ module LiborForwardModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LiborForwardModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LiborForwardModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LiborForwardModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LiborForwardModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

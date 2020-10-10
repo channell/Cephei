@@ -49,19 +49,19 @@ module Actual360Function =
             try
 
                 let _c = Helper.toDefault<bool> c "c" false
-                let builder () = withMnemonic mnemonic (Fun.Actual360 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Actual360 
                                                             _c.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Actual360>) l
 
-                let source = Helper.sourceFold "Fun.Actual360" 
+                let source () = Helper.sourceFold "Fun.Actual360" 
                                                [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Actual360> format
                     ; source = source 
@@ -92,13 +92,13 @@ module Actual360Function =
                 let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).DayCount
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Actual360.source + ".DayCount") 
+                let source () = Helper.sourceFold (_Actual360.source + ".DayCount") 
                                                [| _Actual360.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -109,7 +109,7 @@ module Actual360Function =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -134,18 +134,18 @@ module Actual360Function =
             try
 
                 let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
-                let builder () = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Actual360.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Actual360.source + ".DayCounter") 
                                                [| _Actual360.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Actual360.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Actual360> format
                     ; source = source 
@@ -170,18 +170,18 @@ module Actual360Function =
             try
 
                 let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
-                let builder () = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Actual360.source + ".Empty") 
+                let source () = Helper.sourceFold (_Actual360.source + ".Empty") 
                                                [| _Actual360.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Actual360.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module Actual360Function =
 
                 let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Actual360.source + ".Equals") 
+                let source () = Helper.sourceFold (_Actual360.source + ".Equals") 
                                                [| _Actual360.source
                                                ;  _o.source
                                                |]
@@ -223,7 +223,7 @@ module Actual360Function =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module Actual360Function =
             try
 
                 let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
-                let builder () = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Actual360.source + ".Name") 
+                let source () = Helper.sourceFold (_Actual360.source + ".Name") 
                                                [| _Actual360.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Actual360.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module Actual360Function =
             try
 
                 let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
-                let builder () = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Actual360.source + ".ToString") 
+                let source () = Helper.sourceFold (_Actual360.source + ".ToString") 
                                                [| _Actual360.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Actual360.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -332,7 +332,7 @@ module Actual360Function =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder () = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).YearFraction
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -340,7 +340,7 @@ module Actual360Function =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Actual360.source + ".YearFraction") 
+                let source () = Helper.sourceFold (_Actual360.source + ".YearFraction") 
                                                [| _Actual360.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -355,7 +355,7 @@ module Actual360Function =
                                 ;  _refPeriodEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,13 +386,13 @@ module Actual360Function =
                 let _Actual360 = Helper.toCell<Actual360> actual360 "Actual360"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).YearFraction1
+                let builder (current : ICell) = withMnemonic mnemonic ((Actual360Model.Cast _Actual360.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Actual360.source + ".YearFraction") 
+                let source () = Helper.sourceFold (_Actual360.source + ".YearFraction") 
                                                [| _Actual360.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -403,7 +403,7 @@ module Actual360Function =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -432,14 +432,14 @@ module Actual360Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Actual360>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Actual360>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Actual360>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Actual360>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

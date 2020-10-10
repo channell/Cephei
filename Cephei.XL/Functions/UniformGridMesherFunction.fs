@@ -55,13 +55,13 @@ module UniformGridMesherFunction =
                 let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder () = withMnemonic mnemonic ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Dminus
+                let builder (current : ICell) = withMnemonic mnemonic ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Dminus
                                                             _iter.cell 
                                                             _direction.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_UniformGridMesher.source + ".Dminus") 
+                let source () = Helper.sourceFold (_UniformGridMesher.source + ".Dminus") 
                                                [| _UniformGridMesher.source
                                                ;  _iter.source
                                                ;  _direction.source
@@ -72,7 +72,7 @@ module UniformGridMesherFunction =
                                 ;  _direction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module UniformGridMesherFunction =
                 let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder () = withMnemonic mnemonic ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Dplus
+                let builder (current : ICell) = withMnemonic mnemonic ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Dplus
                                                             _iter.cell 
                                                             _direction.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_UniformGridMesher.source + ".Dplus") 
+                let source () = Helper.sourceFold (_UniformGridMesher.source + ".Dplus") 
                                                [| _UniformGridMesher.source
                                                ;  _iter.source
                                                ;  _direction.source
@@ -120,7 +120,7 @@ module UniformGridMesherFunction =
                                 ;  _direction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -151,13 +151,13 @@ module UniformGridMesherFunction =
                 let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder () = withMnemonic mnemonic ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Location
+                let builder (current : ICell) = withMnemonic mnemonic ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Location
                                                             _iter.cell 
                                                             _direction.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_UniformGridMesher.source + ".Location") 
+                let source () = Helper.sourceFold (_UniformGridMesher.source + ".Location") 
                                                [| _UniformGridMesher.source
                                                ;  _iter.source
                                                ;  _direction.source
@@ -168,7 +168,7 @@ module UniformGridMesherFunction =
                                 ;  _direction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -196,12 +196,12 @@ module UniformGridMesherFunction =
 
                 let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder () = withMnemonic mnemonic ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Locations
+                let builder (current : ICell) = withMnemonic mnemonic ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Locations
                                                             _direction.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_UniformGridMesher.source + ".Locations") 
+                let source () = Helper.sourceFold (_UniformGridMesher.source + ".Locations") 
                                                [| _UniformGridMesher.source
                                                ;  _direction.source
                                                |]
@@ -210,7 +210,7 @@ module UniformGridMesherFunction =
                                 ;  _direction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<UniformGridMesher> format
                     ; source = source 
@@ -238,13 +238,13 @@ module UniformGridMesherFunction =
 
                 let _layout = Helper.toCell<FdmLinearOpLayout> layout "layout" 
                 let _boundaries = Helper.toCell<Generic.List<Pair<Nullable<double>,Nullable<double>>>> boundaries "boundaries" 
-                let builder () = withMnemonic mnemonic (Fun.UniformGridMesher 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.UniformGridMesher 
                                                             _layout.cell 
                                                             _boundaries.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<UniformGridMesher>) l
 
-                let source = Helper.sourceFold "Fun.UniformGridMesher" 
+                let source () = Helper.sourceFold "Fun.UniformGridMesher" 
                                                [| _layout.source
                                                ;  _boundaries.source
                                                |]
@@ -253,7 +253,7 @@ module UniformGridMesherFunction =
                                 ;  _boundaries.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<UniformGridMesher> format
                     ; source = source 
@@ -278,18 +278,18 @@ module UniformGridMesherFunction =
             try
 
                 let _UniformGridMesher = Helper.toCell<UniformGridMesher> uniformgridmesher "UniformGridMesher"  
-                let builder () = withMnemonic mnemonic ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Layout
+                let builder (current : ICell) = withMnemonic mnemonic ((UniformGridMesherModel.Cast _UniformGridMesher.cell).Layout
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpLayout>) l
 
-                let source = Helper.sourceFold (_UniformGridMesher.source + ".Layout") 
+                let source () = Helper.sourceFold (_UniformGridMesher.source + ".Layout") 
                                                [| _UniformGridMesher.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _UniformGridMesher.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<UniformGridMesher> format
                     ; source = source 
@@ -318,14 +318,14 @@ module UniformGridMesherFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<UniformGridMesher>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<UniformGridMesher>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<UniformGridMesher>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<UniformGridMesher>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,12 +52,12 @@ module GaussHermitePolynomialFunction =
 
                 let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Alpha
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHermitePolynomial.source + ".Alpha") 
+                let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".Alpha") 
                                                [| _GaussHermitePolynomial.source
                                                ;  _i.source
                                                |]
@@ -66,7 +66,7 @@ module GaussHermitePolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module GaussHermitePolynomialFunction =
 
                 let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Beta
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHermitePolynomial.source + ".Beta") 
+                let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".Beta") 
                                                [| _GaussHermitePolynomial.source
                                                ;  _i.source
                                                |]
@@ -108,7 +108,7 @@ module GaussHermitePolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -133,19 +133,19 @@ module GaussHermitePolynomialFunction =
             try
 
                 let _mu = Helper.toCell<double> mu "mu" 
-                let builder () = withMnemonic mnemonic (Fun.GaussHermitePolynomial 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussHermitePolynomial 
                                                             _mu.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussHermitePolynomial>) l
 
-                let source = Helper.sourceFold "Fun.GaussHermitePolynomial" 
+                let source () = Helper.sourceFold "Fun.GaussHermitePolynomial" 
                                                [| _mu.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _mu.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussHermitePolynomial> format
                     ; source = source 
@@ -167,16 +167,16 @@ module GaussHermitePolynomialFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.GaussHermitePolynomial1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussHermitePolynomial1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussHermitePolynomial>) l
 
-                let source = Helper.sourceFold "Fun.GaussHermitePolynomial1" 
+                let source () = Helper.sourceFold "Fun.GaussHermitePolynomial1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussHermitePolynomial> format
                     ; source = source 
@@ -201,18 +201,18 @@ module GaussHermitePolynomialFunction =
             try
 
                 let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
-                let builder () = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Mu_0
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHermitePolynomial.source + ".Mu_0") 
+                let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".Mu_0") 
                                                [| _GaussHermitePolynomial.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHermitePolynomial.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,12 +240,12 @@ module GaussHermitePolynomialFunction =
 
                 let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).W
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHermitePolynomial.source + ".W") 
+                let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".W") 
                                                [| _GaussHermitePolynomial.source
                                                ;  _x.source
                                                |]
@@ -254,7 +254,7 @@ module GaussHermitePolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -285,13 +285,13 @@ module GaussHermitePolynomialFunction =
                 let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHermitePolynomial.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".Value") 
                                                [| _GaussHermitePolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -302,7 +302,7 @@ module GaussHermitePolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -333,13 +333,13 @@ module GaussHermitePolynomialFunction =
                 let _GaussHermitePolynomial = Helper.toCell<GaussHermitePolynomial> gausshermitepolynomial "GaussHermitePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).WeightedValue
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHermitePolynomialModel.Cast _GaussHermitePolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHermitePolynomial.source + ".WeightedValue") 
+                let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".WeightedValue") 
                                                [| _GaussHermitePolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -350,7 +350,7 @@ module GaussHermitePolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -379,14 +379,14 @@ module GaussHermitePolynomialFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussHermitePolynomial>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussHermitePolynomial>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussHermitePolynomial>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussHermitePolynomial>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

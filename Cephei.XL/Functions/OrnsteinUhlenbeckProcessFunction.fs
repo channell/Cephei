@@ -55,13 +55,13 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _UnnamedParameter2 = Helper.toCell<double> UnnamedParameter2 "UnnamedParameter2" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Diffusion
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Diffusion
                                                             _UnnamedParameter1.cell 
                                                             _UnnamedParameter2.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Diffusion") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Diffusion") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _UnnamedParameter1.source
                                                ;  _UnnamedParameter2.source
@@ -72,7 +72,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _UnnamedParameter2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Drift
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Drift
                                                             _UnnamedParameter1.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Drift") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Drift") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _UnnamedParameter1.source
                                                ;  _x.source
@@ -120,7 +120,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -154,14 +154,14 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Expectation
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Expectation
                                                             _UnnamedParameter1.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Expectation") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Expectation") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _UnnamedParameter1.source
                                                ;  _x0.source
@@ -174,7 +174,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -199,18 +199,18 @@ module OrnsteinUhlenbeckProcessFunction =
             try
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Level
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Level
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Level") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Level") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OrnsteinUhlenbeckProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -244,7 +244,7 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _vol = Helper.toCell<double> vol "vol" 
                 let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _level = Helper.toDefault<double> level "level" 0.0
-                let builder () = withMnemonic mnemonic (Fun.OrnsteinUhlenbeckProcess 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.OrnsteinUhlenbeckProcess 
                                                             _speed.cell 
                                                             _vol.cell 
                                                             _x0.cell 
@@ -252,7 +252,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OrnsteinUhlenbeckProcess>) l
 
-                let source = Helper.sourceFold "Fun.OrnsteinUhlenbeckProcess" 
+                let source () = Helper.sourceFold "Fun.OrnsteinUhlenbeckProcess" 
                                                [| _speed.source
                                                ;  _vol.source
                                                ;  _x0.source
@@ -265,7 +265,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _level.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OrnsteinUhlenbeckProcess> format
                     ; source = source 
@@ -290,18 +290,18 @@ module OrnsteinUhlenbeckProcessFunction =
             try
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Speed
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Speed
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Speed") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Speed") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OrnsteinUhlenbeckProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -335,14 +335,14 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).StdDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).StdDeviation
                                                             _t.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".StdDeviation") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".StdDeviation") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _t.source
                                                ;  _x0.source
@@ -355,7 +355,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -389,14 +389,14 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
                 let _UnnamedParameter2 = Helper.toCell<double> UnnamedParameter2 "UnnamedParameter2" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Variance
                                                             _UnnamedParameter1.cell 
                                                             _UnnamedParameter2.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Variance") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Variance") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _UnnamedParameter1.source
                                                ;  _UnnamedParameter2.source
@@ -409,7 +409,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -434,18 +434,18 @@ module OrnsteinUhlenbeckProcessFunction =
             try
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Volatility
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Volatility") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Volatility") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OrnsteinUhlenbeckProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -470,18 +470,18 @@ module OrnsteinUhlenbeckProcessFunction =
             try
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).X0
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".X0") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".X0") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OrnsteinUhlenbeckProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -512,13 +512,13 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Apply1
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Apply1
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Apply1") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Apply1") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _x0.source
                                                ;  _dx.source
@@ -529,7 +529,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _dx.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OrnsteinUhlenbeckProcess> format
                     ; source = source 
@@ -560,13 +560,13 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dx = Helper.toCell<double> dx "dx" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Apply
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Apply") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Apply") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _x0.source
                                                ;  _dx.source
@@ -577,7 +577,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _dx.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -614,7 +614,7 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _x0 = Helper.toCell<Vector> x0 "x0"
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<Vector> dw "dw" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Evolve
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -622,7 +622,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Evolve") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Evolve") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -637,7 +637,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _dw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OrnsteinUhlenbeckProcess> format
                     ; source = source 
@@ -674,7 +674,7 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<double> dw "dw" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Evolve1
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Evolve1
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -682,7 +682,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Evolve1") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Evolve1") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -697,7 +697,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _dw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -722,18 +722,18 @@ module OrnsteinUhlenbeckProcessFunction =
             try
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).InitialValues
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".InitialValues") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".InitialValues") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OrnsteinUhlenbeckProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OrnsteinUhlenbeckProcess> format
                     ; source = source 
@@ -758,18 +758,18 @@ module OrnsteinUhlenbeckProcessFunction =
             try
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Size") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Size") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OrnsteinUhlenbeckProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -803,14 +803,14 @@ module OrnsteinUhlenbeckProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Covariance
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Covariance") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Covariance") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -823,7 +823,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<OrnsteinUhlenbeckProcess> format
                     ; source = source 
@@ -848,18 +848,18 @@ module OrnsteinUhlenbeckProcessFunction =
             try
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Factors
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Factors") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Factors") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OrnsteinUhlenbeckProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -887,12 +887,12 @@ module OrnsteinUhlenbeckProcessFunction =
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : OrnsteinUhlenbeckProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".RegisterWith") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _handler.source
                                                |]
@@ -901,7 +901,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -929,12 +929,12 @@ module OrnsteinUhlenbeckProcessFunction =
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Time
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Time
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Time") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Time") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _d.source
                                                |]
@@ -943,7 +943,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -971,12 +971,12 @@ module OrnsteinUhlenbeckProcessFunction =
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : OrnsteinUhlenbeckProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".UnregisterWith") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                ;  _handler.source
                                                |]
@@ -985,7 +985,7 @@ module OrnsteinUhlenbeckProcessFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1010,18 +1010,18 @@ module OrnsteinUhlenbeckProcessFunction =
             try
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
-                let builder () = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((OrnsteinUhlenbeckProcessModel.Cast _OrnsteinUhlenbeckProcess.cell).Update
                                                        ) :> ICell
                 let format (o : OrnsteinUhlenbeckProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Update") 
+                let source () = Helper.sourceFold (_OrnsteinUhlenbeckProcess.source + ".Update") 
                                                [| _OrnsteinUhlenbeckProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OrnsteinUhlenbeckProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1050,14 +1050,14 @@ module OrnsteinUhlenbeckProcessFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<OrnsteinUhlenbeckProcess>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<OrnsteinUhlenbeckProcess>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<OrnsteinUhlenbeckProcess>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<OrnsteinUhlenbeckProcess>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

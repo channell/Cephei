@@ -46,16 +46,16 @@ module GRDCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.GRDCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GRDCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GRDCurrency>) l
 
-                let source = Helper.sourceFold "Fun.GRDCurrency" 
+                let source () = Helper.sourceFold "Fun.GRDCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GRDCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".Code") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".Empty") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module GRDCurrencyFunction =
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".Equals") 
                                                [| _GRDCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module GRDCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".Format") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".FractionsPerUnit") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".FractionSymbol") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".Name") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".NumericCode") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".Rounding") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GRDCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".Symbol") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".ToString") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module GRDCurrencyFunction =
             try
 
                 let _GRDCurrency = Helper.toCell<GRDCurrency> grdcurrency "GRDCurrency"  
-                let builder () = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((GRDCurrencyModel.Cast _GRDCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_GRDCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_GRDCurrency.source + ".TriangulationCurrency") 
                                                [| _GRDCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GRDCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module GRDCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GRDCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GRDCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GRDCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GRDCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

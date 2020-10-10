@@ -9,10 +9,10 @@ open Cephei.QL.Util
 open System.Collections
 open System
 
-type Clock () as this = 
+type Clock (tick : float) as this = 
     inherit Cell<DateTime> (DateTime.Now)
 
-    let _timer = new System.Timers.Timer (1000.0);
+    let _timer = new System.Timers.Timer (tick);
 
     let tick (e : System.Timers.ElapsedEventArgs) : unit = 
         this.Value <- DateTime.Now 
@@ -41,25 +41,50 @@ type Today () as this =
 
 module Today =
 
-    [<ExcelFunction(Name="_Clock", Description="Get the current date ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=false)>]
+    [<ExcelFunction(Name="_Clock", Description="Get the current date ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let clock () =
         let format (i:DateTime) (l:string) = i.ToOADate() :> obj
         Model.specify 
             { mnemonic = "Clock"
-            ; creator = fun () -> new Clock() :> ICell
+            ; creator = fun (current : ICell) -> new Clock(1000.0) :> ICell
             ; subscriber = Helper.subscriber format
-            ; source = "cell " + value.ToString()
+            ; source =  (fun () -> "cell " + value.ToString())
             ; hash = 0
             } |> ignore 
         Model.value "Clock"
 
-    [<ExcelFunction(Name="_Today", Description="Get the current date ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=false)>]
+    [<ExcelFunction(Name="_Today", Description="Get the current date ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let today () =
         let format (i:DateTime) (l:string) = i.ToOADate() :> obj
         Model.specify 
             { mnemonic = "Today"
-            ; creator = fun () -> new Today() :> ICell
+            ; creator = fun (current : ICell) -> new Today() :> ICell
             ; subscriber = Helper.subscriber format
-            ; source = "(value DateTime.Today)"
+            ; source =  (fun () -> "(value DateTime.Today)")
             ; hash = 0 
             } 
+
+    [<ExcelFunction(Name="_Recalculate", Description="duration between recalc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
+    let Recalc (tick : double) =
+        let format (i:DateTime) (l:string) = i.ToOADate() :> obj
+        Model.specify 
+            { mnemonic = "CepheiRecalc"
+            ; creator = fun (current : ICell) -> new Clock(tick) :> ICell
+            ; subscriber = Helper.subscriber format
+            ; source =  (fun () -> "cell " + value.ToString())
+            ; hash = int tick
+            } |> ignore 
+        Model.value "CepheiVersion"
+
+    [<ExcelFunction(Name="_RecalcVersion", Description="duration between recalc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
+    let CepheiVersion (tick : double) =
+        let format (i:DateTime) (l:string) = i.ToOADate() :> obj
+        Model.specify 
+            { mnemonic = "CepheiVersion"
+            ; creator = fun (current : ICell) -> (value tick) :> ICell
+            ; subscriber = Helper.subscriber format
+            ; source =  (fun () -> "cell " + value.ToString())
+            ; hash = int tick
+            } |> ignore 
+        Model.value "CepheiVersion"
+

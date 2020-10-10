@@ -49,19 +49,19 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _evaluations = Helper.toCell<int> evaluations "evaluations" 
-                let builder () = withMnemonic mnemonic (Fun.DiscreteSimpsonIntegrator 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscreteSimpsonIntegrator 
                                                             _evaluations.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscreteSimpsonIntegrator>) l
 
-                let source = Helper.sourceFold "Fun.DiscreteSimpsonIntegrator" 
+                let source () = Helper.sourceFold "Fun.DiscreteSimpsonIntegrator" 
                                                [| _evaluations.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _evaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscreteSimpsonIntegrator> format
                     ; source = source 
@@ -86,18 +86,18 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
-                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).AbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".AbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".AbsoluteAccuracy") 
                                                [| _DiscreteSimpsonIntegrator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -122,18 +122,18 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
-                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).AbsoluteError
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".AbsoluteError") 
+                let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".AbsoluteError") 
                                                [| _DiscreteSimpsonIntegrator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -158,18 +158,18 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
-                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).IntegrationSuccess
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".IntegrationSuccess") 
+                let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".IntegrationSuccess") 
                                                [| _DiscreteSimpsonIntegrator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
-                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).MaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".MaxEvaluations") 
+                let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".MaxEvaluations") 
                                                [| _DiscreteSimpsonIntegrator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
-                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).NumberOfEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".NumberOfEvaluations") 
+                let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".NumberOfEvaluations") 
                                                [| _DiscreteSimpsonIntegrator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -269,12 +269,12 @@ module DiscreteSimpsonIntegratorFunction =
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).SetAbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : DiscreteSimpsonIntegrator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".SetAbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".SetAbsoluteAccuracy") 
                                                [| _DiscreteSimpsonIntegrator.source
                                                ;  _accuracy.source
                                                |]
@@ -283,7 +283,7 @@ module DiscreteSimpsonIntegratorFunction =
                                 ;  _accuracy.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -311,12 +311,12 @@ module DiscreteSimpsonIntegratorFunction =
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).SetMaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : DiscreteSimpsonIntegrator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".SetMaxEvaluations") 
+                let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".SetMaxEvaluations") 
                                                [| _DiscreteSimpsonIntegrator.source
                                                ;  _maxEvaluations.source
                                                |]
@@ -325,7 +325,7 @@ module DiscreteSimpsonIntegratorFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -359,14 +359,14 @@ module DiscreteSimpsonIntegratorFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".Value") 
+                let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".Value") 
                                                [| _DiscreteSimpsonIntegrator.source
                                                ;  _f.source
                                                ;  _a.source
@@ -379,7 +379,7 @@ module DiscreteSimpsonIntegratorFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -408,14 +408,14 @@ module DiscreteSimpsonIntegratorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscreteSimpsonIntegrator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscreteSimpsonIntegrator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscreteSimpsonIntegrator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscreteSimpsonIntegrator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

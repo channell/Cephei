@@ -58,7 +58,7 @@ module SpreadOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.SpreadOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SpreadOption 
                                                             _payoff.cell 
                                                             _exercise.cell 
                                                             _pricingEngine.cell 
@@ -66,7 +66,7 @@ module SpreadOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SpreadOption>) l
 
-                let source = Helper.sourceFold "Fun.SpreadOption" 
+                let source () = Helper.sourceFold "Fun.SpreadOption" 
                                                [| _payoff.source
                                                ;  _exercise.source
                                                ;  _pricingEngine.source
@@ -79,7 +79,7 @@ module SpreadOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadOption> format
                     ; source = source 
@@ -104,18 +104,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".Delta") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -140,18 +140,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".DividendRho") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,18 +176,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".Gamma") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -212,18 +212,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".IsExpired") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".Rho") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".Theta") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".Vega") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,18 +356,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".Exercise") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadOption> format
                     ; source = source 
@@ -392,18 +392,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".Payoff") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadOption> format
                     ; source = source 
@@ -428,18 +428,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".CASH") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -464,18 +464,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".ErrorEstimate") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -500,18 +500,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".NPV") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -539,12 +539,12 @@ module SpreadOptionFunction =
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".Result") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".Result") 
                                                [| _SpreadOption.source
                                                ;  _tag.source
                                                |]
@@ -553,7 +553,7 @@ module SpreadOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -581,12 +581,12 @@ module SpreadOptionFunction =
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : SpreadOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".SetPricingEngine") 
                                                [| _SpreadOption.source
                                                ;  _e.source
                                                |]
@@ -595,7 +595,7 @@ module SpreadOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -620,18 +620,18 @@ module SpreadOptionFunction =
             try
 
                 let _SpreadOption = Helper.toCell<SpreadOption> spreadoption "SpreadOption"  
-                let builder () = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadOptionModel.Cast _SpreadOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SpreadOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_SpreadOption.source + ".ValuationDate") 
                                                [| _SpreadOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -660,14 +660,14 @@ module SpreadOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SpreadOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SpreadOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SpreadOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SpreadOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

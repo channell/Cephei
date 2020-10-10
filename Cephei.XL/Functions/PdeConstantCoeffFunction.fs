@@ -55,13 +55,13 @@ module PdeConstantCoeffFunction =
                 let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Diffusion
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Diffusion
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PdeConstantCoeff.source + ".Diffusion") 
+                let source () = Helper.sourceFold (_PdeConstantCoeff.source + ".Diffusion") 
                                                [| _PdeConstantCoeff.source
                                                ;  _x.source
                                                ;  _y.source
@@ -72,7 +72,7 @@ module PdeConstantCoeffFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module PdeConstantCoeffFunction =
                 let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Discount
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PdeConstantCoeff.source + ".Discount") 
+                let source () = Helper.sourceFold (_PdeConstantCoeff.source + ".Discount") 
                                                [| _PdeConstantCoeff.source
                                                ;  _x.source
                                                ;  _y.source
@@ -120,7 +120,7 @@ module PdeConstantCoeffFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -151,13 +151,13 @@ module PdeConstantCoeffFunction =
                 let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Drift
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Drift
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PdeConstantCoeff.source + ".Drift") 
+                let source () = Helper.sourceFold (_PdeConstantCoeff.source + ".Drift") 
                                                [| _PdeConstantCoeff.source
                                                ;  _x.source
                                                ;  _y.source
@@ -168,7 +168,7 @@ module PdeConstantCoeffFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -196,12 +196,12 @@ module PdeConstantCoeffFunction =
 
                 let _PdeConstantCoeff = Helper.toCell<PdeConstantCoeff> pdeconstantcoeff "PdeConstantCoeff"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).Factory
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeSecondOrderParabolic>) l
 
-                let source = Helper.sourceFold (_PdeConstantCoeff.source + ".Factory") 
+                let source () = Helper.sourceFold (_PdeConstantCoeff.source + ".Factory") 
                                                [| _PdeConstantCoeff.source
                                                ;  _Process.source
                                                |]
@@ -210,7 +210,7 @@ module PdeConstantCoeffFunction =
                                 ;  _Process.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PdeConstantCoeff> format
                     ; source = source 
@@ -241,14 +241,14 @@ module PdeConstantCoeffFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic (Fun.PdeConstantCoeff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PdeConstantCoeff 
                                                             _Process.cell 
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeConstantCoeff>) l
 
-                let source = Helper.sourceFold "Fun.PdeConstantCoeff" 
+                let source () = Helper.sourceFold "Fun.PdeConstantCoeff" 
                                                [| _Process.source
                                                ;  _t.source
                                                ;  _x.source
@@ -259,7 +259,7 @@ module PdeConstantCoeffFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PdeConstantCoeff> format
                     ; source = source 
@@ -293,14 +293,14 @@ module PdeConstantCoeffFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _tg = Helper.toCell<TransformedGrid> tg "tg" 
                 let _L = Helper.toCell<TridiagonalOperator> L "L" 
-                let builder () = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).GenerateOperator
+                let builder (current : ICell) = withMnemonic mnemonic ((PdeConstantCoeffModel.Cast _PdeConstantCoeff.cell).GenerateOperator
                                                             _t.cell 
                                                             _tg.cell 
                                                             _L.cell 
                                                        ) :> ICell
                 let format (o : PdeConstantCoeff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PdeConstantCoeff.source + ".GenerateOperator") 
+                let source () = Helper.sourceFold (_PdeConstantCoeff.source + ".GenerateOperator") 
                                                [| _PdeConstantCoeff.source
                                                ;  _t.source
                                                ;  _tg.source
@@ -313,7 +313,7 @@ module PdeConstantCoeffFunction =
                                 ;  _L.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -342,14 +342,14 @@ module PdeConstantCoeffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PdeConstantCoeff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PdeConstantCoeff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PdeConstantCoeff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PdeConstantCoeff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder () = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Btps
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Btps
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<BTP>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_RendistatoBasket.source + ".Btps") 
+                let source () = Helper.sourceFold (_RendistatoBasket.source + ".Btps") 
                                                [| _RendistatoBasket.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -85,18 +85,18 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder () = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).CleanPriceQuotes
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).CleanPriceQuotes
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Handle<Quote>>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_RendistatoBasket.source + ".CleanPriceQuotes") 
+                let source () = Helper.sourceFold (_RendistatoBasket.source + ".CleanPriceQuotes") 
                                                [| _RendistatoBasket.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -121,18 +121,18 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder () = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Outstanding
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Outstanding
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RendistatoBasket.source + ".Outstanding") 
+                let source () = Helper.sourceFold (_RendistatoBasket.source + ".Outstanding") 
                                                [| _RendistatoBasket.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder () = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Outstandings
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Outstandings
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RendistatoBasket.source + ".Outstandings") 
+                let source () = Helper.sourceFold (_RendistatoBasket.source + ".Outstandings") 
                                                [| _RendistatoBasket.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -196,12 +196,12 @@ module RendistatoBasketFunction =
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RendistatoBasket.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_RendistatoBasket.source + ".RegisterWith") 
                                                [| _RendistatoBasket.source
                                                ;  _handler.source
                                                |]
@@ -210,7 +210,7 @@ module RendistatoBasketFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -241,14 +241,14 @@ module RendistatoBasketFunction =
                 let _btps = Helper.toCell<Generic.List<BTP>> btps "btps" 
                 let _outstandings = Helper.toCell<Generic.List<double>> outstandings "outstandings" 
                 let _cleanPriceQuotes = Helper.toCell<Generic.List<Handle<Quote>>> cleanPriceQuotes "cleanPriceQuotes" 
-                let builder () = withMnemonic mnemonic (Fun.RendistatoBasket 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.RendistatoBasket 
                                                             _btps.cell 
                                                             _outstandings.cell 
                                                             _cleanPriceQuotes.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RendistatoBasket>) l
 
-                let source = Helper.sourceFold "Fun.RendistatoBasket" 
+                let source () = Helper.sourceFold "Fun.RendistatoBasket" 
                                                [| _btps.source
                                                ;  _outstandings.source
                                                ;  _cleanPriceQuotes.source
@@ -259,7 +259,7 @@ module RendistatoBasketFunction =
                                 ;  _cleanPriceQuotes.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<RendistatoBasket> format
                     ; source = source 
@@ -284,18 +284,18 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder () = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RendistatoBasket.source + ".Size") 
+                let source () = Helper.sourceFold (_RendistatoBasket.source + ".Size") 
                                                [| _RendistatoBasket.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -323,12 +323,12 @@ module RendistatoBasketFunction =
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RendistatoBasket.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_RendistatoBasket.source + ".UnregisterWith") 
                                                [| _RendistatoBasket.source
                                                ;  _handler.source
                                                |]
@@ -337,7 +337,7 @@ module RendistatoBasketFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -362,18 +362,18 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder () = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Update
                                                        ) :> ICell
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RendistatoBasket.source + ".Update") 
+                let source () = Helper.sourceFold (_RendistatoBasket.source + ".Update") 
                                                [| _RendistatoBasket.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -398,18 +398,18 @@ module RendistatoBasketFunction =
             try
 
                 let _RendistatoBasket = Helper.toCell<RendistatoBasket> rendistatobasket "RendistatoBasket"  
-                let builder () = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((RendistatoBasketModel.Cast _RendistatoBasket.cell).Weights
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_RendistatoBasket.source + ".Weights") 
+                let source () = Helper.sourceFold (_RendistatoBasket.source + ".Weights") 
                                                [| _RendistatoBasket.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -438,14 +438,14 @@ module RendistatoBasketFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RendistatoBasket>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RendistatoBasket>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RendistatoBasket>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RendistatoBasket>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

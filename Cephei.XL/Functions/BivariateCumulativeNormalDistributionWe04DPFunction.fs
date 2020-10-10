@@ -49,19 +49,19 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
             try
 
                 let _rho = Helper.toCell<double> rho "rho" 
-                let builder () = withMnemonic mnemonic (Fun.BivariateCumulativeNormalDistributionWe04DP 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BivariateCumulativeNormalDistributionWe04DP 
                                                             _rho.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BivariateCumulativeNormalDistributionWe04DP>) l
 
-                let source = Helper.sourceFold "Fun.BivariateCumulativeNormalDistributionWe04DP" 
+                let source () = Helper.sourceFold "Fun.BivariateCumulativeNormalDistributionWe04DP" 
                                                [| _rho.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rho.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BivariateCumulativeNormalDistributionWe04DP> format
                     ; source = source 
@@ -92,13 +92,13 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
                 let _BivariateCumulativeNormalDistributionWe04DP = Helper.toCell<BivariateCumulativeNormalDistributionWe04DP> bivariatecumulativenormaldistributionwe04dp "BivariateCumulativeNormalDistributionWe04DP"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BivariateCumulativeNormalDistributionWe04DPModel.Cast _BivariateCumulativeNormalDistributionWe04DP.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BivariateCumulativeNormalDistributionWe04DPModel.Cast _BivariateCumulativeNormalDistributionWe04DP.cell).Value
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BivariateCumulativeNormalDistributionWe04DP.source + ".Value") 
+                let source () = Helper.sourceFold (_BivariateCumulativeNormalDistributionWe04DP.source + ".Value") 
                                                [| _BivariateCumulativeNormalDistributionWe04DP.source
                                                ;  _x.source
                                                ;  _y.source
@@ -109,7 +109,7 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -138,14 +138,14 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BivariateCumulativeNormalDistributionWe04DP>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BivariateCumulativeNormalDistributionWe04DP>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BivariateCumulativeNormalDistributionWe04DP>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BivariateCumulativeNormalDistributionWe04DP>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -40,14 +40,14 @@ module ENumFunctions =
 
                 let _<#= name #> : <#= ename #> =  Enum.Parse(typeof<<#= ename #>>, value) :?> <#= ename #>
 
-                let builder () = Util.value _<#= name #> :> ICell
+                let builder (current : ICell) = Util.value _<#= name #> :> ICell
                 let format (i : <#= ename #>) (l:string) = i.ToString() :> obj
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
-                    ; source = "value " + _<#= name #>.ToString()
+                    ; source =  (fun () -> "value " + _<#= name #>.ToString())
                     ; hash = _<#= name #>.GetHashCode()
                     } :?> string
             with

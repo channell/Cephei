@@ -55,13 +55,13 @@ module DiscountFunction =
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).DiscountImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Discount.source + ".DiscountImpl") 
+                let source () = Helper.sourceFold (_Discount.source + ".DiscountImpl") 
                                                [| _Discount.source
                                                ;  _i.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module DiscountFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module DiscountFunction =
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).ForwardImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Discount.source + ".ForwardImpl") 
+                let source () = Helper.sourceFold (_Discount.source + ".ForwardImpl") 
                                                [| _Discount.source
                                                ;  _i.source
                                                ;  _t.source
@@ -120,7 +120,7 @@ module DiscountFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,7 +157,7 @@ module DiscountFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).Guess
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -165,7 +165,7 @@ module DiscountFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Discount.source + ".Guess") 
+                let source () = Helper.sourceFold (_Discount.source + ".Guess") 
                                                [| _Discount.source
                                                ;  _i.source
                                                ;  _c.source
@@ -180,7 +180,7 @@ module DiscountFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -208,12 +208,12 @@ module DiscountFunction =
 
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).InitialDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Discount.source + ".InitialDate") 
+                let source () = Helper.sourceFold (_Discount.source + ".InitialDate") 
                                                [| _Discount.source
                                                ;  _c.source
                                                |]
@@ -222,7 +222,7 @@ module DiscountFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -250,12 +250,12 @@ module DiscountFunction =
 
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).InitialValue
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Discount.source + ".InitialValue") 
+                let source () = Helper.sourceFold (_Discount.source + ".InitialValue") 
                                                [| _Discount.source
                                                ;  _c.source
                                                |]
@@ -264,7 +264,7 @@ module DiscountFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,18 +289,18 @@ module DiscountFunction =
             try
 
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
-                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).MaxIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Discount.source + ".MaxIterations") 
+                let source () = Helper.sourceFold (_Discount.source + ".MaxIterations") 
                                                [| _Discount.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,7 +337,7 @@ module DiscountFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).MaxValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -345,7 +345,7 @@ module DiscountFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Discount.source + ".MaxValueAfter") 
+                let source () = Helper.sourceFold (_Discount.source + ".MaxValueAfter") 
                                                [| _Discount.source
                                                ;  _i.source
                                                ;  _c.source
@@ -360,7 +360,7 @@ module DiscountFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -397,7 +397,7 @@ module DiscountFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).MinValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -405,7 +405,7 @@ module DiscountFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Discount.source + ".MinValueAfter") 
+                let source () = Helper.sourceFold (_Discount.source + ".MinValueAfter") 
                                                [| _Discount.source
                                                ;  _i.source
                                                ;  _c.source
@@ -420,7 +420,7 @@ module DiscountFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -454,14 +454,14 @@ module DiscountFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).UpdateGuess
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).UpdateGuess
                                                             _data.cell 
                                                             _discount.cell 
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : Discount) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Discount.source + ".UpdateGuess") 
+                let source () = Helper.sourceFold (_Discount.source + ".UpdateGuess") 
                                                [| _Discount.source
                                                ;  _data.source
                                                ;  _discount.source
@@ -474,7 +474,7 @@ module DiscountFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -505,13 +505,13 @@ module DiscountFunction =
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).ZeroYieldImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Discount.source + ".ZeroYieldImpl") 
+                let source () = Helper.sourceFold (_Discount.source + ".ZeroYieldImpl") 
                                                [| _Discount.source
                                                ;  _i.source
                                                ;  _t.source
@@ -522,7 +522,7 @@ module DiscountFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -551,14 +551,14 @@ module DiscountFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Discount>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Discount>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Discount>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Discount>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

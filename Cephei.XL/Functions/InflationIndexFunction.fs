@@ -58,14 +58,14 @@ module InflationIndexFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toDefault<bool> forceOverwrite "forceOverwrite" false
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".AddFixing") 
                                                [| _InflationIndex.source
                                                ;  _fixingDate.source
                                                ;  _fixing.source
@@ -78,7 +78,7 @@ module InflationIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -104,18 +104,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AvailabilityLag
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".AvailabilityLag") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".AvailabilityLag") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InflationIndex> format
                     ; source = source 
@@ -140,18 +140,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".Currency") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".Currency") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InflationIndex> format
                     ; source = source 
@@ -176,18 +176,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".FamilyName") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -218,13 +218,13 @@ module InflationIndexFunction =
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toDefault<bool> forecastTodaysFixing "forecastTodaysFixing" false
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".Fixing") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".Fixing") 
                                                [| _InflationIndex.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -235,7 +235,7 @@ module InflationIndexFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,18 +260,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".FixingCalendar") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InflationIndex> format
                     ; source = source 
@@ -296,18 +296,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".Frequency") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".Frequency") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -350,7 +350,7 @@ module InflationIndexFunction =
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _availabilitiyLag = Helper.toCell<Period> availabilitiyLag "availabilitiyLag" 
                 let _currency = Helper.toCell<Currency> currency "currency" 
-                let builder () = withMnemonic mnemonic (Fun.InflationIndex 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InflationIndex 
                                                             _familyName.cell 
                                                             _region.cell 
                                                             _revised.cell 
@@ -361,7 +361,7 @@ module InflationIndexFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationIndex>) l
 
-                let source = Helper.sourceFold "Fun.InflationIndex" 
+                let source () = Helper.sourceFold "Fun.InflationIndex" 
                                                [| _familyName.source
                                                ;  _region.source
                                                ;  _revised.source
@@ -380,7 +380,7 @@ module InflationIndexFunction =
                                 ;  _currency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InflationIndex> format
                     ; source = source 
@@ -405,18 +405,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Interpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".Interpolated") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".Interpolated") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -444,12 +444,12 @@ module InflationIndexFunction =
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".IsValidFixingDate") 
                                                [| _InflationIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -458,7 +458,7 @@ module InflationIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -483,18 +483,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".Name") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".Name") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -519,18 +519,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Region
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".Region") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".Region") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InflationIndex> format
                     ; source = source 
@@ -555,18 +555,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Revised
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".Revised") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".Revised") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -591,18 +591,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).Update
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".Update") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".Update") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -636,14 +636,14 @@ module InflationIndexFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toDefault<bool> forceOverwrite "forceOverwrite" false
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".AddFixings") 
                                                [| _InflationIndex.source
                                                ;  _d.source
                                                ;  _v.source
@@ -656,7 +656,7 @@ module InflationIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -687,13 +687,13 @@ module InflationIndexFunction =
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toDefault<bool> forceOverwrite "forceOverwrite" false
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".AddFixings1") 
                                                [| _InflationIndex.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -704,7 +704,7 @@ module InflationIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -729,18 +729,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".AllowsNativeFixings") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -765,18 +765,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".ClearFixings") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -804,12 +804,12 @@ module InflationIndexFunction =
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".RegisterWith") 
                                                [| _InflationIndex.source
                                                ;  _handler.source
                                                |]
@@ -818,7 +818,7 @@ module InflationIndexFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -843,18 +843,18 @@ module InflationIndexFunction =
             try
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".TimeSeries") 
                                                [| _InflationIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -882,12 +882,12 @@ module InflationIndexFunction =
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((InflationIndexModel.Cast _InflationIndex.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : InflationIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InflationIndex.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_InflationIndex.source + ".UnregisterWith") 
                                                [| _InflationIndex.source
                                                ;  _handler.source
                                                |]
@@ -896,7 +896,7 @@ module InflationIndexFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -925,14 +925,14 @@ module InflationIndexFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InflationIndex>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InflationIndex>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InflationIndex>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InflationIndex>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

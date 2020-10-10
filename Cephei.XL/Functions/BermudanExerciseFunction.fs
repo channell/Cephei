@@ -49,19 +49,19 @@ module BermudanExerciseFunction =
             try
 
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
-                let builder () = withMnemonic mnemonic (Fun.BermudanExercise 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BermudanExercise 
                                                             _dates.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BermudanExercise>) l
 
-                let source = Helper.sourceFold "Fun.BermudanExercise" 
+                let source () = Helper.sourceFold "Fun.BermudanExercise" 
                                                [| _dates.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _dates.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BermudanExercise> format
                     ; source = source 
@@ -89,13 +89,13 @@ module BermudanExerciseFunction =
 
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" 
-                let builder () = withMnemonic mnemonic (Fun.BermudanExercise1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BermudanExercise1 
                                                             _dates.cell 
                                                             _payoffAtExpiry.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BermudanExercise>) l
 
-                let source = Helper.sourceFold "Fun.BermudanExercise1" 
+                let source () = Helper.sourceFold "Fun.BermudanExercise1" 
                                                [| _dates.source
                                                ;  _payoffAtExpiry.source
                                                |]
@@ -104,7 +104,7 @@ module BermudanExerciseFunction =
                                 ;  _payoffAtExpiry.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BermudanExercise> format
                     ; source = source 
@@ -129,18 +129,18 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder () = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).PayoffAtExpiry
+                let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BermudanExercise.source + ".PayoffAtExpiry") 
+                let source () = Helper.sourceFold (_BermudanExercise.source + ".PayoffAtExpiry") 
                                                [| _BermudanExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BermudanExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -168,12 +168,12 @@ module BermudanExerciseFunction =
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Date
                                                             _index.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BermudanExercise.source + ".Date") 
+                let source () = Helper.sourceFold (_BermudanExercise.source + ".Date") 
                                                [| _BermudanExercise.source
                                                ;  _index.source
                                                |]
@@ -182,7 +182,7 @@ module BermudanExerciseFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -207,18 +207,18 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder () = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Dates
+                let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_BermudanExercise.source + ".Dates") 
+                let source () = Helper.sourceFold (_BermudanExercise.source + ".Dates") 
                                                [| _BermudanExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BermudanExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -243,18 +243,18 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder () = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).LastDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BermudanExercise.source + ".LastDate") 
+                let source () = Helper.sourceFold (_BermudanExercise.source + ".LastDate") 
                                                [| _BermudanExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BermudanExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -279,18 +279,18 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder () = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BermudanExercise.source + ".TYPE") 
+                let source () = Helper.sourceFold (_BermudanExercise.source + ".TYPE") 
                                                [| _BermudanExercise.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BermudanExercise.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -319,14 +319,14 @@ module BermudanExerciseFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BermudanExercise>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BermudanExercise>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BermudanExercise>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BermudanExercise>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

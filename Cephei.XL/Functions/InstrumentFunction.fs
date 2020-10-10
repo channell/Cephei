@@ -49,18 +49,18 @@ module InstrumentFunction =
             try
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
-                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Instrument.source + ".CASH") 
+                let source () = Helper.sourceFold (_Instrument.source + ".CASH") 
                                                [| _Instrument.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module InstrumentFunction =
             try
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
-                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Instrument.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_Instrument.source + ".ErrorEstimate") 
                                                [| _Instrument.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module InstrumentFunction =
             try
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
-                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Instrument.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_Instrument.source + ".IsExpired") 
                                                [| _Instrument.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module InstrumentFunction =
             try
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
-                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Instrument.source + ".NPV") 
+                let source () = Helper.sourceFold (_Instrument.source + ".NPV") 
                                                [| _Instrument.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -196,12 +196,12 @@ module InstrumentFunction =
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Instrument.source + ".Result") 
+                let source () = Helper.sourceFold (_Instrument.source + ".Result") 
                                                [| _Instrument.source
                                                ;  _tag.source
                                                |]
@@ -210,7 +210,7 @@ module InstrumentFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -238,12 +238,12 @@ module InstrumentFunction =
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Instrument) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Instrument.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_Instrument.source + ".SetPricingEngine") 
                                                [| _Instrument.source
                                                ;  _e.source
                                                |]
@@ -252,7 +252,7 @@ module InstrumentFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -277,18 +277,18 @@ module InstrumentFunction =
             try
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
-                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Instrument.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_Instrument.source + ".ValuationDate") 
                                                [| _Instrument.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -317,14 +317,14 @@ module InstrumentFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Instrument>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Instrument>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Instrument>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Instrument>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

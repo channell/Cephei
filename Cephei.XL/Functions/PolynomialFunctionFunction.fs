@@ -49,18 +49,18 @@ module PolynomialFunctionFunction =
             try
 
                 let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
-                let builder () = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Coefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Coefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PolynomialFunction.source + ".Coefficients") 
+                let source () = Helper.sourceFold (_PolynomialFunction.source + ".Coefficients") 
                                                [| _PolynomialFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -91,13 +91,13 @@ module PolynomialFunctionFunction =
                 let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DefiniteDerivativeCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DefiniteDerivativeCoefficients
                                                             _t.cell 
                                                             _t2.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PolynomialFunction.source + ".DefiniteDerivativeCoefficients") 
+                let source () = Helper.sourceFold (_PolynomialFunction.source + ".DefiniteDerivativeCoefficients") 
                                                [| _PolynomialFunction.source
                                                ;  _t.source
                                                ;  _t2.source
@@ -108,7 +108,7 @@ module PolynomialFunctionFunction =
                                 ;  _t2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -139,13 +139,13 @@ module PolynomialFunctionFunction =
                 let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DefiniteIntegral
+                let builder (current : ICell) = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DefiniteIntegral
                                                             _t1.cell 
                                                             _t2.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PolynomialFunction.source + ".DefiniteIntegral") 
+                let source () = Helper.sourceFold (_PolynomialFunction.source + ".DefiniteIntegral") 
                                                [| _PolynomialFunction.source
                                                ;  _t1.source
                                                ;  _t2.source
@@ -156,7 +156,7 @@ module PolynomialFunctionFunction =
                                 ;  _t2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -187,13 +187,13 @@ module PolynomialFunctionFunction =
                 let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DefiniteIntegralCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DefiniteIntegralCoefficients
                                                             _t.cell 
                                                             _t2.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PolynomialFunction.source + ".DefiniteIntegralCoefficients") 
+                let source () = Helper.sourceFold (_PolynomialFunction.source + ".DefiniteIntegralCoefficients") 
                                                [| _PolynomialFunction.source
                                                ;  _t.source
                                                ;  _t2.source
@@ -204,7 +204,7 @@ module PolynomialFunctionFunction =
                                 ;  _t2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -232,12 +232,12 @@ module PolynomialFunctionFunction =
 
                 let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Derivative
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PolynomialFunction.source + ".Derivative") 
+                let source () = Helper.sourceFold (_PolynomialFunction.source + ".Derivative") 
                                                [| _PolynomialFunction.source
                                                ;  _t.source
                                                |]
@@ -246,7 +246,7 @@ module PolynomialFunctionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -271,18 +271,18 @@ module PolynomialFunctionFunction =
             try
 
                 let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
-                let builder () = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DerivativeCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).DerivativeCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PolynomialFunction.source + ".DerivativeCoefficients") 
+                let source () = Helper.sourceFold (_PolynomialFunction.source + ".DerivativeCoefficients") 
                                                [| _PolynomialFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -307,18 +307,18 @@ module PolynomialFunctionFunction =
             try
 
                 let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
-                let builder () = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Order
+                let builder (current : ICell) = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PolynomialFunction.source + ".Order") 
+                let source () = Helper.sourceFold (_PolynomialFunction.source + ".Order") 
                                                [| _PolynomialFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -343,19 +343,19 @@ module PolynomialFunctionFunction =
             try
 
                 let _coeff = Helper.toCell<Generic.List<double>> coeff "coeff" 
-                let builder () = withMnemonic mnemonic (Fun.PolynomialFunction 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PolynomialFunction 
                                                             _coeff.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PolynomialFunction>) l
 
-                let source = Helper.sourceFold "Fun.PolynomialFunction" 
+                let source () = Helper.sourceFold "Fun.PolynomialFunction" 
                                                [| _coeff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _coeff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PolynomialFunction> format
                     ; source = source 
@@ -383,12 +383,12 @@ module PolynomialFunctionFunction =
 
                 let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Primitive
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PolynomialFunction.source + ".Primitive") 
+                let source () = Helper.sourceFold (_PolynomialFunction.source + ".Primitive") 
                                                [| _PolynomialFunction.source
                                                ;  _t.source
                                                |]
@@ -397,7 +397,7 @@ module PolynomialFunctionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -422,18 +422,18 @@ module PolynomialFunctionFunction =
             try
 
                 let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
-                let builder () = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).PrimitiveCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).PrimitiveCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_PolynomialFunction.source + ".PrimitiveCoefficients") 
+                let source () = Helper.sourceFold (_PolynomialFunction.source + ".PrimitiveCoefficients") 
                                                [| _PolynomialFunction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -461,12 +461,12 @@ module PolynomialFunctionFunction =
 
                 let _PolynomialFunction = Helper.toCell<PolynomialFunction> polynomialfunction "PolynomialFunction"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((PolynomialFunctionModel.Cast _PolynomialFunction.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PolynomialFunction.source + ".Value") 
+                let source () = Helper.sourceFold (_PolynomialFunction.source + ".Value") 
                                                [| _PolynomialFunction.source
                                                ;  _t.source
                                                |]
@@ -475,7 +475,7 @@ module PolynomialFunctionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -504,14 +504,14 @@ module PolynomialFunctionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PolynomialFunction>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PolynomialFunction>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PolynomialFunction>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PolynomialFunction>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

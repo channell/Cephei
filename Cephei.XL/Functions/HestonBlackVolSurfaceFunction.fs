@@ -49,19 +49,19 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _hestonModel = Helper.toHandle<HestonModel> hestonModel "hestonModel" 
-                let builder () = withMnemonic mnemonic (Fun.HestonBlackVolSurface 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.HestonBlackVolSurface 
                                                             _hestonModel.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HestonBlackVolSurface>) l
 
-                let source = Helper.sourceFold "Fun.HestonBlackVolSurface" 
+                let source () = Helper.sourceFold "Fun.HestonBlackVolSurface" 
                                                [| _hestonModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _hestonModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<HestonBlackVolSurface> format
                     ; source = source 
@@ -86,18 +86,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".MaxDate") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -122,18 +122,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".MaxStrike") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -158,18 +158,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".MinStrike") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,7 +206,7 @@ module HestonBlackVolSurfaceFunction =
                 let _time2 = Helper.toCell<double> time2 "time2" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVariance
                                                             _time1.cell 
                                                             _time2.cell 
                                                             _strike.cell 
@@ -214,7 +214,7 @@ module HestonBlackVolSurfaceFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackForwardVariance") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackForwardVariance") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _time1.source
                                                ;  _time2.source
@@ -229,7 +229,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,7 +266,7 @@ module HestonBlackVolSurfaceFunction =
                 let _date2 = Helper.toCell<Date> date2 "date2" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVariance1
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVariance1
                                                             _date1.cell 
                                                             _date2.cell 
                                                             _strike.cell 
@@ -274,7 +274,7 @@ module HestonBlackVolSurfaceFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackForwardVariance1") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackForwardVariance1") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _date1.source
                                                ;  _date2.source
@@ -289,7 +289,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,7 +326,7 @@ module HestonBlackVolSurfaceFunction =
                 let _date2 = Helper.toCell<Date> date2 "date2" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVol1
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVol1
                                                             _date1.cell 
                                                             _date2.cell 
                                                             _strike.cell 
@@ -334,7 +334,7 @@ module HestonBlackVolSurfaceFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackForwardVol1") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackForwardVol1") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _date1.source
                                                ;  _date2.source
@@ -349,7 +349,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,7 +386,7 @@ module HestonBlackVolSurfaceFunction =
                 let _time2 = Helper.toCell<double> time2 "time2" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVol
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVol
                                                             _time1.cell 
                                                             _time2.cell 
                                                             _strike.cell 
@@ -394,7 +394,7 @@ module HestonBlackVolSurfaceFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackForwardVol") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackForwardVol") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _time1.source
                                                ;  _time2.source
@@ -409,7 +409,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -443,14 +443,14 @@ module HestonBlackVolSurfaceFunction =
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVariance1
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVariance1
                                                             _maturity.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackVariance1") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackVariance1") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _maturity.source
                                                ;  _strike.source
@@ -463,7 +463,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -497,14 +497,14 @@ module HestonBlackVolSurfaceFunction =
                 let _maturity = Helper.toCell<Date> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVariance
                                                             _maturity.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackVariance") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackVariance") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _maturity.source
                                                ;  _strike.source
@@ -517,7 +517,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -551,14 +551,14 @@ module HestonBlackVolSurfaceFunction =
                 let _maturity = Helper.toCell<Date> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVol
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVol
                                                             _maturity.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackVol") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackVol") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _maturity.source
                                                ;  _strike.source
@@ -571,7 +571,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -605,14 +605,14 @@ module HestonBlackVolSurfaceFunction =
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVol1
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVol1
                                                             _maturity.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackVol1") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".BlackVol1") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _maturity.source
                                                ;  _strike.source
@@ -625,7 +625,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -650,18 +650,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".BusinessDayConvention") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -689,12 +689,12 @@ module HestonBlackVolSurfaceFunction =
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).OptionDateFromTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".OptionDateFromTenor") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".OptionDateFromTenor") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _p.source
                                                |]
@@ -703,7 +703,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -728,18 +728,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".Calendar") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".Calendar") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<HestonBlackVolSurface> format
                     ; source = source 
@@ -764,18 +764,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".DayCounter") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<HestonBlackVolSurface> format
                     ; source = source 
@@ -800,18 +800,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".MaxTime") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -836,18 +836,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".ReferenceDate") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -872,18 +872,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".SettlementDays") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -911,12 +911,12 @@ module HestonBlackVolSurfaceFunction =
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".TimeFromReference") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _date.source
                                                |]
@@ -925,7 +925,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -950,18 +950,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).Update
                                                        ) :> ICell
                 let format (o : HestonBlackVolSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".Update") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".Update") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -986,18 +986,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".AllowsExtrapolation") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1025,12 +1025,12 @@ module HestonBlackVolSurfaceFunction =
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : HestonBlackVolSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".DisableExtrapolation") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _b.source
                                                |]
@@ -1039,7 +1039,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1067,12 +1067,12 @@ module HestonBlackVolSurfaceFunction =
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : HestonBlackVolSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".EnableExtrapolation") 
                                                [| _HestonBlackVolSurface.source
                                                ;  _b.source
                                                |]
@@ -1081,7 +1081,7 @@ module HestonBlackVolSurfaceFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1106,18 +1106,18 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonBlackVolSurface.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_HestonBlackVolSurface.source + ".Extrapolate") 
                                                [| _HestonBlackVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonBlackVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1146,14 +1146,14 @@ module HestonBlackVolSurfaceFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HestonBlackVolSurface>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<HestonBlackVolSurface>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<HestonBlackVolSurface>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<HestonBlackVolSurface>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

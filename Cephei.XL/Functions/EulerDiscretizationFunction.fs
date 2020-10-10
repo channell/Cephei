@@ -61,7 +61,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Covariance
+                let builder (current : ICell) = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Covariance
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -69,7 +69,7 @@ module EulerDiscretizationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_EulerDiscretization.source + ".Covariance") 
+                let source () = Helper.sourceFold (_EulerDiscretization.source + ".Covariance") 
                                                [| _EulerDiscretization.source
                                                ;  _Process.source
                                                ;  _t0.source
@@ -84,7 +84,7 @@ module EulerDiscretizationFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EulerDiscretization> format
                     ; source = source 
@@ -121,7 +121,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Diffusion
+                let builder (current : ICell) = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Diffusion
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -129,7 +129,7 @@ module EulerDiscretizationFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EulerDiscretization.source + ".Diffusion") 
+                let source () = Helper.sourceFold (_EulerDiscretization.source + ".Diffusion") 
                                                [| _EulerDiscretization.source
                                                ;  _Process.source
                                                ;  _t0.source
@@ -144,7 +144,7 @@ module EulerDiscretizationFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -181,7 +181,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Diffusion1
+                let builder (current : ICell) = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Diffusion1
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -189,7 +189,7 @@ module EulerDiscretizationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_EulerDiscretization.source + ".Diffusion1") 
+                let source () = Helper.sourceFold (_EulerDiscretization.source + ".Diffusion1") 
                                                [| _EulerDiscretization.source
                                                ;  _Process.source
                                                ;  _t0.source
@@ -204,7 +204,7 @@ module EulerDiscretizationFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EulerDiscretization> format
                     ; source = source 
@@ -241,7 +241,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Drift1
+                let builder (current : ICell) = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Drift1
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -249,7 +249,7 @@ module EulerDiscretizationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_EulerDiscretization.source + ".Drift1") 
+                let source () = Helper.sourceFold (_EulerDiscretization.source + ".Drift1") 
                                                [| _EulerDiscretization.source
                                                ;  _Process.source
                                                ;  _t0.source
@@ -264,7 +264,7 @@ module EulerDiscretizationFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EulerDiscretization> format
                     ; source = source 
@@ -301,7 +301,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Drift
+                let builder (current : ICell) = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Drift
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -309,7 +309,7 @@ module EulerDiscretizationFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EulerDiscretization.source + ".Drift") 
+                let source () = Helper.sourceFold (_EulerDiscretization.source + ".Drift") 
                                                [| _EulerDiscretization.source
                                                ;  _Process.source
                                                ;  _t0.source
@@ -324,7 +324,7 @@ module EulerDiscretizationFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -361,7 +361,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Variance
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -369,7 +369,7 @@ module EulerDiscretizationFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EulerDiscretization.source + ".Variance") 
+                let source () = Helper.sourceFold (_EulerDiscretization.source + ".Variance") 
                                                [| _EulerDiscretization.source
                                                ;  _Process.source
                                                ;  _t0.source
@@ -384,7 +384,7 @@ module EulerDiscretizationFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -413,14 +413,14 @@ module EulerDiscretizationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EulerDiscretization>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EulerDiscretization>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EulerDiscretization>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EulerDiscretization>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

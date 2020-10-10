@@ -55,13 +55,13 @@ module FdmDirichletBoundaryFunction =
                 let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _x = Helper.toCell<double> x "x" 
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyAfterApplying1
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyAfterApplying1
                                                             _x.cell 
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmDirichletBoundary.source + ".ApplyAfterApplying1") 
+                let source () = Helper.sourceFold (_FdmDirichletBoundary.source + ".ApplyAfterApplying1") 
                                                [| _FdmDirichletBoundary.source
                                                ;  _x.source
                                                ;  _value.source
@@ -72,7 +72,7 @@ module FdmDirichletBoundaryFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -100,12 +100,12 @@ module FdmDirichletBoundaryFunction =
 
                 let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyAfterApplying
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyAfterApplying
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : FdmDirichletBoundary) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmDirichletBoundary.source + ".ApplyAfterApplying") 
+                let source () = Helper.sourceFold (_FdmDirichletBoundary.source + ".ApplyAfterApplying") 
                                                [| _FdmDirichletBoundary.source
                                                ;  _v.source
                                                |]
@@ -114,7 +114,7 @@ module FdmDirichletBoundaryFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -142,12 +142,12 @@ module FdmDirichletBoundaryFunction =
 
                 let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyAfterSolving
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyAfterSolving
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : FdmDirichletBoundary) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmDirichletBoundary.source + ".ApplyAfterSolving") 
+                let source () = Helper.sourceFold (_FdmDirichletBoundary.source + ".ApplyAfterSolving") 
                                                [| _FdmDirichletBoundary.source
                                                ;  _v.source
                                                |]
@@ -156,7 +156,7 @@ module FdmDirichletBoundaryFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -184,12 +184,12 @@ module FdmDirichletBoundaryFunction =
 
                 let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _o = Helper.toCell<IOperator> o "o" 
-                let builder () = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyBeforeApplying
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyBeforeApplying
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : FdmDirichletBoundary) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmDirichletBoundary.source + ".ApplyBeforeApplying") 
+                let source () = Helper.sourceFold (_FdmDirichletBoundary.source + ".ApplyBeforeApplying") 
                                                [| _FdmDirichletBoundary.source
                                                ;  _o.source
                                                |]
@@ -198,7 +198,7 @@ module FdmDirichletBoundaryFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,13 +229,13 @@ module FdmDirichletBoundaryFunction =
                 let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _o = Helper.toCell<IOperator> o "o" 
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyBeforeSolving
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).ApplyBeforeSolving
                                                             _o.cell 
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : FdmDirichletBoundary) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmDirichletBoundary.source + ".ApplyBeforeSolving") 
+                let source () = Helper.sourceFold (_FdmDirichletBoundary.source + ".ApplyBeforeSolving") 
                                                [| _FdmDirichletBoundary.source
                                                ;  _o.source
                                                ;  _v.source
@@ -246,7 +246,7 @@ module FdmDirichletBoundaryFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -280,7 +280,7 @@ module FdmDirichletBoundaryFunction =
                 let _valueOnBoundary = Helper.toCell<double> valueOnBoundary "valueOnBoundary" 
                 let _direction = Helper.toCell<int> direction "direction" 
                 let _side = Helper.toCell<BoundaryCondition<FdmLinearOp>.Side> side "side" 
-                let builder () = withMnemonic mnemonic (Fun.FdmDirichletBoundary 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmDirichletBoundary 
                                                             _mesher.cell 
                                                             _valueOnBoundary.cell 
                                                             _direction.cell 
@@ -288,7 +288,7 @@ module FdmDirichletBoundaryFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmDirichletBoundary>) l
 
-                let source = Helper.sourceFold "Fun.FdmDirichletBoundary" 
+                let source () = Helper.sourceFold "Fun.FdmDirichletBoundary" 
                                                [| _mesher.source
                                                ;  _valueOnBoundary.source
                                                ;  _direction.source
@@ -301,7 +301,7 @@ module FdmDirichletBoundaryFunction =
                                 ;  _side.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmDirichletBoundary> format
                     ; source = source 
@@ -329,12 +329,12 @@ module FdmDirichletBoundaryFunction =
 
                 let _FdmDirichletBoundary = Helper.toCell<FdmDirichletBoundary> fdmdirichletboundary "FdmDirichletBoundary"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmDirichletBoundaryModel.Cast _FdmDirichletBoundary.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FdmDirichletBoundary) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmDirichletBoundary.source + ".SetTime") 
+                let source () = Helper.sourceFold (_FdmDirichletBoundary.source + ".SetTime") 
                                                [| _FdmDirichletBoundary.source
                                                ;  _t.source
                                                |]
@@ -343,7 +343,7 @@ module FdmDirichletBoundaryFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -372,14 +372,14 @@ module FdmDirichletBoundaryFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmDirichletBoundary>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmDirichletBoundary>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmDirichletBoundary>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmDirichletBoundary>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

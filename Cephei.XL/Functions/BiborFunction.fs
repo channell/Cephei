@@ -52,13 +52,13 @@ module BiborFunction =
 
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.Bibor 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Bibor 
                                                             _tenor.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bibor>) l
 
-                let source = Helper.sourceFold "Fun.Bibor" 
+                let source () = Helper.sourceFold "Fun.Bibor" 
                                                [| _tenor.source
                                                ;  _h.source
                                                |]
@@ -67,7 +67,7 @@ module BiborFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bibor> format
                     ; source = source 
@@ -92,18 +92,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_Bibor.source + ".BusinessDayConvention") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,12 +131,12 @@ module BiborFunction =
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_Bibor.source + ".Clone") 
+                let source () = Helper.sourceFold (_Bibor.source + ".Clone") 
                                                [| _Bibor.source
                                                ;  _forwarding.source
                                                |]
@@ -145,7 +145,7 @@ module BiborFunction =
                                 ;  _forwarding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bibor> format
                     ; source = source 
@@ -170,18 +170,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_Bibor.source + ".EndOfMonth") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -215,14 +215,14 @@ module BiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".ForecastFixing1") 
+                let source () = Helper.sourceFold (_Bibor.source + ".ForecastFixing1") 
                                                [| _Bibor.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -235,7 +235,7 @@ module BiborFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -263,12 +263,12 @@ module BiborFunction =
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_Bibor.source + ".ForecastFixing") 
                                                [| _Bibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -277,7 +277,7 @@ module BiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_Bibor.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_Bibor.source + ".ForwardingTermStructure") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bibor> format
                     ; source = source 
@@ -341,12 +341,12 @@ module BiborFunction =
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_Bibor.source + ".MaturityDate") 
                                                [| _Bibor.source
                                                ;  _valueDate.source
                                                |]
@@ -355,7 +355,7 @@ module BiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,18 +380,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_Bibor.source + ".Currency") 
+                let source () = Helper.sourceFold (_Bibor.source + ".Currency") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bibor> format
                     ; source = source 
@@ -416,18 +416,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Bibor.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Bibor.source + ".DayCounter") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bibor> format
                     ; source = source 
@@ -452,18 +452,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_Bibor.source + ".FamilyName") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -494,13 +494,13 @@ module BiborFunction =
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".Fixing") 
+                let source () = Helper.sourceFold (_Bibor.source + ".Fixing") 
                                                [| _Bibor.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -511,7 +511,7 @@ module BiborFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -536,18 +536,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_Bibor.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_Bibor.source + ".FixingCalendar") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bibor> format
                     ; source = source 
@@ -575,12 +575,12 @@ module BiborFunction =
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_Bibor.source + ".FixingDate") 
                                                [| _Bibor.source
                                                ;  _valueDate.source
                                                |]
@@ -589,7 +589,7 @@ module BiborFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -614,18 +614,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_Bibor.source + ".FixingDays") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -653,12 +653,12 @@ module BiborFunction =
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_Bibor.source + ".IsValidFixingDate") 
                                                [| _Bibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -667,7 +667,7 @@ module BiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -692,18 +692,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".Name") 
+                let source () = Helper.sourceFold (_Bibor.source + ".Name") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -731,12 +731,12 @@ module BiborFunction =
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_Bibor.source + ".PastFixing") 
                                                [| _Bibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -745,7 +745,7 @@ module BiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -770,18 +770,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_Bibor.source + ".Tenor") 
+                let source () = Helper.sourceFold (_Bibor.source + ".Tenor") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bibor> format
                     ; source = source 
@@ -806,18 +806,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).Update
                                                        ) :> ICell
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".Update") 
+                let source () = Helper.sourceFold (_Bibor.source + ".Update") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -845,12 +845,12 @@ module BiborFunction =
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_Bibor.source + ".ValueDate") 
                                                [| _Bibor.source
                                                ;  _fixingDate.source
                                                |]
@@ -859,7 +859,7 @@ module BiborFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -893,14 +893,14 @@ module BiborFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_Bibor.source + ".AddFixing") 
                                                [| _Bibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -913,7 +913,7 @@ module BiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -947,14 +947,14 @@ module BiborFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_Bibor.source + ".AddFixings") 
                                                [| _Bibor.source
                                                ;  _d.source
                                                ;  _v.source
@@ -967,7 +967,7 @@ module BiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -998,13 +998,13 @@ module BiborFunction =
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_Bibor.source + ".AddFixings1") 
                                                [| _Bibor.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1015,7 +1015,7 @@ module BiborFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1040,18 +1040,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_Bibor.source + ".AllowsNativeFixings") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1076,18 +1076,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_Bibor.source + ".ClearFixings") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1115,12 +1115,12 @@ module BiborFunction =
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Bibor.source + ".RegisterWith") 
                                                [| _Bibor.source
                                                ;  _handler.source
                                                |]
@@ -1129,7 +1129,7 @@ module BiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1154,18 +1154,18 @@ module BiborFunction =
             try
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_Bibor.source + ".TimeSeries") 
                                                [| _Bibor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1193,12 +1193,12 @@ module BiborFunction =
 
                 let _Bibor = Helper.toCell<Bibor> bibor "Bibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((BiborModel.Cast _Bibor.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Bibor.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Bibor.source + ".UnregisterWith") 
                                                [| _Bibor.source
                                                ;  _handler.source
                                                |]
@@ -1207,7 +1207,7 @@ module BiborFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1236,14 +1236,14 @@ module BiborFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Bibor>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Bibor>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Bibor>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Bibor>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

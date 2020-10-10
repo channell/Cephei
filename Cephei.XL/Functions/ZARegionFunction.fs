@@ -46,16 +46,16 @@ module ZARegionFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ZARegion ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ZARegion ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZARegion>) l
 
-                let source = Helper.sourceFold "Fun.ZARegion" 
+                let source () = Helper.sourceFold "Fun.ZARegion" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ZARegion> format
                     ; source = source 
@@ -80,18 +80,18 @@ module ZARegionFunction =
             try
 
                 let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
-                let builder () = withMnemonic mnemonic ((ZARegionModel.Cast _ZARegion.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARegionModel.Cast _ZARegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARegion.source + ".Code") 
+                let source () = Helper.sourceFold (_ZARegion.source + ".Code") 
                                                [| _ZARegion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARegion.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -119,12 +119,12 @@ module ZARegionFunction =
 
                 let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((ZARegionModel.Cast _ZARegion.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARegionModel.Cast _ZARegion.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARegion.source + ".Equals") 
+                let source () = Helper.sourceFold (_ZARegion.source + ".Equals") 
                                                [| _ZARegion.source
                                                ;  _o.source
                                                |]
@@ -133,7 +133,7 @@ module ZARegionFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -158,18 +158,18 @@ module ZARegionFunction =
             try
 
                 let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
-                let builder () = withMnemonic mnemonic ((ZARegionModel.Cast _ZARegion.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((ZARegionModel.Cast _ZARegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZARegion.source + ".Name") 
+                let source () = Helper.sourceFold (_ZARegion.source + ".Name") 
                                                [| _ZARegion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARegion.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -198,14 +198,14 @@ module ZARegionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZARegion>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ZARegion>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ZARegion>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ZARegion>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

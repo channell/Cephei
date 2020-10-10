@@ -49,19 +49,19 @@ module FloatingTypePayoffFunction =
             try
 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic (Fun.FloatingTypePayoff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FloatingTypePayoff 
                                                             _Type.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingTypePayoff>) l
 
-                let source = Helper.sourceFold "Fun.FloatingTypePayoff" 
+                let source () = Helper.sourceFold "Fun.FloatingTypePayoff" 
                                                [| _Type.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FloatingTypePayoff> format
                     ; source = source 
@@ -86,18 +86,18 @@ module FloatingTypePayoffFunction =
             try
 
                 let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
-                let builder () = withMnemonic mnemonic ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FloatingTypePayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_FloatingTypePayoff.source + ".Name") 
                                                [| _FloatingTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -125,12 +125,12 @@ module FloatingTypePayoffFunction =
 
                 let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
                 let _k = Helper.toCell<double> k "k" 
-                let builder () = withMnemonic mnemonic ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Value
                                                             _k.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FloatingTypePayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_FloatingTypePayoff.source + ".Value") 
                                                [| _FloatingTypePayoff.source
                                                ;  _k.source
                                                |]
@@ -139,7 +139,7 @@ module FloatingTypePayoffFunction =
                                 ;  _k.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module FloatingTypePayoffFunction =
             try
 
                 let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
-                let builder () = withMnemonic mnemonic ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FloatingTypePayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_FloatingTypePayoff.source + ".Description") 
                                                [| _FloatingTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module FloatingTypePayoffFunction =
             try
 
                 let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
-                let builder () = withMnemonic mnemonic ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).OptionType
+                let builder (current : ICell) = withMnemonic mnemonic ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FloatingTypePayoff.source + ".OptionType") 
+                let source () = Helper.sourceFold (_FloatingTypePayoff.source + ".OptionType") 
                                                [| _FloatingTypePayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingTypePayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -239,12 +239,12 @@ module FloatingTypePayoffFunction =
 
                 let _FloatingTypePayoff = Helper.toCell<FloatingTypePayoff> floatingtypepayoff "FloatingTypePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((FloatingTypePayoffModel.Cast _FloatingTypePayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : FloatingTypePayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FloatingTypePayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_FloatingTypePayoff.source + ".Accept") 
                                                [| _FloatingTypePayoff.source
                                                ;  _v.source
                                                |]
@@ -253,7 +253,7 @@ module FloatingTypePayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -282,14 +282,14 @@ module FloatingTypePayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FloatingTypePayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FloatingTypePayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FloatingTypePayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FloatingTypePayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

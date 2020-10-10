@@ -70,7 +70,7 @@ module MCEuropeanHestonEngineFunction =
                 let _requiredTolerance = Helper.toNullable<double> requiredTolerance "requiredTolerance"
                 let _maxSamples = Helper.toNullable<int> maxSamples "maxSamples"
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic (Fun.MCEuropeanHestonEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MCEuropeanHestonEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _timeStepsPerYear.cell 
@@ -82,7 +82,7 @@ module MCEuropeanHestonEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MCEuropeanHestonEngine>) l
 
-                let source = Helper.sourceFold "Fun.MCEuropeanHestonEngine" 
+                let source () = Helper.sourceFold "Fun.MCEuropeanHestonEngine" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _timeStepsPerYear.source
@@ -103,7 +103,7 @@ module MCEuropeanHestonEngineFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MCEuropeanHestonEngine> format
                     ; source = source 
@@ -132,14 +132,14 @@ module MCEuropeanHestonEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MCEuropeanHestonEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MCEuropeanHestonEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MCEuropeanHestonEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MCEuropeanHestonEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

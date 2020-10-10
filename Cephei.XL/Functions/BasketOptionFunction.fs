@@ -58,7 +58,7 @@ module BasketOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.BasketOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BasketOption 
                                                             _payoff.cell 
                                                             _exercise.cell 
                                                             _pricingEngine.cell 
@@ -66,7 +66,7 @@ module BasketOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BasketOption>) l
 
-                let source = Helper.sourceFold "Fun.BasketOption" 
+                let source () = Helper.sourceFold "Fun.BasketOption" 
                                                [| _payoff.source
                                                ;  _exercise.source
                                                ;  _pricingEngine.source
@@ -79,7 +79,7 @@ module BasketOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BasketOption> format
                     ; source = source 
@@ -104,18 +104,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".Delta") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -140,18 +140,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".DividendRho") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,18 +176,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".Gamma") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -212,18 +212,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".IsExpired") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".Rho") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".Theta") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".Vega") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,18 +356,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_BasketOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".Exercise") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BasketOption> format
                     ; source = source 
@@ -392,18 +392,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_BasketOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".Payoff") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BasketOption> format
                     ; source = source 
@@ -428,18 +428,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".CASH") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -464,18 +464,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".ErrorEstimate") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -500,18 +500,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".NPV") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -539,12 +539,12 @@ module BasketOptionFunction =
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".Result") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".Result") 
                                                [| _BasketOption.source
                                                ;  _tag.source
                                                |]
@@ -553,7 +553,7 @@ module BasketOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -581,12 +581,12 @@ module BasketOptionFunction =
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : BasketOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".SetPricingEngine") 
                                                [| _BasketOption.source
                                                ;  _e.source
                                                |]
@@ -595,7 +595,7 @@ module BasketOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -620,18 +620,18 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BasketOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_BasketOption.source + ".ValuationDate") 
                                                [| _BasketOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -660,14 +660,14 @@ module BasketOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BasketOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BasketOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BasketOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BasketOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).AtmLevel
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".AtmLevel") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".AtmLevel") 
                                                [| _AtmSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -88,13 +88,13 @@ module AtmSmileSectionFunction =
 
                 let _source = Helper.toCell<SmileSection> source "source" 
                 let _atm = Helper.toNullable<double> atm "atm"
-                let builder () = withMnemonic mnemonic (Fun.AtmSmileSection 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AtmSmileSection 
                                                             _source.cell 
                                                             _atm.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AtmSmileSection>) l
 
-                let source = Helper.sourceFold "Fun.AtmSmileSection" 
+                let source () = Helper.sourceFold "Fun.AtmSmileSection" 
                                                [| _source.source
                                                ;  _atm.source
                                                |]
@@ -103,7 +103,7 @@ module AtmSmileSectionFunction =
                                 ;  _atm.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AtmSmileSection> format
                     ; source = source 
@@ -128,18 +128,18 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".DayCounter") 
                                                [| _AtmSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AtmSmileSection> format
                     ; source = source 
@@ -164,18 +164,18 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ExerciseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".ExerciseDate") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".ExerciseDate") 
                                                [| _AtmSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ExerciseTime
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".ExerciseTime") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".ExerciseTime") 
                                                [| _AtmSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,18 +236,18 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".MaxStrike") 
                                                [| _AtmSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,18 +272,18 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".MinStrike") 
                                                [| _AtmSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,18 +308,18 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".ReferenceDate") 
                                                [| _AtmSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,18 +344,18 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Shift
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".Shift") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".Shift") 
                                                [| _AtmSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,18 +380,18 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).VolatilityType
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".VolatilityType") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".VolatilityType") 
                                                [| _AtmSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -425,14 +425,14 @@ module AtmSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Density
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Density
                                                             _strike.cell 
                                                             _discount.cell 
                                                             _gap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".Density") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".Density") 
                                                [| _AtmSmileSection.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -445,7 +445,7 @@ module AtmSmileSectionFunction =
                                 ;  _gap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,7 +482,7 @@ module AtmSmileSectionFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).DigitalOptionPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).DigitalOptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -490,7 +490,7 @@ module AtmSmileSectionFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".DigitalOptionPrice") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".DigitalOptionPrice") 
                                                [| _AtmSmileSection.source
                                                ;  _strike.source
                                                ;  _Type.source
@@ -505,7 +505,7 @@ module AtmSmileSectionFunction =
                                 ;  _gap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -539,14 +539,14 @@ module AtmSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).OptionPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).OptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".OptionPrice") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".OptionPrice") 
                                                [| _AtmSmileSection.source
                                                ;  _strike.source
                                                ;  _Type.source
@@ -559,7 +559,7 @@ module AtmSmileSectionFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -584,18 +584,18 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : AtmSmileSection) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".Update") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".Update") 
                                                [| _AtmSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -623,12 +623,12 @@ module AtmSmileSectionFunction =
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Variance
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".Variance") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".Variance") 
                                                [| _AtmSmileSection.source
                                                ;  _strike.source
                                                |]
@@ -637,7 +637,7 @@ module AtmSmileSectionFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -668,13 +668,13 @@ module AtmSmileSectionFunction =
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Vega
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".Vega") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".Vega") 
                                                [| _AtmSmileSection.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -685,7 +685,7 @@ module AtmSmileSectionFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -719,14 +719,14 @@ module AtmSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toCell<double> shift "shift" 
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 
                                                             _shift.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".Volatility") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".Volatility") 
                                                [| _AtmSmileSection.source
                                                ;  _strike.source
                                                ;  _volatilityType.source
@@ -739,7 +739,7 @@ module AtmSmileSectionFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -767,12 +767,12 @@ module AtmSmileSectionFunction =
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Volatility1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AtmSmileSection.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_AtmSmileSection.source + ".Volatility1") 
                                                [| _AtmSmileSection.source
                                                ;  _strike.source
                                                |]
@@ -781,7 +781,7 @@ module AtmSmileSectionFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -810,14 +810,14 @@ module AtmSmileSectionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AtmSmileSection>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AtmSmileSection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AtmSmileSection>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AtmSmileSection>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

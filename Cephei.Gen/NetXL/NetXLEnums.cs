@@ -96,7 +96,7 @@ namespace Cephei.Gen.NetXL
             
             #line default
             #line hidden
-            this.Write("\r\n\r\n                let builder () = Util.value _");
+            this.Write("\r\n\r\n                let builder (current : ICell) = Util.value _");
             
             #line 43 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
@@ -113,10 +113,10 @@ namespace Cephei.Gen.NetXL
             this.Write(@") (l:string) = i.ToString() :> obj
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
-                    ; source = ""value "" + _");
+                    ; source =  (fun () -> ""value "" + _)");
             
             #line 50 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));

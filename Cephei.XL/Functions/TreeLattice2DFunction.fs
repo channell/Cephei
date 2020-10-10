@@ -58,14 +58,14 @@ module TreeLattice2DFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Descendant
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Descendant
                                                             _i.cell 
                                                             _index.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".Descendant") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".Descendant") 
                                                [| _TreeLattice2D.source
                                                ;  _i.source
                                                ;  _index.source
@@ -78,7 +78,7 @@ module TreeLattice2DFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -106,12 +106,12 @@ module TreeLattice2DFunction =
 
                 let _TreeLattice2D = Helper.toCell<TreeLattice2D> treelattice2d "TreeLattice2D"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Grid
                                                             _t.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".Grid") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".Grid") 
                                                [| _TreeLattice2D.source
                                                ;  _t.source
                                                |]
@@ -120,7 +120,7 @@ module TreeLattice2DFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TreeLattice2D> format
                     ; source = source 
@@ -154,14 +154,14 @@ module TreeLattice2DFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Probability
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Probability
                                                             _i.cell 
                                                             _index.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".Probability") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".Probability") 
                                                [| _TreeLattice2D.source
                                                ;  _i.source
                                                ;  _index.source
@@ -174,7 +174,7 @@ module TreeLattice2DFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -202,12 +202,12 @@ module TreeLattice2DFunction =
 
                 let _TreeLattice2D = Helper.toCell<TreeLattice2D> treelattice2d "TreeLattice2D"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".Size") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".Size") 
                                                [| _TreeLattice2D.source
                                                ;  _i.source
                                                |]
@@ -216,7 +216,7 @@ module TreeLattice2DFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -247,14 +247,14 @@ module TreeLattice2DFunction =
                 let _tree1 = Helper.toCell<TrinomialTree> tree1 "tree1" 
                 let _tree2 = Helper.toCell<TrinomialTree> tree2 "tree2" 
                 let _correlation = Helper.toCell<double> correlation "correlation" 
-                let builder () = withMnemonic mnemonic (Fun.TreeLattice2D 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeLattice2D 
                                                             _tree1.cell 
                                                             _tree2.cell 
                                                             _correlation.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeLattice2D>) l
 
-                let source = Helper.sourceFold "Fun.TreeLattice2D" 
+                let source () = Helper.sourceFold "Fun.TreeLattice2D" 
                                                [| _tree1.source
                                                ;  _tree2.source
                                                ;  _correlation.source
@@ -265,7 +265,7 @@ module TreeLattice2DFunction =
                                 ;  _correlation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TreeLattice2D> format
                     ; source = source 
@@ -296,13 +296,13 @@ module TreeLattice2DFunction =
                 let _TreeLattice2D = Helper.toCell<TreeLattice2D> treelattice2d "TreeLattice2D"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Initialize
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Initialize
                                                             _asset.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : TreeLattice2D) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".Initialize") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".Initialize") 
                                                [| _TreeLattice2D.source
                                                ;  _asset.source
                                                ;  _t.source
@@ -313,7 +313,7 @@ module TreeLattice2DFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,13 +344,13 @@ module TreeLattice2DFunction =
                 let _TreeLattice2D = Helper.toCell<TreeLattice2D> treelattice2d "TreeLattice2D"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).PartialRollback
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).PartialRollback
                                                             _asset.cell 
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : TreeLattice2D) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".PartialRollback") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".PartialRollback") 
                                                [| _TreeLattice2D.source
                                                ;  _asset.source
                                                ;  _To.source
@@ -361,7 +361,7 @@ module TreeLattice2DFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -389,12 +389,12 @@ module TreeLattice2DFunction =
 
                 let _TreeLattice2D = Helper.toCell<TreeLattice2D> treelattice2d "TreeLattice2D"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).PresentValue
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).PresentValue
                                                             _asset.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".PresentValue") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".PresentValue") 
                                                [| _TreeLattice2D.source
                                                ;  _asset.source
                                                |]
@@ -403,7 +403,7 @@ module TreeLattice2DFunction =
                                 ;  _asset.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -434,13 +434,13 @@ module TreeLattice2DFunction =
                 let _TreeLattice2D = Helper.toCell<TreeLattice2D> treelattice2d "TreeLattice2D"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Rollback
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Rollback
                                                             _asset.cell 
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : TreeLattice2D) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".Rollback") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".Rollback") 
                                                [| _TreeLattice2D.source
                                                ;  _asset.source
                                                ;  _To.source
@@ -451,7 +451,7 @@ module TreeLattice2DFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -479,12 +479,12 @@ module TreeLattice2DFunction =
 
                 let _TreeLattice2D = Helper.toCell<TreeLattice2D> treelattice2d "TreeLattice2D"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).StatePrices
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).StatePrices
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".StatePrices") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".StatePrices") 
                                                [| _TreeLattice2D.source
                                                ;  _i.source
                                                |]
@@ -493,7 +493,7 @@ module TreeLattice2DFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TreeLattice2D> format
                     ; source = source 
@@ -527,14 +527,14 @@ module TreeLattice2DFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _values = Helper.toCell<Vector> values "values" 
                 let _newValues = Helper.toCell<Vector> newValues "newValues" 
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Stepback
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).Stepback
                                                             _i.cell 
                                                             _values.cell 
                                                             _newValues.cell 
                                                        ) :> ICell
                 let format (o : TreeLattice2D) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".Stepback") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".Stepback") 
                                                [| _TreeLattice2D.source
                                                ;  _i.source
                                                ;  _values.source
@@ -547,7 +547,7 @@ module TreeLattice2DFunction =
                                 ;  _newValues.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -572,18 +572,18 @@ module TreeLattice2DFunction =
             try
 
                 let _TreeLattice2D = Helper.toCell<TreeLattice2D> treelattice2d "TreeLattice2D"  
-                let builder () = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).TimeGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeLattice2DModel.Cast _TreeLattice2D.cell).TimeGrid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
-                let source = Helper.sourceFold (_TreeLattice2D.source + ".TimeGrid") 
+                let source () = Helper.sourceFold (_TreeLattice2D.source + ".TimeGrid") 
                                                [| _TreeLattice2D.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeLattice2D.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TreeLattice2D> format
                     ; source = source 
@@ -612,14 +612,14 @@ module TreeLattice2DFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TreeLattice2D>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TreeLattice2D>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TreeLattice2D>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TreeLattice2D>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,12 +52,12 @@ module DateFunction =
 
                 let _Date = Helper.toCell<Date> date "Date"  
                 let _obj = Helper.toCell<Object> obj "obj" 
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).CompareTo
                                                             _obj.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_Date.source + ".CompareTo") 
                                                [| _Date.source
                                                ;  _obj.source
                                                |]
@@ -66,7 +66,7 @@ module DateFunction =
                                 ;  _obj.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,19 +91,19 @@ module DateFunction =
             try
 
                 let _d = Helper.toCell<DateTime> d "d" 
-                let builder () = withMnemonic mnemonic (Fun.Date4 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Date4 
                                                             _d.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Date>) l
 
-                let source = Helper.sourceFold "Fun.Date4" 
+                let source () = Helper.sourceFold "Fun.Date4" 
                                                [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
@@ -146,7 +146,7 @@ module DateFunction =
                 let _mi = Helper.toDefault<int> mi "mi" 0
                 let _s = Helper.toDefault<int> s "s" 0
                 let _ms = Helper.toDefault<int> ms "ms" 0
-                let builder () = withMnemonic mnemonic (Fun.Date5
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Date5
                                                             _d.cell 
                                                             _m.cell 
                                                             _y.cell 
@@ -157,7 +157,7 @@ module DateFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Date>) l
 
-                let source = Helper.sourceFold "Fun.Date2" 
+                let source () = Helper.sourceFold "Fun.Date2" 
                                                [| _d.source
                                                ;  _m.source
                                                ;  _y.source
@@ -176,7 +176,7 @@ module DateFunction =
                                 ;  _ms.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
@@ -207,14 +207,14 @@ module DateFunction =
                 let _d = Helper.toCell<int> d "d" 
                 let _m = Helper.toCell<int> m "m" 
                 let _y = Helper.toCell<int> y "y" 
-                let builder () = withMnemonic mnemonic (Fun.Date3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Date3 
                                                             _d.cell 
                                                             _m.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Date>) l
 
-                let source = Helper.sourceFold "Fun.Date3" 
+                let source () = Helper.sourceFold "Fun.Date3" 
                                                [| _d.source
                                                ;  _m.source
                                                ;  _y.source
@@ -225,7 +225,7 @@ module DateFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
@@ -268,7 +268,7 @@ module DateFunction =
                 let _mi = Helper.toDefault<int> mi "mi" 0
                 let _s = Helper.toDefault<int> s "s" 0
                 let _ms = Helper.toDefault<int> ms "ms" 0
-                let builder () = withMnemonic mnemonic (Fun.Date2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Date2
                                                             _d.cell 
                                                             _m.cell 
                                                             _y.cell 
@@ -279,7 +279,7 @@ module DateFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Date>) l
 
-                let source = Helper.sourceFold "Fun.Date2" 
+                let source () = Helper.sourceFold "Fun.Date2" 
                                                [| _d.source
                                                ;  _m.source
                                                ;  _y.source
@@ -298,7 +298,7 @@ module DateFunction =
                                 ;  _ms.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
@@ -323,19 +323,19 @@ module DateFunction =
             try
 
                 let _serialNumber = Helper.toCell<int> serialNumber "serialNumber" 
-                let builder () = withMnemonic mnemonic (Fun.Date1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Date1
                                                             _serialNumber.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Date>) l
 
-                let source = Helper.sourceFold "Fun.Date1" 
+                let source () = Helper.sourceFold "Fun.Date1" 
                                                [| _serialNumber.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _serialNumber.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
@@ -357,16 +357,16 @@ module DateFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Date ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Date ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Date>) l
 
-                let source = Helper.sourceFold "Fun.Date" 
+                let source () = Helper.sourceFold "Fun.Date" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Date> format
                     ; source = source 
@@ -391,18 +391,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Day
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Day
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".Day") 
+                let source () = Helper.sourceFold (_Date.source + ".Day") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -427,18 +427,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).DayOfWeek
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).DayOfWeek
                                                        ) :> ICell
                 let format (o : DayOfWeek) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".DayOfWeek") 
+                let source () = Helper.sourceFold (_Date.source + ".DayOfWeek") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -463,18 +463,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).DayOfYear
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).DayOfYear
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".DayOfYear") 
+                let source () = Helper.sourceFold (_Date.source + ".DayOfYear") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -502,12 +502,12 @@ module DateFunction =
 
                 let _Date = Helper.toCell<Date> date "Date"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".Equals") 
+                let source () = Helper.sourceFold (_Date.source + ".Equals") 
                                                [| _Date.source
                                                ;  _o.source
                                                |]
@@ -516,7 +516,7 @@ module DateFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -541,18 +541,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).FractionOfDay
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).FractionOfDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".FractionOfDay") 
+                let source () = Helper.sourceFold (_Date.source + ".FractionOfDay") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -577,18 +577,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).FractionOfSecond
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).FractionOfSecond
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".FractionOfSecond") 
+                let source () = Helper.sourceFold (_Date.source + ".FractionOfSecond") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -613,18 +613,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Hours
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Hours
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".Hours") 
+                let source () = Helper.sourceFold (_Date.source + ".Hours") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -649,18 +649,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Milliseconds
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Milliseconds
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".Milliseconds") 
+                let source () = Helper.sourceFold (_Date.source + ".Milliseconds") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -685,18 +685,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Minutes
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Minutes
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".Minutes") 
+                let source () = Helper.sourceFold (_Date.source + ".Minutes") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -721,18 +721,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Month
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Month
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".Month") 
+                let source () = Helper.sourceFold (_Date.source + ".Month") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -757,19 +757,19 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel1.Cast _Date.cell).Seconds
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel1.Cast _Date.cell).Seconds
 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".Seconds") 
+                let source () = Helper.sourceFold (_Date.source + ".Seconds") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -794,18 +794,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).SerialNumber
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).SerialNumber
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".SerialNumber") 
+                let source () = Helper.sourceFold (_Date.source + ".SerialNumber") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -830,18 +830,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToLongDateString
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToLongDateString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".ToLongDateString") 
+                let source () = Helper.sourceFold (_Date.source + ".ToLongDateString") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -866,18 +866,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToShortDateString
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToShortDateString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".ToShortDateString") 
+                let source () = Helper.sourceFold (_Date.source + ".ToShortDateString") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -908,13 +908,13 @@ module DateFunction =
                 let _Date = Helper.toCell<Date> date "Date"  
                 let _format = Helper.toCell<string> format "format" 
                 let _provider = Helper.toCell<IFormatProvider> provider "provider" 
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToString2 
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToString2 
                                                             _format.cell 
                                                             _provider.cell 
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".ToString2") 
+                let source () = Helper.sourceFold (_Date.source + ".ToString2") 
                                                [| _Date.source
                                                ;  _format.source
                                                ;  _provider.source
@@ -925,7 +925,7 @@ module DateFunction =
                                 ;  _provider.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -953,12 +953,12 @@ module DateFunction =
 
                 let _Date = Helper.toCell<Date> date "Date"  
                 let _format = Helper.toCell<string> format "format" 
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToString3
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToString3
                                                             _format.cell 
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".ToString3") 
+                let source () = Helper.sourceFold (_Date.source + ".ToString3") 
                                                [| _Date.source
                                                ;  _format.source
                                                |]
@@ -967,7 +967,7 @@ module DateFunction =
                                 ;  _format.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -995,13 +995,13 @@ module DateFunction =
 
                 let _Date = Helper.toCell<Date> date "Date"  
                 let _provider = Helper.toCell<IFormatProvider> provider "provider" 
-                let builder () = withMnemonic mnemonic ((DateModel1.Cast _Date.cell).ToString1
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel1.Cast _Date.cell).ToString1
                                                             _provider.cell 
                                                        ) :> ICell
 
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".ToString1") 
+                let source () = Helper.sourceFold (_Date.source + ".ToString1") 
                                                [| _Date.source
                                                ;  _provider.source
                                                |]
@@ -1010,7 +1010,7 @@ module DateFunction =
                                 ;  _provider.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1035,18 +1035,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".ToString") 
+                let source () = Helper.sourceFold (_Date.source + ".ToString") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1071,18 +1071,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Weekday
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Weekday
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".Weekday") 
+                let source () = Helper.sourceFold (_Date.source + ".Weekday") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1108,18 +1108,18 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Year
+                let builder (current : ICell) = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Year
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Date.source + ".Year") 
+                let source () = Helper.sourceFold (_Date.source + ".Year") 
                                                [| _Date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1148,14 +1148,14 @@ module DateFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Date>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Date>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Date>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -61,7 +61,7 @@ module JarrowRuddFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Factory
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -69,7 +69,7 @@ module JarrowRuddFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JarrowRudd>) l
 
-                let source = Helper.sourceFold (_JarrowRudd.source + ".Factory") 
+                let source () = Helper.sourceFold (_JarrowRudd.source + ".Factory") 
                                                [| _JarrowRudd.source
                                                ;  _Process.source
                                                ;  _End.source
@@ -84,7 +84,7 @@ module JarrowRuddFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JarrowRudd> format
                     ; source = source 
@@ -118,7 +118,7 @@ module JarrowRuddFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic (Fun.JarrowRudd1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.JarrowRudd1 
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -126,7 +126,7 @@ module JarrowRuddFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JarrowRudd>) l
 
-                let source = Helper.sourceFold "Fun.JarrowRudd1" 
+                let source () = Helper.sourceFold "Fun.JarrowRudd1" 
                                                [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
@@ -139,7 +139,7 @@ module JarrowRuddFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JarrowRudd> format
                     ; source = source 
@@ -161,16 +161,16 @@ module JarrowRuddFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.JarrowRudd ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.JarrowRudd ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JarrowRudd>) l
 
-                let source = Helper.sourceFold "Fun.JarrowRudd" 
+                let source () = Helper.sourceFold "Fun.JarrowRudd" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JarrowRudd> format
                     ; source = source 
@@ -204,14 +204,14 @@ module JarrowRuddFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _z = Helper.toCell<int> z "z" 
-                let builder () = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Probability
+                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Probability
                                                             _x.cell 
                                                             _y.cell 
                                                             _z.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JarrowRudd.source + ".Probability") 
+                let source () = Helper.sourceFold (_JarrowRudd.source + ".Probability") 
                                                [| _JarrowRudd.source
                                                ;  _x.source
                                                ;  _y.source
@@ -224,7 +224,7 @@ module JarrowRuddFunction =
                                 ;  _z.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,13 +255,13 @@ module JarrowRuddFunction =
                 let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Underlying
+                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JarrowRudd.source + ".Underlying") 
+                let source () = Helper.sourceFold (_JarrowRudd.source + ".Underlying") 
                                                [| _JarrowRudd.source
                                                ;  _i.source
                                                ;  _index.source
@@ -272,7 +272,7 @@ module JarrowRuddFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -306,14 +306,14 @@ module JarrowRuddFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Descendant
+                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JarrowRudd.source + ".Descendant") 
+                let source () = Helper.sourceFold (_JarrowRudd.source + ".Descendant") 
                                                [| _JarrowRudd.source
                                                ;  _x.source
                                                ;  _index.source
@@ -326,7 +326,7 @@ module JarrowRuddFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -354,12 +354,12 @@ module JarrowRuddFunction =
 
                 let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JarrowRudd.source + ".Size") 
+                let source () = Helper.sourceFold (_JarrowRudd.source + ".Size") 
                                                [| _JarrowRudd.source
                                                ;  _i.source
                                                |]
@@ -368,7 +368,7 @@ module JarrowRuddFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -393,18 +393,18 @@ module JarrowRuddFunction =
             try
 
                 let _JarrowRudd = Helper.toCell<JarrowRudd> jarrowrudd "JarrowRudd"  
-                let builder () = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Columns
+                let builder (current : ICell) = withMnemonic mnemonic ((JarrowRuddModel.Cast _JarrowRudd.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_JarrowRudd.source + ".Columns") 
+                let source () = Helper.sourceFold (_JarrowRudd.source + ".Columns") 
                                                [| _JarrowRudd.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JarrowRudd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -433,14 +433,14 @@ module JarrowRuddFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<JarrowRudd>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<JarrowRudd>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<JarrowRudd>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<JarrowRudd>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

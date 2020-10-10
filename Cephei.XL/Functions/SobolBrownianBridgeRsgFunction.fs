@@ -49,18 +49,18 @@ module SobolBrownianBridgeRsgFunction =
             try
 
                 let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
-                let builder () = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).Dimension
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".Dimension") 
+                let source () = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".Dimension") 
                                                [| _SobolBrownianBridgeRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianBridgeRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,13 +91,13 @@ module SobolBrownianBridgeRsgFunction =
                 let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toDefault<uint64> seed "seed" 0UL
-                let builder () = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
-                let source = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".Factory") 
+                let source () = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".Factory") 
                                                [| _SobolBrownianBridgeRsg.source
                                                ;  _dimensionality.source
                                                ;  _seed.source
@@ -108,7 +108,7 @@ module SobolBrownianBridgeRsgFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SobolBrownianBridgeRsg> format
                     ; source = source 
@@ -134,18 +134,18 @@ module SobolBrownianBridgeRsgFunction =
             try
 
                 let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
-                let builder () = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).LastSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".LastSequence") 
+                let source () = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".LastSequence") 
                                                [| _SobolBrownianBridgeRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianBridgeRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -172,18 +172,18 @@ module SobolBrownianBridgeRsgFunction =
             try
 
                 let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
-                let builder () = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).NextSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((SobolBrownianBridgeRsgModel.Cast _SobolBrownianBridgeRsg.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".NextSequence") 
+                let source () = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".NextSequence") 
                                                [| _SobolBrownianBridgeRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianBridgeRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -221,7 +221,7 @@ module SobolBrownianBridgeRsgFunction =
                 let _ordering = Helper.toDefault<SobolBrownianGenerator.Ordering> ordering "ordering" SobolBrownianGenerator.Ordering.Diagonal
                 let _seed = Helper.toDefault<uint64> seed "seed" 0UL
                 let _directionIntegers = Helper.toDefault<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" SobolRsg.DirectionIntegers.JoeKuoD7
-                let builder () = withMnemonic mnemonic (Fun.SobolBrownianBridgeRsg 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SobolBrownianBridgeRsg 
                                                             _factors.cell 
                                                             _steps.cell 
                                                             _ordering.cell 
@@ -230,7 +230,7 @@ module SobolBrownianBridgeRsgFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SobolBrownianBridgeRsg>) l
 
-                let source = Helper.sourceFold "Fun.SobolBrownianBridgeRsg" 
+                let source () = Helper.sourceFold "Fun.SobolBrownianBridgeRsg" 
                                                [| _factors.source
                                                ;  _steps.source
                                                ;  _ordering.source
@@ -245,7 +245,7 @@ module SobolBrownianBridgeRsgFunction =
                                 ;  _directionIntegers.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SobolBrownianBridgeRsg> format
                     ; source = source 
@@ -274,14 +274,14 @@ module SobolBrownianBridgeRsgFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SobolBrownianBridgeRsg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SobolBrownianBridgeRsg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SobolBrownianBridgeRsg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SobolBrownianBridgeRsg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

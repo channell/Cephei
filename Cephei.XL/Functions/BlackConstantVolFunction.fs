@@ -58,7 +58,7 @@ module BlackConstantVolFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.BlackConstantVol 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackConstantVol 
                                                             _settlementDays.cell 
                                                             _cal.cell 
                                                             _volatility.cell 
@@ -66,7 +66,7 @@ module BlackConstantVolFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackConstantVol>) l
 
-                let source = Helper.sourceFold "Fun.BlackConstantVol" 
+                let source () = Helper.sourceFold "Fun.BlackConstantVol" 
                                                [| _settlementDays.source
                                                ;  _cal.source
                                                ;  _volatility.source
@@ -79,7 +79,7 @@ module BlackConstantVolFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackConstantVol> format
                     ; source = source 
@@ -113,7 +113,7 @@ module BlackConstantVolFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _volatility = Helper.toCell<double> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.BlackConstantVol1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackConstantVol1 
                                                             _settlementDays.cell 
                                                             _cal.cell 
                                                             _volatility.cell 
@@ -121,7 +121,7 @@ module BlackConstantVolFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackConstantVol>) l
 
-                let source = Helper.sourceFold "Fun.BlackConstantVol1" 
+                let source () = Helper.sourceFold "Fun.BlackConstantVol1" 
                                                [| _settlementDays.source
                                                ;  _cal.source
                                                ;  _volatility.source
@@ -134,7 +134,7 @@ module BlackConstantVolFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackConstantVol> format
                     ; source = source 
@@ -168,7 +168,7 @@ module BlackConstantVolFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _volatility = Helper.toHandle<Quote> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.BlackConstantVol2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackConstantVol2 
                                                             _referenceDate.cell 
                                                             _cal.cell 
                                                             _volatility.cell 
@@ -176,7 +176,7 @@ module BlackConstantVolFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackConstantVol>) l
 
-                let source = Helper.sourceFold "Fun.BlackConstantVol2" 
+                let source () = Helper.sourceFold "Fun.BlackConstantVol2" 
                                                [| _referenceDate.source
                                                ;  _cal.source
                                                ;  _volatility.source
@@ -189,7 +189,7 @@ module BlackConstantVolFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackConstantVol> format
                     ; source = source 
@@ -223,7 +223,7 @@ module BlackConstantVolFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _volatility = Helper.toCell<double> volatility "volatility" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let builder () = withMnemonic mnemonic (Fun.BlackConstantVol3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackConstantVol3 
                                                             _referenceDate.cell 
                                                             _cal.cell 
                                                             _volatility.cell 
@@ -231,7 +231,7 @@ module BlackConstantVolFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackConstantVol>) l
 
-                let source = Helper.sourceFold "Fun.BlackConstantVol3" 
+                let source () = Helper.sourceFold "Fun.BlackConstantVol3" 
                                                [| _referenceDate.source
                                                ;  _cal.source
                                                ;  _volatility.source
@@ -244,7 +244,7 @@ module BlackConstantVolFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackConstantVol> format
                     ; source = source 
@@ -269,18 +269,18 @@ module BlackConstantVolFunction =
             try
 
                 let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
-                let builder () = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BlackConstantVol.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_BlackConstantVol.source + ".MaxDate") 
                                                [| _BlackConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -305,18 +305,18 @@ module BlackConstantVolFunction =
             try
 
                 let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
-                let builder () = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackConstantVol.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_BlackConstantVol.source + ".MaxStrike") 
                                                [| _BlackConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -341,18 +341,18 @@ module BlackConstantVolFunction =
             try
 
                 let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
-                let builder () = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackConstantVol.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_BlackConstantVol.source + ".MinStrike") 
                                                [| _BlackConstantVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackConstantVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -381,14 +381,14 @@ module BlackConstantVolFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackConstantVol>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackConstantVol>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackConstantVol>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackConstantVol>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

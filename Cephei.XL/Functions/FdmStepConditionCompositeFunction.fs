@@ -55,13 +55,13 @@ module FdmStepConditionCompositeFunction =
                 let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FdmStepConditionComposite) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmStepConditionComposite.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_FdmStepConditionComposite.source + ".ApplyTo") 
                                                [| _FdmStepConditionComposite.source
                                                ;  _o.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module FdmStepConditionCompositeFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,18 +97,18 @@ module FdmStepConditionCompositeFunction =
             try
 
                 let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
-                let builder () = withMnemonic mnemonic ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).Conditions
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).Conditions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<IStepCondition<Vector>>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_FdmStepConditionComposite.source + ".Conditions") 
+                let source () = Helper.sourceFold (_FdmStepConditionComposite.source + ".Conditions") 
                                                [| _FdmStepConditionComposite.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmStepConditionComposite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -136,13 +136,13 @@ module FdmStepConditionCompositeFunction =
 
                 let _stoppingTimes = Helper.toCell<Generic.List<Generic.List<double>>> stoppingTimes "stoppingTimes" 
                 let _conditions = Helper.toCell<Generic.List<IStepCondition<Vector>>> conditions "conditions" 
-                let builder () = withMnemonic mnemonic (Fun.FdmStepConditionComposite1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmStepConditionComposite1 
                                                             _stoppingTimes.cell 
                                                             _conditions.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmStepConditionComposite>) l
 
-                let source = Helper.sourceFold "Fun.FdmStepConditionComposite1" 
+                let source () = Helper.sourceFold "Fun.FdmStepConditionComposite1" 
                                                [| _stoppingTimes.source
                                                ;  _conditions.source
                                                |]
@@ -151,7 +151,7 @@ module FdmStepConditionCompositeFunction =
                                 ;  _conditions.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmStepConditionComposite> format
                     ; source = source 
@@ -173,16 +173,16 @@ module FdmStepConditionCompositeFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.FdmStepConditionComposite ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmStepConditionComposite ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmStepConditionComposite>) l
 
-                let source = Helper.sourceFold "Fun.FdmStepConditionComposite" 
+                let source () = Helper.sourceFold "Fun.FdmStepConditionComposite" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmStepConditionComposite> format
                     ; source = source 
@@ -207,18 +207,18 @@ module FdmStepConditionCompositeFunction =
             try
 
                 let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
-                let builder () = withMnemonic mnemonic ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).StoppingTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).StoppingTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FdmStepConditionComposite.source + ".StoppingTimes") 
+                let source () = Helper.sourceFold (_FdmStepConditionComposite.source + ".StoppingTimes") 
                                                [| _FdmStepConditionComposite.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmStepConditionComposite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -247,14 +247,14 @@ module FdmStepConditionCompositeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmStepConditionComposite>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmStepConditionComposite>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmStepConditionComposite>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmStepConditionComposite>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

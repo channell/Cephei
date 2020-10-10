@@ -52,12 +52,12 @@ module PayoffFunction =
 
                 let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : Payoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Payoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_Payoff.source + ".Accept") 
                                                [| _Payoff.source
                                                ;  _v.source
                                                |]
@@ -66,7 +66,7 @@ module PayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,18 +91,18 @@ module PayoffFunction =
             try
 
                 let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
-                let builder () = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Payoff.source + ".Description") 
+                let source () = Helper.sourceFold (_Payoff.source + ".Description") 
                                                [| _Payoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Payoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -127,18 +127,18 @@ module PayoffFunction =
             try
 
                 let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
-                let builder () = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Payoff.source + ".Name") 
+                let source () = Helper.sourceFold (_Payoff.source + ".Name") 
                                                [| _Payoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Payoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -166,12 +166,12 @@ module PayoffFunction =
 
                 let _Payoff = Helper.toCell<Payoff> payoff "Payoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((PayoffModel.Cast _Payoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Payoff.source + ".Value") 
+                let source () = Helper.sourceFold (_Payoff.source + ".Value") 
                                                [| _Payoff.source
                                                ;  _price.source
                                                |]
@@ -180,7 +180,7 @@ module PayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,14 +209,14 @@ module PayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Payoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Payoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Payoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Payoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

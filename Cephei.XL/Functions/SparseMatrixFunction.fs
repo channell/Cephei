@@ -49,18 +49,18 @@ module SparseMatrixFunction =
             try
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Clear
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Clear
                                                        ) :> ICell
                 let format (o : SparseMatrix) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".Clear") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".Clear") 
                                                [| _SparseMatrix.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SparseMatrix.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module SparseMatrixFunction =
             try
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Columns
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".Columns") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".Columns") 
                                                [| _SparseMatrix.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SparseMatrix.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -127,13 +127,13 @@ module SparseMatrixFunction =
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetAt
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetAt
                                                             _row.cell 
                                                             _col.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".GetAt") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".GetAt") 
                                                [| _SparseMatrix.source
                                                ;  _row.source
                                                ;  _col.source
@@ -144,7 +144,7 @@ module SparseMatrixFunction =
                                 ;  _col.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -172,12 +172,12 @@ module SparseMatrixFunction =
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _col = Helper.toCell<int> col "col" 
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetColumnData
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetColumnData
                                                             _col.cell 
                                                        ) :> ICell
                 let format (o : Generic.IEnumerable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".GetColumnData") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".GetColumnData") 
                                                [| _SparseMatrix.source
                                                ;  _col.source
                                                |]
@@ -186,7 +186,7 @@ module SparseMatrixFunction =
                                 ;  _col.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -214,12 +214,12 @@ module SparseMatrixFunction =
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _col = Helper.toCell<int> col "col" 
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetColumnDataCount
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetColumnDataCount
                                                             _col.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".GetColumnDataCount") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".GetColumnDataCount") 
                                                [| _SparseMatrix.source
                                                ;  _col.source
                                                |]
@@ -228,7 +228,7 @@ module SparseMatrixFunction =
                                 ;  _col.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -256,12 +256,12 @@ module SparseMatrixFunction =
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetRowData
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetRowData
                                                             _row.cell 
                                                        ) :> ICell
                 let format (o : Generic.IEnumerable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".GetRowData") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".GetRowData") 
                                                [| _SparseMatrix.source
                                                ;  _row.source
                                                |]
@@ -270,7 +270,7 @@ module SparseMatrixFunction =
                                 ;  _row.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -298,12 +298,12 @@ module SparseMatrixFunction =
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetRowDataCount
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetRowDataCount
                                                             _row.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".GetRowDataCount") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".GetRowDataCount") 
                                                [| _SparseMatrix.source
                                                ;  _row.source
                                                |]
@@ -312,7 +312,7 @@ module SparseMatrixFunction =
                                 ;  _row.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -343,13 +343,13 @@ module SparseMatrixFunction =
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).RemoveAt
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).RemoveAt
                                                             _row.cell 
                                                             _col.cell 
                                                        ) :> ICell
                 let format (o : SparseMatrix) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".RemoveAt") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".RemoveAt") 
                                                [| _SparseMatrix.source
                                                ;  _row.source
                                                ;  _col.source
@@ -360,7 +360,7 @@ module SparseMatrixFunction =
                                 ;  _col.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -385,18 +385,18 @@ module SparseMatrixFunction =
             try
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Rows
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Rows
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".Rows") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".Rows") 
                                                [| _SparseMatrix.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SparseMatrix.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -430,14 +430,14 @@ module SparseMatrixFunction =
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).SetAt
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).SetAt
                                                             _row.cell 
                                                             _col.cell 
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : SparseMatrix) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".SetAt") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".SetAt") 
                                                [| _SparseMatrix.source
                                                ;  _row.source
                                                ;  _col.source
@@ -450,7 +450,7 @@ module SparseMatrixFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -478,13 +478,13 @@ module SparseMatrixFunction =
 
                 let _rows = Helper.toCell<int> rows "rows" 
                 let _columns = Helper.toCell<int> columns "columns" 
-                let builder () = withMnemonic mnemonic (Fun.SparseMatrix1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SparseMatrix1 
                                                             _rows.cell 
                                                             _columns.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
 
-                let source = Helper.sourceFold "Fun.SparseMatrix1" 
+                let source () = Helper.sourceFold "Fun.SparseMatrix1" 
                                                [| _rows.source
                                                ;  _columns.source
                                                |]
@@ -493,7 +493,7 @@ module SparseMatrixFunction =
                                 ;  _columns.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SparseMatrix> format
                     ; source = source 
@@ -515,16 +515,16 @@ module SparseMatrixFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.SparseMatrix2 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SparseMatrix2 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
 
-                let source = Helper.sourceFold "Fun.SparseMatrix2" 
+                let source () = Helper.sourceFold "Fun.SparseMatrix2" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SparseMatrix> format
                     ; source = source 
@@ -549,19 +549,19 @@ module SparseMatrixFunction =
             try
 
                 let _lhs = Helper.toCell<SparseMatrix> lhs "lhs" 
-                let builder () = withMnemonic mnemonic (Fun.SparseMatrix
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SparseMatrix
                                                             _lhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
 
-                let source = Helper.sourceFold "Fun.SparseMatrix" 
+                let source () = Helper.sourceFold "Fun.SparseMatrix" 
                                                [| _lhs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _lhs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SparseMatrix> format
                     ; source = source 
@@ -592,13 +592,13 @@ module SparseMatrixFunction =
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).This
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).This
                                                             _row.cell 
                                                             _col.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".This") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".This") 
                                                [| _SparseMatrix.source
                                                ;  _row.source
                                                ;  _col.source
@@ -609,7 +609,7 @@ module SparseMatrixFunction =
                                 ;  _col.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -634,18 +634,18 @@ module SparseMatrixFunction =
             try
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
-                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Values
+                let builder (current : ICell) = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Values
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SparseMatrix.source + ".Values") 
+                let source () = Helper.sourceFold (_SparseMatrix.source + ".Values") 
                                                [| _SparseMatrix.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SparseMatrix.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -674,14 +674,14 @@ module SparseMatrixFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SparseMatrix>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SparseMatrix>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SparseMatrix>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SparseMatrix>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

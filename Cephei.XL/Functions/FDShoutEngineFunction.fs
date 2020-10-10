@@ -58,14 +58,14 @@ module FDShoutEngineFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
-                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IFDEngine>) l
 
-                let source = Helper.sourceFold (_FDShoutEngine.source + ".Factory") 
+                let source () = Helper.sourceFold (_FDShoutEngine.source + ".Factory") 
                                                [| _FDShoutEngine.source
                                                ;  _Process.source
                                                ;  _timeSteps.source
@@ -78,7 +78,7 @@ module FDShoutEngineFunction =
                                 ;  _gridPoints.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDShoutEngine> format
                     ; source = source 
@@ -112,7 +112,7 @@ module FDShoutEngineFunction =
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
                 let _timeDependent = Helper.toDefault<bool> timeDependent "timeDependent" false
-                let builder () = withMnemonic mnemonic (Fun.FDShoutEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDShoutEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -120,7 +120,7 @@ module FDShoutEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDShoutEngine>) l
 
-                let source = Helper.sourceFold "Fun.FDShoutEngine" 
+                let source () = Helper.sourceFold "Fun.FDShoutEngine" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
@@ -133,7 +133,7 @@ module FDShoutEngineFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDShoutEngine> format
                     ; source = source 
@@ -155,16 +155,16 @@ module FDShoutEngineFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.FDShoutEngine1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDShoutEngine1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDShoutEngine>) l
 
-                let source = Helper.sourceFold "Fun.FDShoutEngine1" 
+                let source () = Helper.sourceFold "Fun.FDShoutEngine1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDShoutEngine> format
                     ; source = source 
@@ -193,12 +193,12 @@ module FDShoutEngineFunction =
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDShoutEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDShoutEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FDShoutEngine.source + ".RegisterWith") 
                                                [| _FDShoutEngine.source
                                                ;  _handler.source
                                                |]
@@ -207,7 +207,7 @@ module FDShoutEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -232,18 +232,18 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : FDShoutEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDShoutEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_FDShoutEngine.source + ".Reset") 
                                                [| _FDShoutEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDShoutEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -271,12 +271,12 @@ module FDShoutEngineFunction =
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDShoutEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDShoutEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FDShoutEngine.source + ".UnregisterWith") 
                                                [| _FDShoutEngine.source
                                                ;  _handler.source
                                                |]
@@ -285,7 +285,7 @@ module FDShoutEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -310,18 +310,18 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Update
                                                        ) :> ICell
                 let format (o : FDShoutEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDShoutEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_FDShoutEngine.source + ".Update") 
                                                [| _FDShoutEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDShoutEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -346,18 +346,18 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).EnsureStrikeInGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDShoutEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDShoutEngine.source + ".EnsureStrikeInGrid") 
+                let source () = Helper.sourceFold (_FDShoutEngine.source + ".EnsureStrikeInGrid") 
                                                [| _FDShoutEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDShoutEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -382,18 +382,18 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).GetResidualTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FDShoutEngine.source + ".GetResidualTime") 
+                let source () = Helper.sourceFold (_FDShoutEngine.source + ".GetResidualTime") 
                                                [| _FDShoutEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDShoutEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -418,18 +418,18 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FDShoutEngine.source + ".Grid") 
+                let source () = Helper.sourceFold (_FDShoutEngine.source + ".Grid") 
                                                [| _FDShoutEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDShoutEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDShoutEngine> format
                     ; source = source 
@@ -454,18 +454,18 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).IntrinsicValues_
+                let builder (current : ICell) = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold (_FDShoutEngine.source + ".IntrinsicValues_") 
+                let source () = Helper.sourceFold (_FDShoutEngine.source + ".IntrinsicValues_") 
                                                [| _FDShoutEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDShoutEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDShoutEngine> format
                     ; source = source 
@@ -494,14 +494,14 @@ module FDShoutEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDShoutEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FDShoutEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FDShoutEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FDShoutEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

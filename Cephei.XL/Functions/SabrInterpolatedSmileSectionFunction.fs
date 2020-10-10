@@ -49,18 +49,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Alpha
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Alpha
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Alpha") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Alpha") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).AtmLevel
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".AtmLevel") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".AtmLevel") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Beta
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Beta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Beta") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Beta") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).EndCriteria
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".EndCriteria") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".EndCriteria") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).MaxError
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".MaxError") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".MaxError") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,18 +229,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".MaxStrike") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -265,18 +265,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".MinStrike") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -301,18 +301,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Nu
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Nu
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Nu") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Nu") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,18 +337,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Rho") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Rho") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -373,18 +373,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).RmsError
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).RmsError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".RmsError") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".RmsError") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -463,7 +463,7 @@ module SabrInterpolatedSmileSectionFunction =
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
-                let builder () = withMnemonic mnemonic (Fun.SabrInterpolatedSmileSection1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SabrInterpolatedSmileSection1 
                                                             _optionDate.cell 
                                                             _forward.cell 
                                                             _strikes.cell 
@@ -486,7 +486,7 @@ module SabrInterpolatedSmileSectionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SabrInterpolatedSmileSection>) l
 
-                let source = Helper.sourceFold "Fun.SabrInterpolatedSmileSection1" 
+                let source () = Helper.sourceFold "Fun.SabrInterpolatedSmileSection1" 
                                                [| _optionDate.source
                                                ;  _forward.source
                                                ;  _strikes.source
@@ -529,7 +529,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SabrInterpolatedSmileSection> format
                     ; source = source 
@@ -609,7 +609,7 @@ module SabrInterpolatedSmileSectionFunction =
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
-                let builder () = withMnemonic mnemonic (Fun.SabrInterpolatedSmileSection
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SabrInterpolatedSmileSection
                                                             _optionDate.cell 
                                                             _forward.cell 
                                                             _strikes.cell 
@@ -632,7 +632,7 @@ module SabrInterpolatedSmileSectionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SabrInterpolatedSmileSection>) l
 
-                let source = Helper.sourceFold "Fun.SabrInterpolatedSmileSection" 
+                let source () = Helper.sourceFold "Fun.SabrInterpolatedSmileSection" 
                                                [| _optionDate.source
                                                ;  _forward.source
                                                ;  _strikes.source
@@ -675,7 +675,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SabrInterpolatedSmileSection> format
                     ; source = source 
@@ -700,18 +700,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : SabrInterpolatedSmileSection) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Update") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Update") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -736,18 +736,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".DayCounter") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SabrInterpolatedSmileSection> format
                     ; source = source 
@@ -781,14 +781,14 @@ module SabrInterpolatedSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Density
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Density
                                                             _strike.cell 
                                                             _discount.cell 
                                                             _gap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Density") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Density") 
                                                [| _SabrInterpolatedSmileSection.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -801,7 +801,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _gap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -838,7 +838,7 @@ module SabrInterpolatedSmileSectionFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).DigitalOptionPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).DigitalOptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -846,7 +846,7 @@ module SabrInterpolatedSmileSectionFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".DigitalOptionPrice") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".DigitalOptionPrice") 
                                                [| _SabrInterpolatedSmileSection.source
                                                ;  _strike.source
                                                ;  _Type.source
@@ -861,7 +861,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _gap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -886,18 +886,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).ExerciseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".ExerciseDate") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".ExerciseDate") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -922,18 +922,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).ExerciseTime
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".ExerciseTime") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".ExerciseTime") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -967,14 +967,14 @@ module SabrInterpolatedSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).OptionPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).OptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".OptionPrice") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".OptionPrice") 
                                                [| _SabrInterpolatedSmileSection.source
                                                ;  _strike.source
                                                ;  _Type.source
@@ -987,7 +987,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1012,18 +1012,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".ReferenceDate") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1048,18 +1048,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Shift
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Shift") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Shift") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1087,12 +1087,12 @@ module SabrInterpolatedSmileSectionFunction =
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Variance
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Variance") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Variance") 
                                                [| _SabrInterpolatedSmileSection.source
                                                ;  _strike.source
                                                |]
@@ -1101,7 +1101,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1132,13 +1132,13 @@ module SabrInterpolatedSmileSectionFunction =
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Vega
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Vega") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Vega") 
                                                [| _SabrInterpolatedSmileSection.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -1149,7 +1149,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1183,14 +1183,14 @@ module SabrInterpolatedSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 
                                                             _shift.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Volatility") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Volatility") 
                                                [| _SabrInterpolatedSmileSection.source
                                                ;  _strike.source
                                                ;  _volatilityType.source
@@ -1203,7 +1203,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1231,12 +1231,12 @@ module SabrInterpolatedSmileSectionFunction =
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).Volatility1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Volatility1") 
                                                [| _SabrInterpolatedSmileSection.source
                                                ;  _strike.source
                                                |]
@@ -1245,7 +1245,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1270,18 +1270,18 @@ module SabrInterpolatedSmileSectionFunction =
             try
 
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
-                let builder () = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).VolatilityType
+                let builder (current : ICell) = withMnemonic mnemonic ((SabrInterpolatedSmileSectionModel.Cast _SabrInterpolatedSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".VolatilityType") 
+                let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".VolatilityType") 
                                                [| _SabrInterpolatedSmileSection.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1310,14 +1310,14 @@ module SabrInterpolatedSmileSectionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SabrInterpolatedSmileSection>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SabrInterpolatedSmileSection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SabrInterpolatedSmileSection>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SabrInterpolatedSmileSection>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

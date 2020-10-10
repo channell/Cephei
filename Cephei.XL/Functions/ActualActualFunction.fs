@@ -46,16 +46,16 @@ module ActualActualFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ActualActual ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ActualActual ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ActualActual>) l
 
-                let source = Helper.sourceFold "Fun.ActualActual" 
+                let source () = Helper.sourceFold "Fun.ActualActual" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ActualActual> format
                     ; source = source 
@@ -83,13 +83,13 @@ module ActualActualFunction =
 
                 let _c = Helper.toCell<ActualActual.Convention> c "c" 
                 let _schedule = Helper.toDefault<Schedule> schedule "schedule" null
-                let builder () = withMnemonic mnemonic (Fun.ActualActual1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ActualActual1 
                                                             _c.cell 
                                                             _schedule.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ActualActual>) l
 
-                let source = Helper.sourceFold "Fun.ActualActual1" 
+                let source () = Helper.sourceFold "Fun.ActualActual1" 
                                                [| _c.source
                                                ;  _schedule.source
                                                |]
@@ -98,7 +98,7 @@ module ActualActualFunction =
                                 ;  _schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ActualActual> format
                     ; source = source 
@@ -129,13 +129,13 @@ module ActualActualFunction =
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).DayCount
+                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ActualActual.source + ".DayCount") 
+                let source () = Helper.sourceFold (_ActualActual.source + ".DayCount") 
                                                [| _ActualActual.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -146,7 +146,7 @@ module ActualActualFunction =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -171,18 +171,18 @@ module ActualActualFunction =
             try
 
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
-                let builder () = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_ActualActual.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_ActualActual.source + ".DayCounter") 
                                                [| _ActualActual.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ActualActual.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ActualActual> format
                     ; source = source 
@@ -207,18 +207,18 @@ module ActualActualFunction =
             try
 
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
-                let builder () = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ActualActual.source + ".Empty") 
+                let source () = Helper.sourceFold (_ActualActual.source + ".Empty") 
                                                [| _ActualActual.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ActualActual.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -246,12 +246,12 @@ module ActualActualFunction =
 
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ActualActual.source + ".Equals") 
+                let source () = Helper.sourceFold (_ActualActual.source + ".Equals") 
                                                [| _ActualActual.source
                                                ;  _o.source
                                                |]
@@ -260,7 +260,7 @@ module ActualActualFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -285,18 +285,18 @@ module ActualActualFunction =
             try
 
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
-                let builder () = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ActualActual.source + ".Name") 
+                let source () = Helper.sourceFold (_ActualActual.source + ".Name") 
                                                [| _ActualActual.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ActualActual.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -321,18 +321,18 @@ module ActualActualFunction =
             try
 
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
-                let builder () = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ActualActual.source + ".ToString") 
+                let source () = Helper.sourceFold (_ActualActual.source + ".ToString") 
                                                [| _ActualActual.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ActualActual.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -369,7 +369,7 @@ module ActualActualFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder () = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).YearFraction
+                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -377,7 +377,7 @@ module ActualActualFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ActualActual.source + ".YearFraction") 
+                let source () = Helper.sourceFold (_ActualActual.source + ".YearFraction") 
                                                [| _ActualActual.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -392,7 +392,7 @@ module ActualActualFunction =
                                 ;  _refPeriodEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -423,13 +423,13 @@ module ActualActualFunction =
                 let _ActualActual = Helper.toCell<ActualActual> actualactual "ActualActual"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).YearFraction1
+                let builder (current : ICell) = withMnemonic mnemonic ((ActualActualModel.Cast _ActualActual.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ActualActual.source + ".YearFraction1") 
+                let source () = Helper.sourceFold (_ActualActual.source + ".YearFraction1") 
                                                [| _ActualActual.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -440,7 +440,7 @@ module ActualActualFunction =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -469,14 +469,14 @@ module ActualActualFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ActualActual>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ActualActual>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ActualActual>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ActualActual>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

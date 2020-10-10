@@ -64,7 +64,7 @@ module CatBondFunction =
                 let _notionalRisk = Helper.toCell<NotionalRisk> notionalRisk "notionalRisk" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.CatBond 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CatBond 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _issueDate.cell 
@@ -74,7 +74,7 @@ module CatBondFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CatBond>) l
 
-                let source = Helper.sourceFold "Fun.CatBond" 
+                let source () = Helper.sourceFold "Fun.CatBond" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _issueDate.source
@@ -91,7 +91,7 @@ module CatBondFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CatBond> format
                     ; source = source 
@@ -116,18 +116,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).ExhaustionProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).ExhaustionProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".ExhaustionProbability") 
+                let source () = Helper.sourceFold (_CatBond.source + ".ExhaustionProbability") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -152,18 +152,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).ExpectedLoss
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).ExpectedLoss
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".ExpectedLoss") 
+                let source () = Helper.sourceFold (_CatBond.source + ".ExpectedLoss") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -188,18 +188,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).LossProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).LossProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".LossProbability") 
+                let source () = Helper.sourceFold (_CatBond.source + ".LossProbability") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -227,12 +227,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_CatBond.source + ".AccruedAmount") 
                                                [| _CatBond.source
                                                ;  _settlement.source
                                                |]
@@ -241,7 +241,7 @@ module CatBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_CatBond.source + ".Calendar") 
+                let source () = Helper.sourceFold (_CatBond.source + ".Calendar") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CatBond> format
                     ; source = source 
@@ -302,18 +302,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Cashflows
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CatBond.source + ".Cashflows") 
+                let source () = Helper.sourceFold (_CatBond.source + ".Cashflows") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -338,18 +338,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).CleanPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".CleanPrice") 
+                let source () = Helper.sourceFold (_CatBond.source + ".CleanPrice") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -389,7 +389,7 @@ module CatBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).CleanPrice1
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -398,7 +398,7 @@ module CatBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".CleanPrice1") 
+                let source () = Helper.sourceFold (_CatBond.source + ".CleanPrice1") 
                                                [| _CatBond.source
                                                ;  _Yield.source
                                                ;  _dc.source
@@ -415,7 +415,7 @@ module CatBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -455,7 +455,7 @@ module CatBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).DirtyPrice1
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -464,7 +464,7 @@ module CatBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".DirtyPrice") 
+                let source () = Helper.sourceFold (_CatBond.source + ".DirtyPrice") 
                                                [| _CatBond.source
                                                ;  _Yield.source
                                                ;  _dc.source
@@ -481,7 +481,7 @@ module CatBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -506,18 +506,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).DirtyPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".DirtyPrice") 
+                let source () = Helper.sourceFold (_CatBond.source + ".DirtyPrice") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -542,18 +542,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_CatBond.source + ".IsExpired") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -578,18 +578,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).IssueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".IssueDate") 
+                let source () = Helper.sourceFold (_CatBond.source + ".IssueDate") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -617,12 +617,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).IsTradable
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".IsTradable") 
+                let source () = Helper.sourceFold (_CatBond.source + ".IsTradable") 
                                                [| _CatBond.source
                                                ;  _d.source
                                                |]
@@ -631,7 +631,7 @@ module CatBondFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -656,18 +656,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_CatBond.source + ".MaturityDate") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -695,12 +695,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).NextCashFlowDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".NextCashFlowDate") 
+                let source () = Helper.sourceFold (_CatBond.source + ".NextCashFlowDate") 
                                                [| _CatBond.source
                                                ;  _settlement.source
                                                |]
@@ -709,7 +709,7 @@ module CatBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -737,12 +737,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).NextCouponRate
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".NextCouponRate") 
+                let source () = Helper.sourceFold (_CatBond.source + ".NextCouponRate") 
                                                [| _CatBond.source
                                                ;  _settlement.source
                                                |]
@@ -751,7 +751,7 @@ module CatBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -779,12 +779,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Notional
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Notional
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".Notional") 
+                let source () = Helper.sourceFold (_CatBond.source + ".Notional") 
                                                [| _CatBond.source
                                                ;  _d.source
                                                |]
@@ -793,7 +793,7 @@ module CatBondFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -818,18 +818,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Notionals
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CatBond.source + ".Notionals") 
+                let source () = Helper.sourceFold (_CatBond.source + ".Notionals") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -857,12 +857,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).PreviousCashFlowDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".PreviousCashFlowDate") 
+                let source () = Helper.sourceFold (_CatBond.source + ".PreviousCashFlowDate") 
                                                [| _CatBond.source
                                                ;  _settlement.source
                                                |]
@@ -871,7 +871,7 @@ module CatBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -899,12 +899,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).PreviousCouponRate
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".PreviousCouponRate") 
+                let source () = Helper.sourceFold (_CatBond.source + ".PreviousCouponRate") 
                                                [| _CatBond.source
                                                ;  _settlement.source
                                                |]
@@ -913,7 +913,7 @@ module CatBondFunction =
                                 ;  _settlement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -938,18 +938,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Redemption
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
-                let source = Helper.sourceFold (_CatBond.source + ".Redemption") 
+                let source () = Helper.sourceFold (_CatBond.source + ".Redemption") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CatBond> format
                     ; source = source 
@@ -974,18 +974,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Redemptions
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CatBond.source + ".Redemptions") 
+                let source () = Helper.sourceFold (_CatBond.source + ".Redemptions") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -1013,12 +1013,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).SettlementDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".SettlementDate") 
+                let source () = Helper.sourceFold (_CatBond.source + ".SettlementDate") 
                                                [| _CatBond.source
                                                ;  _date.source
                                                |]
@@ -1027,7 +1027,7 @@ module CatBondFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1052,18 +1052,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_CatBond.source + ".SettlementDays") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1091,12 +1091,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).SettlementValue
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".SettlementValue") 
+                let source () = Helper.sourceFold (_CatBond.source + ".SettlementValue") 
                                                [| _CatBond.source
                                                ;  _cleanPrice.source
                                                |]
@@ -1105,7 +1105,7 @@ module CatBondFunction =
                                 ;  _cleanPrice.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1130,18 +1130,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).SettlementValue1
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".SettlementValue1") 
+                let source () = Helper.sourceFold (_CatBond.source + ".SettlementValue1") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1166,18 +1166,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).StartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".StartDate") 
+                let source () = Helper.sourceFold (_CatBond.source + ".StartDate") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1223,7 +1223,7 @@ module CatBondFunction =
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Yield1
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1234,7 +1234,7 @@ module CatBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".Yield1") 
+                let source () = Helper.sourceFold (_CatBond.source + ".Yield1") 
                                                [| _CatBond.source
                                                ;  _cleanPrice.source
                                                ;  _dc.source
@@ -1255,7 +1255,7 @@ module CatBondFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1295,7 +1295,7 @@ module CatBondFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Yield
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Yield
                                                             _dc.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1304,7 +1304,7 @@ module CatBondFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".Yield") 
+                let source () = Helper.sourceFold (_CatBond.source + ".Yield") 
                                                [| _CatBond.source
                                                ;  _dc.source
                                                ;  _comp.source
@@ -1321,7 +1321,7 @@ module CatBondFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1346,18 +1346,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".CASH") 
+                let source () = Helper.sourceFold (_CatBond.source + ".CASH") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1382,18 +1382,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_CatBond.source + ".ErrorEstimate") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1418,18 +1418,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".NPV") 
+                let source () = Helper.sourceFold (_CatBond.source + ".NPV") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1457,12 +1457,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".Result") 
+                let source () = Helper.sourceFold (_CatBond.source + ".Result") 
                                                [| _CatBond.source
                                                ;  _tag.source
                                                |]
@@ -1471,7 +1471,7 @@ module CatBondFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1499,12 +1499,12 @@ module CatBondFunction =
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CatBond) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_CatBond.source + ".SetPricingEngine") 
                                                [| _CatBond.source
                                                ;  _e.source
                                                |]
@@ -1513,7 +1513,7 @@ module CatBondFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1538,18 +1538,18 @@ module CatBondFunction =
             try
 
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
-                let builder () = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CatBond.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_CatBond.source + ".ValuationDate") 
                                                [| _CatBond.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1578,14 +1578,14 @@ module CatBondFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CatBond>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CatBond>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CatBond>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CatBond>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

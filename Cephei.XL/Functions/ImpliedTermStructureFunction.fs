@@ -49,18 +49,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".Calendar") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".Calendar") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImpliedTermStructure> format
                     ; source = source 
@@ -85,18 +85,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".DayCounter") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImpliedTermStructure> format
                     ; source = source 
@@ -124,13 +124,13 @@ module ImpliedTermStructureFunction =
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
-                let builder () = withMnemonic mnemonic (Fun.ImpliedTermStructure 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ImpliedTermStructure 
                                                             _h.cell 
                                                             _referenceDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ImpliedTermStructure>) l
 
-                let source = Helper.sourceFold "Fun.ImpliedTermStructure" 
+                let source () = Helper.sourceFold "Fun.ImpliedTermStructure" 
                                                [| _h.source
                                                ;  _referenceDate.source
                                                |]
@@ -139,7 +139,7 @@ module ImpliedTermStructureFunction =
                                 ;  _referenceDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImpliedTermStructure> format
                     ; source = source 
@@ -164,18 +164,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".MaxDate") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".SettlementDays") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,13 +242,13 @@ module ImpliedTermStructureFunction =
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Discount
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".Discount") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".Discount") 
                                                [| _ImpliedTermStructure.source
                                                ;  _t.source
                                                ;  _extrapolate.source
@@ -259,7 +259,7 @@ module ImpliedTermStructureFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,13 +290,13 @@ module ImpliedTermStructureFunction =
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Discount1
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Discount1
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".Discount1") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".Discount1") 
                                                [| _ImpliedTermStructure.source
                                                ;  _d.source
                                                ;  _extrapolate.source
@@ -307,7 +307,7 @@ module ImpliedTermStructureFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -350,7 +350,7 @@ module ImpliedTermStructureFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ForwardRate
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ForwardRate
                                                             _d.cell 
                                                             _p.cell 
                                                             _dayCounter.cell 
@@ -360,7 +360,7 @@ module ImpliedTermStructureFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".ForwardRate") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".ForwardRate") 
                                                [| _ImpliedTermStructure.source
                                                ;  _d.source
                                                ;  _p.source
@@ -379,7 +379,7 @@ module ImpliedTermStructureFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImpliedTermStructure> format
                     ; source = source 
@@ -422,7 +422,7 @@ module ImpliedTermStructureFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ForwardRate1
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ForwardRate1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _dayCounter.cell 
@@ -432,7 +432,7 @@ module ImpliedTermStructureFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".ForwardRate1") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".ForwardRate1") 
                                                [| _ImpliedTermStructure.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -451,7 +451,7 @@ module ImpliedTermStructureFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImpliedTermStructure> format
                     ; source = source 
@@ -491,7 +491,7 @@ module ImpliedTermStructureFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ForwardRate2
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ForwardRate2
                                                             _t1.cell 
                                                             _t2.cell 
                                                             _comp.cell 
@@ -500,7 +500,7 @@ module ImpliedTermStructureFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".ForwardRate2") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".ForwardRate2") 
                                                [| _ImpliedTermStructure.source
                                                ;  _t1.source
                                                ;  _t2.source
@@ -517,7 +517,7 @@ module ImpliedTermStructureFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImpliedTermStructure> format
                     ; source = source 
@@ -542,18 +542,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).JumpDates
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".JumpDates") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".JumpDates") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -578,18 +578,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).JumpTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".JumpTimes") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".JumpTimes") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -614,18 +614,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Update
                                                        ) :> ICell
                 let format (o : ImpliedTermStructure) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".Update") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".Update") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -665,7 +665,7 @@ module ImpliedTermStructureFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ZeroRate1
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ZeroRate1
                                                             _d.cell 
                                                             _dayCounter.cell 
                                                             _comp.cell 
@@ -674,7 +674,7 @@ module ImpliedTermStructureFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".ZeroRate1") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".ZeroRate1") 
                                                [| _ImpliedTermStructure.source
                                                ;  _d.source
                                                ;  _dayCounter.source
@@ -691,7 +691,7 @@ module ImpliedTermStructureFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImpliedTermStructure> format
                     ; source = source 
@@ -728,7 +728,7 @@ module ImpliedTermStructureFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ZeroRate
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ZeroRate
                                                             _t.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -736,7 +736,7 @@ module ImpliedTermStructureFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".ZeroRate") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".ZeroRate") 
                                                [| _ImpliedTermStructure.source
                                                ;  _t.source
                                                ;  _comp.source
@@ -751,7 +751,7 @@ module ImpliedTermStructureFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImpliedTermStructure> format
                     ; source = source 
@@ -776,18 +776,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".MaxTime") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -812,18 +812,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".ReferenceDate") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -851,12 +851,12 @@ module ImpliedTermStructureFunction =
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".TimeFromReference") 
                                                [| _ImpliedTermStructure.source
                                                ;  _date.source
                                                |]
@@ -865,7 +865,7 @@ module ImpliedTermStructureFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -890,18 +890,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".AllowsExtrapolation") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -929,12 +929,12 @@ module ImpliedTermStructureFunction =
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : ImpliedTermStructure) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".DisableExtrapolation") 
                                                [| _ImpliedTermStructure.source
                                                ;  _b.source
                                                |]
@@ -943,7 +943,7 @@ module ImpliedTermStructureFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -971,12 +971,12 @@ module ImpliedTermStructureFunction =
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : ImpliedTermStructure) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".EnableExtrapolation") 
                                                [| _ImpliedTermStructure.source
                                                ;  _b.source
                                                |]
@@ -985,7 +985,7 @@ module ImpliedTermStructureFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1010,18 +1010,18 @@ module ImpliedTermStructureFunction =
             try
 
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
-                let builder () = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ImpliedTermStructure.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".Extrapolate") 
                                                [| _ImpliedTermStructure.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1050,14 +1050,14 @@ module ImpliedTermStructureFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ImpliedTermStructure>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ImpliedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ImpliedTermStructure>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ImpliedTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

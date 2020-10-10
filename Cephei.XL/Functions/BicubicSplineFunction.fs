@@ -61,7 +61,7 @@ module BicubicSplineFunction =
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _ySize = Helper.toCell<int> ySize "ySize" 
                 let _zData = Helper.toCell<Matrix> zData "zData" 
-                let builder () = withMnemonic mnemonic (Fun.BicubicSpline 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BicubicSpline 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -70,7 +70,7 @@ module BicubicSplineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BicubicSpline>) l
 
-                let source = Helper.sourceFold "Fun.BicubicSpline" 
+                let source () = Helper.sourceFold "Fun.BicubicSpline" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -85,7 +85,7 @@ module BicubicSplineFunction =
                                 ;  _zData.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BicubicSpline> format
                     ; source = source 
@@ -116,13 +116,13 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DerivativeX
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DerivativeX
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".DerivativeX") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".DerivativeX") 
                                                [| _BicubicSpline.source
                                                ;  _x.source
                                                ;  _y.source
@@ -133,7 +133,7 @@ module BicubicSplineFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,13 +164,13 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DerivativeXY
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DerivativeXY
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".DerivativeXY") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".DerivativeXY") 
                                                [| _BicubicSpline.source
                                                ;  _x.source
                                                ;  _y.source
@@ -181,7 +181,7 @@ module BicubicSplineFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -212,13 +212,13 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DerivativeY
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DerivativeY
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".DerivativeY") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".DerivativeY") 
                                                [| _BicubicSpline.source
                                                ;  _x.source
                                                ;  _y.source
@@ -229,7 +229,7 @@ module BicubicSplineFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,13 +260,13 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).SecondDerivativeX
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).SecondDerivativeX
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".SecondDerivativeX") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".SecondDerivativeX") 
                                                [| _BicubicSpline.source
                                                ;  _x.source
                                                ;  _y.source
@@ -277,7 +277,7 @@ module BicubicSplineFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,13 +308,13 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).SecondDerivativeY
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).SecondDerivativeY
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".SecondDerivativeY") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".SecondDerivativeY") 
                                                [| _BicubicSpline.source
                                                ;  _x.source
                                                ;  _y.source
@@ -325,7 +325,7 @@ module BicubicSplineFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -356,13 +356,13 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).IsInRange
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).IsInRange
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".IsInRange") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".IsInRange") 
                                                [| _BicubicSpline.source
                                                ;  _x.source
                                                ;  _y.source
@@ -373,7 +373,7 @@ module BicubicSplineFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -401,12 +401,12 @@ module BicubicSplineFunction =
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).LocateX
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).LocateX
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".LocateX") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".LocateX") 
                                                [| _BicubicSpline.source
                                                ;  _x.source
                                                |]
@@ -415,7 +415,7 @@ module BicubicSplineFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -443,12 +443,12 @@ module BicubicSplineFunction =
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).LocateY
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).LocateY
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".LocateY") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".LocateY") 
                                                [| _BicubicSpline.source
                                                ;  _y.source
                                                |]
@@ -457,7 +457,7 @@ module BicubicSplineFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Update
                                                        ) :> ICell
                 let format (o : BicubicSpline) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".Update") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".Update") 
                                                [| _BicubicSpline.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BicubicSpline.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -524,13 +524,13 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Value1
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".Value1") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".Value1") 
                                                [| _BicubicSpline.source
                                                ;  _x.source
                                                ;  _y.source
@@ -541,7 +541,7 @@ module BicubicSplineFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -575,14 +575,14 @@ module BicubicSplineFunction =
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Value
                                                             _x.cell 
                                                             _y.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".Value") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".Value") 
                                                [| _BicubicSpline.source
                                                ;  _x.source
                                                ;  _y.source
@@ -595,7 +595,7 @@ module BicubicSplineFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -620,18 +620,18 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".XMax") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".XMax") 
                                                [| _BicubicSpline.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BicubicSpline.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -656,18 +656,18 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".XMin") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".XMin") 
                                                [| _BicubicSpline.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BicubicSpline.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -692,18 +692,18 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).XValues
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).XValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".XValues") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".XValues") 
                                                [| _BicubicSpline.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BicubicSpline.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -728,18 +728,18 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).YMax
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).YMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".YMax") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".YMax") 
                                                [| _BicubicSpline.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BicubicSpline.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -764,18 +764,18 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).YMin
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).YMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".YMin") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".YMin") 
                                                [| _BicubicSpline.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BicubicSpline.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -800,18 +800,18 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).YValues
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).YValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".YValues") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".YValues") 
                                                [| _BicubicSpline.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BicubicSpline.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -836,18 +836,18 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).ZData
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).ZData
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".ZData") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".ZData") 
                                                [| _BicubicSpline.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BicubicSpline.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BicubicSpline> format
                     ; source = source 
@@ -872,18 +872,18 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".AllowsExtrapolation") 
                                                [| _BicubicSpline.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BicubicSpline.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -911,12 +911,12 @@ module BicubicSplineFunction =
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : BicubicSpline) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".DisableExtrapolation") 
                                                [| _BicubicSpline.source
                                                ;  _b.source
                                                |]
@@ -925,7 +925,7 @@ module BicubicSplineFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -953,12 +953,12 @@ module BicubicSplineFunction =
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : BicubicSpline) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".EnableExtrapolation") 
                                                [| _BicubicSpline.source
                                                ;  _b.source
                                                |]
@@ -967,7 +967,7 @@ module BicubicSplineFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -992,18 +992,18 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BicubicSpline.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_BicubicSpline.source + ".Extrapolate") 
                                                [| _BicubicSpline.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BicubicSpline.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1032,14 +1032,14 @@ module BicubicSplineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BicubicSpline>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BicubicSpline>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BicubicSpline>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BicubicSpline>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

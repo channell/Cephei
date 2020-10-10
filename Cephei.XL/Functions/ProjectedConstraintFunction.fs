@@ -55,14 +55,14 @@ module ProjectedConstraintFunction =
                 let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" 
                 let _parameterValues = Helper.toCell<Vector> parameterValues "parameterValues" 
                 let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
-                let builder () = withMnemonic mnemonic (Fun.ProjectedConstraint1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ProjectedConstraint1 
                                                             _Constraint.cell 
                                                             _parameterValues.cell 
                                                             _fixParameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ProjectedConstraint>) l
 
-                let source = Helper.sourceFold "Fun.ProjectedConstraint1" 
+                let source () = Helper.sourceFold "Fun.ProjectedConstraint1" 
                                                [| _Constraint.source
                                                ;  _parameterValues.source
                                                ;  _fixParameters.source
@@ -73,7 +73,7 @@ module ProjectedConstraintFunction =
                                 ;  _fixParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ProjectedConstraint> format
                     ; source = source 
@@ -101,13 +101,13 @@ module ProjectedConstraintFunction =
 
                 let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" 
                 let _projection = Helper.toCell<Projection> projection "projection" 
-                let builder () = withMnemonic mnemonic (Fun.ProjectedConstraint
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ProjectedConstraint
                                                             _Constraint.cell 
                                                             _projection.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ProjectedConstraint>) l
 
-                let source = Helper.sourceFold "Fun.ProjectedConstraint" 
+                let source () = Helper.sourceFold "Fun.ProjectedConstraint" 
                                                [| _Constraint.source
                                                ;  _projection.source
                                                |]
@@ -116,7 +116,7 @@ module ProjectedConstraintFunction =
                                 ;  _projection.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ProjectedConstraint> format
                     ; source = source 
@@ -141,18 +141,18 @@ module ProjectedConstraintFunction =
             try
 
                 let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
-                let builder () = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ProjectedConstraint.source + ".Empty") 
+                let source () = Helper.sourceFold (_ProjectedConstraint.source + ".Empty") 
                                                [| _ProjectedConstraint.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ProjectedConstraint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -180,12 +180,12 @@ module ProjectedConstraintFunction =
 
                 let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).LowerBound
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_ProjectedConstraint.source + ".LowerBound") 
+                let source () = Helper.sourceFold (_ProjectedConstraint.source + ".LowerBound") 
                                                [| _ProjectedConstraint.source
                                                ;  _parameters.source
                                                |]
@@ -194,7 +194,7 @@ module ProjectedConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ProjectedConstraint> format
                     ; source = source 
@@ -222,12 +222,12 @@ module ProjectedConstraintFunction =
 
                 let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Test
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ProjectedConstraint.source + ".Test") 
+                let source () = Helper.sourceFold (_ProjectedConstraint.source + ".Test") 
                                                [| _ProjectedConstraint.source
                                                ;  _p.source
                                                |]
@@ -236,7 +236,7 @@ module ProjectedConstraintFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -270,14 +270,14 @@ module ProjectedConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ProjectedConstraint.source + ".Update") 
+                let source () = Helper.sourceFold (_ProjectedConstraint.source + ".Update") 
                                                [| _ProjectedConstraint.source
                                                ;  _p.source
                                                ;  _direction.source
@@ -290,7 +290,7 @@ module ProjectedConstraintFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -318,12 +318,12 @@ module ProjectedConstraintFunction =
 
                 let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).UpperBound
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_ProjectedConstraint.source + ".UpperBound") 
+                let source () = Helper.sourceFold (_ProjectedConstraint.source + ".UpperBound") 
                                                [| _ProjectedConstraint.source
                                                ;  _parameters.source
                                                |]
@@ -332,7 +332,7 @@ module ProjectedConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ProjectedConstraint> format
                     ; source = source 
@@ -361,14 +361,14 @@ module ProjectedConstraintFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ProjectedConstraint>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ProjectedConstraint>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ProjectedConstraint>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ProjectedConstraint>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

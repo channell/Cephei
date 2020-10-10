@@ -52,12 +52,12 @@ module ImpliedVolHelperFunction =
 
                 let _ImpliedVolHelper = Helper.toCell<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((ImpliedVolHelperModel.Cast _ImpliedVolHelper.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedVolHelperModel.Cast _ImpliedVolHelper.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ImpliedVolHelper.source + ".Derivative") 
+                let source () = Helper.sourceFold (_ImpliedVolHelper.source + ".Derivative") 
                                                [| _ImpliedVolHelper.source
                                                ;  _x.source
                                                |]
@@ -66,7 +66,7 @@ module ImpliedVolHelperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,7 +103,7 @@ module ImpliedVolHelperFunction =
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _displacement = Helper.toCell<double> displacement "displacement" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let builder () = withMnemonic mnemonic (Fun.ImpliedVolHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ImpliedVolHelper 
                                                             _cap.cell 
                                                             _discountCurve.cell 
                                                             _targetValue.cell 
@@ -112,7 +112,7 @@ module ImpliedVolHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ImpliedVolHelper>) l
 
-                let source = Helper.sourceFold "Fun.ImpliedVolHelper" 
+                let source () = Helper.sourceFold "Fun.ImpliedVolHelper" 
                                                [| _cap.source
                                                ;  _discountCurve.source
                                                ;  _targetValue.source
@@ -127,7 +127,7 @@ module ImpliedVolHelperFunction =
                                 ;  _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ImpliedVolHelper> format
                     ; source = source 
@@ -155,12 +155,12 @@ module ImpliedVolHelperFunction =
 
                 let _ImpliedVolHelper = Helper.toCell<ImpliedVolHelper> impliedvolhelper "ImpliedVolHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((ImpliedVolHelperModel.Cast _ImpliedVolHelper.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ImpliedVolHelperModel.Cast _ImpliedVolHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ImpliedVolHelper.source + ".Value") 
+                let source () = Helper.sourceFold (_ImpliedVolHelper.source + ".Value") 
                                                [| _ImpliedVolHelper.source
                                                ;  _x.source
                                                |]
@@ -169,7 +169,7 @@ module ImpliedVolHelperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -198,14 +198,14 @@ module ImpliedVolHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ImpliedVolHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ImpliedVolHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ImpliedVolHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ImpliedVolHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

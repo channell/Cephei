@@ -61,7 +61,7 @@ module BlackVarianceCurveFunction =
                 let _blackVolCurve = Helper.toCell<Generic.List<double>> blackVolCurve "blackVolCurve" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _forceMonotoneVariance = Helper.toCell<bool> forceMonotoneVariance "forceMonotoneVariance" 
-                let builder () = withMnemonic mnemonic (Fun.BlackVarianceCurve 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackVarianceCurve 
                                                             _referenceDate.cell 
                                                             _dates.cell 
                                                             _blackVolCurve.cell 
@@ -70,7 +70,7 @@ module BlackVarianceCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackVarianceCurve>) l
 
-                let source = Helper.sourceFold "Fun.BlackVarianceCurve" 
+                let source () = Helper.sourceFold "Fun.BlackVarianceCurve" 
                                                [| _referenceDate.source
                                                ;  _dates.source
                                                ;  _blackVolCurve.source
@@ -85,7 +85,7 @@ module BlackVarianceCurveFunction =
                                 ;  _forceMonotoneVariance.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackVarianceCurve> format
                     ; source = source 
@@ -110,18 +110,18 @@ module BlackVarianceCurveFunction =
             try
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_BlackVarianceCurve.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".DayCounter") 
                                                [| _BlackVarianceCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackVarianceCurve> format
                     ; source = source 
@@ -146,18 +146,18 @@ module BlackVarianceCurveFunction =
             try
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_BlackVarianceCurve.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".MaxDate") 
                                                [| _BlackVarianceCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,18 +182,18 @@ module BlackVarianceCurveFunction =
             try
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackVarianceCurve.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".MaxStrike") 
                                                [| _BlackVarianceCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -218,18 +218,18 @@ module BlackVarianceCurveFunction =
             try
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackVarianceCurve.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".MinStrike") 
                                                [| _BlackVarianceCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,18 +255,18 @@ module BlackVarianceCurveFunction =
             try
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).SetInterpolation
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).SetInterpolation
                                                        ) :> ICell
                 let format (o : BlackVarianceCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BlackVarianceCurve.source + ".SetInterpolation") 
+                let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".SetInterpolation") 
                                                [| _BlackVarianceCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,12 +296,12 @@ module BlackVarianceCurveFunction =
 
                 let _BlackVarianceCurve = Helper.toCell<BlackVarianceCurve> blackvariancecurve "BlackVarianceCurve"  
                 let _i = Helper.toCell<Interpolator> i "i" 
-                let builder () = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).SetInterpolation1
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceCurveModel.Cast _BlackVarianceCurve.cell).SetInterpolation1
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : BlackVarianceCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BlackVarianceCurve.source + ".SetInterpolation") 
+                let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".SetInterpolation") 
                                                [| _BlackVarianceCurve.source
                                                ;  _i.source
                                                |]
@@ -310,7 +310,7 @@ module BlackVarianceCurveFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -340,14 +340,14 @@ module BlackVarianceCurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackVarianceCurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackVarianceCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackVarianceCurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackVarianceCurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

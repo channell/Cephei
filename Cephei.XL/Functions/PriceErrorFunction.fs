@@ -55,14 +55,14 @@ module PriceErrorFunction =
                 let _engine = Helper.toCell<IPricingEngine> engine "engine" 
                 let _vol = Helper.toCell<SimpleQuote> vol "vol" 
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
-                let builder () = withMnemonic mnemonic (Fun.PriceError 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PriceError 
                                                             _engine.cell 
                                                             _vol.cell 
                                                             _targetValue.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PriceError>) l
 
-                let source = Helper.sourceFold "Fun.PriceError" 
+                let source () = Helper.sourceFold "Fun.PriceError" 
                                                [| _engine.source
                                                ;  _vol.source
                                                ;  _targetValue.source
@@ -73,7 +73,7 @@ module PriceErrorFunction =
                                 ;  _targetValue.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PriceError> format
                     ; source = source 
@@ -101,12 +101,12 @@ module PriceErrorFunction =
 
                 let _PriceError = Helper.toCell<PriceError> priceerror "PriceError"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((PriceErrorModel.Cast _PriceError.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((PriceErrorModel.Cast _PriceError.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PriceError.source + ".Value") 
+                let source () = Helper.sourceFold (_PriceError.source + ".Value") 
                                                [| _PriceError.source
                                                ;  _x.source
                                                |]
@@ -115,7 +115,7 @@ module PriceErrorFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -143,12 +143,12 @@ module PriceErrorFunction =
 
                 let _PriceError = Helper.toCell<PriceError> priceerror "PriceError"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((PriceErrorModel.Cast _PriceError.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((PriceErrorModel.Cast _PriceError.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PriceError.source + ".Derivative") 
+                let source () = Helper.sourceFold (_PriceError.source + ".Derivative") 
                                                [| _PriceError.source
                                                ;  _x.source
                                                |]
@@ -157,7 +157,7 @@ module PriceErrorFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -186,14 +186,14 @@ module PriceErrorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PriceError>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PriceError>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PriceError>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PriceError>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

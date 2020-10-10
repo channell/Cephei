@@ -52,12 +52,12 @@ module GaussLaguerrePolynomialFunction =
 
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Alpha
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Alpha") 
+                let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Alpha") 
                                                [| _GaussLaguerrePolynomial.source
                                                ;  _i.source
                                                |]
@@ -66,7 +66,7 @@ module GaussLaguerrePolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module GaussLaguerrePolynomialFunction =
 
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Beta
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Beta") 
+                let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Beta") 
                                                [| _GaussLaguerrePolynomial.source
                                                ;  _i.source
                                                |]
@@ -108,7 +108,7 @@ module GaussLaguerrePolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -133,19 +133,19 @@ module GaussLaguerrePolynomialFunction =
             try
 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic (Fun.GaussLaguerrePolynomial1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussLaguerrePolynomial1 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussLaguerrePolynomial>) l
 
-                let source = Helper.sourceFold "Fun.GaussLaguerrePolynomial1" 
+                let source () = Helper.sourceFold "Fun.GaussLaguerrePolynomial1" 
                                                [| _s.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussLaguerrePolynomial> format
                     ; source = source 
@@ -167,16 +167,16 @@ module GaussLaguerrePolynomialFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.GaussLaguerrePolynomial ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussLaguerrePolynomial ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussLaguerrePolynomial>) l
 
-                let source = Helper.sourceFold "Fun.GaussLaguerrePolynomial" 
+                let source () = Helper.sourceFold "Fun.GaussLaguerrePolynomial" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussLaguerrePolynomial> format
                     ; source = source 
@@ -201,18 +201,18 @@ module GaussLaguerrePolynomialFunction =
             try
 
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
-                let builder () = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Mu_0
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Mu_0") 
+                let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Mu_0") 
                                                [| _GaussLaguerrePolynomial.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLaguerrePolynomial.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,12 +240,12 @@ module GaussLaguerrePolynomialFunction =
 
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).W
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".W") 
+                let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".W") 
                                                [| _GaussLaguerrePolynomial.source
                                                ;  _x.source
                                                |]
@@ -254,7 +254,7 @@ module GaussLaguerrePolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -285,13 +285,13 @@ module GaussLaguerrePolynomialFunction =
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Value") 
                                                [| _GaussLaguerrePolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -302,7 +302,7 @@ module GaussLaguerrePolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -333,13 +333,13 @@ module GaussLaguerrePolynomialFunction =
                 let _GaussLaguerrePolynomial = Helper.toCell<GaussLaguerrePolynomial> gausslaguerrepolynomial "GaussLaguerrePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).WeightedValue
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLaguerrePolynomialModel.Cast _GaussLaguerrePolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".WeightedValue") 
+                let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".WeightedValue") 
                                                [| _GaussLaguerrePolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -350,7 +350,7 @@ module GaussLaguerrePolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -379,14 +379,14 @@ module GaussLaguerrePolynomialFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussLaguerrePolynomial>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussLaguerrePolynomial>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussLaguerrePolynomial>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussLaguerrePolynomial>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

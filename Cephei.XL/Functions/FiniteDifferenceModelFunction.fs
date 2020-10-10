@@ -49,18 +49,18 @@ module FiniteDifferenceModelFunction =
             try
 
                 let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
-                let builder () = withMnemonic mnemonic ((FiniteDifferenceModelModel.Cast _FiniteDifferenceModel.cell).Evolver
+                let builder (current : ICell) = withMnemonic mnemonic ((FiniteDifferenceModelModel.Cast _FiniteDifferenceModel.cell).Evolver
                                                        ) :> ICell
                 let format (o : Evolver) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FiniteDifferenceModel.source + ".Evolver") 
+                let source () = Helper.sourceFold (_FiniteDifferenceModel.source + ".Evolver") 
                                                [| _FiniteDifferenceModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FiniteDifferenceModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -88,13 +88,13 @@ module FiniteDifferenceModelFunction =
 
                 let _evolver = Helper.toCell<'Evolver> evolver "evolver" 
                 let _stoppingTimes = Helper.toCell<Generic.List<double>> stoppingTimes "stoppingTimes" 
-                let builder () = withMnemonic mnemonic (Fun.FiniteDifferenceModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FiniteDifferenceModel 
                                                             _evolver.cell 
                                                             _stoppingTimes.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FiniteDifferenceModel>) l
 
-                let source = Helper.sourceFold "Fun.FiniteDifferenceModel" 
+                let source () = Helper.sourceFold "Fun.FiniteDifferenceModel" 
                                                [| _evolver.source
                                                ;  _stoppingTimes.source
                                                |]
@@ -103,7 +103,7 @@ module FiniteDifferenceModelFunction =
                                 ;  _stoppingTimes.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FiniteDifferenceModel> format
                     ; source = source 
@@ -131,13 +131,13 @@ module FiniteDifferenceModelFunction =
 
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
-                let builder () = withMnemonic mnemonic (Fun.FiniteDifferenceModel1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FiniteDifferenceModel1 
                                                             _L.cell 
                                                             _bcs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FiniteDifferenceModel>) l
 
-                let source = Helper.sourceFold "Fun.FiniteDifferenceModel1" 
+                let source () = Helper.sourceFold "Fun.FiniteDifferenceModel1" 
                                                [| _L.source
                                                ;  _bcs.source
                                                |]
@@ -146,7 +146,7 @@ module FiniteDifferenceModelFunction =
                                 ;  _bcs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FiniteDifferenceModel> format
                     ; source = source 
@@ -177,14 +177,14 @@ module FiniteDifferenceModelFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _stoppingTimes = Helper.toCell<Generic.List<double>> stoppingTimes "stoppingTimes" 
-                let builder () = withMnemonic mnemonic (Fun.FiniteDifferenceModel2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FiniteDifferenceModel2 
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _stoppingTimes.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FiniteDifferenceModel>) l
 
-                let source = Helper.sourceFold "Fun.FiniteDifferenceModel2" 
+                let source () = Helper.sourceFold "Fun.FiniteDifferenceModel2" 
                                                [| _L.source
                                                ;  _bcs.source
                                                ;  _stoppingTimes.source
@@ -195,7 +195,7 @@ module FiniteDifferenceModelFunction =
                                 ;  _stoppingTimes.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FiniteDifferenceModel> format
                     ; source = source 
@@ -235,7 +235,7 @@ module FiniteDifferenceModelFunction =
                 let _To = Helper.toCell<double> To "To" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _condition = Helper.toCell<IStepCondition<Vector>> condition "condition" 
-                let builder () = withMnemonic mnemonic ((FiniteDifferenceModelModel.Cast _FiniteDifferenceModel.cell).Rollback
+                let builder (current : ICell) = withMnemonic mnemonic ((FiniteDifferenceModelModel.Cast _FiniteDifferenceModel.cell).Rollback
                                                             _a.cell 
                                                             _from.cell 
                                                             _To.cell 
@@ -244,7 +244,7 @@ module FiniteDifferenceModelFunction =
                                                        ) :> ICell
                 let format (o : FiniteDifferenceModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FiniteDifferenceModel.source + ".Rollback") 
+                let source () = Helper.sourceFold (_FiniteDifferenceModel.source + ".Rollback") 
                                                [| _FiniteDifferenceModel.source
                                                ;  _a.source
                                                ;  _from.source
@@ -261,7 +261,7 @@ module FiniteDifferenceModelFunction =
                                 ;  _condition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -298,7 +298,7 @@ module FiniteDifferenceModelFunction =
                 let _from = Helper.toCell<double> from "from" 
                 let _To = Helper.toCell<double> To "To" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder () = withMnemonic mnemonic ((FiniteDifferenceModelModel.Cast _FiniteDifferenceModel.cell).Rollback1
+                let builder (current : ICell) = withMnemonic mnemonic ((FiniteDifferenceModelModel.Cast _FiniteDifferenceModel.cell).Rollback1
                                                             _a.cell 
                                                             _from.cell 
                                                             _To.cell 
@@ -306,7 +306,7 @@ module FiniteDifferenceModelFunction =
                                                        ) :> ICell
                 let format (o : FiniteDifferenceModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FiniteDifferenceModel.source + ".Rollback") 
+                let source () = Helper.sourceFold (_FiniteDifferenceModel.source + ".Rollback") 
                                                [| _FiniteDifferenceModel.source
                                                ;  _a.source
                                                ;  _from.source
@@ -321,7 +321,7 @@ module FiniteDifferenceModelFunction =
                                 ;  _steps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -350,14 +350,14 @@ module FiniteDifferenceModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FiniteDifferenceModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FiniteDifferenceModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FiniteDifferenceModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FiniteDifferenceModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -46,16 +46,16 @@ module PTECurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.PTECurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PTECurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PTECurrency>) l
 
-                let source = Helper.sourceFold "Fun.PTECurrency" 
+                let source () = Helper.sourceFold "Fun.PTECurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PTECurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".Code") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".Empty") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module PTECurrencyFunction =
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".Equals") 
                                                [| _PTECurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module PTECurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".Format") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".FractionsPerUnit") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".FractionSymbol") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".Name") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".NumericCode") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".Rounding") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PTECurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".Symbol") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".ToString") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module PTECurrencyFunction =
             try
 
                 let _PTECurrency = Helper.toCell<PTECurrency> ptecurrency "PTECurrency"  
-                let builder () = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((PTECurrencyModel.Cast _PTECurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_PTECurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_PTECurrency.source + ".TriangulationCurrency") 
                                                [| _PTECurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PTECurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module PTECurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PTECurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PTECurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PTECurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PTECurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

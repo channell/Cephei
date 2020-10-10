@@ -52,12 +52,12 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).LogGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).LogGrid
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogGrid.source + ".LogGrid") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".LogGrid") 
                                                [| _LogGrid.source
                                                ;  _i.source
                                                |]
@@ -66,7 +66,7 @@ module LogGridFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,19 +91,19 @@ module LogGridFunction =
             try
 
                 let _grid = Helper.toCell<Vector> grid "grid" 
-                let builder () = withMnemonic mnemonic (Fun.LogGrid 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LogGrid 
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LogGrid>) l
 
-                let source = Helper.sourceFold "Fun.LogGrid" 
+                let source () = Helper.sourceFold "Fun.LogGrid" 
                                                [| _grid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogGrid> format
                     ; source = source 
@@ -128,18 +128,18 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).LogGridArray
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).LogGridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LogGrid.source + ".LogGridArray") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".LogGridArray") 
                                                [| _LogGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogGrid> format
                     ; source = source 
@@ -167,12 +167,12 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Dx
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Dx
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogGrid.source + ".Dx") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".Dx") 
                                                [| _LogGrid.source
                                                ;  _i.source
                                                |]
@@ -181,7 +181,7 @@ module LogGridFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,18 +206,18 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).DxArray
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).DxArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LogGrid.source + ".DxArray") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".DxArray") 
                                                [| _LogGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogGrid> format
                     ; source = source 
@@ -245,12 +245,12 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Dxm
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Dxm
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogGrid.source + ".Dxm") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".Dxm") 
                                                [| _LogGrid.source
                                                ;  _i.source
                                                |]
@@ -259,7 +259,7 @@ module LogGridFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).DxmArray
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).DxmArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LogGrid.source + ".DxmArray") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".DxmArray") 
                                                [| _LogGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogGrid> format
                     ; source = source 
@@ -323,12 +323,12 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Dxp
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Dxp
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogGrid.source + ".Dxp") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".Dxp") 
                                                [| _LogGrid.source
                                                ;  _i.source
                                                |]
@@ -337,7 +337,7 @@ module LogGridFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -362,18 +362,18 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).DxpArray
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).DxpArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LogGrid.source + ".DxpArray") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".DxpArray") 
                                                [| _LogGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogGrid> format
                     ; source = source 
@@ -401,12 +401,12 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Grid
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogGrid.source + ".Grid") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".Grid") 
                                                [| _LogGrid.source
                                                ;  _i.source
                                                |]
@@ -415,7 +415,7 @@ module LogGridFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -440,18 +440,18 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).GridArray
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).GridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LogGrid.source + ".GridArray") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".GridArray") 
                                                [| _LogGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogGrid> format
                     ; source = source 
@@ -476,18 +476,18 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogGrid.source + ".Size") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".Size") 
                                                [| _LogGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -515,12 +515,12 @@ module LogGridFunction =
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).TransformedGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).TransformedGrid
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LogGrid.source + ".TransformedGrid") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".TransformedGrid") 
                                                [| _LogGrid.source
                                                ;  _i.source
                                                |]
@@ -529,7 +529,7 @@ module LogGridFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -554,18 +554,18 @@ module LogGridFunction =
             try
 
                 let _LogGrid = Helper.toCell<LogGrid> loggrid "LogGrid"  
-                let builder () = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).TransformedGridArray
+                let builder (current : ICell) = withMnemonic mnemonic ((LogGridModel.Cast _LogGrid.cell).TransformedGridArray
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LogGrid.source + ".TransformedGridArray") 
+                let source () = Helper.sourceFold (_LogGrid.source + ".TransformedGridArray") 
                                                [| _LogGrid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LogGrid> format
                     ; source = source 
@@ -594,14 +594,14 @@ module LogGridFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LogGrid>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LogGrid>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LogGrid>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LogGrid>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

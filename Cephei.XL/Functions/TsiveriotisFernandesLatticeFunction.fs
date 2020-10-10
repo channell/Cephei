@@ -55,13 +55,13 @@ module TsiveriotisFernandesLatticeFunction =
                 let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).PartialRollback
+                let builder (current : ICell) = withMnemonic mnemonic ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).PartialRollback
                                                             _asset.cell 
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : TsiveriotisFernandesLattice) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TsiveriotisFernandesLattice.source + ".PartialRollback") 
+                let source () = Helper.sourceFold (_TsiveriotisFernandesLattice.source + ".PartialRollback") 
                                                [| _TsiveriotisFernandesLattice.source
                                                ;  _asset.source
                                                ;  _To.source
@@ -72,7 +72,7 @@ module TsiveriotisFernandesLatticeFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module TsiveriotisFernandesLatticeFunction =
                 let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).Rollback
+                let builder (current : ICell) = withMnemonic mnemonic ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).Rollback
                                                             _asset.cell 
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : TsiveriotisFernandesLattice) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TsiveriotisFernandesLattice.source + ".Rollback") 
+                let source () = Helper.sourceFold (_TsiveriotisFernandesLattice.source + ".Rollback") 
                                                [| _TsiveriotisFernandesLattice.source
                                                ;  _asset.source
                                                ;  _To.source
@@ -120,7 +120,7 @@ module TsiveriotisFernandesLatticeFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -166,7 +166,7 @@ module TsiveriotisFernandesLatticeFunction =
                 let _newValues = Helper.toCell<Vector> newValues "newValues" 
                 let _newConversionProbability = Helper.toCell<Vector> newConversionProbability "newConversionProbability" 
                 let _newSpreadAdjustedRate = Helper.toCell<Vector> newSpreadAdjustedRate "newSpreadAdjustedRate" 
-                let builder () = withMnemonic mnemonic ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).Stepback
+                let builder (current : ICell) = withMnemonic mnemonic ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).Stepback
                                                             _i.cell 
                                                             _values.cell 
                                                             _conversionProbability.cell 
@@ -177,7 +177,7 @@ module TsiveriotisFernandesLatticeFunction =
                                                        ) :> ICell
                 let format (o : TsiveriotisFernandesLattice) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TsiveriotisFernandesLattice.source + ".Stepback") 
+                let source () = Helper.sourceFold (_TsiveriotisFernandesLattice.source + ".Stepback") 
                                                [| _TsiveriotisFernandesLattice.source
                                                ;  _i.source
                                                ;  _values.source
@@ -198,7 +198,7 @@ module TsiveriotisFernandesLatticeFunction =
                                 ;  _newSpreadAdjustedRate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -241,7 +241,7 @@ module TsiveriotisFernandesLatticeFunction =
                 let _creditSpread = Helper.toCell<double> creditSpread "creditSpread" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
                 let _divYield = Helper.toCell<double> divYield "divYield" 
-                let builder () = withMnemonic mnemonic (Fun.TsiveriotisFernandesLattice 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TsiveriotisFernandesLattice 
                                                             _tree.cell 
                                                             _riskFreeRate.cell 
                                                             _End.cell 
@@ -252,7 +252,7 @@ module TsiveriotisFernandesLatticeFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TsiveriotisFernandesLattice>) l
 
-                let source = Helper.sourceFold "Fun.TsiveriotisFernandesLattice" 
+                let source () = Helper.sourceFold "Fun.TsiveriotisFernandesLattice" 
                                                [| _tree.source
                                                ;  _riskFreeRate.source
                                                ;  _End.source
@@ -271,7 +271,7 @@ module TsiveriotisFernandesLatticeFunction =
                                 ;  _divYield.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TsiveriotisFernandesLattice> format
                     ; source = source 
@@ -300,14 +300,14 @@ module TsiveriotisFernandesLatticeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TsiveriotisFernandesLattice>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TsiveriotisFernandesLattice>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TsiveriotisFernandesLattice>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TsiveriotisFernandesLattice>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

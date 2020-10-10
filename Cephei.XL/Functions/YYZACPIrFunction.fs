@@ -52,13 +52,13 @@ module YYZACPIrFunction =
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
                 let _ts = Helper.toHandle<YoYInflationTermStructure> ts "ts" 
-                let builder () = withMnemonic mnemonic (Fun.YYZACPIr1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.YYZACPIr1 
                                                             _interpolated.cell 
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YYZACPIr>) l
 
-                let source = Helper.sourceFold "Fun.YYZACPIr1" 
+                let source () = Helper.sourceFold "Fun.YYZACPIr1" 
                                                [| _interpolated.source
                                                ;  _ts.source
                                                |]
@@ -67,7 +67,7 @@ module YYZACPIrFunction =
                                 ;  _ts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYZACPIr> format
                     ; source = source 
@@ -92,19 +92,19 @@ module YYZACPIrFunction =
             try
 
                 let _interpolated = Helper.toCell<bool> interpolated "interpolated" 
-                let builder () = withMnemonic mnemonic (Fun.YYZACPIr
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.YYZACPIr
                                                             _interpolated.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YYZACPIr>) l
 
-                let source = Helper.sourceFold "Fun.YYZACPIr" 
+                let source () = Helper.sourceFold "Fun.YYZACPIr" 
                                                [| _interpolated.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _interpolated.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYZACPIr> format
                     ; source = source 
@@ -132,12 +132,12 @@ module YYZACPIrFunction =
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
                 let _h = Helper.toHandle<YoYInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".Clone") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".Clone") 
                                                [| _YYZACPIr.source
                                                ;  _h.source
                                                |]
@@ -146,7 +146,7 @@ module YYZACPIrFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYZACPIr> format
                     ; source = source 
@@ -177,13 +177,13 @@ module YYZACPIrFunction =
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".Fixing") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".Fixing") 
                                                [| _YYZACPIr.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -194,7 +194,7 @@ module YYZACPIrFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -219,18 +219,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Ratio
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Ratio
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".Ratio") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".Ratio") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,18 +255,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).YoyInflationTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).YoyInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".YoyInflationTermStructure") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".YoyInflationTermStructure") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYZACPIr> format
                     ; source = source 
@@ -300,14 +300,14 @@ module YYZACPIrFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : YYZACPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".AddFixing") 
                                                [| _YYZACPIr.source
                                                ;  _fixingDate.source
                                                ;  _fixing.source
@@ -320,7 +320,7 @@ module YYZACPIrFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -346,18 +346,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).AvailabilityLag
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".AvailabilityLag") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".AvailabilityLag") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYZACPIr> format
                     ; source = source 
@@ -382,18 +382,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".Currency") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".Currency") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYZACPIr> format
                     ; source = source 
@@ -418,18 +418,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".FamilyName") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -454,18 +454,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".FixingCalendar") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYZACPIr> format
                     ; source = source 
@@ -490,18 +490,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Frequency
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".Frequency") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".Frequency") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -526,18 +526,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Interpolated
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".Interpolated") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".Interpolated") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -565,12 +565,12 @@ module YYZACPIrFunction =
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".IsValidFixingDate") 
                                                [| _YYZACPIr.source
                                                ;  _fixingDate.source
                                                |]
@@ -579,7 +579,7 @@ module YYZACPIrFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -604,18 +604,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".Name") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".Name") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -640,18 +640,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Region
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".Region") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".Region") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<YYZACPIr> format
                     ; source = source 
@@ -676,18 +676,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Revised
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".Revised") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".Revised") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -712,18 +712,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).Update
                                                        ) :> ICell
                 let format (o : YYZACPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".Update") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".Update") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -757,14 +757,14 @@ module YYZACPIrFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : YYZACPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".AddFixings") 
                                                [| _YYZACPIr.source
                                                ;  _d.source
                                                ;  _v.source
@@ -777,7 +777,7 @@ module YYZACPIrFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -808,13 +808,13 @@ module YYZACPIrFunction =
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : YYZACPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".AddFixings1") 
                                                [| _YYZACPIr.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -825,7 +825,7 @@ module YYZACPIrFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -850,18 +850,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".AllowsNativeFixings") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -886,18 +886,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : YYZACPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".ClearFixings") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -925,12 +925,12 @@ module YYZACPIrFunction =
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YYZACPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".RegisterWith") 
                                                [| _YYZACPIr.source
                                                ;  _handler.source
                                                |]
@@ -939,7 +939,7 @@ module YYZACPIrFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -964,18 +964,18 @@ module YYZACPIrFunction =
             try
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".TimeSeries") 
                                                [| _YYZACPIr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPIr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1003,12 +1003,12 @@ module YYZACPIrFunction =
 
                 let _YYZACPIr = Helper.toCell<YYZACPIr> yyzacpir "YYZACPIr"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((YYZACPIrModel.Cast _YYZACPIr.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YYZACPIr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_YYZACPIr.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_YYZACPIr.source + ".UnregisterWith") 
                                                [| _YYZACPIr.source
                                                ;  _handler.source
                                                |]
@@ -1017,7 +1017,7 @@ module YYZACPIrFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1046,14 +1046,14 @@ module YYZACPIrFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<YYZACPIr>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<YYZACPIr>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<YYZACPIr>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<YYZACPIr>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

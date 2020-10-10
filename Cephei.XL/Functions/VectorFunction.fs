@@ -49,18 +49,18 @@ module VectorFunction =
             try
 
                 let _Vector = Helper.toCell<Vector> vector "Vector"  
-                let builder () = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Vector.source + ".Clone") 
+                let source () = Helper.sourceFold (_Vector.source + ".Clone") 
                                                [| _Vector.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vector.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
@@ -85,18 +85,18 @@ module VectorFunction =
             try
 
                 let _Vector = Helper.toCell<Vector> vector "Vector"  
-                let builder () = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vector.source + ".Empty") 
+                let source () = Helper.sourceFold (_Vector.source + ".Empty") 
                                                [| _Vector.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vector.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,12 +124,12 @@ module VectorFunction =
 
                 let _Vector = Helper.toCell<Vector> vector "Vector"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vector.source + ".Equals") 
+                let source () = Helper.sourceFold (_Vector.source + ".Equals") 
                                                [| _Vector.source
                                                ;  _o.source
                                                |]
@@ -138,7 +138,7 @@ module VectorFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -166,12 +166,12 @@ module VectorFunction =
 
                 let _Vector = Helper.toCell<Vector> vector "Vector"  
                 let _other = Helper.toCell<Vector> other "other" 
-                let builder () = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Equals1
+                let builder (current : ICell) = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Equals1
                                                             _other.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vector.source + ".Equals1") 
+                let source () = Helper.sourceFold (_Vector.source + ".Equals1") 
                                                [| _Vector.source
                                                ;  _other.source
                                                |]
@@ -180,7 +180,7 @@ module VectorFunction =
                                 ;  _other.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -205,18 +205,18 @@ module VectorFunction =
             try
 
                 let _Vector = Helper.toCell<Vector> vector "Vector"  
-                let builder () = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Vector.source + ".Size") 
+                let source () = Helper.sourceFold (_Vector.source + ".Size") 
                                                [| _Vector.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vector.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -247,13 +247,13 @@ module VectorFunction =
                 let _Vector = Helper.toCell<Vector> vector "Vector"  
                 let _i1 = Helper.toCell<int> i1 "i1" 
                 let _i2 = Helper.toCell<int> i2 "i2" 
-                let builder () = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Swap
+                let builder (current : ICell) = withMnemonic mnemonic ((VectorModel.Cast _Vector.cell).Swap
                                                             _i1.cell 
                                                             _i2.cell 
                                                        ) :> ICell
                 let format (o : Vector) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Vector.source + ".Swap") 
+                let source () = Helper.sourceFold (_Vector.source + ".Swap") 
                                                [| _Vector.source
                                                ;  _i1.source
                                                ;  _i2.source
@@ -264,7 +264,7 @@ module VectorFunction =
                                 ;  _i2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,19 +289,19 @@ module VectorFunction =
             try
 
                 let _from = Helper.toCell<Generic.List<double>> from "from" 
-                let builder () = withMnemonic mnemonic (Fun.Vector1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Vector1 
                                                             _from.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold "Fun.Vector1" 
+                let source () = Helper.sourceFold "Fun.Vector1" 
                                                [| _from.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _from.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
@@ -323,16 +323,16 @@ module VectorFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Vector ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Vector ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold "Fun.Vector" 
+                let source () = Helper.sourceFold "Fun.Vector" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
@@ -357,19 +357,19 @@ module VectorFunction =
             try
 
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic (Fun.Vector4
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Vector4
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold "Fun.Vector4" 
+                let source () = Helper.sourceFold "Fun.Vector4" 
                                                [| _size.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
@@ -397,13 +397,13 @@ module VectorFunction =
 
                 let _size = Helper.toCell<int> size "size" 
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic (Fun.Vector5 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Vector5 
                                                             _size.cell 
                                                             _value.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold "Fun.Vector5" 
+                let source () = Helper.sourceFold "Fun.Vector5" 
                                                [| _size.source
                                                ;  _value.source
                                                |]
@@ -412,7 +412,7 @@ module VectorFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
@@ -437,19 +437,19 @@ module VectorFunction =
             try
 
                 let _from = Helper.toCell<Vector> from "from" 
-                let builder () = withMnemonic mnemonic (Fun.Vector2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Vector2
                                                             _from.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold "Fun.Vector2" 
+                let source () = Helper.sourceFold "Fun.Vector2" 
                                                [| _from.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _from.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
@@ -480,14 +480,14 @@ module VectorFunction =
                 let _size = Helper.toCell<int> size "size" 
                 let _value = Helper.toCell<double> value "value" 
                 let _increment = Helper.toCell<double> increment "increment" 
-                let builder () = withMnemonic mnemonic (Fun.Vector3
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Vector3
                                                             _size.cell 
                                                             _value.cell 
                                                             _increment.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold "Fun.Vector3" 
+                let source () = Helper.sourceFold "Fun.Vector3" 
                                                [| _size.source
                                                ;  _value.source
                                                ;  _increment.source
@@ -498,7 +498,7 @@ module VectorFunction =
                                 ;  _increment.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Vector> format
                     ; source = source 
@@ -527,14 +527,14 @@ module VectorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Vector>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Vector>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Vector>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Vector>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

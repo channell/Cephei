@@ -61,7 +61,7 @@ module TianFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Factory
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -69,7 +69,7 @@ module TianFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Tian>) l
 
-                let source = Helper.sourceFold (_Tian.source + ".Factory") 
+                let source () = Helper.sourceFold (_Tian.source + ".Factory") 
                                                [| _Tian.source
                                                ;  _Process.source
                                                ;  _End.source
@@ -84,7 +84,7 @@ module TianFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tian> format
                     ; source = source 
@@ -118,14 +118,14 @@ module TianFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Probability
+                let builder (current : ICell) = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Probability
                                                             _i.cell 
                                                             _j.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Tian.source + ".Probability") 
+                let source () = Helper.sourceFold (_Tian.source + ".Probability") 
                                                [| _Tian.source
                                                ;  _i.source
                                                ;  _j.source
@@ -138,7 +138,7 @@ module TianFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -160,16 +160,16 @@ module TianFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Tian1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Tian1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Tian>) l
 
-                let source = Helper.sourceFold "Fun.Tian1 ()" 
+                let source () = Helper.sourceFold "Fun.Tian1 ()" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tian> format
                     ; source = source 
@@ -203,7 +203,7 @@ module TianFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic (Fun.Tian
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Tian
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -211,7 +211,7 @@ module TianFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Tian>) l
 
-                let source = Helper.sourceFold "Fun.Tian" 
+                let source () = Helper.sourceFold "Fun.Tian" 
                                                [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
@@ -224,7 +224,7 @@ module TianFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Tian> format
                     ; source = source 
@@ -255,13 +255,13 @@ module TianFunction =
                 let _Tian = Helper.toCell<Tian> tian "Tian"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Underlying
+                let builder (current : ICell) = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Tian.source + ".Underlying") 
+                let source () = Helper.sourceFold (_Tian.source + ".Underlying") 
                                                [| _Tian.source
                                                ;  _i.source
                                                ;  _index.source
@@ -272,7 +272,7 @@ module TianFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -306,14 +306,14 @@ module TianFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Descendant
+                let builder (current : ICell) = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Tian.source + ".Descendant") 
+                let source () = Helper.sourceFold (_Tian.source + ".Descendant") 
                                                [| _Tian.source
                                                ;  _x.source
                                                ;  _index.source
@@ -326,7 +326,7 @@ module TianFunction =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -354,12 +354,12 @@ module TianFunction =
 
                 let _Tian = Helper.toCell<Tian> tian "Tian"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Tian.source + ".Size") 
+                let source () = Helper.sourceFold (_Tian.source + ".Size") 
                                                [| _Tian.source
                                                ;  _i.source
                                                |]
@@ -368,7 +368,7 @@ module TianFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -393,18 +393,18 @@ module TianFunction =
             try
 
                 let _Tian = Helper.toCell<Tian> tian "Tian"  
-                let builder () = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Columns
+                let builder (current : ICell) = withMnemonic mnemonic ((TianModel.Cast _Tian.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Tian.source + ".Columns") 
+                let source () = Helper.sourceFold (_Tian.source + ".Columns") 
                                                [| _Tian.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tian.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -433,14 +433,14 @@ module TianFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Tian>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Tian>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Tian>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Tian>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

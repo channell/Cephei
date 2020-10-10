@@ -49,18 +49,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).ConvexityAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".ConvexityAdjustment") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".ConvexityAdjustment") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,7 +97,7 @@ module FuturesRateHelperFunction =
                 let _i = Helper.toCell<IborIndex> i "i" 
                 let _convAdj = Helper.toDefault<double> convAdj "convAdj" 0.0
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic (Fun.FuturesRateHelper1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper1 
                                                             _price.cell 
                                                             _iborStartDate.cell 
                                                             _i.cell 
@@ -106,7 +106,7 @@ module FuturesRateHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.FuturesRateHelper1" 
+                let source () = Helper.sourceFold "Fun.FuturesRateHelper1" 
                                                [| _price.source
                                                ;  _iborStartDate.source
                                                ;  _i.source
@@ -121,7 +121,7 @@ module FuturesRateHelperFunction =
                                 ;  _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FuturesRateHelper> format
                     ; source = source 
@@ -158,7 +158,7 @@ module FuturesRateHelperFunction =
                 let _i = Helper.toCell<IborIndex> i "i" 
                 let _convAdj = Helper.toHandle<Quote> convAdj "convAdj" 
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic (Fun.FuturesRateHelper2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper2
                                                             _price.cell 
                                                             _iborStartDate.cell 
                                                             _i.cell 
@@ -167,7 +167,7 @@ module FuturesRateHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.FuturesRateHelper2" 
+                let source () = Helper.sourceFold "Fun.FuturesRateHelper2" 
                                                [| _price.source
                                                ;  _iborStartDate.source
                                                ;  _i.source
@@ -182,7 +182,7 @@ module FuturesRateHelperFunction =
                                 ;  _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FuturesRateHelper> format
                     ; source = source 
@@ -222,7 +222,7 @@ module FuturesRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _convAdj = Helper.toDefault<double> convAdj "convAdj" 0.0
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic (Fun.FuturesRateHelper3
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper3
                                                             _price.cell 
                                                             _iborStartDate.cell 
                                                             _iborEndDate.cell 
@@ -232,7 +232,7 @@ module FuturesRateHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.FuturesRateHelper3" 
+                let source () = Helper.sourceFold "Fun.FuturesRateHelper3" 
                                                [| _price.source
                                                ;  _iborStartDate.source
                                                ;  _iborEndDate.source
@@ -249,7 +249,7 @@ module FuturesRateHelperFunction =
                                 ;  _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FuturesRateHelper> format
                     ; source = source 
@@ -289,7 +289,7 @@ module FuturesRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _convAdj = Helper.toHandle<Quote> convAdj "convAdj" 
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic (Fun.FuturesRateHelper4
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper4
                                                             _price.cell 
                                                             _iborStartDate.cell 
                                                             _iborEndDate.cell 
@@ -299,7 +299,7 @@ module FuturesRateHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.FuturesRateHelper4" 
+                let source () = Helper.sourceFold "Fun.FuturesRateHelper4" 
                                                [| _price.source
                                                ;  _iborStartDate.source
                                                ;  _iborEndDate.source
@@ -316,7 +316,7 @@ module FuturesRateHelperFunction =
                                 ;  _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FuturesRateHelper> format
                     ; source = source 
@@ -365,7 +365,7 @@ module FuturesRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _convexityAdjustment = Helper.toDefault<double> convexityAdjustment "convexityAdjustment" 0.0
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic (Fun.FuturesRateHelper5 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper5 
                                                             _price.cell 
                                                             _iborStartDate.cell 
                                                             _lengthInMonths.cell 
@@ -378,7 +378,7 @@ module FuturesRateHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.FuturesRateHelper5" 
+                let source () = Helper.sourceFold "Fun.FuturesRateHelper5" 
                                                [| _price.source
                                                ;  _iborStartDate.source
                                                ;  _lengthInMonths.source
@@ -401,7 +401,7 @@ module FuturesRateHelperFunction =
                                 ;  _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FuturesRateHelper> format
                     ; source = source 
@@ -450,7 +450,7 @@ module FuturesRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _convAdj = Helper.toHandle<Quote> convAdj "convAdj" 
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic (Fun.FuturesRateHelper
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper
                                                             _price.cell 
                                                             _iborStartDate.cell 
                                                             _lengthInMonths.cell 
@@ -463,7 +463,7 @@ module FuturesRateHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.FuturesRateHelper" 
+                let source () = Helper.sourceFold "Fun.FuturesRateHelper" 
                                                [| _price.source
                                                ;  _iborStartDate.source
                                                ;  _lengthInMonths.source
@@ -486,7 +486,7 @@ module FuturesRateHelperFunction =
                                 ;  _Type.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FuturesRateHelper> format
                     ; source = source 
@@ -511,18 +511,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).ImpliedQuote
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".ImpliedQuote") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".ImpliedQuote") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -547,18 +547,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).EarliestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".EarliestDate") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".EarliestDate") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -583,18 +583,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).LatestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".LatestDate") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".LatestDate") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -619,18 +619,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).LatestRelevantDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".LatestRelevantDate") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".LatestRelevantDate") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -655,18 +655,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".MaturityDate") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -691,18 +691,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).PillarDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".PillarDate") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".PillarDate") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -727,18 +727,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).Quote
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".Quote") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".Quote") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FuturesRateHelper> format
                     ; source = source 
@@ -763,18 +763,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).QuoteError
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".QuoteError") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".QuoteError") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -799,18 +799,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).QuoteIsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".QuoteIsValid") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".QuoteIsValid") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -835,18 +835,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).QuoteValue
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".QuoteValue") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".QuoteValue") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -874,12 +874,12 @@ module FuturesRateHelperFunction =
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".RegisterWith") 
                                                [| _FuturesRateHelper.source
                                                ;  _handler.source
                                                |]
@@ -888,7 +888,7 @@ module FuturesRateHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -917,12 +917,12 @@ module FuturesRateHelperFunction =
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
                 let _ts = Helper.toCell<'TS> ts "ts" 
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).SetTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).SetTermStructure
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".SetTermStructure") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".SetTermStructure") 
                                                [| _FuturesRateHelper.source
                                                ;  _ts.source
                                                |]
@@ -931,7 +931,7 @@ module FuturesRateHelperFunction =
                                 ;  _ts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -960,12 +960,12 @@ module FuturesRateHelperFunction =
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".UnregisterWith") 
                                                [| _FuturesRateHelper.source
                                                ;  _handler.source
                                                |]
@@ -974,7 +974,7 @@ module FuturesRateHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -999,18 +999,18 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FuturesRateHelper.source + ".Update") 
+                let source () = Helper.sourceFold (_FuturesRateHelper.source + ".Update") 
                                                [| _FuturesRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1039,14 +1039,14 @@ module FuturesRateHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FuturesRateHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FuturesRateHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FuturesRateHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FuturesRateHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

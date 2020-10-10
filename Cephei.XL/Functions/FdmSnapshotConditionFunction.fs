@@ -55,13 +55,13 @@ module FdmSnapshotConditionFunction =
                 let _FdmSnapshotCondition = Helper.toCell<FdmSnapshotCondition> fdmsnapshotcondition "FdmSnapshotCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmSnapshotConditionModel.Cast _FdmSnapshotCondition.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSnapshotConditionModel.Cast _FdmSnapshotCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FdmSnapshotCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmSnapshotCondition.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_FdmSnapshotCondition.source + ".ApplyTo") 
                                                [| _FdmSnapshotCondition.source
                                                ;  _o.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module FdmSnapshotConditionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,19 +97,19 @@ module FdmSnapshotConditionFunction =
             try
 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic (Fun.FdmSnapshotCondition 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmSnapshotCondition 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmSnapshotCondition>) l
 
-                let source = Helper.sourceFold "Fun.FdmSnapshotCondition" 
+                let source () = Helper.sourceFold "Fun.FdmSnapshotCondition" 
                                                [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSnapshotCondition> format
                     ; source = source 
@@ -134,18 +134,18 @@ module FdmSnapshotConditionFunction =
             try
 
                 let _FdmSnapshotCondition = Helper.toCell<FdmSnapshotCondition> fdmsnapshotcondition "FdmSnapshotCondition"  
-                let builder () = withMnemonic mnemonic ((FdmSnapshotConditionModel.Cast _FdmSnapshotCondition.cell).GetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSnapshotConditionModel.Cast _FdmSnapshotCondition.cell).GetTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmSnapshotCondition.source + ".GetTime") 
+                let source () = Helper.sourceFold (_FdmSnapshotCondition.source + ".GetTime") 
                                                [| _FdmSnapshotCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSnapshotCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module FdmSnapshotConditionFunction =
             try
 
                 let _FdmSnapshotCondition = Helper.toCell<FdmSnapshotCondition> fdmsnapshotcondition "FdmSnapshotCondition"  
-                let builder () = withMnemonic mnemonic ((FdmSnapshotConditionModel.Cast _FdmSnapshotCondition.cell).GetValues
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmSnapshotConditionModel.Cast _FdmSnapshotCondition.cell).GetValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FdmSnapshotCondition.source + ".GetValues") 
+                let source () = Helper.sourceFold (_FdmSnapshotCondition.source + ".GetValues") 
                                                [| _FdmSnapshotCondition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmSnapshotCondition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmSnapshotCondition> format
                     ; source = source 
@@ -210,14 +210,14 @@ module FdmSnapshotConditionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmSnapshotCondition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmSnapshotCondition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmSnapshotCondition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmSnapshotCondition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

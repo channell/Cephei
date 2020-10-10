@@ -55,13 +55,13 @@ module DefaultDensityFunction =
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).DiscountImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DefaultDensity.source + ".DiscountImpl") 
+                let source () = Helper.sourceFold (_DefaultDensity.source + ".DiscountImpl") 
                                                [| _DefaultDensity.source
                                                ;  _i.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module DefaultDensityFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module DefaultDensityFunction =
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).ForwardImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DefaultDensity.source + ".ForwardImpl") 
+                let source () = Helper.sourceFold (_DefaultDensity.source + ".ForwardImpl") 
                                                [| _DefaultDensity.source
                                                ;  _i.source
                                                ;  _t.source
@@ -120,7 +120,7 @@ module DefaultDensityFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,7 +157,7 @@ module DefaultDensityFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).Guess
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -165,7 +165,7 @@ module DefaultDensityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DefaultDensity.source + ".Guess") 
+                let source () = Helper.sourceFold (_DefaultDensity.source + ".Guess") 
                                                [| _DefaultDensity.source
                                                ;  _i.source
                                                ;  _c.source
@@ -180,7 +180,7 @@ module DefaultDensityFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -208,12 +208,12 @@ module DefaultDensityFunction =
 
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
                 let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).InitialDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DefaultDensity.source + ".InitialDate") 
+                let source () = Helper.sourceFold (_DefaultDensity.source + ".InitialDate") 
                                                [| _DefaultDensity.source
                                                ;  _c.source
                                                |]
@@ -222,7 +222,7 @@ module DefaultDensityFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -250,12 +250,12 @@ module DefaultDensityFunction =
 
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
                 let _c = Helper.toCell<DefaultProbabilityTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).InitialValue
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DefaultDensity.source + ".InitialValue") 
+                let source () = Helper.sourceFold (_DefaultDensity.source + ".InitialValue") 
                                                [| _DefaultDensity.source
                                                ;  _c.source
                                                |]
@@ -264,7 +264,7 @@ module DefaultDensityFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,18 +289,18 @@ module DefaultDensityFunction =
             try
 
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
-                let builder () = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).MaxIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DefaultDensity.source + ".MaxIterations") 
+                let source () = Helper.sourceFold (_DefaultDensity.source + ".MaxIterations") 
                                                [| _DefaultDensity.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DefaultDensity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,7 +337,7 @@ module DefaultDensityFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).MaxValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -345,7 +345,7 @@ module DefaultDensityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DefaultDensity.source + ".MaxValueAfter") 
+                let source () = Helper.sourceFold (_DefaultDensity.source + ".MaxValueAfter") 
                                                [| _DefaultDensity.source
                                                ;  _i.source
                                                ;  _c.source
@@ -360,7 +360,7 @@ module DefaultDensityFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -397,7 +397,7 @@ module DefaultDensityFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).MinValueAfter
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -405,7 +405,7 @@ module DefaultDensityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DefaultDensity.source + ".MinValueAfter") 
+                let source () = Helper.sourceFold (_DefaultDensity.source + ".MinValueAfter") 
                                                [| _DefaultDensity.source
                                                ;  _i.source
                                                ;  _c.source
@@ -420,7 +420,7 @@ module DefaultDensityFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -454,14 +454,14 @@ module DefaultDensityFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _density = Helper.toCell<double> density "density" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).UpdateGuess
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).UpdateGuess
                                                             _data.cell 
                                                             _density.cell 
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : DefaultDensity) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DefaultDensity.source + ".UpdateGuess") 
+                let source () = Helper.sourceFold (_DefaultDensity.source + ".UpdateGuess") 
                                                [| _DefaultDensity.source
                                                ;  _data.source
                                                ;  _density.source
@@ -474,7 +474,7 @@ module DefaultDensityFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -505,13 +505,13 @@ module DefaultDensityFunction =
                 let _DefaultDensity = Helper.toCell<DefaultDensity> defaultdensity "DefaultDensity"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).ZeroYieldImpl
+                let builder (current : ICell) = withMnemonic mnemonic ((DefaultDensityModel.Cast _DefaultDensity.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DefaultDensity.source + ".ZeroYieldImpl") 
+                let source () = Helper.sourceFold (_DefaultDensity.source + ".ZeroYieldImpl") 
                                                [| _DefaultDensity.source
                                                ;  _i.source
                                                ;  _t.source
@@ -522,7 +522,7 @@ module DefaultDensityFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -551,14 +551,14 @@ module DefaultDensityFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DefaultDensity>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DefaultDensity>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DefaultDensity>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DefaultDensity>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -59,7 +59,7 @@ module FDBermudanEngineFunction =
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
                 let _timeDependent = Helper.toDefault<bool> timeDependent "timeDependent" false
-                let builder () = withMnemonic mnemonic (Fun.FDBermudanEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDBermudanEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -67,7 +67,7 @@ module FDBermudanEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDBermudanEngine>) l
 
-                let source = Helper.sourceFold "Fun.FDBermudanEngine" 
+                let source () = Helper.sourceFold "Fun.FDBermudanEngine" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
@@ -80,7 +80,7 @@ module FDBermudanEngineFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDBermudanEngine> format
                     ; source = source 
@@ -108,12 +108,12 @@ module FDBermudanEngineFunction =
 
                 let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDBermudanEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FDBermudanEngine.source + ".RegisterWith") 
                                                [| _FDBermudanEngine.source
                                                ;  _handler.source
                                                |]
@@ -122,7 +122,7 @@ module FDBermudanEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -147,18 +147,18 @@ module FDBermudanEngineFunction =
             try
 
                 let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
-                let builder () = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDBermudanEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_FDBermudanEngine.source + ".Reset") 
                                                [| _FDBermudanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -186,12 +186,12 @@ module FDBermudanEngineFunction =
 
                 let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDBermudanEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FDBermudanEngine.source + ".UnregisterWith") 
                                                [| _FDBermudanEngine.source
                                                ;  _handler.source
                                                |]
@@ -200,7 +200,7 @@ module FDBermudanEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -225,18 +225,18 @@ module FDBermudanEngineFunction =
             try
 
                 let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
-                let builder () = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).Update
                                                        ) :> ICell
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDBermudanEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_FDBermudanEngine.source + ".Update") 
                                                [| _FDBermudanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -264,12 +264,12 @@ module FDBermudanEngineFunction =
 
                 let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder () = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).SetStepCondition
+                let builder (current : ICell) = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDBermudanEngine.source + ".SetStepCondition") 
+                let source () = Helper.sourceFold (_FDBermudanEngine.source + ".SetStepCondition") 
                                                [| _FDBermudanEngine.source
                                                ;  _impl.source
                                                |]
@@ -278,7 +278,7 @@ module FDBermudanEngineFunction =
                                 ;  _impl.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -303,18 +303,18 @@ module FDBermudanEngineFunction =
             try
 
                 let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
-                let builder () = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).EnsureStrikeInGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDBermudanEngine.source + ".EnsureStrikeInGrid") 
+                let source () = Helper.sourceFold (_FDBermudanEngine.source + ".EnsureStrikeInGrid") 
                                                [| _FDBermudanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -351,7 +351,7 @@ module FDBermudanEngineFunction =
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
                 let _timeDependent = Helper.toDefault<bool> timeDependent "timeDependent" false
-                let builder () = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -359,7 +359,7 @@ module FDBermudanEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
-                let source = Helper.sourceFold (_FDBermudanEngine.source + ".Factory") 
+                let source () = Helper.sourceFold (_FDBermudanEngine.source + ".Factory") 
                                                [| _FDBermudanEngine.source
                                                ;  _Process.source
                                                ;  _timeSteps.source
@@ -374,7 +374,7 @@ module FDBermudanEngineFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDBermudanEngine> format
                     ; source = source 
@@ -399,18 +399,18 @@ module FDBermudanEngineFunction =
             try
 
                 let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
-                let builder () = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).GetResidualTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FDBermudanEngine.source + ".GetResidualTime") 
+                let source () = Helper.sourceFold (_FDBermudanEngine.source + ".GetResidualTime") 
                                                [| _FDBermudanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -435,18 +435,18 @@ module FDBermudanEngineFunction =
             try
 
                 let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
-                let builder () = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FDBermudanEngine.source + ".Grid") 
+                let source () = Helper.sourceFold (_FDBermudanEngine.source + ".Grid") 
                                                [| _FDBermudanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDBermudanEngine> format
                     ; source = source 
@@ -471,18 +471,18 @@ module FDBermudanEngineFunction =
             try
 
                 let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
-                let builder () = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).IntrinsicValues_
+                let builder (current : ICell) = withMnemonic mnemonic ((FDBermudanEngineModel.Cast _FDBermudanEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold (_FDBermudanEngine.source + ".IntrinsicValues_") 
+                let source () = Helper.sourceFold (_FDBermudanEngine.source + ".IntrinsicValues_") 
                                                [| _FDBermudanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDBermudanEngine> format
                     ; source = source 
@@ -511,14 +511,14 @@ module FDBermudanEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDBermudanEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FDBermudanEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FDBermudanEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FDBermudanEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

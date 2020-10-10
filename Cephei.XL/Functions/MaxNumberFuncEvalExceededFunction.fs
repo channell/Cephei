@@ -52,13 +52,13 @@ module MaxNumberFuncEvalExceededFunction =
 
                 let _message = Helper.toCell<string> message "message" 
                 let _inner = Helper.toCell<Exception> inner "inner" 
-                let builder () = withMnemonic mnemonic (Fun.MaxNumberFuncEvalExceeded 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MaxNumberFuncEvalExceeded 
                                                             _message.cell 
                                                             _inner.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MaxNumberFuncEvalExceeded>) l
 
-                let source = Helper.sourceFold "Fun.MaxNumberFuncEvalExceeded" 
+                let source () = Helper.sourceFold "Fun.MaxNumberFuncEvalExceeded" 
                                                [| _message.source
                                                ;  _inner.source
                                                |]
@@ -67,7 +67,7 @@ module MaxNumberFuncEvalExceededFunction =
                                 ;  _inner.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MaxNumberFuncEvalExceeded> format
                     ; source = source 
@@ -92,19 +92,19 @@ module MaxNumberFuncEvalExceededFunction =
             try
 
                 let _message = Helper.toCell<string> message "message" 
-                let builder () = withMnemonic mnemonic (Fun.MaxNumberFuncEvalExceeded1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MaxNumberFuncEvalExceeded1 
                                                             _message.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MaxNumberFuncEvalExceeded>) l
 
-                let source = Helper.sourceFold "Fun.MaxNumberFuncEvalExceeded1" 
+                let source () = Helper.sourceFold "Fun.MaxNumberFuncEvalExceeded1" 
                                                [| _message.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _message.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MaxNumberFuncEvalExceeded> format
                     ; source = source 
@@ -126,16 +126,16 @@ module MaxNumberFuncEvalExceededFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.MaxNumberFuncEvalExceeded2 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MaxNumberFuncEvalExceeded2 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MaxNumberFuncEvalExceeded>) l
 
-                let source = Helper.sourceFold "Fun.MaxNumberFuncEvalExceeded2" 
+                let source () = Helper.sourceFold "Fun.MaxNumberFuncEvalExceeded2" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MaxNumberFuncEvalExceeded> format
                     ; source = source 
@@ -164,14 +164,14 @@ module MaxNumberFuncEvalExceededFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MaxNumberFuncEvalExceeded>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MaxNumberFuncEvalExceeded>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MaxNumberFuncEvalExceeded>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MaxNumberFuncEvalExceeded>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

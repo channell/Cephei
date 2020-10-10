@@ -46,16 +46,16 @@ module BDTCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.BDTCurrency 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BDTCurrency 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BDTCurrency>) l
 
-                let source = Helper.sourceFold "Fun.BDTCurrency" 
+                let source () = Helper.sourceFold "Fun.BDTCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BDTCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".Code") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".Empty") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module BDTCurrencyFunction =
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".Equals") 
                                                [| _BDTCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module BDTCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".Format") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".FractionsPerUnit") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".FractionSymbol") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".Name") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".NumericCode") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".Rounding") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BDTCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".Symbol") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".ToString") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module BDTCurrencyFunction =
             try
 
                 let _BDTCurrency = Helper.toCell<BDTCurrency> bdtcurrency "BDTCurrency"  
-                let builder () = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((BDTCurrencyModel.Cast _BDTCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_BDTCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_BDTCurrency.source + ".TriangulationCurrency") 
                                                [| _BDTCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BDTCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BDTCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module BDTCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BDTCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BDTCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BDTCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BDTCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

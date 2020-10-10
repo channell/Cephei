@@ -55,13 +55,13 @@ module DayCounterFunction =
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).DayCount
+                let builder (current : ICell) = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DayCounter.source + ".DayCount") 
+                let source () = Helper.sourceFold (_DayCounter.source + ".DayCount") 
                                                [| _DayCounter.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -72,7 +72,7 @@ module DayCounterFunction =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -97,18 +97,18 @@ module DayCounterFunction =
             try
 
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
-                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_DayCounter.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_DayCounter.source + ".DayCounter") 
                                                [| _DayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DayCounter> format
                     ; source = source 
@@ -133,19 +133,19 @@ module DayCounterFunction =
             try
 
                 let _d = Helper.toCell<DayCounter> d "d" 
-                let builder () = withMnemonic mnemonic (Fun.DayCounter 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DayCounter 
                                                             _d.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold "Fun.DayCounter" 
+                let source () = Helper.sourceFold "Fun.DayCounter" 
                                                [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DayCounter> format
                     ; source = source 
@@ -167,16 +167,16 @@ module DayCounterFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.DayCounter1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DayCounter1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold "Fun.DayCounter1" 
+                let source () = Helper.sourceFold "Fun.DayCounter1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DayCounter> format
                     ; source = source 
@@ -201,18 +201,18 @@ module DayCounterFunction =
             try
 
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
-                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DayCounter.source + ".Empty") 
+                let source () = Helper.sourceFold (_DayCounter.source + ".Empty") 
                                                [| _DayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,12 +240,12 @@ module DayCounterFunction =
 
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DayCounter.source + ".Equals") 
+                let source () = Helper.sourceFold (_DayCounter.source + ".Equals") 
                                                [| _DayCounter.source
                                                ;  _o.source
                                                |]
@@ -254,7 +254,7 @@ module DayCounterFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -279,18 +279,18 @@ module DayCounterFunction =
             try
 
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
-                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DayCounter.source + ".Name") 
+                let source () = Helper.sourceFold (_DayCounter.source + ".Name") 
                                                [| _DayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -315,18 +315,18 @@ module DayCounterFunction =
             try
 
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
-                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DayCounter.source + ".ToString") 
+                let source () = Helper.sourceFold (_DayCounter.source + ".ToString") 
                                                [| _DayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -363,7 +363,7 @@ module DayCounterFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).YearFraction
+                let builder (current : ICell) = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -371,7 +371,7 @@ module DayCounterFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DayCounter.source + ".YearFraction") 
+                let source () = Helper.sourceFold (_DayCounter.source + ".YearFraction") 
                                                [| _DayCounter.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -386,7 +386,7 @@ module DayCounterFunction =
                                 ;  _refPeriodEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -417,13 +417,13 @@ module DayCounterFunction =
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).YearFraction1
+                let builder (current : ICell) = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DayCounter.source + ".YearFraction1") 
+                let source () = Helper.sourceFold (_DayCounter.source + ".YearFraction1") 
                                                [| _DayCounter.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -434,7 +434,7 @@ module DayCounterFunction =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -463,14 +463,14 @@ module DayCounterFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DayCounter>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DayCounter>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DayCounter>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DayCounter>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

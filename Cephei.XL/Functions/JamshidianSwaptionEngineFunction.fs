@@ -50,19 +50,19 @@ module JamshidianSwaptionEngineFunction =
             try
 
                 let _model = Helper.toCell<OneFactorAffineModel> model "model" 
-                let builder () = withMnemonic mnemonic (Fun.JamshidianSwaptionEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.JamshidianSwaptionEngine 
                                                             _model.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JamshidianSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.JamshidianSwaptionEngine" 
+                let source () = Helper.sourceFold "Fun.JamshidianSwaptionEngine" 
                                                [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JamshidianSwaptionEngine> format
                     ; source = source 
@@ -90,13 +90,13 @@ module JamshidianSwaptionEngineFunction =
 
                 let _model = Helper.toCell<OneFactorAffineModel> model "model" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let builder () = withMnemonic mnemonic (Fun.JamshidianSwaptionEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.JamshidianSwaptionEngine1 
                                                             _model.cell 
                                                             _termStructure.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JamshidianSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.JamshidianSwaptionEngine1" 
+                let source () = Helper.sourceFold "Fun.JamshidianSwaptionEngine1" 
                                                [| _model.source
                                                ;  _termStructure.source
                                                |]
@@ -105,7 +105,7 @@ module JamshidianSwaptionEngineFunction =
                                 ;  _termStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<JamshidianSwaptionEngine> format
                     ; source = source 
@@ -134,12 +134,12 @@ module JamshidianSwaptionEngineFunction =
 
                 let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".SetModel") 
                                                [| _JamshidianSwaptionEngine.source
                                                ;  _model.source
                                                |]
@@ -148,7 +148,7 @@ module JamshidianSwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,12 +176,12 @@ module JamshidianSwaptionEngineFunction =
 
                 let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".RegisterWith") 
                                                [| _JamshidianSwaptionEngine.source
                                                ;  _handler.source
                                                |]
@@ -190,7 +190,7 @@ module JamshidianSwaptionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -215,18 +215,18 @@ module JamshidianSwaptionEngineFunction =
             try
 
                 let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".Reset") 
                                                [| _JamshidianSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JamshidianSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,12 +254,12 @@ module JamshidianSwaptionEngineFunction =
 
                 let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".UnregisterWith") 
                                                [| _JamshidianSwaptionEngine.source
                                                ;  _handler.source
                                                |]
@@ -268,7 +268,7 @@ module JamshidianSwaptionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -293,18 +293,18 @@ module JamshidianSwaptionEngineFunction =
             try
 
                 let _JamshidianSwaptionEngine = Helper.toCell<JamshidianSwaptionEngine> jamshidianswaptionengine "JamshidianSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((JamshidianSwaptionEngineModel.Cast _JamshidianSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".Update") 
                                                [| _JamshidianSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JamshidianSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -333,14 +333,14 @@ module JamshidianSwaptionEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<JamshidianSwaptionEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<JamshidianSwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<JamshidianSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<JamshidianSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

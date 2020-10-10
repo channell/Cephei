@@ -61,7 +61,7 @@ module LmExponentialCorrelationModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Correlation
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Correlation
                                                             _i.cell 
                                                             _j.cell 
                                                             _t.cell 
@@ -69,7 +69,7 @@ module LmExponentialCorrelationModelFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Correlation") 
+                let source () = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Correlation") 
                                                [| _LmExponentialCorrelationModel.source
                                                ;  _i.source
                                                ;  _j.source
@@ -84,7 +84,7 @@ module LmExponentialCorrelationModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -115,13 +115,13 @@ module LmExponentialCorrelationModelFunction =
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Correlation1
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Correlation1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Correlation1") 
+                let source () = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Correlation1") 
                                                [| _LmExponentialCorrelationModel.source
                                                ;  _t.source
                                                ;  _x.source
@@ -132,7 +132,7 @@ module LmExponentialCorrelationModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmExponentialCorrelationModel> format
                     ; source = source 
@@ -157,18 +157,18 @@ module LmExponentialCorrelationModelFunction =
             try
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
-                let builder () = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).IsTimeIndependent
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).IsTimeIndependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".IsTimeIndependent") 
+                let source () = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".IsTimeIndependent") 
                                                [| _LmExponentialCorrelationModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmExponentialCorrelationModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -196,13 +196,13 @@ module LmExponentialCorrelationModelFunction =
 
                 let _size = Helper.toCell<int> size "size" 
                 let _rho = Helper.toCell<double> rho "rho" 
-                let builder () = withMnemonic mnemonic (Fun.LmExponentialCorrelationModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LmExponentialCorrelationModel 
                                                             _size.cell 
                                                             _rho.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmExponentialCorrelationModel>) l
 
-                let source = Helper.sourceFold "Fun.LmExponentialCorrelationModel" 
+                let source () = Helper.sourceFold "Fun.LmExponentialCorrelationModel" 
                                                [| _size.source
                                                ;  _rho.source
                                                |]
@@ -211,7 +211,7 @@ module LmExponentialCorrelationModelFunction =
                                 ;  _rho.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmExponentialCorrelationModel> format
                     ; source = source 
@@ -242,13 +242,13 @@ module LmExponentialCorrelationModelFunction =
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).PseudoSqrt
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).PseudoSqrt
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".PseudoSqrt") 
+                let source () = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".PseudoSqrt") 
                                                [| _LmExponentialCorrelationModel.source
                                                ;  _t.source
                                                ;  _x.source
@@ -259,7 +259,7 @@ module LmExponentialCorrelationModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmExponentialCorrelationModel> format
                     ; source = source 
@@ -284,18 +284,18 @@ module LmExponentialCorrelationModelFunction =
             try
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
-                let builder () = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Factors
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Factors") 
+                let source () = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Factors") 
                                                [| _LmExponentialCorrelationModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmExponentialCorrelationModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module LmExponentialCorrelationModelFunction =
             try
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
-                let builder () = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Parameters") 
+                let source () = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Parameters") 
                                                [| _LmExponentialCorrelationModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmExponentialCorrelationModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -359,12 +359,12 @@ module LmExponentialCorrelationModelFunction =
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder () = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmExponentialCorrelationModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".SetParams") 
+                let source () = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".SetParams") 
                                                [| _LmExponentialCorrelationModel.source
                                                ;  _arguments.source
                                                |]
@@ -373,7 +373,7 @@ module LmExponentialCorrelationModelFunction =
                                 ;  _arguments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -398,18 +398,18 @@ module LmExponentialCorrelationModelFunction =
             try
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
-                let builder () = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Size") 
+                let source () = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Size") 
                                                [| _LmExponentialCorrelationModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmExponentialCorrelationModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -438,14 +438,14 @@ module LmExponentialCorrelationModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LmExponentialCorrelationModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LmExponentialCorrelationModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LmExponentialCorrelationModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LmExponentialCorrelationModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

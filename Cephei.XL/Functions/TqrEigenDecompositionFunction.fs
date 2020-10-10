@@ -49,18 +49,18 @@ module TqrEigenDecompositionFunction =
             try
 
                 let _TqrEigenDecomposition = Helper.toCell<TqrEigenDecomposition> tqreigendecomposition "TqrEigenDecomposition"  
-                let builder () = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Eigenvalues
+                let builder (current : ICell) = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Eigenvalues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_TqrEigenDecomposition.source + ".Eigenvalues") 
+                let source () = Helper.sourceFold (_TqrEigenDecomposition.source + ".Eigenvalues") 
                                                [| _TqrEigenDecomposition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TqrEigenDecomposition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TqrEigenDecomposition> format
                     ; source = source 
@@ -85,18 +85,18 @@ module TqrEigenDecompositionFunction =
             try
 
                 let _TqrEigenDecomposition = Helper.toCell<TqrEigenDecomposition> tqreigendecomposition "TqrEigenDecomposition"  
-                let builder () = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Eigenvectors
+                let builder (current : ICell) = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Eigenvectors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_TqrEigenDecomposition.source + ".Eigenvectors") 
+                let source () = Helper.sourceFold (_TqrEigenDecomposition.source + ".Eigenvectors") 
                                                [| _TqrEigenDecomposition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TqrEigenDecomposition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TqrEigenDecomposition> format
                     ; source = source 
@@ -121,18 +121,18 @@ module TqrEigenDecompositionFunction =
             try
 
                 let _TqrEigenDecomposition = Helper.toCell<TqrEigenDecomposition> tqreigendecomposition "TqrEigenDecomposition"  
-                let builder () = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Iterations
+                let builder (current : ICell) = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Iterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TqrEigenDecomposition.source + ".Iterations") 
+                let source () = Helper.sourceFold (_TqrEigenDecomposition.source + ".Iterations") 
                                                [| _TqrEigenDecomposition.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TqrEigenDecomposition.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -166,7 +166,7 @@ module TqrEigenDecompositionFunction =
                 let _sub = Helper.toCell<Vector> sub "sub" 
                 let _calc = Helper.toDefault<TqrEigenDecomposition.EigenVectorCalculation> calc "calc" TqrEigenDecomposition.EigenVectorCalculation.WithEigenVector
                 let _strategy = Helper.toDefault<TqrEigenDecomposition.ShiftStrategy> strategy "strategy" TqrEigenDecomposition.ShiftStrategy.CloseEigenValue
-                let builder () = withMnemonic mnemonic (Fun.TqrEigenDecomposition 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TqrEigenDecomposition 
                                                             _diag.cell 
                                                             _sub.cell 
                                                             _calc.cell 
@@ -174,7 +174,7 @@ module TqrEigenDecompositionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TqrEigenDecomposition>) l
 
-                let source = Helper.sourceFold "Fun.TqrEigenDecomposition" 
+                let source () = Helper.sourceFold "Fun.TqrEigenDecomposition" 
                                                [| _diag.source
                                                ;  _sub.source
                                                ;  _calc.source
@@ -187,7 +187,7 @@ module TqrEigenDecompositionFunction =
                                 ;  _strategy.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TqrEigenDecomposition> format
                     ; source = source 
@@ -216,14 +216,14 @@ module TqrEigenDecompositionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TqrEigenDecomposition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TqrEigenDecomposition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TqrEigenDecomposition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TqrEigenDecomposition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -56,14 +56,14 @@ module TreeSwaptionEngineFunction =
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let builder () = withMnemonic mnemonic (Fun.TreeSwaptionEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine 
                                                             _model.cell 
                                                             _timeGrid.cell 
                                                             _termStructure.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.TreeSwaptionEngine" 
+                let source () = Helper.sourceFold "Fun.TreeSwaptionEngine" 
                                                [| _model.source
                                                ;  _timeGrid.source
                                                ;  _termStructure.source
@@ -74,7 +74,7 @@ module TreeSwaptionEngineFunction =
                                 ;  _termStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TreeSwaptionEngine> format
                     ; source = source 
@@ -102,13 +102,13 @@ module TreeSwaptionEngineFunction =
 
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
-                let builder () = withMnemonic mnemonic (Fun.TreeSwaptionEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine1 
                                                             _model.cell 
                                                             _timeGrid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.TreeSwaptionEngine1" 
+                let source () = Helper.sourceFold "Fun.TreeSwaptionEngine1" 
                                                [| _model.source
                                                ;  _timeGrid.source
                                                |]
@@ -117,7 +117,7 @@ module TreeSwaptionEngineFunction =
                                 ;  _timeGrid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TreeSwaptionEngine> format
                     ; source = source 
@@ -148,14 +148,14 @@ module TreeSwaptionEngineFunction =
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let builder () = withMnemonic mnemonic (Fun.TreeSwaptionEngine2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine2 
                                                             _model.cell 
                                                             _timeSteps.cell 
                                                             _termStructure.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.TreeSwaptionEngine2" 
+                let source () = Helper.sourceFold "Fun.TreeSwaptionEngine2" 
                                                [| _model.source
                                                ;  _timeSteps.source
                                                ;  _termStructure.source
@@ -166,7 +166,7 @@ module TreeSwaptionEngineFunction =
                                 ;  _termStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TreeSwaptionEngine> format
                     ; source = source 
@@ -194,13 +194,13 @@ module TreeSwaptionEngineFunction =
 
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
-                let builder () = withMnemonic mnemonic (Fun.TreeSwaptionEngine3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine3 
                                                             _model.cell 
                                                             _timeSteps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.TreeSwaptionEngine3" 
+                let source () = Helper.sourceFold "Fun.TreeSwaptionEngine3" 
                                                [| _model.source
                                                ;  _timeSteps.source
                                                |]
@@ -209,7 +209,7 @@ module TreeSwaptionEngineFunction =
                                 ;  _timeSteps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TreeSwaptionEngine> format
                     ; source = source 
@@ -234,18 +234,18 @@ module TreeSwaptionEngineFunction =
             try
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeSwaptionEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_TreeSwaptionEngine.source + ".Update") 
                                                [| _TreeSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -274,12 +274,12 @@ module TreeSwaptionEngineFunction =
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
-                let builder () = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeSwaptionEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_TreeSwaptionEngine.source + ".SetModel") 
                                                [| _TreeSwaptionEngine.source
                                                ;  _model.source
                                                |]
@@ -288,7 +288,7 @@ module TreeSwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -316,12 +316,12 @@ module TreeSwaptionEngineFunction =
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeSwaptionEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_TreeSwaptionEngine.source + ".RegisterWith") 
                                                [| _TreeSwaptionEngine.source
                                                ;  _handler.source
                                                |]
@@ -330,7 +330,7 @@ module TreeSwaptionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -355,18 +355,18 @@ module TreeSwaptionEngineFunction =
             try
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeSwaptionEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_TreeSwaptionEngine.source + ".Reset") 
                                                [| _TreeSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -394,12 +394,12 @@ module TreeSwaptionEngineFunction =
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeSwaptionEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_TreeSwaptionEngine.source + ".UnregisterWith") 
                                                [| _TreeSwaptionEngine.source
                                                ;  _handler.source
                                                |]
@@ -408,7 +408,7 @@ module TreeSwaptionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -437,14 +437,14 @@ module TreeSwaptionEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TreeSwaptionEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TreeSwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TreeSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TreeSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -67,7 +67,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _vols = Helper.toCell<Matrix> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolSurface3
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolSurface3
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _bdc.cell 
@@ -78,7 +78,7 @@ module CapFloorTermVolSurfaceFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolSurface>) l
 
-                let source = Helper.sourceFold "Fun.CapFloorTermVolSurface3" 
+                let source () = Helper.sourceFold "Fun.CapFloorTermVolSurface3" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _bdc.source
@@ -97,7 +97,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolSurface> format
                     ; source = source 
@@ -140,7 +140,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _vols = Helper.toCell<Matrix> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolSurface
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolSurface
                                                             _settlementDate.cell 
                                                             _calendar.cell 
                                                             _bdc.cell 
@@ -151,7 +151,7 @@ module CapFloorTermVolSurfaceFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolSurface>) l
 
-                let source = Helper.sourceFold "Fun.CapFloorTermVolSurface" 
+                let source () = Helper.sourceFold "Fun.CapFloorTermVolSurface" 
                                                [| _settlementDate.source
                                                ;  _calendar.source
                                                ;  _bdc.source
@@ -170,7 +170,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolSurface> format
                     ; source = source 
@@ -213,7 +213,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _vols = Helper.toCell<Generic.List<Generic.List<Handle<Quote>>>> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolSurface1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolSurface1
                                                             _settlementDate.cell 
                                                             _calendar.cell 
                                                             _bdc.cell 
@@ -224,7 +224,7 @@ module CapFloorTermVolSurfaceFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolSurface>) l
 
-                let source = Helper.sourceFold "Fun.CapFloorTermVolSurface1" 
+                let source () = Helper.sourceFold "Fun.CapFloorTermVolSurface1" 
                                                [| _settlementDate.source
                                                ;  _calendar.source
                                                ;  _bdc.source
@@ -243,7 +243,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolSurface> format
                     ; source = source 
@@ -287,7 +287,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _vols = Helper.toCell<Generic.List<Generic.List<Handle<Quote>>>> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolSurface3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolSurface3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _bdc.cell 
@@ -298,7 +298,7 @@ module CapFloorTermVolSurfaceFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolSurface>) l
 
-                let source = Helper.sourceFold "Fun.CapFloorTermVolSurface3" 
+                let source () = Helper.sourceFold "Fun.CapFloorTermVolSurface3" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _bdc.source
@@ -317,7 +317,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolSurface> format
                     ; source = source 
@@ -343,18 +343,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".MaxDate") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -379,18 +379,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".MaxStrike") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -415,18 +415,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".MinStrike") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -451,18 +451,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionDates
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".OptionDates") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".OptionDates") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -487,18 +487,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionTenors
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionTenors
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".OptionTenors") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".OptionTenors") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -523,18 +523,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".OptionTimes") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".OptionTimes") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -559,18 +559,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Strikes
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Strikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Strikes") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Strikes") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -595,18 +595,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Update
                                                        ) :> ICell
                 let format (o : CapFloorTermVolSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Update") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Update") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -640,14 +640,14 @@ module CapFloorTermVolSurfaceFunction =
                 let _length = Helper.toCell<Period> length "length" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Volatility
                                                             _length.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Volatility") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Volatility") 
                                                [| _CapFloorTermVolSurface.source
                                                ;  _length.source
                                                ;  _strike.source
@@ -660,7 +660,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -694,14 +694,14 @@ module CapFloorTermVolSurfaceFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Volatility1
                                                             _t.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Volatility1") 
                                                [| _CapFloorTermVolSurface.source
                                                ;  _t.source
                                                ;  _strike.source
@@ -714,7 +714,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -748,14 +748,14 @@ module CapFloorTermVolSurfaceFunction =
                 let _End = Helper.toCell<Date> End "End" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Volatility2
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Volatility2
                                                             _End.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Volatility2") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Volatility2") 
                                                [| _CapFloorTermVolSurface.source
                                                ;  _End.source
                                                ;  _strike.source
@@ -768,7 +768,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -793,18 +793,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".BusinessDayConvention") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -832,12 +832,12 @@ module CapFloorTermVolSurfaceFunction =
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionDateFromTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".OptionDateFromTenor") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".OptionDateFromTenor") 
                                                [| _CapFloorTermVolSurface.source
                                                ;  _p.source
                                                |]
@@ -846,7 +846,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -871,18 +871,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Calendar") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Calendar") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolSurface> format
                     ; source = source 
@@ -907,18 +907,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".DayCounter") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolSurface> format
                     ; source = source 
@@ -943,18 +943,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".MaxTime") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -979,18 +979,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".ReferenceDate") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1015,18 +1015,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".SettlementDays") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1054,12 +1054,12 @@ module CapFloorTermVolSurfaceFunction =
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".TimeFromReference") 
                                                [| _CapFloorTermVolSurface.source
                                                ;  _date.source
                                                |]
@@ -1068,7 +1068,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1093,18 +1093,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".AllowsExtrapolation") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1132,12 +1132,12 @@ module CapFloorTermVolSurfaceFunction =
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CapFloorTermVolSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".DisableExtrapolation") 
                                                [| _CapFloorTermVolSurface.source
                                                ;  _b.source
                                                |]
@@ -1146,7 +1146,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1174,12 +1174,12 @@ module CapFloorTermVolSurfaceFunction =
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CapFloorTermVolSurface) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".EnableExtrapolation") 
                                                [| _CapFloorTermVolSurface.source
                                                ;  _b.source
                                                |]
@@ -1188,7 +1188,7 @@ module CapFloorTermVolSurfaceFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1213,18 +1213,18 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".Extrapolate") 
                                                [| _CapFloorTermVolSurface.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolSurface.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1253,14 +1253,14 @@ module CapFloorTermVolSurfaceFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CapFloorTermVolSurface>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CapFloorTermVolSurface>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CapFloorTermVolSurface>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CapFloorTermVolSurface>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

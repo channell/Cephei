@@ -49,18 +49,18 @@ module GMRESResultFunction =
             try
 
                 let _GMRESResult = Helper.toCell<GMRESResult> gmresresult "GMRESResult"  
-                let builder () = withMnemonic mnemonic ((GMRESResultModel.Cast _GMRESResult.cell).Errors
+                let builder (current : ICell) = withMnemonic mnemonic ((GMRESResultModel.Cast _GMRESResult.cell).Errors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_GMRESResult.source + ".Errors") 
+                let source () = Helper.sourceFold (_GMRESResult.source + ".Errors") 
                                                [| _GMRESResult.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GMRESResult.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -88,13 +88,13 @@ module GMRESResultFunction =
 
                 let _e = Helper.toCell<Generic.List<double>> e "e" 
                 let _xx = Helper.toCell<Vector> xx "xx" 
-                let builder () = withMnemonic mnemonic (Fun.GMRESResult 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GMRESResult 
                                                             _e.cell 
                                                             _xx.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GMRESResult>) l
 
-                let source = Helper.sourceFold "Fun.GMRESResult" 
+                let source () = Helper.sourceFold "Fun.GMRESResult" 
                                                [| _e.source
                                                ;  _xx.source
                                                |]
@@ -103,7 +103,7 @@ module GMRESResultFunction =
                                 ;  _xx.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GMRESResult> format
                     ; source = source 
@@ -128,18 +128,18 @@ module GMRESResultFunction =
             try
 
                 let _GMRESResult = Helper.toCell<GMRESResult> gmresresult "GMRESResult"  
-                let builder () = withMnemonic mnemonic ((GMRESResultModel.Cast _GMRESResult.cell).X
+                let builder (current : ICell) = withMnemonic mnemonic ((GMRESResultModel.Cast _GMRESResult.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GMRESResult.source + ".X") 
+                let source () = Helper.sourceFold (_GMRESResult.source + ".X") 
                                                [| _GMRESResult.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GMRESResult.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GMRESResult> format
                     ; source = source 
@@ -168,14 +168,14 @@ module GMRESResultFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GMRESResult>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GMRESResult>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GMRESResult>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GMRESResult>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

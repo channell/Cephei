@@ -55,13 +55,13 @@ module NegativePowerDefaultIntensityFunction =
                 let _NegativePowerDefaultIntensity = Helper.toCell<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((NegativePowerDefaultIntensityModel.Cast _NegativePowerDefaultIntensity.cell).DefaultRecovery
+                let builder (current : ICell) = withMnemonic mnemonic ((NegativePowerDefaultIntensityModel.Cast _NegativePowerDefaultIntensity.cell).DefaultRecovery
                                                             _t.cell 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NegativePowerDefaultIntensity.source + ".DefaultRecovery") 
+                let source () = Helper.sourceFold (_NegativePowerDefaultIntensity.source + ".DefaultRecovery") 
                                                [| _NegativePowerDefaultIntensity.source
                                                ;  _t.source
                                                ;  _s.source
@@ -72,7 +72,7 @@ module NegativePowerDefaultIntensityFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module NegativePowerDefaultIntensityFunction =
                 let _NegativePowerDefaultIntensity = Helper.toCell<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((NegativePowerDefaultIntensityModel.Cast _NegativePowerDefaultIntensity.cell).HazardRate
+                let builder (current : ICell) = withMnemonic mnemonic ((NegativePowerDefaultIntensityModel.Cast _NegativePowerDefaultIntensity.cell).HazardRate
                                                             _t.cell 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NegativePowerDefaultIntensity.source + ".HazardRate") 
+                let source () = Helper.sourceFold (_NegativePowerDefaultIntensity.source + ".HazardRate") 
                                                [| _NegativePowerDefaultIntensity.source
                                                ;  _t.source
                                                ;  _s.source
@@ -120,7 +120,7 @@ module NegativePowerDefaultIntensityFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -151,14 +151,14 @@ module NegativePowerDefaultIntensityFunction =
                 let _alpha = Helper.toCell<double> alpha "alpha" 
                 let _p = Helper.toCell<double> p "p" 
                 let _recovery = Helper.toCell<double> recovery "recovery" 
-                let builder () = withMnemonic mnemonic (Fun.NegativePowerDefaultIntensity1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NegativePowerDefaultIntensity1 
                                                             _alpha.cell 
                                                             _p.cell 
                                                             _recovery.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NegativePowerDefaultIntensity>) l
 
-                let source = Helper.sourceFold "Fun.NegativePowerDefaultIntensity1" 
+                let source () = Helper.sourceFold "Fun.NegativePowerDefaultIntensity1" 
                                                [| _alpha.source
                                                ;  _p.source
                                                ;  _recovery.source
@@ -169,7 +169,7 @@ module NegativePowerDefaultIntensityFunction =
                                 ;  _recovery.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NegativePowerDefaultIntensity> format
                     ; source = source 
@@ -197,13 +197,13 @@ module NegativePowerDefaultIntensityFunction =
 
                 let _alpha = Helper.toCell<double> alpha "alpha" 
                 let _p = Helper.toCell<double> p "p" 
-                let builder () = withMnemonic mnemonic (Fun.NegativePowerDefaultIntensity
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NegativePowerDefaultIntensity
                                                             _alpha.cell 
                                                             _p.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NegativePowerDefaultIntensity>) l
 
-                let source = Helper.sourceFold "Fun.NegativePowerDefaultIntensity" 
+                let source () = Helper.sourceFold "Fun.NegativePowerDefaultIntensity" 
                                                [| _alpha.source
                                                ;  _p.source
                                                |]
@@ -212,7 +212,7 @@ module NegativePowerDefaultIntensityFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NegativePowerDefaultIntensity> format
                     ; source = source 
@@ -241,14 +241,14 @@ module NegativePowerDefaultIntensityFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NegativePowerDefaultIntensity>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NegativePowerDefaultIntensity>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NegativePowerDefaultIntensity>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NegativePowerDefaultIntensity>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

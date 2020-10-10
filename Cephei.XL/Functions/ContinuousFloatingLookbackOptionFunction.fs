@@ -61,7 +61,7 @@ module ContinuousFloatingLookbackOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.ContinuousFloatingLookbackOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ContinuousFloatingLookbackOption 
                                                             _minmax.cell 
                                                             _payoff.cell 
                                                             _exercise.cell 
@@ -70,7 +70,7 @@ module ContinuousFloatingLookbackOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ContinuousFloatingLookbackOption>) l
 
-                let source = Helper.sourceFold "Fun.ContinuousFloatingLookbackOption" 
+                let source () = Helper.sourceFold "Fun.ContinuousFloatingLookbackOption" 
                                                [| _minmax.source
                                                ;  _payoff.source
                                                ;  _exercise.source
@@ -85,7 +85,7 @@ module ContinuousFloatingLookbackOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ContinuousFloatingLookbackOption> format
                     ; source = source 
@@ -110,18 +110,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Delta") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -146,18 +146,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".DeltaForward") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,18 +182,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".DividendRho") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -218,18 +218,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Elasticity") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,18 +254,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Gamma") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,18 +290,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".IsExpired") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,18 +326,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ItmCashProbability") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -362,18 +362,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Rho") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -398,18 +398,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".StrikeSensitivity") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -434,18 +434,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Theta") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -470,18 +470,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ThetaPerDay") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -506,18 +506,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Vega") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -542,18 +542,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Exercise") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ContinuousFloatingLookbackOption> format
                     ; source = source 
@@ -578,18 +578,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Payoff") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ContinuousFloatingLookbackOption> format
                     ; source = source 
@@ -614,18 +614,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".CASH") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -650,18 +650,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ErrorEstimate") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -686,18 +686,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".NPV") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -725,12 +725,12 @@ module ContinuousFloatingLookbackOptionFunction =
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Result") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Result") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                ;  _tag.source
                                                |]
@@ -739,7 +739,7 @@ module ContinuousFloatingLookbackOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -767,12 +767,12 @@ module ContinuousFloatingLookbackOptionFunction =
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : ContinuousFloatingLookbackOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".SetPricingEngine") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                ;  _e.source
                                                |]
@@ -781,7 +781,7 @@ module ContinuousFloatingLookbackOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -806,18 +806,18 @@ module ContinuousFloatingLookbackOptionFunction =
             try
 
                 let _ContinuousFloatingLookbackOption = Helper.toCell<ContinuousFloatingLookbackOption> continuousfloatinglookbackoption "ContinuousFloatingLookbackOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousFloatingLookbackOptionModel.Cast _ContinuousFloatingLookbackOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ValuationDate") 
                                                [| _ContinuousFloatingLookbackOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -846,14 +846,14 @@ module ContinuousFloatingLookbackOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ContinuousFloatingLookbackOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ContinuousFloatingLookbackOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ContinuousFloatingLookbackOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ContinuousFloatingLookbackOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

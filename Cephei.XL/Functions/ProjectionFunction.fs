@@ -52,12 +52,12 @@ module ProjectionFunction =
 
                 let _Projection = Helper.toCell<Projection> projection "Projection"  
                 let _projectedParameters = Helper.toCell<Vector> projectedParameters "projectedParameters" 
-                let builder () = withMnemonic mnemonic ((ProjectionModel.Cast _Projection.cell).Include
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectionModel.Cast _Projection.cell).Include
                                                             _projectedParameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Projection.source + ".INCLUDE") 
+                let source () = Helper.sourceFold (_Projection.source + ".INCLUDE") 
                                                [| _Projection.source
                                                ;  _projectedParameters.source
                                                |]
@@ -66,7 +66,7 @@ module ProjectionFunction =
                                 ;  _projectedParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Projection> format
                     ; source = source 
@@ -94,12 +94,12 @@ module ProjectionFunction =
 
                 let _Projection = Helper.toCell<Projection> projection "Projection"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((ProjectionModel.Cast _Projection.cell).Project
+                let builder (current : ICell) = withMnemonic mnemonic ((ProjectionModel.Cast _Projection.cell).Project
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Projection.source + ".Project") 
+                let source () = Helper.sourceFold (_Projection.source + ".Project") 
                                                [| _Projection.source
                                                ;  _parameters.source
                                                |]
@@ -108,7 +108,7 @@ module ProjectionFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Projection> format
                     ; source = source 
@@ -136,13 +136,13 @@ module ProjectionFunction =
 
                 let _parameterValues = Helper.toCell<Vector> parameterValues "parameterValues" 
                 let _fixParameters = Helper.toDefault<Generic.List<bool>> fixParameters "fixParameters" null
-                let builder () = withMnemonic mnemonic (Fun.Projection 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Projection 
                                                             _parameterValues.cell 
                                                             _fixParameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Projection>) l
 
-                let source = Helper.sourceFold "Fun.Projection" 
+                let source () = Helper.sourceFold "Fun.Projection" 
                                                [| _parameterValues.source
                                                ;  _fixParameters.source
                                                |]
@@ -151,7 +151,7 @@ module ProjectionFunction =
                                 ;  _fixParameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Projection> format
                     ; source = source 
@@ -180,14 +180,14 @@ module ProjectionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Projection>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Projection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Projection>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Projection>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

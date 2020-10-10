@@ -52,12 +52,12 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _atmT = Helper.toCell<DeltaVolQuote.AtmType> atmT "atmT" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).AtmStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).AtmStrike
                                                             _atmT.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaCalculator.source + ".AtmStrike") 
+                let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".AtmStrike") 
                                                [| _BlackDeltaCalculator.source
                                                ;  _atmT.source
                                                |]
@@ -66,7 +66,7 @@ module BlackDeltaCalculatorFunction =
                                 ;  _atmT.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -106,7 +106,7 @@ module BlackDeltaCalculatorFunction =
                 let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" 
                 let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
-                let builder () = withMnemonic mnemonic (Fun.BlackDeltaCalculator 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackDeltaCalculator 
                                                             _ot.cell 
                                                             _dt.cell 
                                                             _spot.cell 
@@ -116,7 +116,7 @@ module BlackDeltaCalculatorFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackDeltaCalculator>) l
 
-                let source = Helper.sourceFold "Fun.BlackDeltaCalculator" 
+                let source () = Helper.sourceFold "Fun.BlackDeltaCalculator" 
                                                [| _ot.source
                                                ;  _dt.source
                                                ;  _spot.source
@@ -133,7 +133,7 @@ module BlackDeltaCalculatorFunction =
                                 ;  _stdDev.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackDeltaCalculator> format
                     ; source = source 
@@ -161,12 +161,12 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).CumD1
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).CumD1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaCalculator.source + ".CumD1") 
+                let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".CumD1") 
                                                [| _BlackDeltaCalculator.source
                                                ;  _strike.source
                                                |]
@@ -175,7 +175,7 @@ module BlackDeltaCalculatorFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,12 +203,12 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).CumD2
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).CumD2
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaCalculator.source + ".CumD2") 
+                let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".CumD2") 
                                                [| _BlackDeltaCalculator.source
                                                ;  _strike.source
                                                |]
@@ -217,7 +217,7 @@ module BlackDeltaCalculatorFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -245,12 +245,12 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).DeltaFromStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).DeltaFromStrike
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaCalculator.source + ".DeltaFromStrike") 
+                let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".DeltaFromStrike") 
                                                [| _BlackDeltaCalculator.source
                                                ;  _strike.source
                                                |]
@@ -259,7 +259,7 @@ module BlackDeltaCalculatorFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -287,12 +287,12 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).ND1
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).ND1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaCalculator.source + ".ND1") 
+                let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".ND1") 
                                                [| _BlackDeltaCalculator.source
                                                ;  _strike.source
                                                |]
@@ -301,7 +301,7 @@ module BlackDeltaCalculatorFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -329,12 +329,12 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).ND2
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).ND2
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaCalculator.source + ".ND2") 
+                let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".ND2") 
                                                [| _BlackDeltaCalculator.source
                                                ;  _strike.source
                                                |]
@@ -343,7 +343,7 @@ module BlackDeltaCalculatorFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -371,12 +371,12 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _dt = Helper.toCell<DeltaVolQuote.DeltaType> dt "dt" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).SetDeltaType
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).SetDeltaType
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : BlackDeltaCalculator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaCalculator.source + ".SetDeltaType") 
+                let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".SetDeltaType") 
                                                [| _BlackDeltaCalculator.source
                                                ;  _dt.source
                                                |]
@@ -385,7 +385,7 @@ module BlackDeltaCalculatorFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -413,12 +413,12 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _ot = Helper.toCell<Option.Type> ot "ot" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).SetOptionType
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).SetOptionType
                                                             _ot.cell 
                                                        ) :> ICell
                 let format (o : BlackDeltaCalculator) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaCalculator.source + ".SetOptionType") 
+                let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".SetOptionType") 
                                                [| _BlackDeltaCalculator.source
                                                ;  _ot.source
                                                |]
@@ -427,7 +427,7 @@ module BlackDeltaCalculatorFunction =
                                 ;  _ot.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -455,12 +455,12 @@ module BlackDeltaCalculatorFunction =
 
                 let _BlackDeltaCalculator = Helper.toCell<BlackDeltaCalculator> blackdeltacalculator "BlackDeltaCalculator"  
                 let _delta = Helper.toCell<double> delta "delta" 
-                let builder () = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).StrikeFromDelta
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackDeltaCalculatorModel.Cast _BlackDeltaCalculator.cell).StrikeFromDelta
                                                             _delta.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackDeltaCalculator.source + ".StrikeFromDelta") 
+                let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".StrikeFromDelta") 
                                                [| _BlackDeltaCalculator.source
                                                ;  _delta.source
                                                |]
@@ -469,7 +469,7 @@ module BlackDeltaCalculatorFunction =
                                 ;  _delta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -498,14 +498,14 @@ module BlackDeltaCalculatorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackDeltaCalculator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackDeltaCalculator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackDeltaCalculator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackDeltaCalculator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

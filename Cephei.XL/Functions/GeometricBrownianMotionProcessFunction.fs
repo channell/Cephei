@@ -55,13 +55,13 @@ module GeometricBrownianMotionProcessFunction =
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Diffusion
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Diffusion") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Diffusion") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t.source
                                                ;  _x.source
@@ -72,7 +72,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -103,13 +103,13 @@ module GeometricBrownianMotionProcessFunction =
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Drift
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Drift") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Drift") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t.source
                                                ;  _x.source
@@ -120,7 +120,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -151,14 +151,14 @@ module GeometricBrownianMotionProcessFunction =
                 let _initialValue = Helper.toCell<double> initialValue "initialValue" 
                 let _mue = Helper.toCell<double> mue "mue" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
-                let builder () = withMnemonic mnemonic (Fun.GeometricBrownianMotionProcess 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GeometricBrownianMotionProcess 
                                                             _initialValue.cell 
                                                             _mue.cell 
                                                             _sigma.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GeometricBrownianMotionProcess>) l
 
-                let source = Helper.sourceFold "Fun.GeometricBrownianMotionProcess" 
+                let source () = Helper.sourceFold "Fun.GeometricBrownianMotionProcess" 
                                                [| _initialValue.source
                                                ;  _mue.source
                                                ;  _sigma.source
@@ -169,7 +169,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _sigma.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
@@ -194,18 +194,18 @@ module GeometricBrownianMotionProcessFunction =
             try
 
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).X0
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".X0") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".X0") 
                                                [| _GeometricBrownianMotionProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeometricBrownianMotionProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,13 +236,13 @@ module GeometricBrownianMotionProcessFunction =
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Apply1
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Apply1
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Apply1") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Apply1") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _x0.source
                                                ;  _dx.source
@@ -253,7 +253,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dx.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
@@ -284,13 +284,13 @@ module GeometricBrownianMotionProcessFunction =
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dx = Helper.toCell<double> dx "dx" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Apply
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Apply") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Apply") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _x0.source
                                                ;  _dx.source
@@ -301,7 +301,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dx.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,7 +338,7 @@ module GeometricBrownianMotionProcessFunction =
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<Vector> dw "dw" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Evolve
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -346,7 +346,7 @@ module GeometricBrownianMotionProcessFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Evolve") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Evolve") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -361,7 +361,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
@@ -398,7 +398,7 @@ module GeometricBrownianMotionProcessFunction =
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<double> dw "dw" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Evolve1
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Evolve1
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -406,7 +406,7 @@ module GeometricBrownianMotionProcessFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Evolve1") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Evolve1") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -421,7 +421,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -455,14 +455,14 @@ module GeometricBrownianMotionProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Expectation
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Expectation") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Expectation") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -475,7 +475,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
@@ -509,14 +509,14 @@ module GeometricBrownianMotionProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Expectation1
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Expectation1
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Expectation1") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Expectation1") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -529,7 +529,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -554,18 +554,18 @@ module GeometricBrownianMotionProcessFunction =
             try
 
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).InitialValues
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".InitialValues") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".InitialValues") 
                                                [| _GeometricBrownianMotionProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeometricBrownianMotionProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
@@ -590,18 +590,18 @@ module GeometricBrownianMotionProcessFunction =
             try
 
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Size") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Size") 
                                                [| _GeometricBrownianMotionProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeometricBrownianMotionProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -635,14 +635,14 @@ module GeometricBrownianMotionProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).StdDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".StdDeviation") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".StdDeviation") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -655,7 +655,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
@@ -689,14 +689,14 @@ module GeometricBrownianMotionProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).StdDeviation1
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).StdDeviation1
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".StdDeviation1") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".StdDeviation1") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -709,7 +709,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -743,14 +743,14 @@ module GeometricBrownianMotionProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Variance
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Variance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Variance") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Variance") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -763,7 +763,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
@@ -797,14 +797,14 @@ module GeometricBrownianMotionProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Variance1
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Variance1
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Variance1") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Variance1") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -817,7 +817,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -851,14 +851,14 @@ module GeometricBrownianMotionProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Covariance
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Covariance") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Covariance") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -871,7 +871,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GeometricBrownianMotionProcess> format
                     ; source = source 
@@ -896,18 +896,18 @@ module GeometricBrownianMotionProcessFunction =
             try
 
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Factors
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Factors") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Factors") 
                                                [| _GeometricBrownianMotionProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeometricBrownianMotionProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -935,12 +935,12 @@ module GeometricBrownianMotionProcessFunction =
 
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GeometricBrownianMotionProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".RegisterWith") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _handler.source
                                                |]
@@ -949,7 +949,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -977,12 +977,12 @@ module GeometricBrownianMotionProcessFunction =
 
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Time
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Time
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Time") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Time") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _d.source
                                                |]
@@ -991,7 +991,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1019,12 +1019,12 @@ module GeometricBrownianMotionProcessFunction =
 
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GeometricBrownianMotionProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".UnregisterWith") 
                                                [| _GeometricBrownianMotionProcess.source
                                                ;  _handler.source
                                                |]
@@ -1033,7 +1033,7 @@ module GeometricBrownianMotionProcessFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1058,18 +1058,18 @@ module GeometricBrownianMotionProcessFunction =
             try
 
                 let _GeometricBrownianMotionProcess = Helper.toCell<GeometricBrownianMotionProcess> geometricbrownianmotionprocess "GeometricBrownianMotionProcess"  
-                let builder () = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((GeometricBrownianMotionProcessModel.Cast _GeometricBrownianMotionProcess.cell).Update
                                                        ) :> ICell
                 let format (o : GeometricBrownianMotionProcess) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Update") 
+                let source () = Helper.sourceFold (_GeometricBrownianMotionProcess.source + ".Update") 
                                                [| _GeometricBrownianMotionProcess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeometricBrownianMotionProcess.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1098,14 +1098,14 @@ module GeometricBrownianMotionProcessFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GeometricBrownianMotionProcess>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GeometricBrownianMotionProcess>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GeometricBrownianMotionProcess>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GeometricBrownianMotionProcess>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

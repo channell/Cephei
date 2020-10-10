@@ -46,16 +46,16 @@ module MixedSchemeFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.MixedScheme 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MixedScheme 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MixedScheme>) l
 
-                let source = Helper.sourceFold "Fun.MixedScheme" 
+                let source () = Helper.sourceFold "Fun.MixedScheme" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MixedScheme> format
                     ; source = source 
@@ -86,14 +86,14 @@ module MixedSchemeFunction =
                 let _L = Helper.toCell<'Operator> L "L" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
-                let builder () = withMnemonic mnemonic (Fun.MixedScheme1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MixedScheme1 
                                                             _L.cell 
                                                             _theta.cell 
                                                             _bcs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MixedScheme>) l
 
-                let source = Helper.sourceFold "Fun.MixedScheme1" 
+                let source () = Helper.sourceFold "Fun.MixedScheme1" 
                                                [| _L.source
                                                ;  _theta.source
                                                ;  _bcs.source
@@ -104,7 +104,7 @@ module MixedSchemeFunction =
                                 ;  _bcs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MixedScheme> format
                     ; source = source 
@@ -132,12 +132,12 @@ module MixedSchemeFunction =
 
                 let _MixedScheme = Helper.toCell<MixedScheme> mixedscheme "MixedScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((MixedSchemeModel.Cast _MixedScheme.cell).SetStep
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedSchemeModel.Cast _MixedScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : MixedScheme) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MixedScheme.source + ".SetStep") 
+                let source () = Helper.sourceFold (_MixedScheme.source + ".SetStep") 
                                                [| _MixedScheme.source
                                                ;  _dt.source
                                                |]
@@ -146,7 +146,7 @@ module MixedSchemeFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -180,14 +180,14 @@ module MixedSchemeFunction =
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((MixedSchemeModel.Cast _MixedScheme.cell).Step
+                let builder (current : ICell) = withMnemonic mnemonic ((MixedSchemeModel.Cast _MixedScheme.cell).Step
                                                             _o.cell 
                                                             _t.cell 
                                                             _theta.cell 
                                                        ) :> ICell
                 let format (o : MixedScheme) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MixedScheme.source + ".Step") 
+                let source () = Helper.sourceFold (_MixedScheme.source + ".Step") 
                                                [| _MixedScheme.source
                                                ;  _o.source
                                                ;  _t.source
@@ -200,7 +200,7 @@ module MixedSchemeFunction =
                                 ;  _theta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,14 +229,14 @@ module MixedSchemeFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MixedScheme>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MixedScheme>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MixedScheme>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MixedScheme>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

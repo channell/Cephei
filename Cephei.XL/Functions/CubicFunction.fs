@@ -64,7 +64,7 @@ module CubicFunction =
                 let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" 
                 let _rightCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCondition "rightCondition" 
                 let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" 
-                let builder () = withMnemonic mnemonic (Fun.Cubic 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Cubic 
                                                             _da.cell 
                                                             _monotonic.cell 
                                                             _leftCondition.cell 
@@ -74,7 +74,7 @@ module CubicFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Cubic>) l
 
-                let source = Helper.sourceFold "Fun.Cubic" 
+                let source () = Helper.sourceFold "Fun.Cubic" 
                                                [| _da.source
                                                ;  _monotonic.source
                                                ;  _leftCondition.source
@@ -91,7 +91,7 @@ module CubicFunction =
                                 ;  _rightConditionValue.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Cubic> format
                     ; source = source 
@@ -113,16 +113,16 @@ module CubicFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Cubic1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Cubic1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Cubic>) l
 
-                let source = Helper.sourceFold "Fun.Cubic1" 
+                let source () = Helper.sourceFold "Fun.Cubic1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Cubic> format
                     ; source = source 
@@ -147,18 +147,18 @@ module CubicFunction =
             try
 
                 let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
-                let builder () = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).Global
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Cubic.source + ".GLOBAL") 
+                let source () = Helper.sourceFold (_Cubic.source + ".GLOBAL") 
                                                [| _Cubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -192,14 +192,14 @@ module CubicFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_Cubic.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_Cubic.source + ".Interpolate") 
                                                [| _Cubic.source
                                                ;  _xBegin.source
                                                ;  _size.source
@@ -212,7 +212,7 @@ module CubicFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Cubic> format
                     ; source = source 
@@ -237,18 +237,18 @@ module CubicFunction =
             try
 
                 let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
-                let builder () = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).RequiredPoints
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Cubic.source + ".RequiredPoints") 
+                let source () = Helper.sourceFold (_Cubic.source + ".RequiredPoints") 
                                                [| _Cubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -277,14 +277,14 @@ module CubicFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Cubic>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Cubic>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Cubic>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Cubic>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

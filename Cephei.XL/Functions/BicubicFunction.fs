@@ -64,7 +64,7 @@ module BicubicFunction =
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _ySize = Helper.toCell<int> ySize "ySize" 
                 let _zData = Helper.toCell<Matrix> zData "zData" 
-                let builder () = withMnemonic mnemonic ((BicubicModel.Cast _Bicubic.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((BicubicModel.Cast _Bicubic.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -73,7 +73,7 @@ module BicubicFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation2D>) l
 
-                let source = Helper.sourceFold (_Bicubic.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_Bicubic.source + ".Interpolate") 
                                                [| _Bicubic.source
                                                ;  _xBegin.source
                                                ;  _size.source
@@ -90,7 +90,7 @@ module BicubicFunction =
                                 ;  _zData.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bicubic> format
                     ; source = source 
@@ -119,14 +119,14 @@ module BicubicFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Bicubic>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Bicubic>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Bicubic>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Bicubic>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

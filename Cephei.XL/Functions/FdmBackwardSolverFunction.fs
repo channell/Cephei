@@ -58,7 +58,7 @@ module FdmBackwardSolverFunction =
                 let _bcSet = Helper.toCell<FdmBoundaryConditionSet> bcSet "bcSet" 
                 let _condition = Helper.toCell<FdmStepConditionComposite> condition "condition" 
                 let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
-                let builder () = withMnemonic mnemonic (Fun.FdmBackwardSolver 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmBackwardSolver 
                                                             _map.cell 
                                                             _bcSet.cell 
                                                             _condition.cell 
@@ -66,7 +66,7 @@ module FdmBackwardSolverFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmBackwardSolver>) l
 
-                let source = Helper.sourceFold "Fun.FdmBackwardSolver" 
+                let source () = Helper.sourceFold "Fun.FdmBackwardSolver" 
                                                [| _map.source
                                                ;  _bcSet.source
                                                ;  _condition.source
@@ -79,7 +79,7 @@ module FdmBackwardSolverFunction =
                                 ;  _schemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmBackwardSolver> format
                     ; source = source 
@@ -119,7 +119,7 @@ module FdmBackwardSolverFunction =
                 let _To = Helper.toCell<double> To "To" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _dampingSteps = Helper.toCell<int> dampingSteps "dampingSteps" 
-                let builder () = withMnemonic mnemonic ((FdmBackwardSolverModel.Cast _FdmBackwardSolver.cell).Rollback
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBackwardSolverModel.Cast _FdmBackwardSolver.cell).Rollback
                                                             _a.cell 
                                                             _from.cell 
                                                             _To.cell 
@@ -128,7 +128,7 @@ module FdmBackwardSolverFunction =
                                                        ) :> ICell
                 let format (o : FdmBackwardSolver) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmBackwardSolver.source + ".Rollback") 
+                let source () = Helper.sourceFold (_FdmBackwardSolver.source + ".Rollback") 
                                                [| _FdmBackwardSolver.source
                                                ;  _a.source
                                                ;  _from.source
@@ -145,7 +145,7 @@ module FdmBackwardSolverFunction =
                                 ;  _dampingSteps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -174,14 +174,14 @@ module FdmBackwardSolverFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmBackwardSolver>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmBackwardSolver>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmBackwardSolver>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmBackwardSolver>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

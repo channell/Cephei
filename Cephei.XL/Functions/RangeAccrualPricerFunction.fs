@@ -52,12 +52,12 @@ module RangeAccrualPricerFunction =
 
                 let _RangeAccrualPricer = Helper.toCell<RangeAccrualPricer> rangeaccrualpricer "RangeAccrualPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).CapletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualPricer.source + ".CapletPrice") 
+                let source () = Helper.sourceFold (_RangeAccrualPricer.source + ".CapletPrice") 
                                                [| _RangeAccrualPricer.source
                                                ;  _effectiveCap.source
                                                |]
@@ -66,7 +66,7 @@ module RangeAccrualPricerFunction =
                                 ;  _effectiveCap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module RangeAccrualPricerFunction =
 
                 let _RangeAccrualPricer = Helper.toCell<RangeAccrualPricer> rangeaccrualpricer "RangeAccrualPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).CapletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualPricer.source + ".CapletRate") 
+                let source () = Helper.sourceFold (_RangeAccrualPricer.source + ".CapletRate") 
                                                [| _RangeAccrualPricer.source
                                                ;  _effectiveCap.source
                                                |]
@@ -108,7 +108,7 @@ module RangeAccrualPricerFunction =
                                 ;  _effectiveCap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -136,12 +136,12 @@ module RangeAccrualPricerFunction =
 
                 let _RangeAccrualPricer = Helper.toCell<RangeAccrualPricer> rangeaccrualpricer "RangeAccrualPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).FloorletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualPricer.source + ".FloorletPrice") 
+                let source () = Helper.sourceFold (_RangeAccrualPricer.source + ".FloorletPrice") 
                                                [| _RangeAccrualPricer.source
                                                ;  _effectiveFloor.source
                                                |]
@@ -150,7 +150,7 @@ module RangeAccrualPricerFunction =
                                 ;  _effectiveFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -178,12 +178,12 @@ module RangeAccrualPricerFunction =
 
                 let _RangeAccrualPricer = Helper.toCell<RangeAccrualPricer> rangeaccrualpricer "RangeAccrualPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).FloorletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualPricer.source + ".FloorletRate") 
+                let source () = Helper.sourceFold (_RangeAccrualPricer.source + ".FloorletRate") 
                                                [| _RangeAccrualPricer.source
                                                ;  _effectiveFloor.source
                                                |]
@@ -192,7 +192,7 @@ module RangeAccrualPricerFunction =
                                 ;  _effectiveFloor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -220,12 +220,12 @@ module RangeAccrualPricerFunction =
 
                 let _RangeAccrualPricer = Helper.toCell<RangeAccrualPricer> rangeaccrualpricer "RangeAccrualPricer"  
                 let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).Initialize
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : RangeAccrualPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualPricer.source + ".Initialize") 
+                let source () = Helper.sourceFold (_RangeAccrualPricer.source + ".Initialize") 
                                                [| _RangeAccrualPricer.source
                                                ;  _coupon.source
                                                |]
@@ -234,7 +234,7 @@ module RangeAccrualPricerFunction =
                                 ;  _coupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -259,18 +259,18 @@ module RangeAccrualPricerFunction =
             try
 
                 let _RangeAccrualPricer = Helper.toCell<RangeAccrualPricer> rangeaccrualpricer "RangeAccrualPricer"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).SwapletPrice
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualPricer.source + ".SwapletPrice") 
+                let source () = Helper.sourceFold (_RangeAccrualPricer.source + ".SwapletPrice") 
                                                [| _RangeAccrualPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -295,18 +295,18 @@ module RangeAccrualPricerFunction =
             try
 
                 let _RangeAccrualPricer = Helper.toCell<RangeAccrualPricer> rangeaccrualpricer "RangeAccrualPricer"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).SwapletRate
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualPricer.source + ".SwapletRate") 
+                let source () = Helper.sourceFold (_RangeAccrualPricer.source + ".SwapletRate") 
                                                [| _RangeAccrualPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -334,12 +334,12 @@ module RangeAccrualPricerFunction =
 
                 let _RangeAccrualPricer = Helper.toCell<RangeAccrualPricer> rangeaccrualpricer "RangeAccrualPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RangeAccrualPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualPricer.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_RangeAccrualPricer.source + ".RegisterWith") 
                                                [| _RangeAccrualPricer.source
                                                ;  _handler.source
                                                |]
@@ -348,7 +348,7 @@ module RangeAccrualPricerFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -376,12 +376,12 @@ module RangeAccrualPricerFunction =
 
                 let _RangeAccrualPricer = Helper.toCell<RangeAccrualPricer> rangeaccrualpricer "RangeAccrualPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RangeAccrualPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualPricer.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_RangeAccrualPricer.source + ".UnregisterWith") 
                                                [| _RangeAccrualPricer.source
                                                ;  _handler.source
                                                |]
@@ -390,7 +390,7 @@ module RangeAccrualPricerFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -415,18 +415,18 @@ module RangeAccrualPricerFunction =
             try
 
                 let _RangeAccrualPricer = Helper.toCell<RangeAccrualPricer> rangeaccrualpricer "RangeAccrualPricer"  
-                let builder () = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualPricerModel.Cast _RangeAccrualPricer.cell).Update
                                                        ) :> ICell
                 let format (o : RangeAccrualPricer) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_RangeAccrualPricer.source + ".Update") 
+                let source () = Helper.sourceFold (_RangeAccrualPricer.source + ".Update") 
                                                [| _RangeAccrualPricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -455,14 +455,14 @@ module RangeAccrualPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<RangeAccrualPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<RangeAccrualPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<RangeAccrualPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<RangeAccrualPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

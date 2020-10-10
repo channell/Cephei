@@ -55,13 +55,13 @@ module FdmAmericanStepConditionFunction =
                 let _FdmAmericanStepCondition = Helper.toCell<FdmAmericanStepCondition> fdmamericanstepcondition "FdmAmericanStepCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmAmericanStepConditionModel.Cast _FdmAmericanStepCondition.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmAmericanStepConditionModel.Cast _FdmAmericanStepCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FdmAmericanStepCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmAmericanStepCondition.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_FdmAmericanStepCondition.source + ".ApplyTo") 
                                                [| _FdmAmericanStepCondition.source
                                                ;  _o.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module FdmAmericanStepConditionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -100,13 +100,13 @@ module FdmAmericanStepConditionFunction =
 
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let _calculator = Helper.toCell<FdmInnerValueCalculator> calculator "calculator" 
-                let builder () = withMnemonic mnemonic (Fun.FdmAmericanStepCondition 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmAmericanStepCondition 
                                                             _mesher.cell 
                                                             _calculator.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmAmericanStepCondition>) l
 
-                let source = Helper.sourceFold "Fun.FdmAmericanStepCondition" 
+                let source () = Helper.sourceFold "Fun.FdmAmericanStepCondition" 
                                                [| _mesher.source
                                                ;  _calculator.source
                                                |]
@@ -115,7 +115,7 @@ module FdmAmericanStepConditionFunction =
                                 ;  _calculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmAmericanStepCondition> format
                     ; source = source 
@@ -144,14 +144,14 @@ module FdmAmericanStepConditionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmAmericanStepCondition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmAmericanStepCondition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmAmericanStepCondition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmAmericanStepCondition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -58,14 +58,14 @@ module ParallelEvolverFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalFields = Helper.toDefault<Object[]> additionalFields "additionalFields" null
-                let builder () = withMnemonic mnemonic ((ParallelEvolverModel.Cast _ParallelEvolver.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((ParallelEvolverModel.Cast _ParallelEvolver.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalFields.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
-                let source = Helper.sourceFold (_ParallelEvolver.source + ".Factory") 
+                let source () = Helper.sourceFold (_ParallelEvolver.source + ".Factory") 
                                                [| _ParallelEvolver.source
                                                ;  _L.source
                                                ;  _bcs.source
@@ -78,7 +78,7 @@ module ParallelEvolverFunction =
                                 ;  _additionalFields.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ParallelEvolver> format
                     ; source = source 
@@ -106,13 +106,13 @@ module ParallelEvolverFunction =
 
                 let _L = Helper.toCell<Generic.List<IOperator>> L "L" 
                 let _bcs = Helper.toCell<BoundaryConditionSet> bcs "bcs" 
-                let builder () = withMnemonic mnemonic (Fun.ParallelEvolver 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ParallelEvolver 
                                                             _L.cell 
                                                             _bcs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ParallelEvolver>) l
 
-                let source = Helper.sourceFold "Fun.ParallelEvolver" 
+                let source () = Helper.sourceFold "Fun.ParallelEvolver" 
                                                [| _L.source
                                                ;  _bcs.source
                                                |]
@@ -121,7 +121,7 @@ module ParallelEvolverFunction =
                                 ;  _bcs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ParallelEvolver> format
                     ; source = source 
@@ -143,16 +143,16 @@ module ParallelEvolverFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ParallelEvolver1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ParallelEvolver1 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ParallelEvolver>) l
 
-                let source = Helper.sourceFold "Fun.ParallelEvolver1" 
+                let source () = Helper.sourceFold "Fun.ParallelEvolver1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ParallelEvolver> format
                     ; source = source 
@@ -180,12 +180,12 @@ module ParallelEvolverFunction =
 
                 let _ParallelEvolver = Helper.toCell<ParallelEvolver> parallelevolver "ParallelEvolver"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((ParallelEvolverModel.Cast _ParallelEvolver.cell).SetStep
+                let builder (current : ICell) = withMnemonic mnemonic ((ParallelEvolverModel.Cast _ParallelEvolver.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : ParallelEvolver) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ParallelEvolver.source + ".SetStep") 
+                let source () = Helper.sourceFold (_ParallelEvolver.source + ".SetStep") 
                                                [| _ParallelEvolver.source
                                                ;  _dt.source
                                                |]
@@ -194,7 +194,7 @@ module ParallelEvolverFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -228,14 +228,14 @@ module ParallelEvolverFunction =
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((ParallelEvolverModel.Cast _ParallelEvolver.cell).Step
+                let builder (current : ICell) = withMnemonic mnemonic ((ParallelEvolverModel.Cast _ParallelEvolver.cell).Step
                                                             _o.cell 
                                                             _t.cell 
                                                             _theta.cell 
                                                        ) :> ICell
                 let format (o : ParallelEvolver) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ParallelEvolver.source + ".Step") 
+                let source () = Helper.sourceFold (_ParallelEvolver.source + ".Step") 
                                                [| _ParallelEvolver.source
                                                ;  _o.source
                                                ;  _t.source
@@ -248,7 +248,7 @@ module ParallelEvolverFunction =
                                 ;  _theta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -277,14 +277,14 @@ module ParallelEvolverFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ParallelEvolver>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ParallelEvolver>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ParallelEvolver>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ParallelEvolver>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

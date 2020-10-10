@@ -67,7 +67,7 @@ module DepositRateHelperFunction =
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic (Fun.DepositRateHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DepositRateHelper 
                                                             _rate.cell 
                                                             _tenor.cell 
                                                             _fixingDays.cell 
@@ -78,7 +78,7 @@ module DepositRateHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DepositRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.DepositRateHelper" 
+                let source () = Helper.sourceFold "Fun.DepositRateHelper" 
                                                [| _rate.source
                                                ;  _tenor.source
                                                ;  _fixingDays.source
@@ -97,7 +97,7 @@ module DepositRateHelperFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DepositRateHelper> format
                     ; source = source 
@@ -125,13 +125,13 @@ module DepositRateHelperFunction =
 
                 let _rate = Helper.toCell<double> rate "rate" 
                 let _i = Helper.toCell<IborIndex> i "i" 
-                let builder () = withMnemonic mnemonic (Fun.DepositRateHelper1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DepositRateHelper1 
                                                             _rate.cell 
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DepositRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.DepositRateHelper1" 
+                let source () = Helper.sourceFold "Fun.DepositRateHelper1" 
                                                [| _rate.source
                                                ;  _i.source
                                                |]
@@ -140,7 +140,7 @@ module DepositRateHelperFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DepositRateHelper> format
                     ; source = source 
@@ -168,13 +168,13 @@ module DepositRateHelperFunction =
 
                 let _rate = Helper.toHandle<Quote> rate "rate" 
                 let _i = Helper.toCell<IborIndex> i "i" 
-                let builder () = withMnemonic mnemonic (Fun.DepositRateHelper2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DepositRateHelper2 
                                                             _rate.cell 
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DepositRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.DepositRateHelper2" 
+                let source () = Helper.sourceFold "Fun.DepositRateHelper2" 
                                                [| _rate.source
                                                ;  _i.source
                                                |]
@@ -183,7 +183,7 @@ module DepositRateHelperFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DepositRateHelper> format
                     ; source = source 
@@ -226,7 +226,7 @@ module DepositRateHelperFunction =
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic (Fun.DepositRateHelper3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DepositRateHelper3 
                                                             _rate.cell 
                                                             _tenor.cell 
                                                             _fixingDays.cell 
@@ -237,7 +237,7 @@ module DepositRateHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DepositRateHelper>) l
 
-                let source = Helper.sourceFold "Fun.DepositRateHelper3" 
+                let source () = Helper.sourceFold "Fun.DepositRateHelper3" 
                                                [| _rate.source
                                                ;  _tenor.source
                                                ;  _fixingDays.source
@@ -256,7 +256,7 @@ module DepositRateHelperFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DepositRateHelper> format
                     ; source = source 
@@ -281,18 +281,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).ImpliedQuote
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".ImpliedQuote") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".ImpliedQuote") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,12 +320,12 @@ module DepositRateHelperFunction =
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).SetTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".SetTermStructure") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".SetTermStructure") 
                                                [| _DepositRateHelper.source
                                                ;  _t.source
                                                |]
@@ -334,7 +334,7 @@ module DepositRateHelperFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -359,18 +359,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".Update") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".Update") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -395,18 +395,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).EarliestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".EarliestDate") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".EarliestDate") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -431,18 +431,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).LatestDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".LatestDate") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".LatestDate") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -467,18 +467,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).LatestRelevantDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".LatestRelevantDate") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".LatestRelevantDate") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -503,18 +503,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".MaturityDate") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -539,18 +539,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).PillarDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".PillarDate") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".PillarDate") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -575,18 +575,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).Quote
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".Quote") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".Quote") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DepositRateHelper> format
                     ; source = source 
@@ -611,18 +611,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).QuoteError
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".QuoteError") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".QuoteError") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -647,18 +647,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).QuoteIsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".QuoteIsValid") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".QuoteIsValid") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -683,18 +683,18 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).QuoteValue
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".QuoteValue") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".QuoteValue") 
                                                [| _DepositRateHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -722,12 +722,12 @@ module DepositRateHelperFunction =
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".RegisterWith") 
                                                [| _DepositRateHelper.source
                                                ;  _handler.source
                                                |]
@@ -736,7 +736,7 @@ module DepositRateHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -764,12 +764,12 @@ module DepositRateHelperFunction =
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DepositRateHelper.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_DepositRateHelper.source + ".UnregisterWith") 
                                                [| _DepositRateHelper.source
                                                ;  _handler.source
                                                |]
@@ -778,7 +778,7 @@ module DepositRateHelperFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -807,14 +807,14 @@ module DepositRateHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DepositRateHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DepositRateHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DepositRateHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DepositRateHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

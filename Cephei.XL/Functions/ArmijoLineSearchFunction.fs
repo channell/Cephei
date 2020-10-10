@@ -52,13 +52,13 @@ module ArmijoLineSearchFunction =
 
                 let _eps = Helper.toCell<double> eps "eps" 
                 let _alpha = Helper.toCell<double> alpha "alpha" 
-                let builder () = withMnemonic mnemonic (Fun.ArmijoLineSearch1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ArmijoLineSearch1 
                                                             _eps.cell 
                                                             _alpha.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ArmijoLineSearch>) l
 
-                let source = Helper.sourceFold "Fun.ArmijoLineSearch" 
+                let source () = Helper.sourceFold "Fun.ArmijoLineSearch" 
                                                [| _eps.source
                                                ;  _alpha.source
                                                |]
@@ -67,7 +67,7 @@ module ArmijoLineSearchFunction =
                                 ;  _alpha.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
@@ -92,19 +92,19 @@ module ArmijoLineSearchFunction =
             try
 
                 let _eps = Helper.toCell<double> eps "eps" 
-                let builder () = withMnemonic mnemonic (Fun.ArmijoLineSearch    
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ArmijoLineSearch    
                                                             _eps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ArmijoLineSearch>) l
 
-                let source = Helper.sourceFold "Fun.ArmijoLineSearch1" 
+                let source () = Helper.sourceFold "Fun.ArmijoLineSearch1" 
                                                [| _eps.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _eps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
@@ -126,16 +126,16 @@ module ArmijoLineSearchFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ArmijoLineSearch3 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ArmijoLineSearch3 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ArmijoLineSearch>) l
 
-                let source = Helper.sourceFold "Fun.ArmijoLineSearch3" 
+                let source () = Helper.sourceFold "Fun.ArmijoLineSearch3" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
@@ -166,14 +166,14 @@ module ArmijoLineSearchFunction =
                 let _eps = Helper.toCell<double> eps "eps" 
                 let _alpha = Helper.toCell<double> alpha "alpha" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic (Fun.ArmijoLineSearch2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ArmijoLineSearch2
                                                             _eps.cell 
                                                             _alpha.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ArmijoLineSearch>) l
 
-                let source = Helper.sourceFold "Fun.ArmijoLineSearch3" 
+                let source () = Helper.sourceFold "Fun.ArmijoLineSearch3" 
                                                [| _eps.source
                                                ;  _alpha.source
                                                ;  _beta.source
@@ -184,7 +184,7 @@ module ArmijoLineSearchFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
@@ -221,7 +221,7 @@ module ArmijoLineSearchFunction =
                 let _ecType = Helper.toCell<EndCriteria.Type> ecType "ecType" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
                 let _t_ini = Helper.toCell<double> t_ini "t_ini" 
-                let builder () = withMnemonic mnemonic ((ArmijoLineSearchModel3.Cast _ArmijoLineSearch.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ArmijoLineSearchModel3.Cast _ArmijoLineSearch.cell).Value
                                                             _P.cell 
                                                             _ecType.cell 
                                                             _endCriteria.cell 
@@ -229,7 +229,7 @@ module ArmijoLineSearchFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ArmijoLineSearch.source + ".Value") 
+                let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".Value") 
                                                [| _ArmijoLineSearch.source
                                                ;  _P.source
                                                ;  _ecType.source
@@ -244,7 +244,7 @@ module ArmijoLineSearchFunction =
                                 ;  _t_ini.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -269,18 +269,18 @@ module ArmijoLineSearchFunction =
             try
 
                 let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
-                let builder () = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastFunctionValue
+                let builder (current : ICell) = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastFunctionValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ArmijoLineSearch.source + ".LastFunctionValue") 
+                let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".LastFunctionValue") 
                                                [| _ArmijoLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -305,18 +305,18 @@ module ArmijoLineSearchFunction =
             try
 
                 let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
-                let builder () = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastGradient
+                let builder (current : ICell) = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastGradient
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_ArmijoLineSearch.source + ".LastGradient") 
+                let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".LastGradient") 
                                                [| _ArmijoLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
@@ -341,18 +341,18 @@ module ArmijoLineSearchFunction =
             try
 
                 let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
-                let builder () = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastGradientNorm2
+                let builder (current : ICell) = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastGradientNorm2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ArmijoLineSearch.source + ".LastGradientNorm2") 
+                let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".LastGradientNorm2") 
                                                [| _ArmijoLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,18 +377,18 @@ module ArmijoLineSearchFunction =
             try
 
                 let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
-                let builder () = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastX
+                let builder (current : ICell) = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).LastX
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_ArmijoLineSearch.source + ".LastX") 
+                let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".LastX") 
                                                [| _ArmijoLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
@@ -413,18 +413,18 @@ module ArmijoLineSearchFunction =
             try
 
                 let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
-                let builder () = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).SearchDirection
+                let builder (current : ICell) = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).SearchDirection
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_ArmijoLineSearch.source + ".SearchDirection") 
+                let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".SearchDirection") 
                                                [| _ArmijoLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ArmijoLineSearch> format
                     ; source = source 
@@ -449,18 +449,18 @@ module ArmijoLineSearchFunction =
             try
 
                 let _ArmijoLineSearch = Helper.toCell<ArmijoLineSearch> armijolinesearch "ArmijoLineSearch"  
-                let builder () = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).Succeed
+                let builder (current : ICell) = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).Succeed
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ArmijoLineSearch.source + ".Succeed") 
+                let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".Succeed") 
                                                [| _ArmijoLineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -497,7 +497,7 @@ module ArmijoLineSearchFunction =
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
                 let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" 
-                let builder () = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((ArmijoLineSearchModel.Cast _ArmijoLineSearch.cell).Update
                                                             _data.cell 
                                                             _direction.cell 
                                                             _beta.cell 
@@ -505,7 +505,7 @@ module ArmijoLineSearchFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ArmijoLineSearch.source + ".Update") 
+                let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".Update") 
                                                [| _ArmijoLineSearch.source
                                                ;  _data.source
                                                ;  _direction.source
@@ -520,7 +520,7 @@ module ArmijoLineSearchFunction =
                                 ;  _Constraint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -549,14 +549,14 @@ module ArmijoLineSearchFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ArmijoLineSearch>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ArmijoLineSearch>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ArmijoLineSearch>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ArmijoLineSearch>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

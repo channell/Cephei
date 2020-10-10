@@ -55,14 +55,14 @@ module EuropeanHestonPathPricerFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic (Fun.EuropeanHestonPathPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EuropeanHestonPathPricer 
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EuropeanHestonPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.EuropeanHestonPathPricer" 
+                let source () = Helper.sourceFold "Fun.EuropeanHestonPathPricer" 
                                                [| _Type.source
                                                ;  _strike.source
                                                ;  _discount.source
@@ -73,7 +73,7 @@ module EuropeanHestonPathPricerFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EuropeanHestonPathPricer> format
                     ; source = source 
@@ -101,12 +101,12 @@ module EuropeanHestonPathPricerFunction =
 
                 let _EuropeanHestonPathPricer = Helper.toCell<EuropeanHestonPathPricer> europeanhestonpathpricer "EuropeanHestonPathPricer"  
                 let _multiPath = Helper.toCell<IPath> multiPath "multiPath" 
-                let builder () = withMnemonic mnemonic ((EuropeanHestonPathPricerModel.Cast _EuropeanHestonPathPricer.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((EuropeanHestonPathPricerModel.Cast _EuropeanHestonPathPricer.cell).Value
                                                             _multiPath.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EuropeanHestonPathPricer.source + ".Value") 
+                let source () = Helper.sourceFold (_EuropeanHestonPathPricer.source + ".Value") 
                                                [| _EuropeanHestonPathPricer.source
                                                ;  _multiPath.source
                                                |]
@@ -115,7 +115,7 @@ module EuropeanHestonPathPricerFunction =
                                 ;  _multiPath.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -144,14 +144,14 @@ module EuropeanHestonPathPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EuropeanHestonPathPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EuropeanHestonPathPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EuropeanHestonPathPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EuropeanHestonPathPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,19 +49,19 @@ module EURLibor10MFunction =
             try
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.EURLibor10M1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EURLibor10M1 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EURLibor10M>) l
 
-                let source = Helper.sourceFold "Fun.EURLibor10M" 
+                let source () = Helper.sourceFold "Fun.EURLibor10M" 
                                                [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EURLibor10M> format
                     ; source = source 
@@ -83,16 +83,16 @@ module EURLibor10MFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.EURLibor10M ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.EURLibor10M ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<EURLibor10M>) l
 
-                let source = Helper.sourceFold "Fun.EURLibor10M" 
+                let source () = Helper.sourceFold "Fun.EURLibor10M" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EURLibor10M> format
                     ; source = source 
@@ -120,12 +120,12 @@ module EURLibor10MFunction =
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".MaturityDate") 
                                                [| _EURLibor10M.source
                                                ;  _valueDate.source
                                                |]
@@ -134,7 +134,7 @@ module EURLibor10MFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -162,12 +162,12 @@ module EURLibor10MFunction =
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".ValueDate") 
                                                [| _EURLibor10M.source
                                                ;  _fixingDate.source
                                                |]
@@ -176,7 +176,7 @@ module EURLibor10MFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -201,18 +201,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".BusinessDayConvention") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,12 +240,12 @@ module EURLibor10MFunction =
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".Clone") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".Clone") 
                                                [| _EURLibor10M.source
                                                ;  _forwarding.source
                                                |]
@@ -254,7 +254,7 @@ module EURLibor10MFunction =
                                 ;  _forwarding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EURLibor10M> format
                     ; source = source 
@@ -279,18 +279,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".EndOfMonth") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -324,14 +324,14 @@ module EURLibor10MFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".ForecastFixing1") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".ForecastFixing1") 
                                                [| _EURLibor10M.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -344,7 +344,7 @@ module EURLibor10MFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -372,12 +372,12 @@ module EURLibor10MFunction =
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".ForecastFixing") 
                                                [| _EURLibor10M.source
                                                ;  _fixingDate.source
                                                |]
@@ -386,7 +386,7 @@ module EURLibor10MFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -411,18 +411,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".ForwardingTermStructure") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EURLibor10M> format
                     ; source = source 
@@ -447,18 +447,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".Currency") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".Currency") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EURLibor10M> format
                     ; source = source 
@@ -483,18 +483,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".DayCounter") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EURLibor10M> format
                     ; source = source 
@@ -519,18 +519,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".FamilyName") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -561,13 +561,13 @@ module EURLibor10MFunction =
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".Fixing") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".Fixing") 
                                                [| _EURLibor10M.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -578,7 +578,7 @@ module EURLibor10MFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -603,18 +603,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".FixingCalendar") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EURLibor10M> format
                     ; source = source 
@@ -642,12 +642,12 @@ module EURLibor10MFunction =
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".FixingDate") 
                                                [| _EURLibor10M.source
                                                ;  _valueDate.source
                                                |]
@@ -656,7 +656,7 @@ module EURLibor10MFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -681,18 +681,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".FixingDays") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -720,12 +720,12 @@ module EURLibor10MFunction =
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".IsValidFixingDate") 
                                                [| _EURLibor10M.source
                                                ;  _fixingDate.source
                                                |]
@@ -734,7 +734,7 @@ module EURLibor10MFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -759,18 +759,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".Name") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".Name") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -798,12 +798,12 @@ module EURLibor10MFunction =
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".PastFixing") 
                                                [| _EURLibor10M.source
                                                ;  _fixingDate.source
                                                |]
@@ -812,7 +812,7 @@ module EURLibor10MFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -837,18 +837,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".Tenor") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".Tenor") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<EURLibor10M> format
                     ; source = source 
@@ -873,18 +873,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).Update
                                                        ) :> ICell
                 let format (o : EURLibor10M) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".Update") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".Update") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -918,14 +918,14 @@ module EURLibor10MFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : EURLibor10M) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".AddFixing") 
                                                [| _EURLibor10M.source
                                                ;  _d.source
                                                ;  _v.source
@@ -938,7 +938,7 @@ module EURLibor10MFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -972,14 +972,14 @@ module EURLibor10MFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : EURLibor10M) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".AddFixings") 
                                                [| _EURLibor10M.source
                                                ;  _d.source
                                                ;  _v.source
@@ -992,7 +992,7 @@ module EURLibor10MFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1023,13 +1023,13 @@ module EURLibor10MFunction =
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : EURLibor10M) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".AddFixings1") 
                                                [| _EURLibor10M.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1040,7 +1040,7 @@ module EURLibor10MFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1065,18 +1065,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".AllowsNativeFixings") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1101,18 +1101,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : EURLibor10M) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".ClearFixings") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1140,12 +1140,12 @@ module EURLibor10MFunction =
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : EURLibor10M) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".RegisterWith") 
                                                [| _EURLibor10M.source
                                                ;  _handler.source
                                                |]
@@ -1154,7 +1154,7 @@ module EURLibor10MFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1179,18 +1179,18 @@ module EURLibor10MFunction =
             try
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".TimeSeries") 
                                                [| _EURLibor10M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURLibor10M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1218,12 +1218,12 @@ module EURLibor10MFunction =
 
                 let _EURLibor10M = Helper.toCell<EURLibor10M> eurlibor10m "EURLibor10M"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((EURLibor10MModel.Cast _EURLibor10M.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : EURLibor10M) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_EURLibor10M.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_EURLibor10M.source + ".UnregisterWith") 
                                                [| _EURLibor10M.source
                                                ;  _handler.source
                                                |]
@@ -1232,7 +1232,7 @@ module EURLibor10MFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1261,14 +1261,14 @@ module EURLibor10MFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<EURLibor10M>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<EURLibor10M>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<EURLibor10M>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<EURLibor10M>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

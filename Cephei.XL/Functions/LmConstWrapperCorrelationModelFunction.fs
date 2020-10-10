@@ -61,7 +61,7 @@ module LmConstWrapperCorrelationModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Correlation1
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Correlation1
                                                             _i.cell 
                                                             _j.cell 
                                                             _t.cell 
@@ -69,7 +69,7 @@ module LmConstWrapperCorrelationModelFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Correlation1") 
+                let source () = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Correlation1") 
                                                [| _LmConstWrapperCorrelationModel.source
                                                ;  _i.source
                                                ;  _j.source
@@ -84,7 +84,7 @@ module LmConstWrapperCorrelationModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -115,13 +115,13 @@ module LmConstWrapperCorrelationModelFunction =
                 let _LmConstWrapperCorrelationModel = Helper.toCell<LmConstWrapperCorrelationModel> lmconstwrappercorrelationmodel "LmConstWrapperCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Correlation
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Correlation
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Correlation") 
+                let source () = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Correlation") 
                                                [| _LmConstWrapperCorrelationModel.source
                                                ;  _t.source
                                                ;  _x.source
@@ -132,7 +132,7 @@ module LmConstWrapperCorrelationModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmConstWrapperCorrelationModel> format
                     ; source = source 
@@ -157,18 +157,18 @@ module LmConstWrapperCorrelationModelFunction =
             try
 
                 let _LmConstWrapperCorrelationModel = Helper.toCell<LmConstWrapperCorrelationModel> lmconstwrappercorrelationmodel "LmConstWrapperCorrelationModel"  
-                let builder () = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Factors
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Factors") 
+                let source () = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Factors") 
                                                [| _LmConstWrapperCorrelationModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmConstWrapperCorrelationModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module LmConstWrapperCorrelationModelFunction =
             try
 
                 let _LmConstWrapperCorrelationModel = Helper.toCell<LmConstWrapperCorrelationModel> lmconstwrappercorrelationmodel "LmConstWrapperCorrelationModel"  
-                let builder () = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).IsTimeIndependent
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).IsTimeIndependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".IsTimeIndependent") 
+                let source () = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".IsTimeIndependent") 
                                                [| _LmConstWrapperCorrelationModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmConstWrapperCorrelationModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,19 +229,19 @@ module LmConstWrapperCorrelationModelFunction =
             try
 
                 let _corrModel = Helper.toCell<LmCorrelationModel> corrModel "corrModel" 
-                let builder () = withMnemonic mnemonic (Fun.LmConstWrapperCorrelationModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LmConstWrapperCorrelationModel 
                                                             _corrModel.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmConstWrapperCorrelationModel>) l
 
-                let source = Helper.sourceFold "Fun.LmConstWrapperCorrelationModel" 
+                let source () = Helper.sourceFold "Fun.LmConstWrapperCorrelationModel" 
                                                [| _corrModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _corrModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmConstWrapperCorrelationModel> format
                     ; source = source 
@@ -272,13 +272,13 @@ module LmConstWrapperCorrelationModelFunction =
                 let _LmConstWrapperCorrelationModel = Helper.toCell<LmConstWrapperCorrelationModel> lmconstwrappercorrelationmodel "LmConstWrapperCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).PseudoSqrt
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).PseudoSqrt
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".PseudoSqrt") 
+                let source () = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".PseudoSqrt") 
                                                [| _LmConstWrapperCorrelationModel.source
                                                ;  _t.source
                                                ;  _x.source
@@ -289,7 +289,7 @@ module LmConstWrapperCorrelationModelFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LmConstWrapperCorrelationModel> format
                     ; source = source 
@@ -314,18 +314,18 @@ module LmConstWrapperCorrelationModelFunction =
             try
 
                 let _LmConstWrapperCorrelationModel = Helper.toCell<LmConstWrapperCorrelationModel> lmconstwrappercorrelationmodel "LmConstWrapperCorrelationModel"  
-                let builder () = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Parameters") 
+                let source () = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Parameters") 
                                                [| _LmConstWrapperCorrelationModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmConstWrapperCorrelationModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -353,12 +353,12 @@ module LmConstWrapperCorrelationModelFunction =
 
                 let _LmConstWrapperCorrelationModel = Helper.toCell<LmConstWrapperCorrelationModel> lmconstwrappercorrelationmodel "LmConstWrapperCorrelationModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder () = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).SetParams
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmConstWrapperCorrelationModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".SetParams") 
+                let source () = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".SetParams") 
                                                [| _LmConstWrapperCorrelationModel.source
                                                ;  _arguments.source
                                                |]
@@ -367,7 +367,7 @@ module LmConstWrapperCorrelationModelFunction =
                                 ;  _arguments.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -392,18 +392,18 @@ module LmConstWrapperCorrelationModelFunction =
             try
 
                 let _LmConstWrapperCorrelationModel = Helper.toCell<LmConstWrapperCorrelationModel> lmconstwrappercorrelationmodel "LmConstWrapperCorrelationModel"  
-                let builder () = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Size") 
+                let source () = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Size") 
                                                [| _LmConstWrapperCorrelationModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmConstWrapperCorrelationModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -432,14 +432,14 @@ module LmConstWrapperCorrelationModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LmConstWrapperCorrelationModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LmConstWrapperCorrelationModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LmConstWrapperCorrelationModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LmConstWrapperCorrelationModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Cap
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Cap
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Cap") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Cap") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,7 +124,7 @@ module CappedFlooredYoYInflationCouponFunction =
                 let _floor = Helper.toNullable<double> floor "floor"
                 let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
-                let builder () = withMnemonic mnemonic (Fun.CappedFlooredYoYInflationCoupon 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CappedFlooredYoYInflationCoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
                                                             _startDate.cell 
@@ -142,7 +142,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CappedFlooredYoYInflationCoupon>) l
 
-                let source = Helper.sourceFold "Fun.CappedFlooredYoYInflationCoupon" 
+                let source () = Helper.sourceFold "Fun.CappedFlooredYoYInflationCoupon" 
                                                [| _paymentDate.source
                                                ;  _nominal.source
                                                ;  _startDate.source
@@ -175,7 +175,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _refPeriodEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredYoYInflationCoupon> format
                     ; source = source 
@@ -206,14 +206,14 @@ module CappedFlooredYoYInflationCouponFunction =
                 let _underlying = Helper.toCell<YoYInflationCoupon> underlying "underlying" 
                 let _cap = Helper.toNullable<double> cap "cap"
                 let _floor = Helper.toNullable<double> floor "floor"
-                let builder () = withMnemonic mnemonic (Fun.CappedFlooredYoYInflationCoupon1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CappedFlooredYoYInflationCoupon1 
                                                             _underlying.cell 
                                                             _cap.cell 
                                                             _floor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CappedFlooredYoYInflationCoupon>) l
 
-                let source = Helper.sourceFold "Fun.CappedFlooredYoYInflationCoupon1" 
+                let source () = Helper.sourceFold "Fun.CappedFlooredYoYInflationCoupon1" 
                                                [| _underlying.source
                                                ;  _cap.source
                                                ;  _floor.source
@@ -224,7 +224,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _floor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredYoYInflationCoupon> format
                     ; source = source 
@@ -249,18 +249,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).EffectiveCap
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).EffectiveCap
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".EffectiveCap") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".EffectiveCap") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -285,18 +285,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).EffectiveFloor
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).EffectiveFloor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".EffectiveFloor") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".EffectiveFloor") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -321,18 +321,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Floor
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Floor
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Floor") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Floor") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -357,18 +357,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IsCapped
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IsCapped
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".IsCapped") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".IsCapped") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -393,18 +393,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IsFloored
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IsFloored
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".IsFloored") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".IsFloored") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -429,18 +429,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Rate
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Rate") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Rate") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -468,12 +468,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _pricer = Helper.toCell<YoYInflationCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).SetPricer
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredYoYInflationCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".SetPricer") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".SetPricer") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _pricer.source
                                                |]
@@ -482,7 +482,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _pricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -507,18 +507,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AdjustedFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AdjustedFixing") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AdjustedFixing") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -543,18 +543,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Gearing
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Gearing") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Gearing") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -579,18 +579,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Spread
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Spread") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Spread") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,18 +615,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).YoyIndex
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).YoyIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".YoyIndex") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".YoyIndex") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredYoYInflationCoupon> format
                     ; source = source 
@@ -654,12 +654,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccruedAmount") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _d.source
                                                |]
@@ -668,7 +668,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -693,18 +693,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Amount") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Amount") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -729,18 +729,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".DayCounter") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredYoYInflationCoupon> format
                     ; source = source 
@@ -765,18 +765,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".FixingDate") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -801,18 +801,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".FixingDays") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -837,18 +837,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationIndex>) l
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Index") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Index") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredYoYInflationCoupon> format
                     ; source = source 
@@ -873,18 +873,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IndexFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".IndexFixing") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".IndexFixing") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -909,18 +909,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ObservationLag
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".ObservationLag") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".ObservationLag") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredYoYInflationCoupon> format
                     ; source = source 
@@ -948,12 +948,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _discountingCurve = Helper.toHandle<YieldTermStructure> discountingCurve "discountingCurve" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Price
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Price
                                                             _discountingCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Price") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Price") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _discountingCurve.source
                                                |]
@@ -962,7 +962,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _discountingCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -987,18 +987,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Pricer
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationCouponPricer>) l
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Pricer") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Pricer") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredYoYInflationCoupon> format
                     ; source = source 
@@ -1023,18 +1023,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : CappedFlooredYoYInflationCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Update") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Update") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1059,18 +1059,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccrualDays") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccrualDays") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1095,18 +1095,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualEndDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccrualEndDate") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccrualEndDate") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1131,18 +1131,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccrualPeriod") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccrualPeriod") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1167,18 +1167,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualStartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccrualStartDate") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccrualStartDate") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1206,12 +1206,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccruedDays") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccruedDays") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _d.source
                                                |]
@@ -1220,7 +1220,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1248,12 +1248,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccruedPeriod") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".AccruedPeriod") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _d.source
                                                |]
@@ -1262,7 +1262,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1287,18 +1287,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Date") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Date") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1323,18 +1323,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".ExCouponDate") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1359,18 +1359,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Nominal") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Nominal") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1395,18 +1395,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".ReferencePeriodEnd") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".ReferencePeriodEnd") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1431,18 +1431,18 @@ module CappedFlooredYoYInflationCouponFunction =
             try
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".ReferencePeriodStart") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".ReferencePeriodStart") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredYoYInflationCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1470,12 +1470,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".CompareTo") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _cf.source
                                                |]
@@ -1484,7 +1484,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1512,12 +1512,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Equals") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Equals") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _cf.source
                                                |]
@@ -1526,7 +1526,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1557,13 +1557,13 @@ module CappedFlooredYoYInflationCouponFunction =
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".HasOccurred") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -1574,7 +1574,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1602,12 +1602,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".TradingExCoupon") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _refDate.source
                                                |]
@@ -1616,7 +1616,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1644,12 +1644,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredYoYInflationCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Accept") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".Accept") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _v.source
                                                |]
@@ -1658,7 +1658,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1686,12 +1686,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredYoYInflationCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".RegisterWith") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _handler.source
                                                |]
@@ -1700,7 +1700,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1728,12 +1728,12 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let _CappedFlooredYoYInflationCoupon = Helper.toCell<CappedFlooredYoYInflationCoupon> cappedflooredyoyinflationcoupon "CappedFlooredYoYInflationCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredYoYInflationCouponModel.Cast _CappedFlooredYoYInflationCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredYoYInflationCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_CappedFlooredYoYInflationCoupon.source + ".UnregisterWith") 
                                                [| _CappedFlooredYoYInflationCoupon.source
                                                ;  _handler.source
                                                |]
@@ -1742,7 +1742,7 @@ module CappedFlooredYoYInflationCouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1771,14 +1771,14 @@ module CappedFlooredYoYInflationCouponFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CappedFlooredYoYInflationCoupon>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CappedFlooredYoYInflationCoupon>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CappedFlooredYoYInflationCoupon>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CappedFlooredYoYInflationCoupon>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -67,7 +67,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toNullable<double> shift "shift"
-                let builder () = withMnemonic mnemonic (Fun.ConstantSwaptionVolatility 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConstantSwaptionVolatility 
                                                             _referenceDate.cell 
                                                             _cal.cell 
                                                             _bdc.cell 
@@ -78,7 +78,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConstantSwaptionVolatility>) l
 
-                let source = Helper.sourceFold "Fun.ConstantSwaptionVolatility" 
+                let source () = Helper.sourceFold "Fun.ConstantSwaptionVolatility" 
                                                [| _referenceDate.source
                                                ;  _cal.source
                                                ;  _bdc.source
@@ -97,7 +97,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantSwaptionVolatility> format
                     ; source = source 
@@ -140,7 +140,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toNullable<double> shift "shift"
-                let builder () = withMnemonic mnemonic (Fun.ConstantSwaptionVolatility3 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConstantSwaptionVolatility3 
                                                             _settlementDays.cell 
                                                             _cal.cell 
                                                             _bdc.cell 
@@ -151,7 +151,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConstantSwaptionVolatility>) l
 
-                let source = Helper.sourceFold "Fun.ConstantSwaptionVolatility3" 
+                let source () = Helper.sourceFold "Fun.ConstantSwaptionVolatility3" 
                                                [| _settlementDays.source
                                                ;  _cal.source
                                                ;  _bdc.source
@@ -170,7 +170,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantSwaptionVolatility> format
                     ; source = source 
@@ -213,7 +213,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toNullable<double> shift "shift"
-                let builder () = withMnemonic mnemonic (Fun.ConstantSwaptionVolatility2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConstantSwaptionVolatility2 
                                                             _referenceDate.cell 
                                                             _cal.cell 
                                                             _bdc.cell 
@@ -224,7 +224,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConstantSwaptionVolatility>) l
 
-                let source = Helper.sourceFold "Fun.ConstantSwaptionVolatility2" 
+                let source () = Helper.sourceFold "Fun.ConstantSwaptionVolatility2" 
                                                [| _referenceDate.source
                                                ;  _cal.source
                                                ;  _bdc.source
@@ -243,7 +243,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantSwaptionVolatility> format
                     ; source = source 
@@ -286,7 +286,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toNullable<double> shift "shift"
-                let builder () = withMnemonic mnemonic (Fun.ConstantSwaptionVolatility1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConstantSwaptionVolatility1 
                                                             _settlementDays.cell 
                                                             _cal.cell 
                                                             _bdc.cell 
@@ -297,7 +297,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConstantSwaptionVolatility>) l
 
-                let source = Helper.sourceFold "Fun.ConstantSwaptionVolatility1" 
+                let source () = Helper.sourceFold "Fun.ConstantSwaptionVolatility1" 
                                                [| _settlementDays.source
                                                ;  _cal.source
                                                ;  _bdc.source
@@ -316,7 +316,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _shift.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantSwaptionVolatility> format
                     ; source = source 
@@ -341,18 +341,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MaxDate") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,18 +377,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MaxStrike") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -413,18 +413,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxSwapTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxSwapTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MaxSwapTenor") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MaxSwapTenor") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantSwaptionVolatility> format
                     ; source = source 
@@ -449,18 +449,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MinStrike") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -485,18 +485,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).VolatilityType
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".VolatilityType") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".VolatilityType") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -533,7 +533,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance4
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance4
                                                             _optionTime.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -541,7 +541,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance4") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance4") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTime.source
                                                ;  _swapLength.source
@@ -556,7 +556,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -593,7 +593,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance5
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance5
                                                             _optionDate.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -601,7 +601,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance5") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance5") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionDate.source
                                                ;  _swapLength.source
@@ -616,7 +616,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -653,7 +653,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance3
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance3
                                                             _optionTenor.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -661,7 +661,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance3") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance3") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTenor.source
                                                ;  _swapLength.source
@@ -676,7 +676,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -713,7 +713,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance2
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance2
                                                             _optionTime.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -721,7 +721,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance2") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance2") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTime.source
                                                ;  _swapTenor.source
@@ -736,7 +736,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -773,7 +773,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance1
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance1
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -781,7 +781,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance1") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance1") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionDate.source
                                                ;  _swapTenor.source
@@ -796,7 +796,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -833,7 +833,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BlackVariance
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -841,7 +841,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BlackVariance") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTenor.source
                                                ;  _swapTenor.source
@@ -856,7 +856,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -881,18 +881,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxSwapLength
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxSwapLength
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MaxSwapLength") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MaxSwapLength") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -926,14 +926,14 @@ module ConstantSwaptionVolatilityFunction =
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift4
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift4
                                                             _optionTime.cell 
                                                             _swapTenor.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift4") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift4") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTime.source
                                                ;  _swapTenor.source
@@ -946,7 +946,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -980,14 +980,14 @@ module ConstantSwaptionVolatilityFunction =
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift5
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift5
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift5") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift5") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionDate.source
                                                ;  _swapTenor.source
@@ -1000,7 +1000,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1034,14 +1034,14 @@ module ConstantSwaptionVolatilityFunction =
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift1
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift1
                                                             _optionDate.cell 
                                                             _swapLength.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift1") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift1") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionDate.source
                                                ;  _swapLength.source
@@ -1054,7 +1054,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1088,14 +1088,14 @@ module ConstantSwaptionVolatilityFunction =
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift
                                                             _optionTime.cell 
                                                             _swapLength.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTime.source
                                                ;  _swapLength.source
@@ -1108,7 +1108,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1142,14 +1142,14 @@ module ConstantSwaptionVolatilityFunction =
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift2
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift2
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift2") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift2") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTenor.source
                                                ;  _swapTenor.source
@@ -1162,7 +1162,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1196,14 +1196,14 @@ module ConstantSwaptionVolatilityFunction =
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift3
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Shift3
                                                             _optionTenor.cell 
                                                             _swapLength.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift3") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Shift3") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTenor.source
                                                ;  _swapLength.source
@@ -1216,7 +1216,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1250,14 +1250,14 @@ module ConstantSwaptionVolatilityFunction =
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SmileSection1
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SmileSection1
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
                                                             _extr.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SmileSection1") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SmileSection1") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTenor.source
                                                ;  _swapTenor.source
@@ -1270,7 +1270,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantSwaptionVolatility> format
                     ; source = source 
@@ -1304,14 +1304,14 @@ module ConstantSwaptionVolatilityFunction =
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SmileSection2
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SmileSection2
                                                             _optionTime.cell 
                                                             _swapLength.cell 
                                                             _extr.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SmileSection2") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SmileSection2") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTime.source
                                                ;  _swapLength.source
@@ -1324,7 +1324,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantSwaptionVolatility> format
                     ; source = source 
@@ -1358,14 +1358,14 @@ module ConstantSwaptionVolatilityFunction =
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SmileSection
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SmileSection
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
                                                             _extr.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SmileSection") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SmileSection") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionDate.source
                                                ;  _swapTenor.source
@@ -1378,7 +1378,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantSwaptionVolatility> format
                     ; source = source 
@@ -1409,13 +1409,13 @@ module ConstantSwaptionVolatilityFunction =
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SwapLength
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SwapLength
                                                             _start.cell 
                                                             _End.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SwapLength") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SwapLength") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _start.source
                                                ;  _End.source
@@ -1426,7 +1426,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _End.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1454,12 +1454,12 @@ module ConstantSwaptionVolatilityFunction =
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SwapLength1
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SwapLength1
                                                             _swapTenor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SwapLength1") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SwapLength1") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _swapTenor.source
                                                |]
@@ -1468,7 +1468,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _swapTenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1505,7 +1505,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility4
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility4
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -1513,7 +1513,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility4") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility4") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionDate.source
                                                ;  _swapTenor.source
@@ -1528,7 +1528,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1565,7 +1565,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility2
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility2
                                                             _optionDate.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -1573,7 +1573,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility2") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility2") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionDate.source
                                                ;  _swapLength.source
@@ -1588,7 +1588,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1625,7 +1625,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility5
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility5
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -1633,7 +1633,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility5") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility5") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTenor.source
                                                ;  _swapTenor.source
@@ -1648,7 +1648,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1685,7 +1685,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility1
                                                             _optionTenor.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -1693,7 +1693,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility1") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTenor.source
                                                ;  _swapLength.source
@@ -1708,7 +1708,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1745,7 +1745,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility3
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility3
                                                             _optionTime.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -1753,7 +1753,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTime.source
                                                ;  _swapLength.source
@@ -1768,7 +1768,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1805,7 +1805,7 @@ module ConstantSwaptionVolatilityFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Volatility
                                                             _optionTime.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -1813,7 +1813,7 @@ module ConstantSwaptionVolatilityFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Volatility") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _optionTime.source
                                                ;  _swapTenor.source
@@ -1828,7 +1828,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1853,18 +1853,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".BusinessDayConvention") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1892,12 +1892,12 @@ module ConstantSwaptionVolatilityFunction =
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).OptionDateFromTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".OptionDateFromTenor") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".OptionDateFromTenor") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _p.source
                                                |]
@@ -1906,7 +1906,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1931,18 +1931,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Calendar") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Calendar") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantSwaptionVolatility> format
                     ; source = source 
@@ -1967,18 +1967,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".DayCounter") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantSwaptionVolatility> format
                     ; source = source 
@@ -2003,18 +2003,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".MaxTime") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2039,18 +2039,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".ReferenceDate") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2075,18 +2075,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".SettlementDays") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2114,12 +2114,12 @@ module ConstantSwaptionVolatilityFunction =
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".TimeFromReference") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _date.source
                                                |]
@@ -2128,7 +2128,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2153,18 +2153,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Update
                                                        ) :> ICell
                 let format (o : ConstantSwaptionVolatility) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Update") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Update") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2189,18 +2189,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".AllowsExtrapolation") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2228,12 +2228,12 @@ module ConstantSwaptionVolatilityFunction =
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : ConstantSwaptionVolatility) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".DisableExtrapolation") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _b.source
                                                |]
@@ -2242,7 +2242,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2270,12 +2270,12 @@ module ConstantSwaptionVolatilityFunction =
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : ConstantSwaptionVolatility) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".EnableExtrapolation") 
                                                [| _ConstantSwaptionVolatility.source
                                                ;  _b.source
                                                |]
@@ -2284,7 +2284,7 @@ module ConstantSwaptionVolatilityFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2309,18 +2309,18 @@ module ConstantSwaptionVolatilityFunction =
             try
 
                 let _ConstantSwaptionVolatility = Helper.toCell<ConstantSwaptionVolatility> constantswaptionvolatility "ConstantSwaptionVolatility"  
-                let builder () = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantSwaptionVolatilityModel.Cast _ConstantSwaptionVolatility.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_ConstantSwaptionVolatility.source + ".Extrapolate") 
                                                [| _ConstantSwaptionVolatility.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantSwaptionVolatility.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -2349,14 +2349,14 @@ module ConstantSwaptionVolatilityFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConstantSwaptionVolatility>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ConstantSwaptionVolatility>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ConstantSwaptionVolatility>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ConstantSwaptionVolatility>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

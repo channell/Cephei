@@ -52,13 +52,13 @@ module BinomialConvertibleEngineFunction =
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
-                let builder () = withMnemonic mnemonic (Fun.BinomialConvertibleEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BinomialConvertibleEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BinomialConvertibleEngine>) l
 
-                let source = Helper.sourceFold "Fun.BinomialConvertibleEngine" 
+                let source () = Helper.sourceFold "Fun.BinomialConvertibleEngine" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                |]
@@ -67,7 +67,7 @@ module BinomialConvertibleEngineFunction =
                                 ;  _timeSteps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BinomialConvertibleEngine> format
                     ; source = source 
@@ -97,14 +97,14 @@ module BinomialConvertibleEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BinomialConvertibleEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BinomialConvertibleEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BinomialConvertibleEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BinomialConvertibleEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

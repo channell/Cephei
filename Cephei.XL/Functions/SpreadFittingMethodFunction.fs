@@ -49,18 +49,18 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder () = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
-                let source = Helper.sourceFold (_SpreadFittingMethod.source + ".Clone") 
+                let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".Clone") 
                                                [| _SpreadFittingMethod.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadFittingMethod> format
                     ; source = source 
@@ -85,18 +85,18 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder () = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadFittingMethod.source + ".Size") 
+                let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".Size") 
                                                [| _SpreadFittingMethod.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,13 +124,13 @@ module SpreadFittingMethodFunction =
 
                 let _Method = Helper.toCell<FittedBondDiscountCurve.FittingMethod> Method "Method" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic (Fun.SpreadFittingMethod 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SpreadFittingMethod 
                                                             _Method.cell 
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SpreadFittingMethod>) l
 
-                let source = Helper.sourceFold "Fun.SpreadFittingMethod" 
+                let source () = Helper.sourceFold "Fun.SpreadFittingMethod" 
                                                [| _Method.source
                                                ;  _discountCurve.source
                                                |]
@@ -139,7 +139,7 @@ module SpreadFittingMethodFunction =
                                 ;  _discountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadFittingMethod> format
                     ; source = source 
@@ -164,18 +164,18 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder () = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).ConstrainAtZero
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SpreadFittingMethod.source + ".ConstrainAtZero") 
+                let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".ConstrainAtZero") 
                                                [| _SpreadFittingMethod.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,13 +206,13 @@ module SpreadFittingMethodFunction =
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Discount
                                                             _x.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadFittingMethod.source + ".Discount") 
+                let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".Discount") 
                                                [| _SpreadFittingMethod.source
                                                ;  _x.source
                                                ;  _t.source
@@ -223,7 +223,7 @@ module SpreadFittingMethodFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder () = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).MinimumCostValue
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadFittingMethod.source + ".MinimumCostValue") 
+                let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".MinimumCostValue") 
                                                [| _SpreadFittingMethod.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder () = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).NumberOfIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SpreadFittingMethod.source + ".NumberOfIterations") 
+                let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".NumberOfIterations") 
                                                [| _SpreadFittingMethod.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder () = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).OptimizationMethod
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
-                let source = Helper.sourceFold (_SpreadFittingMethod.source + ".OptimizationMethod") 
+                let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".OptimizationMethod") 
                                                [| _SpreadFittingMethod.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadFittingMethod> format
                     ; source = source 
@@ -356,18 +356,18 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder () = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Solution
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SpreadFittingMethod.source + ".Solution") 
+                let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".Solution") 
                                                [| _SpreadFittingMethod.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadFittingMethod> format
                     ; source = source 
@@ -392,18 +392,18 @@ module SpreadFittingMethodFunction =
             try
 
                 let _SpreadFittingMethod = Helper.toCell<SpreadFittingMethod> spreadfittingmethod "SpreadFittingMethod"  
-                let builder () = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((SpreadFittingMethodModel.Cast _SpreadFittingMethod.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SpreadFittingMethod.source + ".Weights") 
+                let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".Weights") 
                                                [| _SpreadFittingMethod.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SpreadFittingMethod> format
                     ; source = source 
@@ -432,14 +432,14 @@ module SpreadFittingMethodFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SpreadFittingMethod>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SpreadFittingMethod>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SpreadFittingMethod>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SpreadFittingMethod>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

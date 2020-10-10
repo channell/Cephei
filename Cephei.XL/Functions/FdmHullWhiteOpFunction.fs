@@ -56,13 +56,13 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Add") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Add") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _A.source
                                                ;  _B.source
@@ -73,7 +73,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -102,12 +102,12 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Apply") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Apply") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _r.source
                                                |]
@@ -116,7 +116,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _r.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -147,13 +147,13 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _direction = Helper.toCell<int> direction "direction" 
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply_direction
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply_direction
                                                             _direction.cell 
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Apply_direction") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Apply_direction") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _direction.source
                                                ;  _r.source
@@ -164,7 +164,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _r.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -192,12 +192,12 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply_mixed
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Apply_mixed
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Apply_mixed") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Apply_mixed") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _r.source
                                                |]
@@ -206,7 +206,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _r.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -234,12 +234,12 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".ApplyTo") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _v.source
                                                |]
@@ -248,7 +248,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -273,18 +273,18 @@ module FdmHullWhiteOpFunction =
             try
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Clone") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Clone") 
                                                [| _FdmHullWhiteOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmHullWhiteOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -315,14 +315,14 @@ module FdmHullWhiteOpFunction =
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let _model = Helper.toCell<HullWhite> model "model" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder () = withMnemonic mnemonic (Fun.FdmHullWhiteOp 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmHullWhiteOp 
                                                             _mesher.cell 
                                                             _model.cell 
                                                             _direction.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmHullWhiteOp>) l
 
-                let source = Helper.sourceFold "Fun.FdmHullWhiteOp" 
+                let source () = Helper.sourceFold "Fun.FdmHullWhiteOp" 
                                                [| _mesher.source
                                                ;  _model.source
                                                ;  _direction.source
@@ -333,7 +333,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _direction.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -361,12 +361,12 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Identity
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Identity") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Identity") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _size.source
                                                |]
@@ -375,7 +375,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -400,18 +400,18 @@ module FdmHullWhiteOpFunction =
             try
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).IsTimeDependent
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".IsTimeDependent") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".IsTimeDependent") 
                                                [| _FdmHullWhiteOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmHullWhiteOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -442,13 +442,13 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _a = Helper.toCell<double> a "a" 
                 let _D = Helper.toCell<IOperator> D "D" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Multiply
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Multiply
                                                             _a.cell 
                                                             _D.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Multiply") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Multiply") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _a.source
                                                ;  _D.source
@@ -459,7 +459,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _D.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -490,13 +490,13 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _r = Helper.toCell<Vector> r "r" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Preconditioner
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Preconditioner
                                                             _r.cell 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Preconditioner") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Preconditioner") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _r.source
                                                ;  _s.source
@@ -507,7 +507,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -538,13 +538,13 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SetTime
                                                             _t1.cell 
                                                             _t2.cell 
                                                        ) :> ICell
                 let format (o : FdmHullWhiteOp) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".SetTime") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".SetTime") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _t1.source
                                                ;  _t2.source
@@ -555,7 +555,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _t2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -583,12 +583,12 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SetTime1
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SetTime1
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FdmHullWhiteOp) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".SetTime1") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".SetTime1") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _t.source
                                                |]
@@ -597,7 +597,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -622,18 +622,18 @@ module FdmHullWhiteOpFunction =
             try
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Size") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Size") 
                                                [| _FdmHullWhiteOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmHullWhiteOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -667,14 +667,14 @@ module FdmHullWhiteOpFunction =
                 let _direction = Helper.toCell<int> direction "direction" 
                 let _r = Helper.toCell<Vector> r "r" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Solve_splitting
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Solve_splitting
                                                             _direction.cell 
                                                             _r.cell 
                                                             _s.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Solve_splitting") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Solve_splitting") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _direction.source
                                                ;  _r.source
@@ -687,7 +687,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -715,12 +715,12 @@ module FdmHullWhiteOpFunction =
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SolveFor
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".SolveFor") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".SolveFor") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _rhs.source
                                                |]
@@ -729,7 +729,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _rhs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -760,13 +760,13 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Subtract
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".Subtract") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".Subtract") 
                                                [| _FdmHullWhiteOp.source
                                                ;  _A.source
                                                ;  _B.source
@@ -777,7 +777,7 @@ module FdmHullWhiteOpFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -802,18 +802,18 @@ module FdmHullWhiteOpFunction =
             try
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ToMatrixDecomp
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ToMatrixDecomp
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<SparseMatrix>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".ToMatrixDecomp") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".ToMatrixDecomp") 
                                                [| _FdmHullWhiteOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmHullWhiteOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -838,18 +838,18 @@ module FdmHullWhiteOpFunction =
             try
 
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
-                let builder () = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ToMatrix
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
 
-                let source = Helper.sourceFold (_FdmHullWhiteOp.source + ".ToMatrix") 
+                let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".ToMatrix") 
                                                [| _FdmHullWhiteOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmHullWhiteOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmHullWhiteOp> format
                     ; source = source 
@@ -878,14 +878,14 @@ module FdmHullWhiteOpFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmHullWhiteOp>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmHullWhiteOp>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmHullWhiteOp>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmHullWhiteOp>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

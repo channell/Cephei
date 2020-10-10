@@ -53,13 +53,13 @@ module LfmSwaptionEngineFunction =
 
                 let _model = Helper.toCell<LiborForwardModel> model "model" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic (Fun.LfmSwaptionEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LfmSwaptionEngine 
                                                             _model.cell 
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LfmSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.LfmSwaptionEngine" 
+                let source () = Helper.sourceFold "Fun.LfmSwaptionEngine" 
                                                [| _model.source
                                                ;  _discountCurve.source
                                                |]
@@ -68,7 +68,7 @@ module LfmSwaptionEngineFunction =
                                 ;  _discountCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LfmSwaptionEngine> format
                     ; source = source 
@@ -97,12 +97,12 @@ module LfmSwaptionEngineFunction =
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LfmSwaptionEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_LfmSwaptionEngine.source + ".SetModel") 
                                                [| _LfmSwaptionEngine.source
                                                ;  _model.source
                                                |]
@@ -111,7 +111,7 @@ module LfmSwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -139,12 +139,12 @@ module LfmSwaptionEngineFunction =
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LfmSwaptionEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_LfmSwaptionEngine.source + ".RegisterWith") 
                                                [| _LfmSwaptionEngine.source
                                                ;  _handler.source
                                                |]
@@ -153,7 +153,7 @@ module LfmSwaptionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -178,18 +178,18 @@ module LfmSwaptionEngineFunction =
             try
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LfmSwaptionEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_LfmSwaptionEngine.source + ".Reset") 
                                                [| _LfmSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LfmSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -217,12 +217,12 @@ module LfmSwaptionEngineFunction =
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LfmSwaptionEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_LfmSwaptionEngine.source + ".UnregisterWith") 
                                                [| _LfmSwaptionEngine.source
                                                ;  _handler.source
                                                |]
@@ -231,7 +231,7 @@ module LfmSwaptionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -256,18 +256,18 @@ module LfmSwaptionEngineFunction =
             try
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_LfmSwaptionEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_LfmSwaptionEngine.source + ".Update") 
                                                [| _LfmSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LfmSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,14 +296,14 @@ module LfmSwaptionEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LfmSwaptionEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LfmSwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LfmSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LfmSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

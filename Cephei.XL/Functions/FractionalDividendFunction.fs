@@ -52,12 +52,12 @@ module FractionalDividendFunction =
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _underlying = Helper.toCell<double> underlying "underlying" 
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Amount1
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Amount1
                                                             _underlying.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".Amount1") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".Amount1") 
                                                [| _FractionalDividend.source
                                                ;  _underlying.source
                                                |]
@@ -66,7 +66,7 @@ module FractionalDividendFunction =
                                 ;  _underlying.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,18 +91,18 @@ module FractionalDividendFunction =
             try
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".Amount") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".Amount") 
                                                [| _FractionalDividend.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -133,14 +133,14 @@ module FractionalDividendFunction =
                 let _rate = Helper.toCell<double> rate "rate" 
                 let _nominal = Helper.toCell<double> nominal "nominal" 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic (Fun.FractionalDividend 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FractionalDividend 
                                                             _rate.cell 
                                                             _nominal.cell 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FractionalDividend>) l
 
-                let source = Helper.sourceFold "Fun.FractionalDividend" 
+                let source () = Helper.sourceFold "Fun.FractionalDividend" 
                                                [| _rate.source
                                                ;  _nominal.source
                                                ;  _date.source
@@ -151,7 +151,7 @@ module FractionalDividendFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FractionalDividend> format
                     ; source = source 
@@ -179,13 +179,13 @@ module FractionalDividendFunction =
 
                 let _rate = Helper.toCell<double> rate "rate" 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic (Fun.FractionalDividend1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FractionalDividend1 
                                                             _rate.cell 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FractionalDividend>) l
 
-                let source = Helper.sourceFold "Fun.FractionalDividend1" 
+                let source () = Helper.sourceFold "Fun.FractionalDividend1" 
                                                [| _rate.source
                                                ;  _date.source
                                                |]
@@ -194,7 +194,7 @@ module FractionalDividendFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FractionalDividend> format
                     ; source = source 
@@ -219,18 +219,18 @@ module FractionalDividendFunction =
             try
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Nominal
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".Nominal") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".Nominal") 
                                                [| _FractionalDividend.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,18 +255,18 @@ module FractionalDividendFunction =
             try
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Rate
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".Rate") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".Rate") 
                                                [| _FractionalDividend.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -291,18 +291,18 @@ module FractionalDividendFunction =
             try
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".Date") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".Date") 
                                                [| _FractionalDividend.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -330,12 +330,12 @@ module FractionalDividendFunction =
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".CompareTo") 
                                                [| _FractionalDividend.source
                                                ;  _cf.source
                                                |]
@@ -344,7 +344,7 @@ module FractionalDividendFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -372,12 +372,12 @@ module FractionalDividendFunction =
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".Equals") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".Equals") 
                                                [| _FractionalDividend.source
                                                ;  _cf.source
                                                |]
@@ -386,7 +386,7 @@ module FractionalDividendFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -411,18 +411,18 @@ module FractionalDividendFunction =
             try
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".ExCouponDate") 
                                                [| _FractionalDividend.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -453,13 +453,13 @@ module FractionalDividendFunction =
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".HasOccurred") 
                                                [| _FractionalDividend.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -470,7 +470,7 @@ module FractionalDividendFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -498,12 +498,12 @@ module FractionalDividendFunction =
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".TradingExCoupon") 
                                                [| _FractionalDividend.source
                                                ;  _refDate.source
                                                |]
@@ -512,7 +512,7 @@ module FractionalDividendFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -540,12 +540,12 @@ module FractionalDividendFunction =
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : FractionalDividend) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".Accept") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".Accept") 
                                                [| _FractionalDividend.source
                                                ;  _v.source
                                                |]
@@ -554,7 +554,7 @@ module FractionalDividendFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -582,12 +582,12 @@ module FractionalDividendFunction =
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FractionalDividend) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".RegisterWith") 
                                                [| _FractionalDividend.source
                                                ;  _handler.source
                                                |]
@@ -596,7 +596,7 @@ module FractionalDividendFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -624,12 +624,12 @@ module FractionalDividendFunction =
 
                 let _FractionalDividend = Helper.toCell<FractionalDividend> fractionaldividend "FractionalDividend"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FractionalDividendModel.Cast _FractionalDividend.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FractionalDividend) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FractionalDividend.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FractionalDividend.source + ".UnregisterWith") 
                                                [| _FractionalDividend.source
                                                ;  _handler.source
                                                |]
@@ -638,7 +638,7 @@ module FractionalDividendFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -667,14 +667,14 @@ module FractionalDividendFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FractionalDividend>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FractionalDividend>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FractionalDividend>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FractionalDividend>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

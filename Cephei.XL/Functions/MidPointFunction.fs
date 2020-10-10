@@ -64,7 +64,7 @@ module MidPointFunction =
                 let _b = Helper.toCell<double> b "b" 
                 let _I = Helper.toCell<double> I "I" 
                 let _N = Helper.toCell<int> N "N" 
-                let builder () = withMnemonic mnemonic ((MidPointModel.Cast _MidPoint.cell).Integrate
+                let builder (current : ICell) = withMnemonic mnemonic ((MidPointModel.Cast _MidPoint.cell).Integrate
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 
@@ -73,7 +73,7 @@ module MidPointFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MidPoint.source + ".Integrate") 
+                let source () = Helper.sourceFold (_MidPoint.source + ".Integrate") 
                                                [| _MidPoint.source
                                                ;  _f.source
                                                ;  _a.source
@@ -90,7 +90,7 @@ module MidPointFunction =
                                 ;  _N.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -115,18 +115,18 @@ module MidPointFunction =
             try
 
                 let _MidPoint = Helper.toCell<MidPoint> midpoint "MidPoint"  
-                let builder () = withMnemonic mnemonic ((MidPointModel.Cast _MidPoint.cell).NbEvalutions
+                let builder (current : ICell) = withMnemonic mnemonic ((MidPointModel.Cast _MidPoint.cell).NbEvalutions
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MidPoint.source + ".NbEvalutions") 
+                let source () = Helper.sourceFold (_MidPoint.source + ".NbEvalutions") 
                                                [| _MidPoint.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MidPoint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,14 +155,14 @@ module MidPointFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MidPoint>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MidPoint>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MidPoint>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MidPoint>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

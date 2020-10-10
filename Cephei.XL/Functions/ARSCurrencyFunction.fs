@@ -46,16 +46,16 @@ module ARSCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ARSCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ARSCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ARSCurrency>) l
 
-                let source = Helper.sourceFold "Fun.ARSCurrency" 
+                let source () = Helper.sourceFold "Fun.ARSCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ARSCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".Code") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".Empty") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module ARSCurrencyFunction =
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".Equals") 
                                                [| _ARSCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module ARSCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".Format") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".FractionsPerUnit") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".FractionSymbol") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".Name") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".NumericCode") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".Rounding") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ARSCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".Symbol") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".ToString") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_ARSCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_ARSCurrency.source + ".TriangulationCurrency") 
                                                [| _ARSCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ARSCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module ARSCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ARSCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ARSCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ARSCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ARSCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

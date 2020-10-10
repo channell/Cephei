@@ -50,19 +50,19 @@ module InterpolatingCPICapFloorEngineFunction =
             try
 
                 let _priceSurf = Helper.toHandle<CPICapFloorTermPriceSurface> priceSurf "priceSurf" 
-                let builder () = withMnemonic mnemonic (Fun.InterpolatingCPICapFloorEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatingCPICapFloorEngine 
                                                             _priceSurf.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatingCPICapFloorEngine>) l
 
-                let source = Helper.sourceFold "Fun.InterpolatingCPICapFloorEngine" 
+                let source () = Helper.sourceFold "Fun.InterpolatingCPICapFloorEngine" 
                                                [| _priceSurf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _priceSurf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InterpolatingCPICapFloorEngine> format
                     ; source = source 
@@ -87,18 +87,18 @@ module InterpolatingCPICapFloorEngineFunction =
             try
 
                 let _InterpolatingCPICapFloorEngine = Helper.toCell<InterpolatingCPICapFloorEngine> interpolatingcpicapfloorengine "InterpolatingCPICapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((InterpolatingCPICapFloorEngineModel.Cast _InterpolatingCPICapFloorEngine.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((InterpolatingCPICapFloorEngineModel.Cast _InterpolatingCPICapFloorEngine.cell).Name
                                                        ) :> ICell
                 let format (o : String) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_InterpolatingCPICapFloorEngine.source + ".Name") 
+                let source () = Helper.sourceFold (_InterpolatingCPICapFloorEngine.source + ".Name") 
                                                [| _InterpolatingCPICapFloorEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatingCPICapFloorEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -127,14 +127,14 @@ module InterpolatingCPICapFloorEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InterpolatingCPICapFloorEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InterpolatingCPICapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InterpolatingCPICapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InterpolatingCPICapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

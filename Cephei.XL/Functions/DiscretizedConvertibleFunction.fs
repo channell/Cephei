@@ -52,12 +52,12 @@ module DiscretizedConvertibleFunction =
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).AddCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).AddCoupon
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".AddCoupon") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".AddCoupon") 
                                                [| _DiscretizedConvertible.source
                                                ;  _i.source
                                                |]
@@ -66,7 +66,7 @@ module DiscretizedConvertibleFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,18 +91,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).AdjustedGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).AdjustedGrid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".AdjustedGrid") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".AdjustedGrid") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
@@ -133,13 +133,13 @@ module DiscretizedConvertibleFunction =
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _i = Helper.toCell<int> i "i" 
                 let _convertible = Helper.toCell<bool> convertible "convertible" 
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).ApplyCallability
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).ApplyCallability
                                                             _i.cell 
                                                             _convertible.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".ApplyCallability") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".ApplyCallability") 
                                                [| _DiscretizedConvertible.source
                                                ;  _i.source
                                                ;  _convertible.source
@@ -150,7 +150,7 @@ module DiscretizedConvertibleFunction =
                                 ;  _convertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -175,18 +175,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).ApplyConvertibility
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).ApplyConvertibility
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".ApplyConvertibility") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".ApplyConvertibility") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -211,18 +211,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).ConversionProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).ConversionProbability
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".ConversionProbability") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".ConversionProbability") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
@@ -253,14 +253,14 @@ module DiscretizedConvertibleFunction =
                 let _args = Helper.toCell<ConvertibleBond.option.Arguments> args "args" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _grid = Helper.toCell<TimeGrid> grid "grid" 
-                let builder () = withMnemonic mnemonic (Fun.DiscretizedConvertible 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscretizedConvertible 
                                                             _args.cell 
                                                             _Process.cell 
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscretizedConvertible>) l
 
-                let source = Helper.sourceFold "Fun.DiscretizedConvertible" 
+                let source () = Helper.sourceFold "Fun.DiscretizedConvertible" 
                                                [| _args.source
                                                ;  _Process.source
                                                ;  _grid.source
@@ -271,7 +271,7 @@ module DiscretizedConvertibleFunction =
                                 ;  _grid.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
@@ -296,18 +296,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).DividendValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).DividendValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".DividendValues") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".DividendValues") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
@@ -332,18 +332,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).MandatoryTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".MandatoryTimes") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".MandatoryTimes") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -368,18 +368,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Process
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Process
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GeneralizedBlackScholesProcess>) l
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".PROCESS") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".PROCESS") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
@@ -407,12 +407,12 @@ module DiscretizedConvertibleFunction =
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Reset
                                                             _size.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".Reset") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".Reset") 
                                                [| _DiscretizedConvertible.source
                                                ;  _size.source
                                                |]
@@ -421,7 +421,7 @@ module DiscretizedConvertibleFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).SpreadAdjustedRate
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).SpreadAdjustedRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".SpreadAdjustedRate") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".SpreadAdjustedRate") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
@@ -482,18 +482,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).AdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".AdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".AdjustValues") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -524,13 +524,13 @@ module DiscretizedConvertibleFunction =
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Initialize
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Initialize
                                                             _Method.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".Initialize") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".Initialize") 
                                                [| _DiscretizedConvertible.source
                                                ;  _Method.source
                                                ;  _t.source
@@ -541,7 +541,7 @@ module DiscretizedConvertibleFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -566,18 +566,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Method
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".METHOD") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".METHOD") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
@@ -605,12 +605,12 @@ module DiscretizedConvertibleFunction =
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PartialRollback
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".PartialRollback") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".PartialRollback") 
                                                [| _DiscretizedConvertible.source
                                                ;  _To.source
                                                |]
@@ -619,7 +619,7 @@ module DiscretizedConvertibleFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -644,18 +644,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PostAdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".PostAdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".PostAdjustValues") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -680,18 +680,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PreAdjustValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".PreAdjustValues") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".PreAdjustValues") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -716,18 +716,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PresentValue
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".PresentValue") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".PresentValue") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -755,12 +755,12 @@ module DiscretizedConvertibleFunction =
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Rollback
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Rollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".Rollback") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".Rollback") 
                                                [| _DiscretizedConvertible.source
                                                ;  _To.source
                                                |]
@@ -769,7 +769,7 @@ module DiscretizedConvertibleFunction =
                                 ;  _To.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -797,12 +797,12 @@ module DiscretizedConvertibleFunction =
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".SetTime") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".SetTime") 
                                                [| _DiscretizedConvertible.source
                                                ;  _t.source
                                                |]
@@ -811,7 +811,7 @@ module DiscretizedConvertibleFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -839,12 +839,12 @@ module DiscretizedConvertibleFunction =
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).SetValues
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).SetValues
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedConvertible) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".SetValues") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".SetValues") 
                                                [| _DiscretizedConvertible.source
                                                ;  _v.source
                                                |]
@@ -853,7 +853,7 @@ module DiscretizedConvertibleFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -878,18 +878,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Time
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".Time") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".Time") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -914,18 +914,18 @@ module DiscretizedConvertibleFunction =
             try
 
                 let _DiscretizedConvertible = Helper.toCell<DiscretizedConvertible> discretizedconvertible "DiscretizedConvertible"  
-                let builder () = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Values
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscretizedConvertibleModel.Cast _DiscretizedConvertible.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DiscretizedConvertible.source + ".Values") 
+                let source () = Helper.sourceFold (_DiscretizedConvertible.source + ".Values") 
                                                [| _DiscretizedConvertible.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedConvertible.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscretizedConvertible> format
                     ; source = source 
@@ -954,14 +954,14 @@ module DiscretizedConvertibleFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscretizedConvertible>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscretizedConvertible>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscretizedConvertible>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscretizedConvertible>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

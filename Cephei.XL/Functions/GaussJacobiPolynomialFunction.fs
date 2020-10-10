@@ -52,12 +52,12 @@ module GaussJacobiPolynomialFunction =
 
                 let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Alpha
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Alpha") 
+                let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Alpha") 
                                                [| _GaussJacobiPolynomial.source
                                                ;  _i.source
                                                |]
@@ -66,7 +66,7 @@ module GaussJacobiPolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module GaussJacobiPolynomialFunction =
 
                 let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Beta
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Beta") 
+                let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Beta") 
                                                [| _GaussJacobiPolynomial.source
                                                ;  _i.source
                                                |]
@@ -108,7 +108,7 @@ module GaussJacobiPolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -136,13 +136,13 @@ module GaussJacobiPolynomialFunction =
 
                 let _alpha = Helper.toCell<double> alpha "alpha" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic (Fun.GaussJacobiPolynomial 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussJacobiPolynomial 
                                                             _alpha.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussJacobiPolynomial>) l
 
-                let source = Helper.sourceFold "Fun.GaussJacobiPolynomial" 
+                let source () = Helper.sourceFold "Fun.GaussJacobiPolynomial" 
                                                [| _alpha.source
                                                ;  _beta.source
                                                |]
@@ -151,7 +151,7 @@ module GaussJacobiPolynomialFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussJacobiPolynomial> format
                     ; source = source 
@@ -176,18 +176,18 @@ module GaussJacobiPolynomialFunction =
             try
 
                 let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
-                let builder () = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Mu_0
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Mu_0") 
+                let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Mu_0") 
                                                [| _GaussJacobiPolynomial.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiPolynomial.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -215,12 +215,12 @@ module GaussJacobiPolynomialFunction =
 
                 let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).W
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussJacobiPolynomial.source + ".W") 
+                let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".W") 
                                                [| _GaussJacobiPolynomial.source
                                                ;  _x.source
                                                |]
@@ -229,7 +229,7 @@ module GaussJacobiPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,13 +260,13 @@ module GaussJacobiPolynomialFunction =
                 let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Value") 
                                                [| _GaussJacobiPolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -277,7 +277,7 @@ module GaussJacobiPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,13 +308,13 @@ module GaussJacobiPolynomialFunction =
                 let _GaussJacobiPolynomial = Helper.toCell<GaussJacobiPolynomial> gaussjacobipolynomial "GaussJacobiPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).WeightedValue
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiPolynomialModel.Cast _GaussJacobiPolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussJacobiPolynomial.source + ".WeightedValue") 
+                let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".WeightedValue") 
                                                [| _GaussJacobiPolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -325,7 +325,7 @@ module GaussJacobiPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -354,14 +354,14 @@ module GaussJacobiPolynomialFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussJacobiPolynomial>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussJacobiPolynomial>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussJacobiPolynomial>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussJacobiPolynomial>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module DoublingConvergenceStepsFunction =
             try
 
                 let _DoublingConvergenceSteps = Helper.toCell<DoublingConvergenceSteps> doublingconvergencesteps "DoublingConvergenceSteps"  
-                let builder () = withMnemonic mnemonic ((DoublingConvergenceStepsModel.Cast _DoublingConvergenceSteps.cell).InitialSamples
+                let builder (current : ICell) = withMnemonic mnemonic ((DoublingConvergenceStepsModel.Cast _DoublingConvergenceSteps.cell).InitialSamples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DoublingConvergenceSteps.source + ".InitialSamples") 
+                let source () = Helper.sourceFold (_DoublingConvergenceSteps.source + ".InitialSamples") 
                                                [| _DoublingConvergenceSteps.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DoublingConvergenceSteps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -88,12 +88,12 @@ module DoublingConvergenceStepsFunction =
 
                 let _DoublingConvergenceSteps = Helper.toCell<DoublingConvergenceSteps> doublingconvergencesteps "DoublingConvergenceSteps"  
                 let _current = Helper.toCell<int> current "current" 
-                let builder () = withMnemonic mnemonic ((DoublingConvergenceStepsModel.Cast _DoublingConvergenceSteps.cell).NextSamples
+                let builder (current : ICell) = withMnemonic mnemonic ((DoublingConvergenceStepsModel.Cast _DoublingConvergenceSteps.cell).NextSamples
                                                             _current.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DoublingConvergenceSteps.source + ".NextSamples") 
+                let source () = Helper.sourceFold (_DoublingConvergenceSteps.source + ".NextSamples") 
                                                [| _DoublingConvergenceSteps.source
                                                ;  _current.source
                                                |]
@@ -102,7 +102,7 @@ module DoublingConvergenceStepsFunction =
                                 ;  _current.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,14 +131,14 @@ module DoublingConvergenceStepsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DoublingConvergenceSteps>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DoublingConvergenceSteps>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DoublingConvergenceSteps>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DoublingConvergenceSteps>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module InverseCumulativeRsgFunction =
             try
 
                 let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
-                let builder () = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).Dimension
+                let builder (current : ICell) = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_InverseCumulativeRsg.source + ".Dimension") 
+                let source () = Helper.sourceFold (_InverseCumulativeRsg.source + ".Dimension") 
                                                [| _InverseCumulativeRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InverseCumulativeRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,13 +91,13 @@ module InverseCumulativeRsgFunction =
                 let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
-                let source = Helper.sourceFold (_InverseCumulativeRsg.source + ".Factory") 
+                let source () = Helper.sourceFold (_InverseCumulativeRsg.source + ".Factory") 
                                                [| _InverseCumulativeRsg.source
                                                ;  _dimensionality.source
                                                ;  _seed.source
@@ -108,7 +108,7 @@ module InverseCumulativeRsgFunction =
                                 ;  _seed.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InverseCumulativeRsg> format
                     ; source = source 
@@ -133,19 +133,19 @@ module InverseCumulativeRsgFunction =
             try
 
                 let _uniformSequenceGenerator = Helper.toCell<'USG> uniformSequenceGenerator "uniformSequenceGenerator" 
-                let builder () = withMnemonic mnemonic (Fun.InverseCumulativeRsg 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativeRsg 
                                                             _uniformSequenceGenerator.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseCumulativeRsg>) l
 
-                let source = Helper.sourceFold "Fun.InverseCumulativeRsg" 
+                let source () = Helper.sourceFold "Fun.InverseCumulativeRsg" 
                                                [| _uniformSequenceGenerator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _uniformSequenceGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InverseCumulativeRsg> format
                     ; source = source 
@@ -173,13 +173,13 @@ module InverseCumulativeRsgFunction =
 
                 let _uniformSequenceGenerator = Helper.toCell<'USG> uniformSequenceGenerator "uniformSequenceGenerator" 
                 let _inverseCumulative = Helper.toCell<'IC> inverseCumulative "inverseCumulative" 
-                let builder () = withMnemonic mnemonic (Fun.InverseCumulativeRsg1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.InverseCumulativeRsg1 
                                                             _uniformSequenceGenerator.cell 
                                                             _inverseCumulative.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InverseCumulativeRsg>) l
 
-                let source = Helper.sourceFold "Fun.InverseCumulativeRsg1" 
+                let source () = Helper.sourceFold "Fun.InverseCumulativeRsg1" 
                                                [| _uniformSequenceGenerator.source
                                                ;  _inverseCumulative.source
                                                |]
@@ -188,7 +188,7 @@ module InverseCumulativeRsgFunction =
                                 ;  _inverseCumulative.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<InverseCumulativeRsg> format
                     ; source = source 
@@ -213,18 +213,18 @@ module InverseCumulativeRsgFunction =
             try
 
                 let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
-                let builder () = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).LastSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InverseCumulativeRsg.source + ".LastSequence") 
+                let source () = Helper.sourceFold (_InverseCumulativeRsg.source + ".LastSequence") 
                                                [| _InverseCumulativeRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InverseCumulativeRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -249,18 +249,18 @@ module InverseCumulativeRsgFunction =
             try
 
                 let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
-                let builder () = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).NextSequence
+                let builder (current : ICell) = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_InverseCumulativeRsg.source + ".NextSequence") 
+                let source () = Helper.sourceFold (_InverseCumulativeRsg.source + ".NextSequence") 
                                                [| _InverseCumulativeRsg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InverseCumulativeRsg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -289,14 +289,14 @@ module InverseCumulativeRsgFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<InverseCumulativeRsg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<InverseCumulativeRsg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<InverseCumulativeRsg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<InverseCumulativeRsg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

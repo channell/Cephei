@@ -55,13 +55,13 @@ module FdmLogBasketInnerValueFunction =
                 let _FdmLogBasketInnerValue = Helper.toCell<FdmLogBasketInnerValue> fdmlogbasketinnervalue "FdmLogBasketInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmLogBasketInnerValueModel.Cast _FdmLogBasketInnerValue.cell).AvgInnerValue
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmLogBasketInnerValueModel.Cast _FdmLogBasketInnerValue.cell).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmLogBasketInnerValue.source + ".AvgInnerValue") 
+                let source () = Helper.sourceFold (_FdmLogBasketInnerValue.source + ".AvgInnerValue") 
                                                [| _FdmLogBasketInnerValue.source
                                                ;  _iter.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module FdmLogBasketInnerValueFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -100,13 +100,13 @@ module FdmLogBasketInnerValueFunction =
 
                 let _payoff = Helper.toCell<BasketPayoff> payoff "payoff" 
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
-                let builder () = withMnemonic mnemonic (Fun.FdmLogBasketInnerValue 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmLogBasketInnerValue 
                                                             _payoff.cell 
                                                             _mesher.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLogBasketInnerValue>) l
 
-                let source = Helper.sourceFold "Fun.FdmLogBasketInnerValue" 
+                let source () = Helper.sourceFold "Fun.FdmLogBasketInnerValue" 
                                                [| _payoff.source
                                                ;  _mesher.source
                                                |]
@@ -115,7 +115,7 @@ module FdmLogBasketInnerValueFunction =
                                 ;  _mesher.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmLogBasketInnerValue> format
                     ; source = source 
@@ -146,13 +146,13 @@ module FdmLogBasketInnerValueFunction =
                 let _FdmLogBasketInnerValue = Helper.toCell<FdmLogBasketInnerValue> fdmlogbasketinnervalue "FdmLogBasketInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((FdmLogBasketInnerValueModel.Cast _FdmLogBasketInnerValue.cell).InnerValue
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmLogBasketInnerValueModel.Cast _FdmLogBasketInnerValue.cell).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmLogBasketInnerValue.source + ".InnerValue") 
+                let source () = Helper.sourceFold (_FdmLogBasketInnerValue.source + ".InnerValue") 
                                                [| _FdmLogBasketInnerValue.source
                                                ;  _iter.source
                                                ;  _t.source
@@ -163,7 +163,7 @@ module FdmLogBasketInnerValueFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -192,14 +192,14 @@ module FdmLogBasketInnerValueFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmLogBasketInnerValue>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmLogBasketInnerValue>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmLogBasketInnerValue>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmLogBasketInnerValue>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

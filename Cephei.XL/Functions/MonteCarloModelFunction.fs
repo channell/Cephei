@@ -52,12 +52,12 @@ module MonteCarloModelFunction =
 
                 let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel"  
                 let _samples = Helper.toCell<int> samples "samples" 
-                let builder () = withMnemonic mnemonic ((MonteCarloModelModel.Cast _MonteCarloModel.cell).AddSamples
+                let builder (current : ICell) = withMnemonic mnemonic ((MonteCarloModelModel.Cast _MonteCarloModel.cell).AddSamples
                                                             _samples.cell 
                                                        ) :> ICell
                 let format (o : MonteCarloModel) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MonteCarloModel.source + ".AddSamples") 
+                let source () = Helper.sourceFold (_MonteCarloModel.source + ".AddSamples") 
                                                [| _MonteCarloModel.source
                                                ;  _samples.source
                                                |]
@@ -66,7 +66,7 @@ module MonteCarloModelFunction =
                                 ;  _samples.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -109,7 +109,7 @@ module MonteCarloModelFunction =
                 let _cvPathPricer = Helper.toDefault<PathPricer<IPath>> cvPathPricer "cvPathPricer" null
                 let _cvOptionValue = Helper.toDefault<double> cvOptionValue "cvOptionValue" 0
                 let _cvPathGenerator = Helper.toDefault<IPathGenerator<IRNG>> cvPathGenerator "cvPathGenerator" null
-                let builder () = withMnemonic mnemonic (Fun.MonteCarloModel 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MonteCarloModel 
                                                             _pathGenerator.cell 
                                                             _pathPricer.cell 
                                                             _sampleAccumulator.cell 
@@ -120,7 +120,7 @@ module MonteCarloModelFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MonteCarloModel>) l
 
-                let source = Helper.sourceFold "Fun.MonteCarloModel" 
+                let source () = Helper.sourceFold "Fun.MonteCarloModel" 
                                                [| _pathGenerator.source
                                                ;  _pathPricer.source
                                                ;  _sampleAccumulator.source
@@ -139,7 +139,7 @@ module MonteCarloModelFunction =
                                 ;  _cvPathGenerator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MonteCarloModel> format
                     ; source = source 
@@ -164,18 +164,18 @@ module MonteCarloModelFunction =
             try
 
                 let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel"  
-                let builder () = withMnemonic mnemonic ((MonteCarloModelModel.Cast _MonteCarloModel.cell).SampleAccumulator
+                let builder (current : ICell) = withMnemonic mnemonic ((MonteCarloModelModel.Cast _MonteCarloModel.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MonteCarloModel.source + ".SampleAccumulator") 
+                let source () = Helper.sourceFold (_MonteCarloModel.source + ".SampleAccumulator") 
                                                [| _MonteCarloModel.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MonteCarloModel.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -204,14 +204,14 @@ module MonteCarloModelFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MonteCarloModel>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MonteCarloModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MonteCarloModel>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MonteCarloModel>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

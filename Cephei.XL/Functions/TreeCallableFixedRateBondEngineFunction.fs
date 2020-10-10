@@ -56,14 +56,14 @@ module TreeCallableFixedRateBondEngineFunction =
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let builder () = withMnemonic mnemonic (Fun.TreeCallableFixedRateBondEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeCallableFixedRateBondEngine 
                                                             _model.cell 
                                                             _timeSteps.cell 
                                                             _termStructure.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeCallableFixedRateBondEngine>) l
 
-                let source = Helper.sourceFold "Fun.TreeCallableFixedRateBondEngine" 
+                let source () = Helper.sourceFold "Fun.TreeCallableFixedRateBondEngine" 
                                                [| _model.source
                                                ;  _timeSteps.source
                                                ;  _termStructure.source
@@ -74,7 +74,7 @@ module TreeCallableFixedRateBondEngineFunction =
                                 ;  _termStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TreeCallableFixedRateBondEngine> format
                     ; source = source 
@@ -105,14 +105,14 @@ module TreeCallableFixedRateBondEngineFunction =
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
-                let builder () = withMnemonic mnemonic (Fun.TreeCallableFixedRateBondEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeCallableFixedRateBondEngine1 
                                                             _model.cell 
                                                             _timeGrid.cell 
                                                             _termStructure.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeCallableFixedRateBondEngine>) l
 
-                let source = Helper.sourceFold "Fun.TreeCallableFixedRateBondEngine1" 
+                let source () = Helper.sourceFold "Fun.TreeCallableFixedRateBondEngine1" 
                                                [| _model.source
                                                ;  _timeGrid.source
                                                ;  _termStructure.source
@@ -123,7 +123,7 @@ module TreeCallableFixedRateBondEngineFunction =
                                 ;  _termStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TreeCallableFixedRateBondEngine> format
                     ; source = source 
@@ -148,18 +148,18 @@ module TreeCallableFixedRateBondEngineFunction =
             try
 
                 let _TreeCallableFixedRateBondEngine = Helper.toCell<TreeCallableFixedRateBondEngine> treecallablefixedratebondengine "TreeCallableFixedRateBondEngine"  
-                let builder () = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).Update
                                                        ) :> ICell
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".Update") 
                                                [| _TreeCallableFixedRateBondEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeCallableFixedRateBondEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -188,12 +188,12 @@ module TreeCallableFixedRateBondEngineFunction =
 
                 let _TreeCallableFixedRateBondEngine = Helper.toCell<TreeCallableFixedRateBondEngine> treecallablefixedratebondengine "TreeCallableFixedRateBondEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
-                let builder () = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".SetModel") 
                                                [| _TreeCallableFixedRateBondEngine.source
                                                ;  _model.source
                                                |]
@@ -202,7 +202,7 @@ module TreeCallableFixedRateBondEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -231,12 +231,12 @@ module TreeCallableFixedRateBondEngineFunction =
 
                 let _TreeCallableFixedRateBondEngine = Helper.toCell<TreeCallableFixedRateBondEngine> treecallablefixedratebondengine "TreeCallableFixedRateBondEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".RegisterWith") 
                                                [| _TreeCallableFixedRateBondEngine.source
                                                ;  _handler.source
                                                |]
@@ -245,7 +245,7 @@ module TreeCallableFixedRateBondEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -270,18 +270,18 @@ module TreeCallableFixedRateBondEngineFunction =
             try
 
                 let _TreeCallableFixedRateBondEngine = Helper.toCell<TreeCallableFixedRateBondEngine> treecallablefixedratebondengine "TreeCallableFixedRateBondEngine"  
-                let builder () = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".Reset") 
                                                [| _TreeCallableFixedRateBondEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeCallableFixedRateBondEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -309,12 +309,12 @@ module TreeCallableFixedRateBondEngineFunction =
 
                 let _TreeCallableFixedRateBondEngine = Helper.toCell<TreeCallableFixedRateBondEngine> treecallablefixedratebondengine "TreeCallableFixedRateBondEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".UnregisterWith") 
                                                [| _TreeCallableFixedRateBondEngine.source
                                                ;  _handler.source
                                                |]
@@ -323,7 +323,7 @@ module TreeCallableFixedRateBondEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -352,14 +352,14 @@ module TreeCallableFixedRateBondEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TreeCallableFixedRateBondEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TreeCallableFixedRateBondEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TreeCallableFixedRateBondEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TreeCallableFixedRateBondEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

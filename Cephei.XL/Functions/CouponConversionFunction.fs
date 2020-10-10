@@ -52,13 +52,13 @@ module CouponConversionFunction =
 
                 let _date = Helper.toCell<DateTime> date "date" 
                 let _rate = Helper.toCell<double> rate "rate" 
-                let builder () = withMnemonic mnemonic (Fun.CouponConversion 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CouponConversion 
                                                             _date.cell 
                                                             _rate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CouponConversion>) l
 
-                let source = Helper.sourceFold "Fun.CouponConversion" 
+                let source () = Helper.sourceFold "Fun.CouponConversion" 
                                                [| _date.source
                                                ;  _rate.source
                                                |]
@@ -67,7 +67,7 @@ module CouponConversionFunction =
                                 ;  _rate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CouponConversion> format
                     ; source = source 
@@ -92,18 +92,18 @@ module CouponConversionFunction =
             try
 
                 let _CouponConversion = Helper.toCell<CouponConversion> couponconversion "CouponConversion"  
-                let builder () = withMnemonic mnemonic ((CouponConversionModel.Cast _CouponConversion.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((CouponConversionModel.Cast _CouponConversion.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CouponConversion.source + ".Date") 
+                let source () = Helper.sourceFold (_CouponConversion.source + ".Date") 
                                                [| _CouponConversion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CouponConversion.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module CouponConversionFunction =
             try
 
                 let _CouponConversion = Helper.toCell<CouponConversion> couponconversion "CouponConversion"  
-                let builder () = withMnemonic mnemonic ((CouponConversionModel.Cast _CouponConversion.cell).Rate
+                let builder (current : ICell) = withMnemonic mnemonic ((CouponConversionModel.Cast _CouponConversion.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CouponConversion.source + ".Rate") 
+                let source () = Helper.sourceFold (_CouponConversion.source + ".Rate") 
                                                [| _CouponConversion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CouponConversion.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module CouponConversionFunction =
             try
 
                 let _CouponConversion = Helper.toCell<CouponConversion> couponconversion "CouponConversion"  
-                let builder () = withMnemonic mnemonic ((CouponConversionModel.Cast _CouponConversion.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((CouponConversionModel.Cast _CouponConversion.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CouponConversion.source + ".ToString") 
+                let source () = Helper.sourceFold (_CouponConversion.source + ".ToString") 
                                                [| _CouponConversion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CouponConversion.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -204,14 +204,14 @@ module CouponConversionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CouponConversion>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CouponConversion>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CouponConversion>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CouponConversion>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

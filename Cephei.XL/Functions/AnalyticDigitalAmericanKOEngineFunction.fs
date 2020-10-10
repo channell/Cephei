@@ -49,19 +49,19 @@ module AnalyticDigitalAmericanKOEngineFunction =
             try
 
                 let _engine = Helper.toCell<GeneralizedBlackScholesProcess> engine "engine" 
-                let builder () = withMnemonic mnemonic (Fun.AnalyticDigitalAmericanKOEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticDigitalAmericanKOEngine 
                                                             _engine.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticDigitalAmericanKOEngine>) l
 
-                let source = Helper.sourceFold "Fun.AnalyticDigitalAmericanKOEngine" 
+                let source () = Helper.sourceFold "Fun.AnalyticDigitalAmericanKOEngine" 
                                                [| _engine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _engine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AnalyticDigitalAmericanKOEngine> format
                     ; source = source 
@@ -86,18 +86,18 @@ module AnalyticDigitalAmericanKOEngineFunction =
             try
 
                 let _AnalyticDigitalAmericanKOEngine = Helper.toCell<AnalyticDigitalAmericanKOEngine> analyticdigitalamericankoengine "AnalyticDigitalAmericanKOEngine"  
-                let builder () = withMnemonic mnemonic ((AnalyticDigitalAmericanKOEngineModel.Cast _AnalyticDigitalAmericanKOEngine.cell).Knock_in
+                let builder (current : ICell) = withMnemonic mnemonic ((AnalyticDigitalAmericanKOEngineModel.Cast _AnalyticDigitalAmericanKOEngine.cell).Knock_in
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AnalyticDigitalAmericanKOEngine.source + ".Knock_in") 
+                let source () = Helper.sourceFold (_AnalyticDigitalAmericanKOEngine.source + ".Knock_in") 
                                                [| _AnalyticDigitalAmericanKOEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticDigitalAmericanKOEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -130,14 +130,14 @@ module AnalyticDigitalAmericanKOEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AnalyticDigitalAmericanKOEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AnalyticDigitalAmericanKOEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AnalyticDigitalAmericanKOEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AnalyticDigitalAmericanKOEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,13 +52,13 @@ module GaussianQuadratureFunction =
 
                 let _n = Helper.toCell<int> n "n" 
                 let _orthPoly = Helper.toCell<GaussianOrthogonalPolynomial> orthPoly "orthPoly" 
-                let builder () = withMnemonic mnemonic (Fun.GaussianQuadrature 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussianQuadrature 
                                                             _n.cell 
                                                             _orthPoly.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussianQuadrature>) l
 
-                let source = Helper.sourceFold "Fun.GaussianQuadrature" 
+                let source () = Helper.sourceFold "Fun.GaussianQuadrature" 
                                                [| _n.source
                                                ;  _orthPoly.source
                                                |]
@@ -67,7 +67,7 @@ module GaussianQuadratureFunction =
                                 ;  _orthPoly.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussianQuadrature> format
                     ; source = source 
@@ -92,18 +92,18 @@ module GaussianQuadratureFunction =
             try
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
-                let builder () = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Order
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussianQuadrature.source + ".Order") 
+                let source () = Helper.sourceFold (_GaussianQuadrature.source + ".Order") 
                                                [| _GaussianQuadrature.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussianQuadrature.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,12 +131,12 @@ module GaussianQuadratureFunction =
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussianQuadrature.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussianQuadrature.source + ".Value") 
                                                [| _GaussianQuadrature.source
                                                ;  _f.source
                                                |]
@@ -145,7 +145,7 @@ module GaussianQuadratureFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module GaussianQuadratureFunction =
             try
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
-                let builder () = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussianQuadrature.source + ".Weights") 
+                let source () = Helper.sourceFold (_GaussianQuadrature.source + ".Weights") 
                                                [| _GaussianQuadrature.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussianQuadrature.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussianQuadrature> format
                     ; source = source 
@@ -206,18 +206,18 @@ module GaussianQuadratureFunction =
             try
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
-                let builder () = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).X
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussianQuadrature.source + ".X") 
+                let source () = Helper.sourceFold (_GaussianQuadrature.source + ".X") 
                                                [| _GaussianQuadrature.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussianQuadrature.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussianQuadrature> format
                     ; source = source 
@@ -246,14 +246,14 @@ module GaussianQuadratureFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussianQuadrature>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussianQuadrature>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussianQuadrature>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussianQuadrature>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

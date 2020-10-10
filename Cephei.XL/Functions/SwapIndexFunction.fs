@@ -52,12 +52,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Clone
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".Clone") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".Clone") 
                                                [| _SwapIndex.source
                                                ;  _tenor.source
                                                |]
@@ -66,7 +66,7 @@ module SwapIndexFunction =
                                 ;  _tenor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -97,13 +97,13 @@ module SwapIndexFunction =
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let _discounting = Helper.toHandle<YieldTermStructure> discounting "discounting" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Clone1
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Clone1
                                                             _forwarding.cell 
                                                             _discounting.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".Clone1") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".Clone1") 
                                                [| _SwapIndex.source
                                                ;  _forwarding.source
                                                ;  _discounting.source
@@ -114,7 +114,7 @@ module SwapIndexFunction =
                                 ;  _discounting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -142,12 +142,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Clone2
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Clone2
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".Clone2") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".Clone2") 
                                                [| _SwapIndex.source
                                                ;  _forwarding.source
                                                |]
@@ -156,7 +156,7 @@ module SwapIndexFunction =
                                 ;  _forwarding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -181,18 +181,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).DiscountingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).DiscountingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".DiscountingTermStructure") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".DiscountingTermStructure") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -217,18 +217,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ExogenousDiscount
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ExogenousDiscount
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".ExogenousDiscount") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".ExogenousDiscount") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -253,18 +253,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixedLegConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixedLegConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".FixedLegConvention") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".FixedLegConvention") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -289,18 +289,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixedLegTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixedLegTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".FixedLegTenor") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".FixedLegTenor") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -328,12 +328,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".ForecastFixing") 
                                                [| _SwapIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -342,7 +342,7 @@ module SwapIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -367,18 +367,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".ForwardingTermStructure") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -403,18 +403,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).IborIndex
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".IborIndex") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".IborIndex") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -442,12 +442,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".MaturityDate") 
                                                [| _SwapIndex.source
                                                ;  _valueDate.source
                                                |]
@@ -456,7 +456,7 @@ module SwapIndexFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -505,7 +505,7 @@ module SwapIndexFunction =
                 let _fixedLegConvention = Helper.toCell<BusinessDayConvention> fixedLegConvention "fixedLegConvention" 
                 let _fixedLegDayCounter = Helper.toCell<DayCounter> fixedLegDayCounter "fixedLegDayCounter" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
-                let builder () = withMnemonic mnemonic (Fun.SwapIndex1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapIndex1 
                                                             _familyName.cell 
                                                             _tenor.cell 
                                                             _settlementDays.cell 
@@ -518,7 +518,7 @@ module SwapIndexFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold "Fun.SwapIndex1" 
+                let source () = Helper.sourceFold "Fun.SwapIndex1" 
                                                [| _familyName.source
                                                ;  _tenor.source
                                                ;  _settlementDays.source
@@ -541,7 +541,7 @@ module SwapIndexFunction =
                                 ;  _iborIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -563,16 +563,16 @@ module SwapIndexFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.SwapIndex2 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapIndex2 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold "Fun.SwapIndex2" 
+                let source () = Helper.sourceFold "Fun.SwapIndex2" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -624,7 +624,7 @@ module SwapIndexFunction =
                 let _fixedLegDayCounter = Helper.toCell<DayCounter> fixedLegDayCounter "fixedLegDayCounter" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
                 let _discountingTermStructure = Helper.toHandle<YieldTermStructure> discountingTermStructure "discountingTermStructure" 
-                let builder () = withMnemonic mnemonic (Fun.SwapIndex
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapIndex
                                                             _familyName.cell 
                                                             _tenor.cell 
                                                             _settlementDays.cell 
@@ -638,7 +638,7 @@ module SwapIndexFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
-                let source = Helper.sourceFold "Fun.SwapIndex" 
+                let source () = Helper.sourceFold "Fun.SwapIndex" 
                                                [| _familyName.source
                                                ;  _tenor.source
                                                ;  _settlementDays.source
@@ -663,7 +663,7 @@ module SwapIndexFunction =
                                 ;  _discountingTermStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -691,12 +691,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).UnderlyingSwap
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).UnderlyingSwap
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".UnderlyingSwap") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".UnderlyingSwap") 
                                                [| _SwapIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -705,7 +705,7 @@ module SwapIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -730,18 +730,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".Currency") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".Currency") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -766,18 +766,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".DayCounter") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -802,18 +802,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".FamilyName") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -844,13 +844,13 @@ module SwapIndexFunction =
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".Fixing") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".Fixing") 
                                                [| _SwapIndex.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -861,7 +861,7 @@ module SwapIndexFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -886,18 +886,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".FixingCalendar") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -925,12 +925,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".FixingDate") 
                                                [| _SwapIndex.source
                                                ;  _valueDate.source
                                                |]
@@ -939,7 +939,7 @@ module SwapIndexFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -964,18 +964,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".FixingDays") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1003,12 +1003,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".IsValidFixingDate") 
                                                [| _SwapIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -1017,7 +1017,7 @@ module SwapIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1042,18 +1042,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".Name") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".Name") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1081,12 +1081,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".PastFixing") 
                                                [| _SwapIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -1095,7 +1095,7 @@ module SwapIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1120,18 +1120,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".Tenor") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".Tenor") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SwapIndex> format
                     ; source = source 
@@ -1156,18 +1156,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).Update
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".Update") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".Update") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1195,12 +1195,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".ValueDate") 
                                                [| _SwapIndex.source
                                                ;  _fixingDate.source
                                                |]
@@ -1209,7 +1209,7 @@ module SwapIndexFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1243,14 +1243,14 @@ module SwapIndexFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".AddFixing") 
                                                [| _SwapIndex.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1263,7 +1263,7 @@ module SwapIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1297,14 +1297,14 @@ module SwapIndexFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".AddFixings") 
                                                [| _SwapIndex.source
                                                ;  _d.source
                                                ;  _v.source
@@ -1317,7 +1317,7 @@ module SwapIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1348,13 +1348,13 @@ module SwapIndexFunction =
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".AddFixings1") 
                                                [| _SwapIndex.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1365,7 +1365,7 @@ module SwapIndexFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1390,18 +1390,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".AllowsNativeFixings") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1426,18 +1426,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".ClearFixings") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1465,12 +1465,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".RegisterWith") 
                                                [| _SwapIndex.source
                                                ;  _handler.source
                                                |]
@@ -1479,7 +1479,7 @@ module SwapIndexFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1504,18 +1504,18 @@ module SwapIndexFunction =
             try
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".TimeSeries") 
                                                [| _SwapIndex.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapIndex.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1543,12 +1543,12 @@ module SwapIndexFunction =
 
                 let _SwapIndex = Helper.toCell<SwapIndex> swapindex "SwapIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SwapIndexModel.Cast _SwapIndex.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SwapIndex) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SwapIndex.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_SwapIndex.source + ".UnregisterWith") 
                                                [| _SwapIndex.source
                                                ;  _handler.source
                                                |]
@@ -1557,7 +1557,7 @@ module SwapIndexFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1586,14 +1586,14 @@ module SwapIndexFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SwapIndex>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SwapIndex>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SwapIndex>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SwapIndex>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

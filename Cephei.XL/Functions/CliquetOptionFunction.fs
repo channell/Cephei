@@ -61,7 +61,7 @@ module CliquetOptionFunction =
                 let _resetDates = Helper.toCell<Generic.List<Date>> resetDates "resetDates" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.CliquetOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CliquetOption 
                                                             _payoff.cell 
                                                             _maturity.cell 
                                                             _resetDates.cell 
@@ -70,7 +70,7 @@ module CliquetOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CliquetOption>) l
 
-                let source = Helper.sourceFold "Fun.CliquetOption" 
+                let source () = Helper.sourceFold "Fun.CliquetOption" 
                                                [| _payoff.source
                                                ;  _maturity.source
                                                ;  _resetDates.source
@@ -85,7 +85,7 @@ module CliquetOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CliquetOption> format
                     ; source = source 
@@ -110,18 +110,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".Delta") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -146,18 +146,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".DeltaForward") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,18 +182,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".DividendRho") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -218,18 +218,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".Elasticity") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,18 +254,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".Gamma") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,18 +290,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".IsExpired") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,18 +326,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".ItmCashProbability") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -362,18 +362,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".Rho") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -398,18 +398,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".StrikeSensitivity") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -434,18 +434,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".Theta") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -470,18 +470,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".ThetaPerDay") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -506,18 +506,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".Vega") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -542,18 +542,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".Exercise") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CliquetOption> format
                     ; source = source 
@@ -578,18 +578,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".Payoff") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CliquetOption> format
                     ; source = source 
@@ -614,18 +614,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".CASH") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -650,18 +650,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".ErrorEstimate") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -686,18 +686,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".NPV") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -725,12 +725,12 @@ module CliquetOptionFunction =
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".Result") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".Result") 
                                                [| _CliquetOption.source
                                                ;  _tag.source
                                                |]
@@ -739,7 +739,7 @@ module CliquetOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -767,12 +767,12 @@ module CliquetOptionFunction =
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CliquetOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".SetPricingEngine") 
                                                [| _CliquetOption.source
                                                ;  _e.source
                                                |]
@@ -781,7 +781,7 @@ module CliquetOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -806,18 +806,18 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CliquetOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_CliquetOption.source + ".ValuationDate") 
                                                [| _CliquetOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -846,14 +846,14 @@ module CliquetOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CliquetOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CliquetOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CliquetOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CliquetOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

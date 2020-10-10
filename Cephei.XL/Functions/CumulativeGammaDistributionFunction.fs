@@ -49,19 +49,19 @@ module CumulativeGammaDistributionFunction =
             try
 
                 let _a = Helper.toCell<double> a "a" 
-                let builder () = withMnemonic mnemonic (Fun.CumulativeGammaDistribution 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CumulativeGammaDistribution 
                                                             _a.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CumulativeGammaDistribution>) l
 
-                let source = Helper.sourceFold "Fun.CumulativeGammaDistribution" 
+                let source () = Helper.sourceFold "Fun.CumulativeGammaDistribution" 
                                                [| _a.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CumulativeGammaDistribution> format
                     ; source = source 
@@ -89,12 +89,12 @@ module CumulativeGammaDistributionFunction =
 
                 let _CumulativeGammaDistribution = Helper.toCell<CumulativeGammaDistribution> cumulativegammadistribution "CumulativeGammaDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((CumulativeGammaDistributionModel.Cast _CumulativeGammaDistribution.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((CumulativeGammaDistributionModel.Cast _CumulativeGammaDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CumulativeGammaDistribution.source + ".Value") 
+                let source () = Helper.sourceFold (_CumulativeGammaDistribution.source + ".Value") 
                                                [| _CumulativeGammaDistribution.source
                                                ;  _x.source
                                                |]
@@ -103,7 +103,7 @@ module CumulativeGammaDistributionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -132,14 +132,14 @@ module CumulativeGammaDistributionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CumulativeGammaDistribution>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CumulativeGammaDistribution>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CumulativeGammaDistribution>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CumulativeGammaDistribution>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -64,7 +64,7 @@ module BilinearFunction =
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _ySize = Helper.toCell<int> ySize "ySize" 
                 let _zData = Helper.toCell<Matrix> zData "zData" 
-                let builder () = withMnemonic mnemonic ((BilinearModel.Cast _Bilinear.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((BilinearModel.Cast _Bilinear.cell).Interpolate
                                                             _xBegin.cell 
                                                             _xSize.cell 
                                                             _yBegin.cell 
@@ -73,7 +73,7 @@ module BilinearFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation2D>) l
 
-                let source = Helper.sourceFold (_Bilinear.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_Bilinear.source + ".Interpolate") 
                                                [| _Bilinear.source
                                                ;  _xBegin.source
                                                ;  _xSize.source
@@ -90,7 +90,7 @@ module BilinearFunction =
                                 ;  _zData.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Bilinear> format
                     ; source = source 
@@ -119,14 +119,14 @@ module BilinearFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Bilinear>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Bilinear>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Bilinear>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Bilinear>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

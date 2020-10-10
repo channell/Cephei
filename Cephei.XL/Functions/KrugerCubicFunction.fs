@@ -55,14 +55,14 @@ module KrugerCubicFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic (Fun.KrugerCubic 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.KrugerCubic 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<KrugerCubic>) l
 
-                let source = Helper.sourceFold "Fun.KrugerCubic" 
+                let source () = Helper.sourceFold "Fun.KrugerCubic" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -73,7 +73,7 @@ module KrugerCubicFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<KrugerCubic> format
                     ; source = source 
@@ -98,18 +98,18 @@ module KrugerCubicFunction =
             try
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).ACoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".ACoefficients") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".ACoefficients") 
                                                [| _KrugerCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -134,18 +134,18 @@ module KrugerCubicFunction =
             try
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).BCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".BCoefficients") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".BCoefficients") 
                                                [| _KrugerCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -170,18 +170,18 @@ module KrugerCubicFunction =
             try
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).CCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".CCoefficients") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".CCoefficients") 
                                                [| _KrugerCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -212,13 +212,13 @@ module KrugerCubicFunction =
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".Derivative") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".Derivative") 
                                                [| _KrugerCubic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -229,7 +229,7 @@ module KrugerCubicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,18 +254,18 @@ module KrugerCubicFunction =
             try
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".Empty") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".Empty") 
                                                [| _KrugerCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,13 +296,13 @@ module KrugerCubicFunction =
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".Primitive") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".Primitive") 
                                                [| _KrugerCubic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -313,7 +313,7 @@ module KrugerCubicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,13 +344,13 @@ module KrugerCubicFunction =
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".SecondDerivative") 
                                                [| _KrugerCubic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -361,7 +361,7 @@ module KrugerCubicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,18 +386,18 @@ module KrugerCubicFunction =
             try
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Update
                                                        ) :> ICell
                 let format (o : KrugerCubic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".Update") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".Update") 
                                                [| _KrugerCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -428,13 +428,13 @@ module KrugerCubicFunction =
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".Value1") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".Value1") 
                                                [| _KrugerCubic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -445,7 +445,7 @@ module KrugerCubicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -473,12 +473,12 @@ module KrugerCubicFunction =
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".Value") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".Value") 
                                                [| _KrugerCubic.source
                                                ;  _x.source
                                                |]
@@ -487,7 +487,7 @@ module KrugerCubicFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -512,18 +512,18 @@ module KrugerCubicFunction =
             try
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".XMax") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".XMax") 
                                                [| _KrugerCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -548,18 +548,18 @@ module KrugerCubicFunction =
             try
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".XMin") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".XMin") 
                                                [| _KrugerCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -584,18 +584,18 @@ module KrugerCubicFunction =
             try
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".AllowsExtrapolation") 
                                                [| _KrugerCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -623,12 +623,12 @@ module KrugerCubicFunction =
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : KrugerCubic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".DisableExtrapolation") 
                                                [| _KrugerCubic.source
                                                ;  _b.source
                                                |]
@@ -637,7 +637,7 @@ module KrugerCubicFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -665,12 +665,12 @@ module KrugerCubicFunction =
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : KrugerCubic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".EnableExtrapolation") 
                                                [| _KrugerCubic.source
                                                ;  _b.source
                                                |]
@@ -679,7 +679,7 @@ module KrugerCubicFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -704,18 +704,18 @@ module KrugerCubicFunction =
             try
 
                 let _KrugerCubic = Helper.toCell<KrugerCubic> krugercubic "KrugerCubic"  
-                let builder () = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((KrugerCubicModel.Cast _KrugerCubic.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_KrugerCubic.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_KrugerCubic.source + ".Extrapolate") 
                                                [| _KrugerCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -744,14 +744,14 @@ module KrugerCubicFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<KrugerCubic>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<KrugerCubic>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<KrugerCubic>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<KrugerCubic>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

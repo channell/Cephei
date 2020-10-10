@@ -61,7 +61,7 @@ module BlackScholesCalculatorFunction =
                 let _growth = Helper.toCell<double> growth "growth" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic (Fun.BlackScholesCalculator 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackScholesCalculator 
                                                             _payoff.cell 
                                                             _spot.cell 
                                                             _growth.cell 
@@ -70,7 +70,7 @@ module BlackScholesCalculatorFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackScholesCalculator>) l
 
-                let source = Helper.sourceFold "Fun.BlackScholesCalculator" 
+                let source () = Helper.sourceFold "Fun.BlackScholesCalculator" 
                                                [| _payoff.source
                                                ;  _spot.source
                                                ;  _growth.source
@@ -85,7 +85,7 @@ module BlackScholesCalculatorFunction =
                                 ;  _discount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackScholesCalculator> format
                     ; source = source 
@@ -110,18 +110,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".Delta") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".Delta") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -146,18 +146,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".Elasticity") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,18 +182,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".Gamma") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".Gamma") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -221,12 +221,12 @@ module BlackScholesCalculatorFunction =
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Theta
                                                             _maturity.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".Theta") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".Theta") 
                                                [| _BlackScholesCalculator.source
                                                ;  _maturity.source
                                                |]
@@ -235,7 +235,7 @@ module BlackScholesCalculatorFunction =
                                 ;  _maturity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -263,12 +263,12 @@ module BlackScholesCalculatorFunction =
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).ThetaPerDay
                                                             _maturity.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".ThetaPerDay") 
                                                [| _BlackScholesCalculator.source
                                                ;  _maturity.source
                                                |]
@@ -277,7 +277,7 @@ module BlackScholesCalculatorFunction =
                                 ;  _maturity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Alpha
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Alpha
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".Alpha") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".Alpha") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Beta
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Beta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".Beta") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".Beta") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".DeltaForward") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -413,12 +413,12 @@ module BlackScholesCalculatorFunction =
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).DividendRho
                                                             _maturity.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".DividendRho") 
                                                [| _BlackScholesCalculator.source
                                                ;  _maturity.source
                                                |]
@@ -427,7 +427,7 @@ module BlackScholesCalculatorFunction =
                                 ;  _maturity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -452,18 +452,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).ElasticityForward
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).ElasticityForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".ElasticityForward") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".ElasticityForward") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,18 +488,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).GammaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).GammaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".GammaForward") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".GammaForward") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -524,18 +524,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).ItmAssetProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).ItmAssetProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".ItmAssetProbability") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".ItmAssetProbability") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -560,18 +560,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".ItmCashProbability") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -599,12 +599,12 @@ module BlackScholesCalculatorFunction =
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Rho
                                                             _maturity.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".Rho") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".Rho") 
                                                [| _BlackScholesCalculator.source
                                                ;  _maturity.source
                                                |]
@@ -613,7 +613,7 @@ module BlackScholesCalculatorFunction =
                                 ;  _maturity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -638,18 +638,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".StrikeSensitivity") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -674,18 +674,18 @@ module BlackScholesCalculatorFunction =
             try
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".Value") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".Value") 
                                                [| _BlackScholesCalculator.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackScholesCalculator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -713,12 +713,12 @@ module BlackScholesCalculatorFunction =
 
                 let _BlackScholesCalculator = Helper.toCell<BlackScholesCalculator> blackscholescalculator "BlackScholesCalculator"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder () = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackScholesCalculatorModel.Cast _BlackScholesCalculator.cell).Vega
                                                             _maturity.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackScholesCalculator.source + ".Vega") 
+                let source () = Helper.sourceFold (_BlackScholesCalculator.source + ".Vega") 
                                                [| _BlackScholesCalculator.source
                                                ;  _maturity.source
                                                |]
@@ -727,7 +727,7 @@ module BlackScholesCalculatorFunction =
                                 ;  _maturity.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -756,14 +756,14 @@ module BlackScholesCalculatorFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackScholesCalculator>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackScholesCalculator>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackScholesCalculator>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackScholesCalculator>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

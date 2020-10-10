@@ -52,12 +52,12 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).At
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).At
                                                             _i.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".At") 
+                let source () = Helper.sourceFold (_Schedule.source + ".At") 
                                                [| _Schedule.source
                                                ;  _i.source
                                                |]
@@ -66,7 +66,7 @@ module ScheduleFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,18 +91,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_Schedule.source + ".BusinessDayConvention") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -127,18 +127,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_Schedule.source + ".Calendar") 
+                let source () = Helper.sourceFold (_Schedule.source + ".Calendar") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Schedule> format
                     ; source = source 
@@ -163,18 +163,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Count
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Count
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".Count") 
+                let source () = Helper.sourceFold (_Schedule.source + ".Count") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -202,12 +202,12 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Date
                                                             _i.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".Date") 
+                let source () = Helper.sourceFold (_Schedule.source + ".Date") 
                                                [| _Schedule.source
                                                ;  _i.source
                                                |]
@@ -216,7 +216,7 @@ module ScheduleFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -241,18 +241,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Dates
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_Schedule.source + ".Dates") 
+                let source () = Helper.sourceFold (_Schedule.source + ".Dates") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -277,18 +277,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".Empty") 
+                let source () = Helper.sourceFold (_Schedule.source + ".Empty") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -313,18 +313,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).EndDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).EndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".EndDate") 
+                let source () = Helper.sourceFold (_Schedule.source + ".EndDate") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -349,18 +349,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_Schedule.source + ".EndOfMonth") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -385,18 +385,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).IsRegular
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).IsRegular
                                                        ) :> ICell
                 let format (i : Generic.IList<bool>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_Schedule.source + ".IsRegular") 
+                let source () = Helper.sourceFold (_Schedule.source + ".IsRegular") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -424,12 +424,12 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).IsRegular1
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).IsRegular1
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".IsRegular1") 
+                let source () = Helper.sourceFold (_Schedule.source + ".IsRegular1") 
                                                [| _Schedule.source
                                                ;  _i.source
                                                |]
@@ -438,7 +438,7 @@ module ScheduleFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -466,12 +466,12 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).NextDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).NextDate
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".NextDate") 
+                let source () = Helper.sourceFold (_Schedule.source + ".NextDate") 
                                                [| _Schedule.source
                                                ;  _d.source
                                                |]
@@ -480,7 +480,7 @@ module ScheduleFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -508,12 +508,12 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).PreviousDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).PreviousDate
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".PreviousDate") 
+                let source () = Helper.sourceFold (_Schedule.source + ".PreviousDate") 
                                                [| _Schedule.source
                                                ;  _d.source
                                                |]
@@ -522,7 +522,7 @@ module ScheduleFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -547,18 +547,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Rule
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Rule
                                                        ) :> ICell
                 let format (o : DateGeneration.Rule) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".Rule") 
+                let source () = Helper.sourceFold (_Schedule.source + ".Rule") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -610,7 +610,7 @@ module ScheduleFunction =
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth"
                 let _firstDate = Helper.toDefault<Date> firstDate "firstDate" null
                 let _nextToLastDate = Helper.toDefault<Date> nextToLastDate "nextToLastDate" null
-                let builder () = withMnemonic mnemonic (Fun.Schedule 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Schedule 
                                                             _effectiveDate.cell 
                                                             _terminationDate.cell 
                                                             _tenor.cell 
@@ -624,7 +624,7 @@ module ScheduleFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
-                let source = Helper.sourceFold "Fun.Schedule" 
+                let source () = Helper.sourceFold "Fun.Schedule" 
                                                [| _effectiveDate.source
                                                ;  _terminationDate.source
                                                ;  _tenor.source
@@ -649,7 +649,7 @@ module ScheduleFunction =
                                 ;  _nextToLastDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Schedule> format
                     ; source = source 
@@ -671,16 +671,16 @@ module ScheduleFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Schedule2 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Schedule2 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
-                let source = Helper.sourceFold "Fun.Schedule2" 
+                let source () = Helper.sourceFold "Fun.Schedule2" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Schedule> format
                     ; source = source 
@@ -726,7 +726,7 @@ module ScheduleFunction =
                 let _rule = Helper.toNullable<DateGeneration.Rule> rule "rule"
                 let _endOfMonth = Helper.toNullable<bool> endOfMonth "endOfMonth"
                 let _isRegular = Helper.toDefault<Generic.IList<bool>> isRegular "isRegular" null
-                let builder () = withMnemonic mnemonic (Fun.Schedule1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Schedule1
                                                             _dates.cell 
                                                             _calendar.cell 
                                                             _convention.cell 
@@ -738,7 +738,7 @@ module ScheduleFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
-                let source = Helper.sourceFold "Fun.Schedule1" 
+                let source () = Helper.sourceFold "Fun.Schedule1" 
                                                [| _dates.source
                                                ;  _calendar.source
                                                ;  _convention.source
@@ -759,7 +759,7 @@ module ScheduleFunction =
                                 ;  _isRegular.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Schedule> format
                     ; source = source 
@@ -784,18 +784,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".Size") 
+                let source () = Helper.sourceFold (_Schedule.source + ".Size") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -820,18 +820,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).StartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".StartDate") 
+                let source () = Helper.sourceFold (_Schedule.source + ".StartDate") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -856,18 +856,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_Schedule.source + ".Tenor") 
+                let source () = Helper.sourceFold (_Schedule.source + ".Tenor") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Schedule> format
                     ; source = source 
@@ -892,18 +892,18 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).TerminationDateBusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).TerminationDateBusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".TerminationDateBusinessDayConvention") 
+                let source () = Helper.sourceFold (_Schedule.source + ".TerminationDateBusinessDayConvention") 
                                                [| _Schedule.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -931,12 +931,12 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).This
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).This
                                                             _i.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Schedule.source + ".This") 
+                let source () = Helper.sourceFold (_Schedule.source + ".This") 
                                                [| _Schedule.source
                                                ;  _i.source
                                                |]
@@ -945,7 +945,7 @@ module ScheduleFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -973,12 +973,12 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _truncationDate = Helper.toCell<Date> truncationDate "truncationDate" 
-                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Until
+                let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Until
                                                             _truncationDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
-                let source = Helper.sourceFold (_Schedule.source + ".Until") 
+                let source () = Helper.sourceFold (_Schedule.source + ".Until") 
                                                [| _Schedule.source
                                                ;  _truncationDate.source
                                                |]
@@ -987,7 +987,7 @@ module ScheduleFunction =
                                 ;  _truncationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Schedule> format
                     ; source = source 
@@ -1016,14 +1016,14 @@ module ScheduleFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Schedule>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Schedule>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Schedule>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Schedule>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

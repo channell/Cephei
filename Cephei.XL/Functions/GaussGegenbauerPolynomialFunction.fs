@@ -49,19 +49,19 @@ module GaussGegenbauerPolynomialFunction =
             try
 
                 let _lambda = Helper.toCell<double> lambda "lambda" 
-                let builder () = withMnemonic mnemonic (Fun.GaussGegenbauerPolynomial 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussGegenbauerPolynomial 
                                                             _lambda.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussGegenbauerPolynomial>) l
 
-                let source = Helper.sourceFold "Fun.GaussGegenbauerPolynomial" 
+                let source () = Helper.sourceFold "Fun.GaussGegenbauerPolynomial" 
                                                [| _lambda.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _lambda.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussGegenbauerPolynomial> format
                     ; source = source 
@@ -89,12 +89,12 @@ module GaussGegenbauerPolynomialFunction =
 
                 let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Alpha
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Alpha") 
+                let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Alpha") 
                                                [| _GaussGegenbauerPolynomial.source
                                                ;  _i.source
                                                |]
@@ -103,7 +103,7 @@ module GaussGegenbauerPolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,12 +131,12 @@ module GaussGegenbauerPolynomialFunction =
 
                 let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Beta
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Beta") 
+                let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Beta") 
                                                [| _GaussGegenbauerPolynomial.source
                                                ;  _i.source
                                                |]
@@ -145,7 +145,7 @@ module GaussGegenbauerPolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module GaussGegenbauerPolynomialFunction =
             try
 
                 let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
-                let builder () = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Mu_0
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Mu_0") 
+                let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Mu_0") 
                                                [| _GaussGegenbauerPolynomial.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussGegenbauerPolynomial.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module GaussGegenbauerPolynomialFunction =
 
                 let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).W
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".W") 
+                let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".W") 
                                                [| _GaussGegenbauerPolynomial.source
                                                ;  _x.source
                                                |]
@@ -223,7 +223,7 @@ module GaussGegenbauerPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,13 +254,13 @@ module GaussGegenbauerPolynomialFunction =
                 let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Value") 
                                                [| _GaussGegenbauerPolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -271,7 +271,7 @@ module GaussGegenbauerPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,13 +302,13 @@ module GaussGegenbauerPolynomialFunction =
                 let _GaussGegenbauerPolynomial = Helper.toCell<GaussGegenbauerPolynomial> gaussgegenbauerpolynomial "GaussGegenbauerPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).WeightedValue
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussGegenbauerPolynomialModel.Cast _GaussGegenbauerPolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".WeightedValue") 
+                let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".WeightedValue") 
                                                [| _GaussGegenbauerPolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -319,7 +319,7 @@ module GaussGegenbauerPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -348,14 +348,14 @@ module GaussGegenbauerPolynomialFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussGegenbauerPolynomial>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussGegenbauerPolynomial>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussGegenbauerPolynomial>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussGegenbauerPolynomial>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

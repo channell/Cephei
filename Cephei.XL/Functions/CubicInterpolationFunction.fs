@@ -49,18 +49,18 @@ module CubicInterpolationFunction =
             try
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).ACoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".ACoefficients") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".ACoefficients") 
                                                [| _CubicInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -85,18 +85,18 @@ module CubicInterpolationFunction =
             try
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).BCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".BCoefficients") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".BCoefficients") 
                                                [| _CubicInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -121,18 +121,18 @@ module CubicInterpolationFunction =
             try
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).CCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".CCoefficients") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".CCoefficients") 
                                                [| _CubicInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -181,7 +181,7 @@ module CubicInterpolationFunction =
                 let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" 
                 let _rightCond = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCond "rightCond" 
                 let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" 
-                let builder () = withMnemonic mnemonic (Fun.CubicInterpolation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CubicInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -194,7 +194,7 @@ module CubicInterpolationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CubicInterpolation>) l
 
-                let source = Helper.sourceFold "Fun.CubicInterpolation" 
+                let source () = Helper.sourceFold "Fun.CubicInterpolation" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -217,7 +217,7 @@ module CubicInterpolationFunction =
                                 ;  _rightConditionValue.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CubicInterpolation> format
                     ; source = source 
@@ -248,13 +248,13 @@ module CubicInterpolationFunction =
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".Derivative") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".Derivative") 
                                                [| _CubicInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -265,7 +265,7 @@ module CubicInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,18 +290,18 @@ module CubicInterpolationFunction =
             try
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".Empty") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".Empty") 
                                                [| _CubicInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -332,13 +332,13 @@ module CubicInterpolationFunction =
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".Primitive") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".Primitive") 
                                                [| _CubicInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -349,7 +349,7 @@ module CubicInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -380,13 +380,13 @@ module CubicInterpolationFunction =
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".SecondDerivative") 
                                                [| _CubicInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -397,7 +397,7 @@ module CubicInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -422,18 +422,18 @@ module CubicInterpolationFunction =
             try
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : CubicInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".Update") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".Update") 
                                                [| _CubicInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -464,13 +464,13 @@ module CubicInterpolationFunction =
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".Value1") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".Value1") 
                                                [| _CubicInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -481,7 +481,7 @@ module CubicInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -509,12 +509,12 @@ module CubicInterpolationFunction =
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".Value") 
                                                [| _CubicInterpolation.source
                                                ;  _x.source
                                                |]
@@ -523,7 +523,7 @@ module CubicInterpolationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -548,18 +548,18 @@ module CubicInterpolationFunction =
             try
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".XMax") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".XMax") 
                                                [| _CubicInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -584,18 +584,18 @@ module CubicInterpolationFunction =
             try
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".XMin") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".XMin") 
                                                [| _CubicInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -620,18 +620,18 @@ module CubicInterpolationFunction =
             try
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".AllowsExtrapolation") 
                                                [| _CubicInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -659,12 +659,12 @@ module CubicInterpolationFunction =
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CubicInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".DisableExtrapolation") 
                                                [| _CubicInterpolation.source
                                                ;  _b.source
                                                |]
@@ -673,7 +673,7 @@ module CubicInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -701,12 +701,12 @@ module CubicInterpolationFunction =
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CubicInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".EnableExtrapolation") 
                                                [| _CubicInterpolation.source
                                                ;  _b.source
                                                |]
@@ -715,7 +715,7 @@ module CubicInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -740,18 +740,18 @@ module CubicInterpolationFunction =
             try
 
                 let _CubicInterpolation = Helper.toCell<CubicInterpolation> cubicinterpolation "CubicInterpolation"  
-                let builder () = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((CubicInterpolationModel.Cast _CubicInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CubicInterpolation.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_CubicInterpolation.source + ".Extrapolate") 
                                                [| _CubicInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -780,14 +780,14 @@ module CubicInterpolationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CubicInterpolation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CubicInterpolation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CubicInterpolation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CubicInterpolation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,13 +52,13 @@ module NonCentralCumulativeChiSquareDistributionFunction =
 
                 let _df = Helper.toCell<double> df "df" 
                 let _ncp = Helper.toCell<double> ncp "ncp" 
-                let builder () = withMnemonic mnemonic (Fun.NonCentralCumulativeChiSquareDistribution 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NonCentralCumulativeChiSquareDistribution 
                                                             _df.cell 
                                                             _ncp.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NonCentralCumulativeChiSquareDistribution>) l
 
-                let source = Helper.sourceFold "Fun.NonCentralCumulativeChiSquareDistribution" 
+                let source () = Helper.sourceFold "Fun.NonCentralCumulativeChiSquareDistribution" 
                                                [| _df.source
                                                ;  _ncp.source
                                                |]
@@ -67,7 +67,7 @@ module NonCentralCumulativeChiSquareDistributionFunction =
                                 ;  _ncp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NonCentralCumulativeChiSquareDistribution> format
                     ; source = source 
@@ -95,12 +95,12 @@ module NonCentralCumulativeChiSquareDistributionFunction =
 
                 let _NonCentralCumulativeChiSquareDistribution = Helper.toCell<NonCentralCumulativeChiSquareDistribution> noncentralcumulativechisquaredistribution "NonCentralCumulativeChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((NonCentralCumulativeChiSquareDistributionModel.Cast _NonCentralCumulativeChiSquareDistribution.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((NonCentralCumulativeChiSquareDistributionModel.Cast _NonCentralCumulativeChiSquareDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NonCentralCumulativeChiSquareDistribution.source + ".Value") 
+                let source () = Helper.sourceFold (_NonCentralCumulativeChiSquareDistribution.source + ".Value") 
                                                [| _NonCentralCumulativeChiSquareDistribution.source
                                                ;  _x.source
                                                |]
@@ -109,7 +109,7 @@ module NonCentralCumulativeChiSquareDistributionFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -138,14 +138,14 @@ module NonCentralCumulativeChiSquareDistributionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NonCentralCumulativeChiSquareDistribution>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NonCentralCumulativeChiSquareDistribution>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NonCentralCumulativeChiSquareDistribution>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NonCentralCumulativeChiSquareDistribution>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module IndexedCashFlowFunction =
             try
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".Amount") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Amount") 
                                                [| _IndexedCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module IndexedCashFlowFunction =
             try
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).BaseDate
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).BaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".BaseDate") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".BaseDate") 
                                                [| _IndexedCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module IndexedCashFlowFunction =
             try
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".Date") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Date") 
                                                [| _IndexedCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module IndexedCashFlowFunction =
             try
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".FixingDate") 
                                                [| _IndexedCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module IndexedCashFlowFunction =
             try
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).GrowthOnly
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).GrowthOnly
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".GrowthOnly") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".GrowthOnly") 
                                                [| _IndexedCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -229,18 +229,18 @@ module IndexedCashFlowFunction =
             try
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Index>) l
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".Index") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Index") 
                                                [| _IndexedCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IndexedCashFlow> format
                     ; source = source 
@@ -280,7 +280,7 @@ module IndexedCashFlowFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
                 let _growthOnly = Helper.toDefault<bool> growthOnly "growthOnly" false
-                let builder () = withMnemonic mnemonic (Fun.IndexedCashFlow 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.IndexedCashFlow 
                                                             _notional.cell 
                                                             _index.cell 
                                                             _baseDate.cell 
@@ -290,7 +290,7 @@ module IndexedCashFlowFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IndexedCashFlow>) l
 
-                let source = Helper.sourceFold "Fun.IndexedCashFlow" 
+                let source () = Helper.sourceFold "Fun.IndexedCashFlow" 
                                                [| _notional.source
                                                ;  _index.source
                                                ;  _baseDate.source
@@ -307,7 +307,7 @@ module IndexedCashFlowFunction =
                                 ;  _growthOnly.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IndexedCashFlow> format
                     ; source = source 
@@ -332,18 +332,18 @@ module IndexedCashFlowFunction =
             try
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Notional
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Notional
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".Notional") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Notional") 
                                                [| _IndexedCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -371,12 +371,12 @@ module IndexedCashFlowFunction =
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".CompareTo") 
                                                [| _IndexedCashFlow.source
                                                ;  _cf.source
                                                |]
@@ -385,7 +385,7 @@ module IndexedCashFlowFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -413,12 +413,12 @@ module IndexedCashFlowFunction =
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".Equals") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Equals") 
                                                [| _IndexedCashFlow.source
                                                ;  _cf.source
                                                |]
@@ -427,7 +427,7 @@ module IndexedCashFlowFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -452,18 +452,18 @@ module IndexedCashFlowFunction =
             try
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".ExCouponDate") 
                                                [| _IndexedCashFlow.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -494,13 +494,13 @@ module IndexedCashFlowFunction =
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".HasOccurred") 
                                                [| _IndexedCashFlow.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -511,7 +511,7 @@ module IndexedCashFlowFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -539,12 +539,12 @@ module IndexedCashFlowFunction =
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".TradingExCoupon") 
                                                [| _IndexedCashFlow.source
                                                ;  _refDate.source
                                                |]
@@ -553,7 +553,7 @@ module IndexedCashFlowFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -581,12 +581,12 @@ module IndexedCashFlowFunction =
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : IndexedCashFlow) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".Accept") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Accept") 
                                                [| _IndexedCashFlow.source
                                                ;  _v.source
                                                |]
@@ -595,7 +595,7 @@ module IndexedCashFlowFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -623,12 +623,12 @@ module IndexedCashFlowFunction =
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : IndexedCashFlow) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".RegisterWith") 
                                                [| _IndexedCashFlow.source
                                                ;  _handler.source
                                                |]
@@ -637,7 +637,7 @@ module IndexedCashFlowFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -665,12 +665,12 @@ module IndexedCashFlowFunction =
 
                 let _IndexedCashFlow = Helper.toCell<IndexedCashFlow> indexedcashflow "IndexedCashFlow"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((IndexedCashFlowModel.Cast _IndexedCashFlow.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : IndexedCashFlow) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IndexedCashFlow.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_IndexedCashFlow.source + ".UnregisterWith") 
                                                [| _IndexedCashFlow.source
                                                ;  _handler.source
                                                |]
@@ -679,7 +679,7 @@ module IndexedCashFlowFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -708,14 +708,14 @@ module IndexedCashFlowFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IndexedCashFlow>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<IndexedCashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<IndexedCashFlow>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<IndexedCashFlow>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

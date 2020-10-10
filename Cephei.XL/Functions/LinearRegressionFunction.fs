@@ -49,18 +49,18 @@ module LinearRegressionFunction =
             try
 
                 let _LinearRegression = Helper.toCell<LinearRegression> linearregression "LinearRegression"  
-                let builder () = withMnemonic mnemonic ((LinearRegressionModel.Cast _LinearRegression.cell).Coefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((LinearRegressionModel.Cast _LinearRegression.cell).Coefficients
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LinearRegression.source + ".Coefficients") 
+                let source () = Helper.sourceFold (_LinearRegression.source + ".Coefficients") 
                                                [| _LinearRegression.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearRegression.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LinearRegression> format
                     ; source = source 
@@ -88,13 +88,13 @@ module LinearRegressionFunction =
 
                 let _x = Helper.toCell<Generic.List<double>> x "x" 
                 let _y = Helper.toCell<Generic.List<double>> y "y" 
-                let builder () = withMnemonic mnemonic (Fun.LinearRegression1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LinearRegression1
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LinearRegression>) l
 
-                let source = Helper.sourceFold "Fun.LinearRegression1" 
+                let source () = Helper.sourceFold "Fun.LinearRegression1" 
                                                [| _x.source
                                                ;  _y.source
                                                |]
@@ -103,7 +103,7 @@ module LinearRegressionFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LinearRegression> format
                     ; source = source 
@@ -131,13 +131,13 @@ module LinearRegressionFunction =
 
                 let _x = Helper.toCell<Generic.List<Generic.List<double>>> x "x" 
                 let _y = Helper.toCell<Generic.List<double>> y "y" 
-                let builder () = withMnemonic mnemonic (Fun.LinearRegression
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.LinearRegression
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LinearRegression>) l
 
-                let source = Helper.sourceFold "Fun.LinearRegression" 
+                let source () = Helper.sourceFold "Fun.LinearRegression" 
                                                [| _x.source
                                                ;  _y.source
                                                |]
@@ -146,7 +146,7 @@ module LinearRegressionFunction =
                                 ;  _y.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LinearRegression> format
                     ; source = source 
@@ -171,18 +171,18 @@ module LinearRegressionFunction =
             try
 
                 let _LinearRegression = Helper.toCell<LinearRegression> linearregression "LinearRegression"  
-                let builder () = withMnemonic mnemonic ((LinearRegressionModel.Cast _LinearRegression.cell).Residuals
+                let builder (current : ICell) = withMnemonic mnemonic ((LinearRegressionModel.Cast _LinearRegression.cell).Residuals
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LinearRegression.source + ".Residuals") 
+                let source () = Helper.sourceFold (_LinearRegression.source + ".Residuals") 
                                                [| _LinearRegression.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearRegression.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LinearRegression> format
                     ; source = source 
@@ -207,18 +207,18 @@ module LinearRegressionFunction =
             try
 
                 let _LinearRegression = Helper.toCell<LinearRegression> linearregression "LinearRegression"  
-                let builder () = withMnemonic mnemonic ((LinearRegressionModel.Cast _LinearRegression.cell).StandardErrors
+                let builder (current : ICell) = withMnemonic mnemonic ((LinearRegressionModel.Cast _LinearRegression.cell).StandardErrors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_LinearRegression.source + ".StandardErrors") 
+                let source () = Helper.sourceFold (_LinearRegression.source + ".StandardErrors") 
                                                [| _LinearRegression.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearRegression.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<LinearRegression> format
                     ; source = source 
@@ -247,14 +247,14 @@ module LinearRegressionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<LinearRegression>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<LinearRegression>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<LinearRegression>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<LinearRegression>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

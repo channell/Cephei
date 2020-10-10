@@ -52,13 +52,13 @@ module TrapezoidIntegralFunction =
 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxIterations = Helper.toCell<int> maxIterations "maxIterations" 
-                let builder () = withMnemonic mnemonic (Fun.TrapezoidIntegral 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TrapezoidIntegral 
                                                             _accuracy.cell 
                                                             _maxIterations.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TrapezoidIntegral>) l
 
-                let source = Helper.sourceFold "Fun.TrapezoidIntegral" 
+                let source () = Helper.sourceFold "Fun.TrapezoidIntegral" 
                                                [| _accuracy.source
                                                ;  _maxIterations.source
                                                |]
@@ -67,7 +67,7 @@ module TrapezoidIntegralFunction =
                                 ;  _maxIterations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TrapezoidIntegral> format
                     ; source = source 
@@ -92,18 +92,18 @@ module TrapezoidIntegralFunction =
             try
 
                 let _TrapezoidIntegral = Helper.toCell<TrapezoidIntegral> trapezoidintegral "TrapezoidIntegral"  
-                let builder () = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).AbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TrapezoidIntegral.source + ".AbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".AbsoluteAccuracy") 
                                                [| _TrapezoidIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module TrapezoidIntegralFunction =
             try
 
                 let _TrapezoidIntegral = Helper.toCell<TrapezoidIntegral> trapezoidintegral "TrapezoidIntegral"  
-                let builder () = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).AbsoluteError
+                let builder (current : ICell) = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TrapezoidIntegral.source + ".AbsoluteError") 
+                let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".AbsoluteError") 
                                                [| _TrapezoidIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module TrapezoidIntegralFunction =
             try
 
                 let _TrapezoidIntegral = Helper.toCell<TrapezoidIntegral> trapezoidintegral "TrapezoidIntegral"  
-                let builder () = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).IntegrationSuccess
+                let builder (current : ICell) = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TrapezoidIntegral.source + ".IntegrationSuccess") 
+                let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".IntegrationSuccess") 
                                                [| _TrapezoidIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module TrapezoidIntegralFunction =
             try
 
                 let _TrapezoidIntegral = Helper.toCell<TrapezoidIntegral> trapezoidintegral "TrapezoidIntegral"  
-                let builder () = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).MaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TrapezoidIntegral.source + ".MaxEvaluations") 
+                let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".MaxEvaluations") 
                                                [| _TrapezoidIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,18 +236,18 @@ module TrapezoidIntegralFunction =
             try
 
                 let _TrapezoidIntegral = Helper.toCell<TrapezoidIntegral> trapezoidintegral "TrapezoidIntegral"  
-                let builder () = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).NumberOfEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TrapezoidIntegral.source + ".NumberOfEvaluations") 
+                let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".NumberOfEvaluations") 
                                                [| _TrapezoidIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -275,12 +275,12 @@ module TrapezoidIntegralFunction =
 
                 let _TrapezoidIntegral = Helper.toCell<TrapezoidIntegral> trapezoidintegral "TrapezoidIntegral"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).SetAbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : TrapezoidIntegral) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TrapezoidIntegral.source + ".SetAbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".SetAbsoluteAccuracy") 
                                                [| _TrapezoidIntegral.source
                                                ;  _accuracy.source
                                                |]
@@ -289,7 +289,7 @@ module TrapezoidIntegralFunction =
                                 ;  _accuracy.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -317,12 +317,12 @@ module TrapezoidIntegralFunction =
 
                 let _TrapezoidIntegral = Helper.toCell<TrapezoidIntegral> trapezoidintegral "TrapezoidIntegral"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).SetMaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : TrapezoidIntegral) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TrapezoidIntegral.source + ".SetMaxEvaluations") 
+                let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".SetMaxEvaluations") 
                                                [| _TrapezoidIntegral.source
                                                ;  _maxEvaluations.source
                                                |]
@@ -331,7 +331,7 @@ module TrapezoidIntegralFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -365,14 +365,14 @@ module TrapezoidIntegralFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((TrapezoidIntegralModel.Cast _TrapezoidIntegral.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TrapezoidIntegral.source + ".Value") 
+                let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".Value") 
                                                [| _TrapezoidIntegral.source
                                                ;  _f.source
                                                ;  _a.source
@@ -385,7 +385,7 @@ module TrapezoidIntegralFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -414,14 +414,14 @@ module TrapezoidIntegralFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TrapezoidIntegral>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TrapezoidIntegral>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TrapezoidIntegral>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TrapezoidIntegral>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

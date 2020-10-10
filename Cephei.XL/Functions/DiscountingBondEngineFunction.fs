@@ -50,18 +50,18 @@ module DiscountingBondEngineFunction =
             try
 
                 let _DiscountingBondEngine = Helper.toCell<DiscountingBondEngine> discountingbondengine "DiscountingBondEngine"  
-                let builder () = withMnemonic mnemonic ((DiscountingBondEngineModel.Cast _DiscountingBondEngine.cell).DiscountCurve
+                let builder (current : ICell) = withMnemonic mnemonic ((DiscountingBondEngineModel.Cast _DiscountingBondEngine.cell).DiscountCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_DiscountingBondEngine.source + ".DiscountCurve") 
+                let source () = Helper.sourceFold (_DiscountingBondEngine.source + ".DiscountCurve") 
                                                [| _DiscountingBondEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscountingBondEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscountingBondEngine> format
                     ; source = source 
@@ -89,13 +89,13 @@ module DiscountingBondEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
-                let builder () = withMnemonic mnemonic (Fun.DiscountingBondEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscountingBondEngine 
                                                             _discountCurve.cell 
                                                             _includeSettlementDateFlows.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscountingBondEngine>) l
 
-                let source = Helper.sourceFold "Fun.DiscountingBondEngine" 
+                let source () = Helper.sourceFold "Fun.DiscountingBondEngine" 
                                                [| _discountCurve.source
                                                ;  _includeSettlementDateFlows.source
                                                |]
@@ -104,7 +104,7 @@ module DiscountingBondEngineFunction =
                                 ;  _includeSettlementDateFlows.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DiscountingBondEngine> format
                     ; source = source 
@@ -133,14 +133,14 @@ module DiscountingBondEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DiscountingBondEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DiscountingBondEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DiscountingBondEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DiscountingBondEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

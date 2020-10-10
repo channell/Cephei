@@ -49,18 +49,18 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder () = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).Cond
+                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).Cond
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SVD.source + ".Cond") 
+                let source () = Helper.sourceFold (_SVD.source + ".Cond") 
                                                [| _SVD.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVD.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder () = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).Norm2
+                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).Norm2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SVD.source + ".Norm2") 
+                let source () = Helper.sourceFold (_SVD.source + ".Norm2") 
                                                [| _SVD.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVD.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder () = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).Rank
+                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).Rank
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SVD.source + ".Rank") 
+                let source () = Helper.sourceFold (_SVD.source + ".Rank") 
                                                [| _SVD.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVD.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder () = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).S
+                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).S
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_SVD.source + ".S") 
+                let source () = Helper.sourceFold (_SVD.source + ".S") 
                                                [| _SVD.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVD.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVD> format
                     ; source = source 
@@ -193,18 +193,18 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder () = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).SingularValues
+                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).SingularValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SVD.source + ".SingularValues") 
+                let source () = Helper.sourceFold (_SVD.source + ".SingularValues") 
                                                [| _SVD.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVD.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVD> format
                     ; source = source 
@@ -232,12 +232,12 @@ module SVDFunction =
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
                 let _b = Helper.toCell<Vector> b "b" 
-                let builder () = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).SolveFor
+                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).SolveFor
                                                             _b.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SVD.source + ".SolveFor") 
+                let source () = Helper.sourceFold (_SVD.source + ".SolveFor") 
                                                [| _SVD.source
                                                ;  _b.source
                                                |]
@@ -246,7 +246,7 @@ module SVDFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVD> format
                     ; source = source 
@@ -271,19 +271,19 @@ module SVDFunction =
             try
 
                 let _M = Helper.toCell<Matrix> M "M" 
-                let builder () = withMnemonic mnemonic (Fun.SVD 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SVD 
                                                             _M.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SVD>) l
 
-                let source = Helper.sourceFold "Fun.SVD" 
+                let source () = Helper.sourceFold "Fun.SVD" 
                                                [| _M.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _M.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVD> format
                     ; source = source 
@@ -308,18 +308,18 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder () = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).U
+                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).U
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_SVD.source + ".U") 
+                let source () = Helper.sourceFold (_SVD.source + ".U") 
                                                [| _SVD.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVD.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVD> format
                     ; source = source 
@@ -344,18 +344,18 @@ module SVDFunction =
             try
 
                 let _SVD = Helper.toCell<SVD> svd "SVD"  
-                let builder () = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).V
+                let builder (current : ICell) = withMnemonic mnemonic ((SVDModel.Cast _SVD.cell).V
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_SVD.source + ".V") 
+                let source () = Helper.sourceFold (_SVD.source + ".V") 
                                                [| _SVD.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVD.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVD> format
                     ; source = source 
@@ -384,14 +384,14 @@ module SVDFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SVD>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SVD>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SVD>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SVD>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

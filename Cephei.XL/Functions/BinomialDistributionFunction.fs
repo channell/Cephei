@@ -52,13 +52,13 @@ module BinomialDistributionFunction =
 
                 let _p = Helper.toCell<double> p "p" 
                 let _n = Helper.toCell<int> n "n" 
-                let builder () = withMnemonic mnemonic (Fun.BinomialDistribution 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BinomialDistribution 
                                                             _p.cell 
                                                             _n.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BinomialDistribution>) l
 
-                let source = Helper.sourceFold "Fun.BinomialDistribution" 
+                let source () = Helper.sourceFold "Fun.BinomialDistribution" 
                                                [| _p.source
                                                ;  _n.source
                                                |]
@@ -67,7 +67,7 @@ module BinomialDistributionFunction =
                                 ;  _n.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BinomialDistribution> format
                     ; source = source 
@@ -95,12 +95,12 @@ module BinomialDistributionFunction =
 
                 let _BinomialDistribution = Helper.toCell<BinomialDistribution> binomialdistribution "BinomialDistribution"  
                 let _k = Helper.toCell<int> k "k" 
-                let builder () = withMnemonic mnemonic ((BinomialDistributionModel.Cast _BinomialDistribution.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BinomialDistributionModel.Cast _BinomialDistribution.cell).Value
                                                             _k.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BinomialDistribution.source + ".Value") 
+                let source () = Helper.sourceFold (_BinomialDistribution.source + ".Value") 
                                                [| _BinomialDistribution.source
                                                ;  _k.source
                                                |]
@@ -109,7 +109,7 @@ module BinomialDistributionFunction =
                                 ;  _k.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -138,14 +138,14 @@ module BinomialDistributionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BinomialDistribution>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BinomialDistribution>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BinomialDistribution>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BinomialDistribution>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

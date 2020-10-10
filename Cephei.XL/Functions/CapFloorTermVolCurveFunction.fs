@@ -64,7 +64,7 @@ module CapFloorTermVolCurveFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<double>> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolCurve1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolCurve1 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _bdc.cell 
@@ -74,7 +74,7 @@ module CapFloorTermVolCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolCurve>) l
 
-                let source = Helper.sourceFold "Fun.CapFloorTermVolCurve1" 
+                let source () = Helper.sourceFold "Fun.CapFloorTermVolCurve1" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _bdc.source
@@ -91,7 +91,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolCurve> format
                     ; source = source 
@@ -131,7 +131,7 @@ module CapFloorTermVolCurveFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<double>> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolCurve3
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolCurve3
                                                             _settlementDate.cell 
                                                             _calendar.cell 
                                                             _bdc.cell 
@@ -141,7 +141,7 @@ module CapFloorTermVolCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolCurve>) l
 
-                let source = Helper.sourceFold "Fun.CapFloorTermVolCurve3" 
+                let source () = Helper.sourceFold "Fun.CapFloorTermVolCurve3" 
                                                [| _settlementDate.source
                                                ;  _calendar.source
                                                ;  _bdc.source
@@ -158,7 +158,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolCurve> format
                     ; source = source 
@@ -198,7 +198,7 @@ module CapFloorTermVolCurveFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<Handle<Quote>>> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolCurve2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolCurve2 
                                                             _settlementDate.cell 
                                                             _calendar.cell 
                                                             _bdc.cell 
@@ -208,7 +208,7 @@ module CapFloorTermVolCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolCurve>) l
 
-                let source = Helper.sourceFold "Fun.CapFloorTermVolCurve2" 
+                let source () = Helper.sourceFold "Fun.CapFloorTermVolCurve2" 
                                                [| _settlementDate.source
                                                ;  _calendar.source
                                                ;  _bdc.source
@@ -225,7 +225,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolCurve> format
                     ; source = source 
@@ -265,7 +265,7 @@ module CapFloorTermVolCurveFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<Handle<Quote>>> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
-                let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolCurve
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolCurve
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _bdc.cell 
@@ -275,7 +275,7 @@ module CapFloorTermVolCurveFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolCurve>) l
 
-                let source = Helper.sourceFold "Fun.CapFloorTermVolCurve" 
+                let source () = Helper.sourceFold "Fun.CapFloorTermVolCurve" 
                                                [| _settlementDays.source
                                                ;  _calendar.source
                                                ;  _bdc.source
@@ -292,7 +292,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _dc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolCurve> format
                     ; source = source 
@@ -317,18 +317,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MaxDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".MaxDate") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".MaxDate") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -353,18 +353,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MaxStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".MaxStrike") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".MaxStrike") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -389,18 +389,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MinStrike
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".MinStrike") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".MinStrike") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -425,18 +425,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionDates
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".OptionDates") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".OptionDates") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -461,18 +461,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionTenors
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionTenors
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".OptionTenors") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".OptionTenors") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -497,18 +497,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionTimes
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".OptionTimes") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".OptionTimes") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -533,18 +533,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Update
                                                        ) :> ICell
                 let format (o : CapFloorTermVolCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Update") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Update") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -578,14 +578,14 @@ module CapFloorTermVolCurveFunction =
                 let _length = Helper.toCell<Period> length "length" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Volatility
                                                             _length.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Volatility") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Volatility") 
                                                [| _CapFloorTermVolCurve.source
                                                ;  _length.source
                                                ;  _strike.source
@@ -598,7 +598,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -632,14 +632,14 @@ module CapFloorTermVolCurveFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Volatility1
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Volatility1
                                                             _t.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Volatility1") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Volatility1") 
                                                [| _CapFloorTermVolCurve.source
                                                ;  _t.source
                                                ;  _strike.source
@@ -652,7 +652,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -686,14 +686,14 @@ module CapFloorTermVolCurveFunction =
                 let _End = Helper.toCell<Date> End "End" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Volatility2
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Volatility2
                                                             _End.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Volatility2") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Volatility2") 
                                                [| _CapFloorTermVolCurve.source
                                                ;  _End.source
                                                ;  _strike.source
@@ -706,7 +706,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _extrapolate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -731,18 +731,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".BusinessDayConvention") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -770,12 +770,12 @@ module CapFloorTermVolCurveFunction =
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionDateFromTenor
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".OptionDateFromTenor") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".OptionDateFromTenor") 
                                                [| _CapFloorTermVolCurve.source
                                                ;  _p.source
                                                |]
@@ -784,7 +784,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -809,18 +809,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Calendar
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Calendar") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Calendar") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolCurve> format
                     ; source = source 
@@ -845,18 +845,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".DayCounter") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CapFloorTermVolCurve> format
                     ; source = source 
@@ -881,18 +881,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MaxTime
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".MaxTime") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".MaxTime") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -917,18 +917,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).ReferenceDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".ReferenceDate") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".ReferenceDate") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -953,18 +953,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).SettlementDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".SettlementDays") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".SettlementDays") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -992,12 +992,12 @@ module CapFloorTermVolCurveFunction =
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).TimeFromReference
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".TimeFromReference") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".TimeFromReference") 
                                                [| _CapFloorTermVolCurve.source
                                                ;  _date.source
                                                |]
@@ -1006,7 +1006,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1031,18 +1031,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".AllowsExtrapolation") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1070,12 +1070,12 @@ module CapFloorTermVolCurveFunction =
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CapFloorTermVolCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".DisableExtrapolation") 
                                                [| _CapFloorTermVolCurve.source
                                                ;  _b.source
                                                |]
@@ -1084,7 +1084,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1112,12 +1112,12 @@ module CapFloorTermVolCurveFunction =
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CapFloorTermVolCurve) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".EnableExtrapolation") 
                                                [| _CapFloorTermVolCurve.source
                                                ;  _b.source
                                                |]
@@ -1126,7 +1126,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1151,18 +1151,18 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_CapFloorTermVolCurve.source + ".Extrapolate") 
                                                [| _CapFloorTermVolCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapFloorTermVolCurve.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1191,14 +1191,14 @@ module CapFloorTermVolCurveFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CapFloorTermVolCurve>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CapFloorTermVolCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CapFloorTermVolCurve>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CapFloorTermVolCurve>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

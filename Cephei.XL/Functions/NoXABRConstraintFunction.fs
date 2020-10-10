@@ -46,16 +46,16 @@ module NoXABRConstraintFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.NoXABRConstraint ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.NoXABRConstraint ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NoXABRConstraint>) l
 
-                let source = Helper.sourceFold "Fun.NoXABRConstraint" 
+                let source () = Helper.sourceFold "Fun.NoXABRConstraint" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NoXABRConstraint> format
                     ; source = source 
@@ -90,14 +90,14 @@ module NoXABRConstraintFunction =
                 let _costFunction = Helper.toCell<ProjectedCostFunction> costFunction "costFunction" 
                 let _coeff = Helper.toCell<XABRCoeffHolder<Model>> coeff "coeff" 
                 let _forward = Helper.toCell<double> forward "forward" 
-                let builder () = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Config
+                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Config
                                                             _costFunction.cell 
                                                             _coeff.cell 
                                                             _forward.cell 
                                                        ) :> ICell
                 let format (o : NoXABRConstraint) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NoXABRConstraint.source + ".Config") 
+                let source () = Helper.sourceFold (_NoXABRConstraint.source + ".Config") 
                                                [| _NoXABRConstraint.source
                                                ;  _costFunction.source
                                                ;  _coeff.source
@@ -110,7 +110,7 @@ module NoXABRConstraintFunction =
                                 ;  _forward.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -136,18 +136,18 @@ module NoXABRConstraintFunction =
             try
 
                 let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
-                let builder () = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NoXABRConstraint.source + ".Empty") 
+                let source () = Helper.sourceFold (_NoXABRConstraint.source + ".Empty") 
                                                [| _NoXABRConstraint.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NoXABRConstraint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -175,12 +175,12 @@ module NoXABRConstraintFunction =
 
                 let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).LowerBound
+                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NoXABRConstraint.source + ".LowerBound") 
+                let source () = Helper.sourceFold (_NoXABRConstraint.source + ".LowerBound") 
                                                [| _NoXABRConstraint.source
                                                ;  _parameters.source
                                                |]
@@ -189,7 +189,7 @@ module NoXABRConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NoXABRConstraint> format
                     ; source = source 
@@ -217,12 +217,12 @@ module NoXABRConstraintFunction =
 
                 let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Test
+                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_NoXABRConstraint.source + ".Test") 
+                let source () = Helper.sourceFold (_NoXABRConstraint.source + ".Test") 
                                                [| _NoXABRConstraint.source
                                                ;  _p.source
                                                |]
@@ -231,7 +231,7 @@ module NoXABRConstraintFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -265,14 +265,14 @@ module NoXABRConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_NoXABRConstraint.source + ".Update") 
+                let source () = Helper.sourceFold (_NoXABRConstraint.source + ".Update") 
                                                [| _NoXABRConstraint.source
                                                ;  _p.source
                                                ;  _direction.source
@@ -285,7 +285,7 @@ module NoXABRConstraintFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -313,12 +313,12 @@ module NoXABRConstraintFunction =
 
                 let _NoXABRConstraint = Helper.toCell<NoXABRConstraint> noxabrconstraint "NoXABRConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).UpperBound
+                let builder (current : ICell) = withMnemonic mnemonic ((NoXABRConstraintModel.Cast _NoXABRConstraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_NoXABRConstraint.source + ".UpperBound") 
+                let source () = Helper.sourceFold (_NoXABRConstraint.source + ".UpperBound") 
                                                [| _NoXABRConstraint.source
                                                ;  _parameters.source
                                                |]
@@ -327,7 +327,7 @@ module NoXABRConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<NoXABRConstraint> format
                     ; source = source 
@@ -356,14 +356,14 @@ module NoXABRConstraintFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<NoXABRConstraint>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<NoXABRConstraint>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<NoXABRConstraint>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<NoXABRConstraint>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

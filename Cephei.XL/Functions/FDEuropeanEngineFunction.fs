@@ -59,7 +59,7 @@ module FDEuropeanEngineFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic (Fun.FDEuropeanEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDEuropeanEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -67,7 +67,7 @@ module FDEuropeanEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDEuropeanEngine>) l
 
-                let source = Helper.sourceFold "Fun.FDEuropeanEngine" 
+                let source () = Helper.sourceFold "Fun.FDEuropeanEngine" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
@@ -80,7 +80,7 @@ module FDEuropeanEngineFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDEuropeanEngine> format
                     ; source = source 
@@ -111,14 +111,14 @@ module FDEuropeanEngineFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
-                let builder () = withMnemonic mnemonic (Fun.FDEuropeanEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDEuropeanEngine1 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDEuropeanEngine>) l
 
-                let source = Helper.sourceFold "Fun.FDEuropeanEngine1" 
+                let source () = Helper.sourceFold "Fun.FDEuropeanEngine1" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
@@ -129,7 +129,7 @@ module FDEuropeanEngineFunction =
                                 ;  _gridPoints.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDEuropeanEngine> format
                     ; source = source 
@@ -157,12 +157,12 @@ module FDEuropeanEngineFunction =
 
                 let _FDEuropeanEngine = Helper.toCell<FDEuropeanEngine> fdeuropeanengine "FDEuropeanEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDEuropeanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDEuropeanEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".RegisterWith") 
                                                [| _FDEuropeanEngine.source
                                                ;  _handler.source
                                                |]
@@ -171,7 +171,7 @@ module FDEuropeanEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -196,18 +196,18 @@ module FDEuropeanEngineFunction =
             try
 
                 let _FDEuropeanEngine = Helper.toCell<FDEuropeanEngine> fdeuropeanengine "FDEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : FDEuropeanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDEuropeanEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".Reset") 
                                                [| _FDEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -235,12 +235,12 @@ module FDEuropeanEngineFunction =
 
                 let _FDEuropeanEngine = Helper.toCell<FDEuropeanEngine> fdeuropeanengine "FDEuropeanEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDEuropeanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDEuropeanEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".UnregisterWith") 
                                                [| _FDEuropeanEngine.source
                                                ;  _handler.source
                                                |]
@@ -249,7 +249,7 @@ module FDEuropeanEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -274,18 +274,18 @@ module FDEuropeanEngineFunction =
             try
 
                 let _FDEuropeanEngine = Helper.toCell<FDEuropeanEngine> fdeuropeanengine "FDEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).Update
                                                        ) :> ICell
                 let format (o : FDEuropeanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDEuropeanEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".Update") 
                                                [| _FDEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -310,18 +310,18 @@ module FDEuropeanEngineFunction =
             try
 
                 let _FDEuropeanEngine = Helper.toCell<FDEuropeanEngine> fdeuropeanengine "FDEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).EnsureStrikeInGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDEuropeanEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDEuropeanEngine.source + ".EnsureStrikeInGrid") 
+                let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".EnsureStrikeInGrid") 
                                                [| _FDEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -358,7 +358,7 @@ module FDEuropeanEngineFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -366,7 +366,7 @@ module FDEuropeanEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
-                let source = Helper.sourceFold (_FDEuropeanEngine.source + ".Factory") 
+                let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".Factory") 
                                                [| _FDEuropeanEngine.source
                                                ;  _Process.source
                                                ;  _timeSteps.source
@@ -381,7 +381,7 @@ module FDEuropeanEngineFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDEuropeanEngine> format
                     ; source = source 
@@ -406,18 +406,18 @@ module FDEuropeanEngineFunction =
             try
 
                 let _FDEuropeanEngine = Helper.toCell<FDEuropeanEngine> fdeuropeanengine "FDEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).GetResidualTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FDEuropeanEngine.source + ".GetResidualTime") 
+                let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".GetResidualTime") 
                                                [| _FDEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -442,18 +442,18 @@ module FDEuropeanEngineFunction =
             try
 
                 let _FDEuropeanEngine = Helper.toCell<FDEuropeanEngine> fdeuropeanengine "FDEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FDEuropeanEngine.source + ".Grid") 
+                let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".Grid") 
                                                [| _FDEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDEuropeanEngine> format
                     ; source = source 
@@ -478,18 +478,18 @@ module FDEuropeanEngineFunction =
             try
 
                 let _FDEuropeanEngine = Helper.toCell<FDEuropeanEngine> fdeuropeanengine "FDEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).IntrinsicValues_
+                let builder (current : ICell) = withMnemonic mnemonic ((FDEuropeanEngineModel.Cast _FDEuropeanEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold (_FDEuropeanEngine.source + ".IntrinsicValues_") 
+                let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".IntrinsicValues_") 
                                                [| _FDEuropeanEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDEuropeanEngine> format
                     ; source = source 
@@ -518,14 +518,14 @@ module FDEuropeanEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDEuropeanEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FDEuropeanEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FDEuropeanEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FDEuropeanEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

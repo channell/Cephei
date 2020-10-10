@@ -58,14 +58,14 @@ module VannaVolgaFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((VannaVolgaModel.Cast _VannaVolga.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((VannaVolgaModel.Cast _VannaVolga.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_VannaVolga.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_VannaVolga.source + ".Interpolate") 
                                                [| _VannaVolga.source
                                                ;  _xBegin.source
                                                ;  _size.source
@@ -78,7 +78,7 @@ module VannaVolgaFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VannaVolga> format
                     ; source = source 
@@ -112,7 +112,7 @@ module VannaVolgaFunction =
                 let _dDiscount = Helper.toCell<double> dDiscount "dDiscount" 
                 let _fDiscount = Helper.toCell<double> fDiscount "fDiscount" 
                 let _T = Helper.toCell<double> T "T" 
-                let builder () = withMnemonic mnemonic (Fun.VannaVolga 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.VannaVolga 
                                                             _spot.cell 
                                                             _dDiscount.cell 
                                                             _fDiscount.cell 
@@ -120,7 +120,7 @@ module VannaVolgaFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VannaVolga>) l
 
-                let source = Helper.sourceFold "Fun.VannaVolga" 
+                let source () = Helper.sourceFold "Fun.VannaVolga" 
                                                [| _spot.source
                                                ;  _dDiscount.source
                                                ;  _fDiscount.source
@@ -133,7 +133,7 @@ module VannaVolgaFunction =
                                 ;  _T.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<VannaVolga> format
                     ; source = source 
@@ -162,14 +162,14 @@ module VannaVolgaFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<VannaVolga>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<VannaVolga>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<VannaVolga>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<VannaVolga>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

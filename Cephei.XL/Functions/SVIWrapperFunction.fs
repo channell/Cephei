@@ -58,7 +58,7 @@ module SVIWrapperFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic (Fun.SVIWrapper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SVIWrapper 
                                                             _t.cell 
                                                             _forward.cell 
                                                             _param.cell 
@@ -66,7 +66,7 @@ module SVIWrapperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SVIWrapper>) l
 
-                let source = Helper.sourceFold "Fun.SVIWrapper" 
+                let source () = Helper.sourceFold "Fun.SVIWrapper" 
                                                [| _t.source
                                                ;  _forward.source
                                                ;  _param.source
@@ -79,7 +79,7 @@ module SVIWrapperFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVIWrapper> format
                     ; source = source 
@@ -107,12 +107,12 @@ module SVIWrapperFunction =
 
                 let _SVIWrapper = Helper.toCell<SVIWrapper> sviwrapper "SVIWrapper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((SVIWrapperModel.Cast _SVIWrapper.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((SVIWrapperModel.Cast _SVIWrapper.cell).Volatility
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SVIWrapper.source + ".Volatility") 
+                let source () = Helper.sourceFold (_SVIWrapper.source + ".Volatility") 
                                                [| _SVIWrapper.source
                                                ;  _x.source
                                                |]
@@ -121,7 +121,7 @@ module SVIWrapperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -150,14 +150,14 @@ module SVIWrapperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SVIWrapper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SVIWrapper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SVIWrapper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SVIWrapper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

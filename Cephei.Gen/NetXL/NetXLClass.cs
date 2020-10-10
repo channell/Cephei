@@ -456,7 +456,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("                let builder () = withMnemonic mnemonic (Fun.");
+            this.Write("                let builder (current : ICell) = withMnemonic mnemonic (Fun.");
             
             #line 141 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name + (version > 0 ? version.ToString() : "")));
@@ -474,7 +474,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("                let builder () = withMnemonic mnemonic ((_");
+            this.Write("                let builder (current : ICell) = withMnemonic mnemonic ((_");
             
             #line 147 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
@@ -691,7 +691,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("                let source = Helper.sourceFold \"Fun.");
+            this.Write("                let source () = Helper.sourceFold \"Fun.");
             
             #line 226 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name + (version > 0 ? version.ToString() : "")));
@@ -709,7 +709,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("                let source = Helper.sourceFold (_");
+            this.Write("                let source () = Helper.sourceFold (_");
             
             #line 232 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
@@ -950,7 +950,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("                Model.specify \r\n                    { mnemonic = mnemonic\r\n      " +
+            this.Write("                Model.specify \r\n                    { mnemonic = Model.formatMnemonic mnemonic\r\n      " +
                     "              ; creator = builder\r\n                    ; subscriber = Helper.");
             
             #line 320 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"
@@ -1026,7 +1026,7 @@ open Cephei.XL.Helper
             #line default
             #line hidden
             this.Write(">> (c)\r\n                let s = a |> Array.map (fun i -> i.source)\r\n             " +
-                    "   let builder () = Util.value l :> ICell\r\n                let format (i : Gener" +
+                    "   let builder (current : ICell) = Util.value l :> ICell\r\n                let format (i : Gener" +
                     "ic.List<ICell<");
             
             #line 351 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"
@@ -1037,10 +1037,10 @@ open Cephei.XL.Helper
             this.Write(@">>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = ""cell Generic.List<");
+                    ; source =  (fun () -> ""cell Generic.List<");
             
             #line 357 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));

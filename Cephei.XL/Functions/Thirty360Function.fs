@@ -46,16 +46,16 @@ module Thirty360Function =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Thirty3601 () 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Thirty3601 () 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Thirty360>) l
 
-                let source = Helper.sourceFold "Fun.Thirty3601" 
+                let source () = Helper.sourceFold "Fun.Thirty3601" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Thirty360> format
                     ; source = source 
@@ -80,19 +80,19 @@ module Thirty360Function =
             try
 
                 let _c = Helper.toCell<Thirty360.Thirty360Convention> c "c" 
-                let builder () = withMnemonic mnemonic (Fun.Thirty360
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Thirty360
                                                             _c.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Thirty360>) l
 
-                let source = Helper.sourceFold "Fun.Thirty360" 
+                let source () = Helper.sourceFold "Fun.Thirty360" 
                                                [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Thirty360> format
                     ; source = source 
@@ -123,13 +123,13 @@ module Thirty360Function =
                 let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).DayCount
+                let builder (current : ICell) = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Thirty360.source + ".DayCount") 
+                let source () = Helper.sourceFold (_Thirty360.source + ".DayCount") 
                                                [| _Thirty360.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -140,7 +140,7 @@ module Thirty360Function =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -165,18 +165,18 @@ module Thirty360Function =
             try
 
                 let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
-                let builder () = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Thirty360.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Thirty360.source + ".DayCounter") 
                                                [| _Thirty360.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Thirty360.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Thirty360> format
                     ; source = source 
@@ -201,18 +201,18 @@ module Thirty360Function =
             try
 
                 let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
-                let builder () = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thirty360.source + ".Empty") 
+                let source () = Helper.sourceFold (_Thirty360.source + ".Empty") 
                                                [| _Thirty360.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Thirty360.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,12 +240,12 @@ module Thirty360Function =
 
                 let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thirty360.source + ".Equals") 
+                let source () = Helper.sourceFold (_Thirty360.source + ".Equals") 
                                                [| _Thirty360.source
                                                ;  _o.source
                                                |]
@@ -254,7 +254,7 @@ module Thirty360Function =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -279,18 +279,18 @@ module Thirty360Function =
             try
 
                 let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
-                let builder () = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thirty360.source + ".Name") 
+                let source () = Helper.sourceFold (_Thirty360.source + ".Name") 
                                                [| _Thirty360.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Thirty360.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -315,18 +315,18 @@ module Thirty360Function =
             try
 
                 let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
-                let builder () = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Thirty360.source + ".ToString") 
+                let source () = Helper.sourceFold (_Thirty360.source + ".ToString") 
                                                [| _Thirty360.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Thirty360.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -363,7 +363,7 @@ module Thirty360Function =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder () = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).YearFraction
+                let builder (current : ICell) = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -371,7 +371,7 @@ module Thirty360Function =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Thirty360.source + ".YearFraction") 
+                let source () = Helper.sourceFold (_Thirty360.source + ".YearFraction") 
                                                [| _Thirty360.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -386,7 +386,7 @@ module Thirty360Function =
                                 ;  _refPeriodEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -417,13 +417,13 @@ module Thirty360Function =
                 let _Thirty360 = Helper.toCell<Thirty360> thirty360 "Thirty360"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).YearFraction1
+                let builder (current : ICell) = withMnemonic mnemonic ((Thirty360Model.Cast _Thirty360.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Thirty360.source + ".YearFraction1") 
+                let source () = Helper.sourceFold (_Thirty360.source + ".YearFraction1") 
                                                [| _Thirty360.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -434,7 +434,7 @@ module Thirty360Function =
                                 ;  _d2.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -463,14 +463,14 @@ module Thirty360Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Thirty360>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Thirty360>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Thirty360>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Thirty360>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

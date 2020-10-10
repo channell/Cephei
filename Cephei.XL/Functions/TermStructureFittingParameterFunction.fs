@@ -49,19 +49,19 @@ module TermStructureFittingParameterFunction =
             try
 
                 let _impl = Helper.toCell<Parameter.Impl> impl "impl" 
-                let builder () = withMnemonic mnemonic (Fun.TermStructureFittingParameter 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TermStructureFittingParameter 
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TermStructureFittingParameter>) l
 
-                let source = Helper.sourceFold "Fun.TermStructureFittingParameter" 
+                let source () = Helper.sourceFold "Fun.TermStructureFittingParameter" 
                                                [| _impl.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _impl.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TermStructureFittingParameter> format
                     ; source = source 
@@ -86,19 +86,19 @@ module TermStructureFittingParameterFunction =
             try
 
                 let _term = Helper.toHandle<YieldTermStructure> term "term" 
-                let builder () = withMnemonic mnemonic (Fun.TermStructureFittingParameter1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.TermStructureFittingParameter1 
                                                             _term.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TermStructureFittingParameter>) l
 
-                let source = Helper.sourceFold "Fun.TermStructureFittingParameter1" 
+                let source () = Helper.sourceFold "Fun.TermStructureFittingParameter1" 
                                                [| _term.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _term.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TermStructureFittingParameter> format
                     ; source = source 
@@ -123,18 +123,18 @@ module TermStructureFittingParameterFunction =
             try
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
-                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Constraint
+                let builder (current : ICell) = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold (_TermStructureFittingParameter.source + ".CONSTRAINT") 
+                let source () = Helper.sourceFold (_TermStructureFittingParameter.source + ".CONSTRAINT") 
                                                [| _TermStructureFittingParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TermStructureFittingParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TermStructureFittingParameter> format
                     ; source = source 
@@ -159,18 +159,18 @@ module TermStructureFittingParameterFunction =
             try
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
-                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Implementation
+                let builder (current : ICell) = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Parameter.Impl) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TermStructureFittingParameter.source + ".Implementation") 
+                let source () = Helper.sourceFold (_TermStructureFittingParameter.source + ".Implementation") 
                                                [| _TermStructureFittingParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TermStructureFittingParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -195,18 +195,18 @@ module TermStructureFittingParameterFunction =
             try
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
-                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_TermStructureFittingParameter.source + ".Parameters") 
+                let source () = Helper.sourceFold (_TermStructureFittingParameter.source + ".Parameters") 
                                                [| _TermStructureFittingParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TermStructureFittingParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<TermStructureFittingParameter> format
                     ; source = source 
@@ -237,13 +237,13 @@ module TermStructureFittingParameterFunction =
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).SetParam
+                let builder (current : ICell) = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).SetParam
                                                             _i.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : TermStructureFittingParameter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TermStructureFittingParameter.source + ".SetParam") 
+                let source () = Helper.sourceFold (_TermStructureFittingParameter.source + ".SetParam") 
                                                [| _TermStructureFittingParameter.source
                                                ;  _i.source
                                                ;  _x.source
@@ -254,7 +254,7 @@ module TermStructureFittingParameterFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -279,18 +279,18 @@ module TermStructureFittingParameterFunction =
             try
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
-                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TermStructureFittingParameter.source + ".Size") 
+                let source () = Helper.sourceFold (_TermStructureFittingParameter.source + ".Size") 
                                                [| _TermStructureFittingParameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TermStructureFittingParameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -318,12 +318,12 @@ module TermStructureFittingParameterFunction =
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).TestParams
+                let builder (current : ICell) = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).TestParams
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_TermStructureFittingParameter.source + ".TestParams") 
+                let source () = Helper.sourceFold (_TermStructureFittingParameter.source + ".TestParams") 
                                                [| _TermStructureFittingParameter.source
                                                ;  _p.source
                                                |]
@@ -332,7 +332,7 @@ module TermStructureFittingParameterFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -360,12 +360,12 @@ module TermStructureFittingParameterFunction =
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_TermStructureFittingParameter.source + ".Value") 
+                let source () = Helper.sourceFold (_TermStructureFittingParameter.source + ".Value") 
                                                [| _TermStructureFittingParameter.source
                                                ;  _t.source
                                                |]
@@ -374,7 +374,7 @@ module TermStructureFittingParameterFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -403,14 +403,14 @@ module TermStructureFittingParameterFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<TermStructureFittingParameter>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<TermStructureFittingParameter>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<TermStructureFittingParameter>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<TermStructureFittingParameter>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

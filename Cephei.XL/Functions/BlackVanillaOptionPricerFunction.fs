@@ -58,7 +58,7 @@ module BlackVanillaOptionPricerFunction =
                 let _expiryDate = Helper.toCell<Date> expiryDate "expiryDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _volatilityStructure = Helper.toCell<SwaptionVolatilityStructure> volatilityStructure "volatilityStructure" 
-                let builder () = withMnemonic mnemonic (Fun.BlackVanillaOptionPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackVanillaOptionPricer 
                                                             _forwardValue.cell 
                                                             _expiryDate.cell 
                                                             _swapTenor.cell 
@@ -66,7 +66,7 @@ module BlackVanillaOptionPricerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackVanillaOptionPricer>) l
 
-                let source = Helper.sourceFold "Fun.BlackVanillaOptionPricer" 
+                let source () = Helper.sourceFold "Fun.BlackVanillaOptionPricer" 
                                                [| _forwardValue.source
                                                ;  _expiryDate.source
                                                ;  _swapTenor.source
@@ -79,7 +79,7 @@ module BlackVanillaOptionPricerFunction =
                                 ;  _volatilityStructure.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackVanillaOptionPricer> format
                     ; source = source 
@@ -113,14 +113,14 @@ module BlackVanillaOptionPricerFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _optionType = Helper.toCell<Option.Type> optionType "optionType" 
                 let _deflator = Helper.toCell<double> deflator "deflator" 
-                let builder () = withMnemonic mnemonic ((BlackVanillaOptionPricerModel.Cast _BlackVanillaOptionPricer.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackVanillaOptionPricerModel.Cast _BlackVanillaOptionPricer.cell).Value
                                                             _strike.cell 
                                                             _optionType.cell 
                                                             _deflator.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackVanillaOptionPricer.source + ".Value") 
+                let source () = Helper.sourceFold (_BlackVanillaOptionPricer.source + ".Value") 
                                                [| _BlackVanillaOptionPricer.source
                                                ;  _strike.source
                                                ;  _optionType.source
@@ -133,7 +133,7 @@ module BlackVanillaOptionPricerFunction =
                                 ;  _deflator.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -162,14 +162,14 @@ module BlackVanillaOptionPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackVanillaOptionPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackVanillaOptionPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackVanillaOptionPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackVanillaOptionPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

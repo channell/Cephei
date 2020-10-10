@@ -49,19 +49,19 @@ module PricerSetterFunction =
             try
 
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic (Fun.PricerSetter 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PricerSetter 
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PricerSetter>) l
 
-                let source = Helper.sourceFold "Fun.PricerSetter" 
+                let source () = Helper.sourceFold "Fun.PricerSetter" 
                                                [| _pricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _pricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PricerSetter> format
                     ; source = source 
@@ -89,12 +89,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<CappedFlooredCoupon> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit8
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit8
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit8") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit8") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -103,7 +103,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,12 +131,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit3
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit3
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit3") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit3") 
                                                [| _PricerSetter.source
                                                ;  _o.source
                                                |]
@@ -145,7 +145,7 @@ module PricerSetterFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -173,12 +173,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<CashFlow> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit4
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit4
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit4") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit4") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -187,7 +187,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -215,12 +215,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<RangeAccrualFloatersCoupon> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -229,7 +229,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -257,12 +257,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<FloatingRateCoupon> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit7
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit7
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit7") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit7") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -271,7 +271,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -299,12 +299,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<IborCoupon> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit9
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit9
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit9") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit9") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -313,7 +313,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -341,12 +341,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<DigitalIborCoupon> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit10
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit10
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit10") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit10") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -355,7 +355,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -383,12 +383,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<CappedFlooredIborCoupon> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit2
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit2
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit2") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit2") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -397,7 +397,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -425,12 +425,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<CmsCoupon> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit5
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit5
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit5") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit5") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -439,7 +439,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -467,12 +467,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<CappedFlooredCmsCoupon> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit11
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit11
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit11") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit11") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -481,7 +481,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -509,12 +509,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<DigitalCmsCoupon> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit1
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit1
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit1") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit1") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -523,7 +523,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -551,12 +551,12 @@ module PricerSetterFunction =
 
                 let _PricerSetter = Helper.toCell<PricerSetter> pricersetter "PricerSetter"  
                 let _c = Helper.toCell<Coupon> c "c" 
-                let builder () = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit6
+                let builder (current : ICell) = withMnemonic mnemonic ((PricerSetterModel.Cast _PricerSetter.cell).Visit6
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PricerSetter.source + ".Visit6") 
+                let source () = Helper.sourceFold (_PricerSetter.source + ".Visit6") 
                                                [| _PricerSetter.source
                                                ;  _c.source
                                                |]
@@ -565,7 +565,7 @@ module PricerSetterFunction =
                                 ;  _c.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -594,14 +594,14 @@ module PricerSetterFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PricerSetter>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PricerSetter>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PricerSetter>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PricerSetter>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

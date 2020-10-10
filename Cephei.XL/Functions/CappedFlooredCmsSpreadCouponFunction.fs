@@ -46,16 +46,16 @@ module CappedFlooredCmsSpreadCouponFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.CappedFlooredCmsSpreadCoupon1 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CappedFlooredCmsSpreadCoupon1 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CappedFlooredCmsSpreadCoupon>) l
 
-                let source = Helper.sourceFold "Fun.CappedFlooredCmsSpreadCoupon1" 
+                let source () = Helper.sourceFold "Fun.CappedFlooredCmsSpreadCoupon1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredCmsSpreadCoupon> format
                     ; source = source 
@@ -119,7 +119,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
-                let builder () = withMnemonic mnemonic (Fun.CappedFlooredCmsSpreadCoupon
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CappedFlooredCmsSpreadCoupon
                                                             _paymentDate.cell 
                                                             _nominal.cell 
                                                             _startDate.cell 
@@ -137,7 +137,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CappedFlooredCmsSpreadCoupon>) l
 
-                let source = Helper.sourceFold "Fun.CappedFlooredCmsSpreadCoupon" 
+                let source () = Helper.sourceFold "Fun.CappedFlooredCmsSpreadCoupon" 
                                                [| _paymentDate.source
                                                ;  _nominal.source
                                                ;  _startDate.source
@@ -170,7 +170,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _isInArrears.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredCmsSpreadCoupon> format
                     ; source = source 
@@ -195,18 +195,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Cap
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Cap
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Cap") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Cap") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -231,18 +231,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ConvexityAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".ConvexityAdjustment") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".ConvexityAdjustment") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -267,18 +267,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).EffectiveCap
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).EffectiveCap
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".EffectiveCap") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".EffectiveCap") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -303,18 +303,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).EffectiveFloor
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).EffectiveFloor
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".EffectiveFloor") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".EffectiveFloor") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -381,7 +381,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 
                                                             _startDate.cell 
@@ -399,7 +399,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Factory") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Factory") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _nominal.source
                                                ;  _paymentDate.source
@@ -434,7 +434,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _isInArrears.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredCmsSpreadCoupon> format
                     ; source = source 
@@ -459,18 +459,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Floor
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Floor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Floor") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Floor") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -495,18 +495,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IsCapped
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IsCapped
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".IsCapped") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".IsCapped") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -531,18 +531,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IsFloored
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IsFloored
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".IsFloored") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".IsFloored") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -567,18 +567,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Rate
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Rate") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Rate") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -606,12 +606,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).SetPricer
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredCmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".SetPricer") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".SetPricer") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _pricer.source
                                                |]
@@ -620,7 +620,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _pricer.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -648,12 +648,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccruedAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccruedAmount") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccruedAmount") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _d.source
                                                |]
@@ -662,7 +662,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -687,18 +687,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AdjustedFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AdjustedFixing") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AdjustedFixing") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -723,18 +723,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Amount") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Amount") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -759,18 +759,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".DayCounter") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredCmsSpreadCoupon> format
                     ; source = source 
@@ -795,18 +795,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".FixingDate") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -831,18 +831,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".FixingDays") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -867,18 +867,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Gearing
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Gearing") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Gearing") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -903,18 +903,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Index
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Index") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Index") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredCmsSpreadCoupon> format
                     ; source = source 
@@ -939,18 +939,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IndexFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".IndexFixing") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".IndexFixing") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -975,18 +975,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IsInArrears
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".IsInArrears") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".IsInArrears") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1014,12 +1014,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Price
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Price") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Price") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _yts.source
                                                |]
@@ -1028,7 +1028,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _yts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1053,18 +1053,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Pricer
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Pricer") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Pricer") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<CappedFlooredCmsSpreadCoupon> format
                     ; source = source 
@@ -1089,18 +1089,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Spread
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Spread") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Spread") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1125,18 +1125,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : CappedFlooredCmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Update") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Update") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1161,18 +1161,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccrualDays") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccrualDays") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1197,18 +1197,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualEndDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccrualEndDate") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccrualEndDate") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1233,18 +1233,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccrualPeriod") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccrualPeriod") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1269,18 +1269,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualStartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccrualStartDate") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccrualStartDate") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1308,12 +1308,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccruedDays
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccruedDays") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccruedDays") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _d.source
                                                |]
@@ -1322,7 +1322,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1350,12 +1350,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccruedPeriod
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccruedPeriod") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".AccruedPeriod") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _d.source
                                                |]
@@ -1364,7 +1364,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1389,18 +1389,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Date") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Date") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1425,18 +1425,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".ExCouponDate") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1461,18 +1461,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Nominal") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Nominal") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1497,18 +1497,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ReferencePeriodEnd
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".ReferencePeriodEnd") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".ReferencePeriodEnd") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1533,18 +1533,18 @@ module CappedFlooredCmsSpreadCouponFunction =
             try
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ReferencePeriodStart
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".ReferencePeriodStart") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".ReferencePeriodStart") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCmsSpreadCoupon.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1572,12 +1572,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".CompareTo") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _cf.source
                                                |]
@@ -1586,7 +1586,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1614,12 +1614,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Equals") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Equals") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _cf.source
                                                |]
@@ -1628,7 +1628,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1659,13 +1659,13 @@ module CappedFlooredCmsSpreadCouponFunction =
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".HasOccurred") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -1676,7 +1676,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1704,12 +1704,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".TradingExCoupon") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _refDate.source
                                                |]
@@ -1718,7 +1718,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1746,12 +1746,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredCmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Accept") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".Accept") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _v.source
                                                |]
@@ -1760,7 +1760,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1788,12 +1788,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredCmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".RegisterWith") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _handler.source
                                                |]
@@ -1802,7 +1802,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1830,12 +1830,12 @@ module CappedFlooredCmsSpreadCouponFunction =
 
                 let _CappedFlooredCmsSpreadCoupon = Helper.toCell<CappedFlooredCmsSpreadCoupon> cappedflooredcmsspreadcoupon "CappedFlooredCmsSpreadCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((CappedFlooredCmsSpreadCouponModel.Cast _CappedFlooredCmsSpreadCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredCmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_CappedFlooredCmsSpreadCoupon.source + ".UnregisterWith") 
                                                [| _CappedFlooredCmsSpreadCoupon.source
                                                ;  _handler.source
                                                |]
@@ -1844,7 +1844,7 @@ module CappedFlooredCmsSpreadCouponFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1873,14 +1873,14 @@ module CappedFlooredCmsSpreadCouponFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<CappedFlooredCmsSpreadCoupon>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<CappedFlooredCmsSpreadCoupon>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<CappedFlooredCmsSpreadCoupon>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<CappedFlooredCmsSpreadCoupon>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

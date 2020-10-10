@@ -55,14 +55,14 @@ module BlackCapFloorEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<OptionletVolatilityStructure> vol "vol" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic (Fun.BlackCapFloorEngine1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCapFloorEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _displacement.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCapFloorEngine>) l
 
-                let source = Helper.sourceFold "Fun.BlackCapFloorEngine1" 
+                let source () = Helper.sourceFold "Fun.BlackCapFloorEngine1" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _displacement.source
@@ -73,7 +73,7 @@ module BlackCapFloorEngineFunction =
                                 ;  _displacement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackCapFloorEngine> format
                     ; source = source 
@@ -107,7 +107,7 @@ module BlackCapFloorEngineFunction =
                 let _vol = Helper.toHandle<Quote> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic (Fun.BlackCapFloorEngine2
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCapFloorEngine2
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -115,7 +115,7 @@ module BlackCapFloorEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCapFloorEngine>) l
 
-                let source = Helper.sourceFold "Fun.BlackCapFloorEngine2" 
+                let source () = Helper.sourceFold "Fun.BlackCapFloorEngine2" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _dc.source
@@ -128,7 +128,7 @@ module BlackCapFloorEngineFunction =
                                 ;  _displacement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackCapFloorEngine> format
                     ; source = source 
@@ -162,7 +162,7 @@ module BlackCapFloorEngineFunction =
                 let _vol = Helper.toCell<double> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic (Fun.BlackCapFloorEngine
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCapFloorEngine
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -170,7 +170,7 @@ module BlackCapFloorEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCapFloorEngine>) l
 
-                let source = Helper.sourceFold "Fun.BlackCapFloorEngine" 
+                let source () = Helper.sourceFold "Fun.BlackCapFloorEngine" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _dc.source
@@ -183,7 +183,7 @@ module BlackCapFloorEngineFunction =
                                 ;  _displacement.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackCapFloorEngine> format
                     ; source = source 
@@ -209,18 +209,18 @@ module BlackCapFloorEngineFunction =
             try
 
                 let _BlackCapFloorEngine = Helper.toCell<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).Displacement
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BlackCapFloorEngine.source + ".Displacement") 
+                let source () = Helper.sourceFold (_BlackCapFloorEngine.source + ".Displacement") 
                                                [| _BlackCapFloorEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackCapFloorEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -245,18 +245,18 @@ module BlackCapFloorEngineFunction =
             try
 
                 let _BlackCapFloorEngine = Helper.toCell<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).TermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_BlackCapFloorEngine.source + ".TermStructure") 
+                let source () = Helper.sourceFold (_BlackCapFloorEngine.source + ".TermStructure") 
                                                [| _BlackCapFloorEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackCapFloorEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackCapFloorEngine> format
                     ; source = source 
@@ -281,18 +281,18 @@ module BlackCapFloorEngineFunction =
             try
 
                 let _BlackCapFloorEngine = Helper.toCell<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l
 
-                let source = Helper.sourceFold (_BlackCapFloorEngine.source + ".Volatility") 
+                let source () = Helper.sourceFold (_BlackCapFloorEngine.source + ".Volatility") 
                                                [| _BlackCapFloorEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackCapFloorEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackCapFloorEngine> format
                     ; source = source 
@@ -321,14 +321,14 @@ module BlackCapFloorEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackCapFloorEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackCapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

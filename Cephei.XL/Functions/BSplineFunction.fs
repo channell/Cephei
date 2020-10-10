@@ -55,14 +55,14 @@ module BSplineFunction =
                 let _p = Helper.toCell<int> p "p" 
                 let _n = Helper.toCell<int> n "n" 
                 let _knots = Helper.toCell<Generic.List<double>> knots "knots" 
-                let builder () = withMnemonic mnemonic (Fun.BSpline 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BSpline 
                                                             _p.cell 
                                                             _n.cell 
                                                             _knots.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BSpline>) l
 
-                let source = Helper.sourceFold "Fun.BSpline" 
+                let source () = Helper.sourceFold "Fun.BSpline" 
                                                [| _p.source
                                                ;  _n.source
                                                ;  _knots.source
@@ -73,7 +73,7 @@ module BSplineFunction =
                                 ;  _knots.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BSpline> format
                     ; source = source 
@@ -104,13 +104,13 @@ module BSplineFunction =
                 let _BSpline = Helper.toCell<BSpline> bspline "BSpline"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((BSplineModel.Cast _BSpline.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BSplineModel.Cast _BSpline.cell).Value
                                                             _i.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BSpline.source + ".Value") 
+                let source () = Helper.sourceFold (_BSpline.source + ".Value") 
                                                [| _BSpline.source
                                                ;  _i.source
                                                ;  _x.source
@@ -121,7 +121,7 @@ module BSplineFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -150,14 +150,14 @@ module BSplineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BSpline>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BSpline>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BSpline>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BSpline>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

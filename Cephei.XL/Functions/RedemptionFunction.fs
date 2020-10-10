@@ -52,13 +52,13 @@ module RedemptionFunction =
 
                 let _amount = Helper.toCell<double> amount "amount" 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic (Fun.Redemption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Redemption 
                                                             _amount.cell 
                                                             _date.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Redemption>) l
 
-                let source = Helper.sourceFold "Fun.Redemption" 
+                let source () = Helper.sourceFold "Fun.Redemption" 
                                                [| _amount.source
                                                ;  _date.source
                                                |]
@@ -67,7 +67,7 @@ module RedemptionFunction =
                                 ;  _date.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Redemption> format
                     ; source = source 
@@ -92,18 +92,18 @@ module RedemptionFunction =
             try
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
-                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Redemption.source + ".Amount") 
+                let source () = Helper.sourceFold (_Redemption.source + ".Amount") 
                                                [| _Redemption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module RedemptionFunction =
             try
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
-                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Redemption.source + ".Date") 
+                let source () = Helper.sourceFold (_Redemption.source + ".Date") 
                                                [| _Redemption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -167,12 +167,12 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Redemption.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_Redemption.source + ".CompareTo") 
                                                [| _Redemption.source
                                                ;  _cf.source
                                                |]
@@ -181,7 +181,7 @@ module RedemptionFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Redemption.source + ".Equals") 
+                let source () = Helper.sourceFold (_Redemption.source + ".Equals") 
                                                [| _Redemption.source
                                                ;  _cf.source
                                                |]
@@ -223,7 +223,7 @@ module RedemptionFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module RedemptionFunction =
             try
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
-                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Redemption.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_Redemption.source + ".ExCouponDate") 
                                                [| _Redemption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,13 +290,13 @@ module RedemptionFunction =
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Redemption.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_Redemption.source + ".HasOccurred") 
                                                [| _Redemption.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -307,7 +307,7 @@ module RedemptionFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -335,12 +335,12 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Redemption.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_Redemption.source + ".TradingExCoupon") 
                                                [| _Redemption.source
                                                ;  _refDate.source
                                                |]
@@ -349,7 +349,7 @@ module RedemptionFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,12 +377,12 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : Redemption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Redemption.source + ".Accept") 
+                let source () = Helper.sourceFold (_Redemption.source + ".Accept") 
                                                [| _Redemption.source
                                                ;  _v.source
                                                |]
@@ -391,7 +391,7 @@ module RedemptionFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -419,12 +419,12 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Redemption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Redemption.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Redemption.source + ".RegisterWith") 
                                                [| _Redemption.source
                                                ;  _handler.source
                                                |]
@@ -433,7 +433,7 @@ module RedemptionFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -461,12 +461,12 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Redemption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Redemption.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Redemption.source + ".UnregisterWith") 
                                                [| _Redemption.source
                                                ;  _handler.source
                                                |]
@@ -475,7 +475,7 @@ module RedemptionFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -504,14 +504,14 @@ module RedemptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Redemption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Redemption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Redemption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Redemption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -61,7 +61,7 @@ module BlackSwaptionEngineFunction =
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toNullable<double> displacement "displacement"
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel.DiscountCurve
-                let builder () = withMnemonic mnemonic (Fun.BlackSwaptionEngine2 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -70,7 +70,7 @@ module BlackSwaptionEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.BlackSwaptionEngine2" 
+                let source () = Helper.sourceFold "Fun.BlackSwaptionEngine2" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _dc.source
@@ -85,7 +85,7 @@ module BlackSwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackSwaptionEngine> format
                     ; source = source 
@@ -119,7 +119,7 @@ module BlackSwaptionEngineFunction =
                 let _vol = Helper.toHandle<SwaptionVolatilityStructure> vol "vol" 
                 let _displacement = Helper.toNullable<double> displacement "displacement"
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel.DiscountCurve
-                let builder () = withMnemonic mnemonic (Fun.BlackSwaptionEngine
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackSwaptionEngine
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _displacement.cell 
@@ -127,7 +127,7 @@ module BlackSwaptionEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.BlackSwaptionEngine" 
+                let source () = Helper.sourceFold "Fun.BlackSwaptionEngine" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _displacement.source
@@ -140,7 +140,7 @@ module BlackSwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackSwaptionEngine> format
                     ; source = source 
@@ -177,7 +177,7 @@ module BlackSwaptionEngineFunction =
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toNullable<double> displacement "displacement"
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel.DiscountCurve
-                let builder () = withMnemonic mnemonic (Fun.BlackSwaptionEngine1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackSwaptionEngine1
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
@@ -186,7 +186,7 @@ module BlackSwaptionEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.BlackSwaptionEngine1" 
+                let source () = Helper.sourceFold "Fun.BlackSwaptionEngine1" 
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _dc.source
@@ -201,7 +201,7 @@ module BlackSwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackSwaptionEngine> format
                     ; source = source 
@@ -227,18 +227,18 @@ module BlackSwaptionEngineFunction =
             try
 
                 let _BlackSwaptionEngine = Helper.toCell<BlackSwaptionEngine> blackswaptionengine "BlackSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((BlackSwaptionEngineModel.Cast _BlackSwaptionEngine.cell).TermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackSwaptionEngineModel.Cast _BlackSwaptionEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_BlackSwaptionEngine.source + ".TermStructure") 
+                let source () = Helper.sourceFold (_BlackSwaptionEngine.source + ".TermStructure") 
                                                [| _BlackSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackSwaptionEngine> format
                     ; source = source 
@@ -263,18 +263,18 @@ module BlackSwaptionEngineFunction =
             try
 
                 let _BlackSwaptionEngine = Helper.toCell<BlackSwaptionEngine> blackswaptionengine "BlackSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((BlackSwaptionEngineModel.Cast _BlackSwaptionEngine.cell).Volatility
+                let builder (current : ICell) = withMnemonic mnemonic ((BlackSwaptionEngineModel.Cast _BlackSwaptionEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 
-                let source = Helper.sourceFold (_BlackSwaptionEngine.source + ".Volatility") 
+                let source () = Helper.sourceFold (_BlackSwaptionEngine.source + ".Volatility") 
                                                [| _BlackSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BlackSwaptionEngine> format
                     ; source = source 
@@ -303,14 +303,14 @@ module BlackSwaptionEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BlackSwaptionEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BlackSwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BlackSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BlackSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

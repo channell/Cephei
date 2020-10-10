@@ -55,14 +55,14 @@ module FdmIndicesOnBoundaryFunction =
                 let _layout = Helper.toCell<FdmLinearOpLayout> layout "layout" 
                 let _direction = Helper.toCell<int> direction "direction" 
                 let _side = Helper.toCell<BoundaryCondition<FdmLinearOp>.Side> side "side" 
-                let builder () = withMnemonic mnemonic (Fun.FdmIndicesOnBoundary 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmIndicesOnBoundary 
                                                             _layout.cell 
                                                             _direction.cell 
                                                             _side.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmIndicesOnBoundary>) l
 
-                let source = Helper.sourceFold "Fun.FdmIndicesOnBoundary" 
+                let source () = Helper.sourceFold "Fun.FdmIndicesOnBoundary" 
                                                [| _layout.source
                                                ;  _direction.source
                                                ;  _side.source
@@ -73,7 +73,7 @@ module FdmIndicesOnBoundaryFunction =
                                 ;  _side.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmIndicesOnBoundary> format
                     ; source = source 
@@ -98,18 +98,18 @@ module FdmIndicesOnBoundaryFunction =
             try
 
                 let _FdmIndicesOnBoundary = Helper.toCell<FdmIndicesOnBoundary> fdmindicesonboundary "FdmIndicesOnBoundary"  
-                let builder () = withMnemonic mnemonic ((FdmIndicesOnBoundaryModel.Cast _FdmIndicesOnBoundary.cell).GetIndices
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmIndicesOnBoundaryModel.Cast _FdmIndicesOnBoundary.cell).GetIndices
                                                        ) :> ICell
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FdmIndicesOnBoundary.source + ".GetIndices") 
+                let source () = Helper.sourceFold (_FdmIndicesOnBoundary.source + ".GetIndices") 
                                                [| _FdmIndicesOnBoundary.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmIndicesOnBoundary.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -138,14 +138,14 @@ module FdmIndicesOnBoundaryFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmIndicesOnBoundary>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmIndicesOnBoundary>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmIndicesOnBoundary>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmIndicesOnBoundary>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

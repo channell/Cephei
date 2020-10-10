@@ -49,18 +49,18 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder () = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).FixedLeg
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).FixedLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_FixedLoan.source + ".FixedLeg") 
+                let source () = Helper.sourceFold (_FixedLoan.source + ".FixedLeg") 
                                                [| _FixedLoan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -109,7 +109,7 @@ module FixedLoanFunction =
                 let _paymentConvention = Helper.toNullable<BusinessDayConvention> paymentConvention "paymentConvention"
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.FixedLoan 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FixedLoan 
                                                             _Type.cell 
                                                             _nominal.cell 
                                                             _fixedSchedule.cell 
@@ -122,7 +122,7 @@ module FixedLoanFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedLoan>) l
 
-                let source = Helper.sourceFold "Fun.FixedLoan" 
+                let source () = Helper.sourceFold "Fun.FixedLoan" 
                                                [| _Type.source
                                                ;  _nominal.source
                                                ;  _fixedSchedule.source
@@ -145,7 +145,7 @@ module FixedLoanFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FixedLoan> format
                     ; source = source 
@@ -170,18 +170,18 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder () = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).PrincipalLeg
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).PrincipalLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_FixedLoan.source + ".PrincipalLeg") 
+                let source () = Helper.sourceFold (_FixedLoan.source + ".PrincipalLeg") 
                                                [| _FixedLoan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -206,18 +206,18 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder () = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedLoan.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_FixedLoan.source + ".IsExpired") 
                                                [| _FixedLoan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder () = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FixedLoan.source + ".CASH") 
+                let source () = Helper.sourceFold (_FixedLoan.source + ".CASH") 
                                                [| _FixedLoan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -278,18 +278,18 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder () = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FixedLoan.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_FixedLoan.source + ".ErrorEstimate") 
                                                [| _FixedLoan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -314,18 +314,18 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder () = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FixedLoan.source + ".NPV") 
+                let source () = Helper.sourceFold (_FixedLoan.source + ".NPV") 
                                                [| _FixedLoan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -353,12 +353,12 @@ module FixedLoanFunction =
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedLoan.source + ".Result") 
+                let source () = Helper.sourceFold (_FixedLoan.source + ".Result") 
                                                [| _FixedLoan.source
                                                ;  _tag.source
                                                |]
@@ -367,7 +367,7 @@ module FixedLoanFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -395,12 +395,12 @@ module FixedLoanFunction =
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : FixedLoan) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FixedLoan.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_FixedLoan.source + ".SetPricingEngine") 
                                                [| _FixedLoan.source
                                                ;  _e.source
                                                |]
@@ -409,7 +409,7 @@ module FixedLoanFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -434,18 +434,18 @@ module FixedLoanFunction =
             try
 
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
-                let builder () = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_FixedLoan.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_FixedLoan.source + ".ValuationDate") 
                                                [| _FixedLoan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -474,14 +474,14 @@ module FixedLoanFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FixedLoan>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FixedLoan>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FixedLoan>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FixedLoan>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -64,7 +64,7 @@ module SABRSpecsFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).DefaultValues
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).DefaultValues
                                                             _param.cell 
                                                             _b.cell 
                                                             _forward.cell 
@@ -73,7 +73,7 @@ module SABRSpecsFunction =
                                                        ) :> ICell
                 let format (o : SABRSpecs) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SABRSpecs.source + ".DefaultValues") 
+                let source () = Helper.sourceFold (_SABRSpecs.source + ".DefaultValues") 
                                                [| _SABRSpecs.source
                                                ;  _param.source
                                                ;  _b.source
@@ -90,7 +90,7 @@ module SABRSpecsFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -115,18 +115,18 @@ module SABRSpecsFunction =
             try
 
                 let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
-                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).DilationFactor
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).DilationFactor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRSpecs.source + ".DilationFactor") 
+                let source () = Helper.sourceFold (_SABRSpecs.source + ".DilationFactor") 
                                                [| _SABRSpecs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRSpecs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -151,18 +151,18 @@ module SABRSpecsFunction =
             try
 
                 let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
-                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Dimension
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRSpecs.source + ".Dimension") 
+                let source () = Helper.sourceFold (_SABRSpecs.source + ".Dimension") 
                                                [| _SABRSpecs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRSpecs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -199,7 +199,7 @@ module SABRSpecsFunction =
                 let _b = Helper.toCell<Generic.List<bool>> b "b" 
                 let _c = Helper.toCell<Generic.List<Nullable<double>>> c "c" 
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Direct
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Direct
                                                             _x.cell 
                                                             _b.cell 
                                                             _c.cell 
@@ -207,7 +207,7 @@ module SABRSpecsFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SABRSpecs.source + ".Direct") 
+                let source () = Helper.sourceFold (_SABRSpecs.source + ".Direct") 
                                                [| _SABRSpecs.source
                                                ;  _x.source
                                                ;  _b.source
@@ -222,7 +222,7 @@ module SABRSpecsFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SABRSpecs> format
                     ; source = source 
@@ -247,18 +247,18 @@ module SABRSpecsFunction =
             try
 
                 let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
-                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Eps1
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Eps1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRSpecs.source + ".Eps1") 
+                let source () = Helper.sourceFold (_SABRSpecs.source + ".Eps1") 
                                                [| _SABRSpecs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRSpecs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -283,18 +283,18 @@ module SABRSpecsFunction =
             try
 
                 let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
-                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Eps2
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Eps2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRSpecs.source + ".Eps2") 
+                let source () = Helper.sourceFold (_SABRSpecs.source + ".Eps2") 
                                                [| _SABRSpecs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRSpecs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -337,7 +337,7 @@ module SABRSpecsFunction =
                 let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" 
                 let _r = Helper.toCell<Generic.List<double>> r "r" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Guess
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Guess
                                                             _values.cell 
                                                             _paramIsFixed.cell 
                                                             _forward.cell 
@@ -347,7 +347,7 @@ module SABRSpecsFunction =
                                                        ) :> ICell
                 let format (o : SABRSpecs) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SABRSpecs.source + ".Guess") 
+                let source () = Helper.sourceFold (_SABRSpecs.source + ".Guess") 
                                                [| _SABRSpecs.source
                                                ;  _values.source
                                                ;  _paramIsFixed.source
@@ -366,7 +366,7 @@ module SABRSpecsFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -403,7 +403,7 @@ module SABRSpecsFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Instance
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Instance
                                                             _t.cell 
                                                             _forward.cell 
                                                             _param.cell 
@@ -411,7 +411,7 @@ module SABRSpecsFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IWrapper>) l
 
-                let source = Helper.sourceFold (_SABRSpecs.source + ".Instance") 
+                let source () = Helper.sourceFold (_SABRSpecs.source + ".Instance") 
                                                [| _SABRSpecs.source
                                                ;  _t.source
                                                ;  _forward.source
@@ -426,7 +426,7 @@ module SABRSpecsFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SABRSpecs> format
                     ; source = source 
@@ -463,7 +463,7 @@ module SABRSpecsFunction =
                 let _b = Helper.toCell<Generic.List<bool>> b "b" 
                 let _c = Helper.toCell<Generic.List<Nullable<double>>> c "c" 
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Inverse
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Inverse
                                                             _y.cell 
                                                             _b.cell 
                                                             _c.cell 
@@ -471,7 +471,7 @@ module SABRSpecsFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SABRSpecs.source + ".Inverse") 
+                let source () = Helper.sourceFold (_SABRSpecs.source + ".Inverse") 
                                                [| _SABRSpecs.source
                                                ;  _y.source
                                                ;  _b.source
@@ -486,7 +486,7 @@ module SABRSpecsFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SABRSpecs> format
                     ; source = source 
@@ -523,7 +523,7 @@ module SABRSpecsFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Weight
+                let builder (current : ICell) = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Weight
                                                             _strike.cell 
                                                             _forward.cell 
                                                             _stdDev.cell 
@@ -531,7 +531,7 @@ module SABRSpecsFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SABRSpecs.source + ".Weight") 
+                let source () = Helper.sourceFold (_SABRSpecs.source + ".Weight") 
                                                [| _SABRSpecs.source
                                                ;  _strike.source
                                                ;  _forward.source
@@ -546,7 +546,7 @@ module SABRSpecsFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -575,14 +575,14 @@ module SABRSpecsFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SABRSpecs>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SABRSpecs>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SABRSpecs>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SABRSpecs>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,12 +52,12 @@ module GaussHyperbolicPolynomialFunction =
 
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Alpha
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Alpha") 
+                let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Alpha") 
                                                [| _GaussHyperbolicPolynomial.source
                                                ;  _i.source
                                                |]
@@ -66,7 +66,7 @@ module GaussHyperbolicPolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,12 +94,12 @@ module GaussHyperbolicPolynomialFunction =
 
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Beta
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Beta") 
+                let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Beta") 
                                                [| _GaussHyperbolicPolynomial.source
                                                ;  _i.source
                                                |]
@@ -108,7 +108,7 @@ module GaussHyperbolicPolynomialFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -133,18 +133,18 @@ module GaussHyperbolicPolynomialFunction =
             try
 
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
-                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Mu_0
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Mu_0") 
+                let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Mu_0") 
                                                [| _GaussHyperbolicPolynomial.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicPolynomial.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -172,12 +172,12 @@ module GaussHyperbolicPolynomialFunction =
 
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).W
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".W") 
+                let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".W") 
                                                [| _GaussHyperbolicPolynomial.source
                                                ;  _x.source
                                                |]
@@ -186,7 +186,7 @@ module GaussHyperbolicPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -217,13 +217,13 @@ module GaussHyperbolicPolynomialFunction =
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Value") 
                                                [| _GaussHyperbolicPolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -234,7 +234,7 @@ module GaussHyperbolicPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -265,13 +265,13 @@ module GaussHyperbolicPolynomialFunction =
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).WeightedValue
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".WeightedValue") 
+                let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".WeightedValue") 
                                                [| _GaussHyperbolicPolynomial.source
                                                ;  _n.source
                                                ;  _x.source
@@ -282,7 +282,7 @@ module GaussHyperbolicPolynomialFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -311,14 +311,14 @@ module GaussHyperbolicPolynomialFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussHyperbolicPolynomial>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussHyperbolicPolynomial>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussHyperbolicPolynomial>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussHyperbolicPolynomial>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,13 +52,13 @@ module DerivedQuoteFunction =
 
                 let _element = Helper.toHandle<Quote> element "element" 
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic (Fun.DerivedQuote 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DerivedQuote 
                                                             _element.cell 
                                                             _f.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DerivedQuote>) l
 
-                let source = Helper.sourceFold "Fun.DerivedQuote" 
+                let source () = Helper.sourceFold "Fun.DerivedQuote" 
                                                [| _element.source
                                                ;  _f.source
                                                |]
@@ -67,7 +67,7 @@ module DerivedQuoteFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DerivedQuote> format
                     ; source = source 
@@ -92,18 +92,18 @@ module DerivedQuoteFunction =
             try
 
                 let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
-                let builder () = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).IsValid
+                let builder (current : ICell) = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DerivedQuote.source + ".IsValid") 
+                let source () = Helper.sourceFold (_DerivedQuote.source + ".IsValid") 
                                                [| _DerivedQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DerivedQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module DerivedQuoteFunction =
             try
 
                 let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
-                let builder () = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).Update
                                                        ) :> ICell
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DerivedQuote.source + ".Update") 
+                let source () = Helper.sourceFold (_DerivedQuote.source + ".Update") 
                                                [| _DerivedQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DerivedQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module DerivedQuoteFunction =
             try
 
                 let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
-                let builder () = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DerivedQuote.source + ".Value") 
+                let source () = Helper.sourceFold (_DerivedQuote.source + ".Value") 
                                                [| _DerivedQuote.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DerivedQuote.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -203,12 +203,12 @@ module DerivedQuoteFunction =
 
                 let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DerivedQuote.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_DerivedQuote.source + ".RegisterWith") 
                                                [| _DerivedQuote.source
                                                ;  _handler.source
                                                |]
@@ -217,7 +217,7 @@ module DerivedQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -245,12 +245,12 @@ module DerivedQuoteFunction =
 
                 let _DerivedQuote = Helper.toCell<DerivedQuote> derivedquote "DerivedQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((DerivedQuoteModel.Cast _DerivedQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DerivedQuote.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_DerivedQuote.source + ".UnregisterWith") 
                                                [| _DerivedQuote.source
                                                ;  _handler.source
                                                |]
@@ -259,7 +259,7 @@ module DerivedQuoteFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -288,14 +288,14 @@ module DerivedQuoteFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DerivedQuote>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DerivedQuote>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DerivedQuote>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DerivedQuote>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

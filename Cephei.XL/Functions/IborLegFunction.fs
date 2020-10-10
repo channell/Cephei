@@ -52,13 +52,13 @@ module IborLegFunction =
 
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let _index = Helper.toCell<IborIndex> index "index" 
-                let builder () = withMnemonic mnemonic (Fun.IborLeg 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.IborLeg 
                                                             _schedule.cell 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborLeg>) l
 
-                let source = Helper.sourceFold "Fun.IborLeg" 
+                let source () = Helper.sourceFold "Fun.IborLeg" 
                                                [| _schedule.source
                                                ;  _index.source
                                                |]
@@ -67,7 +67,7 @@ module IborLegFunction =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -92,18 +92,18 @@ module IborLegFunction =
             try
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".Value") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".Value") 
                                                [| _IborLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
                     ; source = source 
@@ -131,12 +131,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).InArrears1
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).InArrears1
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".InArrears1") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".InArrears1") 
                                                [| _IborLeg.source
                                                ;  _flag.source
                                                |]
@@ -145,7 +145,7 @@ module IborLegFunction =
                                 ;  _flag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -170,18 +170,18 @@ module IborLegFunction =
             try
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).InArrears
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).InArrears
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".InArrears") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".InArrears") 
                                                [| _IborLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -209,12 +209,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithCaps
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithCaps
                                                             _caps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithCaps") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithCaps") 
                                                [| _IborLeg.source
                                                ;  _caps.source
                                                |]
@@ -223,7 +223,7 @@ module IborLegFunction =
                                 ;  _caps.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -251,12 +251,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _cap = Helper.toNullable<double> cap "cap"
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithCaps1
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithCaps1
                                                             _cap.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithCaps1") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithCaps1") 
                                                [| _IborLeg.source
                                                ;  _cap.source
                                                |]
@@ -265,7 +265,7 @@ module IborLegFunction =
                                 ;  _cap.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -293,12 +293,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithFixingDays1
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithFixingDays1") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithFixingDays1") 
                                                [| _IborLeg.source
                                                ;  _fixingDays.source
                                                |]
@@ -307,7 +307,7 @@ module IborLegFunction =
                                 ;  _fixingDays.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -335,12 +335,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithFixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithFixingDays") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithFixingDays") 
                                                [| _IborLeg.source
                                                ;  _fixingDays.source
                                                |]
@@ -349,7 +349,7 @@ module IborLegFunction =
                                 ;  _fixingDays.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -377,12 +377,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithFloors1
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithFloors1") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithFloors1") 
                                                [| _IborLeg.source
                                                ;  _floors.source
                                                |]
@@ -391,7 +391,7 @@ module IborLegFunction =
                                 ;  _floors.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -419,12 +419,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _floor = Helper.toNullable<double> floor "floor"
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithFloors
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithFloors
                                                             _floor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithFloors") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithFloors") 
                                                [| _IborLeg.source
                                                ;  _floor.source
                                                |]
@@ -433,7 +433,7 @@ module IborLegFunction =
                                 ;  _floor.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -461,12 +461,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithGearings
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithGearings
                                                             _gearing.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithGearings") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithGearings") 
                                                [| _IborLeg.source
                                                ;  _gearing.source
                                                |]
@@ -475,7 +475,7 @@ module IborLegFunction =
                                 ;  _gearing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -503,12 +503,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithGearings1
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithGearings1
                                                             _gearings.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithGearings1") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithGearings1") 
                                                [| _IborLeg.source
                                                ;  _gearings.source
                                                |]
@@ -517,7 +517,7 @@ module IborLegFunction =
                                 ;  _gearings.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -545,12 +545,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithPaymentDayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithPaymentDayCounter") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithPaymentDayCounter") 
                                                [| _IborLeg.source
                                                ;  _dayCounter.source
                                                |]
@@ -559,7 +559,7 @@ module IborLegFunction =
                                 ;  _dayCounter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -587,12 +587,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithSpreads1
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithSpreads1
                                                             _spreads.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithSpreads1") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithSpreads1") 
                                                [| _IborLeg.source
                                                ;  _spreads.source
                                                |]
@@ -601,7 +601,7 @@ module IborLegFunction =
                                 ;  _spreads.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -629,12 +629,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithSpreads
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithSpreads
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithSpreads") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithSpreads") 
                                                [| _IborLeg.source
                                                ;  _spread.source
                                                |]
@@ -643,7 +643,7 @@ module IborLegFunction =
                                 ;  _spread.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -671,12 +671,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithZeroPayments1
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithZeroPayments1
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithZeroPayments1") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithZeroPayments1") 
                                                [| _IborLeg.source
                                                ;  _flag.source
                                                |]
@@ -685,7 +685,7 @@ module IborLegFunction =
                                 ;  _flag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -710,18 +710,18 @@ module IborLegFunction =
             try
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithZeroPayments
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithZeroPayments
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithZeroPayments") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithZeroPayments") 
                                                [| _IborLeg.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -749,12 +749,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithNotionals1
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithNotionals1") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithNotionals1") 
                                                [| _IborLeg.source
                                                ;  _notionals.source
                                                |]
@@ -763,7 +763,7 @@ module IborLegFunction =
                                 ;  _notionals.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -791,12 +791,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithNotionals
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithNotional") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithNotional") 
                                                [| _IborLeg.source
                                                ;  _notional.source
                                                |]
@@ -805,7 +805,7 @@ module IborLegFunction =
                                 ;  _notional.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -833,12 +833,12 @@ module IborLegFunction =
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithPaymentAdjustment
+                let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
-                let source = Helper.sourceFold (_IborLeg.source + ".WithPaymentAdjustment") 
+                let source () = Helper.sourceFold (_IborLeg.source + ".WithPaymentAdjustment") 
                                                [| _IborLeg.source
                                                ;  _convention.source
                                                |]
@@ -847,7 +847,7 @@ module IborLegFunction =
                                 ;  _convention.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IborLeg> format
                     ; source = source 
@@ -876,14 +876,14 @@ module IborLegFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IborLeg>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<IborLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<IborLeg>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<IborLeg>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

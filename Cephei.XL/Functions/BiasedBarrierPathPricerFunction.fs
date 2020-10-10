@@ -64,7 +64,7 @@ module BiasedBarrierPathPricerFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
-                let builder () = withMnemonic mnemonic (Fun.BiasedBarrierPathPricer 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BiasedBarrierPathPricer 
                                                             _barrierType.cell 
                                                             _barrier.cell 
                                                             _rebate.cell 
@@ -74,7 +74,7 @@ module BiasedBarrierPathPricerFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BiasedBarrierPathPricer>) l
 
-                let source = Helper.sourceFold "Fun.BiasedBarrierPathPricer" 
+                let source () = Helper.sourceFold "Fun.BiasedBarrierPathPricer" 
                                                [| _barrierType.source
                                                ;  _barrier.source
                                                ;  _rebate.source
@@ -91,7 +91,7 @@ module BiasedBarrierPathPricerFunction =
                                 ;  _discounts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BiasedBarrierPathPricer> format
                     ; source = source 
@@ -119,12 +119,12 @@ module BiasedBarrierPathPricerFunction =
 
                 let _BiasedBarrierPathPricer = Helper.toCell<BiasedBarrierPathPricer> biasedbarrierpathpricer "BiasedBarrierPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder () = withMnemonic mnemonic ((BiasedBarrierPathPricerModel.Cast _BiasedBarrierPathPricer.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((BiasedBarrierPathPricerModel.Cast _BiasedBarrierPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BiasedBarrierPathPricer.source + ".Value") 
+                let source () = Helper.sourceFold (_BiasedBarrierPathPricer.source + ".Value") 
                                                [| _BiasedBarrierPathPricer.source
                                                ;  _path.source
                                                |]
@@ -133,7 +133,7 @@ module BiasedBarrierPathPricerFunction =
                                 ;  _path.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -162,14 +162,14 @@ module BiasedBarrierPathPricerFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BiasedBarrierPathPricer>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BiasedBarrierPathPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BiasedBarrierPathPricer>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BiasedBarrierPathPricer>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -58,7 +58,7 @@ module GaussLobattoIntegralFunction =
                 let _absAccuracy = Helper.toNullable<double> absAccuracy "absAccuracy"
                 let _relAccuracy = Helper.toNullable<double> relAccuracy "relAccuracy"
                 let _useConvergenceEstimate = Helper.toDefault<bool> useConvergenceEstimate "useConvergenceEstimate" true
-                let builder () = withMnemonic mnemonic (Fun.GaussLobattoIntegral 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussLobattoIntegral 
                                                             _maxIterations.cell 
                                                             _absAccuracy.cell 
                                                             _relAccuracy.cell 
@@ -66,7 +66,7 @@ module GaussLobattoIntegralFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussLobattoIntegral>) l
 
-                let source = Helper.sourceFold "Fun.GaussLobattoIntegral" 
+                let source () = Helper.sourceFold "Fun.GaussLobattoIntegral" 
                                                [| _maxIterations.source
                                                ;  _absAccuracy.source
                                                ;  _relAccuracy.source
@@ -79,7 +79,7 @@ module GaussLobattoIntegralFunction =
                                 ;  _useConvergenceEstimate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussLobattoIntegral> format
                     ; source = source 
@@ -104,18 +104,18 @@ module GaussLobattoIntegralFunction =
             try
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
-                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).AbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GaussLobattoIntegral.source + ".AbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".AbsoluteAccuracy") 
                                                [| _GaussLobattoIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -140,18 +140,18 @@ module GaussLobattoIntegralFunction =
             try
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
-                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).AbsoluteError
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLobattoIntegral.source + ".AbsoluteError") 
+                let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".AbsoluteError") 
                                                [| _GaussLobattoIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,18 +176,18 @@ module GaussLobattoIntegralFunction =
             try
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
-                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).IntegrationSuccess
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GaussLobattoIntegral.source + ".IntegrationSuccess") 
+                let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".IntegrationSuccess") 
                                                [| _GaussLobattoIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -212,18 +212,18 @@ module GaussLobattoIntegralFunction =
             try
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
-                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).MaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLobattoIntegral.source + ".MaxEvaluations") 
+                let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".MaxEvaluations") 
                                                [| _GaussLobattoIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module GaussLobattoIntegralFunction =
             try
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
-                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).NumberOfEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLobattoIntegral.source + ".NumberOfEvaluations") 
+                let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".NumberOfEvaluations") 
                                                [| _GaussLobattoIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -287,12 +287,12 @@ module GaussLobattoIntegralFunction =
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).SetAbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : GaussLobattoIntegral) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GaussLobattoIntegral.source + ".SetAbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".SetAbsoluteAccuracy") 
                                                [| _GaussLobattoIntegral.source
                                                ;  _accuracy.source
                                                |]
@@ -301,7 +301,7 @@ module GaussLobattoIntegralFunction =
                                 ;  _accuracy.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -329,12 +329,12 @@ module GaussLobattoIntegralFunction =
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).SetMaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : GaussLobattoIntegral) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_GaussLobattoIntegral.source + ".SetMaxEvaluations") 
+                let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".SetMaxEvaluations") 
                                                [| _GaussLobattoIntegral.source
                                                ;  _maxEvaluations.source
                                                |]
@@ -343,7 +343,7 @@ module GaussLobattoIntegralFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,14 +377,14 @@ module GaussLobattoIntegralFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussLobattoIntegral.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".Value") 
                                                [| _GaussLobattoIntegral.source
                                                ;  _f.source
                                                ;  _a.source
@@ -397,7 +397,7 @@ module GaussLobattoIntegralFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -426,14 +426,14 @@ module GaussLobattoIntegralFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussLobattoIntegral>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussLobattoIntegral>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussLobattoIntegral>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussLobattoIntegral>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

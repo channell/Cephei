@@ -55,13 +55,13 @@ module ZeroConditionFunction =
                 let _ZeroCondition = Helper.toCell<ZeroCondition> zerocondition "ZeroCondition"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ZeroConditionModel.Cast _ZeroCondition.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((ZeroConditionModel.Cast _ZeroCondition.cell).ApplyTo
                                                             _a.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : ZeroCondition) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ZeroCondition.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_ZeroCondition.source + ".ApplyTo") 
                                                [| _ZeroCondition.source
                                                ;  _a.source
                                                ;  _t.source
@@ -72,7 +72,7 @@ module ZeroConditionFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -101,14 +101,14 @@ module ZeroConditionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ZeroCondition>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ZeroCondition>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ZeroCondition>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ZeroCondition>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

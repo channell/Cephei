@@ -64,7 +64,7 @@ module DividendVanillaOptionFunction =
                 let _dividends = Helper.toCell<Generic.List<double>> dividends "dividends" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.DividendVanillaOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DividendVanillaOption 
                                                             _payoff.cell 
                                                             _exercise.cell 
                                                             _dividendDates.cell 
@@ -74,7 +74,7 @@ module DividendVanillaOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DividendVanillaOption>) l
 
-                let source = Helper.sourceFold "Fun.DividendVanillaOption" 
+                let source () = Helper.sourceFold "Fun.DividendVanillaOption" 
                                                [| _payoff.source
                                                ;  _exercise.source
                                                ;  _dividendDates.source
@@ -91,7 +91,7 @@ module DividendVanillaOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DividendVanillaOption> format
                     ; source = source 
@@ -134,7 +134,7 @@ module DividendVanillaOptionFunction =
                 let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 100
                 let _minVol = Helper.toDefault<double> minVol "minVol" 1.0e-7
                 let _maxVol = Helper.toDefault<double> maxVol "maxVol" 4.0
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ImpliedVolatility
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _Process.cell 
                                                             _accuracy.cell 
@@ -144,7 +144,7 @@ module DividendVanillaOptionFunction =
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".ImpliedVolatility") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".ImpliedVolatility") 
                                                [| _DividendVanillaOption.source
                                                ;  _targetValue.source
                                                ;  _Process.source
@@ -163,7 +163,7 @@ module DividendVanillaOptionFunction =
                                 ;  _maxVol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -188,18 +188,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".Delta") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -224,18 +224,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".DeltaForward") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -260,18 +260,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".DividendRho") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,18 +296,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".Elasticity") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -332,18 +332,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".Gamma") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -368,18 +368,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".IsExpired") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -404,18 +404,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".ItmCashProbability") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -440,18 +440,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".Rho") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -476,18 +476,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".StrikeSensitivity") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -512,18 +512,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".Theta") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -548,18 +548,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".ThetaPerDay") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -584,18 +584,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".Vega") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -620,18 +620,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".Exercise") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DividendVanillaOption> format
                     ; source = source 
@@ -656,18 +656,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".Payoff") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DividendVanillaOption> format
                     ; source = source 
@@ -692,18 +692,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".CASH") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -728,18 +728,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".ErrorEstimate") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -764,18 +764,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".NPV") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -803,12 +803,12 @@ module DividendVanillaOptionFunction =
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".Result") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".Result") 
                                                [| _DividendVanillaOption.source
                                                ;  _tag.source
                                                |]
@@ -817,7 +817,7 @@ module DividendVanillaOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -845,12 +845,12 @@ module DividendVanillaOptionFunction =
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : DividendVanillaOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".SetPricingEngine") 
                                                [| _DividendVanillaOption.source
                                                ;  _e.source
                                                |]
@@ -859,7 +859,7 @@ module DividendVanillaOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -884,18 +884,18 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_DividendVanillaOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_DividendVanillaOption.source + ".ValuationDate") 
                                                [| _DividendVanillaOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DividendVanillaOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -924,14 +924,14 @@ module DividendVanillaOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DividendVanillaOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DividendVanillaOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DividendVanillaOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DividendVanillaOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

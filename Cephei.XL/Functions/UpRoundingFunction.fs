@@ -52,13 +52,13 @@ module UpRoundingFunction =
 
                 let _precision = Helper.toCell<int> precision "precision" 
                 let _digit = Helper.toCell<int> digit "digit" 
-                let builder () = withMnemonic mnemonic (Fun.UpRounding1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.UpRounding1 
                                                             _precision.cell 
                                                             _digit.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<UpRounding>) l
 
-                let source = Helper.sourceFold "Fun.UpRounding1" 
+                let source () = Helper.sourceFold "Fun.UpRounding1" 
                                                [| _precision.source
                                                ;  _digit.source
                                                |]
@@ -67,7 +67,7 @@ module UpRoundingFunction =
                                 ;  _digit.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<UpRounding> format
                     ; source = source 
@@ -92,19 +92,19 @@ module UpRoundingFunction =
             try
 
                 let _precision = Helper.toCell<int> precision "precision" 
-                let builder () = withMnemonic mnemonic (Fun.UpRounding
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.UpRounding
                                                             _precision.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<UpRounding>) l
 
-                let source = Helper.sourceFold "Fun.UpRounding1" 
+                let source () = Helper.sourceFold "Fun.UpRounding1" 
                                                [| _precision.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _precision.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<UpRounding> format
                     ; source = source 
@@ -129,18 +129,18 @@ module UpRoundingFunction =
             try
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
-                let builder () = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Digit
+                let builder (current : ICell) = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_UpRounding.source + ".Digit") 
+                let source () = Helper.sourceFold (_UpRounding.source + ".Digit") 
                                                [| _UpRounding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _UpRounding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -165,18 +165,18 @@ module UpRoundingFunction =
             try
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
-                let builder () = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).GetType
+                let builder (current : ICell) = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_UpRounding.source + ".GetType") 
+                let source () = Helper.sourceFold (_UpRounding.source + ".GetType") 
                                                [| _UpRounding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _UpRounding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -201,18 +201,18 @@ module UpRoundingFunction =
             try
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
-                let builder () = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Precision
+                let builder (current : ICell) = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_UpRounding.source + ".Precision") 
+                let source () = Helper.sourceFold (_UpRounding.source + ".Precision") 
                                                [| _UpRounding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _UpRounding.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,12 +240,12 @@ module UpRoundingFunction =
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Round
+                let builder (current : ICell) = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_UpRounding.source + ".Round") 
+                let source () = Helper.sourceFold (_UpRounding.source + ".Round") 
                                                [| _UpRounding.source
                                                ;  _value.source
                                                |]
@@ -254,7 +254,7 @@ module UpRoundingFunction =
                                 ;  _value.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -283,14 +283,14 @@ module UpRoundingFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<UpRounding>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<UpRounding>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<UpRounding>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<UpRounding>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

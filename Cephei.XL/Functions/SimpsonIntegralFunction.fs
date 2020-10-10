@@ -52,13 +52,13 @@ module SimpsonIntegralFunction =
 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxIterations = Helper.toCell<int> maxIterations "maxIterations" 
-                let builder () = withMnemonic mnemonic (Fun.SimpsonIntegral 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SimpsonIntegral 
                                                             _accuracy.cell 
                                                             _maxIterations.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SimpsonIntegral>) l
 
-                let source = Helper.sourceFold "Fun.SimpsonIntegral" 
+                let source () = Helper.sourceFold "Fun.SimpsonIntegral" 
                                                [| _accuracy.source
                                                ;  _maxIterations.source
                                                |]
@@ -67,7 +67,7 @@ module SimpsonIntegralFunction =
                                 ;  _maxIterations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SimpsonIntegral> format
                     ; source = source 
@@ -92,18 +92,18 @@ module SimpsonIntegralFunction =
             try
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
-                let builder () = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).AbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpsonIntegral.source + ".AbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_SimpsonIntegral.source + ".AbsoluteAccuracy") 
                                                [| _SimpsonIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -128,18 +128,18 @@ module SimpsonIntegralFunction =
             try
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
-                let builder () = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).AbsoluteError
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimpsonIntegral.source + ".AbsoluteError") 
+                let source () = Helper.sourceFold (_SimpsonIntegral.source + ".AbsoluteError") 
                                                [| _SimpsonIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module SimpsonIntegralFunction =
             try
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
-                let builder () = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).IntegrationSuccess
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpsonIntegral.source + ".IntegrationSuccess") 
+                let source () = Helper.sourceFold (_SimpsonIntegral.source + ".IntegrationSuccess") 
                                                [| _SimpsonIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module SimpsonIntegralFunction =
             try
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
-                let builder () = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).MaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimpsonIntegral.source + ".MaxEvaluations") 
+                let source () = Helper.sourceFold (_SimpsonIntegral.source + ".MaxEvaluations") 
                                                [| _SimpsonIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,18 +236,18 @@ module SimpsonIntegralFunction =
             try
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
-                let builder () = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).NumberOfEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimpsonIntegral.source + ".NumberOfEvaluations") 
+                let source () = Helper.sourceFold (_SimpsonIntegral.source + ".NumberOfEvaluations") 
                                                [| _SimpsonIntegral.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -275,12 +275,12 @@ module SimpsonIntegralFunction =
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).SetAbsoluteAccuracy
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : SimpsonIntegral) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpsonIntegral.source + ".SetAbsoluteAccuracy") 
+                let source () = Helper.sourceFold (_SimpsonIntegral.source + ".SetAbsoluteAccuracy") 
                                                [| _SimpsonIntegral.source
                                                ;  _accuracy.source
                                                |]
@@ -289,7 +289,7 @@ module SimpsonIntegralFunction =
                                 ;  _accuracy.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -317,12 +317,12 @@ module SimpsonIntegralFunction =
 
                 let _SimpsonIntegral = Helper.toCell<SimpsonIntegral> simpsonintegral "SimpsonIntegral"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).SetMaxEvaluations
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : SimpsonIntegral) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SimpsonIntegral.source + ".SetMaxEvaluations") 
+                let source () = Helper.sourceFold (_SimpsonIntegral.source + ".SetMaxEvaluations") 
                                                [| _SimpsonIntegral.source
                                                ;  _maxEvaluations.source
                                                |]
@@ -331,7 +331,7 @@ module SimpsonIntegralFunction =
                                 ;  _maxEvaluations.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -365,14 +365,14 @@ module SimpsonIntegralFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((SimpsonIntegralModel.Cast _SimpsonIntegral.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SimpsonIntegral.source + ".Value") 
+                let source () = Helper.sourceFold (_SimpsonIntegral.source + ".Value") 
                                                [| _SimpsonIntegral.source
                                                ;  _f.source
                                                ;  _a.source
@@ -385,7 +385,7 @@ module SimpsonIntegralFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -414,14 +414,14 @@ module SimpsonIntegralFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SimpsonIntegral>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SimpsonIntegral>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SimpsonIntegral>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SimpsonIntegral>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

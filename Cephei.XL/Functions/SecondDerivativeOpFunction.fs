@@ -52,13 +52,13 @@ module SecondDerivativeOpFunction =
 
                 let _direction = Helper.toCell<int> direction "direction" 
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
-                let builder () = withMnemonic mnemonic (Fun.SecondDerivativeOp 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SecondDerivativeOp 
                                                             _direction.cell 
                                                             _mesher.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SecondDerivativeOp>) l
 
-                let source = Helper.sourceFold "Fun.SecondDerivativeOp" 
+                let source () = Helper.sourceFold "Fun.SecondDerivativeOp" 
                                                [| _direction.source
                                                ;  _mesher.source
                                                |]
@@ -67,7 +67,7 @@ module SecondDerivativeOpFunction =
                                 ;  _mesher.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -92,19 +92,19 @@ module SecondDerivativeOpFunction =
             try
 
                 let _rhs = Helper.toCell<SecondDerivativeOp> rhs "rhs" 
-                let builder () = withMnemonic mnemonic (Fun.SecondDerivativeOp1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SecondDerivativeOp1 
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SecondDerivativeOp>) l
 
-                let source = Helper.sourceFold "Fun.SecondDerivativeOp1" 
+                let source () = Helper.sourceFold "Fun.SecondDerivativeOp1" 
                                                [| _rhs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rhs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -136,13 +136,13 @@ module SecondDerivativeOpFunction =
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Add") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Add") 
                                                [| _SecondDerivativeOp.source
                                                ;  _A.source
                                                ;  _B.source
@@ -153,7 +153,7 @@ module SecondDerivativeOpFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -182,12 +182,12 @@ module SecondDerivativeOpFunction =
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _u = Helper.toCell<Vector> u "u" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Add1
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Add1
                                                             _u.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Add") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Add") 
                                                [| _SecondDerivativeOp.source
                                                ;  _u.source
                                                |]
@@ -196,7 +196,7 @@ module SecondDerivativeOpFunction =
                                 ;  _u.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -225,12 +225,12 @@ module SecondDerivativeOpFunction =
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _m = Helper.toCell<TripleBandLinearOp> m "m" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Add2
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Add2
                                                             _m.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Add") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Add") 
                                                [| _SecondDerivativeOp.source
                                                ;  _m.source
                                                |]
@@ -239,7 +239,7 @@ module SecondDerivativeOpFunction =
                                 ;  _m.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -268,12 +268,12 @@ module SecondDerivativeOpFunction =
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Apply
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Apply
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Apply") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Apply") 
                                                [| _SecondDerivativeOp.source
                                                ;  _r.source
                                                |]
@@ -282,7 +282,7 @@ module SecondDerivativeOpFunction =
                                 ;  _r.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -310,12 +310,12 @@ module SecondDerivativeOpFunction =
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".ApplyTo") 
                                                [| _SecondDerivativeOp.source
                                                ;  _v.source
                                                |]
@@ -324,7 +324,7 @@ module SecondDerivativeOpFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -361,7 +361,7 @@ module SecondDerivativeOpFunction =
                 let _x = Helper.toCell<TripleBandLinearOp> x "x" 
                 let _y = Helper.toCell<TripleBandLinearOp> y "y" 
                 let _b = Helper.toCell<Vector> b "b" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Axpyb
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Axpyb
                                                             _a.cell 
                                                             _x.cell 
                                                             _y.cell 
@@ -369,7 +369,7 @@ module SecondDerivativeOpFunction =
                                                        ) :> ICell
                 let format (o : SecondDerivativeOp) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Axpyb") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Axpyb") 
                                                [| _SecondDerivativeOp.source
                                                ;  _a.source
                                                ;  _x.source
@@ -384,7 +384,7 @@ module SecondDerivativeOpFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -409,18 +409,18 @@ module SecondDerivativeOpFunction =
             try
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Clone") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Clone") 
                                                [| _SecondDerivativeOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SecondDerivativeOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -448,12 +448,12 @@ module SecondDerivativeOpFunction =
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Identity
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Identity") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Identity") 
                                                [| _SecondDerivativeOp.source
                                                ;  _size.source
                                                |]
@@ -462,7 +462,7 @@ module SecondDerivativeOpFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -487,18 +487,18 @@ module SecondDerivativeOpFunction =
             try
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).IsTimeDependent
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".IsTimeDependent") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".IsTimeDependent") 
                                                [| _SecondDerivativeOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SecondDerivativeOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -526,12 +526,12 @@ module SecondDerivativeOpFunction =
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _u = Helper.toCell<Vector> u "u" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Mult
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Mult
                                                             _u.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Mult") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Mult") 
                                                [| _SecondDerivativeOp.source
                                                ;  _u.source
                                                |]
@@ -540,7 +540,7 @@ module SecondDerivativeOpFunction =
                                 ;  _u.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -571,13 +571,13 @@ module SecondDerivativeOpFunction =
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _a = Helper.toCell<double> a "a" 
                 let _D = Helper.toCell<IOperator> D "D" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Multiply
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Multiply
                                                             _a.cell 
                                                             _D.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Multiply") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Multiply") 
                                                [| _SecondDerivativeOp.source
                                                ;  _a.source
                                                ;  _D.source
@@ -588,7 +588,7 @@ module SecondDerivativeOpFunction =
                                 ;  _D.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -616,12 +616,12 @@ module SecondDerivativeOpFunction =
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _u = Helper.toCell<Vector> u "u" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).MultR
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).MultR
                                                             _u.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".MultR") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".MultR") 
                                                [| _SecondDerivativeOp.source
                                                ;  _u.source
                                                |]
@@ -630,7 +630,7 @@ module SecondDerivativeOpFunction =
                                 ;  _u.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -658,12 +658,12 @@ module SecondDerivativeOpFunction =
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : SecondDerivativeOp) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".SetTime") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".SetTime") 
                                                [| _SecondDerivativeOp.source
                                                ;  _t.source
                                                |]
@@ -672,7 +672,7 @@ module SecondDerivativeOpFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -697,18 +697,18 @@ module SecondDerivativeOpFunction =
             try
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Size") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Size") 
                                                [| _SecondDerivativeOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SecondDerivativeOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -742,14 +742,14 @@ module SecondDerivativeOpFunction =
                 let _r = Helper.toCell<Vector> r "r" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Solve_splitting
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Solve_splitting
                                                             _r.cell 
                                                             _a.cell 
                                                             _b.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Solve_splitting") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Solve_splitting") 
                                                [| _SecondDerivativeOp.source
                                                ;  _r.source
                                                ;  _a.source
@@ -762,7 +762,7 @@ module SecondDerivativeOpFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -790,12 +790,12 @@ module SecondDerivativeOpFunction =
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).SolveFor
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".SolveFor") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".SolveFor") 
                                                [| _SecondDerivativeOp.source
                                                ;  _rhs.source
                                                |]
@@ -804,7 +804,7 @@ module SecondDerivativeOpFunction =
                                 ;  _rhs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -835,13 +835,13 @@ module SecondDerivativeOpFunction =
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Subtract
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Subtract") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Subtract") 
                                                [| _SecondDerivativeOp.source
                                                ;  _A.source
                                                ;  _B.source
@@ -852,7 +852,7 @@ module SecondDerivativeOpFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -880,12 +880,12 @@ module SecondDerivativeOpFunction =
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
                 let _m = Helper.toCell<TripleBandLinearOp> m "m" 
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Swap
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).Swap
                                                             _m.cell 
                                                        ) :> ICell
                 let format (o : SecondDerivativeOp) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".Swap") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".Swap") 
                                                [| _SecondDerivativeOp.source
                                                ;  _m.source
                                                |]
@@ -894,7 +894,7 @@ module SecondDerivativeOpFunction =
                                 ;  _m.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -919,18 +919,18 @@ module SecondDerivativeOpFunction =
             try
 
                 let _SecondDerivativeOp = Helper.toCell<SecondDerivativeOp> secondderivativeop "SecondDerivativeOp"  
-                let builder () = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).ToMatrix
+                let builder (current : ICell) = withMnemonic mnemonic ((SecondDerivativeOpModel.Cast _SecondDerivativeOp.cell).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
 
-                let source = Helper.sourceFold (_SecondDerivativeOp.source + ".ToMatrix") 
+                let source () = Helper.sourceFold (_SecondDerivativeOp.source + ".ToMatrix") 
                                                [| _SecondDerivativeOp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SecondDerivativeOp.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SecondDerivativeOp> format
                     ; source = source 
@@ -959,14 +959,14 @@ module SecondDerivativeOpFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SecondDerivativeOp>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SecondDerivativeOp>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SecondDerivativeOp>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SecondDerivativeOp>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

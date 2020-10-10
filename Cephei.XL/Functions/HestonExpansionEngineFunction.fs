@@ -53,13 +53,13 @@ module HestonExpansionEngineFunction =
 
                 let _model = Helper.toCell<HestonModel> model "model" 
                 let _formula = Helper.toCell<HestonExpansionEngine.HestonExpansionFormula> formula "formula" 
-                let builder () = withMnemonic mnemonic (Fun.HestonExpansionEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.HestonExpansionEngine 
                                                             _model.cell 
                                                             _formula.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HestonExpansionEngine>) l
 
-                let source = Helper.sourceFold "Fun.HestonExpansionEngine" 
+                let source () = Helper.sourceFold "Fun.HestonExpansionEngine" 
                                                [| _model.source
                                                ;  _formula.source
                                                |]
@@ -68,7 +68,7 @@ module HestonExpansionEngineFunction =
                                 ;  _formula.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<HestonExpansionEngine> format
                     ; source = source 
@@ -97,12 +97,12 @@ module HestonExpansionEngineFunction =
 
                 let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonExpansionEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_HestonExpansionEngine.source + ".SetModel") 
                                                [| _HestonExpansionEngine.source
                                                ;  _model.source
                                                |]
@@ -111,7 +111,7 @@ module HestonExpansionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -139,12 +139,12 @@ module HestonExpansionEngineFunction =
 
                 let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonExpansionEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_HestonExpansionEngine.source + ".RegisterWith") 
                                                [| _HestonExpansionEngine.source
                                                ;  _handler.source
                                                |]
@@ -153,7 +153,7 @@ module HestonExpansionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -178,18 +178,18 @@ module HestonExpansionEngineFunction =
             try
 
                 let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
-                let builder () = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonExpansionEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_HestonExpansionEngine.source + ".Reset") 
                                                [| _HestonExpansionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonExpansionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -217,12 +217,12 @@ module HestonExpansionEngineFunction =
 
                 let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonExpansionEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_HestonExpansionEngine.source + ".UnregisterWith") 
                                                [| _HestonExpansionEngine.source
                                                ;  _handler.source
                                                |]
@@ -231,7 +231,7 @@ module HestonExpansionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -256,18 +256,18 @@ module HestonExpansionEngineFunction =
             try
 
                 let _HestonExpansionEngine = Helper.toCell<HestonExpansionEngine> hestonexpansionengine "HestonExpansionEngine"  
-                let builder () = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((HestonExpansionEngineModel.Cast _HestonExpansionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : HestonExpansionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_HestonExpansionEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_HestonExpansionEngine.source + ".Update") 
                                                [| _HestonExpansionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonExpansionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,14 +296,14 @@ module HestonExpansionEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<HestonExpansionEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<HestonExpansionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<HestonExpansionEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<HestonExpansionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

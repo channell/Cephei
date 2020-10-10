@@ -52,12 +52,12 @@ module MaxBasketPayoffFunction =
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Accumulate
+                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Accumulate
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MaxBasketPayoff.source + ".Accumulate") 
+                let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Accumulate") 
                                                [| _MaxBasketPayoff.source
                                                ;  _a.source
                                                |]
@@ -66,7 +66,7 @@ module MaxBasketPayoffFunction =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,19 +91,19 @@ module MaxBasketPayoffFunction =
             try
 
                 let _p = Helper.toCell<Payoff> p "p" 
-                let builder () = withMnemonic mnemonic (Fun.MaxBasketPayoff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.MaxBasketPayoff 
                                                             _p.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MaxBasketPayoff>) l
 
-                let source = Helper.sourceFold "Fun.MaxBasketPayoff" 
+                let source () = Helper.sourceFold "Fun.MaxBasketPayoff" 
                                                [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MaxBasketPayoff> format
                     ; source = source 
@@ -128,18 +128,18 @@ module MaxBasketPayoffFunction =
             try
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).BasePayoff
+                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_MaxBasketPayoff.source + ".BasePayoff") 
+                let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".BasePayoff") 
                                                [| _MaxBasketPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MaxBasketPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<MaxBasketPayoff> format
                     ; source = source 
@@ -164,18 +164,18 @@ module MaxBasketPayoffFunction =
             try
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MaxBasketPayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Description") 
                                                [| _MaxBasketPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MaxBasketPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -200,18 +200,18 @@ module MaxBasketPayoffFunction =
             try
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MaxBasketPayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Name") 
                                                [| _MaxBasketPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MaxBasketPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -239,12 +239,12 @@ module MaxBasketPayoffFunction =
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Value1
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MaxBasketPayoff.source + ".Value1") 
+                let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Value1") 
                                                [| _MaxBasketPayoff.source
                                                ;  _a.source
                                                |]
@@ -253,7 +253,7 @@ module MaxBasketPayoffFunction =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -281,12 +281,12 @@ module MaxBasketPayoffFunction =
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_MaxBasketPayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Value") 
                                                [| _MaxBasketPayoff.source
                                                ;  _price.source
                                                |]
@@ -295,7 +295,7 @@ module MaxBasketPayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -323,12 +323,12 @@ module MaxBasketPayoffFunction =
 
                 let _MaxBasketPayoff = Helper.toCell<MaxBasketPayoff> maxbasketpayoff "MaxBasketPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((MaxBasketPayoffModel.Cast _MaxBasketPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : MaxBasketPayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_MaxBasketPayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Accept") 
                                                [| _MaxBasketPayoff.source
                                                ;  _v.source
                                                |]
@@ -337,7 +337,7 @@ module MaxBasketPayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -366,14 +366,14 @@ module MaxBasketPayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<MaxBasketPayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<MaxBasketPayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<MaxBasketPayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<MaxBasketPayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

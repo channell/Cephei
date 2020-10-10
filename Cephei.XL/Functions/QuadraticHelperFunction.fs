@@ -49,18 +49,18 @@ module QuadraticHelperFunction =
             try
 
                 let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
-                let builder () = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).FNext
+                let builder (current : ICell) = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_QuadraticHelper.source + ".FNext") 
+                let source () = Helper.sourceFold (_QuadraticHelper.source + ".FNext") 
                                                [| _QuadraticHelper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _QuadraticHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -88,12 +88,12 @@ module QuadraticHelperFunction =
 
                 let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_QuadraticHelper.source + ".Primitive") 
+                let source () = Helper.sourceFold (_QuadraticHelper.source + ".Primitive") 
                                                [| _QuadraticHelper.source
                                                ;  _x.source
                                                |]
@@ -102,7 +102,7 @@ module QuadraticHelperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -142,7 +142,7 @@ module QuadraticHelperFunction =
                 let _fNext = Helper.toCell<double> fNext "fNext" 
                 let _fAverage = Helper.toCell<double> fAverage "fAverage" 
                 let _prevPrimitive = Helper.toCell<double> prevPrimitive "prevPrimitive" 
-                let builder () = withMnemonic mnemonic (Fun.QuadraticHelper 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.QuadraticHelper 
                                                             _xPrev.cell 
                                                             _xNext.cell 
                                                             _fPrev.cell 
@@ -152,7 +152,7 @@ module QuadraticHelperFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<QuadraticHelper>) l
 
-                let source = Helper.sourceFold "Fun.QuadraticHelper" 
+                let source () = Helper.sourceFold "Fun.QuadraticHelper" 
                                                [| _xPrev.source
                                                ;  _xNext.source
                                                ;  _fPrev.source
@@ -169,7 +169,7 @@ module QuadraticHelperFunction =
                                 ;  _prevPrimitive.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<QuadraticHelper> format
                     ; source = source 
@@ -197,12 +197,12 @@ module QuadraticHelperFunction =
 
                 let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_QuadraticHelper.source + ".Value") 
+                let source () = Helper.sourceFold (_QuadraticHelper.source + ".Value") 
                                                [| _QuadraticHelper.source
                                                ;  _x.source
                                                |]
@@ -211,7 +211,7 @@ module QuadraticHelperFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -240,14 +240,14 @@ module QuadraticHelperFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<QuadraticHelper>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<QuadraticHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<QuadraticHelper>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<QuadraticHelper>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

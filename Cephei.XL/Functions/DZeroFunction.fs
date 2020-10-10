@@ -52,13 +52,13 @@ module DZeroFunction =
 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _h = Helper.toCell<double> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.DZero 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DZero 
                                                             _gridPoints.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DZero>) l
 
-                let source = Helper.sourceFold "Fun.DZero" 
+                let source () = Helper.sourceFold "Fun.DZero" 
                                                [| _gridPoints.source
                                                ;  _h.source
                                                |]
@@ -67,7 +67,7 @@ module DZeroFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -99,13 +99,13 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_DZero.source + ".Add") 
+                let source () = Helper.sourceFold (_DZero.source + ".Add") 
                                                [| _DZero.source
                                                ;  _A.source
                                                ;  _B.source
@@ -116,7 +116,7 @@ module DZeroFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -145,12 +145,12 @@ module DZeroFunction =
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DZero.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_DZero.source + ".ApplyTo") 
                                                [| _DZero.source
                                                ;  _v.source
                                                |]
@@ -159,7 +159,7 @@ module DZeroFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -184,18 +184,18 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DZero.source + ".Clone") 
+                let source () = Helper.sourceFold (_DZero.source + ".Clone") 
                                                [| _DZero.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DZero.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -220,18 +220,18 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Diagonal
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DZero.source + ".Diagonal") 
+                let source () = Helper.sourceFold (_DZero.source + ".Diagonal") 
                                                [| _DZero.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DZero.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -259,12 +259,12 @@ module DZeroFunction =
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Identity
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_DZero.source + ".Identity") 
+                let source () = Helper.sourceFold (_DZero.source + ".Identity") 
                                                [| _DZero.source
                                                ;  _size.source
                                                |]
@@ -273,7 +273,7 @@ module DZeroFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -298,18 +298,18 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).IsTimeDependent
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DZero.source + ".IsTimeDependent") 
+                let source () = Helper.sourceFold (_DZero.source + ".IsTimeDependent") 
                                                [| _DZero.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DZero.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -334,18 +334,18 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).LowerDiagonal
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DZero.source + ".LowerDiagonal") 
+                let source () = Helper.sourceFold (_DZero.source + ".LowerDiagonal") 
                                                [| _DZero.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DZero.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -376,13 +376,13 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _a = Helper.toCell<double> a "a" 
                 let _o = Helper.toCell<IOperator> o "o" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Multiply
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Multiply
                                                             _a.cell 
                                                             _o.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_DZero.source + ".Multiply") 
+                let source () = Helper.sourceFold (_DZero.source + ".Multiply") 
                                                [| _DZero.source
                                                ;  _a.source
                                                ;  _o.source
@@ -393,7 +393,7 @@ module DZeroFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -424,13 +424,13 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetFirstRow
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetFirstRow
                                                             _valB.cell 
                                                             _valC.cell 
                                                        ) :> ICell
                 let format (o : DZero) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DZero.source + ".SetFirstRow") 
+                let source () = Helper.sourceFold (_DZero.source + ".SetFirstRow") 
                                                [| _DZero.source
                                                ;  _valB.source
                                                ;  _valC.source
@@ -441,7 +441,7 @@ module DZeroFunction =
                                 ;  _valC.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -472,13 +472,13 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetLastRow
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetLastRow
                                                             _valA.cell 
                                                             _valB.cell 
                                                        ) :> ICell
                 let format (o : DZero) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DZero.source + ".SetLastRow") 
+                let source () = Helper.sourceFold (_DZero.source + ".SetLastRow") 
                                                [| _DZero.source
                                                ;  _valA.source
                                                ;  _valB.source
@@ -489,7 +489,7 @@ module DZeroFunction =
                                 ;  _valB.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -526,7 +526,7 @@ module DZeroFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetMidRow
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetMidRow
                                                             _i.cell 
                                                             _valA.cell 
                                                             _valB.cell 
@@ -534,7 +534,7 @@ module DZeroFunction =
                                                        ) :> ICell
                 let format (o : DZero) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DZero.source + ".SetMidRow") 
+                let source () = Helper.sourceFold (_DZero.source + ".SetMidRow") 
                                                [| _DZero.source
                                                ;  _i.source
                                                ;  _valA.source
@@ -549,7 +549,7 @@ module DZeroFunction =
                                 ;  _valC.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -583,14 +583,14 @@ module DZeroFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetMidRows
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetMidRows
                                                             _valA.cell 
                                                             _valB.cell 
                                                             _valC.cell 
                                                        ) :> ICell
                 let format (o : DZero) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DZero.source + ".SetMidRows") 
+                let source () = Helper.sourceFold (_DZero.source + ".SetMidRows") 
                                                [| _DZero.source
                                                ;  _valA.source
                                                ;  _valB.source
@@ -603,7 +603,7 @@ module DZeroFunction =
                                 ;  _valC.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -631,12 +631,12 @@ module DZeroFunction =
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DZero) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DZero.source + ".SetTime") 
+                let source () = Helper.sourceFold (_DZero.source + ".SetTime") 
                                                [| _DZero.source
                                                ;  _t.source
                                                |]
@@ -645,7 +645,7 @@ module DZeroFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -670,18 +670,18 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DZero.source + ".Size") 
+                let source () = Helper.sourceFold (_DZero.source + ".Size") 
                                                [| _DZero.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DZero.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -709,12 +709,12 @@ module DZeroFunction =
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SolveFor
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DZero.source + ".SolveFor") 
+                let source () = Helper.sourceFold (_DZero.source + ".SolveFor") 
                                                [| _DZero.source
                                                ;  _rhs.source
                                                |]
@@ -723,7 +723,7 @@ module DZeroFunction =
                                 ;  _rhs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -754,13 +754,13 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let _tol = Helper.toCell<double> tol "tol" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SOR
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SOR
                                                             _rhs.cell 
                                                             _tol.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DZero.source + ".SOR") 
+                let source () = Helper.sourceFold (_DZero.source + ".SOR") 
                                                [| _DZero.source
                                                ;  _rhs.source
                                                ;  _tol.source
@@ -771,7 +771,7 @@ module DZeroFunction =
                                 ;  _tol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -802,13 +802,13 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Subtract
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_DZero.source + ".Subtract") 
+                let source () = Helper.sourceFold (_DZero.source + ".Subtract") 
                                                [| _DZero.source
                                                ;  _A.source
                                                ;  _B.source
@@ -819,7 +819,7 @@ module DZeroFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -844,18 +844,18 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).UpperDiagonal
+                let builder (current : ICell) = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DZero.source + ".UpperDiagonal") 
+                let source () = Helper.sourceFold (_DZero.source + ".UpperDiagonal") 
                                                [| _DZero.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DZero.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DZero> format
                     ; source = source 
@@ -884,14 +884,14 @@ module DZeroFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DZero>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DZero>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DZero>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DZero>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

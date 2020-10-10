@@ -65,7 +65,7 @@ module FdHullWhiteSwaptionEngineFunction =
                 let _dampingSteps = Helper.toDefault<int> dampingSteps "dampingSteps" 0
                 let _invEps = Helper.toDefault<double> invEps "invEps" 1e-5
                 let _schemeDesc = Helper.toDefault<FdmSchemeDesc> schemeDesc "schemeDesc" null
-                let builder () = withMnemonic mnemonic (Fun.FdHullWhiteSwaptionEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdHullWhiteSwaptionEngine 
                                                             _model.cell 
                                                             _tGrid.cell 
                                                             _xGrid.cell 
@@ -75,7 +75,7 @@ module FdHullWhiteSwaptionEngineFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdHullWhiteSwaptionEngine>) l
 
-                let source = Helper.sourceFold "Fun.FdHullWhiteSwaptionEngine" 
+                let source () = Helper.sourceFold "Fun.FdHullWhiteSwaptionEngine" 
                                                [| _model.source
                                                ;  _tGrid.source
                                                ;  _xGrid.source
@@ -92,7 +92,7 @@ module FdHullWhiteSwaptionEngineFunction =
                                 ;  _schemeDesc.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdHullWhiteSwaptionEngine> format
                     ; source = source 
@@ -121,12 +121,12 @@ module FdHullWhiteSwaptionEngineFunction =
 
                 let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).SetModel
+                let builder (current : ICell) = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".SetModel") 
+                let source () = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".SetModel") 
                                                [| _FdHullWhiteSwaptionEngine.source
                                                ;  _model.source
                                                |]
@@ -135,7 +135,7 @@ module FdHullWhiteSwaptionEngineFunction =
                                 ;  _model.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -163,12 +163,12 @@ module FdHullWhiteSwaptionEngineFunction =
 
                 let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".RegisterWith") 
                                                [| _FdHullWhiteSwaptionEngine.source
                                                ;  _handler.source
                                                |]
@@ -177,7 +177,7 @@ module FdHullWhiteSwaptionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -202,18 +202,18 @@ module FdHullWhiteSwaptionEngineFunction =
             try
 
                 let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).Reset
+                let builder (current : ICell) = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".Reset") 
+                let source () = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".Reset") 
                                                [| _FdHullWhiteSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdHullWhiteSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -241,12 +241,12 @@ module FdHullWhiteSwaptionEngineFunction =
 
                 let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".UnregisterWith") 
                                                [| _FdHullWhiteSwaptionEngine.source
                                                ;  _handler.source
                                                |]
@@ -255,7 +255,7 @@ module FdHullWhiteSwaptionEngineFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -280,18 +280,18 @@ module FdHullWhiteSwaptionEngineFunction =
             try
 
                 let _FdHullWhiteSwaptionEngine = Helper.toCell<FdHullWhiteSwaptionEngine> fdhullwhiteswaptionengine "FdHullWhiteSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FdHullWhiteSwaptionEngineModel.Cast _FdHullWhiteSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".Update") 
+                let source () = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".Update") 
                                                [| _FdHullWhiteSwaptionEngine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdHullWhiteSwaptionEngine.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,14 +320,14 @@ module FdHullWhiteSwaptionEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdHullWhiteSwaptionEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdHullWhiteSwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdHullWhiteSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdHullWhiteSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

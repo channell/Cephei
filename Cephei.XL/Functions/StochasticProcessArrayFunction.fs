@@ -55,13 +55,13 @@ module StochasticProcessArrayFunction =
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Apply
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Apply") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Apply") 
                                                [| _StochasticProcessArray.source
                                                ;  _x0.source
                                                ;  _dx.source
@@ -72,7 +72,7 @@ module StochasticProcessArrayFunction =
                                 ;  _dx.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -97,18 +97,18 @@ module StochasticProcessArrayFunction =
             try
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Correlation
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Correlation
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Correlation") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Correlation") 
                                                [| _StochasticProcessArray.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StochasticProcessArray.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -142,14 +142,14 @@ module StochasticProcessArrayFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Covariance
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Covariance") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Covariance") 
                                                [| _StochasticProcessArray.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -162,7 +162,7 @@ module StochasticProcessArrayFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -193,13 +193,13 @@ module StochasticProcessArrayFunction =
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Diffusion
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Diffusion") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Diffusion") 
                                                [| _StochasticProcessArray.source
                                                ;  _t.source
                                                ;  _x.source
@@ -210,7 +210,7 @@ module StochasticProcessArrayFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -241,13 +241,13 @@ module StochasticProcessArrayFunction =
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Drift
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Drift") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Drift") 
                                                [| _StochasticProcessArray.source
                                                ;  _t.source
                                                ;  _x.source
@@ -258,7 +258,7 @@ module StochasticProcessArrayFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -295,7 +295,7 @@ module StochasticProcessArrayFunction =
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<Vector> dw "dw" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Evolve
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -303,7 +303,7 @@ module StochasticProcessArrayFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Evolve") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Evolve") 
                                                [| _StochasticProcessArray.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -318,7 +318,7 @@ module StochasticProcessArrayFunction =
                                 ;  _dw.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -352,14 +352,14 @@ module StochasticProcessArrayFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Expectation
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Expectation") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Expectation") 
                                                [| _StochasticProcessArray.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -372,7 +372,7 @@ module StochasticProcessArrayFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -397,18 +397,18 @@ module StochasticProcessArrayFunction =
             try
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).InitialValues
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".InitialValues") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".InitialValues") 
                                                [| _StochasticProcessArray.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StochasticProcessArray.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -436,12 +436,12 @@ module StochasticProcessArrayFunction =
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Process
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Process
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<StochasticProcess1D>) l
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".PROCESS") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".PROCESS") 
                                                [| _StochasticProcessArray.source
                                                ;  _i.source
                                                |]
@@ -450,7 +450,7 @@ module StochasticProcessArrayFunction =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -475,18 +475,18 @@ module StochasticProcessArrayFunction =
             try
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Size") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Size") 
                                                [| _StochasticProcessArray.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StochasticProcessArray.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -520,14 +520,14 @@ module StochasticProcessArrayFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).StdDeviation
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".StdDeviation") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".StdDeviation") 
                                                [| _StochasticProcessArray.source
                                                ;  _t0.source
                                                ;  _x0.source
@@ -540,7 +540,7 @@ module StochasticProcessArrayFunction =
                                 ;  _dt.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -568,13 +568,13 @@ module StochasticProcessArrayFunction =
 
                 let _processes = Helper.toCell<Generic.List<StochasticProcess1D>> processes "processes" 
                 let _correlation = Helper.toCell<Matrix> correlation "correlation" 
-                let builder () = withMnemonic mnemonic (Fun.StochasticProcessArray 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.StochasticProcessArray 
                                                             _processes.cell 
                                                             _correlation.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<StochasticProcessArray>) l
 
-                let source = Helper.sourceFold "Fun.StochasticProcessArray" 
+                let source () = Helper.sourceFold "Fun.StochasticProcessArray" 
                                                [| _processes.source
                                                ;  _correlation.source
                                                |]
@@ -583,7 +583,7 @@ module StochasticProcessArrayFunction =
                                 ;  _correlation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<StochasticProcessArray> format
                     ; source = source 
@@ -611,12 +611,12 @@ module StochasticProcessArrayFunction =
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Time
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Time
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Time") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Time") 
                                                [| _StochasticProcessArray.source
                                                ;  _d.source
                                                |]
@@ -625,7 +625,7 @@ module StochasticProcessArrayFunction =
                                 ;  _d.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -650,18 +650,18 @@ module StochasticProcessArrayFunction =
             try
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Factors
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Factors") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Factors") 
                                                [| _StochasticProcessArray.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StochasticProcessArray.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -689,12 +689,12 @@ module StochasticProcessArrayFunction =
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : StochasticProcessArray) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".RegisterWith") 
                                                [| _StochasticProcessArray.source
                                                ;  _handler.source
                                                |]
@@ -703,7 +703,7 @@ module StochasticProcessArrayFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -731,12 +731,12 @@ module StochasticProcessArrayFunction =
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : StochasticProcessArray) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".UnregisterWith") 
                                                [| _StochasticProcessArray.source
                                                ;  _handler.source
                                                |]
@@ -745,7 +745,7 @@ module StochasticProcessArrayFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -770,18 +770,18 @@ module StochasticProcessArrayFunction =
             try
 
                 let _StochasticProcessArray = Helper.toCell<StochasticProcessArray> stochasticprocessarray "StochasticProcessArray"  
-                let builder () = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((StochasticProcessArrayModel.Cast _StochasticProcessArray.cell).Update
                                                        ) :> ICell
                 let format (o : StochasticProcessArray) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_StochasticProcessArray.source + ".Update") 
+                let source () = Helper.sourceFold (_StochasticProcessArray.source + ".Update") 
                                                [| _StochasticProcessArray.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StochasticProcessArray.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -810,14 +810,14 @@ module StochasticProcessArrayFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<StochasticProcessArray>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<StochasticProcessArray>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<StochasticProcessArray>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<StochasticProcessArray>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,12 +52,12 @@ module FdmBlackScholesSolverFunction =
 
                 let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).DeltaAt
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).DeltaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmBlackScholesSolver.source + ".DeltaAt") 
+                let source () = Helper.sourceFold (_FdmBlackScholesSolver.source + ".DeltaAt") 
                                                [| _FdmBlackScholesSolver.source
                                                ;  _s.source
                                                |]
@@ -66,7 +66,7 @@ module FdmBlackScholesSolverFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -109,7 +109,7 @@ module FdmBlackScholesSolverFunction =
                 let _localVol = Helper.toDefault<bool> localVol "localVol" false
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
                 let _quantoHelper = Helper.toHandle<FdmQuantoHelper> quantoHelper "quantoHelper" 
-                let builder () = withMnemonic mnemonic (Fun.FdmBlackScholesSolver 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmBlackScholesSolver 
                                                             _Process.cell 
                                                             _strike.cell 
                                                             _solverDesc.cell 
@@ -120,7 +120,7 @@ module FdmBlackScholesSolverFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmBlackScholesSolver>) l
 
-                let source = Helper.sourceFold "Fun.FdmBlackScholesSolver" 
+                let source () = Helper.sourceFold "Fun.FdmBlackScholesSolver" 
                                                [| _Process.source
                                                ;  _strike.source
                                                ;  _solverDesc.source
@@ -139,7 +139,7 @@ module FdmBlackScholesSolverFunction =
                                 ;  _quantoHelper.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FdmBlackScholesSolver> format
                     ; source = source 
@@ -167,12 +167,12 @@ module FdmBlackScholesSolverFunction =
 
                 let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).GammaAt
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).GammaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmBlackScholesSolver.source + ".GammaAt") 
+                let source () = Helper.sourceFold (_FdmBlackScholesSolver.source + ".GammaAt") 
                                                [| _FdmBlackScholesSolver.source
                                                ;  _s.source
                                                |]
@@ -181,7 +181,7 @@ module FdmBlackScholesSolverFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,12 +209,12 @@ module FdmBlackScholesSolverFunction =
 
                 let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).ThetaAt
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).ThetaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmBlackScholesSolver.source + ".ThetaAt") 
+                let source () = Helper.sourceFold (_FdmBlackScholesSolver.source + ".ThetaAt") 
                                                [| _FdmBlackScholesSolver.source
                                                ;  _s.source
                                                |]
@@ -223,7 +223,7 @@ module FdmBlackScholesSolverFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -251,12 +251,12 @@ module FdmBlackScholesSolverFunction =
 
                 let _FdmBlackScholesSolver = Helper.toCell<FdmBlackScholesSolver> fdmblackscholessolver "FdmBlackScholesSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).ValueAt
+                let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesSolverModel.Cast _FdmBlackScholesSolver.cell).ValueAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FdmBlackScholesSolver.source + ".ValueAt") 
+                let source () = Helper.sourceFold (_FdmBlackScholesSolver.source + ".ValueAt") 
                                                [| _FdmBlackScholesSolver.source
                                                ;  _s.source
                                                |]
@@ -265,7 +265,7 @@ module FdmBlackScholesSolverFunction =
                                 ;  _s.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -294,14 +294,14 @@ module FdmBlackScholesSolverFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FdmBlackScholesSolver>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FdmBlackScholesSolver>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FdmBlackScholesSolver>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FdmBlackScholesSolver>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

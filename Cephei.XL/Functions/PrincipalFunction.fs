@@ -49,18 +49,18 @@ module PrincipalFunction =
             try
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).AccrualEndDate
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".AccrualEndDate") 
+                let source () = Helper.sourceFold (_Principal.source + ".AccrualEndDate") 
                                                [| _Principal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -85,18 +85,18 @@ module PrincipalFunction =
             try
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).AccrualStartDate
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".AccrualStartDate") 
+                let source () = Helper.sourceFold (_Principal.source + ".AccrualStartDate") 
                                                [| _Principal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -121,18 +121,18 @@ module PrincipalFunction =
             try
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).Amount
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".Amount") 
+                let source () = Helper.sourceFold (_Principal.source + ".Amount") 
                                                [| _Principal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -157,18 +157,18 @@ module PrincipalFunction =
             try
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".Date") 
+                let source () = Helper.sourceFold (_Principal.source + ".Date") 
                                                [| _Principal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -193,18 +193,18 @@ module PrincipalFunction =
             try
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Principal.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Principal.source + ".DayCounter") 
                                                [| _Principal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Principal> format
                     ; source = source 
@@ -229,18 +229,18 @@ module PrincipalFunction =
             try
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).Nominal
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".Nominal") 
+                let source () = Helper.sourceFold (_Principal.source + ".Nominal") 
                                                [| _Principal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -262,16 +262,16 @@ module PrincipalFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Principal ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Principal ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Principal>) l
 
-                let source = Helper.sourceFold "Fun.Principal" 
+                let source () = Helper.sourceFold "Fun.Principal" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Principal> format
                     ; source = source 
@@ -317,7 +317,7 @@ module PrincipalFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
-                let builder () = withMnemonic mnemonic (Fun.Principal1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Principal1 
                                                             _amount.cell 
                                                             _nominal.cell 
                                                             _paymentDate.cell 
@@ -329,7 +329,7 @@ module PrincipalFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Principal>) l
 
-                let source = Helper.sourceFold "Fun.Principal1" 
+                let source () = Helper.sourceFold "Fun.Principal1" 
                                                [| _amount.source
                                                ;  _nominal.source
                                                ;  _paymentDate.source
@@ -350,7 +350,7 @@ module PrincipalFunction =
                                 ;  _refPeriodEnd.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Principal> format
                     ; source = source 
@@ -375,18 +375,18 @@ module PrincipalFunction =
             try
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).RefPeriodEnd
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).RefPeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".RefPeriodEnd") 
+                let source () = Helper.sourceFold (_Principal.source + ".RefPeriodEnd") 
                                                [| _Principal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -411,18 +411,18 @@ module PrincipalFunction =
             try
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).RefPeriodStart
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).RefPeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".RefPeriodStart") 
+                let source () = Helper.sourceFold (_Principal.source + ".RefPeriodStart") 
                                                [| _Principal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -450,12 +450,12 @@ module PrincipalFunction =
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let _amount = Helper.toCell<double> amount "amount" 
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).SetAmount
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).SetAmount
                                                             _amount.cell 
                                                        ) :> ICell
                 let format (o : Principal) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".SetAmount") 
+                let source () = Helper.sourceFold (_Principal.source + ".SetAmount") 
                                                [| _Principal.source
                                                ;  _amount.source
                                                |]
@@ -464,7 +464,7 @@ module PrincipalFunction =
                                 ;  _amount.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -492,12 +492,12 @@ module PrincipalFunction =
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).CompareTo
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".CompareTo") 
+                let source () = Helper.sourceFold (_Principal.source + ".CompareTo") 
                                                [| _Principal.source
                                                ;  _cf.source
                                                |]
@@ -506,7 +506,7 @@ module PrincipalFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -534,12 +534,12 @@ module PrincipalFunction =
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".Equals") 
+                let source () = Helper.sourceFold (_Principal.source + ".Equals") 
                                                [| _Principal.source
                                                ;  _cf.source
                                                |]
@@ -548,7 +548,7 @@ module PrincipalFunction =
                                 ;  _cf.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -573,18 +573,18 @@ module PrincipalFunction =
             try
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).ExCouponDate
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".ExCouponDate") 
+                let source () = Helper.sourceFold (_Principal.source + ".ExCouponDate") 
                                                [| _Principal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,13 +615,13 @@ module PrincipalFunction =
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_Principal.source + ".HasOccurred") 
                                                [| _Principal.source
                                                ;  _refDate.source
                                                ;  _includeRefDate.source
@@ -632,7 +632,7 @@ module PrincipalFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -660,12 +660,12 @@ module PrincipalFunction =
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).TradingExCoupon
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".TradingExCoupon") 
+                let source () = Helper.sourceFold (_Principal.source + ".TradingExCoupon") 
                                                [| _Principal.source
                                                ;  _refDate.source
                                                |]
@@ -674,7 +674,7 @@ module PrincipalFunction =
                                 ;  _refDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -702,12 +702,12 @@ module PrincipalFunction =
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : Principal) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".Accept") 
+                let source () = Helper.sourceFold (_Principal.source + ".Accept") 
                                                [| _Principal.source
                                                ;  _v.source
                                                |]
@@ -716,7 +716,7 @@ module PrincipalFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -744,12 +744,12 @@ module PrincipalFunction =
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Principal) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Principal.source + ".RegisterWith") 
                                                [| _Principal.source
                                                ;  _handler.source
                                                |]
@@ -758,7 +758,7 @@ module PrincipalFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -786,12 +786,12 @@ module PrincipalFunction =
 
                 let _Principal = Helper.toCell<Principal> principal "Principal"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((PrincipalModel.Cast _Principal.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Principal) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Principal.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Principal.source + ".UnregisterWith") 
                                                [| _Principal.source
                                                ;  _handler.source
                                                |]
@@ -800,7 +800,7 @@ module PrincipalFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -829,14 +829,14 @@ module PrincipalFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Principal>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Principal>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Principal>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Principal>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

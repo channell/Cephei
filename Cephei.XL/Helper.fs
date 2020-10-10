@@ -55,17 +55,17 @@ module Helper =
                     if o :? ICell<double> then
                         let cd = c :?> ICell<double>
                         { cell = triv (fun () -> (new Date(int (cd.Value)))) :?> ICell<'T>
-                        ; source = "(triv (fun () -> new Date(int (" + c.Mnemonic + ".Value))))"
+                        ; source =  "(triv (fun () -> new Date(int (" + c.Mnemonic + ".Value))))"
                         }
                     elif o :? ICell<DateTime> then
                         let ct = c :?> ICell<DateTime>
                         { cell = triv (fun () -> new Date(int (ct.Value.ToOADate()))) :?> ICell<'T>
-                        ; source = "(triv (fun () -> new Date(int (" + c.Mnemonic + ".Value.ToOADate())))"
+                        ; source =  "(triv (fun () -> new Date(int (" + c.Mnemonic + ".Value.ToOADate())))"
                         }
                     elif o :? ICell<int> then
                         let i = c :?> ICell<int>
                         { cell = triv (fun () -> new Date(i.Value)) :?> ICell<'T>
-                        ; source = "(triv (fun () -> new Date(" + c.Mnemonic + ".Value)))"
+                        ; source =  "(triv (fun () -> new Date(" + c.Mnemonic + ".Value)))"
                         }
                     else
                         { cell = c :?> ICell<'T>
@@ -75,11 +75,11 @@ module Helper =
                     let d = c :?> ICell<DateTime>
                     if typeof<'T> = typeof<int> then
                         { cell = withMnemonic c.Mnemonic (triv (fun () -> (Convert.ToInt32(d.Value.ToOADate()) :> obj) :?> 'T))
-                        ; source = "(triv (fun () -> " + s + ".ToOADate()))"
+                        ; source =  "(triv (fun () -> " + s + ".ToOADate()))"
                         }
                     else
                         { cell = withMnemonic c.Mnemonic (triv (fun () -> ((d.Value.ToOADate()) :> obj) :?> 'T))
-                        ; source = "(triv (fun () -> " + s + ".ToOADate()))"
+                        ; source =  "(triv (fun () -> " + s + ".ToOADate()))"
                         }
                 elif typeof<'T>.IsEnum then
                     let en = Enum.Parse(typeof<'T>, o.ToString()) :?> 'T
@@ -92,48 +92,48 @@ module Helper =
                     }
             else
                 { cell = (triv (fun () -> o :?> 'T))
-                ; source = "(triv (fun () -> " + s + " :?> " + typeof<'T>.Name + "))"
+                ; source =  "(triv (fun () -> " + s + " :?> " + typeof<'T>.Name + "))"
                 }
         elif o :? 'T then 
             { cell = (value (o :?> 'T))
-            ; source = "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + "))"
+            ; source =  "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + "))"
             }
         elif typeof<'T> = typeof<Date> &&  o :? double then
             if o :? double then
                 let d = o :?> double
                 { cell = triv (fun () -> (new Date(int (d)))) :?> ICell<'T> 
-                ; source = "(triv (fun () -> new Date(int (" + d.ToString() + ".Value))))"
+                ; source =  "(triv (fun () -> new Date(int (" + d.ToString() + ".Value))))"
                 }
             elif o :? DateTime then
                 let t = o :?> DateTime
                 { cell = triv (fun () -> new Date(int (t.ToOADate()))) :?> ICell<'T>
-                ; source = "(triv (fun () -> new Date(int (" + t.ToOADate().ToString() + "t.ToOADate()))))"
+                ; source =  "(triv (fun () -> new Date(int (" + t.ToOADate().ToString() + "t.ToOADate()))))"
                 }
             else
                 { cell = triv (fun () -> o :?> 'T)
-                ; source = "(triv (fun () -> " + o.ToString() + " :?> " + typeof<'T>.Name + "))"
+                ; source =  "(triv (fun () -> " + o.ToString() + " :?> " + typeof<'T>.Name + "))"
                 }
         else
             try
                 if typeof<'T> = typeof<int> then 
                     { cell = triv (fun () -> Convert.ToInt32(o) :> obj :?> 'T)
-                    ; source = "(triv (fun () -> Convert.ToInt32(" + o.ToString() + ")))"
+                    ; source =  "(triv (fun () -> Convert.ToInt32(" + o.ToString() + ")))"
                     }
                 elif typeof<'T> = typeof<double> then 
                     { cell = triv (fun () -> Convert.ToDouble(o) :> obj :?> 'T)
-                    ; source = "(triv (fun () -> Convert.ToDouble(" + o.ToString() + ")))"
+                    ; source =  "(triv (fun () -> Convert.ToDouble(" + o.ToString() + ")))"
                     }
                 elif typeof<'T> = typeof<int64> then 
                     { cell = triv (fun () -> Convert.ToInt64(o) :> obj :?> 'T)
-                    ; source = "(triv (fun () -> Convert.ToInt64(" + o.ToString() + ")))"
+                    ; source =  "(triv (fun () -> Convert.ToInt64(" + o.ToString() + ")))"
                     }
                 elif typeof<'T> = typeof<uint64> then 
                     { cell = triv (fun () -> Convert.ToUInt64(o) :> obj :?> 'T)
-                    ; source = "(triv (fun () -> Convert.ToInt64(" + o.ToString() + ")))"
+                    ; source =  "(triv (fun () -> Convert.ToInt64(" + o.ToString() + ")))"
                     }
                 elif typeof<'T> = typeof<string> then 
                     { cell = triv (fun () -> o.ToString() :> obj :?> 'T)
-                    ; source = "(triv (fun () -> \"" + o.ToString() + "\")))"
+                    ; source =  "(triv (fun () -> \"" + o.ToString() + "\")))"
                     }
                 else 
                     invalidArg (o.ToString()) ("Invalid " + attribute)
@@ -146,10 +146,10 @@ module Helper =
                 try
                     defaultValue.ToString()
                 with 
-                | _ -> "null"
+                | _ -> "(null :> " + typeof<'T>.Name
 
             { cell = withMnemonic attribute (value defaultValue)
-            ; source = "(value " + s + ")"
+            ; source =  "(value " + s + ")"
             }
         else
             toCell<'T> o attribute
@@ -164,16 +164,16 @@ module Helper =
                 if c:? ICell<'T> then 
                     let c = c :?> ICell<'T>
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle (c.Value)))
-                    ; source = "(triv (fun () -> toHandle (" + c.Mnemonic + ")))"
+                    ; source =  "(triv (fun () -> toHandle (" + c.Mnemonic + ")))"
                     }
                 else
                     let v = c.Box :?> 'T
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle<'T> (v)))
-                    ; source = "(triv (fun () -> toHandle<" + typeof<'T>.Name + "> (" + c.Mnemonic + ")))"
+                    ; source =  "(triv (fun () -> toHandle<" + typeof<'T>.Name + "> (" + c.Mnemonic + ")))"
                     }
             else
                 { cell = withMnemonic s (triv (fun () -> Util.toHandle (o :?> 'T)))
-                ; source = "(triv (fun () -> toHandle (" + s + ")))"
+                ; source =  "(triv (fun () -> toHandle (" + s + ")))"
                 }
         elif o :? 'T then 
             { cell =  withMnemonic (Model.formatMnemonic (o.ToString())) (triv (fun () -> Util.toHandle (o :?> 'T)))
@@ -190,16 +190,16 @@ module Helper =
             if  c.IsSome then
                 let c = c.Value :?> ICell<'T>
                 { cell = triv (fun () -> Util.toNullable (c.Value))
-                ; source ="(triv (fun () -> toNullable (" + c.Mnemonic + ".Value))"
+                ; source = "(triv (fun () -> toNullable (" + c.Mnemonic + ".Value)"
                 }
             else
                 { cell = triv (fun () -> Util.nullableNull<'T> ())
-                ; source = "(triv (fun () -> nullableNull<" + typeof<'T>.Name + "> ()))"
+                ; source =  "(triv (fun () -> nullableNull<" + typeof<'T>.Name + "> ()))"
                 }
 
         elif o :? 'T then 
             { cell = triv (fun () -> Util.toNullable (o :?> 'T))
-            ; source = "(triv (fun () -> toNullable (" + o.ToString() + "))"
+            ; source =  "(triv (fun () -> toNullable (" + o.ToString() + "))"
             }
         else 
             invalidArg (o.ToString()) ("Invalid " + attribute)

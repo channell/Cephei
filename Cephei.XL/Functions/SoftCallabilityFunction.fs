@@ -55,14 +55,14 @@ module SoftCallabilityFunction =
                 let _price = Helper.toCell<Callability.Price> price "price" 
                 let _date = Helper.toCell<Date> date "date" 
                 let _trigger = Helper.toCell<double> trigger "trigger" 
-                let builder () = withMnemonic mnemonic (Fun.SoftCallability 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SoftCallability 
                                                             _price.cell 
                                                             _date.cell 
                                                             _trigger.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SoftCallability>) l
 
-                let source = Helper.sourceFold "Fun.SoftCallability" 
+                let source () = Helper.sourceFold "Fun.SoftCallability" 
                                                [| _price.source
                                                ;  _date.source
                                                ;  _trigger.source
@@ -73,7 +73,7 @@ module SoftCallabilityFunction =
                                 ;  _trigger.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SoftCallability> format
                     ; source = source 
@@ -98,18 +98,18 @@ module SoftCallabilityFunction =
             try
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
-                let builder () = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Trigger
+                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Trigger
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SoftCallability.source + ".Trigger") 
+                let source () = Helper.sourceFold (_SoftCallability.source + ".Trigger") 
                                                [| _SoftCallability.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -134,18 +134,18 @@ module SoftCallabilityFunction =
             try
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
-                let builder () = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Date
+                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_SoftCallability.source + ".Date") 
+                let source () = Helper.sourceFold (_SoftCallability.source + ".Date") 
                                                [| _SoftCallability.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module SoftCallabilityFunction =
             try
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
-                let builder () = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Price
+                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Price
                                                        ) :> ICell
                 let format (o : Callability.Price) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SoftCallability.source + ".Price") 
+                let source () = Helper.sourceFold (_SoftCallability.source + ".Price") 
                                                [| _SoftCallability.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,18 +206,18 @@ module SoftCallabilityFunction =
             try
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
-                let builder () = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Type
+                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SoftCallability.source + ".TYPE") 
+                let source () = Helper.sourceFold (_SoftCallability.source + ".TYPE") 
                                                [| _SoftCallability.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -245,12 +245,12 @@ module SoftCallabilityFunction =
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : SoftCallability) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SoftCallability.source + ".Accept") 
+                let source () = Helper.sourceFold (_SoftCallability.source + ".Accept") 
                                                [| _SoftCallability.source
                                                ;  _v.source
                                                |]
@@ -259,7 +259,7 @@ module SoftCallabilityFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,13 +290,13 @@ module SoftCallabilityFunction =
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).HasOccurred
+                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).HasOccurred
                                                             _d.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SoftCallability.source + ".HasOccurred") 
+                let source () = Helper.sourceFold (_SoftCallability.source + ".HasOccurred") 
                                                [| _SoftCallability.source
                                                ;  _d.source
                                                ;  _includeRefDate.source
@@ -307,7 +307,7 @@ module SoftCallabilityFunction =
                                 ;  _includeRefDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -335,12 +335,12 @@ module SoftCallabilityFunction =
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SoftCallability) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SoftCallability.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_SoftCallability.source + ".RegisterWith") 
                                                [| _SoftCallability.source
                                                ;  _handler.source
                                                |]
@@ -349,7 +349,7 @@ module SoftCallabilityFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -377,12 +377,12 @@ module SoftCallabilityFunction =
 
                 let _SoftCallability = Helper.toCell<SoftCallability> softcallability "SoftCallability"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((SoftCallabilityModel.Cast _SoftCallability.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SoftCallability) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SoftCallability.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_SoftCallability.source + ".UnregisterWith") 
                                                [| _SoftCallability.source
                                                ;  _handler.source
                                                |]
@@ -391,7 +391,7 @@ module SoftCallabilityFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -420,14 +420,14 @@ module SoftCallabilityFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SoftCallability>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SoftCallability>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SoftCallability>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SoftCallability>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

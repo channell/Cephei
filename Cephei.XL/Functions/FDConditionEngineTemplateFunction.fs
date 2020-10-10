@@ -58,7 +58,7 @@ module FDConditionEngineTemplateFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic (Fun.FDConditionEngineTemplate1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDConditionEngineTemplate1 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -66,7 +66,7 @@ module FDConditionEngineTemplateFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDConditionEngineTemplate>) l
 
-                let source = Helper.sourceFold "Fun.FDConditionEngineTemplate" 
+                let source () = Helper.sourceFold "Fun.FDConditionEngineTemplate" 
                                                [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
@@ -79,7 +79,7 @@ module FDConditionEngineTemplateFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDConditionEngineTemplate> format
                     ; source = source 
@@ -101,16 +101,16 @@ module FDConditionEngineTemplateFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.FDConditionEngineTemplate ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDConditionEngineTemplate ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDConditionEngineTemplate>) l
 
-                let source = Helper.sourceFold "Fun.FDConditionEngineTemplate1" 
+                let source () = Helper.sourceFold "Fun.FDConditionEngineTemplate1" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDConditionEngineTemplate> format
                     ; source = source 
@@ -138,12 +138,12 @@ module FDConditionEngineTemplateFunction =
 
                 let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).SetStepCondition
+                let builder (current : ICell) = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDConditionEngineTemplate) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDConditionEngineTemplate.source + ".SetStepCondition") 
+                let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".SetStepCondition") 
                                                [| _FDConditionEngineTemplate.source
                                                ;  _impl.source
                                                |]
@@ -152,7 +152,7 @@ module FDConditionEngineTemplateFunction =
                                 ;  _impl.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -178,18 +178,18 @@ module FDConditionEngineTemplateFunction =
             try
 
                 let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
-                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).EnsureStrikeInGrid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDConditionEngineTemplate) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FDConditionEngineTemplate.source + ".EnsureStrikeInGrid") 
+                let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".EnsureStrikeInGrid") 
                                                [| _FDConditionEngineTemplate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDConditionEngineTemplate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -226,7 +226,7 @@ module FDConditionEngineTemplateFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -234,7 +234,7 @@ module FDConditionEngineTemplateFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
-                let source = Helper.sourceFold (_FDConditionEngineTemplate.source + ".Factory") 
+                let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".Factory") 
                                                [| _FDConditionEngineTemplate.source
                                                ;  _Process.source
                                                ;  _timeSteps.source
@@ -249,7 +249,7 @@ module FDConditionEngineTemplateFunction =
                                 ;  _timeDependent.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDConditionEngineTemplate> format
                     ; source = source 
@@ -274,18 +274,18 @@ module FDConditionEngineTemplateFunction =
             try
 
                 let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
-                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).GetResidualTime
+                let builder (current : ICell) = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FDConditionEngineTemplate.source + ".GetResidualTime") 
+                let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".GetResidualTime") 
                                                [| _FDConditionEngineTemplate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDConditionEngineTemplate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -310,18 +310,18 @@ module FDConditionEngineTemplateFunction =
             try
 
                 let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
-                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).Grid
+                let builder (current : ICell) = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_FDConditionEngineTemplate.source + ".Grid") 
+                let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".Grid") 
                                                [| _FDConditionEngineTemplate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDConditionEngineTemplate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDConditionEngineTemplate> format
                     ; source = source 
@@ -346,18 +346,18 @@ module FDConditionEngineTemplateFunction =
             try
 
                 let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
-                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).IntrinsicValues_
+                let builder (current : ICell) = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
-                let source = Helper.sourceFold (_FDConditionEngineTemplate.source + ".IntrinsicValues_") 
+                let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".IntrinsicValues_") 
                                                [| _FDConditionEngineTemplate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDConditionEngineTemplate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FDConditionEngineTemplate> format
                     ; source = source 
@@ -386,14 +386,14 @@ module FDConditionEngineTemplateFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FDConditionEngineTemplate>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FDConditionEngineTemplate>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FDConditionEngineTemplate>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FDConditionEngineTemplate>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

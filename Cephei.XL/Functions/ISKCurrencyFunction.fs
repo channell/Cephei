@@ -46,16 +46,16 @@ module ISKCurrencyFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.ISKCurrency ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ISKCurrency ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ISKCurrency>) l
 
-                let source = Helper.sourceFold "Fun.ISKCurrency" 
+                let source () = Helper.sourceFold "Fun.ISKCurrency" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ISKCurrency> format
                     ; source = source 
@@ -80,18 +80,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".Code") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".Code") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -116,18 +116,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".Empty") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".Empty") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -155,12 +155,12 @@ module ISKCurrencyFunction =
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".Equals") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".Equals") 
                                                [| _ISKCurrency.source
                                                ;  _o.source
                                                |]
@@ -169,7 +169,7 @@ module ISKCurrencyFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -194,18 +194,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Format
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".Format") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".Format") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -230,18 +230,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).FractionsPerUnit
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".FractionsPerUnit") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".FractionsPerUnit") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -266,18 +266,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).FractionSymbol
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".FractionSymbol") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".FractionSymbol") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -302,18 +302,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".Name") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".Name") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -338,18 +338,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).NumericCode
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".NumericCode") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".NumericCode") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Rounding
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".Rounding") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".Rounding") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ISKCurrency> format
                     ; source = source 
@@ -410,18 +410,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Symbol
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".Symbol") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".Symbol") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -446,18 +446,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).ToString
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".ToString") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".ToString") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -482,18 +482,18 @@ module ISKCurrencyFunction =
             try
 
                 let _ISKCurrency = Helper.toCell<ISKCurrency> iskcurrency "ISKCurrency"  
-                let builder () = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).TriangulationCurrency
+                let builder (current : ICell) = withMnemonic mnemonic ((ISKCurrencyModel.Cast _ISKCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_ISKCurrency.source + ".TriangulationCurrency") 
+                let source () = Helper.sourceFold (_ISKCurrency.source + ".TriangulationCurrency") 
                                                [| _ISKCurrency.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ISKCurrency.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ISKCurrency> format
                     ; source = source 
@@ -522,14 +522,14 @@ module ISKCurrencyFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ISKCurrency>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ISKCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ISKCurrency>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ISKCurrency>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

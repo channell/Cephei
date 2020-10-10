@@ -49,18 +49,18 @@ module PlainVanillaPayoffFunction =
             try
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
-                let builder () = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PlainVanillaPayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".Name") 
                                                [| _PlainVanillaPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PlainVanillaPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -88,13 +88,13 @@ module PlainVanillaPayoffFunction =
 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic (Fun.PlainVanillaPayoff 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.PlainVanillaPayoff 
                                                             _Type.cell 
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PlainVanillaPayoff>) l
 
-                let source = Helper.sourceFold "Fun.PlainVanillaPayoff" 
+                let source () = Helper.sourceFold "Fun.PlainVanillaPayoff" 
                                                [| _Type.source
                                                ;  _strike.source
                                                |]
@@ -103,7 +103,7 @@ module PlainVanillaPayoffFunction =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<PlainVanillaPayoff> format
                     ; source = source 
@@ -131,12 +131,12 @@ module PlainVanillaPayoffFunction =
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PlainVanillaPayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".Value") 
                                                [| _PlainVanillaPayoff.source
                                                ;  _price.source
                                                |]
@@ -145,7 +145,7 @@ module PlainVanillaPayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module PlainVanillaPayoffFunction =
             try
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
-                let builder () = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PlainVanillaPayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".Description") 
                                                [| _PlainVanillaPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PlainVanillaPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,18 +206,18 @@ module PlainVanillaPayoffFunction =
             try
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
-                let builder () = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Strike
+                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_PlainVanillaPayoff.source + ".Strike") 
+                let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".Strike") 
                                                [| _PlainVanillaPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PlainVanillaPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -242,18 +242,18 @@ module PlainVanillaPayoffFunction =
             try
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
-                let builder () = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).OptionType
+                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PlainVanillaPayoff.source + ".OptionType") 
+                let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".OptionType") 
                                                [| _PlainVanillaPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PlainVanillaPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -281,12 +281,12 @@ module PlainVanillaPayoffFunction =
 
                 let _PlainVanillaPayoff = Helper.toCell<PlainVanillaPayoff> plainvanillapayoff "PlainVanillaPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((PlainVanillaPayoffModel.Cast _PlainVanillaPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : PlainVanillaPayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_PlainVanillaPayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".Accept") 
                                                [| _PlainVanillaPayoff.source
                                                ;  _v.source
                                                |]
@@ -295,7 +295,7 @@ module PlainVanillaPayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -324,14 +324,14 @@ module PlainVanillaPayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<PlainVanillaPayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<PlainVanillaPayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<PlainVanillaPayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<PlainVanillaPayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

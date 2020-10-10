@@ -55,14 +55,14 @@ module FritschButlandCubicFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic (Fun.FritschButlandCubic 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FritschButlandCubic 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FritschButlandCubic>) l
 
-                let source = Helper.sourceFold "Fun.FritschButlandCubic" 
+                let source () = Helper.sourceFold "Fun.FritschButlandCubic" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -73,7 +73,7 @@ module FritschButlandCubicFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FritschButlandCubic> format
                     ; source = source 
@@ -98,18 +98,18 @@ module FritschButlandCubicFunction =
             try
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).ACoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".ACoefficients") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".ACoefficients") 
                                                [| _FritschButlandCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FritschButlandCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -134,18 +134,18 @@ module FritschButlandCubicFunction =
             try
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).BCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".BCoefficients") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".BCoefficients") 
                                                [| _FritschButlandCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FritschButlandCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -170,18 +170,18 @@ module FritschButlandCubicFunction =
             try
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).CCoefficients
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".CCoefficients") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".CCoefficients") 
                                                [| _FritschButlandCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FritschButlandCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -212,13 +212,13 @@ module FritschButlandCubicFunction =
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".Derivative") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".Derivative") 
                                                [| _FritschButlandCubic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -229,7 +229,7 @@ module FritschButlandCubicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,18 +254,18 @@ module FritschButlandCubicFunction =
             try
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".Empty") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".Empty") 
                                                [| _FritschButlandCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FritschButlandCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,13 +296,13 @@ module FritschButlandCubicFunction =
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".Primitive") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".Primitive") 
                                                [| _FritschButlandCubic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -313,7 +313,7 @@ module FritschButlandCubicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -344,13 +344,13 @@ module FritschButlandCubicFunction =
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".SecondDerivative") 
                                                [| _FritschButlandCubic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -361,7 +361,7 @@ module FritschButlandCubicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -386,18 +386,18 @@ module FritschButlandCubicFunction =
             try
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Update
                                                        ) :> ICell
                 let format (o : FritschButlandCubic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".Update") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".Update") 
                                                [| _FritschButlandCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FritschButlandCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -428,13 +428,13 @@ module FritschButlandCubicFunction =
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".Value1") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".Value1") 
                                                [| _FritschButlandCubic.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -445,7 +445,7 @@ module FritschButlandCubicFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -473,12 +473,12 @@ module FritschButlandCubicFunction =
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".Value") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".Value") 
                                                [| _FritschButlandCubic.source
                                                ;  _x.source
                                                |]
@@ -487,7 +487,7 @@ module FritschButlandCubicFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -512,18 +512,18 @@ module FritschButlandCubicFunction =
             try
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".XMax") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".XMax") 
                                                [| _FritschButlandCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FritschButlandCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -548,18 +548,18 @@ module FritschButlandCubicFunction =
             try
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".XMin") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".XMin") 
                                                [| _FritschButlandCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FritschButlandCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -584,18 +584,18 @@ module FritschButlandCubicFunction =
             try
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".AllowsExtrapolation") 
                                                [| _FritschButlandCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FritschButlandCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -623,12 +623,12 @@ module FritschButlandCubicFunction =
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : FritschButlandCubic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".DisableExtrapolation") 
                                                [| _FritschButlandCubic.source
                                                ;  _b.source
                                                |]
@@ -637,7 +637,7 @@ module FritschButlandCubicFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -665,12 +665,12 @@ module FritschButlandCubicFunction =
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : FritschButlandCubic) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".EnableExtrapolation") 
                                                [| _FritschButlandCubic.source
                                                ;  _b.source
                                                |]
@@ -679,7 +679,7 @@ module FritschButlandCubicFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -704,18 +704,18 @@ module FritschButlandCubicFunction =
             try
 
                 let _FritschButlandCubic = Helper.toCell<FritschButlandCubic> fritschbutlandcubic "FritschButlandCubic"  
-                let builder () = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((FritschButlandCubicModel.Cast _FritschButlandCubic.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FritschButlandCubic.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_FritschButlandCubic.source + ".Extrapolate") 
                                                [| _FritschButlandCubic.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FritschButlandCubic.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -744,14 +744,14 @@ module FritschButlandCubicFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FritschButlandCubic>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FritschButlandCubic>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FritschButlandCubic>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FritschButlandCubic>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

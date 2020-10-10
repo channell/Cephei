@@ -49,19 +49,19 @@ module ConjugateGradientFunction =
             try
 
                 let _lineSearch = Helper.toDefault<LineSearch> lineSearch "lineSearch" null
-                let builder () = withMnemonic mnemonic (Fun.ConjugateGradient 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConjugateGradient 
                                                             _lineSearch.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConjugateGradient>) l
 
-                let source = Helper.sourceFold "Fun.ConjugateGradient" 
+                let source () = Helper.sourceFold "Fun.ConjugateGradient" 
                                                [| _lineSearch.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _lineSearch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConjugateGradient> format
                     ; source = source 
@@ -92,13 +92,13 @@ module ConjugateGradientFunction =
                 let _ConjugateGradient = Helper.toCell<ConjugateGradient> conjugategradient "ConjugateGradient"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((ConjugateGradientModel.Cast _ConjugateGradient.cell).Minimize
+                let builder (current : ICell) = withMnemonic mnemonic ((ConjugateGradientModel.Cast _ConjugateGradient.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConjugateGradient.source + ".Minimize") 
+                let source () = Helper.sourceFold (_ConjugateGradient.source + ".Minimize") 
                                                [| _ConjugateGradient.source
                                                ;  _P.source
                                                ;  _endCriteria.source
@@ -109,7 +109,7 @@ module ConjugateGradientFunction =
                                 ;  _endCriteria.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -138,14 +138,14 @@ module ConjugateGradientFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConjugateGradient>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ConjugateGradient>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ConjugateGradient>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ConjugateGradient>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

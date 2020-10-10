@@ -58,14 +58,14 @@ module SVIFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _xEnd = Helper.toCell<int> xEnd "xEnd" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((SVIModel.Cast _SVI.cell).Interpolate
+                let builder (current : ICell) = withMnemonic mnemonic ((SVIModel.Cast _SVI.cell).Interpolate
                                                             _xBegin.cell 
                                                             _xEnd.cell 
                                                             _yBegin.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
-                let source = Helper.sourceFold (_SVI.source + ".Interpolate") 
+                let source () = Helper.sourceFold (_SVI.source + ".Interpolate") 
                                                [| _SVI.source
                                                ;  _xBegin.source
                                                ;  _xEnd.source
@@ -78,7 +78,7 @@ module SVIFunction =
                                 ;  _yBegin.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVI> format
                     ; source = source 
@@ -157,7 +157,7 @@ module SVIFunction =
                 let _useMaxError = Helper.toDefault<bool> useMaxError "useMaxError" false
                 let _maxGuesses = Helper.toDefault<int> maxGuesses "maxGuesses" 50
                 let _addParams = Helper.toDefault<Generic.List<Nullable<double>>> addParams "addParams" null
-                let builder () = withMnemonic mnemonic (Fun.SVI 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SVI 
                                                             _t.cell 
                                                             _forward.cell 
                                                             _a.cell 
@@ -180,7 +180,7 @@ module SVIFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SVI>) l
 
-                let source = Helper.sourceFold "Fun.SVI" 
+                let source () = Helper.sourceFold "Fun.SVI" 
                                                [| _t.source
                                                ;  _forward.source
                                                ;  _a.source
@@ -223,7 +223,7 @@ module SVIFunction =
                                 ;  _addParams.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SVI> format
                     ; source = source 
@@ -252,14 +252,14 @@ module SVIFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SVI>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SVI>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SVI>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SVI>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

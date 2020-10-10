@@ -52,13 +52,13 @@ module DPlusFunction =
 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _h = Helper.toCell<double> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.DPlus 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DPlus 
                                                             _gridPoints.cell 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DPlus>) l
 
-                let source = Helper.sourceFold "Fun.DPlus" 
+                let source () = Helper.sourceFold "Fun.DPlus" 
                                                [| _gridPoints.source
                                                ;  _h.source
                                                |]
@@ -67,7 +67,7 @@ module DPlusFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -99,13 +99,13 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Add
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_DPlus.source + ".Add") 
+                let source () = Helper.sourceFold (_DPlus.source + ".Add") 
                                                [| _DPlus.source
                                                ;  _A.source
                                                ;  _B.source
@@ -116,7 +116,7 @@ module DPlusFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -145,12 +145,12 @@ module DPlusFunction =
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).ApplyTo
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DPlus.source + ".ApplyTo") 
+                let source () = Helper.sourceFold (_DPlus.source + ".ApplyTo") 
                                                [| _DPlus.source
                                                ;  _v.source
                                                |]
@@ -159,7 +159,7 @@ module DPlusFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -184,18 +184,18 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DPlus.source + ".Clone") 
+                let source () = Helper.sourceFold (_DPlus.source + ".Clone") 
                                                [| _DPlus.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DPlus.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -220,18 +220,18 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Diagonal
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DPlus.source + ".Diagonal") 
+                let source () = Helper.sourceFold (_DPlus.source + ".Diagonal") 
                                                [| _DPlus.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DPlus.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -259,12 +259,12 @@ module DPlusFunction =
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Identity
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_DPlus.source + ".Identity") 
+                let source () = Helper.sourceFold (_DPlus.source + ".Identity") 
                                                [| _DPlus.source
                                                ;  _size.source
                                                |]
@@ -273,7 +273,7 @@ module DPlusFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -298,18 +298,18 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).IsTimeDependent
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DPlus.source + ".IsTimeDependent") 
+                let source () = Helper.sourceFold (_DPlus.source + ".IsTimeDependent") 
                                                [| _DPlus.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DPlus.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -334,18 +334,18 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).LowerDiagonal
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DPlus.source + ".LowerDiagonal") 
+                let source () = Helper.sourceFold (_DPlus.source + ".LowerDiagonal") 
                                                [| _DPlus.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DPlus.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -376,13 +376,13 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _a = Helper.toCell<double> a "a" 
                 let _o = Helper.toCell<IOperator> o "o" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Multiply
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Multiply
                                                             _a.cell 
                                                             _o.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_DPlus.source + ".Multiply") 
+                let source () = Helper.sourceFold (_DPlus.source + ".Multiply") 
                                                [| _DPlus.source
                                                ;  _a.source
                                                ;  _o.source
@@ -393,7 +393,7 @@ module DPlusFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -424,13 +424,13 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetFirstRow
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetFirstRow
                                                             _valB.cell 
                                                             _valC.cell 
                                                        ) :> ICell
                 let format (o : DPlus) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DPlus.source + ".SetFirstRow") 
+                let source () = Helper.sourceFold (_DPlus.source + ".SetFirstRow") 
                                                [| _DPlus.source
                                                ;  _valB.source
                                                ;  _valC.source
@@ -441,7 +441,7 @@ module DPlusFunction =
                                 ;  _valC.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -472,13 +472,13 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetLastRow
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetLastRow
                                                             _valA.cell 
                                                             _valB.cell 
                                                        ) :> ICell
                 let format (o : DPlus) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DPlus.source + ".SetLastRow") 
+                let source () = Helper.sourceFold (_DPlus.source + ".SetLastRow") 
                                                [| _DPlus.source
                                                ;  _valA.source
                                                ;  _valB.source
@@ -489,7 +489,7 @@ module DPlusFunction =
                                 ;  _valB.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -526,7 +526,7 @@ module DPlusFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetMidRow
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetMidRow
                                                             _i.cell 
                                                             _valA.cell 
                                                             _valB.cell 
@@ -534,7 +534,7 @@ module DPlusFunction =
                                                        ) :> ICell
                 let format (o : DPlus) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DPlus.source + ".SetMidRow") 
+                let source () = Helper.sourceFold (_DPlus.source + ".SetMidRow") 
                                                [| _DPlus.source
                                                ;  _i.source
                                                ;  _valA.source
@@ -549,7 +549,7 @@ module DPlusFunction =
                                 ;  _valC.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -583,14 +583,14 @@ module DPlusFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetMidRows
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetMidRows
                                                             _valA.cell 
                                                             _valB.cell 
                                                             _valC.cell 
                                                        ) :> ICell
                 let format (o : DPlus) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DPlus.source + ".SetMidRows") 
+                let source () = Helper.sourceFold (_DPlus.source + ".SetMidRows") 
                                                [| _DPlus.source
                                                ;  _valA.source
                                                ;  _valB.source
@@ -603,7 +603,7 @@ module DPlusFunction =
                                 ;  _valC.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -631,12 +631,12 @@ module DPlusFunction =
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetTime
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DPlus) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_DPlus.source + ".SetTime") 
+                let source () = Helper.sourceFold (_DPlus.source + ".SetTime") 
                                                [| _DPlus.source
                                                ;  _t.source
                                                |]
@@ -645,7 +645,7 @@ module DPlusFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -670,18 +670,18 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_DPlus.source + ".Size") 
+                let source () = Helper.sourceFold (_DPlus.source + ".Size") 
                                                [| _DPlus.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DPlus.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -709,12 +709,12 @@ module DPlusFunction =
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SolveFor
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DPlus.source + ".SolveFor") 
+                let source () = Helper.sourceFold (_DPlus.source + ".SolveFor") 
                                                [| _DPlus.source
                                                ;  _rhs.source
                                                |]
@@ -723,7 +723,7 @@ module DPlusFunction =
                                 ;  _rhs.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -754,13 +754,13 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let _tol = Helper.toCell<double> tol "tol" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SOR
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SOR
                                                             _rhs.cell 
                                                             _tol.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DPlus.source + ".SOR") 
+                let source () = Helper.sourceFold (_DPlus.source + ".SOR") 
                                                [| _DPlus.source
                                                ;  _rhs.source
                                                ;  _tol.source
@@ -771,7 +771,7 @@ module DPlusFunction =
                                 ;  _tol.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -802,13 +802,13 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Subtract
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
-                let source = Helper.sourceFold (_DPlus.source + ".Subtract") 
+                let source () = Helper.sourceFold (_DPlus.source + ".Subtract") 
                                                [| _DPlus.source
                                                ;  _A.source
                                                ;  _B.source
@@ -819,7 +819,7 @@ module DPlusFunction =
                                 ;  _B.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -844,18 +844,18 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).UpperDiagonal
+                let builder (current : ICell) = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_DPlus.source + ".UpperDiagonal") 
+                let source () = Helper.sourceFold (_DPlus.source + ".UpperDiagonal") 
                                                [| _DPlus.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DPlus.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<DPlus> format
                     ; source = source 
@@ -884,14 +884,14 @@ module DPlusFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<DPlus>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<DPlus>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<DPlus>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<DPlus>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

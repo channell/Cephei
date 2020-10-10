@@ -55,14 +55,14 @@ module GaussJacobiIntegrationFunction =
                 let _n = Helper.toCell<int> n "n" 
                 let _alpha = Helper.toCell<double> alpha "alpha" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic (Fun.GaussJacobiIntegration 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.GaussJacobiIntegration 
                                                             _n.cell 
                                                             _alpha.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GaussJacobiIntegration>) l
 
-                let source = Helper.sourceFold "Fun.GaussJacobiIntegration" 
+                let source () = Helper.sourceFold "Fun.GaussJacobiIntegration" 
                                                [| _n.source
                                                ;  _alpha.source
                                                ;  _beta.source
@@ -73,7 +73,7 @@ module GaussJacobiIntegrationFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussJacobiIntegration> format
                     ; source = source 
@@ -98,18 +98,18 @@ module GaussJacobiIntegrationFunction =
             try
 
                 let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Order
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussJacobiIntegration.source + ".Order") 
+                let source () = Helper.sourceFold (_GaussJacobiIntegration.source + ".Order") 
                                                [| _GaussJacobiIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -137,12 +137,12 @@ module GaussJacobiIntegrationFunction =
 
                 let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_GaussJacobiIntegration.source + ".Value") 
+                let source () = Helper.sourceFold (_GaussJacobiIntegration.source + ".Value") 
                                                [| _GaussJacobiIntegration.source
                                                ;  _f.source
                                                |]
@@ -151,7 +151,7 @@ module GaussJacobiIntegrationFunction =
                                 ;  _f.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -176,18 +176,18 @@ module GaussJacobiIntegrationFunction =
             try
 
                 let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussJacobiIntegration.source + ".Weights") 
+                let source () = Helper.sourceFold (_GaussJacobiIntegration.source + ".Weights") 
                                                [| _GaussJacobiIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussJacobiIntegration> format
                     ; source = source 
@@ -212,18 +212,18 @@ module GaussJacobiIntegrationFunction =
             try
 
                 let _GaussJacobiIntegration = Helper.toCell<GaussJacobiIntegration> gaussjacobiintegration "GaussJacobiIntegration"  
-                let builder () = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).X
+                let builder (current : ICell) = withMnemonic mnemonic ((GaussJacobiIntegrationModel.Cast _GaussJacobiIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_GaussJacobiIntegration.source + ".X") 
+                let source () = Helper.sourceFold (_GaussJacobiIntegration.source + ".X") 
                                                [| _GaussJacobiIntegration.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiIntegration.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<GaussJacobiIntegration> format
                     ; source = source 
@@ -252,14 +252,14 @@ module GaussJacobiIntegrationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<GaussJacobiIntegration>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<GaussJacobiIntegration>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<GaussJacobiIntegration>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<GaussJacobiIntegration>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

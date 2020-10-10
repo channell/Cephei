@@ -61,7 +61,7 @@ module Joshi4Function =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Factory
+                let builder (current : ICell) = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Factory
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -69,7 +69,7 @@ module Joshi4Function =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Joshi4>) l
 
-                let source = Helper.sourceFold (_Joshi4.source + ".Factory") 
+                let source () = Helper.sourceFold (_Joshi4.source + ".Factory") 
                                                [| _Joshi4.source
                                                ;  _Process.source
                                                ;  _End.source
@@ -84,7 +84,7 @@ module Joshi4Function =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Joshi4> format
                     ; source = source 
@@ -118,7 +118,7 @@ module Joshi4Function =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic (Fun.Joshi4 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Joshi4 
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -126,7 +126,7 @@ module Joshi4Function =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Joshi4>) l
 
-                let source = Helper.sourceFold "Fun.Joshi4" 
+                let source () = Helper.sourceFold "Fun.Joshi4" 
                                                [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
@@ -139,7 +139,7 @@ module Joshi4Function =
                                 ;  _strike.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Joshi4> format
                     ; source = source 
@@ -161,16 +161,16 @@ module Joshi4Function =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Joshi41 ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Joshi41 ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Joshi4>) l
 
-                let source = Helper.sourceFold "Fun.Joshi41" 
+                let source () = Helper.sourceFold "Fun.Joshi41" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Joshi4> format
                     ; source = source 
@@ -204,14 +204,14 @@ module Joshi4Function =
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Probability
+                let builder (current : ICell) = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Probability
                                                             _x.cell 
                                                             _y.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Joshi4.source + ".Probability") 
+                let source () = Helper.sourceFold (_Joshi4.source + ".Probability") 
                                                [| _Joshi4.source
                                                ;  _x.source
                                                ;  _y.source
@@ -224,7 +224,7 @@ module Joshi4Function =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -255,13 +255,13 @@ module Joshi4Function =
                 let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Underlying
+                let builder (current : ICell) = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Joshi4.source + ".Underlying") 
+                let source () = Helper.sourceFold (_Joshi4.source + ".Underlying") 
                                                [| _Joshi4.source
                                                ;  _i.source
                                                ;  _index.source
@@ -272,7 +272,7 @@ module Joshi4Function =
                                 ;  _index.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -306,14 +306,14 @@ module Joshi4Function =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Descendant
+                let builder (current : ICell) = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Joshi4.source + ".Descendant") 
+                let source () = Helper.sourceFold (_Joshi4.source + ".Descendant") 
                                                [| _Joshi4.source
                                                ;  _x.source
                                                ;  _index.source
@@ -326,7 +326,7 @@ module Joshi4Function =
                                 ;  _branch.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -354,12 +354,12 @@ module Joshi4Function =
 
                 let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Joshi4.source + ".Size") 
+                let source () = Helper.sourceFold (_Joshi4.source + ".Size") 
                                                [| _Joshi4.source
                                                ;  _i.source
                                                |]
@@ -368,7 +368,7 @@ module Joshi4Function =
                                 ;  _i.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -393,18 +393,18 @@ module Joshi4Function =
             try
 
                 let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
-                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Columns
+                let builder (current : ICell) = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Joshi4.source + ".Columns") 
+                let source () = Helper.sourceFold (_Joshi4.source + ".Columns") 
                                                [| _Joshi4.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Joshi4.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -433,14 +433,14 @@ module Joshi4Function =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Joshi4>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Joshi4>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Joshi4>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Joshi4>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

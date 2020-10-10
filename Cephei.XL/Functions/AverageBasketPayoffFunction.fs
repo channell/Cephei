@@ -52,12 +52,12 @@ module AverageBasketPayoffFunction =
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Accumulate
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Accumulate
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBasketPayoff.source + ".Accumulate") 
+                let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Accumulate") 
                                                [| _AverageBasketPayoff.source
                                                ;  _a.source
                                                |]
@@ -66,7 +66,7 @@ module AverageBasketPayoffFunction =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -94,13 +94,13 @@ module AverageBasketPayoffFunction =
 
                 let _p = Helper.toCell<Payoff> p "p" 
                 let _n = Helper.toCell<int> n "n" 
-                let builder () = withMnemonic mnemonic (Fun.AverageBasketPayoff1
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AverageBasketPayoff1
                                                             _p.cell 
                                                             _n.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AverageBasketPayoff>) l
 
-                let source = Helper.sourceFold "Fun.AverageBasketPayoff1" 
+                let source () = Helper.sourceFold "Fun.AverageBasketPayoff1" 
                                                [| _p.source
                                                ;  _n.source
                                                |]
@@ -109,7 +109,7 @@ module AverageBasketPayoffFunction =
                                 ;  _n.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AverageBasketPayoff> format
                     ; source = source 
@@ -137,13 +137,13 @@ module AverageBasketPayoffFunction =
 
                 let _p = Helper.toCell<Payoff> p "p" 
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic (Fun.AverageBasketPayoff
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AverageBasketPayoff
                                                             _p.cell 
                                                             _a.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AverageBasketPayoff>) l
 
-                let source = Helper.sourceFold "Fun.AverageBasketPayoff" 
+                let source () = Helper.sourceFold "Fun.AverageBasketPayoff" 
                                                [| _p.source
                                                ;  _a.source
                                                |]
@@ -152,7 +152,7 @@ module AverageBasketPayoffFunction =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AverageBasketPayoff> format
                     ; source = source 
@@ -177,18 +177,18 @@ module AverageBasketPayoffFunction =
             try
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).BasePayoff
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_AverageBasketPayoff.source + ".BasePayoff") 
+                let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".BasePayoff") 
                                                [| _AverageBasketPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBasketPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AverageBasketPayoff> format
                     ; source = source 
@@ -213,18 +213,18 @@ module AverageBasketPayoffFunction =
             try
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Description
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBasketPayoff.source + ".Description") 
+                let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Description") 
                                                [| _AverageBasketPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBasketPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -249,18 +249,18 @@ module AverageBasketPayoffFunction =
             try
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBasketPayoff.source + ".Name") 
+                let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Name") 
                                                [| _AverageBasketPayoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBasketPayoff.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -288,12 +288,12 @@ module AverageBasketPayoffFunction =
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Value1
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBasketPayoff.source + ".Value1") 
+                let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Value1") 
                                                [| _AverageBasketPayoff.source
                                                ;  _a.source
                                                |]
@@ -302,7 +302,7 @@ module AverageBasketPayoffFunction =
                                 ;  _a.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -330,12 +330,12 @@ module AverageBasketPayoffFunction =
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AverageBasketPayoff.source + ".Value") 
+                let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Value") 
                                                [| _AverageBasketPayoff.source
                                                ;  _price.source
                                                |]
@@ -344,7 +344,7 @@ module AverageBasketPayoffFunction =
                                 ;  _price.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -372,12 +372,12 @@ module AverageBasketPayoffFunction =
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Accept
+                let builder (current : ICell) = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : AverageBasketPayoff) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AverageBasketPayoff.source + ".Accept") 
+                let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Accept") 
                                                [| _AverageBasketPayoff.source
                                                ;  _v.source
                                                |]
@@ -386,7 +386,7 @@ module AverageBasketPayoffFunction =
                                 ;  _v.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -415,14 +415,14 @@ module AverageBasketPayoffFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AverageBasketPayoff>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AverageBasketPayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AverageBasketPayoff>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AverageBasketPayoff>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

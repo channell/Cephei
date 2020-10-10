@@ -70,7 +70,7 @@ module ConvexMonotoneInterpolationFunction =
                 let _forcePositive = Helper.toCell<bool> forcePositive "forcePositive" 
                 let _flatFinalPeriod = Helper.toCell<bool> flatFinalPeriod "flatFinalPeriod" 
                 let _preExistingHelpers = Helper.toCell<System.Collections.Generic.Dictionary<double,ISectionHelper>> preExistingHelpers "preExistingHelpers" 
-                let builder () = withMnemonic mnemonic (Fun.ConvexMonotoneInterpolation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConvexMonotoneInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -82,7 +82,7 @@ module ConvexMonotoneInterpolationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConvexMonotoneInterpolation>) l
 
-                let source = Helper.sourceFold "Fun.ConvexMonotoneInterpolation" 
+                let source () = Helper.sourceFold "Fun.ConvexMonotoneInterpolation" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -103,7 +103,7 @@ module ConvexMonotoneInterpolationFunction =
                                 ;  _preExistingHelpers.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConvexMonotoneInterpolation> format
                     ; source = source 
@@ -146,7 +146,7 @@ module ConvexMonotoneInterpolationFunction =
                 let _monotonicity = Helper.toCell<double> monotonicity "monotonicity" 
                 let _forcePositive = Helper.toCell<bool> forcePositive "forcePositive" 
                 let _flatFinalPeriod = Helper.toCell<bool> flatFinalPeriod "flatFinalPeriod" 
-                let builder () = withMnemonic mnemonic (Fun.ConvexMonotoneInterpolation1 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConvexMonotoneInterpolation1 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -157,7 +157,7 @@ module ConvexMonotoneInterpolationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConvexMonotoneInterpolation>) l
 
-                let source = Helper.sourceFold "Fun.ConvexMonotoneInterpolation1" 
+                let source () = Helper.sourceFold "Fun.ConvexMonotoneInterpolation1" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -176,7 +176,7 @@ module ConvexMonotoneInterpolationFunction =
                                 ;  _flatFinalPeriod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConvexMonotoneInterpolation> format
                     ; source = source 
@@ -201,18 +201,18 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).GetExistingHelpers
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).GetExistingHelpers
                                                        ) :> ICell
                 let format (o : System.Collections.Generic.Dictionary<double,ISectionHelper>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".GetExistingHelpers") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".GetExistingHelpers") 
                                                [| _ConvexMonotoneInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -243,13 +243,13 @@ module ConvexMonotoneInterpolationFunction =
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Derivative") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Derivative") 
                                                [| _ConvexMonotoneInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -260,7 +260,7 @@ module ConvexMonotoneInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -285,18 +285,18 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Empty") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Empty") 
                                                [| _ConvexMonotoneInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -327,13 +327,13 @@ module ConvexMonotoneInterpolationFunction =
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Primitive") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Primitive") 
                                                [| _ConvexMonotoneInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -344,7 +344,7 @@ module ConvexMonotoneInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -375,13 +375,13 @@ module ConvexMonotoneInterpolationFunction =
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".SecondDerivative") 
                                                [| _ConvexMonotoneInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -392,7 +392,7 @@ module ConvexMonotoneInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -417,18 +417,18 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : ConvexMonotoneInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Update") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Update") 
                                                [| _ConvexMonotoneInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -459,13 +459,13 @@ module ConvexMonotoneInterpolationFunction =
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Value1
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Value1") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Value1") 
                                                [| _ConvexMonotoneInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -476,7 +476,7 @@ module ConvexMonotoneInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -504,12 +504,12 @@ module ConvexMonotoneInterpolationFunction =
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Value") 
                                                [| _ConvexMonotoneInterpolation.source
                                                ;  _x.source
                                                |]
@@ -518,7 +518,7 @@ module ConvexMonotoneInterpolationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -543,18 +543,18 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".XMax") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".XMax") 
                                                [| _ConvexMonotoneInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -579,18 +579,18 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".XMin") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".XMin") 
                                                [| _ConvexMonotoneInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -615,18 +615,18 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".AllowsExtrapolation") 
                                                [| _ConvexMonotoneInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -654,12 +654,12 @@ module ConvexMonotoneInterpolationFunction =
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : ConvexMonotoneInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".DisableExtrapolation") 
                                                [| _ConvexMonotoneInterpolation.source
                                                ;  _b.source
                                                |]
@@ -668,7 +668,7 @@ module ConvexMonotoneInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -696,12 +696,12 @@ module ConvexMonotoneInterpolationFunction =
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : ConvexMonotoneInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".EnableExtrapolation") 
                                                [| _ConvexMonotoneInterpolation.source
                                                ;  _b.source
                                                |]
@@ -710,7 +710,7 @@ module ConvexMonotoneInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -735,18 +735,18 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Extrapolate") 
                                                [| _ConvexMonotoneInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -775,14 +775,14 @@ module ConvexMonotoneInterpolationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConvexMonotoneInterpolation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ConvexMonotoneInterpolation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ConvexMonotoneInterpolation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ConvexMonotoneInterpolation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

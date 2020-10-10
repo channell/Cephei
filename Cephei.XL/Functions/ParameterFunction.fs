@@ -49,18 +49,18 @@ module ParameterFunction =
             try
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
-                let builder () = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Constraint
+                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
-                let source = Helper.sourceFold (_Parameter.source + ".CONSTRAINT") 
+                let source () = Helper.sourceFold (_Parameter.source + ".CONSTRAINT") 
                                                [| _Parameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Parameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Parameter> format
                     ; source = source 
@@ -85,18 +85,18 @@ module ParameterFunction =
             try
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
-                let builder () = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Implementation
+                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Parameter.Impl) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Parameter.source + ".Implementation") 
+                let source () = Helper.sourceFold (_Parameter.source + ".Implementation") 
                                                [| _Parameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Parameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -118,16 +118,16 @@ module ParameterFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.Parameter ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Parameter ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Parameter>) l
 
-                let source = Helper.sourceFold "Fun.Parameter" 
+                let source () = Helper.sourceFold "Fun.Parameter" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Parameter> format
                     ; source = source 
@@ -152,18 +152,18 @@ module ParameterFunction =
             try
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
-                let builder () = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Parameters
+                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_Parameter.source + ".Parameters") 
+                let source () = Helper.sourceFold (_Parameter.source + ".Parameters") 
                                                [| _Parameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Parameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Parameter> format
                     ; source = source 
@@ -194,13 +194,13 @@ module ParameterFunction =
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).SetParam
+                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).SetParam
                                                             _i.cell 
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : Parameter) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Parameter.source + ".SetParam") 
+                let source () = Helper.sourceFold (_Parameter.source + ".SetParam") 
                                                [| _Parameter.source
                                                ;  _i.source
                                                ;  _x.source
@@ -211,7 +211,7 @@ module ParameterFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,18 +236,18 @@ module ParameterFunction =
             try
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
-                let builder () = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Parameter.source + ".Size") 
+                let source () = Helper.sourceFold (_Parameter.source + ".Size") 
                                                [| _Parameter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Parameter.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -275,12 +275,12 @@ module ParameterFunction =
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).TestParams
+                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).TestParams
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Parameter.source + ".TestParams") 
+                let source () = Helper.sourceFold (_Parameter.source + ".TestParams") 
                                                [| _Parameter.source
                                                ;  _p.source
                                                |]
@@ -289,7 +289,7 @@ module ParameterFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -317,12 +317,12 @@ module ParameterFunction =
 
                 let _Parameter = Helper.toCell<Parameter> parameter "Parameter"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((ParameterModel.Cast _Parameter.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Parameter.source + ".Value") 
+                let source () = Helper.sourceFold (_Parameter.source + ".Value") 
                                                [| _Parameter.source
                                                ;  _t.source
                                                |]
@@ -331,7 +331,7 @@ module ParameterFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -360,14 +360,14 @@ module ParameterFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Parameter>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Parameter>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Parameter>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,13 +52,13 @@ module BoundaryConstraintFunction =
 
                 let _low = Helper.toCell<double> low "low" 
                 let _high = Helper.toCell<double> high "high" 
-                let builder () = withMnemonic mnemonic (Fun.BoundaryConstraint 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.BoundaryConstraint 
                                                             _low.cell 
                                                             _high.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BoundaryConstraint>) l
 
-                let source = Helper.sourceFold "Fun.BoundaryConstraint" 
+                let source () = Helper.sourceFold "Fun.BoundaryConstraint" 
                                                [| _low.source
                                                ;  _high.source
                                                |]
@@ -67,7 +67,7 @@ module BoundaryConstraintFunction =
                                 ;  _high.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BoundaryConstraint> format
                     ; source = source 
@@ -92,18 +92,18 @@ module BoundaryConstraintFunction =
             try
 
                 let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
-                let builder () = withMnemonic mnemonic ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BoundaryConstraint.source + ".Empty") 
+                let source () = Helper.sourceFold (_BoundaryConstraint.source + ".Empty") 
                                                [| _BoundaryConstraint.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BoundaryConstraint.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,12 +131,12 @@ module BoundaryConstraintFunction =
 
                 let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).LowerBound
+                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_BoundaryConstraint.source + ".LowerBound") 
+                let source () = Helper.sourceFold (_BoundaryConstraint.source + ".LowerBound") 
                                                [| _BoundaryConstraint.source
                                                ;  _parameters.source
                                                |]
@@ -145,7 +145,7 @@ module BoundaryConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BoundaryConstraint> format
                     ; source = source 
@@ -173,12 +173,12 @@ module BoundaryConstraintFunction =
 
                 let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).Test
+                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_BoundaryConstraint.source + ".Test") 
+                let source () = Helper.sourceFold (_BoundaryConstraint.source + ".Test") 
                                                [| _BoundaryConstraint.source
                                                ;  _p.source
                                                |]
@@ -187,7 +187,7 @@ module BoundaryConstraintFunction =
                                 ;  _p.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -221,14 +221,14 @@ module BoundaryConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_BoundaryConstraint.source + ".Update") 
+                let source () = Helper.sourceFold (_BoundaryConstraint.source + ".Update") 
                                                [| _BoundaryConstraint.source
                                                ;  _p.source
                                                ;  _direction.source
@@ -241,7 +241,7 @@ module BoundaryConstraintFunction =
                                 ;  _beta.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -269,12 +269,12 @@ module BoundaryConstraintFunction =
 
                 let _BoundaryConstraint = Helper.toCell<BoundaryConstraint> boundaryconstraint "BoundaryConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).UpperBound
+                let builder (current : ICell) = withMnemonic mnemonic ((BoundaryConstraintModel.Cast _BoundaryConstraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_BoundaryConstraint.source + ".UpperBound") 
+                let source () = Helper.sourceFold (_BoundaryConstraint.source + ".UpperBound") 
                                                [| _BoundaryConstraint.source
                                                ;  _parameters.source
                                                |]
@@ -283,7 +283,7 @@ module BoundaryConstraintFunction =
                                 ;  _parameters.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<BoundaryConstraint> format
                     ; source = source 
@@ -312,14 +312,14 @@ module BoundaryConstraintFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<BoundaryConstraint>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<BoundaryConstraint>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<BoundaryConstraint>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<BoundaryConstraint>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder () = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
-                let source = Helper.sourceFold (_SvenssonFitting.source + ".Clone") 
+                let source () = Helper.sourceFold (_SvenssonFitting.source + ".Clone") 
                                                [| _SvenssonFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SvenssonFitting> format
                     ; source = source 
@@ -85,18 +85,18 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder () = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Size
+                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SvenssonFitting.source + ".Size") 
+                let source () = Helper.sourceFold (_SvenssonFitting.source + ".Size") 
                                                [| _SvenssonFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,13 +124,13 @@ module SvenssonFittingFunction =
 
                 let _weights = Helper.toDefault<Vector> weights "weights" null
                 let _optimizationMethod = Helper.toDefault<OptimizationMethod> optimizationMethod "optimizationMethod" null
-                let builder () = withMnemonic mnemonic (Fun.SvenssonFitting 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.SvenssonFitting 
                                                             _weights.cell 
                                                             _optimizationMethod.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SvenssonFitting>) l
 
-                let source = Helper.sourceFold "Fun.SvenssonFitting" 
+                let source () = Helper.sourceFold "Fun.SvenssonFitting" 
                                                [| _weights.source
                                                ;  _optimizationMethod.source
                                                |]
@@ -139,7 +139,7 @@ module SvenssonFittingFunction =
                                 ;  _optimizationMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SvenssonFitting> format
                     ; source = source 
@@ -164,18 +164,18 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder () = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).ConstrainAtZero
+                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_SvenssonFitting.source + ".ConstrainAtZero") 
+                let source () = Helper.sourceFold (_SvenssonFitting.source + ".ConstrainAtZero") 
                                                [| _SvenssonFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,13 +206,13 @@ module SvenssonFittingFunction =
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Discount
+                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Discount
                                                             _x.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SvenssonFitting.source + ".Discount") 
+                let source () = Helper.sourceFold (_SvenssonFitting.source + ".Discount") 
                                                [| _SvenssonFitting.source
                                                ;  _x.source
                                                ;  _t.source
@@ -223,7 +223,7 @@ module SvenssonFittingFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -248,18 +248,18 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder () = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).MinimumCostValue
+                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SvenssonFitting.source + ".MinimumCostValue") 
+                let source () = Helper.sourceFold (_SvenssonFitting.source + ".MinimumCostValue") 
                                                [| _SvenssonFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -284,18 +284,18 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder () = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).NumberOfIterations
+                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_SvenssonFitting.source + ".NumberOfIterations") 
+                let source () = Helper.sourceFold (_SvenssonFitting.source + ".NumberOfIterations") 
                                                [| _SvenssonFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -320,18 +320,18 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder () = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).OptimizationMethod
+                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
-                let source = Helper.sourceFold (_SvenssonFitting.source + ".OptimizationMethod") 
+                let source () = Helper.sourceFold (_SvenssonFitting.source + ".OptimizationMethod") 
                                                [| _SvenssonFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SvenssonFitting> format
                     ; source = source 
@@ -356,18 +356,18 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder () = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Solution
+                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SvenssonFitting.source + ".Solution") 
+                let source () = Helper.sourceFold (_SvenssonFitting.source + ".Solution") 
                                                [| _SvenssonFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SvenssonFitting> format
                     ; source = source 
@@ -392,18 +392,18 @@ module SvenssonFittingFunction =
             try
 
                 let _SvenssonFitting = Helper.toCell<SvenssonFitting> svenssonfitting "SvenssonFitting"  
-                let builder () = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Weights
+                let builder (current : ICell) = withMnemonic mnemonic ((SvenssonFittingModel.Cast _SvenssonFitting.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
-                let source = Helper.sourceFold (_SvenssonFitting.source + ".Weights") 
+                let source () = Helper.sourceFold (_SvenssonFitting.source + ".Weights") 
                                                [| _SvenssonFitting.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<SvenssonFitting> format
                     ; source = source 
@@ -432,14 +432,14 @@ module SvenssonFittingFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<SvenssonFitting>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<SvenssonFitting>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<SvenssonFitting>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<SvenssonFitting>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -46,16 +46,16 @@ module IterativeBootstrapFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.IterativeBootstrap 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.IterativeBootstrap 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IterativeBootstrap>) l
 
-                let source = Helper.sourceFold "Fun.IterativeBootstrap" 
+                let source () = Helper.sourceFold "Fun.IterativeBootstrap" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<IterativeBootstrap> format
                     ; source = source 
@@ -83,12 +83,12 @@ module IterativeBootstrapFunction =
 
                 let _IterativeBootstrap = Helper.toCell<IterativeBootstrap> iterativebootstrap "IterativeBootstrap"  
                 let _ts = Helper.toCell<'T> ts "ts" 
-                let builder () = withMnemonic mnemonic ((IterativeBootstrapModel.Cast _IterativeBootstrap.cell).Setup
+                let builder (current : ICell) = withMnemonic mnemonic ((IterativeBootstrapModel.Cast _IterativeBootstrap.cell).Setup
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (o : IterativeBootstrap) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_IterativeBootstrap.source + ".Setup") 
+                let source () = Helper.sourceFold (_IterativeBootstrap.source + ".Setup") 
                                                [| _IterativeBootstrap.source
                                                ;  _ts.source
                                                |]
@@ -97,7 +97,7 @@ module IterativeBootstrapFunction =
                                 ;  _ts.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -126,14 +126,14 @@ module IterativeBootstrapFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<IterativeBootstrap>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<IterativeBootstrap>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<IterativeBootstrap>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<IterativeBootstrap>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

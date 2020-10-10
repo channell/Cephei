@@ -46,16 +46,16 @@ module FranceRegionFunction =
 
             try
 
-                let builder () = withMnemonic mnemonic (Fun.FranceRegion ()
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FranceRegion ()
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FranceRegion>) l
 
-                let source = Helper.sourceFold "Fun.FranceRegion" 
+                let source () = Helper.sourceFold "Fun.FranceRegion" 
                                                [||]
                 let hash = Helper.hashFold 
                                 [||]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<FranceRegion> format
                     ; source = source 
@@ -80,18 +80,18 @@ module FranceRegionFunction =
             try
 
                 let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion"  
-                let builder () = withMnemonic mnemonic ((FranceRegionModel.Cast _FranceRegion.cell).Code
+                let builder (current : ICell) = withMnemonic mnemonic ((FranceRegionModel.Cast _FranceRegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FranceRegion.source + ".Code") 
+                let source () = Helper.sourceFold (_FranceRegion.source + ".Code") 
                                                [| _FranceRegion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FranceRegion.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -119,12 +119,12 @@ module FranceRegionFunction =
 
                 let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((FranceRegionModel.Cast _FranceRegion.cell).Equals
+                let builder (current : ICell) = withMnemonic mnemonic ((FranceRegionModel.Cast _FranceRegion.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FranceRegion.source + ".Equals") 
+                let source () = Helper.sourceFold (_FranceRegion.source + ".Equals") 
                                                [| _FranceRegion.source
                                                ;  _o.source
                                                |]
@@ -133,7 +133,7 @@ module FranceRegionFunction =
                                 ;  _o.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -158,18 +158,18 @@ module FranceRegionFunction =
             try
 
                 let _FranceRegion = Helper.toCell<FranceRegion> franceregion "FranceRegion"  
-                let builder () = withMnemonic mnemonic ((FranceRegionModel.Cast _FranceRegion.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((FranceRegionModel.Cast _FranceRegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_FranceRegion.source + ".Name") 
+                let source () = Helper.sourceFold (_FranceRegion.source + ".Name") 
                                                [| _FranceRegion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FranceRegion.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -198,14 +198,14 @@ module FranceRegionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<FranceRegion>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<FranceRegion>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<FranceRegion>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<FranceRegion>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

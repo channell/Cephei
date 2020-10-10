@@ -61,7 +61,7 @@ module ContinuousAveragingAsianOptionFunction =
                 let _exercise = Helper.toCell<Exercise> exercise "exercise" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.ContinuousAveragingAsianOption 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ContinuousAveragingAsianOption 
                                                             _averageType.cell 
                                                             _payoff.cell 
                                                             _exercise.cell 
@@ -70,7 +70,7 @@ module ContinuousAveragingAsianOptionFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ContinuousAveragingAsianOption>) l
 
-                let source = Helper.sourceFold "Fun.ContinuousAveragingAsianOption" 
+                let source () = Helper.sourceFold "Fun.ContinuousAveragingAsianOption" 
                                                [| _averageType.source
                                                ;  _payoff.source
                                                ;  _exercise.source
@@ -85,7 +85,7 @@ module ContinuousAveragingAsianOptionFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ContinuousAveragingAsianOption> format
                     ; source = source 
@@ -110,18 +110,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Delta
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Delta") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Delta") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -146,18 +146,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).DeltaForward
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".DeltaForward") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".DeltaForward") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -182,18 +182,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).DividendRho
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".DividendRho") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".DividendRho") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -218,18 +218,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Elasticity
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Elasticity") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Elasticity") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -254,18 +254,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Gamma
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Gamma") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Gamma") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -290,18 +290,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".IsExpired") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,18 +326,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ItmCashProbability
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ItmCashProbability") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ItmCashProbability") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -362,18 +362,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Rho
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Rho") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Rho") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -398,18 +398,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).StrikeSensitivity
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".StrikeSensitivity") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".StrikeSensitivity") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -434,18 +434,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Theta
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Theta") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Theta") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -470,18 +470,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ThetaPerDay
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ThetaPerDay") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ThetaPerDay") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -506,18 +506,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Vega
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Vega") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Vega") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -542,18 +542,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Exercise
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Exercise") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Exercise") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ContinuousAveragingAsianOption> format
                     ; source = source 
@@ -578,18 +578,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Payoff
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Payoff") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Payoff") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ContinuousAveragingAsianOption> format
                     ; source = source 
@@ -614,18 +614,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".CASH") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".CASH") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -650,18 +650,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ErrorEstimate") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -686,18 +686,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".NPV") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".NPV") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -725,12 +725,12 @@ module ContinuousAveragingAsianOptionFunction =
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Result") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Result") 
                                                [| _ContinuousAveragingAsianOption.source
                                                ;  _tag.source
                                                |]
@@ -739,7 +739,7 @@ module ContinuousAveragingAsianOptionFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -767,12 +767,12 @@ module ContinuousAveragingAsianOptionFunction =
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : ContinuousAveragingAsianOption) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".SetPricingEngine") 
                                                [| _ContinuousAveragingAsianOption.source
                                                ;  _e.source
                                                |]
@@ -781,7 +781,7 @@ module ContinuousAveragingAsianOptionFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -806,18 +806,18 @@ module ContinuousAveragingAsianOptionFunction =
             try
 
                 let _ContinuousAveragingAsianOption = Helper.toCell<ContinuousAveragingAsianOption> continuousaveragingasianoption "ContinuousAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((ContinuousAveragingAsianOptionModel.Cast _ContinuousAveragingAsianOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ValuationDate") 
                                                [| _ContinuousAveragingAsianOption.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -846,14 +846,14 @@ module ContinuousAveragingAsianOptionFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ContinuousAveragingAsianOption>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ContinuousAveragingAsianOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ContinuousAveragingAsianOption>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ContinuousAveragingAsianOption>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

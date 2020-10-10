@@ -49,18 +49,18 @@ module LoanFunction =
             try
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
-                let builder () = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).IsExpired
+                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Loan.source + ".IsExpired") 
+                let source () = Helper.sourceFold (_Loan.source + ".IsExpired") 
                                                [| _Loan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -91,14 +91,14 @@ module LoanFunction =
                 let _legs = Helper.toCell<int> legs "legs" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
-                let builder () = withMnemonic mnemonic (Fun.Loan 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Loan 
                                                             _legs.cell 
                                                             _pricingEngine.cell 
                                                             _evaluationDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Loan>) l
 
-                let source = Helper.sourceFold "Fun.Loan" 
+                let source () = Helper.sourceFold "Fun.Loan" 
                                                [| _legs.source
                                                ;  _pricingEngine.source
                                                ;  _evaluationDate.source
@@ -109,7 +109,7 @@ module LoanFunction =
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Loan> format
                     ; source = source 
@@ -134,18 +134,18 @@ module LoanFunction =
             try
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
-                let builder () = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).CASH
+                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Loan.source + ".CASH") 
+                let source () = Helper.sourceFold (_Loan.source + ".CASH") 
                                                [| _Loan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -170,18 +170,18 @@ module LoanFunction =
             try
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
-                let builder () = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).ErrorEstimate
+                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Loan.source + ".ErrorEstimate") 
+                let source () = Helper.sourceFold (_Loan.source + ".ErrorEstimate") 
                                                [| _Loan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -206,18 +206,18 @@ module LoanFunction =
             try
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
-                let builder () = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).NPV
+                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Loan.source + ".NPV") 
+                let source () = Helper.sourceFold (_Loan.source + ".NPV") 
                                                [| _Loan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -245,12 +245,12 @@ module LoanFunction =
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).Result
+                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Loan.source + ".Result") 
+                let source () = Helper.sourceFold (_Loan.source + ".Result") 
                                                [| _Loan.source
                                                ;  _tag.source
                                                |]
@@ -259,7 +259,7 @@ module LoanFunction =
                                 ;  _tag.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -287,12 +287,12 @@ module LoanFunction =
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).SetPricingEngine
+                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Loan) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Loan.source + ".SetPricingEngine") 
+                let source () = Helper.sourceFold (_Loan.source + ".SetPricingEngine") 
                                                [| _Loan.source
                                                ;  _e.source
                                                |]
@@ -301,7 +301,7 @@ module LoanFunction =
                                 ;  _e.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -326,18 +326,18 @@ module LoanFunction =
             try
 
                 let _Loan = Helper.toCell<Loan> loan "Loan"  
-                let builder () = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).ValuationDate
+                let builder (current : ICell) = withMnemonic mnemonic ((LoanModel.Cast _Loan.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Loan.source + ".ValuationDate") 
+                let source () = Helper.sourceFold (_Loan.source + ".ValuationDate") 
                                                [| _Loan.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -366,14 +366,14 @@ module LoanFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Loan>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Loan>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Loan>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Loan>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

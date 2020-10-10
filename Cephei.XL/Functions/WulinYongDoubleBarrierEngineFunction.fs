@@ -53,13 +53,13 @@ module WulinYongDoubleBarrierEngineFunction =
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _series = Helper.toDefault<int> series "series" 5
-                let builder () = withMnemonic mnemonic (Fun.WulinYongDoubleBarrierEngine 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.WulinYongDoubleBarrierEngine 
                                                             _Process.cell 
                                                             _series.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<WulinYongDoubleBarrierEngine>) l
 
-                let source = Helper.sourceFold "Fun.WulinYongDoubleBarrierEngine" 
+                let source () = Helper.sourceFold "Fun.WulinYongDoubleBarrierEngine" 
                                                [| _Process.source
                                                ;  _series.source
                                                |]
@@ -68,7 +68,7 @@ module WulinYongDoubleBarrierEngineFunction =
                                 ;  _series.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<WulinYongDoubleBarrierEngine> format
                     ; source = source 
@@ -97,14 +97,14 @@ module WulinYongDoubleBarrierEngineFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<WulinYongDoubleBarrierEngine>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<WulinYongDoubleBarrierEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<WulinYongDoubleBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<WulinYongDoubleBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

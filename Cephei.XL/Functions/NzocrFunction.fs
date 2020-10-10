@@ -49,19 +49,19 @@ module NzocrFunction =
             try
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic (Fun.Nzocr 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Nzocr 
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Nzocr>) l
 
-                let source = Helper.sourceFold "Fun.Nzocr" 
+                let source () = Helper.sourceFold "Fun.Nzocr" 
                                                [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Nzocr> format
                     ; source = source 
@@ -89,12 +89,12 @@ module NzocrFunction =
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Clone
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
 
-                let source = Helper.sourceFold (_Nzocr.source + ".Clone") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".Clone") 
                                                [| _Nzocr.source
                                                ;  _h.source
                                                |]
@@ -103,7 +103,7 @@ module NzocrFunction =
                                 ;  _h.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Nzocr> format
                     ; source = source 
@@ -128,18 +128,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).BusinessDayConvention
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".BusinessDayConvention") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".BusinessDayConvention") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -164,18 +164,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).EndOfMonth
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".EndOfMonth") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".EndOfMonth") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -209,14 +209,14 @@ module NzocrFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).ForecastFixing1
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".ForecastFixing1") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".ForecastFixing1") 
                                                [| _Nzocr.source
                                                ;  _d1.source
                                                ;  _d2.source
@@ -229,7 +229,7 @@ module NzocrFunction =
                                 ;  _t.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -257,12 +257,12 @@ module NzocrFunction =
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).ForecastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".ForecastFixing") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".ForecastFixing") 
                                                [| _Nzocr.source
                                                ;  _fixingDate.source
                                                |]
@@ -271,7 +271,7 @@ module NzocrFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -296,18 +296,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).ForwardingTermStructure
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
-                let source = Helper.sourceFold (_Nzocr.source + ".ForwardingTermStructure") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".ForwardingTermStructure") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Nzocr> format
                     ; source = source 
@@ -335,12 +335,12 @@ module NzocrFunction =
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).MaturityDate
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".MaturityDate") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".MaturityDate") 
                                                [| _Nzocr.source
                                                ;  _valueDate.source
                                                |]
@@ -349,7 +349,7 @@ module NzocrFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -374,18 +374,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Currency
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
-                let source = Helper.sourceFold (_Nzocr.source + ".Currency") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".Currency") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Nzocr> format
                     ; source = source 
@@ -410,18 +410,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).DayCounter
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
-                let source = Helper.sourceFold (_Nzocr.source + ".DayCounter") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".DayCounter") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Nzocr> format
                     ; source = source 
@@ -446,18 +446,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).FamilyName
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".FamilyName") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".FamilyName") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -488,13 +488,13 @@ module NzocrFunction =
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Fixing
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".Fixing") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".Fixing") 
                                                [| _Nzocr.source
                                                ;  _fixingDate.source
                                                ;  _forecastTodaysFixing.source
@@ -505,7 +505,7 @@ module NzocrFunction =
                                 ;  _forecastTodaysFixing.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -530,18 +530,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).FixingCalendar
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
-                let source = Helper.sourceFold (_Nzocr.source + ".FixingCalendar") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".FixingCalendar") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Nzocr> format
                     ; source = source 
@@ -569,12 +569,12 @@ module NzocrFunction =
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).FixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".FixingDate") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".FixingDate") 
                                                [| _Nzocr.source
                                                ;  _valueDate.source
                                                |]
@@ -583,7 +583,7 @@ module NzocrFunction =
                                 ;  _valueDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -608,18 +608,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).FixingDays
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".FixingDays") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".FixingDays") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -647,12 +647,12 @@ module NzocrFunction =
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).IsValidFixingDate
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".IsValidFixingDate") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".IsValidFixingDate") 
                                                [| _Nzocr.source
                                                ;  _fixingDate.source
                                                |]
@@ -661,7 +661,7 @@ module NzocrFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -686,18 +686,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Name
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".Name") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".Name") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -725,12 +725,12 @@ module NzocrFunction =
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).PastFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".PastFixing") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".PastFixing") 
                                                [| _Nzocr.source
                                                ;  _fixingDate.source
                                                |]
@@ -739,7 +739,7 @@ module NzocrFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -764,18 +764,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Tenor
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
-                let source = Helper.sourceFold (_Nzocr.source + ".Tenor") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".Tenor") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<Nzocr> format
                     ; source = source 
@@ -800,18 +800,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).Update
                                                        ) :> ICell
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".Update") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".Update") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -839,12 +839,12 @@ module NzocrFunction =
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).ValueDate
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".ValueDate") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".ValueDate") 
                                                [| _Nzocr.source
                                                ;  _fixingDate.source
                                                |]
@@ -853,7 +853,7 @@ module NzocrFunction =
                                 ;  _fixingDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -887,14 +887,14 @@ module NzocrFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).AddFixing
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".AddFixing") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".AddFixing") 
                                                [| _Nzocr.source
                                                ;  _d.source
                                                ;  _v.source
@@ -907,7 +907,7 @@ module NzocrFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -941,14 +941,14 @@ module NzocrFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).AddFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".AddFixings") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".AddFixings") 
                                                [| _Nzocr.source
                                                ;  _d.source
                                                ;  _v.source
@@ -961,7 +961,7 @@ module NzocrFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -992,13 +992,13 @@ module NzocrFunction =
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).AddFixings1
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".AddFixings1") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".AddFixings1") 
                                                [| _Nzocr.source
                                                ;  _source.source
                                                ;  _forceOverwrite.source
@@ -1009,7 +1009,7 @@ module NzocrFunction =
                                 ;  _forceOverwrite.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1034,18 +1034,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).AllowsNativeFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".AllowsNativeFixings") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".AllowsNativeFixings") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1070,18 +1070,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).ClearFixings
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".ClearFixings") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".ClearFixings") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1109,12 +1109,12 @@ module NzocrFunction =
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).RegisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".RegisterWith") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".RegisterWith") 
                                                [| _Nzocr.source
                                                ;  _handler.source
                                                |]
@@ -1123,7 +1123,7 @@ module NzocrFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1148,18 +1148,18 @@ module NzocrFunction =
             try
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).TimeSeries
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".TimeSeries") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".TimeSeries") 
                                                [| _Nzocr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1187,12 +1187,12 @@ module NzocrFunction =
 
                 let _Nzocr = Helper.toCell<Nzocr> nzocr "Nzocr"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).UnregisterWith
+                let builder (current : ICell) = withMnemonic mnemonic ((NzocrModel.Cast _Nzocr.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_Nzocr.source + ".UnregisterWith") 
+                let source () = Helper.sourceFold (_Nzocr.source + ".UnregisterWith") 
                                                [| _Nzocr.source
                                                ;  _handler.source
                                                |]
@@ -1201,7 +1201,7 @@ module NzocrFunction =
                                 ;  _handler.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1230,14 +1230,14 @@ module NzocrFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<Nzocr>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<Nzocr>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<Nzocr>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<Nzocr>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

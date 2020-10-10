@@ -49,19 +49,19 @@ module ConstantCPRFunction =
             try
 
                 let _cpr = Helper.toCell<double> cpr "cpr" 
-                let builder () = withMnemonic mnemonic (Fun.ConstantCPR 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.ConstantCPR 
                                                             _cpr.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ConstantCPR>) l
 
-                let source = Helper.sourceFold "Fun.ConstantCPR" 
+                let source () = Helper.sourceFold "Fun.ConstantCPR" 
                                                [| _cpr.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _cpr.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<ConstantCPR> format
                     ; source = source 
@@ -89,12 +89,12 @@ module ConstantCPRFunction =
 
                 let _ConstantCPR = Helper.toCell<ConstantCPR> constantcpr "ConstantCPR"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
-                let builder () = withMnemonic mnemonic ((ConstantCPRModel.Cast _ConstantCPR.cell).GetCPR
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantCPRModel.Cast _ConstantCPR.cell).GetCPR
                                                             _valDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantCPR.source + ".GetCPR") 
+                let source () = Helper.sourceFold (_ConstantCPR.source + ".GetCPR") 
                                                [| _ConstantCPR.source
                                                ;  _valDate.source
                                                |]
@@ -103,7 +103,7 @@ module ConstantCPRFunction =
                                 ;  _valDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -131,12 +131,12 @@ module ConstantCPRFunction =
 
                 let _ConstantCPR = Helper.toCell<ConstantCPR> constantcpr "ConstantCPR"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
-                let builder () = withMnemonic mnemonic ((ConstantCPRModel.Cast _ConstantCPR.cell).GetSMM
+                let builder (current : ICell) = withMnemonic mnemonic ((ConstantCPRModel.Cast _ConstantCPR.cell).GetSMM
                                                             _valDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_ConstantCPR.source + ".GetSMM") 
+                let source () = Helper.sourceFold (_ConstantCPR.source + ".GetSMM") 
                                                [| _ConstantCPR.source
                                                ;  _valDate.source
                                                |]
@@ -145,7 +145,7 @@ module ConstantCPRFunction =
                                 ;  _valDate.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -174,14 +174,14 @@ module ConstantCPRFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<ConstantCPR>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<ConstantCPR>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<ConstantCPR>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<ConstantCPR>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -49,18 +49,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).A
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).A
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".A") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".A") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -124,7 +124,7 @@ module AbcdInterpolationFunction =
                 let _vegaWeighted = Helper.toDefault<bool> vegaWeighted "vegaWeighted" false
                 let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _optMethod = Helper.toDefault<OptimizationMethod> optMethod "optMethod" null
-                let builder () = withMnemonic mnemonic (Fun.AbcdInterpolation 
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.AbcdInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -142,7 +142,7 @@ module AbcdInterpolationFunction =
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AbcdInterpolation>) l
 
-                let source = Helper.sourceFold "Fun.AbcdInterpolation" 
+                let source () = Helper.sourceFold "Fun.AbcdInterpolation" 
                                                [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
@@ -175,7 +175,7 @@ module AbcdInterpolationFunction =
                                 ;  _optMethod.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModel<AbcdInterpolation> format
                     ; source = source 
@@ -200,18 +200,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).B
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).B
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".B") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".B") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -236,18 +236,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).C
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).C
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".C") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".C") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -272,18 +272,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).D
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).D
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".D") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".D") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -308,18 +308,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).EndCriteria
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".EndCriteria") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".EndCriteria") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -353,14 +353,14 @@ module AbcdInterpolationFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).K
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).K
                                                             _t.cell 
                                                             _xBegin.cell 
                                                             _size.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".K") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".K") 
                                                [| _AbcdInterpolation.source
                                                ;  _t.source
                                                ;  _xBegin.source
@@ -373,7 +373,7 @@ module AbcdInterpolationFunction =
                                 ;  _size.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -398,18 +398,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).K1
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).K1
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".K1") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".K1") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberRange format
                     ; source = source 
@@ -434,18 +434,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).MaxError
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).MaxError
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".MaxError") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".MaxError") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -470,18 +470,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).RmsError
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).RmsError
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".RmsError") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".RmsError") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -512,13 +512,13 @@ module AbcdInterpolationFunction =
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Derivative
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".Derivative") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".Derivative") 
                                                [| _AbcdInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -529,7 +529,7 @@ module AbcdInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -554,18 +554,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Empty
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".Empty") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".Empty") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -596,13 +596,13 @@ module AbcdInterpolationFunction =
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Primitive
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".Primitive") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".Primitive") 
                                                [| _AbcdInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -613,7 +613,7 @@ module AbcdInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -644,13 +644,13 @@ module AbcdInterpolationFunction =
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).SecondDerivative
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".SecondDerivative") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".SecondDerivative") 
                                                [| _AbcdInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -661,7 +661,7 @@ module AbcdInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -686,18 +686,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Update
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : AbcdInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".Update") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".Update") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -729,13 +729,13 @@ module AbcdInterpolationFunction =
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Value
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".Value") 
                                                [| _AbcdInterpolation.source
                                                ;  _x.source
                                                ;  _allowExtrapolation.source
@@ -746,7 +746,7 @@ module AbcdInterpolationFunction =
                                 ;  _allowExtrapolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -774,12 +774,12 @@ module AbcdInterpolationFunction =
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Value
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".Value") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".Value") 
                                                [| _AbcdInterpolation.source
                                                ;  _x.source
                                                |]
@@ -788,7 +788,7 @@ module AbcdInterpolationFunction =
                                 ;  _x.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -813,18 +813,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).XMax
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".XMax") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".XMax") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -849,18 +849,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).XMin
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".XMin") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".XMin") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -885,18 +885,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).AllowsExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".AllowsExtrapolation") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".AllowsExtrapolation") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -924,12 +924,12 @@ module AbcdInterpolationFunction =
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _b = Helper.toCell<bool> b "b"
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).DisableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : AbcdInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".DisableExtrapolation") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".DisableExtrapolation") 
                                                [| _AbcdInterpolation.source
                                                ;  _b.source
                                                |]
@@ -938,7 +938,7 @@ module AbcdInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -966,12 +966,12 @@ module AbcdInterpolationFunction =
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
                 let _b = Helper.toCell<bool> b "b"
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).EnableExtrapolation
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : AbcdInterpolation) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".EnableExtrapolation") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".EnableExtrapolation") 
                                                [| _AbcdInterpolation.source
                                                ;  _b.source
                                                |]
@@ -980,7 +980,7 @@ module AbcdInterpolationFunction =
                                 ;  _b.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1005,18 +1005,18 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let builder () = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Extrapolate
+                let builder (current : ICell) = withMnemonic mnemonic ((AbcdInterpolationModel.Cast _AbcdInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
-                let source = Helper.sourceFold (_AbcdInterpolation.source + ".Extrapolate") 
+                let source () = Helper.sourceFold (_AbcdInterpolation.source + ".Extrapolate") 
                                                [| _AbcdInterpolation.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdInterpolation.cell
                                 |]
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriber format
                     ; source = source 
@@ -1045,14 +1045,14 @@ module AbcdInterpolationFunction =
                 let c = a |> Array.map (fun i -> i.cell)
                 let l = new Generic.List<ICell<AbcdInterpolation>> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder (current : ICell) = Util.value l :> ICell
                 let format (i : Generic.List<ICell<AbcdInterpolation>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
-                    { mnemonic = mnemonic
+                    { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source = "cell Generic.List<AbcdInterpolation>(" + (Helper.sourceFoldArray (s) + ")")
+                    ; source =  (fun () -> "cell Generic.List<AbcdInterpolation>(" + (Helper.sourceFoldArray (s) + ")"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with
