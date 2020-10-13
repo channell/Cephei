@@ -55,7 +55,7 @@ type BermudanExerciseModel
 (* 
     casting 
 *)
-    internal new () = BermudanExerciseModel(null)
+    internal new () = new BermudanExerciseModel(null)
     member internal this.Inject v = _BermudanExercise.Value <- v
     static member Cast (p : ICell<BermudanExercise>) = 
         if p :? BermudanExerciseModel then 
@@ -106,7 +106,7 @@ type BermudanExerciseModel1
 (* 
     casting 
 *)
-    internal new () = BermudanExerciseModel1(null,null)
+    internal new () = new BermudanExerciseModel1(null,null)
     member internal this.Inject v = _BermudanExercise.Value <- v
     static member Cast (p : ICell<BermudanExercise>) = 
         if p :? BermudanExerciseModel1 then 

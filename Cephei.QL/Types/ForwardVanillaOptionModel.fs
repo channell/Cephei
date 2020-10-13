@@ -82,7 +82,7 @@ type ForwardVanillaOptionModel
 (* 
     casting 
 *)
-    internal new () = ForwardVanillaOptionModel(null,null,null,null,null,null)
+    internal new () = new ForwardVanillaOptionModel(null,null,null,null,null,null)
     member internal this.Inject v = _ForwardVanillaOption.Value <- v
     static member Cast (p : ICell<ForwardVanillaOption>) = 
         if p :? ForwardVanillaOptionModel then 

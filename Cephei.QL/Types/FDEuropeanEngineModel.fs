@@ -72,7 +72,7 @@ type FDEuropeanEngineModel
 (* 
     casting 
 *)
-    internal new () = FDEuropeanEngineModel(null,null,null,null)
+    internal new () = new FDEuropeanEngineModel(null,null,null,null)
     member internal this.Inject v = _FDEuropeanEngine.Value <- v
     static member Cast (p : ICell<FDEuropeanEngine>) = 
         if p :? FDEuropeanEngineModel then 
@@ -145,7 +145,7 @@ type FDEuropeanEngineModel1
 (* 
     casting 
 *)
-    internal new () = FDEuropeanEngineModel1(null,null,null)
+    internal new () = new FDEuropeanEngineModel1(null,null,null)
     member internal this.Inject v = _FDEuropeanEngine.Value <- v
     static member Cast (p : ICell<FDEuropeanEngine>) = 
         if p :? FDEuropeanEngineModel1 then 

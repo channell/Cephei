@@ -23,12 +23,11 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgSystem_Reflection_Emit_Lightweight Condition=" '$(PkgSystem_Reflection_Emit_Lightweight)' == '' ">C:\Users\steve\.nuget\packages\system.reflection.emit.lightweight\4.7.0</PkgSystem_Reflection_Emit_Lightweight>
-    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\steve\.nuget\packages\newtonsoft.json\10.0.3</PkgNewtonsoft_Json>
+    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\steve\.nuget\packages\newtonsoft.json\9.0.1</PkgNewtonsoft_Json>
     <PkgMSTest_TestFramework Condition=" '$(PkgMSTest_TestFramework)' == '' ">C:\Users\steve\.nuget\packages\mstest.testframework\2.1.2</PkgMSTest_TestFramework>
     <PkgMSTest_TestAdapter Condition=" '$(PkgMSTest_TestAdapter)' == '' ">C:\Users\steve\.nuget\packages\mstest.testadapter\2.1.2</PkgMSTest_TestAdapter>
     <PkgMicrosoft_NET_Test_Sdk Condition=" '$(PkgMicrosoft_NET_Test_Sdk)' == '' ">C:\Users\steve\.nuget\packages\microsoft.net.test.sdk\16.7.1</PkgMicrosoft_NET_Test_Sdk>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
     <Pkgcoverlet_collector Condition=" '$(Pkgcoverlet_collector)' == '' ">C:\Users\steve\.nuget\packages\coverlet.collector\1.3.0</Pkgcoverlet_collector>
-    <PkgCephei_Cell Condition=" '$(PkgCephei_Cell)' == '' ">C:\Users\steve\.nuget\packages\cephei.cell\3.0.2</PkgCephei_Cell>
   </PropertyGroup>
 </Project>

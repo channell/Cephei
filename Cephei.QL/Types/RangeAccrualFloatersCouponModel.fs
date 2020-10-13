@@ -139,7 +139,7 @@ type RangeAccrualFloatersCouponModel
 (* 
     casting 
 *)
-    internal new () = RangeAccrualFloatersCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new RangeAccrualFloatersCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _RangeAccrualFloatersCoupon.Value <- v
     static member Cast (p : ICell<RangeAccrualFloatersCoupon>) = 
         if p :? RangeAccrualFloatersCouponModel then 

@@ -105,7 +105,7 @@ type EuriborSwapIsdaFixAModel
 (* 
     casting 
 *)
-    internal new () = EuriborSwapIsdaFixAModel(null)
+    internal new () = new EuriborSwapIsdaFixAModel(null)
     member internal this.Inject v = _EuriborSwapIsdaFixA.Value <- v
     static member Cast (p : ICell<EuriborSwapIsdaFixA>) = 
         if p :? EuriborSwapIsdaFixAModel then 
@@ -249,7 +249,7 @@ type EuriborSwapIsdaFixAModel1
 (* 
     casting 
 *)
-    internal new () = EuriborSwapIsdaFixAModel1(null,null)
+    internal new () = new EuriborSwapIsdaFixAModel1(null,null)
     member internal this.Inject v = _EuriborSwapIsdaFixA.Value <- v
     static member Cast (p : ICell<EuriborSwapIsdaFixA>) = 
         if p :? EuriborSwapIsdaFixAModel1 then 
@@ -396,7 +396,7 @@ type EuriborSwapIsdaFixAModel2
 (* 
     casting 
 *)
-    internal new () = EuriborSwapIsdaFixAModel2(null,null,null)
+    internal new () = new EuriborSwapIsdaFixAModel2(null,null,null)
     member internal this.Inject v = _EuriborSwapIsdaFixA.Value <- v
     static member Cast (p : ICell<EuriborSwapIsdaFixA>) = 
         if p :? EuriborSwapIsdaFixAModel2 then 

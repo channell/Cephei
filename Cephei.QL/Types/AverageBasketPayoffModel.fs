@@ -63,7 +63,7 @@ type AverageBasketPayoffModel
 (* 
     casting 
 *)
-    internal new () = AverageBasketPayoffModel(null,null)
+    internal new () = new AverageBasketPayoffModel(null,null)
     member internal this.Inject v = _AverageBasketPayoff.Value <- v
     static member Cast (p : ICell<AverageBasketPayoff>) = 
         if p :? AverageBasketPayoffModel then 
@@ -126,7 +126,7 @@ type AverageBasketPayoffModel1
 (* 
     casting 
 *)
-    internal new () = AverageBasketPayoffModel1(null,null)
+    internal new () = new AverageBasketPayoffModel1(null,null)
     member internal this.Inject v = _AverageBasketPayoff.Value <- v
     static member Cast (p : ICell<AverageBasketPayoff>) = 
         if p :? AverageBasketPayoffModel1 then 

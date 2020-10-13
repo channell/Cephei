@@ -80,7 +80,7 @@ type CliquetOptionModel
 (* 
     casting 
 *)
-    internal new () = CliquetOptionModel(null,null,null,null,null)
+    internal new () = new CliquetOptionModel(null,null,null,null,null)
     member internal this.Inject v = _CliquetOption.Value <- v
     static member Cast (p : ICell<CliquetOption>) = 
         if p :? CliquetOptionModel then 

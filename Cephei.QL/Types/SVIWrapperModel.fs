@@ -57,7 +57,7 @@ type SVIWrapperModel
 (* 
     casting 
 *)
-    internal new () = SVIWrapperModel(null,null,null,null)
+    internal new () = new SVIWrapperModel(null,null,null,null)
     member internal this.Inject v = _SVIWrapper.Value <- v
     static member Cast (p : ICell<SVIWrapper>) = 
         if p :? SVIWrapperModel then 

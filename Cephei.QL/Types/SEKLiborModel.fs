@@ -98,7 +98,7 @@ type SEKLiborModel
 (* 
     casting 
 *)
-    internal new () = SEKLiborModel(null)
+    internal new () = new SEKLiborModel(null)
     member internal this.Inject v = _SEKLibor.Value <- v
     static member Cast (p : ICell<SEKLibor>) = 
         if p :? SEKLiborModel then 
@@ -228,7 +228,7 @@ type SEKLiborModel1
 (* 
     casting 
 *)
-    internal new () = SEKLiborModel1(null,null)
+    internal new () = new SEKLiborModel1(null,null)
     member internal this.Inject v = _SEKLibor.Value <- v
     static member Cast (p : ICell<SEKLibor>) = 
         if p :? SEKLiborModel1 then 

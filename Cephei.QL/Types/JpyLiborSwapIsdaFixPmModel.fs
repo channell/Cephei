@@ -107,7 +107,7 @@ type JpyLiborSwapIsdaFixPmModel
 (* 
     casting 
 *)
-    internal new () = JpyLiborSwapIsdaFixPmModel(null,null)
+    internal new () = new JpyLiborSwapIsdaFixPmModel(null,null)
     member internal this.Inject v = _JpyLiborSwapIsdaFixPm.Value <- v
     static member Cast (p : ICell<JpyLiborSwapIsdaFixPm>) = 
         if p :? JpyLiborSwapIsdaFixPmModel then 
@@ -250,7 +250,7 @@ type JpyLiborSwapIsdaFixPmModel1
 (* 
     casting 
 *)
-    internal new () = JpyLiborSwapIsdaFixPmModel1(null)
+    internal new () = new JpyLiborSwapIsdaFixPmModel1(null)
     member internal this.Inject v = _JpyLiborSwapIsdaFixPm.Value <- v
     static member Cast (p : ICell<JpyLiborSwapIsdaFixPm>) = 
         if p :? JpyLiborSwapIsdaFixPmModel1 then 

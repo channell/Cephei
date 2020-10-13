@@ -98,7 +98,7 @@ type TRLiborModel
 (* 
     casting 
 *)
-    internal new () = TRLiborModel(null)
+    internal new () = new TRLiborModel(null)
     member internal this.Inject v = _TRLibor.Value <- v
     static member Cast (p : ICell<TRLibor>) = 
         if p :? TRLiborModel then 
@@ -228,7 +228,7 @@ type TRLiborModel1
 (* 
     casting 
 *)
-    internal new () = TRLiborModel1(null,null)
+    internal new () = new TRLiborModel1(null,null)
     member internal this.Inject v = _TRLibor.Value <- v
     static member Cast (p : ICell<TRLibor>) = 
         if p :? TRLiborModel1 then 

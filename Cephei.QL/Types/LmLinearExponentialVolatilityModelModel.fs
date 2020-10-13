@@ -68,7 +68,7 @@ type LmLinearExponentialVolatilityModelModel
 (* 
     casting 
 *)
-    internal new () = LmLinearExponentialVolatilityModelModel(null,null,null,null,null)
+    internal new () = new LmLinearExponentialVolatilityModelModel(null,null,null,null,null)
     member internal this.Inject v = _LmLinearExponentialVolatilityModel.Value <- v
     static member Cast (p : ICell<LmLinearExponentialVolatilityModel>) = 
         if p :? LmLinearExponentialVolatilityModelModel then 

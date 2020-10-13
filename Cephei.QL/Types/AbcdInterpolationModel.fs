@@ -108,7 +108,7 @@ type AbcdInterpolationModel
 (* 
     casting 
 *)
-    internal new () = AbcdInterpolationModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new AbcdInterpolationModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AbcdInterpolation.Value <- v
     static member Cast (p : ICell<AbcdInterpolation>) = 
         if p :? AbcdInterpolationModel then 

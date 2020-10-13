@@ -62,7 +62,7 @@ type DiscreteSimpsonIntegratorModel
 (* 
     casting 
 *)
-    internal new () = DiscreteSimpsonIntegratorModel(null)
+    internal new () = new DiscreteSimpsonIntegratorModel(null)
     member internal this.Inject v = _DiscreteSimpsonIntegrator.Value <- v
     static member Cast (p : ICell<DiscreteSimpsonIntegrator>) = 
         if p :? DiscreteSimpsonIntegratorModel then 

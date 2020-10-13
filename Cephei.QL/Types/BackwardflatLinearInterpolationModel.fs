@@ -84,7 +84,7 @@ type BackwardflatLinearInterpolationModel
 (* 
     casting 
 *)
-    internal new () = BackwardflatLinearInterpolationModel(null,null,null,null,null)
+    internal new () = new BackwardflatLinearInterpolationModel(null,null,null,null,null)
     member internal this.Inject v = _BackwardflatLinearInterpolation.Value <- v
     static member Cast (p : ICell<BackwardflatLinearInterpolation>) = 
         if p :? BackwardflatLinearInterpolationModel then 

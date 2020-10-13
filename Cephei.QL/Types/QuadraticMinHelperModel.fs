@@ -64,7 +64,7 @@ type QuadraticMinHelperModel
 (* 
     casting 
 *)
-    internal new () = QuadraticMinHelperModel(null,null,null,null,null,null)
+    internal new () = new QuadraticMinHelperModel(null,null,null,null,null,null)
     member internal this.Inject v = _QuadraticMinHelper.Value <- v
     static member Cast (p : ICell<QuadraticMinHelper>) = 
         if p :? QuadraticMinHelperModel then 

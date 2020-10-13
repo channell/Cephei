@@ -60,7 +60,7 @@ type PlainVanillaPayoffModel
 (* 
     casting 
 *)
-    internal new () = PlainVanillaPayoffModel(null,null)
+    internal new () = new PlainVanillaPayoffModel(null,null)
     member internal this.Inject v = _PlainVanillaPayoff.Value <- v
     static member Cast (p : ICell<PlainVanillaPayoff>) = 
         if p :? PlainVanillaPayoffModel then 

@@ -62,7 +62,7 @@ type ConstantGradHelperModel
 (* 
     casting 
 *)
-    internal new () = ConstantGradHelperModel(null,null,null,null,null)
+    internal new () = new ConstantGradHelperModel(null,null,null,null,null)
     member internal this.Inject v = _ConstantGradHelper.Value <- v
     static member Cast (p : ICell<ConstantGradHelper>) = 
         if p :? ConstantGradHelperModel then 

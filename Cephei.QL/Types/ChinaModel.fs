@@ -94,7 +94,7 @@ type ChinaModel
 (* 
     casting 
 *)
-    internal new () = ChinaModel(null)
+    internal new () = new ChinaModel(null)
     member internal this.Inject v = _China.Value <- v
     static member Cast (p : ICell<China>) = 
         if p :? ChinaModel then 

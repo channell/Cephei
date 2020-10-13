@@ -126,7 +126,7 @@ type IborCouponModel
 (* 
     casting 
 *)
-    internal new () = IborCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new IborCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _IborCoupon.Value <- v
     static member Cast (p : ICell<IborCoupon>) = 
         if p :? IborCouponModel then 

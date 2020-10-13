@@ -88,7 +88,7 @@ type LogCubicInterpolationModel
 (* 
     casting 
 *)
-    internal new () = LogCubicInterpolationModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new LogCubicInterpolationModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _LogCubicInterpolation.Value <- v
     static member Cast (p : ICell<LogCubicInterpolation>) = 
         if p :? LogCubicInterpolationModel then 

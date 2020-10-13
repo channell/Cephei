@@ -51,7 +51,7 @@ type CumulativeGammaDistributionModel
 (* 
     casting 
 *)
-    internal new () = CumulativeGammaDistributionModel(null)
+    internal new () = new CumulativeGammaDistributionModel(null)
     member internal this.Inject v = _CumulativeGammaDistribution.Value <- v
     static member Cast (p : ICell<CumulativeGammaDistribution>) = 
         if p :? CumulativeGammaDistributionModel then 

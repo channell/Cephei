@@ -78,7 +78,7 @@ type BlackIborCouponPricerModel
 (* 
     casting 
 *)
-    internal new () = BlackIborCouponPricerModel(null,null,null)
+    internal new () = new BlackIborCouponPricerModel(null,null,null)
     member internal this.Inject v = _BlackIborCouponPricer.Value <- v
     static member Cast (p : ICell<BlackIborCouponPricer>) = 
         if p :? BlackIborCouponPricerModel then 

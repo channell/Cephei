@@ -61,7 +61,7 @@ type NumericalDifferentiationModel
 (* 
     casting 
 *)
-    internal new () = NumericalDifferentiationModel(null,null,null,null,null)
+    internal new () = new NumericalDifferentiationModel(null,null,null,null,null)
     member internal this.Inject v = _NumericalDifferentiation.Value <- v
     static member Cast (p : ICell<NumericalDifferentiation>) = 
         if p :? NumericalDifferentiationModel then 
@@ -114,7 +114,7 @@ type NumericalDifferentiationModel1
 (* 
     casting 
 *)
-    internal new () = NumericalDifferentiationModel1(null,null,null)
+    internal new () = new NumericalDifferentiationModel1(null,null,null)
     member internal this.Inject v = _NumericalDifferentiation.Value <- v
     static member Cast (p : ICell<NumericalDifferentiation>) = 
         if p :? NumericalDifferentiationModel1 then 

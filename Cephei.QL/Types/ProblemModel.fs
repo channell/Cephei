@@ -80,7 +80,7 @@ type ProblemModel
 (* 
     casting 
 *)
-    internal new () = ProblemModel(null,null,null)
+    internal new () = new ProblemModel(null,null,null)
     member internal this.Inject v = _Problem.Value <- v
     static member Cast (p : ICell<Problem>) = 
         if p :? ProblemModel then 

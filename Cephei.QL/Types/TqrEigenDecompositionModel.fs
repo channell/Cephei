@@ -58,7 +58,7 @@ type TqrEigenDecompositionModel
 (* 
     casting 
 *)
-    internal new () = TqrEigenDecompositionModel(null,null,null,null)
+    internal new () = new TqrEigenDecompositionModel(null,null,null,null)
     member internal this.Inject v = _TqrEigenDecomposition.Value <- v
     static member Cast (p : ICell<TqrEigenDecomposition>) = 
         if p :? TqrEigenDecompositionModel then 

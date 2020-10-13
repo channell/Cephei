@@ -3,9 +3,14 @@
  * All rights reserves
  */
 using Cephei.Cell.Generic;
+using ILGPU.Frontend;
+using ILGPU.Frontend.DebugInformation;
 using Microsoft.FSharp.Core;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Cephei.Cell
 {
@@ -21,7 +26,7 @@ namespace Cephei.Cell
     /// <summary>
     /// Cells and observers that handle change events
     /// </summary>
-    public interface ICellEvent
+    public interface ICellEvent : IDisposable
     {
         /// <summary>
         /// OnChange is the event sink that receives notification of changes to dependant
@@ -72,6 +77,24 @@ namespace Cephei.Cell
         bool HasFunction { get; }
 
         /// <summary>
+        /// Clone the dependancies of another cell
+        /// </summary>
+        /// <param name="source"></param>
+        void Clone(ICell source);
+
+        /// <summary>
+        /// Add notifcation 
+        /// </summary>
+        /// <param name="listener">cell aquiring the notification</param>
+        void Notify(ICell listener);
+
+        /// <summary>
+        /// Drop notifciation
+        /// </summary>
+        /// <param name="listener">cell aquiring the notification</param>
+        void UnNotify(ICell listener);
+
+        /// <summary>
         /// Does the cell havee a function that can be subscribed to 
         /// </summary>
         bool HasValue { get; }
@@ -82,6 +105,9 @@ namespace Cephei.Cell
         object Box { get; set; }
     }
 
+    /// <summary>
+    /// Trivial Cells are executed inline with their calling function
+    /// </summary>
     public interface ITrivial
     {
         /// <summary>
@@ -89,6 +115,19 @@ namespace Cephei.Cell
         /// </summary>
         /// <returns></returns>
         ICell ToCell();
+
+        /// <summary>
+        /// enable passthrough profiling of trivial funtions
+        /// </summary>
+        /// <returns>_func</returns>
+        object GetFunction();
+    }
+
+    /// <summary>
+    /// Fast Cells do not need to have dependancie migrated
+    /// </summary>
+    public interface IFast
+    {
     }
 
     /// <summary>
@@ -272,27 +311,82 @@ namespace Cephei.Cell
             return new CellSpot<T>(value, mnemonic);
         }
 
-		/// <summary>
-		/// profile the closure to extract a list of the cells referenced
-		/// </summary>
-		/// <param name="func"></param>
+        /// <summary>
+        /// profile the closure to extract a list of the cells referenced
+        /// </summary>
+        /// <param name="func"></param>
         public static ICell[] Profile<T>(FSharpFunc<Unit, T> func)
+        {
+            return ProfileObject<T>(func);
+        }
+
+        /// <summary>
+        /// profile the kernel bootstrap closure to extract a list of the cells referenced
+        /// </summary>
+        /// <param name="func"></param>
+        public static ICell[] Profile<T>(FSharpFunc<Unit, FSharpFunc<Unit, T>> func)
+        {
+            return ProfileObject<T>(func);
+        }
+
+        /// <summary>
+        /// profile the closure to extract a list of the cells referenced
+        /// </summary>
+        /// <param name="func"></param>
+        private static ICell[] ProfileObject(object func)
         {
             var l = new LinkedList<ICell>();
             var fields = func.GetType().GetFields();
-            int size = 0;
+            var fd = new Dictionary<string, object>();
 
             foreach (var f in fields)
             {
-                if (f.GetValue(func) is ICell c && !(c is Model))
+                var o = f.GetValue(func);
+                fd.Add(f.Name, o);
+                if (o is ICell c && !(c is Model))
                 {
                     l.AddLast(c);
-                    size++;
                 }
             }
-            var a = new ICell[size];
-            l.CopyTo(a, 0);
-            return a;
+
+            var method = func.GetType().GetMethod("Invoke");
+            var disasembler = new Disassembler(method, SequencePointEnumerator.Empty);
+            var code = disasembler.Disassemble();
+
+            foreach (var il in code.Instructions)
+            {
+                if (il.InstructionType == ILInstructionType.Ldfld)
+                {
+                    var fi = il.Argument as FieldInfo;
+                    if (!fd.ContainsKey(fi.Name))
+                    {
+                        foreach (var o in fd)
+                        {
+                            try
+                            {
+                                var p = fi.GetValue(o.Value);
+                                if (p != null)
+                                {
+                                    fd.Add(fi.Name, p);
+                                    if (p is ICell c)
+                                    {
+                                        if (p is ITrivial t)
+                                        {
+                                            foreach (var x in ProfileObject(t.GetFunction()))
+                                                l.AddLast(x);
+                                        }
+                                        else
+                                            l.AddLast(c);
+                                    }
+                                }
+                                break;
+                            }
+                            catch { }
+                        }
+                    }
+                }
+            }
+            return l.Distinct().ToArray();
         }
     }
 }

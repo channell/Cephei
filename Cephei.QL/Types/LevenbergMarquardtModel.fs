@@ -111,7 +111,7 @@ type LevenbergMarquardtModel1
 (* 
     casting 
 *)
-    internal new () = LevenbergMarquardtModel1(null,null,null,null)
+    internal new () = new LevenbergMarquardtModel1(null,null,null,null)
     member internal this.Inject v = _LevenbergMarquardt.Value <- v
     static member Cast (p : ICell<LevenbergMarquardt>) = 
         if p :? LevenbergMarquardtModel1 then 

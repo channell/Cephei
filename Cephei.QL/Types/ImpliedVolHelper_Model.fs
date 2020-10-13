@@ -61,7 +61,7 @@ type ImpliedVolHelper_Model
 (* 
     casting 
 *)
-    internal new () = ImpliedVolHelper_Model(null,null,null,null,null)
+    internal new () = new ImpliedVolHelper_Model(null,null,null,null,null)
     member internal this.Inject v = _ImpliedVolHelper_.Value <- v
     static member Cast (p : ICell<ImpliedVolHelper_>) = 
         if p :? ImpliedVolHelper_Model then 

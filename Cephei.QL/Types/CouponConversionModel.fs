@@ -54,7 +54,7 @@ type CouponConversionModel
 (* 
     casting 
 *)
-    internal new () = CouponConversionModel(null,null)
+    internal new () = new CouponConversionModel(null,null)
     member internal this.Inject v = _CouponConversion.Value <- v
     static member Cast (p : ICell<CouponConversion>) = 
         if p :? CouponConversionModel then 

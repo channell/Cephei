@@ -62,7 +62,7 @@ type JamshidianSwaptionEngineModel
 (* 
     casting 
 *)
-    internal new () = JamshidianSwaptionEngineModel(null)
+    internal new () = new JamshidianSwaptionEngineModel(null)
     member internal this.Inject v = _JamshidianSwaptionEngine.Value <- v
     static member Cast (p : ICell<JamshidianSwaptionEngine>) = 
         if p :? JamshidianSwaptionEngineModel then 
@@ -122,7 +122,7 @@ type JamshidianSwaptionEngineModel1
 (* 
     casting 
 *)
-    internal new () = JamshidianSwaptionEngineModel1(null,null)
+    internal new () = new JamshidianSwaptionEngineModel1(null,null)
     member internal this.Inject v = _JamshidianSwaptionEngine.Value <- v
     static member Cast (p : ICell<JamshidianSwaptionEngine>) = 
         if p :? JamshidianSwaptionEngineModel1 then 

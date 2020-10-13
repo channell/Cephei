@@ -62,7 +62,7 @@ type GaussJacobiPolynomialModel
 (* 
     casting 
 *)
-    internal new () = GaussJacobiPolynomialModel(null,null)
+    internal new () = new GaussJacobiPolynomialModel(null,null)
     member internal this.Inject v = _GaussJacobiPolynomial.Value <- v
     static member Cast (p : ICell<GaussJacobiPolynomial>) = 
         if p :? GaussJacobiPolynomialModel then 

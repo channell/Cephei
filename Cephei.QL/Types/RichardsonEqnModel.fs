@@ -61,7 +61,7 @@ type RichardsonEqnModel
 (* 
     casting 
 *)
-    internal new () = RichardsonEqnModel(null,null,null,null,null)
+    internal new () = new RichardsonEqnModel(null,null,null,null,null)
     member internal this.Inject v = _RichardsonEqn.Value <- v
     static member Cast (p : ICell<RichardsonEqn>) = 
         if p :? RichardsonEqnModel then 

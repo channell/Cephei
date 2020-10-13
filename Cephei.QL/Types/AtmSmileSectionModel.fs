@@ -76,7 +76,7 @@ type AtmSmileSectionModel
 (* 
     casting 
 *)
-    internal new () = AtmSmileSectionModel(null,null)
+    internal new () = new AtmSmileSectionModel(null,null)
     member internal this.Inject v = _AtmSmileSection.Value <- v
     static member Cast (p : ICell<AtmSmileSection>) = 
         if p :? AtmSmileSectionModel then 

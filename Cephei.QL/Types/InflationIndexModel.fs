@@ -95,7 +95,7 @@ type InflationIndexModel
 (* 
     casting 
 *)
-    internal new () = InflationIndexModel(null,null,null,null,null,null,null)
+    internal new () = new InflationIndexModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _InflationIndex.Value <- v
     static member Cast (p : ICell<InflationIndex>) = 
         if p :? InflationIndexModel then 

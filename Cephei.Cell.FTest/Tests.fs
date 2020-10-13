@@ -63,6 +63,8 @@ type Sample () =
 
     let cell (v : unit -> 'a) s = Cell.Create (v, s)
 
+    let fast (v : unit -> 'a) s = Cell.CreateFast (v ,s)
+
     let watch (c : ICell<'a>) n = 
         new ConsoleSubscriber<'a> (c, n)
 
@@ -73,10 +75,20 @@ type Sample () =
         new TraceSubscriber<'a> (c, intFromat,  n)
 
 
+    let oneHundred = value 100I "oneHundred"
+
     [<TestInitialize>]
     member this.setup () = 
         Log.Logger <- (new LoggerConfiguration()).MinimumLevel.Verbose().WriteTo.File(".\\FTest.log").CreateLogger()
 
+    [<TestMethod>]
+    member this.FastTest () =
+        let sc = value 100I "sc"
+        let tc = fast (fun () -> List.toSeq (bins (oneHundred.Value))) "tc"
+        let obs = logWatch tc "obs"
+        [1I..10000I] |> List.iter (fun i -> oneHundred.Value <- i
+                                            Threading.Thread.Sleep(0))
+        Threading.Thread.Sleep 1000
 
     [<TestMethod>]
     member this.CellSimple () = 

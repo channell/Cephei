@@ -76,7 +76,7 @@ type LinearInterpolationModel
 (* 
     casting 
 *)
-    internal new () = LinearInterpolationModel(null,null,null)
+    internal new () = new LinearInterpolationModel(null,null,null)
     member internal this.Inject v = _LinearInterpolation.Value <- v
     static member Cast (p : ICell<LinearInterpolation>) = 
         if p :? LinearInterpolationModel then 

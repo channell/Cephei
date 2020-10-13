@@ -53,7 +53,7 @@ type InverseNonCentralChiSquareDistributionModel
 (* 
     casting 
 *)
-    internal new () = InverseNonCentralChiSquareDistributionModel(null,null)
+    internal new () = new InverseNonCentralChiSquareDistributionModel(null,null)
     member internal this.Inject v = _InverseNonCentralChiSquareDistribution.Value <- v
     static member Cast (p : ICell<InverseNonCentralChiSquareDistribution>) = 
         if p :? InverseNonCentralChiSquareDistributionModel then 
@@ -99,7 +99,7 @@ type InverseNonCentralChiSquareDistributionModel1
 (* 
     casting 
 *)
-    internal new () = InverseNonCentralChiSquareDistributionModel1(null,null,null)
+    internal new () = new InverseNonCentralChiSquareDistributionModel1(null,null,null)
     member internal this.Inject v = _InverseNonCentralChiSquareDistribution.Value <- v
     static member Cast (p : ICell<InverseNonCentralChiSquareDistribution>) = 
         if p :? InverseNonCentralChiSquareDistributionModel1 then 
@@ -148,7 +148,7 @@ type InverseNonCentralChiSquareDistributionModel2
 (* 
     casting 
 *)
-    internal new () = InverseNonCentralChiSquareDistributionModel2(null,null,null,null)
+    internal new () = new InverseNonCentralChiSquareDistributionModel2(null,null,null,null)
     member internal this.Inject v = _InverseNonCentralChiSquareDistribution.Value <- v
     static member Cast (p : ICell<InverseNonCentralChiSquareDistribution>) = 
         if p :? InverseNonCentralChiSquareDistributionModel2 then 

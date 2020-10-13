@@ -68,7 +68,7 @@ type LmLinearExponentialCorrelationModelModel
 (* 
     casting 
 *)
-    internal new () = LmLinearExponentialCorrelationModelModel(null,null,null,null)
+    internal new () = new LmLinearExponentialCorrelationModelModel(null,null,null,null)
     member internal this.Inject v = _LmLinearExponentialCorrelationModel.Value <- v
     static member Cast (p : ICell<LmLinearExponentialCorrelationModel>) = 
         if p :? LmLinearExponentialCorrelationModelModel then 

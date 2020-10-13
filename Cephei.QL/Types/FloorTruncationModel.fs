@@ -56,7 +56,7 @@ type FloorTruncationModel
 (* 
     casting 
 *)
-    internal new () = FloorTruncationModel(null,null)
+    internal new () = new FloorTruncationModel(null,null)
     member internal this.Inject v = _FloorTruncation.Value <- v
     static member Cast (p : ICell<FloorTruncation>) = 
         if p :? FloorTruncationModel then 
@@ -104,7 +104,7 @@ type FloorTruncationModel1
 (* 
     casting 
 *)
-    internal new () = FloorTruncationModel1(null)
+    internal new () = new FloorTruncationModel1(null)
     member internal this.Inject v = _FloorTruncation.Value <- v
     static member Cast (p : ICell<FloorTruncation>) = 
         if p :? FloorTruncationModel1 then 

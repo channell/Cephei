@@ -61,7 +61,7 @@ type XABRConstraintModel
 (* 
     casting 
 *)
-    internal new () = XABRConstraintModel(null)
+    internal new () = new XABRConstraintModel(null)
     member internal this.Inject v = _XABRConstraint.Value <- v
     static member Cast (p : ICell<XABRConstraint>) = 
         if p :? XABRConstraintModel then 

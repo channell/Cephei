@@ -93,7 +93,7 @@ type FxSwapRateHelperModel
 (* 
     casting 
 *)
-    internal new () = FxSwapRateHelperModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new FxSwapRateHelperModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FxSwapRateHelper.Value <- v
     static member Cast (p : ICell<FxSwapRateHelper>) = 
         if p :? FxSwapRateHelperModel then 

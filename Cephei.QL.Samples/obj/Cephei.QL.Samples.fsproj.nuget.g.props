@@ -17,10 +17,10 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgSystem_Reflection_Emit_Lightweight Condition=" '$(PkgSystem_Reflection_Emit_Lightweight)' == '' ">C:\Users\steve\.nuget\packages\system.reflection.emit.lightweight\4.7.0</PkgSystem_Reflection_Emit_Lightweight>
+    <PkgSystem_Collections_Immutable Condition=" '$(PkgSystem_Collections_Immutable)' == '' ">C:\Users\steve\.nuget\packages\system.collections.immutable\1.7.1</PkgSystem_Collections_Immutable>
     <PkgNETStandard_Library Condition=" '$(PkgNETStandard_Library)' == '' ">C:\Users\steve\.nuget\packages\netstandard.library\2.0.3</PkgNETStandard_Library>
-    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\steve\.nuget\packages\newtonsoft.json\10.0.3</PkgNewtonsoft_Json>
+    <PkgILGPU Condition=" '$(PkgILGPU)' == '' ">C:\Users\steve\.nuget\packages\ilgpu\0.9.1</PkgILGPU>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
-    <PkgCephei_Cell Condition=" '$(PkgCephei_Cell)' == '' ">C:\Users\steve\.nuget\packages\cephei.cell\3.0.2</PkgCephei_Cell>
     <PkgCephei_QL Condition=" '$(PkgCephei_QL)' == '' ">C:\Users\steve\.nuget\packages\cephei.ql\3.0.0</PkgCephei_QL>
   </PropertyGroup>
 </Project>

@@ -103,7 +103,7 @@ type SwapSpreadIndexModel
 (* 
     casting 
 *)
-    internal new () = SwapSpreadIndexModel(null,null,null,null,null)
+    internal new () = new SwapSpreadIndexModel(null,null,null,null,null)
     member internal this.Inject v = _SwapSpreadIndex.Value <- v
     static member Cast (p : ICell<SwapSpreadIndex>) = 
         if p :? SwapSpreadIndexModel then 

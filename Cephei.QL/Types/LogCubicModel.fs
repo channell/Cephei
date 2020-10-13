@@ -63,7 +63,7 @@ type LogCubicModel
 (* 
     casting 
 *)
-    internal new () = LogCubicModel(null,null,null,null,null,null)
+    internal new () = new LogCubicModel(null,null,null,null,null,null)
     member internal this.Inject v = _LogCubic.Value <- v
     static member Cast (p : ICell<LogCubic>) = 
         if p :? LogCubicModel then 

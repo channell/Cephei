@@ -63,7 +63,7 @@ type GapPayoffModel
 (* 
     casting 
 *)
-    internal new () = GapPayoffModel(null,null,null)
+    internal new () = new GapPayoffModel(null,null,null)
     member internal this.Inject v = _GapPayoff.Value <- v
     static member Cast (p : ICell<GapPayoff>) = 
         if p :? GapPayoffModel then 

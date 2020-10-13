@@ -72,7 +72,7 @@ type FDDividendAmericanEngineModel
 (* 
     casting 
 *)
-    internal new () = FDDividendAmericanEngineModel(null,null,null,null)
+    internal new () = new FDDividendAmericanEngineModel(null,null,null,null)
     member internal this.Inject v = _FDDividendAmericanEngine.Value <- v
     static member Cast (p : ICell<FDDividendAmericanEngine>) = 
         if p :? FDDividendAmericanEngineModel then 

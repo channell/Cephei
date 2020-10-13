@@ -72,7 +72,7 @@ type AbcdModel
 (* 
     casting 
 *)
-    internal new () = AbcdModel(null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new AbcdModel(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _Abcd.Value <- v
     static member Cast (p : ICell<Abcd>) = 
         if p :? AbcdModel then 

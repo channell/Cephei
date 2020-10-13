@@ -51,7 +51,7 @@ type BlackCallableFixedRateBondEngineModel
 (* 
     casting 
 *)
-    internal new () = BlackCallableFixedRateBondEngineModel(null,null)
+    internal new () = new BlackCallableFixedRateBondEngineModel(null,null)
     member internal this.Inject v = _BlackCallableFixedRateBondEngine.Value <- v
     static member Cast (p : ICell<BlackCallableFixedRateBondEngine>) = 
         if p :? BlackCallableFixedRateBondEngineModel then 
@@ -91,7 +91,7 @@ type BlackCallableFixedRateBondEngineModel1
 (* 
     casting 
 *)
-    internal new () = BlackCallableFixedRateBondEngineModel1(null,null)
+    internal new () = new BlackCallableFixedRateBondEngineModel1(null,null)
     member internal this.Inject v = _BlackCallableFixedRateBondEngine.Value <- v
     static member Cast (p : ICell<BlackCallableFixedRateBondEngine>) = 
         if p :? BlackCallableFixedRateBondEngineModel1 then 

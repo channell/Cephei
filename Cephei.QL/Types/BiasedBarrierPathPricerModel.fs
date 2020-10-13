@@ -61,7 +61,7 @@ type BiasedBarrierPathPricerModel
 (* 
     casting 
 *)
-    internal new () = BiasedBarrierPathPricerModel(null,null,null,null,null,null)
+    internal new () = new BiasedBarrierPathPricerModel(null,null,null,null,null,null)
     member internal this.Inject v = _BiasedBarrierPathPricer.Value <- v
     static member Cast (p : ICell<BiasedBarrierPathPricer>) = 
         if p :? BiasedBarrierPathPricerModel then 

@@ -60,7 +60,7 @@ type CompositeConstraintModel
 (* 
     casting 
 *)
-    internal new () = CompositeConstraintModel(null,null)
+    internal new () = new CompositeConstraintModel(null,null)
     member internal this.Inject v = _CompositeConstraint.Value <- v
     static member Cast (p : ICell<CompositeConstraint>) = 
         if p :? CompositeConstraintModel then 

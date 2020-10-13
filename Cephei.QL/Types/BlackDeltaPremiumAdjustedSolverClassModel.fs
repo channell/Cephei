@@ -65,7 +65,7 @@ type BlackDeltaPremiumAdjustedSolverClassModel
 (* 
     casting 
 *)
-    internal new () = BlackDeltaPremiumAdjustedSolverClassModel(null,null,null,null,null,null,null)
+    internal new () = new BlackDeltaPremiumAdjustedSolverClassModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _BlackDeltaPremiumAdjustedSolverClass.Value <- v
     static member Cast (p : ICell<BlackDeltaPremiumAdjustedSolverClass>) = 
         if p :? BlackDeltaPremiumAdjustedSolverClassModel then 

@@ -60,7 +60,7 @@ type GaussGegenbauerPolynomialModel
 (* 
     casting 
 *)
-    internal new () = GaussGegenbauerPolynomialModel(null)
+    internal new () = new GaussGegenbauerPolynomialModel(null)
     member internal this.Inject v = _GaussGegenbauerPolynomial.Value <- v
     static member Cast (p : ICell<GaussGegenbauerPolynomial>) = 
         if p :? GaussGegenbauerPolynomialModel then 

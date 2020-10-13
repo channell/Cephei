@@ -82,7 +82,7 @@ type DiscretizedSwapModel
 (* 
     casting 
 *)
-    internal new () = DiscretizedSwapModel(null,null,null)
+    internal new () = new DiscretizedSwapModel(null,null,null)
     member internal this.Inject v = _DiscretizedSwap.Value <- v
     static member Cast (p : ICell<DiscretizedSwap>) = 
         if p :? DiscretizedSwapModel then 

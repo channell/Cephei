@@ -107,7 +107,7 @@ type CreditDefaultSwapModel
 (* 
     casting 
 *)
-    internal new () = CreditDefaultSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CreditDefaultSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CreditDefaultSwap.Value <- v
     static member Cast (p : ICell<CreditDefaultSwap>) = 
         if p :? CreditDefaultSwapModel then 
@@ -250,7 +250,7 @@ type CreditDefaultSwapModel1
 (* 
     casting 
 *)
-    internal new () = CreditDefaultSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CreditDefaultSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CreditDefaultSwap.Value <- v
     static member Cast (p : ICell<CreditDefaultSwap>) = 
         if p :? CreditDefaultSwapModel1 then 

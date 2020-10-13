@@ -68,7 +68,7 @@ type LogGridModel
 (* 
     casting 
 *)
-    internal new () = LogGridModel(null)
+    internal new () = new LogGridModel(null)
     member internal this.Inject v = _LogGrid.Value <- v
     static member Cast (p : ICell<LogGrid>) = 
         if p :? LogGridModel then 

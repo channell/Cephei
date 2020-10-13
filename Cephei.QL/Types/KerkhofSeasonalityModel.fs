@@ -65,7 +65,7 @@ type KerkhofSeasonalityModel
 (* 
     casting 
 *)
-    internal new () = KerkhofSeasonalityModel(null,null)
+    internal new () = new KerkhofSeasonalityModel(null,null)
     member internal this.Inject v = _KerkhofSeasonality.Value <- v
     static member Cast (p : ICell<KerkhofSeasonality>) = 
         if p :? KerkhofSeasonalityModel then 

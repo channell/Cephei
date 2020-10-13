@@ -125,7 +125,7 @@ type FloatingRateCouponModel
 (* 
     casting 
 *)
-    internal new () = FloatingRateCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FloatingRateCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingRateCoupon.Value <- v
     static member Cast (p : ICell<FloatingRateCoupon>) = 
         if p :? FloatingRateCouponModel then 

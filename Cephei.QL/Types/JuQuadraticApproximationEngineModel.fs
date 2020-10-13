@@ -49,7 +49,7 @@ type JuQuadraticApproximationEngineModel
 (* 
     casting 
 *)
-    internal new () = JuQuadraticApproximationEngineModel(null)
+    internal new () = new JuQuadraticApproximationEngineModel(null)
     member internal this.Inject v = _JuQuadraticApproximationEngine.Value <- v
     static member Cast (p : ICell<JuQuadraticApproximationEngine>) = 
         if p :? JuQuadraticApproximationEngineModel then 

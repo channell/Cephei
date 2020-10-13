@@ -72,7 +72,7 @@ type SparseMatrixModel
 (* 
     casting 
 *)
-    internal new () = SparseMatrixModel(null)
+    internal new () = new SparseMatrixModel(null)
     member internal this.Inject v = _SparseMatrix.Value <- v
     static member Cast (p : ICell<SparseMatrix>) = 
         if p :? SparseMatrixModel then 
@@ -154,7 +154,7 @@ type SparseMatrixModel1
 (* 
     casting 
 *)
-    internal new () = SparseMatrixModel1(null,null)
+    internal new () = new SparseMatrixModel1(null,null)
     member internal this.Inject v = _SparseMatrix.Value <- v
     static member Cast (p : ICell<SparseMatrix>) = 
         if p :? SparseMatrixModel1 then 

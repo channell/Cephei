@@ -98,7 +98,7 @@ type TiborModel
 (* 
     casting 
 *)
-    internal new () = TiborModel(null)
+    internal new () = new TiborModel(null)
     member internal this.Inject v = _Tibor.Value <- v
     static member Cast (p : ICell<Tibor>) = 
         if p :? TiborModel then 
@@ -228,7 +228,7 @@ type TiborModel1
 (* 
     casting 
 *)
-    internal new () = TiborModel1(null,null)
+    internal new () = new TiborModel1(null,null)
     member internal this.Inject v = _Tibor.Value <- v
     static member Cast (p : ICell<Tibor>) = 
         if p :? TiborModel1 then 

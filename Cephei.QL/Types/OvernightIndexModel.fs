@@ -108,7 +108,7 @@ type OvernightIndexModel
 (* 
     casting 
 *)
-    internal new () = OvernightIndexModel(null,null,null,null,null,null)
+    internal new () = new OvernightIndexModel(null,null,null,null,null,null)
     member internal this.Inject v = _OvernightIndex.Value <- v
     static member Cast (p : ICell<OvernightIndex>) = 
         if p :? OvernightIndexModel then 

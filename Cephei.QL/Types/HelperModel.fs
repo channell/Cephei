@@ -61,7 +61,7 @@ type HelperModel
 (* 
     casting 
 *)
-    internal new () = HelperModel(null,null,null,null,null)
+    internal new () = new HelperModel(null,null,null,null,null)
     member internal this.Inject v = _Helper.Value <- v
     static member Cast (p : ICell<Helper>) = 
         if p :? HelperModel then 

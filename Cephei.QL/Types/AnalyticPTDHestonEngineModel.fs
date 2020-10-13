@@ -66,7 +66,7 @@ type AnalyticPTDHestonEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticPTDHestonEngineModel(null,null,null)
+    internal new () = new AnalyticPTDHestonEngineModel(null,null,null)
     member internal this.Inject v = _AnalyticPTDHestonEngine.Value <- v
     static member Cast (p : ICell<AnalyticPTDHestonEngine>) = 
         if p :? AnalyticPTDHestonEngineModel then 
@@ -128,7 +128,7 @@ type AnalyticPTDHestonEngineModel1
 (* 
     casting 
 *)
-    internal new () = AnalyticPTDHestonEngineModel1(null,null)
+    internal new () = new AnalyticPTDHestonEngineModel1(null,null)
     member internal this.Inject v = _AnalyticPTDHestonEngine.Value <- v
     static member Cast (p : ICell<AnalyticPTDHestonEngine>) = 
         if p :? AnalyticPTDHestonEngineModel1 then 

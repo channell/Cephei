@@ -72,7 +72,7 @@ type FdmDirichletBoundaryModel
 (* 
     casting 
 *)
-    internal new () = FdmDirichletBoundaryModel(null,null,null,null)
+    internal new () = new FdmDirichletBoundaryModel(null,null,null,null)
     member internal this.Inject v = _FdmDirichletBoundary.Value <- v
     static member Cast (p : ICell<FdmDirichletBoundary>) = 
         if p :? FdmDirichletBoundaryModel then 

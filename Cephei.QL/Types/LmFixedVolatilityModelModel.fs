@@ -62,7 +62,7 @@ type LmFixedVolatilityModelModel
 (* 
     casting 
 *)
-    internal new () = LmFixedVolatilityModelModel(null,null)
+    internal new () = new LmFixedVolatilityModelModel(null,null)
     member internal this.Inject v = _LmFixedVolatilityModel.Value <- v
     static member Cast (p : ICell<LmFixedVolatilityModel>) = 
         if p :? LmFixedVolatilityModelModel then 

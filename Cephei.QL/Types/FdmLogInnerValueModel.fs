@@ -57,7 +57,7 @@ type FdmLogInnerValueModel
 (* 
     casting 
 *)
-    internal new () = FdmLogInnerValueModel(null,null,null)
+    internal new () = new FdmLogInnerValueModel(null,null,null)
     member internal this.Inject v = _FdmLogInnerValue.Value <- v
     static member Cast (p : ICell<FdmLogInnerValue>) = 
         if p :? FdmLogInnerValueModel then 

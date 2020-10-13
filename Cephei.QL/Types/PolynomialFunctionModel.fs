@@ -65,7 +65,7 @@ type PolynomialFunctionModel
 (* 
     casting 
 *)
-    internal new () = PolynomialFunctionModel(null)
+    internal new () = new PolynomialFunctionModel(null)
     member internal this.Inject v = _PolynomialFunction.Value <- v
     static member Cast (p : ICell<PolynomialFunction>) = 
         if p :? PolynomialFunctionModel then 

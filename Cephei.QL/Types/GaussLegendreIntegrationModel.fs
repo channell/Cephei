@@ -54,7 +54,7 @@ type GaussLegendreIntegrationModel
 (* 
     casting 
 *)
-    internal new () = GaussLegendreIntegrationModel(null)
+    internal new () = new GaussLegendreIntegrationModel(null)
     member internal this.Inject v = _GaussLegendreIntegration.Value <- v
     static member Cast (p : ICell<GaussLegendreIntegration>) = 
         if p :? GaussLegendreIntegrationModel then 

@@ -58,7 +58,7 @@ type ConstraintModel
 (* 
     casting 
 *)
-    internal new () = ConstraintModel(null)
+    internal new () = new ConstraintModel(null)
     member internal this.Inject v = _Constraint.Value <- v
     static member Cast (p : ICell<Constraint>) = 
         if p :? ConstraintModel then 

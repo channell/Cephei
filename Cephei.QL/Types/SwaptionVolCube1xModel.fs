@@ -194,7 +194,7 @@ type SwaptionVolCube1xModel
 (* 
     casting 
 *)
-    internal new () = SwaptionVolCube1xModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new SwaptionVolCube1xModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionVolCube1x.Value <- v
     static member Cast (p : ICell<SwaptionVolCube1x>) = 
         if p :? SwaptionVolCube1xModel then 

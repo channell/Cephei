@@ -71,7 +71,7 @@ type RedemptionModel
 (* 
     casting 
 *)
-    internal new () = RedemptionModel(null,null)
+    internal new () = new RedemptionModel(null,null)
     member internal this.Inject v = _Redemption.Value <- v
     static member Cast (p : ICell<Redemption>) = 
         if p :? RedemptionModel then 

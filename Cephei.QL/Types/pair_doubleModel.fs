@@ -58,7 +58,7 @@ type pair_doubleModel
 (* 
     casting 
 *)
-    internal new () = pair_doubleModel(null,null)
+    internal new () = new pair_doubleModel(null,null)
     member internal this.Inject v = _pair_double.Value <- v
     static member Cast (p : ICell<pair_double>) = 
         if p :? pair_doubleModel then 

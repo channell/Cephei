@@ -84,7 +84,7 @@ type ContinuousPartialFloatingLookbackOptionModel
 (* 
     casting 
 *)
-    internal new () = ContinuousPartialFloatingLookbackOptionModel(null,null,null,null,null,null,null)
+    internal new () = new ContinuousPartialFloatingLookbackOptionModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _ContinuousPartialFloatingLookbackOption.Value <- v
     static member Cast (p : ICell<ContinuousPartialFloatingLookbackOption>) = 
         if p :? ContinuousPartialFloatingLookbackOptionModel then 

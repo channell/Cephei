@@ -86,7 +86,7 @@ type DiscreteAveragingAsianOptionModel
 (* 
     casting 
 *)
-    internal new () = DiscreteAveragingAsianOptionModel(null,null,null,null,null,null,null,null)
+    internal new () = new DiscreteAveragingAsianOptionModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _DiscreteAveragingAsianOption.Value <- v
     static member Cast (p : ICell<DiscreteAveragingAsianOption>) = 
         if p :? DiscreteAveragingAsianOptionModel then 

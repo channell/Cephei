@@ -90,7 +90,7 @@ type ShiftedBlackVolTermStructureModel
 (* 
     casting 
 *)
-    internal new () = ShiftedBlackVolTermStructureModel(null,null)
+    internal new () = new ShiftedBlackVolTermStructureModel(null,null)
     member internal this.Inject v = _ShiftedBlackVolTermStructure.Value <- v
     static member Cast (p : ICell<ShiftedBlackVolTermStructure>) = 
         if p :? ShiftedBlackVolTermStructureModel then 

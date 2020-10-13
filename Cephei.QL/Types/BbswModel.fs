@@ -100,7 +100,7 @@ type BbswModel
 (* 
     casting 
 *)
-    internal new () = BbswModel(null,null)
+    internal new () = new BbswModel(null,null)
     member internal this.Inject v = _Bbsw.Value <- v
     static member Cast (p : ICell<Bbsw>) = 
         if p :? BbswModel then 

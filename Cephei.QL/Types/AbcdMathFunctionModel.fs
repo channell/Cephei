@@ -70,7 +70,7 @@ type AbcdMathFunctionModel
 (* 
     casting 
 *)
-    internal new () = AbcdMathFunctionModel(null)
+    internal new () = new AbcdMathFunctionModel(null)
     member internal this.Inject v = _AbcdMathFunction.Value <- v
     static member Cast (p : ICell<AbcdMathFunction>) = 
         if p :? AbcdMathFunctionModel then 
@@ -155,7 +155,7 @@ type AbcdMathFunctionModel1
 (* 
     casting 
 *)
-    internal new () = AbcdMathFunctionModel1(null,null,null,null)
+    internal new () = new AbcdMathFunctionModel1(null,null,null,null)
     member internal this.Inject v = _AbcdMathFunction.Value <- v
     static member Cast (p : ICell<AbcdMathFunction>) = 
         if p :? AbcdMathFunctionModel1 then 

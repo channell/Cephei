@@ -49,7 +49,7 @@ type IntegralEngineModel
 (* 
     casting 
 *)
-    internal new () = IntegralEngineModel(null)
+    internal new () = new IntegralEngineModel(null)
     member internal this.Inject v = _IntegralEngine.Value <- v
     static member Cast (p : ICell<IntegralEngine>) = 
         if p :? IntegralEngineModel then 

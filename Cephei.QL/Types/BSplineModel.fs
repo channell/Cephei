@@ -55,7 +55,7 @@ type BSplineModel
 (* 
     casting 
 *)
-    internal new () = BSplineModel(null,null,null)
+    internal new () = new BSplineModel(null,null,null)
     member internal this.Inject v = _BSpline.Value <- v
     static member Cast (p : ICell<BSpline>) = 
         if p :? BSplineModel then 

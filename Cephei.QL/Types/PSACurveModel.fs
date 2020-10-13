@@ -55,7 +55,7 @@ type PSACurveModel
 (* 
     casting 
 *)
-    internal new () = PSACurveModel(null,null)
+    internal new () = new PSACurveModel(null,null)
     member internal this.Inject v = _PSACurve.Value <- v
     static member Cast (p : ICell<PSACurve>) = 
         if p :? PSACurveModel then 
@@ -101,7 +101,7 @@ type PSACurveModel1
 (* 
     casting 
 *)
-    internal new () = PSACurveModel1(null)
+    internal new () = new PSACurveModel1(null)
     member internal this.Inject v = _PSACurve.Value <- v
     static member Cast (p : ICell<PSACurve>) = 
         if p :? PSACurveModel1 then 

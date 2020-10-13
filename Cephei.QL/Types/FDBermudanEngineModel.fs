@@ -75,7 +75,7 @@ type FDBermudanEngineModel
 (* 
     casting 
 *)
-    internal new () = FDBermudanEngineModel(null,null,null,null)
+    internal new () = new FDBermudanEngineModel(null,null,null,null)
     member internal this.Inject v = _FDBermudanEngine.Value <- v
     static member Cast (p : ICell<FDBermudanEngine>) = 
         if p :? FDBermudanEngineModel then 

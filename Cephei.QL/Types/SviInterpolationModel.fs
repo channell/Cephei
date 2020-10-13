@@ -125,7 +125,7 @@ type SviInterpolationModel
 (* 
     casting 
 *)
-    internal new () = SviInterpolationModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new SviInterpolationModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SviInterpolation.Value <- v
     static member Cast (p : ICell<SviInterpolation>) = 
         if p :? SviInterpolationModel then 

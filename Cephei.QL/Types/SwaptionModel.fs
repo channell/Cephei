@@ -80,7 +80,7 @@ type SwaptionModel
 (* 
     casting 
 *)
-    internal new () = SwaptionModel(null,null,null,null,null,null)
+    internal new () = new SwaptionModel(null,null,null,null,null,null)
     member internal this.Inject v = _Swaption.Value <- v
     static member Cast (p : ICell<Swaption>) = 
         if p :? SwaptionModel then 

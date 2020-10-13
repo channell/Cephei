@@ -65,7 +65,7 @@ type ForwardVanillaEngineModel
 (* 
     casting 
 *)
-    internal new () = ForwardVanillaEngineModel(null,null,null,null)
+    internal new () = new ForwardVanillaEngineModel(null,null,null,null)
     member internal this.Inject v = _ForwardVanillaEngine.Value <- v
     static member Cast (p : ICell<ForwardVanillaEngine>) = 
         if p :? ForwardVanillaEngineModel then 

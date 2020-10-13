@@ -92,7 +92,7 @@ type AUCPIModel
 (* 
     casting 
 *)
-    internal new () = AUCPIModel(null,null,null,null)
+    internal new () = new AUCPIModel(null,null,null,null)
     member internal this.Inject v = _AUCPI.Value <- v
     static member Cast (p : ICell<AUCPI>) = 
         if p :? AUCPIModel then 
@@ -203,7 +203,7 @@ type AUCPIModel1
 (* 
     casting 
 *)
-    internal new () = AUCPIModel1(null,null,null)
+    internal new () = new AUCPIModel1(null,null,null)
     member internal this.Inject v = _AUCPI.Value <- v
     static member Cast (p : ICell<AUCPI>) = 
         if p :? AUCPIModel1 then 

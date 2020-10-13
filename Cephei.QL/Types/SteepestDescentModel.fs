@@ -51,7 +51,7 @@ type SteepestDescentModel
 (* 
     casting 
 *)
-    internal new () = SteepestDescentModel(null)
+    internal new () = new SteepestDescentModel(null)
     member internal this.Inject v = _SteepestDescent.Value <- v
     static member Cast (p : ICell<SteepestDescent>) = 
         if p :? SteepestDescentModel then 

@@ -98,7 +98,7 @@ type Bkbm2MModel
 (* 
     casting 
 *)
-    internal new () = Bkbm2MModel(null)
+    internal new () = new Bkbm2MModel(null)
     member internal this.Inject v = _Bkbm2M.Value <- v
     static member Cast (p : ICell<Bkbm2M>) = 
         if p :? Bkbm2MModel then 

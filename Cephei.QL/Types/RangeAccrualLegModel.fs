@@ -84,7 +84,7 @@ type RangeAccrualLegModel
 (* 
     casting 
 *)
-    internal new () = RangeAccrualLegModel(null,null)
+    internal new () = new RangeAccrualLegModel(null,null)
     member internal this.Inject v = _RangeAccrualLeg.Value <- v
     static member Cast (p : ICell<RangeAccrualLeg>) = 
         if p :? RangeAccrualLegModel then 

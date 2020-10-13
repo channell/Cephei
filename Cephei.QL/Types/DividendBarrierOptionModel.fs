@@ -90,7 +90,7 @@ type DividendBarrierOptionModel
 (* 
     casting 
 *)
-    internal new () = DividendBarrierOptionModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new DividendBarrierOptionModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _DividendBarrierOption.Value <- v
     static member Cast (p : ICell<DividendBarrierOption>) = 
         if p :? DividendBarrierOptionModel then 

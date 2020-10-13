@@ -97,7 +97,7 @@ type IsraelModel
 (* 
     casting 
 *)
-    internal new () = IsraelModel(null)
+    internal new () = new IsraelModel(null)
     member internal this.Inject v = _Israel.Value <- v
     static member Cast (p : ICell<Israel>) = 
         if p :? IsraelModel then 

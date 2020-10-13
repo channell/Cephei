@@ -79,7 +79,7 @@ type BlackScholesCalculatorModel
 (* 
     casting 
 *)
-    internal new () = BlackScholesCalculatorModel(null,null,null,null,null)
+    internal new () = new BlackScholesCalculatorModel(null,null,null,null,null)
     member internal this.Inject v = _BlackScholesCalculator.Value <- v
     static member Cast (p : ICell<BlackScholesCalculator>) = 
         if p :? BlackScholesCalculatorModel then 

@@ -101,7 +101,7 @@ type FixedRateBondHelperModel
 (* 
     casting 
 *)
-    internal new () = FixedRateBondHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FixedRateBondHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedRateBondHelper.Value <- v
     static member Cast (p : ICell<FixedRateBondHelper>) = 
         if p :? FixedRateBondHelperModel then 

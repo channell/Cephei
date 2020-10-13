@@ -84,7 +84,7 @@ type VannaVolgaInterpolationModel
 (* 
     casting 
 *)
-    internal new () = VannaVolgaInterpolationModel(null,null,null,null,null,null,null)
+    internal new () = new VannaVolgaInterpolationModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _VannaVolgaInterpolation.Value <- v
     static member Cast (p : ICell<VannaVolgaInterpolation>) = 
         if p :? VannaVolgaInterpolationModel then 

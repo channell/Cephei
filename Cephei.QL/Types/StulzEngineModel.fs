@@ -53,7 +53,7 @@ type StulzEngineModel
 (* 
     casting 
 *)
-    internal new () = StulzEngineModel(null,null,null)
+    internal new () = new StulzEngineModel(null,null,null)
     member internal this.Inject v = _StulzEngine.Value <- v
     static member Cast (p : ICell<StulzEngine>) = 
         if p :? StulzEngineModel then 

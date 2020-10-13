@@ -60,7 +60,7 @@ type TermStructureFittingParameterModel
 (* 
     casting 
 *)
-    internal new () = TermStructureFittingParameterModel(null)
+    internal new () = new TermStructureFittingParameterModel(null)
     member internal this.Inject v = _TermStructureFittingParameter.Value <- v
     static member Cast (p : ICell<TermStructureFittingParameter>) = 
         if p :? TermStructureFittingParameterModel then 
@@ -118,7 +118,7 @@ type TermStructureFittingParameterModel1
 (* 
     casting 
 *)
-    internal new () = TermStructureFittingParameterModel1(null)
+    internal new () = new TermStructureFittingParameterModel1(null)
     member internal this.Inject v = _TermStructureFittingParameter.Value <- v
     static member Cast (p : ICell<TermStructureFittingParameter>) = 
         if p :? TermStructureFittingParameterModel1 then 

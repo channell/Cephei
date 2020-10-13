@@ -76,7 +76,7 @@ type DatedOISRateHelperModel
 (* 
     casting 
 *)
-    internal new () = DatedOISRateHelperModel(null,null,null,null)
+    internal new () = new DatedOISRateHelperModel(null,null,null,null)
     member internal this.Inject v = _DatedOISRateHelper.Value <- v
     static member Cast (p : ICell<DatedOISRateHelper>) = 
         if p :? DatedOISRateHelperModel then 

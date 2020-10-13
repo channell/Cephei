@@ -19,7 +19,9 @@ Cells can be grouped into a Model to encapsulate the implementation of the model
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="FSharp.Core" version="4.7.2" exclude="Build,Analyzers" />
+        <dependency id="ILGPU" version="0.9.1" exclude="Build,Analyzers" />
         <dependency id="Serilog" version="2.10.0" exclude="Build,Analyzers" />
+        <dependency id="System.Collections.Immutable" version="1.7.1" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>

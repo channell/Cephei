@@ -51,7 +51,7 @@ type GammaDistributionModel
 (* 
     casting 
 *)
-    internal new () = GammaDistributionModel(null)
+    internal new () = new GammaDistributionModel(null)
     member internal this.Inject v = _GammaDistribution.Value <- v
     static member Cast (p : ICell<GammaDistribution>) = 
         if p :? GammaDistributionModel then 

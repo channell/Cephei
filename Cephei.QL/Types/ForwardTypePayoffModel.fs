@@ -60,7 +60,7 @@ type ForwardTypePayoffModel
 (* 
     casting 
 *)
-    internal new () = ForwardTypePayoffModel(null,null)
+    internal new () = new ForwardTypePayoffModel(null,null)
     member internal this.Inject v = _ForwardTypePayoff.Value <- v
     static member Cast (p : ICell<ForwardTypePayoff>) = 
         if p :? ForwardTypePayoffModel then 

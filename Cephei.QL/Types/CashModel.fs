@@ -70,7 +70,7 @@ type CashModel
 (* 
     casting 
 *)
-    internal new () = CashModel(null,null,null,null,null,null)
+    internal new () = new CashModel(null,null,null,null,null,null)
     member internal this.Inject v = _Cash.Value <- v
     static member Cast (p : ICell<Cash>) = 
         if p :? CashModel then 

@@ -104,7 +104,7 @@ type LiborForwardModelProcessModel
 (* 
     casting 
 *)
-    internal new () = LiborForwardModelProcessModel(null,null,null)
+    internal new () = new LiborForwardModelProcessModel(null,null,null)
     member internal this.Inject v = _LiborForwardModelProcess.Value <- v
     static member Cast (p : ICell<LiborForwardModelProcess>) = 
         if p :? LiborForwardModelProcessModel then 
@@ -243,7 +243,7 @@ type LiborForwardModelProcessModel1
 (* 
     casting 
 *)
-    internal new () = LiborForwardModelProcessModel1(null,null)
+    internal new () = new LiborForwardModelProcessModel1(null,null)
     member internal this.Inject v = _LiborForwardModelProcess.Value <- v
     static member Cast (p : ICell<LiborForwardModelProcess>) = 
         if p :? LiborForwardModelProcessModel1 then 

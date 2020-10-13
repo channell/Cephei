@@ -55,7 +55,7 @@ type EuropeanHestonPathPricerModel
 (* 
     casting 
 *)
-    internal new () = EuropeanHestonPathPricerModel(null,null,null)
+    internal new () = new EuropeanHestonPathPricerModel(null,null,null)
     member internal this.Inject v = _EuropeanHestonPathPricer.Value <- v
     static member Cast (p : ICell<EuropeanHestonPathPricer>) = 
         if p :? EuropeanHestonPathPricerModel then 

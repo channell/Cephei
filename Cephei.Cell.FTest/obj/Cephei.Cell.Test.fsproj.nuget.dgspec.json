@@ -47,6 +47,11 @@
               "version": "[4.7.2, )",
               "generatePathProperty": true
             },
+            "ILGPU": {
+              "target": "Package",
+              "version": "[0.9.1, )",
+              "generatePathProperty": true
+            },
             "MSTest.TestAdapter": {
               "target": "Package",
               "version": "[2.1.0, )",
@@ -74,12 +79,17 @@
             },
             "Serilog": {
               "target": "Package",
-              "version": "[2.9.0, )",
+              "version": "[2.10.0, )",
               "generatePathProperty": true
             },
             "Serilog.Sinks.File": {
               "target": "Package",
               "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Collections.Immutable": {
+              "target": "Package",
+              "version": "[1.7.1, )",
               "generatePathProperty": true
             },
             "coverlet.collector": {
@@ -150,6 +160,10 @@
               "target": "Package",
               "version": "[4.7.2, )"
             },
+            "ILGPU": {
+              "target": "Package",
+              "version": "[0.9.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -159,6 +173,10 @@
             "Serilog": {
               "target": "Package",
               "version": "[2.10.0, )"
+            },
+            "System.Collections.Immutable": {
+              "target": "Package",
+              "version": "[1.7.1, )"
             }
           },
           "imports": [

@@ -75,7 +75,7 @@ type BlackVarianceSurfaceModel
 (* 
     casting 
 *)
-    internal new () = BlackVarianceSurfaceModel(null,null,null,null,null,null,null,null)
+    internal new () = new BlackVarianceSurfaceModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _BlackVarianceSurface.Value <- v
     static member Cast (p : ICell<BlackVarianceSurface>) = 
         if p :? BlackVarianceSurfaceModel then 

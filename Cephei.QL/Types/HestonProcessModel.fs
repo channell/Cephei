@@ -100,7 +100,7 @@ type HestonProcessModel
 (* 
     casting 
 *)
-    internal new () = HestonProcessModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new HestonProcessModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _HestonProcess.Value <- v
     static member Cast (p : ICell<HestonProcess>) = 
         if p :? HestonProcessModel then 

@@ -63,7 +63,7 @@ type CubicModel
 (* 
     casting 
 *)
-    internal new () = CubicModel(null,null,null,null,null,null)
+    internal new () = new CubicModel(null,null,null,null,null,null)
     member internal this.Inject v = _Cubic.Value <- v
     static member Cast (p : ICell<Cubic>) = 
         if p :? CubicModel then 

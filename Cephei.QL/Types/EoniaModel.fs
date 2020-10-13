@@ -98,7 +98,7 @@ type EoniaModel
 (* 
     casting 
 *)
-    internal new () = EoniaModel(null)
+    internal new () = new EoniaModel(null)
     member internal this.Inject v = _Eonia.Value <- v
     static member Cast (p : ICell<Eonia>) = 
         if p :? EoniaModel then 

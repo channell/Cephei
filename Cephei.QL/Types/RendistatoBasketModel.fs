@@ -67,7 +67,7 @@ type RendistatoBasketModel
 (* 
     casting 
 *)
-    internal new () = RendistatoBasketModel(null,null,null)
+    internal new () = new RendistatoBasketModel(null,null,null)
     member internal this.Inject v = _RendistatoBasket.Value <- v
     static member Cast (p : ICell<RendistatoBasket>) = 
         if p :? RendistatoBasketModel then 

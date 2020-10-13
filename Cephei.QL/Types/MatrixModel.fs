@@ -77,7 +77,7 @@ type MatrixModel
 (* 
     casting 
 *)
-    internal new () = MatrixModel(null,null,null)
+    internal new () = new MatrixModel(null,null,null)
     member internal this.Inject v = _Matrix.Value <- v
     static member Cast (p : ICell<Matrix>) = 
         if p :? MatrixModel then 
@@ -163,7 +163,7 @@ type MatrixModel1
 (* 
     casting 
 *)
-    internal new () = MatrixModel1(null,null)
+    internal new () = new MatrixModel1(null,null)
     member internal this.Inject v = _Matrix.Value <- v
     static member Cast (p : ICell<Matrix>) = 
         if p :? MatrixModel1 then 
@@ -246,7 +246,7 @@ type MatrixModel2
 (* 
     casting 
 *)
-    internal new () = MatrixModel2(null)
+    internal new () = new MatrixModel2(null)
     member internal this.Inject v = _Matrix.Value <- v
     static member Cast (p : ICell<Matrix>) = 
         if p :? MatrixModel2 then 

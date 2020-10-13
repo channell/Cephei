@@ -63,7 +63,7 @@ type MethodOfLinesSchemeModel
 (* 
     casting 
 *)
-    internal new () = MethodOfLinesSchemeModel(null,null,null,null)
+    internal new () = new MethodOfLinesSchemeModel(null,null,null,null)
     member internal this.Inject v = _MethodOfLinesScheme.Value <- v
     static member Cast (p : ICell<MethodOfLinesScheme>) = 
         if p :? MethodOfLinesSchemeModel then 

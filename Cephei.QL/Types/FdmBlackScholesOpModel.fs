@@ -94,7 +94,7 @@ type FdmBlackScholesOpModel
 (* 
     casting 
 *)
-    internal new () = FdmBlackScholesOpModel(null,null,null,null,null,null,null)
+    internal new () = new FdmBlackScholesOpModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _FdmBlackScholesOp.Value <- v
     static member Cast (p : ICell<FdmBlackScholesOp>) = 
         if p :? FdmBlackScholesOpModel then 

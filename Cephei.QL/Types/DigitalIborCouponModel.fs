@@ -293,7 +293,7 @@ type DigitalIborCouponModel1
 (* 
     casting 
 *)
-    internal new () = DigitalIborCouponModel1(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new DigitalIborCouponModel1(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _DigitalIborCoupon.Value <- v
     static member Cast (p : ICell<DigitalIborCoupon>) = 
         if p :? DigitalIborCouponModel1 then 

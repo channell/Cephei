@@ -100,7 +100,7 @@ type DKKLiborModel
 (* 
     casting 
 *)
-    internal new () = DKKLiborModel(null,null)
+    internal new () = new DKKLiborModel(null,null)
     member internal this.Inject v = _DKKLibor.Value <- v
     static member Cast (p : ICell<DKKLibor>) = 
         if p :? DKKLiborModel then 
@@ -229,7 +229,7 @@ type DKKLiborModel1
 (* 
     casting 
 *)
-    internal new () = DKKLiborModel1(null)
+    internal new () = new DKKLiborModel1(null)
     member internal this.Inject v = _DKKLibor.Value <- v
     static member Cast (p : ICell<DKKLibor>) = 
         if p :? DKKLiborModel1 then 

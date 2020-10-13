@@ -66,7 +66,7 @@ type CrankNicolsonSchemeModel
 (* 
     casting 
 *)
-    internal new () = CrankNicolsonSchemeModel(null,null,null,null,null)
+    internal new () = new CrankNicolsonSchemeModel(null,null,null,null,null)
     member internal this.Inject v = _CrankNicolsonScheme.Value <- v
     static member Cast (p : ICell<CrankNicolsonScheme>) = 
         if p :? CrankNicolsonSchemeModel then 

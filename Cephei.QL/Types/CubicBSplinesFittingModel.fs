@@ -67,7 +67,7 @@ type CubicBSplinesFittingModel
 (* 
     casting 
 *)
-    internal new () = CubicBSplinesFittingModel(null,null,null,null)
+    internal new () = new CubicBSplinesFittingModel(null,null,null,null)
     member internal this.Inject v = _CubicBSplinesFitting.Value <- v
     static member Cast (p : ICell<CubicBSplinesFitting>) = 
         if p :? CubicBSplinesFittingModel then 

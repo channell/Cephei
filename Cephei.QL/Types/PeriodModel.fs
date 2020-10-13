@@ -62,7 +62,7 @@ type PeriodModel
 (* 
     casting 
 *)
-    internal new () = PeriodModel(null,null)
+    internal new () = new PeriodModel(null,null)
     member internal this.Inject v = _Period.Value <- v
     static member Cast (p : ICell<Period>) = 
         if p :? PeriodModel then 
@@ -175,7 +175,7 @@ type PeriodModel2
 (* 
     casting 
 *)
-    internal new () = PeriodModel2(null)
+    internal new () = new PeriodModel2(null)
     member internal this.Inject v = _Period.Value <- v
     static member Cast (p : ICell<Period>) = 
         if p :? PeriodModel2 then 
@@ -233,7 +233,7 @@ type PeriodModel3
 (* 
     casting 
 *)
-    internal new () = PeriodModel3(null)
+    internal new () = new PeriodModel3(null)
     member internal this.Inject v = _Period.Value <- v
     static member Cast (p : ICell<Period>) = 
         if p :? PeriodModel3 then 

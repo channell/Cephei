@@ -146,7 +146,7 @@ type FloatingCatBondModel
 (* 
     casting 
 *)
-    internal new () = FloatingCatBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FloatingCatBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingCatBond.Value <- v
     static member Cast (p : ICell<FloatingCatBond>) = 
         if p :? FloatingCatBondModel then 
@@ -339,7 +339,7 @@ type FloatingCatBondModel1
 (* 
     casting 
 *)
-    internal new () = FloatingCatBondModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FloatingCatBondModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingCatBond.Value <- v
     static member Cast (p : ICell<FloatingCatBond>) = 
         if p :? FloatingCatBondModel1 then 

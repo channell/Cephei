@@ -93,7 +93,7 @@ type FixedRateBondForwardModel
 (* 
     casting 
 *)
-    internal new () = FixedRateBondForwardModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FixedRateBondForwardModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedRateBondForward.Value <- v
     static member Cast (p : ICell<FixedRateBondForward>) = 
         if p :? FixedRateBondForwardModel then 

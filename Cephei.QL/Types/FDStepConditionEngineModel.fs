@@ -68,7 +68,7 @@ type FDStepConditionEngineModel
 (* 
     casting 
 *)
-    internal new () = FDStepConditionEngineModel(null,null,null,null)
+    internal new () = new FDStepConditionEngineModel(null,null,null,null)
     member internal this.Inject v = _FDStepConditionEngine.Value <- v
     static member Cast (p : ICell<FDStepConditionEngine>) = 
         if p :? FDStepConditionEngineModel then 

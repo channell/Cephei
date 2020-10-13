@@ -57,7 +57,7 @@ type EarlyExerciseModel
 (* 
     casting 
 *)
-    internal new () = EarlyExerciseModel(null,null)
+    internal new () = new EarlyExerciseModel(null,null)
     member internal this.Inject v = _EarlyExercise.Value <- v
     static member Cast (p : ICell<EarlyExercise>) = 
         if p :? EarlyExerciseModel then 

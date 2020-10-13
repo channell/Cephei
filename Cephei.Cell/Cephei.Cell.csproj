@@ -36,7 +36,9 @@ Cells can be grouped into a Model to encapsulate the implementation of the model
 
   <ItemGroup>
     <PackageReference Include="FSharp.Core" Version="4.7.2" />
+    <PackageReference Include="ILGPU" Version="0.9.1" />
     <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.7.1" />
   </ItemGroup>
 
   <ItemGroup>

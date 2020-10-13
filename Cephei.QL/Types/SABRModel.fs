@@ -87,7 +87,7 @@ type SABRModel
 (* 
     casting 
 *)
-    internal new () = SABRModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new SABRModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SABR.Value <- v
     static member Cast (p : ICell<SABR>) = 
         if p :? SABRModel then 

@@ -109,7 +109,7 @@ type CCTEUModel
 (* 
     casting 
 *)
-    internal new () = CCTEUModel(null,null,null,null,null,null,null)
+    internal new () = new CCTEUModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _CCTEU.Value <- v
     static member Cast (p : ICell<CCTEU>) = 
         if p :? CCTEUModel then 

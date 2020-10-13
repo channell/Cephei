@@ -85,7 +85,7 @@ type LiborForwardModelModel
 (* 
     casting 
 *)
-    internal new () = LiborForwardModelModel(null,null,null)
+    internal new () = new LiborForwardModelModel(null,null,null)
     member internal this.Inject v = _LiborForwardModel.Value <- v
     static member Cast (p : ICell<LiborForwardModel>) = 
         if p :? LiborForwardModelModel then 

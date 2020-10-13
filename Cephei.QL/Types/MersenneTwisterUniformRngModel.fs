@@ -54,7 +54,7 @@ type MersenneTwisterUniformRngModel
 (* 
     casting 
 *)
-    internal new () = MersenneTwisterUniformRngModel(null)
+    internal new () = new MersenneTwisterUniformRngModel(null)
     member internal this.Inject v = _MersenneTwisterUniformRng.Value <- v
     static member Cast (p : ICell<MersenneTwisterUniformRng>) = 
         if p :? MersenneTwisterUniformRngModel then 
@@ -144,7 +144,7 @@ type MersenneTwisterUniformRngModel2
 (* 
     casting 
 *)
-    internal new () = MersenneTwisterUniformRngModel2(null)
+    internal new () = new MersenneTwisterUniformRngModel2(null)
     member internal this.Inject v = _MersenneTwisterUniformRng.Value <- v
     static member Cast (p : ICell<MersenneTwisterUniformRng>) = 
         if p :? MersenneTwisterUniformRngModel2 then 

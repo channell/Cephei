@@ -67,7 +67,7 @@ type MultiplicativePriceSeasonalityModel
 (* 
     casting 
 *)
-    internal new () = MultiplicativePriceSeasonalityModel(null,null,null)
+    internal new () = new MultiplicativePriceSeasonalityModel(null,null,null)
     member internal this.Inject v = _MultiplicativePriceSeasonality.Value <- v
     static member Cast (p : ICell<MultiplicativePriceSeasonality>) = 
         if p :? MultiplicativePriceSeasonalityModel then 

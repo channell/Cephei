@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Interface : InterfaceBase
     {
@@ -30,7 +30,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
 /* 
 Name:           Interface.cst
 Author:         Stephen Channell
@@ -40,7 +40,7 @@ Description:    Generate a single Interface for the Class
             #line default
             #line hidden
             
-            #line 16 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 16 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
 
     
     Context.ElementName = ElementName;
@@ -55,7 +55,7 @@ Description:    Generate a single Interface for the Class
                     "\r\nusing System.Collections.Generic;\r\nusing Cephei;\r\nusing Cephei.Core;\r\nusing Ce" +
                     "phei.Core.Generic;\r\nusing Microsoft.FSharp.Core;\r\n");
             
-            #line 31 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 31 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
 
     if (Context.CurrentClass.FileName == "") return "";
     foreach (KeyValuePair<int,Package> pair in Context.CurrentClass.ReferencedPackages)
@@ -66,14 +66,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write(" \r\nusing Cephei.");
             
-            #line 36 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 36 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.GlobalName.Replace("::", ".")));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 37 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 37 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
         
     }
 
@@ -82,35 +82,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("namespace Cephei.");
             
-            #line 40 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 40 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace (ClassDelimiter).Replace ("::", ".")));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    ");
             
-            #line 42 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 42 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.Comment(Context.CurrentClass.Notes,"\t")));
             
             #line default
             #line hidden
             this.Write("\r\n    [Guid (\"");
             
-            #line 43 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 43 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Guid.Substring(1, Context.CurrentClass.Guid.Length -2)));
             
             #line default
             #line hidden
             this.Write("\"),ComVisible(true)]\r\n\tpublic interface I");
             
-            #line 44 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 44 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 44 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 44 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.GetGeneralisation (Context.CurrentClass, "I", false).Replace ("::", ".")));
             
             #line default
@@ -118,7 +118,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n\t{\r\n\t\t///////////////////////////////////////////////////////////////\r\n        " +
                     "// Methods\r\n        //\r\n");
             
-            #line 49 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 49 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
  
         foreach(Method method in Context.CurrentClass.Methods)
         { 
@@ -132,35 +132,35 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 57 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 57 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.Comment(method.Notes,"\t\t")));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t ");
             
-            #line 58 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 58 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::","."))));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 58 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 58 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 58 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 58 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamString(true, "I", "", ".").Replace("::",".")));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 59 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 59 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
 
                 }
                 else
@@ -171,28 +171,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 64 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 64 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.Comment(method.Notes,"\t\t")));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t ");
             
-            #line 65 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 65 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.ReturnType.Source == "void" ? "I" + Context.CurrentClass.Name : method.ReturnType.GetQualifiedType(false,".", "I", "").Replace("::","."))));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 65 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 65 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.UpperName));
             
             #line default
             #line hidden
             this.Write(" {get;}\r\n");
             
-            #line 66 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 66 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
 
                 }
             }
@@ -204,21 +204,21 @@ Description:    Generate a single Interface for the Class
             this.Write("         /// <summary>\r\n         /// Cast the object to an interface\r\n         //" +
                     "/ </summary>\r\n         T As<T> ();\r\n    }   \r\n\r\n    ");
             
-            #line 77 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 77 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.Comment(Context.CurrentClass.Notes + " Factory","\t")));
             
             #line default
             #line hidden
             this.Write("\r\n   \t[ComVisible(true)]\r\n    public interface I");
             
-            #line 79 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 79 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("_Factory ");
             
-            #line 79 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 79 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Collections.Count > 0 ? ": INativeCollection_Factory<I" + Context.CurrentClass.Name + ">" : "")));
             
             #line default
@@ -226,7 +226,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n    {\r\n        ///////////////////////////////////////////////////////////////\r" +
                     "\n        // Factory methods\r\n        //\r\n");
             
-            #line 84 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 84 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
 
     if (!Context.CurrentClass.IsAbstract)
     {
@@ -240,28 +240,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 92 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 92 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.Comment(method.Notes,"\t\t")));
             
             #line default
             #line hidden
             this.Write("\r\n\t    I");
             
-            #line 93 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 93 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(" Create (");
             
-            #line 93 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 93 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamConstructor(true, "I", "", ".").Replace("::",".")));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 94 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 94 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
 
             }
         }
@@ -272,7 +272,7 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("    }\r\n}\r\n");
             
-            #line 101 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+            #line 101 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
   
             
             #line default
@@ -280,7 +280,7 @@ Description:    Generate a single Interface for the Class
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 102 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+        #line 102 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
 
 		public Context Context;
 
@@ -303,7 +303,7 @@ Description:    Generate a single Interface for the Class
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Interface.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Interface.tt"
 
 private string _ElementNameField;
 

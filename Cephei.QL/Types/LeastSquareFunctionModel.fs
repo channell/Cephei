@@ -64,7 +64,7 @@ type LeastSquareFunctionModel
 (* 
     casting 
 *)
-    internal new () = LeastSquareFunctionModel(null)
+    internal new () = new LeastSquareFunctionModel(null)
     member internal this.Inject v = _LeastSquareFunction.Value <- v
     static member Cast (p : ICell<LeastSquareFunction>) = 
         if p :? LeastSquareFunctionModel then 

@@ -53,7 +53,7 @@ type KirkSpreadOptionEngineModel
 (* 
     casting 
 *)
-    internal new () = KirkSpreadOptionEngineModel(null,null,null)
+    internal new () = new KirkSpreadOptionEngineModel(null,null,null)
     member internal this.Inject v = _KirkSpreadOptionEngine.Value <- v
     static member Cast (p : ICell<KirkSpreadOptionEngine>) = 
         if p :? KirkSpreadOptionEngineModel then 

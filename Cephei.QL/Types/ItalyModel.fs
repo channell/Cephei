@@ -108,7 +108,7 @@ type ItalyModel
 (* 
     casting 
 *)
-    internal new () = ItalyModel(null)
+    internal new () = new ItalyModel(null)
     member internal this.Inject v = _Italy.Value <- v
     static member Cast (p : ICell<Italy>) = 
         if p :? ItalyModel then 

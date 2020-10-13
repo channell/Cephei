@@ -87,7 +87,7 @@ type ConvexMonotoneInterpolationModel
 (* 
     casting 
 *)
-    internal new () = ConvexMonotoneInterpolationModel(null,null,null,null,null,null,null,null)
+    internal new () = new ConvexMonotoneInterpolationModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ConvexMonotoneInterpolation.Value <- v
     static member Cast (p : ICell<ConvexMonotoneInterpolation>) = 
         if p :? ConvexMonotoneInterpolationModel then 
@@ -188,7 +188,7 @@ type ConvexMonotoneInterpolationModel1
 (* 
     casting 
 *)
-    internal new () = ConvexMonotoneInterpolationModel1(null,null,null,null,null,null,null)
+    internal new () = new ConvexMonotoneInterpolationModel1(null,null,null,null,null,null,null)
     member internal this.Inject v = _ConvexMonotoneInterpolation.Value <- v
     static member Cast (p : ICell<ConvexMonotoneInterpolation>) = 
         if p :? ConvexMonotoneInterpolationModel1 then 

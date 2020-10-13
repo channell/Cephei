@@ -84,7 +84,7 @@ type SabrSmileSectionModel
 (* 
     casting 
 *)
-    internal new () = SabrSmileSectionModel(null,null,null,null,null,null)
+    internal new () = new SabrSmileSectionModel(null,null,null,null,null,null)
     member internal this.Inject v = _SabrSmileSection.Value <- v
     static member Cast (p : ICell<SabrSmileSection>) = 
         if p :? SabrSmileSectionModel then 
@@ -183,7 +183,7 @@ type SabrSmileSectionModel1
 (* 
     casting 
 *)
-    internal new () = SabrSmileSectionModel1(null,null,null,null,null)
+    internal new () = new SabrSmileSectionModel1(null,null,null,null,null)
     member internal this.Inject v = _SabrSmileSection.Value <- v
     static member Cast (p : ICell<SabrSmileSection>) = 
         if p :? SabrSmileSectionModel1 then 

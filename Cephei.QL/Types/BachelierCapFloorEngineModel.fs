@@ -53,7 +53,7 @@ type BachelierCapFloorEngineModel
 (* 
     casting 
 *)
-    internal new () = BachelierCapFloorEngineModel(null,null)
+    internal new () = new BachelierCapFloorEngineModel(null,null)
     member internal this.Inject v = _BachelierCapFloorEngine.Value <- v
     static member Cast (p : ICell<BachelierCapFloorEngine>) = 
         if p :? BachelierCapFloorEngineModel then 
@@ -99,7 +99,7 @@ type BachelierCapFloorEngineModel1
 (* 
     casting 
 *)
-    internal new () = BachelierCapFloorEngineModel1(null,null,null)
+    internal new () = new BachelierCapFloorEngineModel1(null,null,null)
     member internal this.Inject v = _BachelierCapFloorEngine.Value <- v
     static member Cast (p : ICell<BachelierCapFloorEngine>) = 
         if p :? BachelierCapFloorEngineModel1 then 
@@ -146,7 +146,7 @@ type BachelierCapFloorEngineModel2
 (* 
     casting 
 *)
-    internal new () = BachelierCapFloorEngineModel2(null,null,null)
+    internal new () = new BachelierCapFloorEngineModel2(null,null,null)
     member internal this.Inject v = _BachelierCapFloorEngine.Value <- v
     static member Cast (p : ICell<BachelierCapFloorEngine>) = 
         if p :? BachelierCapFloorEngineModel2 then 

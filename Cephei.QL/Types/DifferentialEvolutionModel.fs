@@ -52,7 +52,7 @@ type DifferentialEvolutionModel
 (* 
     casting 
 *)
-    internal new () = DifferentialEvolutionModel(null)
+    internal new () = new DifferentialEvolutionModel(null)
     member internal this.Inject v = _DifferentialEvolution.Value <- v
     static member Cast (p : ICell<DifferentialEvolution>) = 
         if p :? DifferentialEvolutionModel then 

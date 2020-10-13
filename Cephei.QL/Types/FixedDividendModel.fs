@@ -73,7 +73,7 @@ type FixedDividendModel
 (* 
     casting 
 *)
-    internal new () = FixedDividendModel(null,null)
+    internal new () = new FixedDividendModel(null,null)
     member internal this.Inject v = _FixedDividend.Value <- v
     static member Cast (p : ICell<FixedDividend>) = 
         if p :? FixedDividendModel then 

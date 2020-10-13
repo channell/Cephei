@@ -65,7 +65,7 @@ type TransformedGridModel
 (* 
     casting 
 *)
-    internal new () = TransformedGridModel(null)
+    internal new () = new TransformedGridModel(null)
     member internal this.Inject v = _TransformedGrid.Value <- v
     static member Cast (p : ICell<TransformedGrid>) = 
         if p :? TransformedGridModel then 
@@ -136,7 +136,7 @@ type TransformedGridModel1
 (* 
     casting 
 *)
-    internal new () = TransformedGridModel1(null,null)
+    internal new () = new TransformedGridModel1(null,null)
     member internal this.Inject v = _TransformedGrid.Value <- v
     static member Cast (p : ICell<TransformedGrid>) = 
         if p :? TransformedGridModel1 then 

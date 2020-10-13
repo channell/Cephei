@@ -51,7 +51,7 @@ type WulinYongDoubleBarrierEngineModel
 (* 
     casting 
 *)
-    internal new () = WulinYongDoubleBarrierEngineModel(null,null)
+    internal new () = new WulinYongDoubleBarrierEngineModel(null,null)
     member internal this.Inject v = _WulinYongDoubleBarrierEngine.Value <- v
     static member Cast (p : ICell<WulinYongDoubleBarrierEngine>) = 
         if p :? WulinYongDoubleBarrierEngineModel then 

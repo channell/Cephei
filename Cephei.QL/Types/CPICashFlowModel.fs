@@ -93,7 +93,7 @@ type CPICashFlowModel
 (* 
     casting 
 *)
-    internal new () = CPICashFlowModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new CPICashFlowModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CPICashFlow.Value <- v
     static member Cast (p : ICell<CPICashFlow>) = 
         if p :? CPICashFlowModel then 

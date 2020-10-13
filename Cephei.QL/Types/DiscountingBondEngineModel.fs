@@ -52,7 +52,7 @@ type DiscountingBondEngineModel
 (* 
     casting 
 *)
-    internal new () = DiscountingBondEngineModel(null,null)
+    internal new () = new DiscountingBondEngineModel(null,null)
     member internal this.Inject v = _DiscountingBondEngine.Value <- v
     static member Cast (p : ICell<DiscountingBondEngine>) = 
         if p :? DiscountingBondEngineModel then 

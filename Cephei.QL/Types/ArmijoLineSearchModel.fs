@@ -59,7 +59,7 @@ type ArmijoLineSearchModel
 (* 
     casting 
 *)
-    internal new () = ArmijoLineSearchModel(null)
+    internal new () = new ArmijoLineSearchModel(null)
     member internal this.Inject v = _ArmijoLineSearch.Value <- v
     static member Cast (p : ICell<ArmijoLineSearch>) = 
         if p :? ArmijoLineSearchModel then 
@@ -118,7 +118,7 @@ type ArmijoLineSearchModel1
 (* 
     casting 
 *)
-    internal new () = ArmijoLineSearchModel1(null,null)
+    internal new () = new ArmijoLineSearchModel1(null,null)
     member internal this.Inject v = _ArmijoLineSearch.Value <- v
     static member Cast (p : ICell<ArmijoLineSearch>) = 
         if p :? ArmijoLineSearchModel1 then 
@@ -180,7 +180,7 @@ type ArmijoLineSearchModel2
 (* 
     casting 
 *)
-    internal new () = ArmijoLineSearchModel2(null,null,null)
+    internal new () = new ArmijoLineSearchModel2(null,null,null)
     member internal this.Inject v = _ArmijoLineSearch.Value <- v
     static member Cast (p : ICell<ArmijoLineSearch>) = 
         if p :? ArmijoLineSearchModel2 then 

@@ -114,7 +114,7 @@ type VanillaSwapModel
 (* 
     casting 
 *)
-    internal new () = VanillaSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new VanillaSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _VanillaSwap.Value <- v
     static member Cast (p : ICell<VanillaSwap>) = 
         if p :? VanillaSwapModel then 

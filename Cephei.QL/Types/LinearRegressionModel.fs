@@ -54,7 +54,7 @@ type LinearRegressionModel
 (* 
     casting 
 *)
-    internal new () = LinearRegressionModel(null,null)
+    internal new () = new LinearRegressionModel(null,null)
     member internal this.Inject v = _LinearRegression.Value <- v
     static member Cast (p : ICell<LinearRegression>) = 
         if p :? LinearRegressionModel then 
@@ -100,7 +100,7 @@ type LinearRegressionModel1
 (* 
     casting 
 *)
-    internal new () = LinearRegressionModel1(null,null)
+    internal new () = new LinearRegressionModel1(null,null)
     member internal this.Inject v = _LinearRegression.Value <- v
     static member Cast (p : ICell<LinearRegression>) = 
         if p :? LinearRegressionModel1 then 

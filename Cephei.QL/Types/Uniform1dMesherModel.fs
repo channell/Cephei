@@ -61,7 +61,7 @@ type Uniform1dMesherModel
 (* 
     casting 
 *)
-    internal new () = Uniform1dMesherModel(null,null,null)
+    internal new () = new Uniform1dMesherModel(null,null,null)
     member internal this.Inject v = _Uniform1dMesher.Value <- v
     static member Cast (p : ICell<Uniform1dMesher>) = 
         if p :? Uniform1dMesherModel then 

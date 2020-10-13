@@ -94,7 +94,7 @@ type CPICapFloorModel
 (* 
     casting 
 *)
-    internal new () = CPICapFloorModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CPICapFloorModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CPICapFloor.Value <- v
     static member Cast (p : ICell<CPICapFloor>) = 
         if p :? CPICapFloorModel then 

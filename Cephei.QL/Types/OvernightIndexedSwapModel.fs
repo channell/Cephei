@@ -111,7 +111,7 @@ type OvernightIndexedSwapModel
 (* 
     casting 
 *)
-    internal new () = OvernightIndexedSwapModel(null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new OvernightIndexedSwapModel(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _OvernightIndexedSwap.Value <- v
     static member Cast (p : ICell<OvernightIndexedSwap>) = 
         if p :? OvernightIndexedSwapModel then 
@@ -257,7 +257,7 @@ type OvernightIndexedSwapModel1
 (* 
     casting 
 *)
-    internal new () = OvernightIndexedSwapModel1(null,null,null,null,null,null,null,null,null)
+    internal new () = new OvernightIndexedSwapModel1(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _OvernightIndexedSwap.Value <- v
     static member Cast (p : ICell<OvernightIndexedSwap>) = 
         if p :? OvernightIndexedSwapModel1 then 

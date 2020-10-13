@@ -73,7 +73,7 @@ type StatsHolderModel
 (* 
     casting 
 *)
-    internal new () = StatsHolderModel(null,null)
+    internal new () = new StatsHolderModel(null,null)
     member internal this.Inject v = _StatsHolder.Value <- v
     static member Cast (p : ICell<StatsHolder>) = 
         if p :? StatsHolderModel then 

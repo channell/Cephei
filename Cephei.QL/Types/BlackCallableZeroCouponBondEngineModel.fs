@@ -51,7 +51,7 @@ type BlackCallableZeroCouponBondEngineModel
 (* 
     casting 
 *)
-    internal new () = BlackCallableZeroCouponBondEngineModel(null,null)
+    internal new () = new BlackCallableZeroCouponBondEngineModel(null,null)
     member internal this.Inject v = _BlackCallableZeroCouponBondEngine.Value <- v
     static member Cast (p : ICell<BlackCallableZeroCouponBondEngine>) = 
         if p :? BlackCallableZeroCouponBondEngineModel then 
@@ -91,7 +91,7 @@ type BlackCallableZeroCouponBondEngineModel1
 (* 
     casting 
 *)
-    internal new () = BlackCallableZeroCouponBondEngineModel1(null,null)
+    internal new () = new BlackCallableZeroCouponBondEngineModel1(null,null)
     member internal this.Inject v = _BlackCallableZeroCouponBondEngine.Value <- v
     static member Cast (p : ICell<BlackCallableZeroCouponBondEngine>) = 
         if p :? BlackCallableZeroCouponBondEngineModel1 then 

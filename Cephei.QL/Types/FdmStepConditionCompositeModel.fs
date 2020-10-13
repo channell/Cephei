@@ -98,7 +98,7 @@ type FdmStepConditionCompositeModel1
 (* 
     casting 
 *)
-    internal new () = FdmStepConditionCompositeModel1(null,null)
+    internal new () = new FdmStepConditionCompositeModel1(null,null)
     member internal this.Inject v = _FdmStepConditionComposite.Value <- v
     static member Cast (p : ICell<FdmStepConditionComposite>) = 
         if p :? FdmStepConditionCompositeModel1 then 

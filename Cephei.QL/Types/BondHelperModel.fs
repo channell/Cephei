@@ -76,7 +76,7 @@ type BondHelperModel
 (* 
     casting 
 *)
-    internal new () = BondHelperModel(null,null,null)
+    internal new () = new BondHelperModel(null,null,null)
     member internal this.Inject v = _BondHelper.Value <- v
     static member Cast (p : ICell<BondHelper>) = 
         if p :? BondHelperModel then 

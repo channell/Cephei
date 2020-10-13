@@ -86,7 +86,7 @@ type DMinusModel
 (* 
     casting 
 *)
-    internal new () = DMinusModel(null,null)
+    internal new () = new DMinusModel(null,null)
     member internal this.Inject v = _DMinus.Value <- v
     static member Cast (p : ICell<DMinus>) = 
         if p :? DMinusModel then 

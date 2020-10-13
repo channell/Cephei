@@ -54,7 +54,7 @@ type FdmAmericanStepConditionModel
 (* 
     casting 
 *)
-    internal new () = FdmAmericanStepConditionModel(null,null)
+    internal new () = new FdmAmericanStepConditionModel(null,null)
     member internal this.Inject v = _FdmAmericanStepCondition.Value <- v
     static member Cast (p : ICell<FdmAmericanStepCondition>) = 
         if p :? FdmAmericanStepConditionModel then 

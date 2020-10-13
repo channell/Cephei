@@ -62,7 +62,7 @@ type FdmLinearOpLayoutModel
 (* 
     casting 
 *)
-    internal new () = FdmLinearOpLayoutModel(null)
+    internal new () = new FdmLinearOpLayoutModel(null)
     member internal this.Inject v = _FdmLinearOpLayout.Value <- v
     static member Cast (p : ICell<FdmLinearOpLayout>) = 
         if p :? FdmLinearOpLayoutModel then 

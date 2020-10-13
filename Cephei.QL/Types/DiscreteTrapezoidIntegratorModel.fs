@@ -62,7 +62,7 @@ type DiscreteTrapezoidIntegratorModel
 (* 
     casting 
 *)
-    internal new () = DiscreteTrapezoidIntegratorModel(null)
+    internal new () = new DiscreteTrapezoidIntegratorModel(null)
     member internal this.Inject v = _DiscreteTrapezoidIntegrator.Value <- v
     static member Cast (p : ICell<DiscreteTrapezoidIntegrator>) = 
         if p :? DiscreteTrapezoidIntegratorModel then 

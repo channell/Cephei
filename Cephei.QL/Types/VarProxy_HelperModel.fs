@@ -57,7 +57,7 @@ type VarProxy_HelperModel
 (* 
     casting 
 *)
-    internal new () = VarProxy_HelperModel(null,null,null)
+    internal new () = new VarProxy_HelperModel(null,null,null)
     member internal this.Inject v = _VarProxy_Helper.Value <- v
     static member Cast (p : ICell<VarProxy_Helper>) = 
         if p :? VarProxy_HelperModel then 

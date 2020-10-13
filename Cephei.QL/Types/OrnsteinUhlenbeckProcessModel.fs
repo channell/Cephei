@@ -92,7 +92,7 @@ type OrnsteinUhlenbeckProcessModel
 (* 
     casting 
 *)
-    internal new () = OrnsteinUhlenbeckProcessModel(null,null,null,null)
+    internal new () = new OrnsteinUhlenbeckProcessModel(null,null,null,null)
     member internal this.Inject v = _OrnsteinUhlenbeckProcess.Value <- v
     static member Cast (p : ICell<OrnsteinUhlenbeckProcess>) = 
         if p :? OrnsteinUhlenbeckProcessModel then 

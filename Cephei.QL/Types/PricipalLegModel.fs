@@ -62,7 +62,7 @@ type PricipalLegModel
 (* 
     casting 
 *)
-    internal new () = PricipalLegModel(null,null)
+    internal new () = new PricipalLegModel(null,null)
     member internal this.Inject v = _PricipalLeg.Value <- v
     static member Cast (p : ICell<PricipalLeg>) = 
         if p :? PricipalLegModel then 

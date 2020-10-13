@@ -114,7 +114,7 @@ type PdeBSMModel1
 (* 
     casting 
 *)
-    internal new () = PdeBSMModel1(null)
+    internal new () = new PdeBSMModel1(null)
     member internal this.Inject v = _PdeBSM.Value <- v
     static member Cast (p : ICell<PdeBSM>) = 
         if p :? PdeBSMModel1 then 

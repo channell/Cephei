@@ -68,7 +68,7 @@ type SoftCallabilityModel
 (* 
     casting 
 *)
-    internal new () = SoftCallabilityModel(null,null,null)
+    internal new () = new SoftCallabilityModel(null,null,null)
     member internal this.Inject v = _SoftCallability.Value <- v
     static member Cast (p : ICell<SoftCallability>) = 
         if p :? SoftCallabilityModel then 

@@ -51,7 +51,7 @@ type BivariateCumulativeNormalDistributionDr78Model
 (* 
     casting 
 *)
-    internal new () = BivariateCumulativeNormalDistributionDr78Model(null)
+    internal new () = new BivariateCumulativeNormalDistributionDr78Model(null)
     member internal this.Inject v = _BivariateCumulativeNormalDistributionDr78.Value <- v
     static member Cast (p : ICell<BivariateCumulativeNormalDistributionDr78>) = 
         if p :? BivariateCumulativeNormalDistributionDr78Model then 

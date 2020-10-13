@@ -73,7 +73,7 @@ type VannaVolgaBarrierEngineModel
 (* 
     casting 
 *)
-    internal new () = VannaVolgaBarrierEngineModel(null,null,null,null,null,null,null,null)
+    internal new () = new VannaVolgaBarrierEngineModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _VannaVolgaBarrierEngine.Value <- v
     static member Cast (p : ICell<VannaVolgaBarrierEngine>) = 
         if p :? VannaVolgaBarrierEngineModel then 

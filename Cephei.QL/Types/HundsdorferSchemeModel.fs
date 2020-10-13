@@ -63,7 +63,7 @@ type HundsdorferSchemeModel
 (* 
     casting 
 *)
-    internal new () = HundsdorferSchemeModel(null,null,null,null)
+    internal new () = new HundsdorferSchemeModel(null,null,null,null)
     member internal this.Inject v = _HundsdorferScheme.Value <- v
     static member Cast (p : ICell<HundsdorferScheme>) = 
         if p :? HundsdorferSchemeModel then 

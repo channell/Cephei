@@ -61,7 +61,7 @@ type simple_eventModel
 (* 
     casting 
 *)
-    internal new () = simple_eventModel(null)
+    internal new () = new simple_eventModel(null)
     member internal this.Inject v = _simple_event.Value <- v
     static member Cast (p : ICell<simple_event>) = 
         if p :? simple_eventModel then 

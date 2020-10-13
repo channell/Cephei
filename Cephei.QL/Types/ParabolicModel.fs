@@ -79,7 +79,7 @@ type ParabolicModel
 (* 
     casting 
 *)
-    internal new () = ParabolicModel(null,null,null)
+    internal new () = new ParabolicModel(null,null,null)
     member internal this.Inject v = _Parabolic.Value <- v
     static member Cast (p : ICell<Parabolic>) = 
         if p :? ParabolicModel then 

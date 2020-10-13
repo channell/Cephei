@@ -109,7 +109,7 @@ type BTPModel
 (* 
     casting 
 *)
-    internal new () = BTPModel(null,null,null,null,null,null,null)
+    internal new () = new BTPModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _BTP.Value <- v
     static member Cast (p : ICell<BTP>) = 
         if p :? BTPModel then 
@@ -257,7 +257,7 @@ type BTPModel1
 (* 
     casting 
 *)
-    internal new () = BTPModel1(null,null,null,null,null,null)
+    internal new () = new BTPModel1(null,null,null,null,null,null)
     member internal this.Inject v = _BTP.Value <- v
     static member Cast (p : ICell<BTP>) = 
         if p :? BTPModel1 then 

@@ -57,7 +57,7 @@ type BinomialBarrierEngineModel
 (* 
     casting 
 *)
-    internal new () = BinomialBarrierEngineModel(null,null,null,null,null)
+    internal new () = new BinomialBarrierEngineModel(null,null,null,null,null)
     member internal this.Inject v = _BinomialBarrierEngine.Value <- v
     static member Cast (p : ICell<BinomialBarrierEngine>) = 
         if p :? BinomialBarrierEngineModel then 

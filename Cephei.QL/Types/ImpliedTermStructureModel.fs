@@ -85,7 +85,7 @@ type ImpliedTermStructureModel
 (* 
     casting 
 *)
-    internal new () = ImpliedTermStructureModel(null,null)
+    internal new () = new ImpliedTermStructureModel(null,null)
     member internal this.Inject v = _ImpliedTermStructure.Value <- v
     static member Cast (p : ICell<ImpliedTermStructure>) = 
         if p :? ImpliedTermStructureModel then 

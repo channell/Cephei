@@ -61,7 +61,7 @@ type FdmMesherCompositeModel
 (* 
     casting 
 *)
-    internal new () = FdmMesherCompositeModel(null,null)
+    internal new () = new FdmMesherCompositeModel(null,null)
     member internal this.Inject v = _FdmMesherComposite.Value <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel then 
@@ -119,7 +119,7 @@ type FdmMesherCompositeModel1
 (* 
     casting 
 *)
-    internal new () = FdmMesherCompositeModel1(null)
+    internal new () = new FdmMesherCompositeModel1(null)
     member internal this.Inject v = _FdmMesherComposite.Value <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel1 then 
@@ -182,7 +182,7 @@ type FdmMesherCompositeModel2
 (* 
     casting 
 *)
-    internal new () = FdmMesherCompositeModel2(null,null,null,null)
+    internal new () = new FdmMesherCompositeModel2(null,null,null,null)
     member internal this.Inject v = _FdmMesherComposite.Value <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel2 then 
@@ -242,7 +242,7 @@ type FdmMesherCompositeModel3
 (* 
     casting 
 *)
-    internal new () = FdmMesherCompositeModel3(null)
+    internal new () = new FdmMesherCompositeModel3(null)
     member internal this.Inject v = _FdmMesherComposite.Value <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel3 then 
@@ -301,7 +301,7 @@ type FdmMesherCompositeModel4
 (* 
     casting 
 *)
-    internal new () = FdmMesherCompositeModel4(null,null)
+    internal new () = new FdmMesherCompositeModel4(null,null)
     member internal this.Inject v = _FdmMesherComposite.Value <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel4 then 
@@ -363,7 +363,7 @@ type FdmMesherCompositeModel5
 (* 
     casting 
 *)
-    internal new () = FdmMesherCompositeModel5(null,null,null)
+    internal new () = new FdmMesherCompositeModel5(null,null,null)
     member internal this.Inject v = _FdmMesherComposite.Value <- v
     static member Cast (p : ICell<FdmMesherComposite>) = 
         if p :? FdmMesherCompositeModel5 then 

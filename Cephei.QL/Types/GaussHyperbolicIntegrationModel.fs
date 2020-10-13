@@ -54,7 +54,7 @@ type GaussHyperbolicIntegrationModel
 (* 
     casting 
 *)
-    internal new () = GaussHyperbolicIntegrationModel(null)
+    internal new () = new GaussHyperbolicIntegrationModel(null)
     member internal this.Inject v = _GaussHyperbolicIntegration.Value <- v
     static member Cast (p : ICell<GaussHyperbolicIntegration>) = 
         if p :? GaussHyperbolicIntegrationModel then 

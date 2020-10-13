@@ -91,7 +91,7 @@ type FixedLocalVolSurfaceModel
 (* 
     casting 
 *)
-    internal new () = FixedLocalVolSurfaceModel(null,null,null,null,null,null,null)
+    internal new () = new FixedLocalVolSurfaceModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedLocalVolSurface.Value <- v
     static member Cast (p : ICell<FixedLocalVolSurface>) = 
         if p :? FixedLocalVolSurfaceModel then 
@@ -202,7 +202,7 @@ type FixedLocalVolSurfaceModel1
 (* 
     casting 
 *)
-    internal new () = FixedLocalVolSurfaceModel1(null,null,null,null,null,null,null)
+    internal new () = new FixedLocalVolSurfaceModel1(null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedLocalVolSurface.Value <- v
     static member Cast (p : ICell<FixedLocalVolSurface>) = 
         if p :? FixedLocalVolSurfaceModel1 then 
@@ -313,7 +313,7 @@ type FixedLocalVolSurfaceModel2
 (* 
     casting 
 *)
-    internal new () = FixedLocalVolSurfaceModel2(null,null,null,null,null,null,null)
+    internal new () = new FixedLocalVolSurfaceModel2(null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedLocalVolSurface.Value <- v
     static member Cast (p : ICell<FixedLocalVolSurface>) = 
         if p :? FixedLocalVolSurfaceModel2 then 

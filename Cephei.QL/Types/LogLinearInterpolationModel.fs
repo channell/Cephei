@@ -76,7 +76,7 @@ type LogLinearInterpolationModel
 (* 
     casting 
 *)
-    internal new () = LogLinearInterpolationModel(null,null,null)
+    internal new () = new LogLinearInterpolationModel(null,null,null)
     member internal this.Inject v = _LogLinearInterpolation.Value <- v
     static member Cast (p : ICell<LogLinearInterpolation>) = 
         if p :? LogLinearInterpolationModel then 

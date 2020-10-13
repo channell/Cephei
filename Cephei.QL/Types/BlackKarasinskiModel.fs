@@ -79,7 +79,7 @@ type BlackKarasinskiModel
 (* 
     casting 
 *)
-    internal new () = BlackKarasinskiModel(null,null,null)
+    internal new () = new BlackKarasinskiModel(null,null,null)
     member internal this.Inject v = _BlackKarasinski.Value <- v
     static member Cast (p : ICell<BlackKarasinski>) = 
         if p :? BlackKarasinskiModel then 
@@ -164,7 +164,7 @@ type BlackKarasinskiModel1
 (* 
     casting 
 *)
-    internal new () = BlackKarasinskiModel1(null)
+    internal new () = new BlackKarasinskiModel1(null)
     member internal this.Inject v = _BlackKarasinski.Value <- v
     static member Cast (p : ICell<BlackKarasinski>) = 
         if p :? BlackKarasinskiModel1 then 

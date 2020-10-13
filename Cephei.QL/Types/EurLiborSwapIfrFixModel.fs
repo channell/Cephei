@@ -107,7 +107,7 @@ type EurLiborSwapIfrFixModel
 (* 
     casting 
 *)
-    internal new () = EurLiborSwapIfrFixModel(null,null)
+    internal new () = new EurLiborSwapIfrFixModel(null,null)
     member internal this.Inject v = _EurLiborSwapIfrFix.Value <- v
     static member Cast (p : ICell<EurLiborSwapIfrFix>) = 
         if p :? EurLiborSwapIfrFixModel then 
@@ -250,7 +250,7 @@ type EurLiborSwapIfrFixModel1
 (* 
     casting 
 *)
-    internal new () = EurLiborSwapIfrFixModel1(null)
+    internal new () = new EurLiborSwapIfrFixModel1(null)
     member internal this.Inject v = _EurLiborSwapIfrFix.Value <- v
     static member Cast (p : ICell<EurLiborSwapIfrFix>) = 
         if p :? EurLiborSwapIfrFixModel1 then 
@@ -396,7 +396,7 @@ type EurLiborSwapIfrFixModel2
 (* 
     casting 
 *)
-    internal new () = EurLiborSwapIfrFixModel2(null,null,null)
+    internal new () = new EurLiborSwapIfrFixModel2(null,null,null)
     member internal this.Inject v = _EurLiborSwapIfrFix.Value <- v
     static member Cast (p : ICell<EurLiborSwapIfrFix>) = 
         if p :? EurLiborSwapIfrFixModel2 then 

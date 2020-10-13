@@ -95,7 +95,7 @@ type DiscretizedConvertibleModel
 (* 
     casting 
 *)
-    internal new () = DiscretizedConvertibleModel(null,null,null)
+    internal new () = new DiscretizedConvertibleModel(null,null,null)
     member internal this.Inject v = _DiscretizedConvertible.Value <- v
     static member Cast (p : ICell<DiscretizedConvertible>) = 
         if p :? DiscretizedConvertibleModel then 

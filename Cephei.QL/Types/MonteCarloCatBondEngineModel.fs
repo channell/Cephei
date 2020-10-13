@@ -54,7 +54,7 @@ type MonteCarloCatBondEngineModel
 (* 
     casting 
 *)
-    internal new () = MonteCarloCatBondEngineModel(null,null,null)
+    internal new () = new MonteCarloCatBondEngineModel(null,null,null)
     member internal this.Inject v = _MonteCarloCatBondEngine.Value <- v
     static member Cast (p : ICell<MonteCarloCatBondEngine>) = 
         if p :? MonteCarloCatBondEngineModel then 

@@ -85,7 +85,7 @@ type PricerSetterModel
 (* 
     casting 
 *)
-    internal new () = PricerSetterModel(null)
+    internal new () = new PricerSetterModel(null)
     member internal this.Inject v = _PricerSetter.Value <- v
     static member Cast (p : ICell<PricerSetter>) = 
         if p :? PricerSetterModel then 

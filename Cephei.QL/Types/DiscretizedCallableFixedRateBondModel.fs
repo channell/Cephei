@@ -82,7 +82,7 @@ type DiscretizedCallableFixedRateBondModel
 (* 
     casting 
 *)
-    internal new () = DiscretizedCallableFixedRateBondModel(null,null,null)
+    internal new () = new DiscretizedCallableFixedRateBondModel(null,null,null)
     member internal this.Inject v = _DiscretizedCallableFixedRateBond.Value <- v
     static member Cast (p : ICell<DiscretizedCallableFixedRateBond>) = 
         if p :? DiscretizedCallableFixedRateBondModel then 

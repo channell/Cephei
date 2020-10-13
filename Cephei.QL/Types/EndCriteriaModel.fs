@@ -74,7 +74,7 @@ type EndCriteriaModel
 (* 
     casting 
 *)
-    internal new () = EndCriteriaModel(null,null,null,null,null)
+    internal new () = new EndCriteriaModel(null,null,null,null,null)
     member internal this.Inject v = _EndCriteria.Value <- v
     static member Cast (p : ICell<EndCriteria>) = 
         if p :? EndCriteriaModel then 

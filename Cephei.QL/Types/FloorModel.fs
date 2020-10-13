@@ -80,7 +80,7 @@ type FloorModel
 (* 
     casting 
 *)
-    internal new () = FloorModel(null,null,null,null)
+    internal new () = new FloorModel(null,null,null,null)
     member internal this.Inject v = _Floor.Value <- v
     static member Cast (p : ICell<Floor>) = 
         if p :? FloorModel then 

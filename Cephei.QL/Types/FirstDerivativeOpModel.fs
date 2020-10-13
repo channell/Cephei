@@ -86,7 +86,7 @@ type FirstDerivativeOpModel
 (* 
     casting 
 *)
-    internal new () = FirstDerivativeOpModel(null)
+    internal new () = new FirstDerivativeOpModel(null)
     member internal this.Inject v = _FirstDerivativeOp.Value <- v
     static member Cast (p : ICell<FirstDerivativeOp>) = 
         if p :? FirstDerivativeOpModel then 
@@ -196,7 +196,7 @@ type FirstDerivativeOpModel1
 (* 
     casting 
 *)
-    internal new () = FirstDerivativeOpModel1(null,null)
+    internal new () = new FirstDerivativeOpModel1(null,null)
     member internal this.Inject v = _FirstDerivativeOp.Value <- v
     static member Cast (p : ICell<FirstDerivativeOp>) = 
         if p :? FirstDerivativeOpModel1 then 

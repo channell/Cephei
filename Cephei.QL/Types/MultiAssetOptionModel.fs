@@ -73,7 +73,7 @@ type MultiAssetOptionModel
 (* 
     casting 
 *)
-    internal new () = MultiAssetOptionModel(null,null,null,null)
+    internal new () = new MultiAssetOptionModel(null,null,null,null)
     member internal this.Inject v = _MultiAssetOption.Value <- v
     static member Cast (p : ICell<MultiAssetOption>) = 
         if p :? MultiAssetOptionModel then 

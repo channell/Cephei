@@ -76,7 +76,7 @@ type LocalVolCurveModel
 (* 
     casting 
 *)
-    internal new () = LocalVolCurveModel(null)
+    internal new () = new LocalVolCurveModel(null)
     member internal this.Inject v = _LocalVolCurve.Value <- v
     static member Cast (p : ICell<LocalVolCurve>) = 
         if p :? LocalVolCurveModel then 

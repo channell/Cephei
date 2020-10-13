@@ -60,7 +60,7 @@ type UniformGridMesherModel
 (* 
     casting 
 *)
-    internal new () = UniformGridMesherModel(null,null)
+    internal new () = new UniformGridMesherModel(null,null)
     member internal this.Inject v = _UniformGridMesher.Value <- v
     static member Cast (p : ICell<UniformGridMesher>) = 
         if p :? UniformGridMesherModel then 

@@ -29,7 +29,7 @@ namespace Cephei.Cell.Generic
     /// CellFacst<> should not be used for values unless <b>every </b>dependant is know
     /// to use fast closures
     /// </summary>
-    public class CellFast<T> : ICell<T>
+    public class CellFast<T> : ICell<T>, IFast
     {
         private FSharpFunc<Unit, T> _func;
         private SpinLock _spinLock = new SpinLock(true);
@@ -49,11 +49,13 @@ namespace Cephei.Cell.Generic
 
         public CellFast(FSharpFunc<Unit, T> func, ICell[] dependancies)
         {
-            _func = func;
             if (Cell.Parellel && !Cell.Lazy)
                 Task.Run(() => Calculate(DateTime.Now, 0));
             else if (!Cell.Lazy)
                 Calculate(DateTime.Now, 0);
+
+            foreach (var d in dependancies)
+                d.Notify(this);
         }
         public CellFast(FSharpFunc<Unit, T> func, ICell[] dependancies, string mnemonic) : this(func, dependancies)
         {
@@ -225,6 +227,7 @@ namespace Cephei.Cell.Generic
                         SetState(CellState.Clean);
                         var ses = Session.Current;
                         _value = value;
+                        _state = (int)CellState.Clean;
                         _epoch = DateTime.Now;
                         _spinLock.Exit(true);
                         taken = false;
@@ -268,6 +271,7 @@ namespace Cephei.Cell.Generic
         public void Dispose()
         {
             RaiseChange(CellEvent.Delete, this, DateTime.Now, null);
+            Change = delegate { };
         }
 
         private void PoolCalculate(DateTime epoch, ISession session)
@@ -357,12 +361,36 @@ namespace Cephei.Cell.Generic
         {
             get
             {
-                return _value;
+                return Value;
             }
             set
             {
-                _value = (T)Value;
+                Value = (T)Value;
             }
+        }
+        public FSharpFunc<Unit, T> Function
+        {
+            get
+            {
+                return _func;
+            }
+        }
+
+        public void Clone(ICell source)
+        {
+            Change = delegate { };
+            foreach (var d in source.Dependants)
+            {
+                Change += d.OnChange;
+            }
+            if (source.GetType() == this.GetType())
+            {
+                var c = (ICell<T>)source;
+                _func = c.Function;
+            }
+            _lastException = null;
+            _state = (int)CellState.Dirty;
+            RaiseChange(CellEvent.Link, this, DateTime.Now, null);
         }
 
         #region observable
@@ -400,5 +428,19 @@ namespace Cephei.Cell.Generic
             Value = value;
         }
         #endregion
+        public void Notify(ICell listener)
+        {
+            if (listener == this) return;
+            foreach (var v in Dependants)
+                if (v == listener)
+                    return;
+            Change += listener.OnChange;
+        }
+
+        public void UnNotify(ICell listener)
+        {
+            Change -= listener.OnChange;
+        }
+
     }
 }

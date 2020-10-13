@@ -58,7 +58,7 @@ type SVDModel
 (* 
     casting 
 *)
-    internal new () = SVDModel(null)
+    internal new () = new SVDModel(null)
     member internal this.Inject v = _SVD.Value <- v
     static member Cast (p : ICell<SVD>) = 
         if p :? SVDModel then 

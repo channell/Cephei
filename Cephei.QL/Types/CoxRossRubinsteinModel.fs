@@ -121,7 +121,7 @@ type CoxRossRubinsteinModel1
 (* 
     casting 
 *)
-    internal new () = CoxRossRubinsteinModel1(null,null,null,null)
+    internal new () = new CoxRossRubinsteinModel1(null,null,null,null)
     member internal this.Inject v = _CoxRossRubinstein.Value <- v
     static member Cast (p : ICell<CoxRossRubinstein>) = 
         if p :? CoxRossRubinsteinModel1 then 

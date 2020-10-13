@@ -100,7 +100,7 @@ type BiborModel
 (* 
     casting 
 *)
-    internal new () = BiborModel(null,null)
+    internal new () = new BiborModel(null,null)
     member internal this.Inject v = _Bibor.Value <- v
     static member Cast (p : ICell<Bibor>) = 
         if p :? BiborModel then 

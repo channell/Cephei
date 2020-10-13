@@ -64,7 +64,7 @@ type ImplicitEulerSchemeModel
 (* 
     casting 
 *)
-    internal new () = ImplicitEulerSchemeModel(null,null,null,null)
+    internal new () = new ImplicitEulerSchemeModel(null,null,null,null)
     member internal this.Inject v = _ImplicitEulerScheme.Value <- v
     static member Cast (p : ICell<ImplicitEulerScheme>) = 
         if p :? ImplicitEulerSchemeModel then 

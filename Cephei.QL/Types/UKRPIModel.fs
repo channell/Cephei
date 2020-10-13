@@ -88,7 +88,7 @@ type UKRPIModel
 (* 
     casting 
 *)
-    internal new () = UKRPIModel(null,null)
+    internal new () = new UKRPIModel(null,null)
     member internal this.Inject v = _UKRPI.Value <- v
     static member Cast (p : ICell<UKRPI>) = 
         if p :? UKRPIModel then 
@@ -193,7 +193,7 @@ type UKRPIModel1
 (* 
     casting 
 *)
-    internal new () = UKRPIModel1(null)
+    internal new () = new UKRPIModel1(null)
     member internal this.Inject v = _UKRPI.Value <- v
     static member Cast (p : ICell<UKRPI>) = 
         if p :? UKRPIModel1 then 

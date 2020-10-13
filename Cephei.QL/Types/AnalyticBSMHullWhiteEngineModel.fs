@@ -66,7 +66,7 @@ type AnalyticBSMHullWhiteEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticBSMHullWhiteEngineModel(null,null,null)
+    internal new () = new AnalyticBSMHullWhiteEngineModel(null,null,null)
     member internal this.Inject v = _AnalyticBSMHullWhiteEngine.Value <- v
     static member Cast (p : ICell<AnalyticBSMHullWhiteEngine>) = 
         if p :? AnalyticBSMHullWhiteEngineModel then 

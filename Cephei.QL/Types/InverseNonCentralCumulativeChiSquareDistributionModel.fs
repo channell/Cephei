@@ -57,7 +57,7 @@ type InverseNonCentralCumulativeChiSquareDistributionModel
 (* 
     casting 
 *)
-    internal new () = InverseNonCentralCumulativeChiSquareDistributionModel(null,null,null,null)
+    internal new () = new InverseNonCentralCumulativeChiSquareDistributionModel(null,null,null,null)
     member internal this.Inject v = _InverseNonCentralCumulativeChiSquareDistribution.Value <- v
     static member Cast (p : ICell<InverseNonCentralCumulativeChiSquareDistribution>) = 
         if p :? InverseNonCentralCumulativeChiSquareDistributionModel then 

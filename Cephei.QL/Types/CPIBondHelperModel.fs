@@ -109,7 +109,7 @@ type CPIBondHelperModel
 (* 
     casting 
 *)
-    internal new () = CPIBondHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CPIBondHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CPIBondHelper.Value <- v
     static member Cast (p : ICell<CPIBondHelper>) = 
         if p :? CPIBondHelperModel then 

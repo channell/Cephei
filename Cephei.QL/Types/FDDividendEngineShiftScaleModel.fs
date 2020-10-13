@@ -70,7 +70,7 @@ type FDDividendEngineShiftScaleModel
 (* 
     casting 
 *)
-    internal new () = FDDividendEngineShiftScaleModel(null,null,null,null)
+    internal new () = new FDDividendEngineShiftScaleModel(null,null,null,null)
     member internal this.Inject v = _FDDividendEngineShiftScale.Value <- v
     static member Cast (p : ICell<FDDividendEngineShiftScale>) = 
         if p :? FDDividendEngineShiftScaleModel then 

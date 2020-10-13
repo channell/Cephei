@@ -94,7 +94,7 @@ type ScheduleModel
 (* 
     casting 
 *)
-    internal new () = ScheduleModel(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new ScheduleModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _Schedule.Value <- v
     static member Cast (p : ICell<Schedule>) = 
         if p :? ScheduleModel then 
@@ -208,7 +208,7 @@ type ScheduleModel1
 (* 
     casting 
 *)
-    internal new () = ScheduleModel1(null,null,null,null,null,null,null,null)
+    internal new () = new ScheduleModel1(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _Schedule.Value <- v
     static member Cast (p : ICell<Schedule>) = 
         if p :? ScheduleModel1 then 

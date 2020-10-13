@@ -65,7 +65,7 @@ type Concentrating1dMesherModel
 (* 
     casting 
 *)
-    internal new () = Concentrating1dMesherModel(null,null,null,null,null)
+    internal new () = new Concentrating1dMesherModel(null,null,null,null,null)
     member internal this.Inject v = _Concentrating1dMesher.Value <- v
     static member Cast (p : ICell<Concentrating1dMesher>) = 
         if p :? Concentrating1dMesherModel then 
@@ -130,7 +130,7 @@ type Concentrating1dMesherModel1
 (* 
     casting 
 *)
-    internal new () = Concentrating1dMesherModel1(null,null,null,null,null)
+    internal new () = new Concentrating1dMesherModel1(null,null,null,null,null)
     member internal this.Inject v = _Concentrating1dMesher.Value <- v
     static member Cast (p : ICell<Concentrating1dMesher>) = 
         if p :? Concentrating1dMesherModel1 then 

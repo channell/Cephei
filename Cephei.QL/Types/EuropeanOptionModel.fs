@@ -80,7 +80,7 @@ type EuropeanOptionModel
 (* 
     casting 
 *)
-    internal new () = EuropeanOptionModel(null,null,null,null)
+    internal new () = new EuropeanOptionModel(null,null,null,null)
     member internal this.Inject v = _EuropeanOption.Value <- v
     static member Cast (p : ICell<EuropeanOption>) = 
         if p :? EuropeanOptionModel then 

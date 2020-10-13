@@ -67,7 +67,7 @@ type AnalyticHestonEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticHestonEngineModel(null,null,null)
+    internal new () = new AnalyticHestonEngineModel(null,null,null)
     member internal this.Inject v = _AnalyticHestonEngine.Value <- v
     static member Cast (p : ICell<AnalyticHestonEngine>) = 
         if p :? AnalyticHestonEngineModel then 
@@ -131,7 +131,7 @@ type AnalyticHestonEngineModel1
 (* 
     casting 
 *)
-    internal new () = AnalyticHestonEngineModel1(null,null)
+    internal new () = new AnalyticHestonEngineModel1(null,null)
     member internal this.Inject v = _AnalyticHestonEngine.Value <- v
     static member Cast (p : ICell<AnalyticHestonEngine>) = 
         if p :? AnalyticHestonEngineModel1 then 
@@ -196,7 +196,7 @@ type AnalyticHestonEngineModel2
 (* 
     casting 
 *)
-    internal new () = AnalyticHestonEngineModel2(null,null,null)
+    internal new () = new AnalyticHestonEngineModel2(null,null,null)
     member internal this.Inject v = _AnalyticHestonEngine.Value <- v
     static member Cast (p : ICell<AnalyticHestonEngine>) = 
         if p :? AnalyticHestonEngineModel2 then 

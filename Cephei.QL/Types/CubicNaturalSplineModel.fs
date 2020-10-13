@@ -79,7 +79,7 @@ type CubicNaturalSplineModel
 (* 
     casting 
 *)
-    internal new () = CubicNaturalSplineModel(null,null,null)
+    internal new () = new CubicNaturalSplineModel(null,null,null)
     member internal this.Inject v = _CubicNaturalSpline.Value <- v
     static member Cast (p : ICell<CubicNaturalSpline>) = 
         if p :? CubicNaturalSplineModel then 

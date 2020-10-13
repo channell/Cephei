@@ -66,7 +66,7 @@ type ConvexMonotone2HelperModel
 (* 
     casting 
 *)
-    internal new () = ConvexMonotone2HelperModel(null,null,null,null,null,null,null)
+    internal new () = new ConvexMonotone2HelperModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _ConvexMonotone2Helper.Value <- v
     static member Cast (p : ICell<ConvexMonotone2Helper>) = 
         if p :? ConvexMonotone2HelperModel then 

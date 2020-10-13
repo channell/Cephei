@@ -66,7 +66,7 @@ type ConvexMonotone4MinHelperModel
 (* 
     casting 
 *)
-    internal new () = ConvexMonotone4MinHelperModel(null,null,null,null,null,null,null)
+    internal new () = new ConvexMonotone4MinHelperModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _ConvexMonotone4MinHelper.Value <- v
     static member Cast (p : ICell<ConvexMonotone4MinHelper>) = 
         if p :? ConvexMonotone4MinHelperModel then 

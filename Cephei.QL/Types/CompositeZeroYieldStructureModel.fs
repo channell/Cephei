@@ -65,7 +65,7 @@ type CompositeZeroYieldStructureModel
 (* 
     casting 
 *)
-    internal new () = CompositeZeroYieldStructureModel(null,null,null,null,null)
+    internal new () = new CompositeZeroYieldStructureModel(null,null,null,null,null)
     member internal this.Inject v = _CompositeZeroYieldStructure.Value <- v
     static member Cast (p : ICell<CompositeZeroYieldStructure>) = 
         if p :? CompositeZeroYieldStructureModel then 

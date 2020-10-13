@@ -107,7 +107,7 @@ type ChfLiborSwapIsdaFixModel
 (* 
     casting 
 *)
-    internal new () = ChfLiborSwapIsdaFixModel(null,null)
+    internal new () = new ChfLiborSwapIsdaFixModel(null,null)
     member internal this.Inject v = _ChfLiborSwapIsdaFix.Value <- v
     static member Cast (p : ICell<ChfLiborSwapIsdaFix>) = 
         if p :? ChfLiborSwapIsdaFixModel then 
@@ -250,7 +250,7 @@ type ChfLiborSwapIsdaFixModel1
 (* 
     casting 
 *)
-    internal new () = ChfLiborSwapIsdaFixModel1(null)
+    internal new () = new ChfLiborSwapIsdaFixModel1(null)
     member internal this.Inject v = _ChfLiborSwapIsdaFix.Value <- v
     static member Cast (p : ICell<ChfLiborSwapIsdaFix>) = 
         if p :? ChfLiborSwapIsdaFixModel1 then 

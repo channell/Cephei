@@ -73,7 +73,7 @@ type BasketOptionModel
 (* 
     casting 
 *)
-    internal new () = BasketOptionModel(null,null,null,null)
+    internal new () = new BasketOptionModel(null,null,null,null)
     member internal this.Inject v = _BasketOption.Value <- v
     static member Cast (p : ICell<BasketOption>) = 
         if p :? BasketOptionModel then 

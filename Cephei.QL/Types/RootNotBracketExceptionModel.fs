@@ -51,7 +51,7 @@ type RootNotBracketExceptionModel
 (* 
     casting 
 *)
-    internal new () = RootNotBracketExceptionModel(null,null)
+    internal new () = new RootNotBracketExceptionModel(null,null)
     member internal this.Inject v = _RootNotBracketException.Value <- v
     static member Cast (p : ICell<RootNotBracketException>) = 
         if p :? RootNotBracketExceptionModel then 
@@ -89,7 +89,7 @@ type RootNotBracketExceptionModel1
 (* 
     casting 
 *)
-    internal new () = RootNotBracketExceptionModel1(null)
+    internal new () = new RootNotBracketExceptionModel1(null)
     member internal this.Inject v = _RootNotBracketException.Value <- v
     static member Cast (p : ICell<RootNotBracketException>) = 
         if p :? RootNotBracketExceptionModel1 then 

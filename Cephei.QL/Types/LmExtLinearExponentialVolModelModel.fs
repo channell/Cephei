@@ -68,7 +68,7 @@ type LmExtLinearExponentialVolModelModel
 (* 
     casting 
 *)
-    internal new () = LmExtLinearExponentialVolModelModel(null,null,null,null,null)
+    internal new () = new LmExtLinearExponentialVolModelModel(null,null,null,null,null)
     member internal this.Inject v = _LmExtLinearExponentialVolModel.Value <- v
     static member Cast (p : ICell<LmExtLinearExponentialVolModel>) = 
         if p :? LmExtLinearExponentialVolModelModel then 

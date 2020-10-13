@@ -56,7 +56,7 @@ type BiCGStabResultModel
 (* 
     casting 
 *)
-    internal new () = BiCGStabResultModel(null,null,null)
+    internal new () = new BiCGStabResultModel(null,null,null)
     member internal this.Inject v = _BiCGStabResult.Value <- v
     static member Cast (p : ICell<BiCGStabResult>) = 
         if p :? BiCGStabResultModel then 

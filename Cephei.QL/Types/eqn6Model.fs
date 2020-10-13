@@ -59,7 +59,7 @@ type eqn6Model
 (* 
     casting 
 *)
-    internal new () = eqn6Model(null,null,null,null,null)
+    internal new () = new eqn6Model(null,null,null,null,null)
     member internal this.Inject v = _eqn6.Value <- v
     static member Cast (p : ICell<eqn6>) = 
         if p :? eqn6Model then 

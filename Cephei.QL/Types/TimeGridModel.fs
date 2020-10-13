@@ -67,7 +67,7 @@ type TimeGridModel
 (* 
     casting 
 *)
-    internal new () = TimeGridModel(null,null)
+    internal new () = new TimeGridModel(null,null)
     member internal this.Inject v = _TimeGrid.Value <- v
     static member Cast (p : ICell<TimeGrid>) = 
         if p :? TimeGridModel then 
@@ -137,7 +137,7 @@ type TimeGridModel1
 (* 
     casting 
 *)
-    internal new () = TimeGridModel1(null)
+    internal new () = new TimeGridModel1(null)
     member internal this.Inject v = _TimeGrid.Value <- v
     static member Cast (p : ICell<TimeGrid>) = 
         if p :? TimeGridModel1 then 
@@ -208,7 +208,7 @@ type TimeGridModel2
 (* 
     casting 
 *)
-    internal new () = TimeGridModel2(null,null)
+    internal new () = new TimeGridModel2(null,null)
     member internal this.Inject v = _TimeGrid.Value <- v
     static member Cast (p : ICell<TimeGrid>) = 
         if p :? TimeGridModel2 then 
@@ -282,7 +282,7 @@ type TimeGridModel3
 (* 
     casting 
 *)
-    internal new () = TimeGridModel3(null,null,null)
+    internal new () = new TimeGridModel3(null,null,null)
     member internal this.Inject v = _TimeGrid.Value <- v
     static member Cast (p : ICell<TimeGrid>) = 
         if p :? TimeGridModel3 then 

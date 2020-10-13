@@ -61,7 +61,7 @@ type SpreadFittingMethodModel
 (* 
     casting 
 *)
-    internal new () = SpreadFittingMethodModel(null,null)
+    internal new () = new SpreadFittingMethodModel(null,null)
     member internal this.Inject v = _SpreadFittingMethod.Value <- v
     static member Cast (p : ICell<SpreadFittingMethod>) = 
         if p :? SpreadFittingMethodModel then 

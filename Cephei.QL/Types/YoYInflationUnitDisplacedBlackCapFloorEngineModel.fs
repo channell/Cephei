@@ -56,7 +56,7 @@ type YoYInflationUnitDisplacedBlackCapFloorEngineModel
 (* 
     casting 
 *)
-    internal new () = YoYInflationUnitDisplacedBlackCapFloorEngineModel(null,null)
+    internal new () = new YoYInflationUnitDisplacedBlackCapFloorEngineModel(null,null)
     member internal this.Inject v = _YoYInflationUnitDisplacedBlackCapFloorEngine.Value <- v
     static member Cast (p : ICell<YoYInflationUnitDisplacedBlackCapFloorEngine>) = 
         if p :? YoYInflationUnitDisplacedBlackCapFloorEngineModel then 

@@ -126,7 +126,7 @@ type CmsSpreadCouponModel
 (* 
     casting 
 *)
-    internal new () = CmsSpreadCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CmsSpreadCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CmsSpreadCoupon.Value <- v
     static member Cast (p : ICell<CmsSpreadCoupon>) = 
         if p :? CmsSpreadCouponModel then 

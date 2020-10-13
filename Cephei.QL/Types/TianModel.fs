@@ -66,7 +66,7 @@ type TianModel
 (* 
     casting 
 *)
-    internal new () = TianModel(null,null,null,null)
+    internal new () = new TianModel(null,null,null,null)
     member internal this.Inject v = _Tian.Value <- v
     static member Cast (p : ICell<Tian>) = 
         if p :? TianModel then 

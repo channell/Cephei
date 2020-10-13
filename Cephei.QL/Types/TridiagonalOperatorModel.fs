@@ -186,7 +186,7 @@ type TridiagonalOperatorModel1
 (* 
     casting 
 *)
-    internal new () = TridiagonalOperatorModel1(null,null,null)
+    internal new () = new TridiagonalOperatorModel1(null,null,null)
     member internal this.Inject v = _TridiagonalOperator.Value <- v
     static member Cast (p : ICell<TridiagonalOperator>) = 
         if p :? TridiagonalOperatorModel1 then 
@@ -290,7 +290,7 @@ type TridiagonalOperatorModel2
 (* 
     casting 
 *)
-    internal new () = TridiagonalOperatorModel2(null)
+    internal new () = new TridiagonalOperatorModel2(null)
     member internal this.Inject v = _TridiagonalOperator.Value <- v
     static member Cast (p : ICell<TridiagonalOperator>) = 
         if p :? TridiagonalOperatorModel2 then 

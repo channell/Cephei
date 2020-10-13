@@ -71,7 +71,7 @@ type AmortizingPaymentModel
 (* 
     casting 
 *)
-    internal new () = AmortizingPaymentModel(null,null)
+    internal new () = new AmortizingPaymentModel(null,null)
     member internal this.Inject v = _AmortizingPayment.Value <- v
     static member Cast (p : ICell<AmortizingPayment>) = 
         if p :? AmortizingPaymentModel then 

@@ -123,7 +123,7 @@ type ConvertibleZeroCouponBondModel
 (* 
     casting 
 *)
-    internal new () = ConvertibleZeroCouponBondModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new ConvertibleZeroCouponBondModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ConvertibleZeroCouponBond.Value <- v
     static member Cast (p : ICell<ConvertibleZeroCouponBond>) = 
         if p :? ConvertibleZeroCouponBondModel then 

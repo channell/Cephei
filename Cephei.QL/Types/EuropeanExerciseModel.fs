@@ -54,7 +54,7 @@ type EuropeanExerciseModel
 (* 
     casting 
 *)
-    internal new () = EuropeanExerciseModel(null)
+    internal new () = new EuropeanExerciseModel(null)
     member internal this.Inject v = _EuropeanExercise.Value <- v
     static member Cast (p : ICell<EuropeanExercise>) = 
         if p :? EuropeanExerciseModel then 

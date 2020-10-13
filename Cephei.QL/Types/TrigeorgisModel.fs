@@ -121,7 +121,7 @@ type TrigeorgisModel1
 (* 
     casting 
 *)
-    internal new () = TrigeorgisModel1(null,null,null,null)
+    internal new () = new TrigeorgisModel1(null,null,null,null)
     member internal this.Inject v = _Trigeorgis.Value <- v
     static member Cast (p : ICell<Trigeorgis>) = 
         if p :? TrigeorgisModel1 then 

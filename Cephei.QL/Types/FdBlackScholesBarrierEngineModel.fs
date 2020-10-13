@@ -61,7 +61,7 @@ type FdBlackScholesBarrierEngineModel
 (* 
     casting 
 *)
-    internal new () = FdBlackScholesBarrierEngineModel(null,null,null,null,null,null,null)
+    internal new () = new FdBlackScholesBarrierEngineModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _FdBlackScholesBarrierEngine.Value <- v
     static member Cast (p : ICell<FdBlackScholesBarrierEngine>) = 
         if p :? FdBlackScholesBarrierEngineModel then 

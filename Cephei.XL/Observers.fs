@@ -8,6 +8,7 @@ open Cephei.QL
 open System.Collections.Generic
 open System.Collections
 open System
+open System.Threading.Tasks
 
 
 // Summary: bridge to convert observable events to an updatd value
@@ -18,7 +19,7 @@ type RTDObserver<'T> (rtd : IValueRTD, cell : ICell<'T>, format : 'T -> string -
     let _holder = cell.Subscribe(this)
     let _format = format
     let _layout = layout
-    do _rtd.UpdateValue _mnemonic _layout (_format cell.Value layout)
+    do Task.Run (fun () -> _rtd.UpdateValue _mnemonic _layout (_format cell.Value layout)) |> ignore
 
     interface IObserver<'T> with
         member this.OnCompleted () : unit =
@@ -43,7 +44,7 @@ type RTDRangeObserver<'T> (rtd : IValueRTD, cell : ICell<Generic.List<'T>>, form
     let _holder = cell.Subscribe(this)
     let _format = format
     let _layout = layout
-    do _rtd.UpdateRange _mnemonic _layout (_format cell.Value layout)
+    do Task.Run (fun () -> _rtd.UpdateRange _mnemonic _layout (_format cell.Value layout)) |> ignore
 
     interface IObserver<Generic.List<'T>> with
         member this.OnCompleted () : unit =
@@ -68,7 +69,7 @@ type RTDModelObserver<'t> (rtd : IValueRTD, model : ICell<'t>, format : ICell<'t
     let _holder = (model :?> Model).Subscribe(this)
     let _format = format
     let _layout = layout
-    do _rtd.UpdateRange _mnemonic _layout (_format _model layout)
+    do Task.Run (fun () -> _rtd.UpdateRange _mnemonic _layout (_format _model layout)) |> ignore
 
     interface IObserver<ICell> with
         member this.OnCompleted () : unit =
@@ -94,7 +95,7 @@ type RTDModelRangeObserver<'t> (rtd : IValueRTD, models : ICell<Generic.List<ICe
     let _holders = Seq.map (fun (i : ICell<'t>) -> (i :?> Model).Subscribe(this)) _models |> Seq.toArray
     let _format = format
     let _layout = layout
-    do _rtd.UpdateValue _mnemonic _layout (_format _models layout)
+    do Task.Run (fun () -> _rtd.UpdateValue _mnemonic _layout (_format _models layout)) |> ignore
 
     interface IObserver<ICell> with
         member this.OnCompleted () : unit =

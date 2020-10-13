@@ -51,7 +51,7 @@ type NotTradableExceptionModel
 (* 
     casting 
 *)
-    internal new () = NotTradableExceptionModel(null,null)
+    internal new () = new NotTradableExceptionModel(null,null)
     member internal this.Inject v = _NotTradableException.Value <- v
     static member Cast (p : ICell<NotTradableException>) = 
         if p :? NotTradableExceptionModel then 
@@ -89,7 +89,7 @@ type NotTradableExceptionModel1
 (* 
     casting 
 *)
-    internal new () = NotTradableExceptionModel1(null)
+    internal new () = new NotTradableExceptionModel1(null)
     member internal this.Inject v = _NotTradableException.Value <- v
     static member Cast (p : ICell<NotTradableException>) = 
         if p :? NotTradableExceptionModel1 then 

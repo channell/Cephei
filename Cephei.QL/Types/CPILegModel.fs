@@ -92,7 +92,7 @@ type CPILegModel
 (* 
     casting 
 *)
-    internal new () = CPILegModel(null,null,null,null)
+    internal new () = new CPILegModel(null,null,null,null)
     member internal this.Inject v = _CPILeg.Value <- v
     static member Cast (p : ICell<CPILeg>) = 
         if p :? CPILegModel then 

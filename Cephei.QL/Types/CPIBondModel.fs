@@ -140,7 +140,7 @@ type CPIBondModel
 (* 
     casting 
 *)
-    internal new () = CPIBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CPIBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CPIBond.Value <- v
     static member Cast (p : ICell<CPIBond>) = 
         if p :? CPIBondModel then 

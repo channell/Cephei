@@ -91,7 +91,7 @@ type G2Model
 (* 
     casting 
 *)
-    internal new () = G2Model(null,null,null,null)
+    internal new () = new G2Model(null,null,null,null)
     member internal this.Inject v = _G2.Value <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model then 
@@ -197,7 +197,7 @@ type G2Model1
 (* 
     casting 
 *)
-    internal new () = G2Model1(null)
+    internal new () = new G2Model1(null)
     member internal this.Inject v = _G2.Value <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model1 then 
@@ -304,7 +304,7 @@ type G2Model2
 (* 
     casting 
 *)
-    internal new () = G2Model2(null,null,null)
+    internal new () = new G2Model2(null,null,null)
     member internal this.Inject v = _G2.Value <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model2 then 
@@ -417,7 +417,7 @@ type G2Model3
 (* 
     casting 
 *)
-    internal new () = G2Model3(null,null,null,null,null)
+    internal new () = new G2Model3(null,null,null,null,null)
     member internal this.Inject v = _G2.Value <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model3 then 
@@ -534,7 +534,7 @@ type G2Model4
 (* 
     casting 
 *)
-    internal new () = G2Model4(null,null,null,null,null,null)
+    internal new () = new G2Model4(null,null,null,null,null,null)
     member internal this.Inject v = _G2.Value <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model4 then 
@@ -644,7 +644,7 @@ type G2Model5
 (* 
     casting 
 *)
-    internal new () = G2Model5(null,null)
+    internal new () = new G2Model5(null,null)
     member internal this.Inject v = _G2.Value <- v
     static member Cast (p : ICell<G2>) = 
         if p :? G2Model5 then 

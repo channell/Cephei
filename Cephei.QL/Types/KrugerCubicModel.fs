@@ -79,7 +79,7 @@ type KrugerCubicModel
 (* 
     casting 
 *)
-    internal new () = KrugerCubicModel(null,null,null)
+    internal new () = new KrugerCubicModel(null,null,null)
     member internal this.Inject v = _KrugerCubic.Value <- v
     static member Cast (p : ICell<KrugerCubic>) = 
         if p :? KrugerCubicModel then 

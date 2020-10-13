@@ -101,7 +101,7 @@ type FixedRateCouponModel
 (* 
     casting 
 *)
-    internal new () = FixedRateCouponModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new FixedRateCouponModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedRateCoupon.Value <- v
     static member Cast (p : ICell<FixedRateCoupon>) = 
         if p :? FixedRateCouponModel then 
@@ -231,7 +231,7 @@ type FixedRateCouponModel1
 (* 
     casting 
 *)
-    internal new () = FixedRateCouponModel1(null,null,null,null,null,null,null,null,null)
+    internal new () = new FixedRateCouponModel1(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedRateCoupon.Value <- v
     static member Cast (p : ICell<FixedRateCoupon>) = 
         if p :? FixedRateCouponModel1 then 

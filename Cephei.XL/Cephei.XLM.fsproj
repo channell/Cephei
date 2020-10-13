@@ -22,10 +22,13 @@
 	<Compile Include="Value.fs" />
 	<Compile Include="Today.fs" />
 	<Compile Include="ExcelBridge.fs" />
+	  <Compile Include="Diag.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ExcelDna.Integration" Version="1.1.0" />
+    <PackageReference Include="ILGPU" Version="0.9.1" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.7.1" />
   </ItemGroup>
 
   <ItemGroup>

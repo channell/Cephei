@@ -57,7 +57,7 @@ type MultiPathModel
 (* 
     casting 
 *)
-    internal new () = MultiPathModel(null,null)
+    internal new () = new MultiPathModel(null,null)
     member internal this.Inject v = _MultiPath.Value <- v
     static member Cast (p : ICell<MultiPath>) = 
         if p :? MultiPathModel then 
@@ -152,7 +152,7 @@ type MultiPathModel2
 (* 
     casting 
 *)
-    internal new () = MultiPathModel2(null)
+    internal new () = new MultiPathModel2(null)
     member internal this.Inject v = _MultiPath.Value <- v
     static member Cast (p : ICell<MultiPath>) = 
         if p :? MultiPathModel2 then 

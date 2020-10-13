@@ -64,7 +64,7 @@ type BoundaryConditionSchemeHelperModel
 (* 
     casting 
 *)
-    internal new () = BoundaryConditionSchemeHelperModel(null)
+    internal new () = new BoundaryConditionSchemeHelperModel(null)
     member internal this.Inject v = _BoundaryConditionSchemeHelper.Value <- v
     static member Cast (p : ICell<BoundaryConditionSchemeHelper>) = 
         if p :? BoundaryConditionSchemeHelperModel then 

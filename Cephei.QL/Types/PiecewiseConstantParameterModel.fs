@@ -62,7 +62,7 @@ type PiecewiseConstantParameterModel
 (* 
     casting 
 *)
-    internal new () = PiecewiseConstantParameterModel(null,null)
+    internal new () = new PiecewiseConstantParameterModel(null,null)
     member internal this.Inject v = _PiecewiseConstantParameter.Value <- v
     static member Cast (p : ICell<PiecewiseConstantParameter>) = 
         if p :? PiecewiseConstantParameterModel then 

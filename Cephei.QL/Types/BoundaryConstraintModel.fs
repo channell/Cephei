@@ -60,7 +60,7 @@ type BoundaryConstraintModel
 (* 
     casting 
 *)
-    internal new () = BoundaryConstraintModel(null,null)
+    internal new () = new BoundaryConstraintModel(null,null)
     member internal this.Inject v = _BoundaryConstraint.Value <- v
     static member Cast (p : ICell<BoundaryConstraint>) = 
         if p :? BoundaryConstraintModel then 

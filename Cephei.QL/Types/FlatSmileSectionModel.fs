@@ -84,7 +84,7 @@ type FlatSmileSectionModel
 (* 
     casting 
 *)
-    internal new () = FlatSmileSectionModel(null,null,null,null,null,null)
+    internal new () = new FlatSmileSectionModel(null,null,null,null,null,null)
     member internal this.Inject v = _FlatSmileSection.Value <- v
     static member Cast (p : ICell<FlatSmileSection>) = 
         if p :? FlatSmileSectionModel then 
@@ -187,7 +187,7 @@ type FlatSmileSectionModel1
 (* 
     casting 
 *)
-    internal new () = FlatSmileSectionModel1(null,null,null,null,null,null,null)
+    internal new () = new FlatSmileSectionModel1(null,null,null,null,null,null,null)
     member internal this.Inject v = _FlatSmileSection.Value <- v
     static member Cast (p : ICell<FlatSmileSection>) = 
         if p :? FlatSmileSectionModel1 then 

@@ -57,7 +57,7 @@ type BlackVanillaOptionPricerModel
 (* 
     casting 
 *)
-    internal new () = BlackVanillaOptionPricerModel(null,null,null,null)
+    internal new () = new BlackVanillaOptionPricerModel(null,null,null,null)
     member internal this.Inject v = _BlackVanillaOptionPricer.Value <- v
     static member Cast (p : ICell<BlackVanillaOptionPricer>) = 
         if p :? BlackVanillaOptionPricerModel then 

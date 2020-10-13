@@ -74,7 +74,7 @@ type FdmQuantoHelperModel
 (* 
     casting 
 *)
-    internal new () = FdmQuantoHelperModel(null,null,null,null,null)
+    internal new () = new FdmQuantoHelperModel(null,null,null,null,null)
     member internal this.Inject v = _FdmQuantoHelper.Value <- v
     static member Cast (p : ICell<FdmQuantoHelper>) = 
         if p :? FdmQuantoHelperModel then 

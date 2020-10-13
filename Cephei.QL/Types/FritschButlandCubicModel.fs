@@ -79,7 +79,7 @@ type FritschButlandCubicModel
 (* 
     casting 
 *)
-    internal new () = FritschButlandCubicModel(null,null,null)
+    internal new () = new FritschButlandCubicModel(null,null,null)
     member internal this.Inject v = _FritschButlandCubic.Value <- v
     static member Cast (p : ICell<FritschButlandCubic>) = 
         if p :? FritschButlandCubicModel then 

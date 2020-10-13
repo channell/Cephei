@@ -54,7 +54,7 @@ type DigitalNotionalRiskModel
 (* 
     casting 
 *)
-    internal new () = DigitalNotionalRiskModel(null,null)
+    internal new () = new DigitalNotionalRiskModel(null,null)
     member internal this.Inject v = _DigitalNotionalRisk.Value <- v
     static member Cast (p : ICell<DigitalNotionalRisk>) = 
         if p :? DigitalNotionalRiskModel then 

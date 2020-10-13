@@ -92,7 +92,7 @@ type BlackScholesMertonProcessModel
 (* 
     casting 
 *)
-    internal new () = BlackScholesMertonProcessModel(null,null,null,null,null)
+    internal new () = new BlackScholesMertonProcessModel(null,null,null,null,null)
     member internal this.Inject v = _BlackScholesMertonProcess.Value <- v
     static member Cast (p : ICell<BlackScholesMertonProcess>) = 
         if p :? BlackScholesMertonProcessModel then 
@@ -206,7 +206,7 @@ type BlackScholesMertonProcessModel1
 (* 
     casting 
 *)
-    internal new () = BlackScholesMertonProcessModel1(null,null,null,null)
+    internal new () = new BlackScholesMertonProcessModel1(null,null,null,null)
     member internal this.Inject v = _BlackScholesMertonProcess.Value <- v
     static member Cast (p : ICell<BlackScholesMertonProcess>) = 
         if p :? BlackScholesMertonProcessModel1 then 

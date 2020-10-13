@@ -63,7 +63,7 @@ type StockModel
 (* 
     casting 
 *)
-    internal new () = StockModel(null,null,null)
+    internal new () = new StockModel(null,null,null)
     member internal this.Inject v = _Stock.Value <- v
     static member Cast (p : ICell<Stock>) = 
         if p :? StockModel then 

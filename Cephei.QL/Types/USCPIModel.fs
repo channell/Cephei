@@ -86,7 +86,7 @@ type USCPIModel
 (* 
     casting 
 *)
-    internal new () = USCPIModel(null)
+    internal new () = new USCPIModel(null)
     member internal this.Inject v = _USCPI.Value <- v
     static member Cast (p : ICell<USCPI>) = 
         if p :? USCPIModel then 
@@ -192,7 +192,7 @@ type USCPIModel1
 (* 
     casting 
 *)
-    internal new () = USCPIModel1(null,null)
+    internal new () = new USCPIModel1(null,null)
     member internal this.Inject v = _USCPI.Value <- v
     static member Cast (p : ICell<USCPI>) = 
         if p :? USCPIModel1 then 

@@ -61,7 +61,7 @@ type SvenssonFittingModel
 (* 
     casting 
 *)
-    internal new () = SvenssonFittingModel(null,null)
+    internal new () = new SvenssonFittingModel(null,null)
     member internal this.Inject v = _SvenssonFitting.Value <- v
     static member Cast (p : ICell<SvenssonFitting>) = 
         if p :? SvenssonFittingModel then 

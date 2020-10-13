@@ -98,7 +98,7 @@ type FedFundsModel
 (* 
     casting 
 *)
-    internal new () = FedFundsModel(null)
+    internal new () = new FedFundsModel(null)
     member internal this.Inject v = _FedFunds.Value <- v
     static member Cast (p : ICell<FedFunds>) = 
         if p :? FedFundsModel then 

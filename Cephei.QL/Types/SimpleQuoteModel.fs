@@ -115,7 +115,7 @@ type SimpleQuoteModel1
 (* 
     casting 
 *)
-    internal new () = SimpleQuoteModel1(null)
+    internal new () = new SimpleQuoteModel1(null)
     member internal this.Inject v = _SimpleQuote.Value <- v
     static member Cast (p : ICell<SimpleQuote>) = 
         if p :? SimpleQuoteModel1 then 

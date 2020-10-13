@@ -125,7 +125,7 @@ type AmortizingBondModel
 (* 
     casting 
 *)
-    internal new () = AmortizingBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new AmortizingBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AmortizingBond.Value <- v
     static member Cast (p : ICell<AmortizingBond>) = 
         if p :? AmortizingBondModel then 

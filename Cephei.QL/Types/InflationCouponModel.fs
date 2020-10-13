@@ -117,7 +117,7 @@ type InflationCouponModel
 (* 
     casting 
 *)
-    internal new () = InflationCouponModel(null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new InflationCouponModel(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _InflationCoupon.Value <- v
     static member Cast (p : ICell<InflationCoupon>) = 
         if p :? InflationCouponModel then 

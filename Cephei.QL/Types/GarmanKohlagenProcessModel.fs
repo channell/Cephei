@@ -94,7 +94,7 @@ type GarmanKohlagenProcessModel
 (* 
     casting 
 *)
-    internal new () = GarmanKohlagenProcessModel(null,null,null,null,null,null)
+    internal new () = new GarmanKohlagenProcessModel(null,null,null,null,null,null)
     member internal this.Inject v = _GarmanKohlagenProcess.Value <- v
     static member Cast (p : ICell<GarmanKohlagenProcess>) = 
         if p :? GarmanKohlagenProcessModel then 
@@ -211,7 +211,7 @@ type GarmanKohlagenProcessModel1
 (* 
     casting 
 *)
-    internal new () = GarmanKohlagenProcessModel1(null,null,null,null,null)
+    internal new () = new GarmanKohlagenProcessModel1(null,null,null,null,null)
     member internal this.Inject v = _GarmanKohlagenProcess.Value <- v
     static member Cast (p : ICell<GarmanKohlagenProcess>) = 
         if p :? GarmanKohlagenProcessModel1 then 
@@ -325,7 +325,7 @@ type GarmanKohlagenProcessModel2
 (* 
     casting 
 *)
-    internal new () = GarmanKohlagenProcessModel2(null,null,null,null)
+    internal new () = new GarmanKohlagenProcessModel2(null,null,null,null)
     member internal this.Inject v = _GarmanKohlagenProcess.Value <- v
     static member Cast (p : ICell<GarmanKohlagenProcess>) = 
         if p :? GarmanKohlagenProcessModel2 then 

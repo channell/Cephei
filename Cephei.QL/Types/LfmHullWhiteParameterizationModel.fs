@@ -67,7 +67,7 @@ type LfmHullWhiteParameterizationModel
 (* 
     casting 
 *)
-    internal new () = LfmHullWhiteParameterizationModel(null,null,null,null)
+    internal new () = new LfmHullWhiteParameterizationModel(null,null,null,null)
     member internal this.Inject v = _LfmHullWhiteParameterization.Value <- v
     static member Cast (p : ICell<LfmHullWhiteParameterization>) = 
         if p :? LfmHullWhiteParameterizationModel then 
@@ -133,7 +133,7 @@ type LfmHullWhiteParameterizationModel1
 (* 
     casting 
 *)
-    internal new () = LfmHullWhiteParameterizationModel1(null,null)
+    internal new () = new LfmHullWhiteParameterizationModel1(null,null)
     member internal this.Inject v = _LfmHullWhiteParameterization.Value <- v
     static member Cast (p : ICell<LfmHullWhiteParameterization>) = 
         if p :? LfmHullWhiteParameterizationModel1 then 

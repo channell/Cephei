@@ -80,7 +80,7 @@ type MixedLinearFritschButlandCubicModel
 (* 
     casting 
 *)
-    internal new () = MixedLinearFritschButlandCubicModel(null,null,null,null,null)
+    internal new () = new MixedLinearFritschButlandCubicModel(null,null,null,null,null)
     member internal this.Inject v = _MixedLinearFritschButlandCubic.Value <- v
     static member Cast (p : ICell<MixedLinearFritschButlandCubic>) = 
         if p :? MixedLinearFritschButlandCubicModel then 

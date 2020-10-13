@@ -44,13 +44,13 @@ namespace Cephei.Cell
             }
         }
 
-        public string Mnemonic { get; set; }
+        public virtual string Mnemonic { get; set; }
 
         public event CellChange Change;
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Change = delegate { };
         }
 
         public void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
@@ -367,7 +367,7 @@ namespace Cephei.Cell
                 ICell current;
                 if (TryGetValue(key, out current))
                 {
-                    if (value != current)
+                    if (value != current && value.GetType() != value.GetType() && !(value is IFast))
                     {
                         base[key] = value;
                         LinkedList<ICellEvent> dependants = new LinkedList<ICellEvent>(current.Dependants);
@@ -499,6 +499,23 @@ namespace Cephei.Cell
         public IDisposable Subscribe(IObserver<KeyValuePair<string, decimal>> observer)
         {
             return new ModelCellObserver<decimal>(this, observer);
+        }
+
+        public virtual void Clone(ICell source)
+        {
+            foreach (var d in source.Dependants)
+            {
+                Change += d.OnChange;
+            }
+        }
+        public virtual void Notify(ICell listener)
+        {
+            Change += listener.OnChange;
+        }
+
+        public virtual void UnNotify(ICell listener)
+        {
+            Change -= listener.OnChange;
         }
     }
 }

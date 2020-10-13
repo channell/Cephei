@@ -51,7 +51,7 @@ type LineSearchBasedMethodModel
 (* 
     casting 
 *)
-    internal new () = LineSearchBasedMethodModel(null)
+    internal new () = new LineSearchBasedMethodModel(null)
     member internal this.Inject v = _LineSearchBasedMethod.Value <- v
     static member Cast (p : ICell<LineSearchBasedMethod>) = 
         if p :? LineSearchBasedMethodModel then 

@@ -90,7 +90,7 @@ type BlackScholesProcessModel
 (* 
     casting 
 *)
-    internal new () = BlackScholesProcessModel(null,null,null,null)
+    internal new () = new BlackScholesProcessModel(null,null,null,null)
     member internal this.Inject v = _BlackScholesProcess.Value <- v
     static member Cast (p : ICell<BlackScholesProcess>) = 
         if p :? BlackScholesProcessModel then 
@@ -201,7 +201,7 @@ type BlackScholesProcessModel1
 (* 
     casting 
 *)
-    internal new () = BlackScholesProcessModel1(null,null,null)
+    internal new () = new BlackScholesProcessModel1(null,null,null)
     member internal this.Inject v = _BlackScholesProcess.Value <- v
     static member Cast (p : ICell<BlackScholesProcess>) = 
         if p :? BlackScholesProcessModel1 then 

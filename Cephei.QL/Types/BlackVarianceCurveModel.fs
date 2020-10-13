@@ -64,7 +64,7 @@ type BlackVarianceCurveModel
 (* 
     casting 
 *)
-    internal new () = BlackVarianceCurveModel(null,null,null,null,null)
+    internal new () = new BlackVarianceCurveModel(null,null,null,null,null)
     member internal this.Inject v = _BlackVarianceCurve.Value <- v
     static member Cast (p : ICell<BlackVarianceCurve>) = 
         if p :? BlackVarianceCurveModel then 

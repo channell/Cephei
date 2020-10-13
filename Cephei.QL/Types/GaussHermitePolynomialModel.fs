@@ -60,7 +60,7 @@ type GaussHermitePolynomialModel
 (* 
     casting 
 *)
-    internal new () = GaussHermitePolynomialModel(null)
+    internal new () = new GaussHermitePolynomialModel(null)
     member internal this.Inject v = _GaussHermitePolynomial.Value <- v
     static member Cast (p : ICell<GaussHermitePolynomial>) = 
         if p :? GaussHermitePolynomialModel then 

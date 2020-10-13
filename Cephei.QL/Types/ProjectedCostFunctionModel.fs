@@ -72,7 +72,7 @@ type ProjectedCostFunctionModel
 (* 
     casting 
 *)
-    internal new () = ProjectedCostFunctionModel(null,null,null)
+    internal new () = new ProjectedCostFunctionModel(null,null,null)
     member internal this.Inject v = _ProjectedCostFunction.Value <- v
     static member Cast (p : ICell<ProjectedCostFunction>) = 
         if p :? ProjectedCostFunctionModel then 

@@ -173,7 +173,7 @@ type CalendarModel1
 (* 
     casting 
 *)
-    internal new () = CalendarModel1(null)
+    internal new () = new CalendarModel1(null)
     member internal this.Inject v = _Calendar.Value <- v
     static member Cast (p : ICell<Calendar>) = 
         if p :? CalendarModel1 then 

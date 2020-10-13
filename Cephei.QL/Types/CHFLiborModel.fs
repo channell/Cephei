@@ -100,7 +100,7 @@ type CHFLiborModel
 (* 
     casting 
 *)
-    internal new () = CHFLiborModel(null,null)
+    internal new () = new CHFLiborModel(null,null)
     member internal this.Inject v = _CHFLibor.Value <- v
     static member Cast (p : ICell<CHFLibor>) = 
         if p :? CHFLiborModel then 
@@ -229,7 +229,7 @@ type CHFLiborModel1
 (* 
     casting 
 *)
-    internal new () = CHFLiborModel1(null)
+    internal new () = new CHFLiborModel1(null)
     member internal this.Inject v = _CHFLibor.Value <- v
     static member Cast (p : ICell<CHFLibor>) = 
         if p :? CHFLiborModel1 then 

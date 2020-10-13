@@ -99,7 +99,7 @@ type PiecewiseTimeDependentHestonModelModel
 (* 
     casting 
 *)
-    internal new () = PiecewiseTimeDependentHestonModelModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new PiecewiseTimeDependentHestonModelModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _PiecewiseTimeDependentHestonModel.Value <- v
     static member Cast (p : ICell<PiecewiseTimeDependentHestonModel>) = 
         if p :? PiecewiseTimeDependentHestonModelModel then 

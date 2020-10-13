@@ -147,7 +147,7 @@ type PiecewiseZeroInflationCurveModel
 (* 
     casting 
 *)
-    internal new () = PiecewiseZeroInflationCurveModel(null,null,null,null,null,null,null,null)
+    internal new () = new PiecewiseZeroInflationCurveModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
     static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
         if p :? PiecewiseZeroInflationCurveModel then 
@@ -365,7 +365,7 @@ type PiecewiseZeroInflationCurveModel1
 (* 
     casting 
 *)
-    internal new () = PiecewiseZeroInflationCurveModel1(null,null,null,null,null,null,null,null)
+    internal new () = new PiecewiseZeroInflationCurveModel1(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
     static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
         if p :? PiecewiseZeroInflationCurveModel1 then 
@@ -579,7 +579,7 @@ type PiecewiseZeroInflationCurveModel2
 (* 
     casting 
 *)
-    internal new () = PiecewiseZeroInflationCurveModel2(null,null,null,null,null,null)
+    internal new () = new PiecewiseZeroInflationCurveModel2(null,null,null,null,null,null)
     member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
     static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
         if p :? PiecewiseZeroInflationCurveModel2 then 

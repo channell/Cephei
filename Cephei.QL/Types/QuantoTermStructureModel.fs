@@ -68,7 +68,7 @@ type QuantoTermStructureModel
 (* 
     casting 
 *)
-    internal new () = QuantoTermStructureModel(null,null,null,null,null,null,null,null)
+    internal new () = new QuantoTermStructureModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _QuantoTermStructure.Value <- v
     static member Cast (p : ICell<QuantoTermStructure>) = 
         if p :? QuantoTermStructureModel then 

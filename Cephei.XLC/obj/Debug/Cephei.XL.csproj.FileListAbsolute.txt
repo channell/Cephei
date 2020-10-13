@@ -38,3 +38,4 @@ C:\Users\steve\source\repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XL.csproj.CoreCo
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XL.csproj.CopyComplete
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XL.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.XLC\obj\Debug\Cephei.XL.pdb
+C:\Users\steve\Source\Repos\Cephei2\bin\Debug\Cephei.XL.dll.config

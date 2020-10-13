@@ -94,7 +94,7 @@ type UkraineModel
 (* 
     casting 
 *)
-    internal new () = UkraineModel(null)
+    internal new () = new UkraineModel(null)
     member internal this.Inject v = _Ukraine.Value <- v
     static member Cast (p : ICell<Ukraine>) = 
         if p :? UkraineModel then 

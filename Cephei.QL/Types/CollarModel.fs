@@ -82,7 +82,7 @@ type CollarModel
 (* 
     casting 
 *)
-    internal new () = CollarModel(null,null,null,null,null)
+    internal new () = new CollarModel(null,null,null,null,null)
     member internal this.Inject v = _Collar.Value <- v
     static member Cast (p : ICell<Collar>) = 
         if p :? CollarModel then 

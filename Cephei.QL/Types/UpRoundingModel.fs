@@ -54,7 +54,7 @@ type UpRoundingModel
 (* 
     casting 
 *)
-    internal new () = UpRoundingModel(null)
+    internal new () = new UpRoundingModel(null)
     member internal this.Inject v = _UpRounding.Value <- v
     static member Cast (p : ICell<UpRounding>) = 
         if p :? UpRoundingModel then 
@@ -103,7 +103,7 @@ type UpRoundingModel1
 (* 
     casting 
 *)
-    internal new () = UpRoundingModel1(null,null)
+    internal new () = new UpRoundingModel1(null,null)
     member internal this.Inject v = _UpRounding.Value <- v
     static member Cast (p : ICell<UpRounding>) = 
         if p :? UpRoundingModel1 then 

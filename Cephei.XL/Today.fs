@@ -64,27 +64,3 @@ module Today =
             ; hash = 0 
             } 
 
-    [<ExcelFunction(Name="_Recalculate", Description="duration between recalc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
-    let Recalc (tick : double) =
-        let format (i:DateTime) (l:string) = i.ToOADate() :> obj
-        Model.specify 
-            { mnemonic = "CepheiRecalc"
-            ; creator = fun (current : ICell) -> new Clock(tick) :> ICell
-            ; subscriber = Helper.subscriber format
-            ; source =  (fun () -> "cell " + value.ToString())
-            ; hash = int tick
-            } |> ignore 
-        Model.value "CepheiVersion"
-
-    [<ExcelFunction(Name="_RecalcVersion", Description="duration between recalc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
-    let CepheiVersion (tick : double) =
-        let format (i:DateTime) (l:string) = i.ToOADate() :> obj
-        Model.specify 
-            { mnemonic = "CepheiVersion"
-            ; creator = fun (current : ICell) -> (value tick) :> ICell
-            ; subscriber = Helper.subscriber format
-            ; source =  (fun () -> "cell " + value.ToString())
-            ; hash = int tick
-            } |> ignore 
-        Model.value "CepheiVersion"
-

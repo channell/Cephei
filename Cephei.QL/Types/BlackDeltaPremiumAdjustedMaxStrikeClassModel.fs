@@ -63,7 +63,7 @@ type BlackDeltaPremiumAdjustedMaxStrikeClassModel
 (* 
     casting 
 *)
-    internal new () = BlackDeltaPremiumAdjustedMaxStrikeClassModel(null,null,null,null,null,null)
+    internal new () = new BlackDeltaPremiumAdjustedMaxStrikeClassModel(null,null,null,null,null,null)
     member internal this.Inject v = _BlackDeltaPremiumAdjustedMaxStrikeClass.Value <- v
     static member Cast (p : ICell<BlackDeltaPremiumAdjustedMaxStrikeClass>) = 
         if p :? BlackDeltaPremiumAdjustedMaxStrikeClassModel then 

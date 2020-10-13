@@ -60,7 +60,7 @@ type BulletPricipalLegModel
 (* 
     casting 
 *)
-    internal new () = BulletPricipalLegModel(null)
+    internal new () = new BulletPricipalLegModel(null)
     member internal this.Inject v = _BulletPricipalLeg.Value <- v
     static member Cast (p : ICell<BulletPricipalLeg>) = 
         if p :? BulletPricipalLegModel then 

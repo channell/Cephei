@@ -61,7 +61,7 @@ type SuperFundPayoffModel
 (* 
     casting 
 *)
-    internal new () = SuperFundPayoffModel(null,null)
+    internal new () = new SuperFundPayoffModel(null,null)
     member internal this.Inject v = _SuperFundPayoff.Value <- v
     static member Cast (p : ICell<SuperFundPayoff>) = 
         if p :? SuperFundPayoffModel then 

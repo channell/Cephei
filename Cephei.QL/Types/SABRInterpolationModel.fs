@@ -124,7 +124,7 @@ type SABRInterpolationModel
 (* 
     casting 
 *)
-    internal new () = SABRInterpolationModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new SABRInterpolationModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SABRInterpolation.Value <- v
     static member Cast (p : ICell<SABRInterpolation>) = 
         if p :? SABRInterpolationModel then 

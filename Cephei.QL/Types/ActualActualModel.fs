@@ -120,7 +120,7 @@ type ActualActualModel1
 (* 
     casting 
 *)
-    internal new () = ActualActualModel1(null,null)
+    internal new () = new ActualActualModel1(null,null)
     member internal this.Inject v = _ActualActual.Value <- v
     static member Cast (p : ICell<ActualActual>) = 
         if p :? ActualActualModel1 then 

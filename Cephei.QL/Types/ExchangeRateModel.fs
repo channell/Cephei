@@ -60,7 +60,7 @@ type ExchangeRateModel
 (* 
     casting 
 *)
-    internal new () = ExchangeRateModel(null,null,null)
+    internal new () = new ExchangeRateModel(null,null,null)
     member internal this.Inject v = _ExchangeRate.Value <- v
     static member Cast (p : ICell<ExchangeRate>) = 
         if p :? ExchangeRateModel then 

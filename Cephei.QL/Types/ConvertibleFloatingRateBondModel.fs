@@ -129,7 +129,7 @@ type ConvertibleFloatingRateBondModel
 (* 
     casting 
 *)
-    internal new () = ConvertibleFloatingRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new ConvertibleFloatingRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ConvertibleFloatingRateBond.Value <- v
     static member Cast (p : ICell<ConvertibleFloatingRateBond>) = 
         if p :? ConvertibleFloatingRateBondModel then 

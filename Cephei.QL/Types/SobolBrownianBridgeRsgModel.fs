@@ -62,7 +62,7 @@ type SobolBrownianBridgeRsgModel
 (* 
     casting 
 *)
-    internal new () = SobolBrownianBridgeRsgModel(null,null,null,null,null)
+    internal new () = new SobolBrownianBridgeRsgModel(null,null,null,null,null)
     member internal this.Inject v = _SobolBrownianBridgeRsg.Value <- v
     static member Cast (p : ICell<SobolBrownianBridgeRsg>) = 
         if p :? SobolBrownianBridgeRsgModel then 

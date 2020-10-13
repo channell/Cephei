@@ -71,7 +71,7 @@ type SimpleCashFlowModel
 (* 
     casting 
 *)
-    internal new () = SimpleCashFlowModel(null,null)
+    internal new () = new SimpleCashFlowModel(null,null)
     member internal this.Inject v = _SimpleCashFlow.Value <- v
     static member Cast (p : ICell<SimpleCashFlow>) = 
         if p :? SimpleCashFlowModel then 

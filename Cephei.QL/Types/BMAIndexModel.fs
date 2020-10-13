@@ -94,7 +94,7 @@ type BMAIndexModel
 (* 
     casting 
 *)
-    internal new () = BMAIndexModel(null)
+    internal new () = new BMAIndexModel(null)
     member internal this.Inject v = _BMAIndex.Value <- v
     static member Cast (p : ICell<BMAIndex>) = 
         if p :? BMAIndexModel then 

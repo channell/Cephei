@@ -88,7 +88,7 @@ type HybridHestonHullWhiteProcessModel
 (* 
     casting 
 *)
-    internal new () = HybridHestonHullWhiteProcessModel(null,null,null,null)
+    internal new () = new HybridHestonHullWhiteProcessModel(null,null,null,null)
     member internal this.Inject v = _HybridHestonHullWhiteProcess.Value <- v
     static member Cast (p : ICell<HybridHestonHullWhiteProcess>) = 
         if p :? HybridHestonHullWhiteProcessModel then 

@@ -53,7 +53,7 @@ type KirkEngineModel
 (* 
     casting 
 *)
-    internal new () = KirkEngineModel(null,null,null)
+    internal new () = new KirkEngineModel(null,null,null)
     member internal this.Inject v = _KirkEngine.Value <- v
     static member Cast (p : ICell<KirkEngine>) = 
         if p :? KirkEngineModel then 

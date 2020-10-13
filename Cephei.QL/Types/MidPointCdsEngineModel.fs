@@ -55,7 +55,7 @@ type MidPointCdsEngineModel
 (* 
     casting 
 *)
-    internal new () = MidPointCdsEngineModel(null,null,null,null)
+    internal new () = new MidPointCdsEngineModel(null,null,null,null)
     member internal this.Inject v = _MidPointCdsEngine.Value <- v
     static member Cast (p : ICell<MidPointCdsEngine>) = 
         if p :? MidPointCdsEngineModel then 

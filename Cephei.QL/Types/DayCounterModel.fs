@@ -61,7 +61,7 @@ type DayCounterModel
 (* 
     casting 
 *)
-    internal new () = DayCounterModel(null)
+    internal new () = new DayCounterModel(null)
     member internal this.Inject v = _DayCounter.Value <- v
     static member Cast (p : ICell<DayCounter>) = 
         if p :? DayCounterModel then 

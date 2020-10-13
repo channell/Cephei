@@ -58,7 +58,7 @@ type RoundingModel
 (* 
     casting 
 *)
-    internal new () = RoundingModel(null,null,null)
+    internal new () = new RoundingModel(null,null,null)
     member internal this.Inject v = _Rounding.Value <- v
     static member Cast (p : ICell<Rounding>) = 
         if p :? RoundingModel then 
@@ -152,7 +152,7 @@ type RoundingModel2
 (* 
     casting 
 *)
-    internal new () = RoundingModel2(null,null)
+    internal new () = new RoundingModel2(null,null)
     member internal this.Inject v = _Rounding.Value <- v
     static member Cast (p : ICell<Rounding>) = 
         if p :? RoundingModel2 then 
@@ -200,7 +200,7 @@ type RoundingModel3
 (* 
     casting 
 *)
-    internal new () = RoundingModel3(null)
+    internal new () = new RoundingModel3(null)
     member internal this.Inject v = _Rounding.Value <- v
     static member Cast (p : ICell<Rounding>) = 
         if p :? RoundingModel3 then 

@@ -63,7 +63,7 @@ type CraigSneydSchemeModel
 (* 
     casting 
 *)
-    internal new () = CraigSneydSchemeModel(null,null,null,null)
+    internal new () = new CraigSneydSchemeModel(null,null,null,null)
     member internal this.Inject v = _CraigSneydScheme.Value <- v
     static member Cast (p : ICell<CraigSneydScheme>) = 
         if p :? CraigSneydSchemeModel then 

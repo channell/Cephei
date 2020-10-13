@@ -113,7 +113,7 @@ type BasisSwapModel
 (* 
     casting 
 *)
-    internal new () = BasisSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new BasisSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _BasisSwap.Value <- v
     static member Cast (p : ICell<BasisSwap>) = 
         if p :? BasisSwapModel then 
@@ -268,7 +268,7 @@ type BasisSwapModel1
 (* 
     casting 
 *)
-    internal new () = BasisSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new BasisSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _BasisSwap.Value <- v
     static member Cast (p : ICell<BasisSwap>) = 
         if p :? BasisSwapModel1 then 

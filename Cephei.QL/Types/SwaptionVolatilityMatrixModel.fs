@@ -146,7 +146,7 @@ type SwaptionVolatilityMatrixModel
 (* 
     casting 
 *)
-    internal new () = SwaptionVolatilityMatrixModel(null,null,null,null,null,null,null,null)
+    internal new () = new SwaptionVolatilityMatrixModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
     static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
         if p :? SwaptionVolatilityMatrixModel then 
@@ -371,7 +371,7 @@ type SwaptionVolatilityMatrixModel1
 (* 
     casting 
 *)
-    internal new () = SwaptionVolatilityMatrixModel1(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new SwaptionVolatilityMatrixModel1(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
     static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
         if p :? SwaptionVolatilityMatrixModel1 then 
@@ -596,7 +596,7 @@ type SwaptionVolatilityMatrixModel2
 (* 
     casting 
 *)
-    internal new () = SwaptionVolatilityMatrixModel2(null,null,null,null,null,null,null,null,null)
+    internal new () = new SwaptionVolatilityMatrixModel2(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
     static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
         if p :? SwaptionVolatilityMatrixModel2 then 
@@ -822,7 +822,7 @@ type SwaptionVolatilityMatrixModel3
 (* 
     casting 
 *)
-    internal new () = SwaptionVolatilityMatrixModel3(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new SwaptionVolatilityMatrixModel3(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
     static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
         if p :? SwaptionVolatilityMatrixModel3 then 
@@ -1047,7 +1047,7 @@ type SwaptionVolatilityMatrixModel4
 (* 
     casting 
 *)
-    internal new () = SwaptionVolatilityMatrixModel4(null,null,null,null,null,null,null,null,null)
+    internal new () = new SwaptionVolatilityMatrixModel4(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
     static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
         if p :? SwaptionVolatilityMatrixModel4 then 

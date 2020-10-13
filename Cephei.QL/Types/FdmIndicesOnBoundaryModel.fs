@@ -54,7 +54,7 @@ type FdmIndicesOnBoundaryModel
 (* 
     casting 
 *)
-    internal new () = FdmIndicesOnBoundaryModel(null,null,null)
+    internal new () = new FdmIndicesOnBoundaryModel(null,null,null)
     member internal this.Inject v = _FdmIndicesOnBoundary.Value <- v
     static member Cast (p : ICell<FdmIndicesOnBoundary>) = 
         if p :? FdmIndicesOnBoundaryModel then 

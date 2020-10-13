@@ -101,7 +101,7 @@ type SequenceStatisticsModel
 (* 
     casting 
 *)
-    internal new () = SequenceStatisticsModel(null)
+    internal new () = new SequenceStatisticsModel(null)
     member internal this.Inject v = _SequenceStatistics.Value <- v
     static member Cast (p : ICell<SequenceStatistics>) = 
         if p :? SequenceStatisticsModel then 

@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[4.7.2, )"
             },
+            "ILGPU": {
+              "target": "Package",
+              "version": "[0.9.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -56,6 +60,10 @@
             "Serilog": {
               "target": "Package",
               "version": "[2.10.0, )"
+            },
+            "System.Collections.Immutable": {
+              "target": "Package",
+              "version": "[1.7.1, )"
             }
           },
           "imports": [

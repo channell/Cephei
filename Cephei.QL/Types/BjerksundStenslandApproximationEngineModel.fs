@@ -49,7 +49,7 @@ type BjerksundStenslandApproximationEngineModel
 (* 
     casting 
 *)
-    internal new () = BjerksundStenslandApproximationEngineModel(null)
+    internal new () = new BjerksundStenslandApproximationEngineModel(null)
     member internal this.Inject v = _BjerksundStenslandApproximationEngine.Value <- v
     static member Cast (p : ICell<BjerksundStenslandApproximationEngine>) = 
         if p :? BjerksundStenslandApproximationEngineModel then 

@@ -64,7 +64,7 @@ type HestonExpansionEngineModel
 (* 
     casting 
 *)
-    internal new () = HestonExpansionEngineModel(null,null)
+    internal new () = new HestonExpansionEngineModel(null,null)
     member internal this.Inject v = _HestonExpansionEngine.Value <- v
     static member Cast (p : ICell<HestonExpansionEngine>) = 
         if p :? HestonExpansionEngineModel then 

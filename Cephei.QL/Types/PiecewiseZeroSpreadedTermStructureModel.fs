@@ -64,7 +64,7 @@ type PiecewiseZeroSpreadedTermStructureModel
 (* 
     casting 
 *)
-    internal new () = PiecewiseZeroSpreadedTermStructureModel(null,null,null,null,null,null)
+    internal new () = new PiecewiseZeroSpreadedTermStructureModel(null,null,null,null,null,null)
     member internal this.Inject v = _PiecewiseZeroSpreadedTermStructure.Value <- v
     static member Cast (p : ICell<PiecewiseZeroSpreadedTermStructure>) = 
         if p :? PiecewiseZeroSpreadedTermStructureModel then 

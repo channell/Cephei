@@ -67,7 +67,7 @@ type RendistatoCalculatorModel
 (* 
     casting 
 *)
-    internal new () = RendistatoCalculatorModel(null,null,null)
+    internal new () = new RendistatoCalculatorModel(null,null,null)
     member internal this.Inject v = _RendistatoCalculator.Value <- v
     static member Cast (p : ICell<RendistatoCalculator>) = 
         if p :? RendistatoCalculatorModel then 

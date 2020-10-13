@@ -86,7 +86,7 @@ type BarrierOptionModel
 (* 
     casting 
 *)
-    internal new () = BarrierOptionModel(null,null,null,null,null,null,null)
+    internal new () = new BarrierOptionModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _BarrierOption.Value <- v
     static member Cast (p : ICell<BarrierOption>) = 
         if p :? BarrierOptionModel then 

@@ -76,7 +76,7 @@ type SpreadedSmileSectionModel
 (* 
     casting 
 *)
-    internal new () = SpreadedSmileSectionModel(null,null)
+    internal new () = new SpreadedSmileSectionModel(null,null)
     member internal this.Inject v = _SpreadedSmileSection.Value <- v
     static member Cast (p : ICell<SpreadedSmileSection>) = 
         if p :? SpreadedSmileSectionModel then 

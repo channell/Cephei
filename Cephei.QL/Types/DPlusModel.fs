@@ -86,7 +86,7 @@ type DPlusModel
 (* 
     casting 
 *)
-    internal new () = DPlusModel(null,null)
+    internal new () = new DPlusModel(null,null)
     member internal this.Inject v = _DPlus.Value <- v
     static member Cast (p : ICell<DPlus>) = 
         if p :? DPlusModel then 

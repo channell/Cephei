@@ -58,7 +58,7 @@ type CeilingTruncationModel
 (* 
     casting 
 *)
-    internal new () = CeilingTruncationModel(null,null)
+    internal new () = new CeilingTruncationModel(null,null)
     member internal this.Inject v = _CeilingTruncation.Value <- v
     static member Cast (p : ICell<CeilingTruncation>) = 
         if p :? CeilingTruncationModel then 
@@ -108,7 +108,7 @@ type CeilingTruncationModel1
 (* 
     casting 
 *)
-    internal new () = CeilingTruncationModel1(null)
+    internal new () = new CeilingTruncationModel1(null)
     member internal this.Inject v = _CeilingTruncation.Value <- v
     static member Cast (p : ICell<CeilingTruncation>) = 
         if p :? CeilingTruncationModel1 then 

@@ -16,7 +16,9 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgSystem_Collections_Immutable Condition=" '$(PkgSystem_Collections_Immutable)' == '' ">C:\Users\steve\.nuget\packages\system.collections.immutable\1.7.1</PkgSystem_Collections_Immutable>
     <PkgNETStandard_Library Condition=" '$(PkgNETStandard_Library)' == '' ">C:\Users\steve\.nuget\packages\netstandard.library\2.0.3</PkgNETStandard_Library>
+    <PkgILGPU Condition=" '$(PkgILGPU)' == '' ">C:\Users\steve\.nuget\packages\ilgpu\0.9.1</PkgILGPU>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
   </PropertyGroup>
 </Project>

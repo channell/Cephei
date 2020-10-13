@@ -60,7 +60,7 @@ type ConstantParameterModel
 (* 
     casting 
 *)
-    internal new () = ConstantParameterModel(null)
+    internal new () = new ConstantParameterModel(null)
     member internal this.Inject v = _ConstantParameter.Value <- v
     static member Cast (p : ICell<ConstantParameter>) = 
         if p :? ConstantParameterModel then 
@@ -120,7 +120,7 @@ type ConstantParameterModel1
 (* 
     casting 
 *)
-    internal new () = ConstantParameterModel1(null,null)
+    internal new () = new ConstantParameterModel1(null,null)
     member internal this.Inject v = _ConstantParameter.Value <- v
     static member Cast (p : ICell<ConstantParameter>) = 
         if p :? ConstantParameterModel1 then 

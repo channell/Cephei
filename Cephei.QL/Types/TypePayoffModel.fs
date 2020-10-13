@@ -57,7 +57,7 @@ type TypePayoffModel
 (* 
     casting 
 *)
-    internal new () = TypePayoffModel(null)
+    internal new () = new TypePayoffModel(null)
     member internal this.Inject v = _TypePayoff.Value <- v
     static member Cast (p : ICell<TypePayoff>) = 
         if p :? TypePayoffModel then 

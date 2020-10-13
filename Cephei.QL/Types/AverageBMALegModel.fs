@@ -68,7 +68,7 @@ type AverageBMALegModel
 (* 
     casting 
 *)
-    internal new () = AverageBMALegModel(null,null)
+    internal new () = new AverageBMALegModel(null,null)
     member internal this.Inject v = _AverageBMALeg.Value <- v
     static member Cast (p : ICell<AverageBMALeg>) = 
         if p :? AverageBMALegModel then 

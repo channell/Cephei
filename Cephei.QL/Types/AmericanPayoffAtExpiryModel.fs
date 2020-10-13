@@ -60,7 +60,7 @@ type AmericanPayoffAtExpiryModel
 (* 
     casting 
 *)
-    internal new () = AmericanPayoffAtExpiryModel(null,null,null,null,null,null)
+    internal new () = new AmericanPayoffAtExpiryModel(null,null,null,null,null,null)
     member internal this.Inject v = _AmericanPayoffAtExpiry.Value <- v
     static member Cast (p : ICell<AmericanPayoffAtExpiry>) = 
         if p :? AmericanPayoffAtExpiryModel then 

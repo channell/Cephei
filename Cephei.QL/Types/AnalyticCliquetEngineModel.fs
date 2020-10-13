@@ -49,7 +49,7 @@ type AnalyticCliquetEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticCliquetEngineModel(null)
+    internal new () = new AnalyticCliquetEngineModel(null)
     member internal this.Inject v = _AnalyticCliquetEngine.Value <- v
     static member Cast (p : ICell<AnalyticCliquetEngine>) = 
         if p :? AnalyticCliquetEngineModel then 

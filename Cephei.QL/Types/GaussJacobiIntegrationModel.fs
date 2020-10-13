@@ -58,7 +58,7 @@ type GaussJacobiIntegrationModel
 (* 
     casting 
 *)
-    internal new () = GaussJacobiIntegrationModel(null,null,null)
+    internal new () = new GaussJacobiIntegrationModel(null,null,null)
     member internal this.Inject v = _GaussJacobiIntegration.Value <- v
     static member Cast (p : ICell<GaussJacobiIntegration>) = 
         if p :? GaussJacobiIntegrationModel then 

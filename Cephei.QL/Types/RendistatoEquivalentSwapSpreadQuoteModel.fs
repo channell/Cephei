@@ -57,7 +57,7 @@ type RendistatoEquivalentSwapSpreadQuoteModel
 (* 
     casting 
 *)
-    internal new () = RendistatoEquivalentSwapSpreadQuoteModel(null)
+    internal new () = new RendistatoEquivalentSwapSpreadQuoteModel(null)
     member internal this.Inject v = _RendistatoEquivalentSwapSpreadQuote.Value <- v
     static member Cast (p : ICell<RendistatoEquivalentSwapSpreadQuote>) = 
         if p :? RendistatoEquivalentSwapSpreadQuoteModel then 

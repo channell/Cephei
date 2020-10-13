@@ -58,7 +58,7 @@ type ComboHelperModel
 (* 
     casting 
 *)
-    internal new () = ComboHelperModel(null,null,null)
+    internal new () = new ComboHelperModel(null,null,null)
     member internal this.Inject v = _ComboHelper.Value <- v
     static member Cast (p : ICell<ComboHelper>) = 
         if p :? ComboHelperModel then 

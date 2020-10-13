@@ -62,7 +62,7 @@ type SegmentIntegralModel
 (* 
     casting 
 *)
-    internal new () = SegmentIntegralModel(null)
+    internal new () = new SegmentIntegralModel(null)
     member internal this.Inject v = _SegmentIntegral.Value <- v
     static member Cast (p : ICell<SegmentIntegral>) = 
         if p :? SegmentIntegralModel then 

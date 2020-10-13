@@ -107,7 +107,7 @@ type UsdLiborSwapIsdaFixPmModel
 (* 
     casting 
 *)
-    internal new () = UsdLiborSwapIsdaFixPmModel(null,null)
+    internal new () = new UsdLiborSwapIsdaFixPmModel(null,null)
     member internal this.Inject v = _UsdLiborSwapIsdaFixPm.Value <- v
     static member Cast (p : ICell<UsdLiborSwapIsdaFixPm>) = 
         if p :? UsdLiborSwapIsdaFixPmModel then 
@@ -250,7 +250,7 @@ type UsdLiborSwapIsdaFixPmModel1
 (* 
     casting 
 *)
-    internal new () = UsdLiborSwapIsdaFixPmModel1(null)
+    internal new () = new UsdLiborSwapIsdaFixPmModel1(null)
     member internal this.Inject v = _UsdLiborSwapIsdaFixPm.Value <- v
     static member Cast (p : ICell<UsdLiborSwapIsdaFixPm>) = 
         if p :? UsdLiborSwapIsdaFixPmModel1 then 

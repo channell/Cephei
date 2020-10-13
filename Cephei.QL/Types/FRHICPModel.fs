@@ -88,7 +88,7 @@ type FRHICPModel
 (* 
     casting 
 *)
-    internal new () = FRHICPModel(null,null)
+    internal new () = new FRHICPModel(null,null)
     member internal this.Inject v = _FRHICP.Value <- v
     static member Cast (p : ICell<FRHICP>) = 
         if p :? FRHICPModel then 
@@ -193,7 +193,7 @@ type FRHICPModel1
 (* 
     casting 
 *)
-    internal new () = FRHICPModel1(null)
+    internal new () = new FRHICPModel1(null)
     member internal this.Inject v = _FRHICP.Value <- v
     static member Cast (p : ICell<FRHICP>) = 
         if p :? FRHICPModel1 then 

@@ -1,6 +1,7 @@
 using Microsoft.FSharp.Core;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -363,6 +364,7 @@ namespace Cephei.Cell.Generic
                         }
                         _value = value;
                         _epoch = DateTime.Now;
+                        _state = (int)CellState.Clean;
                         _spinLock.Exit(true);
                         taken = false;
                         if (ses != null)
@@ -405,6 +407,7 @@ namespace Cephei.Cell.Generic
         public void Dispose()
         {
             RaiseChange(CellEvent.Delete, this, DateTime.Now, null);
+            Change = delegate { };
         }
 
         private void PoolCalculate(DateTime epoch, ISession session)
@@ -435,6 +438,32 @@ namespace Cephei.Cell.Generic
                 _event.Reset();
             }
             return s;
+        }
+        public FSharpFunc<Unit, T> Function
+        { 
+            get
+            {
+                return _func;
+            }
+        }
+
+        public void Clone(ICell source)
+        {
+            Change = delegate { };
+
+            foreach (var d in source.Dependants)
+            {
+                Change += d.OnChange;
+            }
+            if (source.GetType() == this.GetType())
+            {
+                var c = (ICell<T>)source;
+                _func = c.Function;
+            }
+            _link = false;
+            _lastException = null;
+            _state = (int)CellState.Dirty;
+            RaiseChange(CellEvent.Link, this, DateTime.Now, null);
         }
 
         public virtual void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)
@@ -545,6 +574,20 @@ namespace Cephei.Cell.Generic
         public void OnNext(T value)
         {
             Value = value;
+        }
+
+        public void Notify(ICell listener)
+        {
+            if (listener == this) return;
+            foreach (var v in Dependants)
+                if (v == listener)
+                    return;
+            Change += listener.OnChange;
+        }
+
+        public void UnNotify(ICell listener)
+        {
+            Change -= listener.OnChange;
         }
         #endregion
     }

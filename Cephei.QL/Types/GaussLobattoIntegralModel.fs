@@ -68,7 +68,7 @@ type GaussLobattoIntegralModel
 (* 
     casting 
 *)
-    internal new () = GaussLobattoIntegralModel(null,null,null,null)
+    internal new () = new GaussLobattoIntegralModel(null,null,null,null)
     member internal this.Inject v = _GaussLobattoIntegral.Value <- v
     static member Cast (p : ICell<GaussLobattoIntegral>) = 
         if p :? GaussLobattoIntegralModel then 

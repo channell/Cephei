@@ -77,7 +77,7 @@ type CommercialPaperModel
 (* 
     casting 
 *)
-    internal new () = CommercialPaperModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new CommercialPaperModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CommercialPaper.Value <- v
     static member Cast (p : ICell<CommercialPaper>) = 
         if p :? CommercialPaperModel then 

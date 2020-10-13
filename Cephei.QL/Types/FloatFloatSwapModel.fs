@@ -140,7 +140,7 @@ type FloatFloatSwapModel
 (* 
     casting 
 *)
-    internal new () = FloatFloatSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FloatFloatSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatFloatSwap.Value <- v
     static member Cast (p : ICell<FloatFloatSwap>) = 
         if p :? FloatFloatSwapModel then 
@@ -336,7 +336,7 @@ type FloatFloatSwapModel1
 (* 
     casting 
 *)
-    internal new () = FloatFloatSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FloatFloatSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatFloatSwap.Value <- v
     static member Cast (p : ICell<FloatFloatSwap>) = 
         if p :? FloatFloatSwapModel1 then 

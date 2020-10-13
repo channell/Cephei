@@ -222,7 +222,7 @@ type Euribor2MModel1
 (* 
     casting 
 *)
-    internal new () = Euribor2MModel1(null)
+    internal new () = new Euribor2MModel1(null)
     member internal this.Inject v = _Euribor2M.Value <- v
     static member Cast (p : ICell<Euribor2M>) = 
         if p :? Euribor2MModel1 then 

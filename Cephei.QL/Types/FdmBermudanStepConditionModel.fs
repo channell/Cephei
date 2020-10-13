@@ -61,7 +61,7 @@ type FdmBermudanStepConditionModel
 (* 
     casting 
 *)
-    internal new () = FdmBermudanStepConditionModel(null,null,null,null,null)
+    internal new () = new FdmBermudanStepConditionModel(null,null,null,null,null)
     member internal this.Inject v = _FdmBermudanStepCondition.Value <- v
     static member Cast (p : ICell<FdmBermudanStepCondition>) = 
         if p :? FdmBermudanStepConditionModel then 

@@ -98,7 +98,7 @@ type CADLiborONModel
 (* 
     casting 
 *)
-    internal new () = CADLiborONModel(null)
+    internal new () = new CADLiborONModel(null)
     member internal this.Inject v = _CADLiborON.Value <- v
     static member Cast (p : ICell<CADLiborON>) = 
         if p :? CADLiborONModel then 

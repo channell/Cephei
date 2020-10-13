@@ -58,7 +58,7 @@ type BlackCapFloorEngineModel
 (* 
     casting 
 *)
-    internal new () = BlackCapFloorEngineModel(null,null,null,null)
+    internal new () = new BlackCapFloorEngineModel(null,null,null,null)
     member internal this.Inject v = _BlackCapFloorEngine.Value <- v
     static member Cast (p : ICell<BlackCapFloorEngine>) = 
         if p :? BlackCapFloorEngineModel then 
@@ -108,7 +108,7 @@ type BlackCapFloorEngineModel1
 (* 
     casting 
 *)
-    internal new () = BlackCapFloorEngineModel1(null,null,null)
+    internal new () = new BlackCapFloorEngineModel1(null,null,null)
     member internal this.Inject v = _BlackCapFloorEngine.Value <- v
     static member Cast (p : ICell<BlackCapFloorEngine>) = 
         if p :? BlackCapFloorEngineModel1 then 
@@ -159,7 +159,7 @@ type BlackCapFloorEngineModel2
 (* 
     casting 
 *)
-    internal new () = BlackCapFloorEngineModel2(null,null,null,null)
+    internal new () = new BlackCapFloorEngineModel2(null,null,null,null)
     member internal this.Inject v = _BlackCapFloorEngine.Value <- v
     static member Cast (p : ICell<BlackCapFloorEngine>) = 
         if p :? BlackCapFloorEngineModel2 then 

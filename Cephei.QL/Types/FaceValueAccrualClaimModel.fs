@@ -59,7 +59,7 @@ type FaceValueAccrualClaimModel
 (* 
     casting 
 *)
-    internal new () = FaceValueAccrualClaimModel(null)
+    internal new () = new FaceValueAccrualClaimModel(null)
     member internal this.Inject v = _FaceValueAccrualClaim.Value <- v
     static member Cast (p : ICell<FaceValueAccrualClaim>) = 
         if p :? FaceValueAccrualClaimModel then 

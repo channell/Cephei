@@ -88,7 +88,7 @@ type SecondDerivativeOpModel
 (* 
     casting 
 *)
-    internal new () = SecondDerivativeOpModel(null,null)
+    internal new () = new SecondDerivativeOpModel(null,null)
     member internal this.Inject v = _SecondDerivativeOp.Value <- v
     static member Cast (p : ICell<SecondDerivativeOp>) = 
         if p :? SecondDerivativeOpModel then 
@@ -197,7 +197,7 @@ type SecondDerivativeOpModel1
 (* 
     casting 
 *)
-    internal new () = SecondDerivativeOpModel1(null)
+    internal new () = new SecondDerivativeOpModel1(null)
     member internal this.Inject v = _SecondDerivativeOp.Value <- v
     static member Cast (p : ICell<SecondDerivativeOp>) = 
         if p :? SecondDerivativeOpModel1 then 

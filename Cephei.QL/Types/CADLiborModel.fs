@@ -100,7 +100,7 @@ type CADLiborModel
 (* 
     casting 
 *)
-    internal new () = CADLiborModel(null,null)
+    internal new () = new CADLiborModel(null,null)
     member internal this.Inject v = _CADLibor.Value <- v
     static member Cast (p : ICell<CADLibor>) = 
         if p :? CADLiborModel then 
@@ -229,7 +229,7 @@ type CADLiborModel1
 (* 
     casting 
 *)
-    internal new () = CADLiborModel1(null)
+    internal new () = new CADLiborModel1(null)
     member internal this.Inject v = _CADLibor.Value <- v
     static member Cast (p : ICell<CADLibor>) = 
         if p :? CADLiborModel1 then 

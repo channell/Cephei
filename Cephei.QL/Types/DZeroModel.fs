@@ -86,7 +86,7 @@ type DZeroModel
 (* 
     casting 
 *)
-    internal new () = DZeroModel(null,null)
+    internal new () = new DZeroModel(null,null)
     member internal this.Inject v = _DZero.Value <- v
     static member Cast (p : ICell<DZero>) = 
         if p :? DZeroModel then 

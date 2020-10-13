@@ -61,7 +61,7 @@ type NelsonSiegelFittingModel
 (* 
     casting 
 *)
-    internal new () = NelsonSiegelFittingModel(null,null)
+    internal new () = new NelsonSiegelFittingModel(null,null)
     member internal this.Inject v = _NelsonSiegelFitting.Value <- v
     static member Cast (p : ICell<NelsonSiegelFitting>) = 
         if p :? NelsonSiegelFittingModel then 

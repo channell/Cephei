@@ -58,6 +58,21 @@
           }
         }
       },
+      "ILGPU/0.9.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "1.7.0",
+          "System.Memory": "4.5.4",
+          "System.Reflection.Metadata": "1.8.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/ILGPU.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/ILGPU.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Connections.Abstractions/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -906,13 +921,13 @@
           }
         }
       },
-      "Serilog/2.9.0": {
+      "Serilog/2.10.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Serilog.dll": {}
+          "lib/netstandard2.1/Serilog.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Serilog.dll": {}
+          "lib/netstandard2.1/Serilog.dll": {}
         }
       },
       "Serilog.Sinks.File/4.1.0": {
@@ -983,7 +998,7 @@
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
         }
       },
-      "System.Collections.Immutable/1.7.0": {
+      "System.Collections.Immutable/1.7.1": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {}
@@ -1397,7 +1412,7 @@
           "lib/netstandard1.6/System.Linq.Expressions.dll": {}
         }
       },
-      "System.Memory/4.5.3": {
+      "System.Memory/4.5.4": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.1/_._": {}
@@ -1603,6 +1618,15 @@
         },
         "compile": {
           "ref/netstandard1.5/System.Runtime.dll": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
       "System.Runtime.Extensions/4.3.0": {
@@ -2111,7 +2135,9 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "FSharp.Core": "4.7.2",
-          "Serilog": "2.10.0"
+          "ILGPU": "0.9.1",
+          "Serilog": "2.10.0",
+          "System.Collections.Immutable": "1.7.1"
         },
         "compile": {
           "bin/placeholder/Cephei.Cell.dll": {}
@@ -2198,6 +2224,26 @@
         "lib/netstandard2.0/tr/FSharp.Core.resources.dll",
         "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll"
+      ]
+    },
+    "ILGPU/0.9.1": {
+      "sha512": "+nuaMbBWLbQkA0fJqZ4AFF4rleEQicc4i1PpGZiWKDVly1zn/P3mVU28MV1+1YkxBEC8VPfNmhJ04I0cJdr9Tg==",
+      "type": "package",
+      "path": "ilgpu/0.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE-3RD-PARTY..txt",
+        "LICENSE.txt",
+        "ilgpu.0.9.1.nupkg.sha512",
+        "ilgpu.nuspec",
+        "lib/net47/ILGPU.dll",
+        "lib/net47/ILGPU.pdb",
+        "lib/net47/ILGPU.xml",
+        "lib/netcoreapp2.0/ILGPU.dll",
+        "lib/netcoreapp2.0/ILGPU.xml",
+        "lib/netstandard2.1/ILGPU.dll",
+        "lib/netstandard2.1/ILGPU.xml"
       ]
     },
     "Microsoft.AspNetCore.Connections.Abstractions/3.0.0": {
@@ -3366,13 +3412,14 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
-    "Serilog/2.9.0": {
-      "sha512": "QzcrD33A3+CsVvwi1I5CSei67ikQnkGrw7SscgL+vZTghaC2aNYg8fiUcedXHzKJFNjgje9rBjzwYGQTKEaXaA==",
+    "Serilog/2.10.0": {
+      "sha512": "+QX0hmf37a0/OZLxM3wL7V6/ADvC1XihXN4Kq/p6d8lCPfgkRdiuhbWlMaFjR9Av0dy5F0+MBeDmDdRZN/YwQA==",
       "type": "package",
-      "path": "serilog/2.9.0",
+      "path": "serilog/2.10.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "icon.png",
         "lib/net45/Serilog.dll",
         "lib/net45/Serilog.xml",
         "lib/net46/Serilog.dll",
@@ -3383,7 +3430,9 @@
         "lib/netstandard1.3/Serilog.xml",
         "lib/netstandard2.0/Serilog.dll",
         "lib/netstandard2.0/Serilog.xml",
-        "serilog.2.9.0.nupkg.sha512",
+        "lib/netstandard2.1/Serilog.dll",
+        "lib/netstandard2.1/Serilog.xml",
+        "serilog.2.10.0.nupkg.sha512",
         "serilog.nuspec"
       ]
     },
@@ -3627,15 +3676,18 @@
         "system.collections.concurrent.nuspec"
       ]
     },
-    "System.Collections.Immutable/1.7.0": {
-      "sha512": "RVSM6wZUo6L2y6P3vN6gjUtyJ2IF2RVtrepF3J7nrDKfFQd5u/SnSUFclchYQis8/k5scHy9E+fVeKVQLnnkzw==",
+    "System.Collections.Immutable/1.7.1": {
+      "sha512": "B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
       "type": "package",
-      "path": "system.collections.immutable/1.7.0",
+      "path": "system.collections.immutable/1.7.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Collections.Immutable.dll",
+        "lib/net461/System.Collections.Immutable.xml",
         "lib/netstandard1.0/System.Collections.Immutable.dll",
         "lib/netstandard1.0/System.Collections.Immutable.xml",
         "lib/netstandard1.3/System.Collections.Immutable.dll",
@@ -3644,7 +3696,7 @@
         "lib/netstandard2.0/System.Collections.Immutable.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
-        "system.collections.immutable.1.7.0.nupkg.sha512",
+        "system.collections.immutable.1.7.1.nupkg.sha512",
         "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -4902,22 +4954,24 @@
         "system.linq.expressions.nuspec"
       ]
     },
-    "System.Memory/4.5.3": {
-      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+    "System.Memory/4.5.4": {
+      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
       "type": "package",
-      "path": "system.memory/4.5.3",
+      "path": "system.memory/4.5.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Memory.dll",
+        "lib/net461/System.Memory.xml",
         "lib/netcoreapp2.1/_._",
         "lib/netstandard1.1/System.Memory.dll",
         "lib/netstandard1.1/System.Memory.xml",
         "lib/netstandard2.0/System.Memory.dll",
         "lib/netstandard2.0/System.Memory.xml",
         "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.4.5.4.nupkg.sha512",
         "system.memory.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -5766,6 +5820,36 @@
         "ref/xamarinwatchos10/_._",
         "system.runtime.4.3.1.nupkg.sha512",
         "system.runtime.nuspec"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "sha512": "zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Runtime.Extensions/4.3.0": {
@@ -7143,13 +7227,15 @@
     ".NETCoreApp,Version=v3.1": [
       "Cephei.Cell >= 3.0.3",
       "FSharp.Core >= 4.7.2",
+      "ILGPU >= 0.9.1",
       "MSTest.TestAdapter >= 2.1.0",
       "MSTest.TestFramework >= 2.1.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "Microsoft.Orleans.Core >= 3.2.1",
       "QLNet >= 1.11.4",
-      "Serilog >= 2.9.0",
+      "Serilog >= 2.10.0",
       "Serilog.Sinks.File >= 4.1.0",
+      "System.Collections.Immutable >= 1.7.1",
       "coverlet.collector >= 1.2.0"
     ]
   },
@@ -7200,6 +7286,11 @@
             "version": "[4.7.2, )",
             "generatePathProperty": true
           },
+          "ILGPU": {
+            "target": "Package",
+            "version": "[0.9.1, )",
+            "generatePathProperty": true
+          },
           "MSTest.TestAdapter": {
             "target": "Package",
             "version": "[2.1.0, )",
@@ -7227,12 +7318,17 @@
           },
           "Serilog": {
             "target": "Package",
-            "version": "[2.9.0, )",
+            "version": "[2.10.0, )",
             "generatePathProperty": true
           },
           "Serilog.Sinks.File": {
             "target": "Package",
             "version": "[4.1.0, )",
+            "generatePathProperty": true
+          },
+          "System.Collections.Immutable": {
+            "target": "Package",
+            "version": "[1.7.1, )",
             "generatePathProperty": true
           },
           "coverlet.collector": {
@@ -7259,17 +7355,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Serilog from 2.10.0 to 2.9.0. Reference the package directly from the project to select a different version. \r\n Cephei.Cell.Test -> Cephei.Cell -> Serilog (>= 2.10.0) \r\n Cephei.Cell.Test -> Serilog (>= 2.9.0)",
-      "libraryId": "Serilog",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

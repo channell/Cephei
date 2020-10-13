@@ -87,7 +87,7 @@ type SVIModel
 (* 
     casting 
 *)
-    internal new () = SVIModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new SVIModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SVI.Value <- v
     static member Cast (p : ICell<SVI>) = 
         if p :? SVIModel then 

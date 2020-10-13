@@ -94,7 +94,7 @@ type GeneralizedBlackScholesProcessModel
 (* 
     casting 
 *)
-    internal new () = GeneralizedBlackScholesProcessModel(null,null,null,null,null,null)
+    internal new () = new GeneralizedBlackScholesProcessModel(null,null,null,null,null,null)
     member internal this.Inject v = _GeneralizedBlackScholesProcess.Value <- v
     static member Cast (p : ICell<GeneralizedBlackScholesProcess>) = 
         if p :? GeneralizedBlackScholesProcessModel then 
@@ -211,7 +211,7 @@ type GeneralizedBlackScholesProcessModel1
 (* 
     casting 
 *)
-    internal new () = GeneralizedBlackScholesProcessModel1(null,null,null,null,null)
+    internal new () = new GeneralizedBlackScholesProcessModel1(null,null,null,null,null)
     member internal this.Inject v = _GeneralizedBlackScholesProcess.Value <- v
     static member Cast (p : ICell<GeneralizedBlackScholesProcess>) = 
         if p :? GeneralizedBlackScholesProcessModel1 then 

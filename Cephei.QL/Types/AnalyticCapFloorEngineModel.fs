@@ -62,7 +62,7 @@ type AnalyticCapFloorEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticCapFloorEngineModel(null)
+    internal new () = new AnalyticCapFloorEngineModel(null)
     member internal this.Inject v = _AnalyticCapFloorEngine.Value <- v
     static member Cast (p : ICell<AnalyticCapFloorEngine>) = 
         if p :? AnalyticCapFloorEngineModel then 
@@ -122,7 +122,7 @@ type AnalyticCapFloorEngineModel1
 (* 
     casting 
 *)
-    internal new () = AnalyticCapFloorEngineModel1(null,null)
+    internal new () = new AnalyticCapFloorEngineModel1(null,null)
     member internal this.Inject v = _AnalyticCapFloorEngine.Value <- v
     static member Cast (p : ICell<AnalyticCapFloorEngine>) = 
         if p :? AnalyticCapFloorEngineModel1 then 

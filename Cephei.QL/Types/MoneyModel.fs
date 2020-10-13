@@ -102,7 +102,7 @@ type MoneyModel1
 (* 
     casting 
 *)
-    internal new () = MoneyModel1(null,null)
+    internal new () = new MoneyModel1(null,null)
     member internal this.Inject v = _Money.Value <- v
     static member Cast (p : ICell<Money>) = 
         if p :? MoneyModel1 then 
@@ -154,7 +154,7 @@ type MoneyModel2
 (* 
     casting 
 *)
-    internal new () = MoneyModel2(null,null)
+    internal new () = new MoneyModel2(null,null)
     member internal this.Inject v = _Money.Value <- v
     static member Cast (p : ICell<Money>) = 
         if p :? MoneyModel2 then 

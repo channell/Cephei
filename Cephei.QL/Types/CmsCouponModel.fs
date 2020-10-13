@@ -264,7 +264,7 @@ type CmsCouponModel1
 (* 
     casting 
 *)
-    internal new () = CmsCouponModel1(null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CmsCouponModel1(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CmsCoupon.Value <- v
     static member Cast (p : ICell<CmsCoupon>) = 
         if p :? CmsCouponModel1 then 

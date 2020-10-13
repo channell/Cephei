@@ -57,7 +57,7 @@ type RendistatoEquivalentSwapLengthQuoteModel
 (* 
     casting 
 *)
-    internal new () = RendistatoEquivalentSwapLengthQuoteModel(null)
+    internal new () = new RendistatoEquivalentSwapLengthQuoteModel(null)
     member internal this.Inject v = _RendistatoEquivalentSwapLengthQuote.Value <- v
     static member Cast (p : ICell<RendistatoEquivalentSwapLengthQuote>) = 
         if p :? RendistatoEquivalentSwapLengthQuoteModel then 

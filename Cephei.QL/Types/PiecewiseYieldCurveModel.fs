@@ -320,7 +320,7 @@ type PiecewiseYieldCurveModel1
 (* 
     casting 
 *)
-    internal new () = PiecewiseYieldCurveModel1(null,null,null,null,null)
+    internal new () = new PiecewiseYieldCurveModel1(null,null,null,null,null)
     member internal this.Inject v = _PiecewiseYieldCurve.Value <- v
     static member Cast (p : ICell<PiecewiseYieldCurve>) = 
         if p :? PiecewiseYieldCurveModel1 then 
@@ -520,7 +520,7 @@ type PiecewiseYieldCurveModel2
 (* 
     casting 
 *)
-    internal new () = PiecewiseYieldCurveModel2(null,null,null,null,null)
+    internal new () = new PiecewiseYieldCurveModel2(null,null,null,null,null)
     member internal this.Inject v = _PiecewiseYieldCurve.Value <- v
     static member Cast (p : ICell<PiecewiseYieldCurve>) = 
         if p :? PiecewiseYieldCurveModel2 then 

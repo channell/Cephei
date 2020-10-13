@@ -53,7 +53,7 @@ type BinomialDistributionModel
 (* 
     casting 
 *)
-    internal new () = BinomialDistributionModel(null,null)
+    internal new () = new BinomialDistributionModel(null,null)
     member internal this.Inject v = _BinomialDistribution.Value <- v
     static member Cast (p : ICell<BinomialDistribution>) = 
         if p :? BinomialDistributionModel then 

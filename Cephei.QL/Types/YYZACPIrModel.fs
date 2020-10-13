@@ -87,7 +87,7 @@ type YYZACPIrModel
 (* 
     casting 
 *)
-    internal new () = YYZACPIrModel(null)
+    internal new () = new YYZACPIrModel(null)
     member internal this.Inject v = _YYZACPIr.Value <- v
     static member Cast (p : ICell<YYZACPIr>) = 
         if p :? YYZACPIrModel then 
@@ -195,7 +195,7 @@ type YYZACPIrModel1
 (* 
     casting 
 *)
-    internal new () = YYZACPIrModel1(null,null)
+    internal new () = new YYZACPIrModel1(null,null)
     member internal this.Inject v = _YYZACPIr.Value <- v
     static member Cast (p : ICell<YYZACPIr>) = 
         if p :? YYZACPIrModel1 then 

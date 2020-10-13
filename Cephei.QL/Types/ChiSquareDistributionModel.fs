@@ -51,7 +51,7 @@ type ChiSquareDistributionModel
 (* 
     casting 
 *)
-    internal new () = ChiSquareDistributionModel(null)
+    internal new () = new ChiSquareDistributionModel(null)
     member internal this.Inject v = _ChiSquareDistribution.Value <- v
     static member Cast (p : ICell<ChiSquareDistribution>) = 
         if p :? ChiSquareDistributionModel then 

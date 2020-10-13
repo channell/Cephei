@@ -84,7 +84,7 @@ type yoyInflationLegModel
 (* 
     casting 
 *)
-    internal new () = yoyInflationLegModel(null,null,null,null)
+    internal new () = new yoyInflationLegModel(null,null,null,null)
     member internal this.Inject v = _yoyInflationLeg.Value <- v
     static member Cast (p : ICell<yoyInflationLeg>) = 
         if p :? yoyInflationLegModel then 

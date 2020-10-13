@@ -58,7 +58,7 @@ type SobolRsgModel
 (* 
     casting 
 *)
-    internal new () = SobolRsgModel(null)
+    internal new () = new SobolRsgModel(null)
     member internal this.Inject v = _SobolRsg.Value <- v
     static member Cast (p : ICell<SobolRsg>) = 
         if p :? SobolRsgModel then 
@@ -166,7 +166,7 @@ type SobolRsgModel2
 (* 
     casting 
 *)
-    internal new () = SobolRsgModel2(null,null,null)
+    internal new () = new SobolRsgModel2(null,null,null)
     member internal this.Inject v = _SobolRsg.Value <- v
     static member Cast (p : ICell<SobolRsg>) = 
         if p :? SobolRsgModel2 then 
@@ -224,7 +224,7 @@ type SobolRsgModel3
 (* 
     casting 
 *)
-    internal new () = SobolRsgModel3(null,null)
+    internal new () = new SobolRsgModel3(null,null)
     member internal this.Inject v = _SobolRsg.Value <- v
     static member Cast (p : ICell<SobolRsg>) = 
         if p :? SobolRsgModel3 then 

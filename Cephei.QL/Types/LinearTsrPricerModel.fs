@@ -86,7 +86,7 @@ type LinearTsrPricerModel
 (* 
     casting 
 *)
-    internal new () = LinearTsrPricerModel(null,null,null,null,null)
+    internal new () = new LinearTsrPricerModel(null,null,null,null,null)
     member internal this.Inject v = _LinearTsrPricer.Value <- v
     static member Cast (p : ICell<LinearTsrPricer>) = 
         if p :? LinearTsrPricerModel then 

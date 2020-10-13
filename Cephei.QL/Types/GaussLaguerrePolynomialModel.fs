@@ -115,7 +115,7 @@ type GaussLaguerrePolynomialModel1
 (* 
     casting 
 *)
-    internal new () = GaussLaguerrePolynomialModel1(null)
+    internal new () = new GaussLaguerrePolynomialModel1(null)
     member internal this.Inject v = _GaussLaguerrePolynomial.Value <- v
     static member Cast (p : ICell<GaussLaguerrePolynomial>) = 
         if p :? GaussLaguerrePolynomialModel1 then 

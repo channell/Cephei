@@ -51,7 +51,7 @@ type NonCentralCumulativeChiSquareSankaranApproxModel
 (* 
     casting 
 *)
-    internal new () = NonCentralCumulativeChiSquareSankaranApproxModel(null,null)
+    internal new () = new NonCentralCumulativeChiSquareSankaranApproxModel(null,null)
     member internal this.Inject v = _NonCentralCumulativeChiSquareSankaranApprox.Value <- v
     static member Cast (p : ICell<NonCentralCumulativeChiSquareSankaranApprox>) = 
         if p :? NonCentralCumulativeChiSquareSankaranApproxModel then 

@@ -66,7 +66,7 @@ type Joshi4Model
 (* 
     casting 
 *)
-    internal new () = Joshi4Model(null,null,null,null)
+    internal new () = new Joshi4Model(null,null,null,null)
     member internal this.Inject v = _Joshi4.Value <- v
     static member Cast (p : ICell<Joshi4>) = 
         if p :? Joshi4Model then 

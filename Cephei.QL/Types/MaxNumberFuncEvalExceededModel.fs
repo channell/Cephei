@@ -51,7 +51,7 @@ type MaxNumberFuncEvalExceededModel
 (* 
     casting 
 *)
-    internal new () = MaxNumberFuncEvalExceededModel(null,null)
+    internal new () = new MaxNumberFuncEvalExceededModel(null,null)
     member internal this.Inject v = _MaxNumberFuncEvalExceeded.Value <- v
     static member Cast (p : ICell<MaxNumberFuncEvalExceeded>) = 
         if p :? MaxNumberFuncEvalExceededModel then 
@@ -89,7 +89,7 @@ type MaxNumberFuncEvalExceededModel1
 (* 
     casting 
 *)
-    internal new () = MaxNumberFuncEvalExceededModel1(null)
+    internal new () = new MaxNumberFuncEvalExceededModel1(null)
     member internal this.Inject v = _MaxNumberFuncEvalExceeded.Value <- v
     static member Cast (p : ICell<MaxNumberFuncEvalExceeded>) = 
         if p :? MaxNumberFuncEvalExceededModel1 then 

@@ -100,7 +100,7 @@ type ZiborModel
 (* 
     casting 
 *)
-    internal new () = ZiborModel(null,null)
+    internal new () = new ZiborModel(null,null)
     member internal this.Inject v = _Zibor.Value <- v
     static member Cast (p : ICell<Zibor>) = 
         if p :? ZiborModel then 
@@ -229,7 +229,7 @@ type ZiborModel1
 (* 
     casting 
 *)
-    internal new () = ZiborModel1(null)
+    internal new () = new ZiborModel1(null)
     member internal this.Inject v = _Zibor.Value <- v
     static member Cast (p : ICell<Zibor>) = 
         if p :? ZiborModel1 then 

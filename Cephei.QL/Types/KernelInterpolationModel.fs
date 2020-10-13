@@ -78,7 +78,7 @@ type KernelInterpolationModel
 (* 
     casting 
 *)
-    internal new () = KernelInterpolationModel(null,null,null,null)
+    internal new () = new KernelInterpolationModel(null,null,null,null)
     member internal this.Inject v = _KernelInterpolation.Value <- v
     static member Cast (p : ICell<KernelInterpolation>) = 
         if p :? KernelInterpolationModel then 

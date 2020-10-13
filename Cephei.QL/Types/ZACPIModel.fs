@@ -86,7 +86,7 @@ type ZACPIModel
 (* 
     casting 
 *)
-    internal new () = ZACPIModel(null)
+    internal new () = new ZACPIModel(null)
     member internal this.Inject v = _ZACPI.Value <- v
     static member Cast (p : ICell<ZACPI>) = 
         if p :? ZACPIModel then 
@@ -192,7 +192,7 @@ type ZACPIModel1
 (* 
     casting 
 *)
-    internal new () = ZACPIModel1(null,null)
+    internal new () = new ZACPIModel1(null,null)
     member internal this.Inject v = _ZACPI.Value <- v
     static member Cast (p : ICell<ZACPI>) = 
         if p :? ZACPIModel1 then 

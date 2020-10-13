@@ -103,7 +103,7 @@ type YoYInflationIndexModel
 (* 
     casting 
 *)
-    internal new () = YoYInflationIndexModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new YoYInflationIndexModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _YoYInflationIndex.Value <- v
     static member Cast (p : ICell<YoYInflationIndex>) = 
         if p :? YoYInflationIndexModel then 

@@ -83,7 +83,7 @@ type BespokeCalendarModel
 (* 
     casting 
 *)
-    internal new () = BespokeCalendarModel(null)
+    internal new () = new BespokeCalendarModel(null)
     member internal this.Inject v = _BespokeCalendar.Value <- v
     static member Cast (p : ICell<BespokeCalendar>) = 
         if p :? BespokeCalendarModel then 

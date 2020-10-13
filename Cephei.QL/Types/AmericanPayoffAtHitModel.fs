@@ -62,7 +62,7 @@ type AmericanPayoffAtHitModel
 (* 
     casting 
 *)
-    internal new () = AmericanPayoffAtHitModel(null,null,null,null,null)
+    internal new () = new AmericanPayoffAtHitModel(null,null,null,null,null)
     member internal this.Inject v = _AmericanPayoffAtHit.Value <- v
     static member Cast (p : ICell<AmericanPayoffAtHit>) = 
         if p :? AmericanPayoffAtHitModel then 

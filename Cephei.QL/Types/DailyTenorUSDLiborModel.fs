@@ -100,7 +100,7 @@ type DailyTenorUSDLiborModel
 (* 
     casting 
 *)
-    internal new () = DailyTenorUSDLiborModel(null,null)
+    internal new () = new DailyTenorUSDLiborModel(null,null)
     member internal this.Inject v = _DailyTenorUSDLibor.Value <- v
     static member Cast (p : ICell<DailyTenorUSDLibor>) = 
         if p :? DailyTenorUSDLiborModel then 
@@ -229,7 +229,7 @@ type DailyTenorUSDLiborModel1
 (* 
     casting 
 *)
-    internal new () = DailyTenorUSDLiborModel1(null)
+    internal new () = new DailyTenorUSDLiborModel1(null)
     member internal this.Inject v = _DailyTenorUSDLibor.Value <- v
     static member Cast (p : ICell<DailyTenorUSDLibor>) = 
         if p :? DailyTenorUSDLiborModel1 then 

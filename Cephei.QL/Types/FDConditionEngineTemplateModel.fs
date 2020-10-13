@@ -124,7 +124,7 @@ type FDConditionEngineTemplateModel1
 (* 
     casting 
 *)
-    internal new () = FDConditionEngineTemplateModel1(null,null,null,null)
+    internal new () = new FDConditionEngineTemplateModel1(null,null,null,null)
     member internal this.Inject v = _FDConditionEngineTemplate.Value <- v
     static member Cast (p : ICell<FDConditionEngineTemplate>) = 
         if p :? FDConditionEngineTemplateModel1 then 

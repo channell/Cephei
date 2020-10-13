@@ -31,7 +31,6 @@ type ModelState () =
     member this.Subscriber = _subscriber
     member this.Ranges = _ranges
     member this.Rtd = _rtd
-    member this.Version with  get () = _version and set(v) = _version <- v
 
 type CellSource<'t> = {cell : ICell<'t>; source : string}
 

@@ -94,7 +94,7 @@ type BicubicSplineModel
 (* 
     casting 
 *)
-    internal new () = BicubicSplineModel(null,null,null,null,null)
+    internal new () = new BicubicSplineModel(null,null,null,null,null)
     member internal this.Inject v = _BicubicSpline.Value <- v
     static member Cast (p : ICell<BicubicSpline>) = 
         if p :? BicubicSplineModel then 

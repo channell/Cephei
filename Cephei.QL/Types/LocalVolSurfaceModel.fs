@@ -82,7 +82,7 @@ type LocalVolSurfaceModel
 (* 
     casting 
 *)
-    internal new () = LocalVolSurfaceModel(null,null,null,null)
+    internal new () = new LocalVolSurfaceModel(null,null,null,null)
     member internal this.Inject v = _LocalVolSurface.Value <- v
     static member Cast (p : ICell<LocalVolSurface>) = 
         if p :? LocalVolSurfaceModel then 
@@ -179,7 +179,7 @@ type LocalVolSurfaceModel1
 (* 
     casting 
 *)
-    internal new () = LocalVolSurfaceModel1(null,null,null,null)
+    internal new () = new LocalVolSurfaceModel1(null,null,null,null)
     member internal this.Inject v = _LocalVolSurface.Value <- v
     static member Cast (p : ICell<LocalVolSurface>) = 
         if p :? LocalVolSurfaceModel1 then 

@@ -110,7 +110,7 @@ type CatBondModel
 (* 
     casting 
 *)
-    internal new () = CatBondModel(null,null,null,null,null,null)
+    internal new () = new CatBondModel(null,null,null,null,null,null)
     member internal this.Inject v = _CatBond.Value <- v
     static member Cast (p : ICell<CatBond>) = 
         if p :? CatBondModel then 

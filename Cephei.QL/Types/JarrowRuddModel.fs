@@ -121,7 +121,7 @@ type JarrowRuddModel1
 (* 
     casting 
 *)
-    internal new () = JarrowRuddModel1(null,null,null,null)
+    internal new () = new JarrowRuddModel1(null,null,null,null)
     member internal this.Inject v = _JarrowRudd.Value <- v
     static member Cast (p : ICell<JarrowRudd>) = 
         if p :? JarrowRuddModel1 then 

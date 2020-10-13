@@ -111,7 +111,7 @@ type CanadaModel
 (* 
     casting 
 *)
-    internal new () = CanadaModel(null)
+    internal new () = new CanadaModel(null)
     member internal this.Inject v = _Canada.Value <- v
     static member Cast (p : ICell<Canada>) = 
         if p :? CanadaModel then 

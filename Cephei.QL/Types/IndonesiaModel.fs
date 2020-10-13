@@ -103,7 +103,7 @@ type IndonesiaModel
 (* 
     casting 
 *)
-    internal new () = IndonesiaModel(null)
+    internal new () = new IndonesiaModel(null)
     member internal this.Inject v = _Indonesia.Value <- v
     static member Cast (p : ICell<Indonesia>) = 
         if p :? IndonesiaModel then 

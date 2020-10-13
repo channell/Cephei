@@ -54,7 +54,7 @@ type ClosestRoundingModel
 (* 
     casting 
 *)
-    internal new () = ClosestRoundingModel(null)
+    internal new () = new ClosestRoundingModel(null)
     member internal this.Inject v = _ClosestRounding.Value <- v
     static member Cast (p : ICell<ClosestRounding>) = 
         if p :? ClosestRoundingModel then 
@@ -103,7 +103,7 @@ type ClosestRoundingModel1
 (* 
     casting 
 *)
-    internal new () = ClosestRoundingModel1(null,null)
+    internal new () = new ClosestRoundingModel1(null,null)
     member internal this.Inject v = _ClosestRounding.Value <- v
     static member Cast (p : ICell<ClosestRounding>) = 
         if p :? ClosestRoundingModel1 then 

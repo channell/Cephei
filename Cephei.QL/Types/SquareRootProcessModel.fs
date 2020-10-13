@@ -97,7 +97,7 @@ type SquareRootProcessModel
 (* 
     casting 
 *)
-    internal new () = SquareRootProcessModel(null,null,null,null,null)
+    internal new () = new SquareRootProcessModel(null,null,null,null,null)
     member internal this.Inject v = _SquareRootProcess.Value <- v
     static member Cast (p : ICell<SquareRootProcess>) = 
         if p :? SquareRootProcessModel then 
@@ -219,7 +219,7 @@ type SquareRootProcessModel1
 (* 
     casting 
 *)
-    internal new () = SquareRootProcessModel1(null,null,null)
+    internal new () = new SquareRootProcessModel1(null,null,null)
     member internal this.Inject v = _SquareRootProcess.Value <- v
     static member Cast (p : ICell<SquareRootProcess>) = 
         if p :? SquareRootProcessModel1 then 
@@ -341,7 +341,7 @@ type SquareRootProcessModel2
 (* 
     casting 
 *)
-    internal new () = SquareRootProcessModel2(null,null,null,null)
+    internal new () = new SquareRootProcessModel2(null,null,null,null)
     member internal this.Inject v = _SquareRootProcess.Value <- v
     static member Cast (p : ICell<SquareRootProcess>) = 
         if p :? SquareRootProcessModel2 then 

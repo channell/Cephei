@@ -94,7 +94,7 @@ type SwaptionHelperModel
 (* 
     casting 
 *)
-    internal new () = SwaptionHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new SwaptionHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionHelper.Value <- v
     static member Cast (p : ICell<SwaptionHelper>) = 
         if p :? SwaptionHelperModel then 
@@ -205,7 +205,7 @@ type SwaptionHelperModel1
 (* 
     casting 
 *)
-    internal new () = SwaptionHelperModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new SwaptionHelperModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionHelper.Value <- v
     static member Cast (p : ICell<SwaptionHelper>) = 
         if p :? SwaptionHelperModel1 then 
@@ -316,7 +316,7 @@ type SwaptionHelperModel2
 (* 
     casting 
 *)
-    internal new () = SwaptionHelperModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new SwaptionHelperModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionHelper.Value <- v
     static member Cast (p : ICell<SwaptionHelper>) = 
         if p :? SwaptionHelperModel2 then 

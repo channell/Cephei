@@ -98,7 +98,7 @@ type AUDLiborModel
 (* 
     casting 
 *)
-    internal new () = AUDLiborModel(null)
+    internal new () = new AUDLiborModel(null)
     member internal this.Inject v = _AUDLibor.Value <- v
     static member Cast (p : ICell<AUDLibor>) = 
         if p :? AUDLiborModel then 
@@ -228,7 +228,7 @@ type AUDLiborModel1
 (* 
     casting 
 *)
-    internal new () = AUDLiborModel1(null,null)
+    internal new () = new AUDLiborModel1(null,null)
     member internal this.Inject v = _AUDLibor.Value <- v
     static member Cast (p : ICell<AUDLibor>) = 
         if p :? AUDLiborModel1 then 

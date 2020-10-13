@@ -56,7 +56,7 @@ type FdmLinearOpIteratorModel
 (* 
     casting 
 *)
-    internal new () = FdmLinearOpIteratorModel(null)
+    internal new () = new FdmLinearOpIteratorModel(null)
     member internal this.Inject v = _FdmLinearOpIterator.Value <- v
     static member Cast (p : ICell<FdmLinearOpIterator>) = 
         if p :? FdmLinearOpIteratorModel then 
@@ -106,7 +106,7 @@ type FdmLinearOpIteratorModel1
 (* 
     casting 
 *)
-    internal new () = FdmLinearOpIteratorModel1(null)
+    internal new () = new FdmLinearOpIteratorModel1(null)
     member internal this.Inject v = _FdmLinearOpIterator.Value <- v
     static member Cast (p : ICell<FdmLinearOpIterator>) = 
         if p :? FdmLinearOpIteratorModel1 then 
@@ -160,7 +160,7 @@ type FdmLinearOpIteratorModel2
 (* 
     casting 
 *)
-    internal new () = FdmLinearOpIteratorModel2(null,null,null)
+    internal new () = new FdmLinearOpIteratorModel2(null,null,null)
     member internal this.Inject v = _FdmLinearOpIterator.Value <- v
     static member Cast (p : ICell<FdmLinearOpIterator>) = 
         if p :? FdmLinearOpIteratorModel2 then 
@@ -212,7 +212,7 @@ type FdmLinearOpIteratorModel3
 (* 
     casting 
 *)
-    internal new () = FdmLinearOpIteratorModel3(null)
+    internal new () = new FdmLinearOpIteratorModel3(null)
     member internal this.Inject v = _FdmLinearOpIterator.Value <- v
     static member Cast (p : ICell<FdmLinearOpIterator>) = 
         if p :? FdmLinearOpIteratorModel3 then 

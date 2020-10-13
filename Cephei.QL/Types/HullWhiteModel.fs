@@ -91,7 +91,7 @@ type HullWhiteModel
 (* 
     casting 
 *)
-    internal new () = HullWhiteModel(null,null,null)
+    internal new () = new HullWhiteModel(null,null,null)
     member internal this.Inject v = _HullWhite.Value <- v
     static member Cast (p : ICell<HullWhite>) = 
         if p :? HullWhiteModel then 
@@ -200,7 +200,7 @@ type HullWhiteModel1
 (* 
     casting 
 *)
-    internal new () = HullWhiteModel1(null)
+    internal new () = new HullWhiteModel1(null)
     member internal this.Inject v = _HullWhite.Value <- v
     static member Cast (p : ICell<HullWhite>) = 
         if p :? HullWhiteModel1 then 
@@ -309,7 +309,7 @@ type HullWhiteModel2
 (* 
     casting 
 *)
-    internal new () = HullWhiteModel2(null,null)
+    internal new () = new HullWhiteModel2(null,null)
     member internal this.Inject v = _HullWhite.Value <- v
     static member Cast (p : ICell<HullWhite>) = 
         if p :? HullWhiteModel2 then 

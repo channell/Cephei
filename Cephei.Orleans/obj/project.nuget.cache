@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "SdIY8NXfTG0Olo4ocmREtdeejDXWFFA2v+LDGUPpEP+tzrB00T3mTnf0JqBqALLaqhU494rYCGIgho1/M6ZsBQ==",
+  "dgSpecHash": "u5IiU3cdCYw6RBLdPv5F69PULd2hbC4nZPd1aiQLKo6/C2ZHhhP9X5hFI0zqMvvKWsRvfQsCclv5A3CgxkUB0g==",
   "success": true,
   "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\ilgpu\\0.9.1\\ilgpu.0.9.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\3.0.0\\microsoft.aspnetcore.connections.abstractions.3.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.0.0\\microsoft.aspnetcore.http.features.3.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
@@ -33,9 +34,9 @@
     "C:\\Users\\steve\\.nuget\\packages\\newtonsoft.json\\10.0.3\\newtonsoft.json.10.0.3.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\qlnet\\1.12.0-preview.26\\qlnet.1.12.0-preview.26.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.collections.immutable\\1.7.0\\system.collections.immutable.1.7.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
@@ -53,7 +54,7 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.io.pipelines\\4.7.0\\system.io.pipelines.4.7.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
@@ -85,5 +86,16 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ILGPU 0.9.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "ILGPU",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

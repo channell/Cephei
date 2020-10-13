@@ -57,7 +57,7 @@ type SABRWrapperModel
 (* 
     casting 
 *)
-    internal new () = SABRWrapperModel(null,null,null,null)
+    internal new () = new SABRWrapperModel(null,null,null,null)
     member internal this.Inject v = _SABRWrapper.Value <- v
     static member Cast (p : ICell<SABRWrapper>) = 
         if p :? SABRWrapperModel then 

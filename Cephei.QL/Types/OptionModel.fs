@@ -67,7 +67,7 @@ type OptionModel
 (* 
     casting 
 *)
-    internal new () = OptionModel(null,null,null,null)
+    internal new () = new OptionModel(null,null,null,null)
     member internal this.Inject v = _Option.Value <- v
     static member Cast (p : ICell<Option>) = 
         if p :? OptionModel then 

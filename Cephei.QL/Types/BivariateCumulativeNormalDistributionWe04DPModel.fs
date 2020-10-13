@@ -51,7 +51,7 @@ type BivariateCumulativeNormalDistributionWe04DPModel
 (* 
     casting 
 *)
-    internal new () = BivariateCumulativeNormalDistributionWe04DPModel(null)
+    internal new () = new BivariateCumulativeNormalDistributionWe04DPModel(null)
     member internal this.Inject v = _BivariateCumulativeNormalDistributionWe04DP.Value <- v
     static member Cast (p : ICell<BivariateCumulativeNormalDistributionWe04DP>) = 
         if p :? BivariateCumulativeNormalDistributionWe04DPModel then 

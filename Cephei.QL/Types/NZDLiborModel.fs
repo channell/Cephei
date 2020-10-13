@@ -100,7 +100,7 @@ type NZDLiborModel
 (* 
     casting 
 *)
-    internal new () = NZDLiborModel(null,null)
+    internal new () = new NZDLiborModel(null,null)
     member internal this.Inject v = _NZDLibor.Value <- v
     static member Cast (p : ICell<NZDLibor>) = 
         if p :? NZDLiborModel then 
@@ -229,7 +229,7 @@ type NZDLiborModel1
 (* 
     casting 
 *)
-    internal new () = NZDLiborModel1(null)
+    internal new () = new NZDLiborModel1(null)
     member internal this.Inject v = _NZDLibor.Value <- v
     static member Cast (p : ICell<NZDLibor>) = 
         if p :? NZDLiborModel1 then 

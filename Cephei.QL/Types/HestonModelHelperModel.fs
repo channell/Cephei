@@ -85,7 +85,7 @@ type HestonModelHelperModel
 (* 
     casting 
 *)
-    internal new () = HestonModelHelperModel(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new HestonModelHelperModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _HestonModelHelper.Value <- v
     static member Cast (p : ICell<HestonModelHelper>) = 
         if p :? HestonModelHelperModel then 
@@ -183,7 +183,7 @@ type HestonModelHelperModel1
 (* 
     casting 
 *)
-    internal new () = HestonModelHelperModel1(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new HestonModelHelperModel1(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _HestonModelHelper.Value <- v
     static member Cast (p : ICell<HestonModelHelper>) = 
         if p :? HestonModelHelperModel1 then 

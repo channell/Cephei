@@ -56,7 +56,7 @@ type TermStructureConsistentModelModel
 (* 
     casting 
 *)
-    internal new () = TermStructureConsistentModelModel(null)
+    internal new () = new TermStructureConsistentModelModel(null)
     member internal this.Inject v = _TermStructureConsistentModel.Value <- v
     static member Cast (p : ICell<TermStructureConsistentModel>) = 
         if p :? TermStructureConsistentModelModel then 

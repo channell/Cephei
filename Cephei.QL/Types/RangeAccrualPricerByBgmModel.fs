@@ -78,7 +78,7 @@ type RangeAccrualPricerByBgmModel
 (* 
     casting 
 *)
-    internal new () = RangeAccrualPricerByBgmModel(null,null,null,null,null)
+    internal new () = new RangeAccrualPricerByBgmModel(null,null,null,null,null)
     member internal this.Inject v = _RangeAccrualPricerByBgm.Value <- v
     static member Cast (p : ICell<RangeAccrualPricerByBgm>) = 
         if p :? RangeAccrualPricerByBgmModel then 

@@ -61,7 +61,7 @@ type DerivedQuoteModel
 (* 
     casting 
 *)
-    internal new () = DerivedQuoteModel(null,null)
+    internal new () = new DerivedQuoteModel(null,null)
     member internal this.Inject v = _DerivedQuote.Value <- v
     static member Cast (p : ICell<DerivedQuote>) = 
         if p :? DerivedQuoteModel then 

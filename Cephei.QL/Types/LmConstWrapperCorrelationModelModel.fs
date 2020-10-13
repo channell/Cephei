@@ -62,7 +62,7 @@ type LmConstWrapperCorrelationModelModel
 (* 
     casting 
 *)
-    internal new () = LmConstWrapperCorrelationModelModel(null)
+    internal new () = new LmConstWrapperCorrelationModelModel(null)
     member internal this.Inject v = _LmConstWrapperCorrelationModel.Value <- v
     static member Cast (p : ICell<LmConstWrapperCorrelationModel>) = 
         if p :? LmConstWrapperCorrelationModelModel then 

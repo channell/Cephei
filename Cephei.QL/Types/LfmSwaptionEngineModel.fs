@@ -64,7 +64,7 @@ type LfmSwaptionEngineModel
 (* 
     casting 
 *)
-    internal new () = LfmSwaptionEngineModel(null,null)
+    internal new () = new LfmSwaptionEngineModel(null,null)
     member internal this.Inject v = _LfmSwaptionEngine.Value <- v
     static member Cast (p : ICell<LfmSwaptionEngine>) = 
         if p :? LfmSwaptionEngineModel then 

@@ -80,7 +80,7 @@ type MixedLinearParabolicModel
 (* 
     casting 
 *)
-    internal new () = MixedLinearParabolicModel(null,null,null,null,null)
+    internal new () = new MixedLinearParabolicModel(null,null,null,null,null)
     member internal this.Inject v = _MixedLinearParabolic.Value <- v
     static member Cast (p : ICell<MixedLinearParabolic>) = 
         if p :? MixedLinearParabolicModel then 

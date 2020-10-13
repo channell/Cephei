@@ -56,7 +56,7 @@ type GaussHermiteIntegrationModel
 (* 
     casting 
 *)
-    internal new () = GaussHermiteIntegrationModel(null,null)
+    internal new () = new GaussHermiteIntegrationModel(null,null)
     member internal this.Inject v = _GaussHermiteIntegration.Value <- v
     static member Cast (p : ICell<GaussHermiteIntegration>) = 
         if p :? GaussHermiteIntegrationModel then 

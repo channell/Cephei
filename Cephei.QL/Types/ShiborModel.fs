@@ -100,7 +100,7 @@ type ShiborModel
 (* 
     casting 
 *)
-    internal new () = ShiborModel(null,null)
+    internal new () = new ShiborModel(null,null)
     member internal this.Inject v = _Shibor.Value <- v
     static member Cast (p : ICell<Shibor>) = 
         if p :? ShiborModel then 
@@ -229,7 +229,7 @@ type ShiborModel1
 (* 
     casting 
 *)
-    internal new () = ShiborModel1(null)
+    internal new () = new ShiborModel1(null)
     member internal this.Inject v = _Shibor.Value <- v
     static member Cast (p : ICell<Shibor>) = 
         if p :? ShiborModel1 then 

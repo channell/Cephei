@@ -98,7 +98,7 @@ type CapletVarianceCurveModel
 (* 
     casting 
 *)
-    internal new () = CapletVarianceCurveModel(null,null,null,null)
+    internal new () = new CapletVarianceCurveModel(null,null,null,null)
     member internal this.Inject v = _CapletVarianceCurve.Value <- v
     static member Cast (p : ICell<CapletVarianceCurve>) = 
         if p :? CapletVarianceCurveModel then 

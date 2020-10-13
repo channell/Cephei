@@ -110,7 +110,7 @@ type AssetSwapModel
 (* 
     casting 
 *)
-    internal new () = AssetSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new AssetSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AssetSwap.Value <- v
     static member Cast (p : ICell<AssetSwap>) = 
         if p :? AssetSwapModel then 
@@ -253,7 +253,7 @@ type AssetSwapModel1
 (* 
     casting 
 *)
-    internal new () = AssetSwapModel1(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new AssetSwapModel1(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AssetSwap.Value <- v
     static member Cast (p : ICell<AssetSwap>) = 
         if p :? AssetSwapModel1 then 

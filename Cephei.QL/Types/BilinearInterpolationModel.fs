@@ -84,7 +84,7 @@ type BilinearInterpolationModel
 (* 
     casting 
 *)
-    internal new () = BilinearInterpolationModel(null,null,null,null,null)
+    internal new () = new BilinearInterpolationModel(null,null,null,null,null)
     member internal this.Inject v = _BilinearInterpolation.Value <- v
     static member Cast (p : ICell<BilinearInterpolation>) = 
         if p :? BilinearInterpolationModel then 

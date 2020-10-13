@@ -50,7 +50,7 @@ type AnalyticDigitalAmericanEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticDigitalAmericanEngineModel(null)
+    internal new () = new AnalyticDigitalAmericanEngineModel(null)
     member internal this.Inject v = _AnalyticDigitalAmericanEngine.Value <- v
     static member Cast (p : ICell<AnalyticDigitalAmericanEngine>) = 
         if p :? AnalyticDigitalAmericanEngineModel then 

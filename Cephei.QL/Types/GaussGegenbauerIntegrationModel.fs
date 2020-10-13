@@ -56,7 +56,7 @@ type GaussGegenbauerIntegrationModel
 (* 
     casting 
 *)
-    internal new () = GaussGegenbauerIntegrationModel(null,null)
+    internal new () = new GaussGegenbauerIntegrationModel(null,null)
     member internal this.Inject v = _GaussGegenbauerIntegration.Value <- v
     static member Cast (p : ICell<GaussGegenbauerIntegration>) = 
         if p :? GaussGegenbauerIntegrationModel then 

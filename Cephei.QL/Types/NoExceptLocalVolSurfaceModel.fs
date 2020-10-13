@@ -84,7 +84,7 @@ type NoExceptLocalVolSurfaceModel
 (* 
     casting 
 *)
-    internal new () = NoExceptLocalVolSurfaceModel(null,null,null,null,null)
+    internal new () = new NoExceptLocalVolSurfaceModel(null,null,null,null,null)
     member internal this.Inject v = _NoExceptLocalVolSurface.Value <- v
     static member Cast (p : ICell<NoExceptLocalVolSurface>) = 
         if p :? NoExceptLocalVolSurfaceModel then 
@@ -184,7 +184,7 @@ type NoExceptLocalVolSurfaceModel1
 (* 
     casting 
 *)
-    internal new () = NoExceptLocalVolSurfaceModel1(null,null,null,null,null)
+    internal new () = new NoExceptLocalVolSurfaceModel1(null,null,null,null,null)
     member internal this.Inject v = _NoExceptLocalVolSurface.Value <- v
     static member Cast (p : ICell<NoExceptLocalVolSurface>) = 
         if p :? NoExceptLocalVolSurfaceModel1 then 

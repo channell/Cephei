@@ -93,7 +93,7 @@ type GeometricBrownianMotionProcessModel
 (* 
     casting 
 *)
-    internal new () = GeometricBrownianMotionProcessModel(null,null,null)
+    internal new () = new GeometricBrownianMotionProcessModel(null,null,null)
     member internal this.Inject v = _GeometricBrownianMotionProcess.Value <- v
     static member Cast (p : ICell<GeometricBrownianMotionProcess>) = 
         if p :? GeometricBrownianMotionProcessModel then 

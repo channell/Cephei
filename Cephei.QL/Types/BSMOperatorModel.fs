@@ -92,7 +92,7 @@ type BSMOperatorModel
 (* 
     casting 
 *)
-    internal new () = BSMOperatorModel(null,null,null,null,null)
+    internal new () = new BSMOperatorModel(null,null,null,null,null)
     member internal this.Inject v = _BSMOperator.Value <- v
     static member Cast (p : ICell<BSMOperator>) = 
         if p :? BSMOperatorModel then 
@@ -202,7 +202,7 @@ type BSMOperatorModel1
 (* 
     casting 
 *)
-    internal new () = BSMOperatorModel1(null,null,null)
+    internal new () = new BSMOperatorModel1(null,null,null)
     member internal this.Inject v = _BSMOperator.Value <- v
     static member Cast (p : ICell<BSMOperator>) = 
         if p :? BSMOperatorModel1 then 

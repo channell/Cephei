@@ -60,7 +60,7 @@ type NonhomogeneousBoundaryConstraintModel
 (* 
     casting 
 *)
-    internal new () = NonhomogeneousBoundaryConstraintModel(null,null)
+    internal new () = new NonhomogeneousBoundaryConstraintModel(null,null)
     member internal this.Inject v = _NonhomogeneousBoundaryConstraint.Value <- v
     static member Cast (p : ICell<NonhomogeneousBoundaryConstraint>) = 
         if p :? NonhomogeneousBoundaryConstraintModel then 

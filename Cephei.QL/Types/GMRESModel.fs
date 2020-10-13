@@ -59,7 +59,7 @@ type GMRESModel
 (* 
     casting 
 *)
-    internal new () = GMRESModel(null,null,null,null)
+    internal new () = new GMRESModel(null,null,null,null)
     member internal this.Inject v = _GMRES.Value <- v
     static member Cast (p : ICell<GMRES>) = 
         if p :? GMRESModel then 

@@ -59,7 +59,7 @@ type EventSetSimulationModel
 (* 
     casting 
 *)
-    internal new () = EventSetSimulationModel(null,null,null,null,null)
+    internal new () = new EventSetSimulationModel(null,null,null,null,null)
     member internal this.Inject v = _EventSetSimulation.Value <- v
     static member Cast (p : ICell<EventSetSimulation>) = 
         if p :? EventSetSimulationModel then 

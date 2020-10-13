@@ -91,7 +91,7 @@ type YYAUCPIModel
 (* 
     casting 
 *)
-    internal new () = YYAUCPIModel(null,null,null)
+    internal new () = new YYAUCPIModel(null,null,null)
     member internal this.Inject v = _YYAUCPI.Value <- v
     static member Cast (p : ICell<YYAUCPI>) = 
         if p :? YYAUCPIModel then 
@@ -205,7 +205,7 @@ type YYAUCPIModel1
 (* 
     casting 
 *)
-    internal new () = YYAUCPIModel1(null,null,null,null)
+    internal new () = new YYAUCPIModel1(null,null,null,null)
     member internal this.Inject v = _YYAUCPI.Value <- v
     static member Cast (p : ICell<YYAUCPI>) = 
         if p :? YYAUCPIModel1 then 

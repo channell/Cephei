@@ -87,7 +87,7 @@ type CoxIngersollRossModel
 (* 
     casting 
 *)
-    internal new () = CoxIngersollRossModel(null,null,null,null)
+    internal new () = new CoxIngersollRossModel(null,null,null,null)
     member internal this.Inject v = _CoxIngersollRoss.Value <- v
     static member Cast (p : ICell<CoxIngersollRoss>) = 
         if p :? CoxIngersollRossModel then 

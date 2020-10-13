@@ -80,7 +80,7 @@ type FixedRateLegModel
 (* 
     casting 
 *)
-    internal new () = FixedRateLegModel(null)
+    internal new () = new FixedRateLegModel(null)
     member internal this.Inject v = _FixedRateLeg.Value <- v
     static member Cast (p : ICell<FixedRateLeg>) = 
         if p :? FixedRateLegModel then 

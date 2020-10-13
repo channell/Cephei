@@ -56,7 +56,7 @@ type ProportionalNotionalRiskModel
 (* 
     casting 
 *)
-    internal new () = ProportionalNotionalRiskModel(null,null,null)
+    internal new () = new ProportionalNotionalRiskModel(null,null,null)
     member internal this.Inject v = _ProportionalNotionalRisk.Value <- v
     static member Cast (p : ICell<ProportionalNotionalRisk>) = 
         if p :? ProportionalNotionalRiskModel then 

@@ -56,7 +56,7 @@ type FlatHazardRateModel
 (* 
     casting 
 *)
-    internal new () = FlatHazardRateModel(null,null,null,null)
+    internal new () = new FlatHazardRateModel(null,null,null,null)
     member internal this.Inject v = _FlatHazardRate.Value <- v
     static member Cast (p : ICell<FlatHazardRate>) = 
         if p :? FlatHazardRateModel then 
@@ -102,7 +102,7 @@ type FlatHazardRateModel1
 (* 
     casting 
 *)
-    internal new () = FlatHazardRateModel1(null,null,null)
+    internal new () = new FlatHazardRateModel1(null,null,null)
     member internal this.Inject v = _FlatHazardRate.Value <- v
     static member Cast (p : ICell<FlatHazardRate>) = 
         if p :? FlatHazardRateModel1 then 
@@ -147,7 +147,7 @@ type FlatHazardRateModel2
 (* 
     casting 
 *)
-    internal new () = FlatHazardRateModel2(null,null,null)
+    internal new () = new FlatHazardRateModel2(null,null,null)
     member internal this.Inject v = _FlatHazardRate.Value <- v
     static member Cast (p : ICell<FlatHazardRate>) = 
         if p :? FlatHazardRateModel2 then 
@@ -194,7 +194,7 @@ type FlatHazardRateModel3
 (* 
     casting 
 *)
-    internal new () = FlatHazardRateModel3(null,null,null,null)
+    internal new () = new FlatHazardRateModel3(null,null,null,null)
     member internal this.Inject v = _FlatHazardRate.Value <- v
     static member Cast (p : ICell<FlatHazardRate>) = 
         if p :? FlatHazardRateModel3 then 

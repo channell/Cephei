@@ -69,7 +69,7 @@ type DeltaVolQuoteModel
 (* 
     casting 
 *)
-    internal new () = DeltaVolQuoteModel(null,null,null,null)
+    internal new () = new DeltaVolQuoteModel(null,null,null,null)
     member internal this.Inject v = _DeltaVolQuote.Value <- v
     static member Cast (p : ICell<DeltaVolQuote>) = 
         if p :? DeltaVolQuoteModel then 
@@ -140,7 +140,7 @@ type DeltaVolQuoteModel1
 (* 
     casting 
 *)
-    internal new () = DeltaVolQuoteModel1(null,null,null,null)
+    internal new () = new DeltaVolQuoteModel1(null,null,null,null)
     member internal this.Inject v = _DeltaVolQuote.Value <- v
     static member Cast (p : ICell<DeltaVolQuote>) = 
         if p :? DeltaVolQuoteModel1 then 

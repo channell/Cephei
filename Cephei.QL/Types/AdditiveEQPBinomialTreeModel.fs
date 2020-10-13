@@ -121,7 +121,7 @@ type AdditiveEQPBinomialTreeModel1
 (* 
     casting 
 *)
-    internal new () = AdditiveEQPBinomialTreeModel1(null,null,null,null)
+    internal new () = new AdditiveEQPBinomialTreeModel1(null,null,null,null)
     member internal this.Inject v = _AdditiveEQPBinomialTree.Value <- v
     static member Cast (p : ICell<AdditiveEQPBinomialTree>) = 
         if p :? AdditiveEQPBinomialTreeModel1 then 

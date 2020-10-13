@@ -60,7 +60,7 @@ type PdeShortRateModel
 (* 
     casting 
 *)
-    internal new () = PdeShortRateModel(null)
+    internal new () = new PdeShortRateModel(null)
     member internal this.Inject v = _PdeShortRate.Value <- v
     static member Cast (p : ICell<PdeShortRate>) = 
         if p :? PdeShortRateModel then 

@@ -82,7 +82,7 @@ type InvalidPriceSignExceptionModel1
 (* 
     casting 
 *)
-    internal new () = InvalidPriceSignExceptionModel1(null)
+    internal new () = new InvalidPriceSignExceptionModel1(null)
     member internal this.Inject v = _InvalidPriceSignException.Value <- v
     static member Cast (p : ICell<InvalidPriceSignException>) = 
         if p :? InvalidPriceSignExceptionModel1 then 
@@ -121,7 +121,7 @@ type InvalidPriceSignExceptionModel2
 (* 
     casting 
 *)
-    internal new () = InvalidPriceSignExceptionModel2(null,null)
+    internal new () = new InvalidPriceSignExceptionModel2(null,null)
     member internal this.Inject v = _InvalidPriceSignException.Value <- v
     static member Cast (p : ICell<InvalidPriceSignException>) = 
         if p :? InvalidPriceSignExceptionModel2 then 

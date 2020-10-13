@@ -65,7 +65,7 @@ type CompositeInstrumentModel
 (* 
     casting 
 *)
-    internal new () = CompositeInstrumentModel(null,null)
+    internal new () = new CompositeInstrumentModel(null,null)
     member internal this.Inject v = _CompositeInstrument.Value <- v
     static member Cast (p : ICell<CompositeInstrument>) = 
         if p :? CompositeInstrumentModel then 

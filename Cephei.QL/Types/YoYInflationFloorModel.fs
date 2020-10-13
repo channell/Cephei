@@ -78,7 +78,7 @@ type YoYInflationFloorModel
 (* 
     casting 
 *)
-    internal new () = YoYInflationFloorModel(null,null,null,null)
+    internal new () = new YoYInflationFloorModel(null,null,null,null)
     member internal this.Inject v = _YoYInflationFloor.Value <- v
     static member Cast (p : ICell<YoYInflationFloor>) = 
         if p :? YoYInflationFloorModel then 

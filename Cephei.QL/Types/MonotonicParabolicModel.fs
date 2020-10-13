@@ -79,7 +79,7 @@ type MonotonicParabolicModel
 (* 
     casting 
 *)
-    internal new () = MonotonicParabolicModel(null,null,null)
+    internal new () = new MonotonicParabolicModel(null,null,null)
     member internal this.Inject v = _MonotonicParabolic.Value <- v
     static member Cast (p : ICell<MonotonicParabolic>) = 
         if p :? MonotonicParabolicModel then 

@@ -77,7 +77,7 @@ type OISRateHelperModel
 (* 
     casting 
 *)
-    internal new () = OISRateHelperModel(null,null,null,null)
+    internal new () = new OISRateHelperModel(null,null,null,null)
     member internal this.Inject v = _OISRateHelper.Value <- v
     static member Cast (p : ICell<OISRateHelper>) = 
         if p :? OISRateHelperModel then 

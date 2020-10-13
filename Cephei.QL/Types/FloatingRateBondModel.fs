@@ -109,7 +109,7 @@ type FloatingRateBondModel
 (* 
     casting 
 *)
-    internal new () = FloatingRateBondModel(null,null,null,null,null,null,null)
+    internal new () = new FloatingRateBondModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingRateBond.Value <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
         if p :? FloatingRateBondModel then 
@@ -267,7 +267,7 @@ type FloatingRateBondModel1
 (* 
     casting 
 *)
-    internal new () = FloatingRateBondModel1(null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FloatingRateBondModel1(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingRateBond.Value <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
         if p :? FloatingRateBondModel1 then 
@@ -439,7 +439,7 @@ type FloatingRateBondModel2
 (* 
     casting 
 *)
-    internal new () = FloatingRateBondModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FloatingRateBondModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingRateBond.Value <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
         if p :? FloatingRateBondModel2 then 
@@ -630,7 +630,7 @@ type FloatingRateBondModel3
 (* 
     casting 
 *)
-    internal new () = FloatingRateBondModel3(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FloatingRateBondModel3(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingRateBond.Value <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
         if p :? FloatingRateBondModel3 then 

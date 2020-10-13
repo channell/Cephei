@@ -98,7 +98,7 @@ type Euribor5MModel
 (* 
     casting 
 *)
-    internal new () = Euribor5MModel(null)
+    internal new () = new Euribor5MModel(null)
     member internal this.Inject v = _Euribor5M.Value <- v
     static member Cast (p : ICell<Euribor5M>) = 
         if p :? Euribor5MModel then 

@@ -133,7 +133,7 @@ type MBSFixedRateBondModel
 (* 
     casting 
 *)
-    internal new () = MBSFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new MBSFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _MBSFixedRateBond.Value <- v
     static member Cast (p : ICell<MBSFixedRateBond>) = 
         if p :? MBSFixedRateBondModel then 

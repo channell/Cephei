@@ -61,7 +61,7 @@ type DouglasSchemeModel
 (* 
     casting 
 *)
-    internal new () = DouglasSchemeModel(null,null,null)
+    internal new () = new DouglasSchemeModel(null,null,null)
     member internal this.Inject v = _DouglasScheme.Value <- v
     static member Cast (p : ICell<DouglasScheme>) = 
         if p :? DouglasSchemeModel then 

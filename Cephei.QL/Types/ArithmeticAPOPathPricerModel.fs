@@ -57,7 +57,7 @@ type ArithmeticAPOPathPricerModel
 (* 
     casting 
 *)
-    internal new () = ArithmeticAPOPathPricerModel(null,null,null)
+    internal new () = new ArithmeticAPOPathPricerModel(null,null,null)
     member internal this.Inject v = _ArithmeticAPOPathPricer.Value <- v
     static member Cast (p : ICell<ArithmeticAPOPathPricer>) = 
         if p :? ArithmeticAPOPathPricerModel then 
@@ -110,7 +110,7 @@ type ArithmeticAPOPathPricerModel1
 (* 
     casting 
 *)
-    internal new () = ArithmeticAPOPathPricerModel1(null,null,null,null)
+    internal new () = new ArithmeticAPOPathPricerModel1(null,null,null,null)
     member internal this.Inject v = _ArithmeticAPOPathPricer.Value <- v
     static member Cast (p : ICell<ArithmeticAPOPathPricer>) = 
         if p :? ArithmeticAPOPathPricerModel1 then 
@@ -166,7 +166,7 @@ type ArithmeticAPOPathPricerModel2
 (* 
     casting 
 *)
-    internal new () = ArithmeticAPOPathPricerModel2(null,null,null,null,null)
+    internal new () = new ArithmeticAPOPathPricerModel2(null,null,null,null,null)
     member internal this.Inject v = _ArithmeticAPOPathPricer.Value <- v
     static member Cast (p : ICell<ArithmeticAPOPathPricer>) = 
         if p :? ArithmeticAPOPathPricerModel2 then 

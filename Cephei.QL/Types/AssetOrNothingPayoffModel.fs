@@ -60,7 +60,7 @@ type AssetOrNothingPayoffModel
 (* 
     casting 
 *)
-    internal new () = AssetOrNothingPayoffModel(null,null)
+    internal new () = new AssetOrNothingPayoffModel(null,null)
     member internal this.Inject v = _AssetOrNothingPayoff.Value <- v
     static member Cast (p : ICell<AssetOrNothingPayoff>) = 
         if p :? AssetOrNothingPayoffModel then 

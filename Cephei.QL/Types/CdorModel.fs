@@ -100,7 +100,7 @@ type CdorModel
 (* 
     casting 
 *)
-    internal new () = CdorModel(null,null)
+    internal new () = new CdorModel(null,null)
     member internal this.Inject v = _Cdor.Value <- v
     static member Cast (p : ICell<Cdor>) = 
         if p :? CdorModel then 
@@ -229,7 +229,7 @@ type CdorModel1
 (* 
     casting 
 *)
-    internal new () = CdorModel1(null)
+    internal new () = new CdorModel1(null)
     member internal this.Inject v = _Cdor.Value <- v
     static member Cast (p : ICell<Cdor>) = 
         if p :? CdorModel1 then 

@@ -60,7 +60,7 @@ type ConvexMonotoneModel
 (* 
     casting 
 *)
-    internal new () = ConvexMonotoneModel(null,null,null)
+    internal new () = new ConvexMonotoneModel(null,null,null)
     member internal this.Inject v = _ConvexMonotone.Value <- v
     static member Cast (p : ICell<ConvexMonotone>) = 
         if p :? ConvexMonotoneModel then 

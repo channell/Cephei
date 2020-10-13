@@ -61,7 +61,7 @@ type MinBasketPayoffModel
 (* 
     casting 
 *)
-    internal new () = MinBasketPayoffModel(null)
+    internal new () = new MinBasketPayoffModel(null)
     member internal this.Inject v = _MinBasketPayoff.Value <- v
     static member Cast (p : ICell<MinBasketPayoff>) = 
         if p :? MinBasketPayoffModel then 

@@ -98,7 +98,7 @@ type NumericHaganPricerModel
 (* 
     casting 
 *)
-    internal new () = NumericHaganPricerModel(null,null,null,null,null,null,null)
+    internal new () = new NumericHaganPricerModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _NumericHaganPricer.Value <- v
     static member Cast (p : ICell<NumericHaganPricer>) = 
         if p :? NumericHaganPricerModel then 

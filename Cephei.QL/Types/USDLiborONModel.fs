@@ -222,7 +222,7 @@ type USDLiborONModel1
 (* 
     casting 
 *)
-    internal new () = USDLiborONModel1(null)
+    internal new () = new USDLiborONModel1(null)
     member internal this.Inject v = _USDLiborON.Value <- v
     static member Cast (p : ICell<USDLiborON>) = 
         if p :? USDLiborONModel1 then 

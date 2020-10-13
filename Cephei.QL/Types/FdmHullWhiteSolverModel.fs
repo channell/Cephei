@@ -61,7 +61,7 @@ type FdmHullWhiteSolverModel
 (* 
     casting 
 *)
-    internal new () = FdmHullWhiteSolverModel(null,null,null)
+    internal new () = new FdmHullWhiteSolverModel(null,null,null)
     member internal this.Inject v = _FdmHullWhiteSolver.Value <- v
     static member Cast (p : ICell<FdmHullWhiteSolver>) = 
         if p :? FdmHullWhiteSolverModel then 

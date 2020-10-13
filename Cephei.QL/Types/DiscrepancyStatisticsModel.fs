@@ -102,7 +102,7 @@ type DiscrepancyStatisticsModel
 (* 
     casting 
 *)
-    internal new () = DiscrepancyStatisticsModel(null)
+    internal new () = new DiscrepancyStatisticsModel(null)
     member internal this.Inject v = _DiscrepancyStatistics.Value <- v
     static member Cast (p : ICell<DiscrepancyStatistics>) = 
         if p :? DiscrepancyStatisticsModel then 

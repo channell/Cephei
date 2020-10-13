@@ -79,7 +79,7 @@ type SecondOrderMixedDerivativeOpModel
 (* 
     casting 
 *)
-    internal new () = SecondOrderMixedDerivativeOpModel(null,null,null)
+    internal new () = new SecondOrderMixedDerivativeOpModel(null,null,null)
     member internal this.Inject v = _SecondOrderMixedDerivativeOp.Value <- v
     static member Cast (p : ICell<SecondOrderMixedDerivativeOp>) = 
         if p :? SecondOrderMixedDerivativeOpModel then 

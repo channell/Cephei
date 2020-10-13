@@ -49,7 +49,7 @@ type AnalyticDividendEuropeanEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticDividendEuropeanEngineModel(null)
+    internal new () = new AnalyticDividendEuropeanEngineModel(null)
     member internal this.Inject v = _AnalyticDividendEuropeanEngine.Value <- v
     static member Cast (p : ICell<AnalyticDividendEuropeanEngine>) = 
         if p :? AnalyticDividendEuropeanEngineModel then 

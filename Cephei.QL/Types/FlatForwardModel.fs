@@ -87,7 +87,7 @@ type FlatForwardModel
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel(null,null,null)
+    internal new () = new FlatForwardModel(null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel then 
@@ -197,7 +197,7 @@ type FlatForwardModel1
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel1(null,null,null,null)
+    internal new () = new FlatForwardModel1(null,null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel1 then 
@@ -312,7 +312,7 @@ type FlatForwardModel2
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel2(null,null,null,null,null,null)
+    internal new () = new FlatForwardModel2(null,null,null,null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel2 then 
@@ -427,7 +427,7 @@ type FlatForwardModel3
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel3(null,null,null,null,null)
+    internal new () = new FlatForwardModel3(null,null,null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel3 then 
@@ -539,7 +539,7 @@ type FlatForwardModel4
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel4(null,null,null,null)
+    internal new () = new FlatForwardModel4(null,null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel4 then 
@@ -654,7 +654,7 @@ type FlatForwardModel5
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel5(null,null,null,null,null,null)
+    internal new () = new FlatForwardModel5(null,null,null,null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel5 then 
@@ -769,7 +769,7 @@ type FlatForwardModel6
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel6(null,null,null,null,null)
+    internal new () = new FlatForwardModel6(null,null,null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel6 then 
@@ -883,7 +883,7 @@ type FlatForwardModel7
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel7(null,null,null,null,null)
+    internal new () = new FlatForwardModel7(null,null,null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel7 then 
@@ -995,7 +995,7 @@ type FlatForwardModel8
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel8(null,null,null,null)
+    internal new () = new FlatForwardModel8(null,null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel8 then 
@@ -1104,7 +1104,7 @@ type FlatForwardModel9
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel9(null,null,null)
+    internal new () = new FlatForwardModel9(null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel9 then 
@@ -1216,7 +1216,7 @@ type FlatForwardModel10
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel10(null,null,null,null,null)
+    internal new () = new FlatForwardModel10(null,null,null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel10 then 
@@ -1328,7 +1328,7 @@ type FlatForwardModel11
 (* 
     casting 
 *)
-    internal new () = FlatForwardModel11(null,null,null,null)
+    internal new () = new FlatForwardModel11(null,null,null,null)
     member internal this.Inject v = _FlatForward.Value <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel11 then 

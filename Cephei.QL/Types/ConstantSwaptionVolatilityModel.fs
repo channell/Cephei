@@ -133,7 +133,7 @@ type ConstantSwaptionVolatilityModel
 (* 
     casting 
 *)
-    internal new () = ConstantSwaptionVolatilityModel(null,null,null,null,null,null,null)
+    internal new () = new ConstantSwaptionVolatilityModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
     static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
         if p :? ConstantSwaptionVolatilityModel then 
@@ -329,7 +329,7 @@ type ConstantSwaptionVolatilityModel1
 (* 
     casting 
 *)
-    internal new () = ConstantSwaptionVolatilityModel1(null,null,null,null,null,null,null)
+    internal new () = new ConstantSwaptionVolatilityModel1(null,null,null,null,null,null,null)
     member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
     static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
         if p :? ConstantSwaptionVolatilityModel1 then 
@@ -525,7 +525,7 @@ type ConstantSwaptionVolatilityModel2
 (* 
     casting 
 *)
-    internal new () = ConstantSwaptionVolatilityModel2(null,null,null,null,null,null,null)
+    internal new () = new ConstantSwaptionVolatilityModel2(null,null,null,null,null,null,null)
     member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
     static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
         if p :? ConstantSwaptionVolatilityModel2 then 
@@ -721,7 +721,7 @@ type ConstantSwaptionVolatilityModel3
 (* 
     casting 
 *)
-    internal new () = ConstantSwaptionVolatilityModel3(null,null,null,null,null,null,null)
+    internal new () = new ConstantSwaptionVolatilityModel3(null,null,null,null,null,null,null)
     member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
     static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
         if p :? ConstantSwaptionVolatilityModel3 then 

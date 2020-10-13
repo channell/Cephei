@@ -63,7 +63,7 @@ type TrinomialTreeModel
 (* 
     casting 
 *)
-    internal new () = TrinomialTreeModel(null,null)
+    internal new () = new TrinomialTreeModel(null,null)
     member internal this.Inject v = _TrinomialTree.Value <- v
     static member Cast (p : ICell<TrinomialTree>) = 
         if p :? TrinomialTreeModel then 
@@ -129,7 +129,7 @@ type TrinomialTreeModel1
 (* 
     casting 
 *)
-    internal new () = TrinomialTreeModel1(null,null,null)
+    internal new () = new TrinomialTreeModel1(null,null,null)
     member internal this.Inject v = _TrinomialTree.Value <- v
     static member Cast (p : ICell<TrinomialTree>) = 
         if p :? TrinomialTreeModel1 then 

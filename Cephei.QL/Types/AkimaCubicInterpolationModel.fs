@@ -79,7 +79,7 @@ type AkimaCubicInterpolationModel
 (* 
     casting 
 *)
-    internal new () = AkimaCubicInterpolationModel(null,null,null)
+    internal new () = new AkimaCubicInterpolationModel(null,null,null)
     member internal this.Inject v = _AkimaCubicInterpolation.Value <- v
     static member Cast (p : ICell<AkimaCubicInterpolation>) = 
         if p :? AkimaCubicInterpolationModel then 

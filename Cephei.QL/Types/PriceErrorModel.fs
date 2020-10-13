@@ -57,7 +57,7 @@ type PriceErrorModel
 (* 
     casting 
 *)
-    internal new () = PriceErrorModel(null,null,null)
+    internal new () = new PriceErrorModel(null,null,null)
     member internal this.Inject v = _PriceError.Value <- v
     static member Cast (p : ICell<PriceError>) = 
         if p :? PriceErrorModel then 

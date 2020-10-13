@@ -57,7 +57,7 @@ type AmericanExerciseModel
 (* 
     casting 
 *)
-    internal new () = AmericanExerciseModel(null,null)
+    internal new () = new AmericanExerciseModel(null,null)
     member internal this.Inject v = _AmericanExercise.Value <- v
     static member Cast (p : ICell<AmericanExercise>) = 
         if p :? AmericanExerciseModel then 
@@ -111,7 +111,7 @@ type AmericanExerciseModel1
 (* 
     casting 
 *)
-    internal new () = AmericanExerciseModel1(null,null,null)
+    internal new () = new AmericanExerciseModel1(null,null,null)
     member internal this.Inject v = _AmericanExercise.Value <- v
     static member Cast (p : ICell<AmericanExercise>) = 
         if p :? AmericanExerciseModel1 then 

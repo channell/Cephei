@@ -127,7 +127,7 @@ type CmsRateBondModel
 (* 
     casting 
 *)
-    internal new () = CmsRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CmsRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CmsRateBond.Value <- v
     static member Cast (p : ICell<CmsRateBond>) = 
         if p :? CmsRateBondModel then 

@@ -51,7 +51,7 @@ type DiscountingBasisSwapEngineModel
 (* 
     casting 
 *)
-    internal new () = DiscountingBasisSwapEngineModel(null,null)
+    internal new () = new DiscountingBasisSwapEngineModel(null,null)
     member internal this.Inject v = _DiscountingBasisSwapEngine.Value <- v
     static member Cast (p : ICell<DiscountingBasisSwapEngine>) = 
         if p :? DiscountingBasisSwapEngineModel then 

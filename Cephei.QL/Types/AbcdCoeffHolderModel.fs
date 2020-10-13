@@ -75,7 +75,7 @@ type AbcdCoeffHolderModel
 (* 
     casting 
 *)
-    internal new () = AbcdCoeffHolderModel(null,null,null,null,null,null,null,null)
+    internal new () = new AbcdCoeffHolderModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AbcdCoeffHolder.Value <- v
     static member Cast (p : ICell<AbcdCoeffHolder>) = 
         if p :? AbcdCoeffHolderModel then 

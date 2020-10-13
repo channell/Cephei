@@ -98,7 +98,7 @@ type GBPLiborONModel
 (* 
     casting 
 *)
-    internal new () = GBPLiborONModel(null)
+    internal new () = new GBPLiborONModel(null)
     member internal this.Inject v = _GBPLiborON.Value <- v
     static member Cast (p : ICell<GBPLiborON>) = 
         if p :? GBPLiborONModel then 

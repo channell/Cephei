@@ -74,7 +74,7 @@ type BachelierYoYInflationCouponPricerModel
 (* 
     casting 
 *)
-    internal new () = BachelierYoYInflationCouponPricerModel(null)
+    internal new () = new BachelierYoYInflationCouponPricerModel(null)
     member internal this.Inject v = _BachelierYoYInflationCouponPricer.Value <- v
     static member Cast (p : ICell<BachelierYoYInflationCouponPricer>) = 
         if p :? BachelierYoYInflationCouponPricerModel then 

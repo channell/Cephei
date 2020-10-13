@@ -81,7 +81,7 @@ type StochasticProcessArrayModel
 (* 
     casting 
 *)
-    internal new () = StochasticProcessArrayModel(null,null)
+    internal new () = new StochasticProcessArrayModel(null,null)
     member internal this.Inject v = _StochasticProcessArray.Value <- v
     static member Cast (p : ICell<StochasticProcessArray>) = 
         if p :? StochasticProcessArrayModel then 

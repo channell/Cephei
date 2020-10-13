@@ -57,7 +57,7 @@ type MonthlyYieldFinderModel
 (* 
     casting 
 *)
-    internal new () = MonthlyYieldFinderModel(null,null,null)
+    internal new () = new MonthlyYieldFinderModel(null,null,null)
     member internal this.Inject v = _MonthlyYieldFinder.Value <- v
     static member Cast (p : ICell<MonthlyYieldFinder>) = 
         if p :? MonthlyYieldFinderModel then 

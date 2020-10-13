@@ -56,7 +56,7 @@ type DownRoundingModel
 (* 
     casting 
 *)
-    internal new () = DownRoundingModel(null,null)
+    internal new () = new DownRoundingModel(null,null)
     member internal this.Inject v = _DownRounding.Value <- v
     static member Cast (p : ICell<DownRounding>) = 
         if p :? DownRoundingModel then 
@@ -104,7 +104,7 @@ type DownRoundingModel1
 (* 
     casting 
 *)
-    internal new () = DownRoundingModel1(null)
+    internal new () = new DownRoundingModel1(null)
     member internal this.Inject v = _DownRounding.Value <- v
     static member Cast (p : ICell<DownRounding>) = 
         if p :? DownRoundingModel1 then 

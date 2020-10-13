@@ -51,7 +51,7 @@ type BFGSModel
 (* 
     casting 
 *)
-    internal new () = BFGSModel(null)
+    internal new () = new BFGSModel(null)
     member internal this.Inject v = _BFGS.Value <- v
     static member Cast (p : ICell<BFGS>) = 
         if p :? BFGSModel then 

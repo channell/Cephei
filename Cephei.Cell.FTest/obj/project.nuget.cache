@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "EpwCPZ9leboIHnb1PNJwwcwOLjlIDI5CR9T3YegVQFavIG/GjsbwlWGnXs0UUNYhX4zPIuHBzUva24IegnsarA==",
+  "dgSpecHash": "IPl+Fdwx2jN5QnnbvQ4Qraz9gGJsWk7cXgPS0Damq7aKT7vSdq4c7UBBBm4LLfTsn685XCepcakgg8XdLZu89A==",
   "success": true,
   "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell.FTest\\Cephei.Cell.Test.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\ilgpu\\0.9.1\\ilgpu.0.9.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\3.0.0\\microsoft.aspnetcore.connections.abstractions.3.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.0.0\\microsoft.aspnetcore.http.features.3.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
@@ -55,13 +56,13 @@
     "C:\\Users\\steve\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\serilog\\2.9.0\\serilog.2.9.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\serilog.sinks.file\\4.1.0\\serilog.sinks.file.4.1.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.collections.immutable\\1.7.0\\system.collections.immutable.1.7.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
@@ -86,7 +87,7 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.io.pipelines\\4.7.0\\system.io.pipelines.4.7.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.net.http\\4.3.0\\system.net.http.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.net.primitives\\4.3.0\\system.net.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.net.sockets\\4.3.0\\system.net.sockets.4.3.0.nupkg.sha512",
@@ -101,6 +102,7 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",
@@ -129,16 +131,5 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Serilog from 2.10.0 to 2.9.0. Reference the package directly from the project to select a different version. \r\n Cephei.Cell.Test -> Cephei.Cell -> Serilog (>= 2.10.0) \r\n Cephei.Cell.Test -> Serilog (>= 2.9.0)",
-      "libraryId": "Serilog",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }

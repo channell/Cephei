@@ -84,7 +84,7 @@ type CapFloorModel
 (* 
     casting 
 *)
-    internal new () = CapFloorModel(null,null,null,null,null,null)
+    internal new () = new CapFloorModel(null,null,null,null,null,null)
     member internal this.Inject v = _CapFloor.Value <- v
     static member Cast (p : ICell<CapFloor>) = 
         if p :? CapFloorModel then 
@@ -183,7 +183,7 @@ type CapFloorModel1
 (* 
     casting 
 *)
-    internal new () = CapFloorModel1(null,null,null,null,null)
+    internal new () = new CapFloorModel1(null,null,null,null,null)
     member internal this.Inject v = _CapFloor.Value <- v
     static member Cast (p : ICell<CapFloor>) = 
         if p :? CapFloorModel1 then 

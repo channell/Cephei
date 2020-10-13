@@ -88,7 +88,7 @@ type HestonBlackVolSurfaceModel
 (* 
     casting 
 *)
-    internal new () = HestonBlackVolSurfaceModel(null)
+    internal new () = new HestonBlackVolSurfaceModel(null)
     member internal this.Inject v = _HestonBlackVolSurface.Value <- v
     static member Cast (p : ICell<HestonBlackVolSurface>) = 
         if p :? HestonBlackVolSurfaceModel then 

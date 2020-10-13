@@ -49,7 +49,7 @@ type AnalyticBinaryBarrierEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticBinaryBarrierEngineModel(null)
+    internal new () = new AnalyticBinaryBarrierEngineModel(null)
     member internal this.Inject v = _AnalyticBinaryBarrierEngine.Value <- v
     static member Cast (p : ICell<AnalyticBinaryBarrierEngine>) = 
         if p :? AnalyticBinaryBarrierEngineModel then 

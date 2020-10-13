@@ -63,7 +63,7 @@ type FdBlackScholesVanillaEngineModel
 (* 
     casting 
 *)
-    internal new () = FdBlackScholesVanillaEngineModel(null,null,null,null,null,null,null,null)
+    internal new () = new FdBlackScholesVanillaEngineModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FdBlackScholesVanillaEngine.Value <- v
     static member Cast (p : ICell<FdBlackScholesVanillaEngine>) = 
         if p :? FdBlackScholesVanillaEngineModel then 
@@ -123,7 +123,7 @@ type FdBlackScholesVanillaEngineModel1
 (* 
     casting 
 *)
-    internal new () = FdBlackScholesVanillaEngineModel1(null,null,null,null,null,null,null,null,null)
+    internal new () = new FdBlackScholesVanillaEngineModel1(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FdBlackScholesVanillaEngine.Value <- v
     static member Cast (p : ICell<FdBlackScholesVanillaEngine>) = 
         if p :? FdBlackScholesVanillaEngineModel1 then 

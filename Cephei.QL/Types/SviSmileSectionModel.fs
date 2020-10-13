@@ -80,7 +80,7 @@ type SviSmileSectionModel
 (* 
     casting 
 *)
-    internal new () = SviSmileSectionModel(null,null,null)
+    internal new () = new SviSmileSectionModel(null,null,null)
     member internal this.Inject v = _SviSmileSection.Value <- v
     static member Cast (p : ICell<SviSmileSection>) = 
         if p :? SviSmileSectionModel then 
@@ -177,7 +177,7 @@ type SviSmileSectionModel1
 (* 
     casting 
 *)
-    internal new () = SviSmileSectionModel1(null,null,null,null)
+    internal new () = new SviSmileSectionModel1(null,null,null,null)
     member internal this.Inject v = _SviSmileSection.Value <- v
     static member Cast (p : ICell<SviSmileSection>) = 
         if p :? SviSmileSectionModel1 then 

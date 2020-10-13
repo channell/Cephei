@@ -53,7 +53,7 @@ type ConstantCPRModel
 (* 
     casting 
 *)
-    internal new () = ConstantCPRModel(null)
+    internal new () = new ConstantCPRModel(null)
     member internal this.Inject v = _ConstantCPR.Value <- v
     static member Cast (p : ICell<ConstantCPR>) = 
         if p :? ConstantCPRModel then 

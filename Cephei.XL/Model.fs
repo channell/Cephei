@@ -54,7 +54,7 @@ module public  Model =
                 if s.StartsWith("+") then 
                     "+" + (new string (filter))
                 elif s.StartsWith("-") then
-                    "+" + (new string (filter))
+                    "-" + (new string (filter))
                 else
                     new string (filter)
 
@@ -96,9 +96,6 @@ module public  Model =
         else
             null :> IDisposable
 
-    let nextVersion () =
-        _state.Value.Version <- _state.Value.Version + 1
-
     let add (s: string) = 
         if _state.Value.Rtd.ContainsKey(s) then
             let sub = _state.Value.Rtd.[s]
@@ -115,7 +112,10 @@ module public  Model =
                 else
                     c
             cell.Mnemonic <- sub.mnemonic
-            if not (current = cell) then 
+            if (not (current = null)) && cell.GetType() = current.GetType() then
+                current.Clone (cell)
+
+            elif not (current = cell) then 
                 _state.Value.Model.[sub.mnemonic] <- cell
                 _state.Value.Source.[sub.mnemonic] <- sub.source()
                 _state.Value.Subscriber.[sub.mnemonic] <- sub.subscriber
@@ -125,7 +125,7 @@ module public  Model =
     let specify (spec : spec) : obj =
       
         _state.Value.Rtd.[spec.mnemonic] <- spec
-        let xlv = xlInterface.ModelRTD spec.mnemonic ((spec.hash ^^^ _state.Value.Version) .ToString())
+        let xlv = xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString())
         if xlv = null then 
             add spec.mnemonic
             spec.mnemonic :> obj
@@ -161,6 +161,7 @@ module public  Model =
             if _state.Value.Model.TryRemove (s, ref cell2) then
                 if not (cell = null) then
                     cell.Dependants|> Seq.iter (fun d -> if not (d = null) then d.OnChange (CellEvent.Link, cell, DateTime.Now, null ))
+                    cell.Dispose ()
                 _state.Value.Source.TryRemove s |> ignore
                 _state.Value.Subscriber.TryRemove s |> ignore
 
@@ -173,6 +174,36 @@ module public  Model =
 
     let contains mnemonic = 
         _state.Value.Model.ContainsKey mnemonic
+
+    let dependancyMatrix () = 
+
+        let rec deps (cell : ICell) : string list = 
+            cell.Dependants
+            |> Seq.filter (fun i -> i :? ICell)
+            |> Seq.map (fun i -> i :?> ICell)
+            //|> Seq.fold (fun a y -> [y.Mnemonic + "/" + y.GetType().ToString() + "/" + y.GetHashCode().ToString()] @ (deps y) @ a) []
+            |> Seq.fold (fun a y -> [y.Mnemonic + "/" + y.GetType().ToString() + "/" + y.GetHashCode().ToString()] @ a) []
+
+        let depens = 
+            _state.Value.Model
+            |> Seq.map (fun i -> (i.Key + "/" + i.Value.GetType().ToString() + "/" + i.Value.GetHashCode().ToString() , (deps i.Value)))
+            |> Seq.toList
+
+        let size = 
+            let max a b = if a > b then a else b
+            depens 
+            |> List.fold (fun (r,c) (n,l) -> ((r + 1), max (List.length l) c)) (0,0)
+
+        let range = Array2D.create<obj> (fst size) ((snd size) + 1) null
+
+        let listtorow (c : string) (l : string list) (r : int) =
+            l |> List.iteri (fun i s -> Array2D.set range r (i + 1) (s :> obj))
+            Array2D.set range r 0 (c :> obj)
+
+        depens
+        |> List.iteri (fun i (s,l) ->  listtorow s l i )
+
+        range
 
     let sourcecode (name : string) = 
         let tieredCells (model : Model) =

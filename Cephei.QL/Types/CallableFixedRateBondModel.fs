@@ -128,7 +128,7 @@ type CallableFixedRateBondModel
 (* 
     casting 
 *)
-    internal new () = CallableFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CallableFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CallableFixedRateBond.Value <- v
     static member Cast (p : ICell<CallableFixedRateBond>) = 
         if p :? CallableFixedRateBondModel then 

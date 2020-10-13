@@ -1077,6 +1077,11 @@ The source types can be used as-is or as recipes for domain specific implementat
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ILGPU" Version="0.9.1" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj" />
     <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
     <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />

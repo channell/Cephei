@@ -55,7 +55,7 @@ type HestonHullWhitePathPricerModel
 (* 
     casting 
 *)
-    internal new () = HestonHullWhitePathPricerModel(null,null,null)
+    internal new () = new HestonHullWhitePathPricerModel(null,null,null)
     member internal this.Inject v = _HestonHullWhitePathPricer.Value <- v
     static member Cast (p : ICell<HestonHullWhitePathPricer>) = 
         if p :? HestonHullWhitePathPricerModel then 

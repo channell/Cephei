@@ -100,7 +100,7 @@ type ZeroInflationIndexModel
 (* 
     casting 
 *)
-    internal new () = ZeroInflationIndexModel(null,null,null,null,null,null,null,null)
+    internal new () = new ZeroInflationIndexModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ZeroInflationIndex.Value <- v
     static member Cast (p : ICell<ZeroInflationIndex>) = 
         if p :? ZeroInflationIndexModel then 

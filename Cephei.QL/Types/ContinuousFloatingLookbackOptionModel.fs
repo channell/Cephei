@@ -80,7 +80,7 @@ type ContinuousFloatingLookbackOptionModel
 (* 
     casting 
 *)
-    internal new () = ContinuousFloatingLookbackOptionModel(null,null,null,null,null)
+    internal new () = new ContinuousFloatingLookbackOptionModel(null,null,null,null,null)
     member internal this.Inject v = _ContinuousFloatingLookbackOption.Value <- v
     static member Cast (p : ICell<ContinuousFloatingLookbackOption>) = 
         if p :? ContinuousFloatingLookbackOptionModel then 

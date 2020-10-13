@@ -61,7 +61,7 @@ type Fdm1DimSolverModel
 (* 
     casting 
 *)
-    internal new () = Fdm1DimSolverModel(null,null,null)
+    internal new () = new Fdm1DimSolverModel(null,null,null)
     member internal this.Inject v = _Fdm1DimSolver.Value <- v
     static member Cast (p : ICell<Fdm1DimSolver>) = 
         if p :? Fdm1DimSolverModel then 

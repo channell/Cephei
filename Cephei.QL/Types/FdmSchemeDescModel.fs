@@ -67,7 +67,7 @@ type FdmSchemeDescModel
 (* 
     casting 
 *)
-    internal new () = FdmSchemeDescModel(null,null,null)
+    internal new () = new FdmSchemeDescModel(null,null,null)
     member internal this.Inject v = _FdmSchemeDesc.Value <- v
     static member Cast (p : ICell<FdmSchemeDesc>) = 
         if p :? FdmSchemeDescModel then 

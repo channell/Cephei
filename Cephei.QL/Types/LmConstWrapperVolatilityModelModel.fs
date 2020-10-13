@@ -60,7 +60,7 @@ type LmConstWrapperVolatilityModelModel
 (* 
     casting 
 *)
-    internal new () = LmConstWrapperVolatilityModelModel(null)
+    internal new () = new LmConstWrapperVolatilityModelModel(null)
     member internal this.Inject v = _LmConstWrapperVolatilityModel.Value <- v
     static member Cast (p : ICell<LmConstWrapperVolatilityModel>) = 
         if p :? LmConstWrapperVolatilityModelModel then 

@@ -96,7 +96,7 @@ type NormalDistributionModel1
 (* 
     casting 
 *)
-    internal new () = NormalDistributionModel1(null,null)
+    internal new () = new NormalDistributionModel1(null,null)
     member internal this.Inject v = _NormalDistribution.Value <- v
     static member Cast (p : ICell<NormalDistribution>) = 
         if p :? NormalDistributionModel1 then 

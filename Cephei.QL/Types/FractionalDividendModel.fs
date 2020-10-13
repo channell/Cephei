@@ -77,7 +77,7 @@ type FractionalDividendModel
 (* 
     casting 
 *)
-    internal new () = FractionalDividendModel(null,null,null)
+    internal new () = new FractionalDividendModel(null,null,null)
     member internal this.Inject v = _FractionalDividend.Value <- v
     static member Cast (p : ICell<FractionalDividend>) = 
         if p :? FractionalDividendModel then 
@@ -163,7 +163,7 @@ type FractionalDividendModel1
 (* 
     casting 
 *)
-    internal new () = FractionalDividendModel1(null,null)
+    internal new () = new FractionalDividendModel1(null,null)
     member internal this.Inject v = _FractionalDividend.Value <- v
     static member Cast (p : ICell<FractionalDividend>) = 
         if p :? FractionalDividendModel1 then 

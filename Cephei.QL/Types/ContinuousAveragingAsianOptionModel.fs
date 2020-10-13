@@ -80,7 +80,7 @@ type ContinuousAveragingAsianOptionModel
 (* 
     casting 
 *)
-    internal new () = ContinuousAveragingAsianOptionModel(null,null,null,null,null)
+    internal new () = new ContinuousAveragingAsianOptionModel(null,null,null,null,null)
     member internal this.Inject v = _ContinuousAveragingAsianOption.Value <- v
     static member Cast (p : ICell<ContinuousAveragingAsianOption>) = 
         if p :? ContinuousAveragingAsianOptionModel then 

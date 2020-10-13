@@ -65,7 +65,7 @@ type GoldsteinLineSearchModel
 (* 
     casting 
 *)
-    internal new () = GoldsteinLineSearchModel(null,null,null,null)
+    internal new () = new GoldsteinLineSearchModel(null,null,null,null)
     member internal this.Inject v = _GoldsteinLineSearch.Value <- v
     static member Cast (p : ICell<GoldsteinLineSearch>) = 
         if p :? GoldsteinLineSearchModel then 

@@ -63,7 +63,7 @@ type NonLinearLeastSquareModel
 (* 
     casting 
 *)
-    internal new () = NonLinearLeastSquareModel(null,null,null,null)
+    internal new () = new NonLinearLeastSquareModel(null,null,null,null)
     member internal this.Inject v = _NonLinearLeastSquare.Value <- v
     static member Cast (p : ICell<NonLinearLeastSquare>) = 
         if p :? NonLinearLeastSquareModel then 
@@ -120,7 +120,7 @@ type NonLinearLeastSquareModel1
 (* 
     casting 
 *)
-    internal new () = NonLinearLeastSquareModel1(null,null)
+    internal new () = new NonLinearLeastSquareModel1(null,null)
     member internal this.Inject v = _NonLinearLeastSquare.Value <- v
     static member Cast (p : ICell<NonLinearLeastSquare>) = 
         if p :? NonLinearLeastSquareModel1 then 
@@ -177,7 +177,7 @@ type NonLinearLeastSquareModel2
 (* 
     casting 
 *)
-    internal new () = NonLinearLeastSquareModel2(null,null,null)
+    internal new () = new NonLinearLeastSquareModel2(null,null,null)
     member internal this.Inject v = _NonLinearLeastSquare.Value <- v
     static member Cast (p : ICell<NonLinearLeastSquare>) = 
         if p :? NonLinearLeastSquareModel2 then 
@@ -231,7 +231,7 @@ type NonLinearLeastSquareModel3
 (* 
     casting 
 *)
-    internal new () = NonLinearLeastSquareModel3(null)
+    internal new () = new NonLinearLeastSquareModel3(null)
     member internal this.Inject v = _NonLinearLeastSquare.Value <- v
     static member Cast (p : ICell<NonLinearLeastSquare>) = 
         if p :? NonLinearLeastSquareModel3 then 

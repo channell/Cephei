@@ -72,7 +72,7 @@ type FdHullWhiteSwaptionEngineModel
 (* 
     casting 
 *)
-    internal new () = FdHullWhiteSwaptionEngineModel(null,null,null,null,null,null)
+    internal new () = new FdHullWhiteSwaptionEngineModel(null,null,null,null,null,null)
     member internal this.Inject v = _FdHullWhiteSwaptionEngine.Value <- v
     static member Cast (p : ICell<FdHullWhiteSwaptionEngine>) = 
         if p :? FdHullWhiteSwaptionEngineModel then 

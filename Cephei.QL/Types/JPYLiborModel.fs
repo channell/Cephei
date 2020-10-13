@@ -98,7 +98,7 @@ type JPYLiborModel
 (* 
     casting 
 *)
-    internal new () = JPYLiborModel(null)
+    internal new () = new JPYLiborModel(null)
     member internal this.Inject v = _JPYLibor.Value <- v
     static member Cast (p : ICell<JPYLibor>) = 
         if p :? JPYLiborModel then 
@@ -228,7 +228,7 @@ type JPYLiborModel1
 (* 
     casting 
 *)
-    internal new () = JPYLiborModel1(null,null)
+    internal new () = new JPYLiborModel1(null,null)
     member internal this.Inject v = _JPYLibor.Value <- v
     static member Cast (p : ICell<JPYLibor>) = 
         if p :? JPYLiborModel1 then 

@@ -82,7 +82,7 @@ type DiscretizedVanillaOptionModel
 (* 
     casting 
 *)
-    internal new () = DiscretizedVanillaOptionModel(null,null,null)
+    internal new () = new DiscretizedVanillaOptionModel(null,null,null)
     member internal this.Inject v = _DiscretizedVanillaOption.Value <- v
     static member Cast (p : ICell<DiscretizedVanillaOption>) = 
         if p :? DiscretizedVanillaOptionModel then 

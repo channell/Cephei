@@ -95,7 +95,7 @@ type SampledCurveModel
 (* 
     casting 
 *)
-    internal new () = SampledCurveModel(null)
+    internal new () = new SampledCurveModel(null)
     member internal this.Inject v = _SampledCurve.Value <- v
     static member Cast (p : ICell<SampledCurve>) = 
         if p :? SampledCurveModel then 
@@ -214,7 +214,7 @@ type SampledCurveModel1
 (* 
     casting 
 *)
-    internal new () = SampledCurveModel1(null)
+    internal new () = new SampledCurveModel1(null)
     member internal this.Inject v = _SampledCurve.Value <- v
     static member Cast (p : ICell<SampledCurve>) = 
         if p :? SampledCurveModel1 then 

@@ -238,7 +238,7 @@ type IborIndexModel1
 (* 
     casting 
 *)
-    internal new () = IborIndexModel1(null,null,null,null,null,null,null,null,null)
+    internal new () = new IborIndexModel1(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _IborIndex.Value <- v
     static member Cast (p : ICell<IborIndex>) = 
         if p :? IborIndexModel1 then 

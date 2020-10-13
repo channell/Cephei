@@ -59,7 +59,7 @@ type Business252Model
 (* 
     casting 
 *)
-    internal new () = Business252Model(null)
+    internal new () = new Business252Model(null)
     member internal this.Inject v = _Business252.Value <- v
     static member Cast (p : ICell<Business252>) = 
         if p :? Business252Model then 

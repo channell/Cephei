@@ -82,7 +82,7 @@ type DepositRateHelperModel
 (* 
     casting 
 *)
-    internal new () = DepositRateHelperModel(null,null,null,null,null,null,null)
+    internal new () = new DepositRateHelperModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _DepositRateHelper.Value <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel then 
@@ -165,7 +165,7 @@ type DepositRateHelperModel1
 (* 
     casting 
 *)
-    internal new () = DepositRateHelperModel1(null,null)
+    internal new () = new DepositRateHelperModel1(null,null)
     member internal this.Inject v = _DepositRateHelper.Value <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel1 then 
@@ -243,7 +243,7 @@ type DepositRateHelperModel2
 (* 
     casting 
 *)
-    internal new () = DepositRateHelperModel2(null,null)
+    internal new () = new DepositRateHelperModel2(null,null)
     member internal this.Inject v = _DepositRateHelper.Value <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel2 then 
@@ -331,7 +331,7 @@ type DepositRateHelperModel3
 (* 
     casting 
 *)
-    internal new () = DepositRateHelperModel3(null,null,null,null,null,null,null)
+    internal new () = new DepositRateHelperModel3(null,null,null,null,null,null,null)
     member internal this.Inject v = _DepositRateHelper.Value <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel3 then 

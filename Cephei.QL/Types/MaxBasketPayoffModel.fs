@@ -61,7 +61,7 @@ type MaxBasketPayoffModel
 (* 
     casting 
 *)
-    internal new () = MaxBasketPayoffModel(null)
+    internal new () = new MaxBasketPayoffModel(null)
     member internal this.Inject v = _MaxBasketPayoff.Value <- v
     static member Cast (p : ICell<MaxBasketPayoff>) = 
         if p :? MaxBasketPayoffModel then 

@@ -123,7 +123,7 @@ type AverageBMACouponModel
 (* 
     casting 
 *)
-    internal new () = AverageBMACouponModel(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new AverageBMACouponModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AverageBMACoupon.Value <- v
     static member Cast (p : ICell<AverageBMACoupon>) = 
         if p :? AverageBMACouponModel then 

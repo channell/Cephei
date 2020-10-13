@@ -76,7 +76,7 @@ type FlatExtrapolator2DModel
 (* 
     casting 
 *)
-    internal new () = FlatExtrapolator2DModel(null)
+    internal new () = new FlatExtrapolator2DModel(null)
     member internal this.Inject v = _FlatExtrapolator2D.Value <- v
     static member Cast (p : ICell<FlatExtrapolator2D>) = 
         if p :? FlatExtrapolator2DModel then 

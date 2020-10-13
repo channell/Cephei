@@ -86,7 +86,7 @@ type EUHICPModel
 (* 
     casting 
 *)
-    internal new () = EUHICPModel(null)
+    internal new () = new EUHICPModel(null)
     member internal this.Inject v = _EUHICP.Value <- v
     static member Cast (p : ICell<EUHICP>) = 
         if p :? EUHICPModel then 
@@ -192,7 +192,7 @@ type EUHICPModel1
 (* 
     casting 
 *)
-    internal new () = EUHICPModel1(null,null)
+    internal new () = new EUHICPModel1(null,null)
     member internal this.Inject v = _EUHICP.Value <- v
     static member Cast (p : ICell<EUHICP>) = 
         if p :? EUHICPModel1 then 

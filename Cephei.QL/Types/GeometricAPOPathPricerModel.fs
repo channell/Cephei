@@ -55,7 +55,7 @@ type GeometricAPOPathPricerModel
 (* 
     casting 
 *)
-    internal new () = GeometricAPOPathPricerModel(null,null,null)
+    internal new () = new GeometricAPOPathPricerModel(null,null,null)
     member internal this.Inject v = _GeometricAPOPathPricer.Value <- v
     static member Cast (p : ICell<GeometricAPOPathPricer>) = 
         if p :? GeometricAPOPathPricerModel then 
@@ -104,7 +104,7 @@ type GeometricAPOPathPricerModel1
 (* 
     casting 
 *)
-    internal new () = GeometricAPOPathPricerModel1(null,null,null,null)
+    internal new () = new GeometricAPOPathPricerModel1(null,null,null,null)
     member internal this.Inject v = _GeometricAPOPathPricer.Value <- v
     static member Cast (p : ICell<GeometricAPOPathPricer>) = 
         if p :? GeometricAPOPathPricerModel1 then 
@@ -156,7 +156,7 @@ type GeometricAPOPathPricerModel2
 (* 
     casting 
 *)
-    internal new () = GeometricAPOPathPricerModel2(null,null,null,null,null)
+    internal new () = new GeometricAPOPathPricerModel2(null,null,null,null,null)
     member internal this.Inject v = _GeometricAPOPathPricer.Value <- v
     static member Cast (p : ICell<GeometricAPOPathPricer>) = 
         if p :? GeometricAPOPathPricerModel2 then 

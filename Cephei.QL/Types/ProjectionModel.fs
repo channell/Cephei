@@ -55,7 +55,7 @@ type ProjectionModel
 (* 
     casting 
 *)
-    internal new () = ProjectionModel(null,null)
+    internal new () = new ProjectionModel(null,null)
     member internal this.Inject v = _Projection.Value <- v
     static member Cast (p : ICell<Projection>) = 
         if p :? ProjectionModel then 

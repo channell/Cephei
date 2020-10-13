@@ -80,7 +80,7 @@ type VanillaOptionModel
 (* 
     casting 
 *)
-    internal new () = VanillaOptionModel(null,null,null,null)
+    internal new () = new VanillaOptionModel(null,null,null,null)
     member internal this.Inject v = _VanillaOption.Value <- v
     static member Cast (p : ICell<VanillaOption>) = 
         if p :? VanillaOptionModel then 

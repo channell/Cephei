@@ -51,7 +51,7 @@ type MonomialFctModel
 (* 
     casting 
 *)
-    internal new () = MonomialFctModel(null)
+    internal new () = new MonomialFctModel(null)
     member internal this.Inject v = _MonomialFct.Value <- v
     static member Cast (p : ICell<MonomialFct>) = 
         if p :? MonomialFctModel then 

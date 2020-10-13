@@ -54,7 +54,7 @@ type GaussChebyshevIntegrationModel
 (* 
     casting 
 *)
-    internal new () = GaussChebyshevIntegrationModel(null)
+    internal new () = new GaussChebyshevIntegrationModel(null)
     member internal this.Inject v = _GaussChebyshevIntegration.Value <- v
     static member Cast (p : ICell<GaussChebyshevIntegration>) = 
         if p :? GaussChebyshevIntegrationModel then 

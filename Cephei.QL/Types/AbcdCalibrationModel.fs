@@ -168,7 +168,7 @@ type AbcdCalibrationModel1
 (* 
     casting 
 *)
-    internal new () = AbcdCalibrationModel1(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new AbcdCalibrationModel1(null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AbcdCalibration.Value <- v
     static member Cast (p : ICell<AbcdCalibration>) = 
         if p :? AbcdCalibrationModel1 then 

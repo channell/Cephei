@@ -73,7 +73,7 @@ type SpreadOptionModel
 (* 
     casting 
 *)
-    internal new () = SpreadOptionModel(null,null,null,null)
+    internal new () = new SpreadOptionModel(null,null,null,null)
     member internal this.Inject v = _SpreadOption.Value <- v
     static member Cast (p : ICell<SpreadOption>) = 
         if p :? SpreadOptionModel then 

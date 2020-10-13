@@ -63,7 +63,7 @@ type FdmDividendHandlerModel
 (* 
     casting 
 *)
-    internal new () = FdmDividendHandlerModel(null,null,null,null,null)
+    internal new () = new FdmDividendHandlerModel(null,null,null,null,null)
     member internal this.Inject v = _FdmDividendHandler.Value <- v
     static member Cast (p : ICell<FdmDividendHandler>) = 
         if p :? FdmDividendHandlerModel then 

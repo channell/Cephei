@@ -87,7 +87,7 @@ type FuturesRateHelperModel
 (* 
     casting 
 *)
-    internal new () = FuturesRateHelperModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new FuturesRateHelperModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper.Value <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel then 
@@ -180,7 +180,7 @@ type FuturesRateHelperModel1
 (* 
     casting 
 *)
-    internal new () = FuturesRateHelperModel1(null,null,null,null,null)
+    internal new () = new FuturesRateHelperModel1(null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper.Value <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel1 then 
@@ -269,7 +269,7 @@ type FuturesRateHelperModel2
 (* 
     casting 
 *)
-    internal new () = FuturesRateHelperModel2(null,null,null,null,null)
+    internal new () = new FuturesRateHelperModel2(null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper.Value <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel2 then 
@@ -360,7 +360,7 @@ type FuturesRateHelperModel3
 (* 
     casting 
 *)
-    internal new () = FuturesRateHelperModel3(null,null,null,null,null,null)
+    internal new () = new FuturesRateHelperModel3(null,null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper.Value <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel3 then 
@@ -452,7 +452,7 @@ type FuturesRateHelperModel4
 (* 
     casting 
 *)
-    internal new () = FuturesRateHelperModel4(null,null,null,null,null,null)
+    internal new () = new FuturesRateHelperModel4(null,null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper.Value <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel4 then 
@@ -550,7 +550,7 @@ type FuturesRateHelperModel5
 (* 
     casting 
 *)
-    internal new () = FuturesRateHelperModel5(null,null,null,null,null,null,null,null,null)
+    internal new () = new FuturesRateHelperModel5(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper.Value <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel5 then 

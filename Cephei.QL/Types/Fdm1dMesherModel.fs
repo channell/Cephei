@@ -57,7 +57,7 @@ type Fdm1dMesherModel
 (* 
     casting 
 *)
-    internal new () = Fdm1dMesherModel(null)
+    internal new () = new Fdm1dMesherModel(null)
     member internal this.Inject v = _Fdm1dMesher.Value <- v
     static member Cast (p : ICell<Fdm1dMesher>) = 
         if p :? Fdm1dMesherModel then 

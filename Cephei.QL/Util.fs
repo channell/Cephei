@@ -26,10 +26,10 @@ open System
 
 module Util = 
     // Summary: create a value that notifies other cells when the value changes
-    let value v = Cell.CreateValue (v)
+    let value v = Cell.CreateFastValue (v)
 
     // Summary: run calcualtions within in the background
-    let cell (f : unit -> 'f) = Cell.Create (f)
+    let cell (f : unit -> 'f) = Cell.CreateFast (f)
 
     // cretate a trivial cell
     let triv (f : unit -> 'f) = Cell.CreateTrivial (f)

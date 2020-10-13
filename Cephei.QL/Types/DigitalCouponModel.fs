@@ -133,7 +133,7 @@ type DigitalCouponModel
 (* 
     casting 
 *)
-    internal new () = DigitalCouponModel(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new DigitalCouponModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _DigitalCoupon.Value <- v
     static member Cast (p : ICell<DigitalCoupon>) = 
         if p :? DigitalCouponModel then 

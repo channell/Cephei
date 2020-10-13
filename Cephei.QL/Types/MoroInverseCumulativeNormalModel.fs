@@ -53,7 +53,7 @@ type MoroInverseCumulativeNormalModel
 (* 
     casting 
 *)
-    internal new () = MoroInverseCumulativeNormalModel(null,null)
+    internal new () = new MoroInverseCumulativeNormalModel(null,null)
     member internal this.Inject v = _MoroInverseCumulativeNormal.Value <- v
     static member Cast (p : ICell<MoroInverseCumulativeNormal>) = 
         if p :? MoroInverseCumulativeNormalModel then 

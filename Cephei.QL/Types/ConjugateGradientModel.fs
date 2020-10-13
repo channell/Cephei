@@ -51,7 +51,7 @@ type ConjugateGradientModel
 (* 
     casting 
 *)
-    internal new () = ConjugateGradientModel(null)
+    internal new () = new ConjugateGradientModel(null)
     member internal this.Inject v = _ConjugateGradient.Value <- v
     static member Cast (p : ICell<ConjugateGradient>) = 
         if p :? ConjugateGradientModel then 

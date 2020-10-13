@@ -58,7 +58,7 @@ type StrikedTypePayoffModel
 (* 
     casting 
 *)
-    internal new () = StrikedTypePayoffModel(null)
+    internal new () = new StrikedTypePayoffModel(null)
     member internal this.Inject v = _StrikedTypePayoff.Value <- v
     static member Cast (p : ICell<StrikedTypePayoff>) = 
         if p :? StrikedTypePayoffModel then 
@@ -114,7 +114,7 @@ type StrikedTypePayoffModel1
 (* 
     casting 
 *)
-    internal new () = StrikedTypePayoffModel1(null,null)
+    internal new () = new StrikedTypePayoffModel1(null,null)
     member internal this.Inject v = _StrikedTypePayoff.Value <- v
     static member Cast (p : ICell<StrikedTypePayoff>) = 
         if p :? StrikedTypePayoffModel1 then 

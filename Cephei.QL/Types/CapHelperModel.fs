@@ -82,7 +82,7 @@ type CapHelperModel
 (* 
     casting 
 *)
-    internal new () = CapHelperModel(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CapHelperModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CapHelper.Value <- v
     static member Cast (p : ICell<CapHelper>) = 
         if p :? CapHelperModel then 

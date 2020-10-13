@@ -61,7 +61,7 @@ type LPP3HestonExpansionModel
 (* 
     casting 
 *)
-    internal new () = LPP3HestonExpansionModel(null,null,null,null,null,null)
+    internal new () = new LPP3HestonExpansionModel(null,null,null,null,null,null)
     member internal this.Inject v = _LPP3HestonExpansion.Value <- v
     static member Cast (p : ICell<LPP3HestonExpansion>) = 
         if p :? LPP3HestonExpansionModel then 

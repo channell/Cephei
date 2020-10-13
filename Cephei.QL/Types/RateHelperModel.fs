@@ -70,7 +70,7 @@ type RateHelperModel
 (* 
     casting 
 *)
-    internal new () = RateHelperModel(null)
+    internal new () = new RateHelperModel(null)
     member internal this.Inject v = _RateHelper.Value <- v
     static member Cast (p : ICell<RateHelper>) = 
         if p :? RateHelperModel then 
@@ -145,7 +145,7 @@ type RateHelperModel1
 (* 
     casting 
 *)
-    internal new () = RateHelperModel1(null)
+    internal new () = new RateHelperModel1(null)
     member internal this.Inject v = _RateHelper.Value <- v
     static member Cast (p : ICell<RateHelper>) = 
         if p :? RateHelperModel1 then 

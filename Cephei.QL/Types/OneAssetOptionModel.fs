@@ -78,7 +78,7 @@ type OneAssetOptionModel
 (* 
     casting 
 *)
-    internal new () = OneAssetOptionModel(null,null,null,null)
+    internal new () = new OneAssetOptionModel(null,null,null,null)
     member internal this.Inject v = _OneAssetOption.Value <- v
     static member Cast (p : ICell<OneAssetOption>) = 
         if p :? OneAssetOptionModel then 

@@ -88,7 +88,7 @@ type OptionletStripper1Model
 (* 
     casting 
 *)
-    internal new () = OptionletStripper1Model(null,null,null,null,null,null,null,null,null)
+    internal new () = new OptionletStripper1Model(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _OptionletStripper1.Value <- v
     static member Cast (p : ICell<OptionletStripper1>) = 
         if p :? OptionletStripper1Model then 

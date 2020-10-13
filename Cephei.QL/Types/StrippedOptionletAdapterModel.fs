@@ -92,7 +92,7 @@ type StrippedOptionletAdapterModel
 (* 
     casting 
 *)
-    internal new () = StrippedOptionletAdapterModel(null)
+    internal new () = new StrippedOptionletAdapterModel(null)
     member internal this.Inject v = _StrippedOptionletAdapter.Value <- v
     static member Cast (p : ICell<StrippedOptionletAdapter>) = 
         if p :? StrippedOptionletAdapterModel then 

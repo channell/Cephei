@@ -86,7 +86,7 @@ type CmsSpreadLegModel
 (* 
     casting 
 *)
-    internal new () = CmsSpreadLegModel(null,null)
+    internal new () = new CmsSpreadLegModel(null,null)
     member internal this.Inject v = _CmsSpreadLeg.Value <- v
     static member Cast (p : ICell<CmsSpreadLeg>) = 
         if p :? CmsSpreadLegModel then 

@@ -104,7 +104,7 @@ type DigitalCmsLegModel
 (* 
     casting 
 *)
-    internal new () = DigitalCmsLegModel(null,null)
+    internal new () = new DigitalCmsLegModel(null,null)
     member internal this.Inject v = _DigitalCmsLeg.Value <- v
     static member Cast (p : ICell<DigitalCmsLeg>) = 
         if p :? DigitalCmsLegModel then 

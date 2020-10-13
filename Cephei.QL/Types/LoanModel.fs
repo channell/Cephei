@@ -63,7 +63,7 @@ type LoanModel
 (* 
     casting 
 *)
-    internal new () = LoanModel(null,null,null)
+    internal new () = new LoanModel(null,null,null)
     member internal this.Inject v = _Loan.Value <- v
     static member Cast (p : ICell<Loan>) = 
         if p :? LoanModel then 

@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\Project.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Project.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Project : ProjectBase
     {
@@ -30,7 +30,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\Project.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Project.tt"
 /*
 Name:           Project.cst
 Author:         Stephen Channell
@@ -40,7 +40,7 @@ Description:    Generate all the interfaces and factories for CepheiFace
             #line default
             #line hidden
             
-            #line 17 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\Project.tt"
+            #line 17 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Project.tt"
 
 
     Context.RootName = RootPackageName;
@@ -67,14 +67,14 @@ Description:    Generate all the interfaces and factories for CepheiFace
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>");
             
-            #line 38 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\Project.tt"
+            #line 38 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ProjectName));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 39 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\Project.tt"
+            #line 39 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ProjectName));
             
             #line default
@@ -115,7 +115,7 @@ Description:    Generate all the interfaces and factories for CepheiFace
                     "es\\AssemblyInfo.cs\" />\r\n    <Compile Include=\"UpdateMessage.cs\" />\r\n    <Compile" +
                     " Include=\"DataModel.cs\" />\r\n");
             
-            #line 105 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\Project.tt"
+            #line 105 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetPackage (Context.RootTree, RootPackageName, "\t")));
             
             #line default
@@ -158,7 +158,7 @@ Description:    Generate all the interfaces and factories for CepheiFace
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 139 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\Project.tt"
+        #line 139 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Project.tt"
 
 
 string GetPackage(Package rootPackage,  string nameSpace, string tabs)
@@ -215,7 +215,7 @@ string GetPackage2(Package package, Package rootPackage,  string nameSpace, stri
         #line default
         #line hidden
         
-        #line 191 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\Project.tt"
+        #line 191 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Project.tt"
 
 		public Context Context;
 
@@ -239,7 +239,7 @@ string GetPackage2(Package package, Package rootPackage,  string nameSpace, stri
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\Project.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\Project.tt"
 
 private string _RootPackageNameField;
 

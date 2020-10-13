@@ -91,7 +91,7 @@ type HullWhiteProcessModel
 (* 
     casting 
 *)
-    internal new () = HullWhiteProcessModel(null,null,null)
+    internal new () = new HullWhiteProcessModel(null,null,null)
     member internal this.Inject v = _HullWhiteProcess.Value <- v
     static member Cast (p : ICell<HullWhiteProcess>) = 
         if p :? HullWhiteProcessModel then 

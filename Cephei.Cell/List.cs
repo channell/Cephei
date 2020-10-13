@@ -2,6 +2,7 @@
  * Copyright Cepheis Ltd 2020 
  * All rights reserves
  */
+using Microsoft.FSharp.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -59,6 +60,19 @@ namespace Cephei.Cell
         {
             _list = new System.Collections.Generic.List<Generic.ICell<T>>(capacity);
         }
+
+        public FSharpFunc<Unit, T> Function
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        public void Clone(ICell source)
+        {
+        }
+
 
         #region Cell
         public IList<Generic.ICell<T>> Value
@@ -289,5 +303,15 @@ namespace Cephei.Cell
         }
 
         #endregion
+        public void Notify(ICell listener)
+        {
+            Change += listener.OnChange;
+        }
+
+        public void UnNotify(ICell listener)
+        {
+            Change -= listener.OnChange;
+        }
+
     }
 }

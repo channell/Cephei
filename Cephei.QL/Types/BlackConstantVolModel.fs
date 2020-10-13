@@ -58,7 +58,7 @@ type BlackConstantVolModel
 (* 
     casting 
 *)
-    internal new () = BlackConstantVolModel(null,null,null,null)
+    internal new () = new BlackConstantVolModel(null,null,null,null)
     member internal this.Inject v = _BlackConstantVol.Value <- v
     static member Cast (p : ICell<BlackConstantVol>) = 
         if p :? BlackConstantVolModel then 
@@ -110,7 +110,7 @@ type BlackConstantVolModel1
 (* 
     casting 
 *)
-    internal new () = BlackConstantVolModel1(null,null,null,null)
+    internal new () = new BlackConstantVolModel1(null,null,null,null)
     member internal this.Inject v = _BlackConstantVol.Value <- v
     static member Cast (p : ICell<BlackConstantVol>) = 
         if p :? BlackConstantVolModel1 then 
@@ -162,7 +162,7 @@ type BlackConstantVolModel2
 (* 
     casting 
 *)
-    internal new () = BlackConstantVolModel2(null,null,null,null)
+    internal new () = new BlackConstantVolModel2(null,null,null,null)
     member internal this.Inject v = _BlackConstantVol.Value <- v
     static member Cast (p : ICell<BlackConstantVol>) = 
         if p :? BlackConstantVolModel2 then 
@@ -214,7 +214,7 @@ type BlackConstantVolModel3
 (* 
     casting 
 *)
-    internal new () = BlackConstantVolModel3(null,null,null,null)
+    internal new () = new BlackConstantVolModel3(null,null,null,null)
     member internal this.Inject v = _BlackConstantVol.Value <- v
     static member Cast (p : ICell<BlackConstantVol>) = 
         if p :? BlackConstantVolModel3 then 

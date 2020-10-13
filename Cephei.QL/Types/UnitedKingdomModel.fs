@@ -245,7 +245,7 @@ type UnitedKingdomModel1
 (* 
     casting 
 *)
-    internal new () = UnitedKingdomModel1(null)
+    internal new () = new UnitedKingdomModel1(null)
     member internal this.Inject v = _UnitedKingdom.Value <- v
     static member Cast (p : ICell<UnitedKingdom>) = 
         if p :? UnitedKingdomModel1 then 

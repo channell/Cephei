@@ -60,7 +60,7 @@ type PercentageStrikePayoffModel
 (* 
     casting 
 *)
-    internal new () = PercentageStrikePayoffModel(null,null)
+    internal new () = new PercentageStrikePayoffModel(null,null)
     member internal this.Inject v = _PercentageStrikePayoff.Value <- v
     static member Cast (p : ICell<PercentageStrikePayoff>) = 
         if p :? PercentageStrikePayoffModel then 

@@ -103,7 +103,7 @@ type FittedBondDiscountCurveModel
 (* 
     casting 
 *)
-    internal new () = FittedBondDiscountCurveModel(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FittedBondDiscountCurveModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FittedBondDiscountCurve.Value <- v
     static member Cast (p : ICell<FittedBondDiscountCurve>) = 
         if p :? FittedBondDiscountCurveModel then 
@@ -233,7 +233,7 @@ type FittedBondDiscountCurveModel1
 (* 
     casting 
 *)
-    internal new () = FittedBondDiscountCurveModel1(null,null,null,null,null,null,null,null,null)
+    internal new () = new FittedBondDiscountCurveModel1(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FittedBondDiscountCurve.Value <- v
     static member Cast (p : ICell<FittedBondDiscountCurve>) = 
         if p :? FittedBondDiscountCurveModel1 then 

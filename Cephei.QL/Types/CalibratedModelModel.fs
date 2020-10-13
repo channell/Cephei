@@ -70,7 +70,7 @@ type CalibratedModelModel
 (* 
     casting 
 *)
-    internal new () = CalibratedModelModel(null)
+    internal new () = new CalibratedModelModel(null)
     member internal this.Inject v = _CalibratedModel.Value <- v
     static member Cast (p : ICell<CalibratedModel>) = 
         if p :? CalibratedModelModel then 

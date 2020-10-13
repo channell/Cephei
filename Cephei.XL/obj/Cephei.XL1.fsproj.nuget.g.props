@@ -16,6 +16,8 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgSystem_Collections_Immutable Condition=" '$(PkgSystem_Collections_Immutable)' == '' ">C:\Users\steve\.nuget\packages\system.collections.immutable\1.7.1</PkgSystem_Collections_Immutable>
+    <PkgILGPU Condition=" '$(PkgILGPU)' == '' ">C:\Users\steve\.nuget\packages\ilgpu\0.9.1</PkgILGPU>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
     <PkgExcelDna_Integration Condition=" '$(PkgExcelDna_Integration)' == '' ">C:\Users\steve\.nuget\packages\exceldna.integration\1.1.0</PkgExcelDna_Integration>
   </PropertyGroup>

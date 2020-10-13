@@ -57,7 +57,7 @@ type IntegralCdsEngineModel
 (* 
     casting 
 *)
-    internal new () = IntegralCdsEngineModel(null,null,null,null,null)
+    internal new () = new IntegralCdsEngineModel(null,null,null,null,null)
     member internal this.Inject v = _IntegralCdsEngine.Value <- v
     static member Cast (p : ICell<IntegralCdsEngine>) = 
         if p :? IntegralCdsEngineModel then 

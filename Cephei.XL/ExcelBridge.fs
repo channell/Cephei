@@ -21,10 +21,6 @@ type ModelRTD ()  =
         let hc = topicInfo.[1]
 
         let dispatch () : unit = 
-            // update all topics when Cephei verseion changes
-            if mnemonic = "CepheiVersion" || mnemonic = "CepheiRecalc" then
-                Model.nextVersion ()
-                _topics |> Seq.iter (fun i -> i.Key.UpdateValue (i.Value))
             _topics.[topic] <- mnemonic
             if _topicIndex.ContainsKey (mnemonic) then 
                 _topicIndex.[mnemonic] <- [topic] @ _topicIndex.[mnemonic]

@@ -82,7 +82,7 @@ type ZeroCouponInflationSwapHelperModel
 (* 
     casting 
 *)
-    internal new () = ZeroCouponInflationSwapHelperModel(null,null,null,null,null,null,null)
+    internal new () = new ZeroCouponInflationSwapHelperModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _ZeroCouponInflationSwapHelper.Value <- v
     static member Cast (p : ICell<ZeroCouponInflationSwapHelper>) = 
         if p :? ZeroCouponInflationSwapHelperModel then 

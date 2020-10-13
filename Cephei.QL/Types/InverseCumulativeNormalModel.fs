@@ -90,7 +90,7 @@ type InverseCumulativeNormalModel1
 (* 
     casting 
 *)
-    internal new () = InverseCumulativeNormalModel1(null,null)
+    internal new () = new InverseCumulativeNormalModel1(null,null)
     member internal this.Inject v = _InverseCumulativeNormal.Value <- v
     static member Cast (p : ICell<InverseCumulativeNormal>) = 
         if p :? InverseCumulativeNormalModel1 then 

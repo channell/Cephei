@@ -71,7 +71,7 @@ type VoluntaryPrepayModel
 (* 
     casting 
 *)
-    internal new () = VoluntaryPrepayModel(null,null)
+    internal new () = new VoluntaryPrepayModel(null,null)
     member internal this.Inject v = _VoluntaryPrepay.Value <- v
     static member Cast (p : ICell<VoluntaryPrepay>) = 
         if p :? VoluntaryPrepayModel then 

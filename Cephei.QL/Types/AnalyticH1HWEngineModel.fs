@@ -69,7 +69,7 @@ type AnalyticH1HWEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticH1HWEngineModel(null,null,null,null)
+    internal new () = new AnalyticH1HWEngineModel(null,null,null,null)
     member internal this.Inject v = _AnalyticH1HWEngine.Value <- v
     static member Cast (p : ICell<AnalyticH1HWEngine>) = 
         if p :? AnalyticH1HWEngineModel then 
@@ -140,7 +140,7 @@ type AnalyticH1HWEngineModel1
 (* 
     casting 
 *)
-    internal new () = AnalyticH1HWEngineModel1(null,null,null,null,null)
+    internal new () = new AnalyticH1HWEngineModel1(null,null,null,null,null)
     member internal this.Inject v = _AnalyticH1HWEngine.Value <- v
     static member Cast (p : ICell<AnalyticH1HWEngine>) = 
         if p :? AnalyticH1HWEngineModel1 then 

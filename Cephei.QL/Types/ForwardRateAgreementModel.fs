@@ -84,7 +84,7 @@ type ForwardRateAgreementModel
 (* 
     casting 
 *)
-    internal new () = ForwardRateAgreementModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new ForwardRateAgreementModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ForwardRateAgreement.Value <- v
     static member Cast (p : ICell<ForwardRateAgreement>) = 
         if p :? ForwardRateAgreementModel then 

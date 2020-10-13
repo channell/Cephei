@@ -80,7 +80,7 @@ type YoYInflationCollarModel
 (* 
     casting 
 *)
-    internal new () = YoYInflationCollarModel(null,null,null,null,null)
+    internal new () = new YoYInflationCollarModel(null,null,null,null,null)
     member internal this.Inject v = _YoYInflationCollar.Value <- v
     static member Cast (p : ICell<YoYInflationCollar>) = 
         if p :? YoYInflationCollarModel then 

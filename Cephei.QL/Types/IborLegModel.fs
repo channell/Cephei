@@ -86,7 +86,7 @@ type IborLegModel
 (* 
     casting 
 *)
-    internal new () = IborLegModel(null,null)
+    internal new () = new IborLegModel(null,null)
     member internal this.Inject v = _IborLeg.Value <- v
     static member Cast (p : ICell<IborLeg>) = 
         if p :? IborLegModel then 

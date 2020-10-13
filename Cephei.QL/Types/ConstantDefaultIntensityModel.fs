@@ -55,7 +55,7 @@ type ConstantDefaultIntensityModel
 (* 
     casting 
 *)
-    internal new () = ConstantDefaultIntensityModel(null,null)
+    internal new () = new ConstantDefaultIntensityModel(null,null)
     member internal this.Inject v = _ConstantDefaultIntensity.Value <- v
     static member Cast (p : ICell<ConstantDefaultIntensity>) = 
         if p :? ConstantDefaultIntensityModel then 
@@ -101,7 +101,7 @@ type ConstantDefaultIntensityModel1
 (* 
     casting 
 *)
-    internal new () = ConstantDefaultIntensityModel1(null)
+    internal new () = new ConstantDefaultIntensityModel1(null)
     member internal this.Inject v = _ConstantDefaultIntensity.Value <- v
     static member Cast (p : ICell<ConstantDefaultIntensity>) = 
         if p :? ConstantDefaultIntensityModel1 then 

@@ -98,7 +98,7 @@ type NzocrModel
 (* 
     casting 
 *)
-    internal new () = NzocrModel(null)
+    internal new () = new NzocrModel(null)
     member internal this.Inject v = _Nzocr.Value <- v
     static member Cast (p : ICell<Nzocr>) = 
         if p :? NzocrModel then 

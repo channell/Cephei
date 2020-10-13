@@ -98,7 +98,7 @@ type USDLiborModel
 (* 
     casting 
 *)
-    internal new () = USDLiborModel(null)
+    internal new () = new USDLiborModel(null)
     member internal this.Inject v = _USDLibor.Value <- v
     static member Cast (p : ICell<USDLibor>) = 
         if p :? USDLiborModel then 
@@ -228,7 +228,7 @@ type USDLiborModel1
 (* 
     casting 
 *)
-    internal new () = USDLiborModel1(null,null)
+    internal new () = new USDLiborModel1(null,null)
     member internal this.Inject v = _USDLibor.Value <- v
     static member Cast (p : ICell<USDLibor>) = 
         if p :? USDLiborModel1 then 

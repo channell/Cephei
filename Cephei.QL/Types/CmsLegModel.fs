@@ -86,7 +86,7 @@ type CmsLegModel
 (* 
     casting 
 *)
-    internal new () = CmsLegModel(null,null)
+    internal new () = new CmsLegModel(null,null)
     member internal this.Inject v = _CmsLeg.Value <- v
     static member Cast (p : ICell<CmsLeg>) = 
         if p :? CmsLegModel then 

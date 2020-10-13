@@ -57,7 +57,7 @@ type FastFourierTransformModel
 (* 
     casting 
 *)
-    internal new () = FastFourierTransformModel(null)
+    internal new () = new FastFourierTransformModel(null)
     member internal this.Inject v = _FastFourierTransform.Value <- v
     static member Cast (p : ICell<FastFourierTransform>) = 
         if p :? FastFourierTransformModel then 

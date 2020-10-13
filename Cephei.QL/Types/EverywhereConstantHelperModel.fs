@@ -58,7 +58,7 @@ type EverywhereConstantHelperModel
 (* 
     casting 
 *)
-    internal new () = EverywhereConstantHelperModel(null,null,null)
+    internal new () = new EverywhereConstantHelperModel(null,null,null)
     member internal this.Inject v = _EverywhereConstantHelper.Value <- v
     static member Cast (p : ICell<EverywhereConstantHelper>) = 
         if p :? EverywhereConstantHelperModel then 

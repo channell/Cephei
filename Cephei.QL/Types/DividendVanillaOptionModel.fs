@@ -84,7 +84,7 @@ type DividendVanillaOptionModel
 (* 
     casting 
 *)
-    internal new () = DividendVanillaOptionModel(null,null,null,null,null,null)
+    internal new () = new DividendVanillaOptionModel(null,null,null,null,null,null)
     member internal this.Inject v = _DividendVanillaOption.Value <- v
     static member Cast (p : ICell<DividendVanillaOption>) = 
         if p :? DividendVanillaOptionModel then 

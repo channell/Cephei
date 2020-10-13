@@ -54,7 +54,7 @@ type AmericanConditionModel
 (* 
     casting 
 *)
-    internal new () = AmericanConditionModel(null,null)
+    internal new () = new AmericanConditionModel(null,null)
     member internal this.Inject v = _AmericanCondition.Value <- v
     static member Cast (p : ICell<AmericanCondition>) = 
         if p :? AmericanConditionModel then 
@@ -97,7 +97,7 @@ type AmericanConditionModel1
 (* 
     casting 
 *)
-    internal new () = AmericanConditionModel1(null)
+    internal new () = new AmericanConditionModel1(null)
     member internal this.Inject v = _AmericanCondition.Value <- v
     static member Cast (p : ICell<AmericanCondition>) = 
         if p :? AmericanConditionModel1 then 

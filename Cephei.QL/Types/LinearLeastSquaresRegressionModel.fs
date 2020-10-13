@@ -53,7 +53,7 @@ type LinearLeastSquaresRegressionModel
 (* 
     casting 
 *)
-    internal new () = LinearLeastSquaresRegressionModel(null,null,null)
+    internal new () = new LinearLeastSquaresRegressionModel(null,null,null)
     member internal this.Inject v = _LinearLeastSquaresRegression.Value <- v
     static member Cast (p : ICell<LinearLeastSquaresRegression>) = 
         if p :? LinearLeastSquaresRegressionModel then 

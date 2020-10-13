@@ -53,7 +53,7 @@ type CumulativeBinomialDistributionModel
 (* 
     casting 
 *)
-    internal new () = CumulativeBinomialDistributionModel(null,null)
+    internal new () = new CumulativeBinomialDistributionModel(null,null)
     member internal this.Inject v = _CumulativeBinomialDistribution.Value <- v
     static member Cast (p : ICell<CumulativeBinomialDistribution>) = 
         if p :? CumulativeBinomialDistributionModel then 

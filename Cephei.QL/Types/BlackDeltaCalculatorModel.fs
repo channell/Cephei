@@ -79,7 +79,7 @@ type BlackDeltaCalculatorModel
 (* 
     casting 
 *)
-    internal new () = BlackDeltaCalculatorModel(null,null,null,null,null,null)
+    internal new () = new BlackDeltaCalculatorModel(null,null,null,null,null,null)
     member internal this.Inject v = _BlackDeltaCalculator.Value <- v
     static member Cast (p : ICell<BlackDeltaCalculator>) = 
         if p :? BlackDeltaCalculatorModel then 

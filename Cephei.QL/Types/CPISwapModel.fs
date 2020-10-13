@@ -137,7 +137,7 @@ type CPISwapModel
 (* 
     casting 
 *)
-    internal new () = CPISwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CPISwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CPISwap.Value <- v
     static member Cast (p : ICell<CPISwap>) = 
         if p :? CPISwapModel then 

@@ -49,7 +49,7 @@ type AnalyticContinuousPartialFixedLookbackEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticContinuousPartialFixedLookbackEngineModel(null)
+    internal new () = new AnalyticContinuousPartialFixedLookbackEngineModel(null)
     member internal this.Inject v = _AnalyticContinuousPartialFixedLookbackEngine.Value <- v
     static member Cast (p : ICell<AnalyticContinuousPartialFixedLookbackEngine>) = 
         if p :? AnalyticContinuousPartialFixedLookbackEngineModel then 

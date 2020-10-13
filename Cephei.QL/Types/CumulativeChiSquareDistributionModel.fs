@@ -51,7 +51,7 @@ type CumulativeChiSquareDistributionModel
 (* 
     casting 
 *)
-    internal new () = CumulativeChiSquareDistributionModel(null)
+    internal new () = new CumulativeChiSquareDistributionModel(null)
     member internal this.Inject v = _CumulativeChiSquareDistribution.Value <- v
     static member Cast (p : ICell<CumulativeChiSquareDistribution>) = 
         if p :? CumulativeChiSquareDistributionModel then 

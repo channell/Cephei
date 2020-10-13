@@ -63,7 +63,7 @@ type ExponentialSplinesFittingModel
 (* 
     casting 
 *)
-    internal new () = ExponentialSplinesFittingModel(null,null,null)
+    internal new () = new ExponentialSplinesFittingModel(null,null,null)
     member internal this.Inject v = _ExponentialSplinesFitting.Value <- v
     static member Cast (p : ICell<ExponentialSplinesFitting>) = 
         if p :? ExponentialSplinesFittingModel then 

@@ -54,7 +54,7 @@ type FdmSnapshotConditionModel
 (* 
     casting 
 *)
-    internal new () = FdmSnapshotConditionModel(null)
+    internal new () = new FdmSnapshotConditionModel(null)
     member internal this.Inject v = _FdmSnapshotCondition.Value <- v
     static member Cast (p : ICell<FdmSnapshotCondition>) = 
         if p :? FdmSnapshotConditionModel then 

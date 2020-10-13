@@ -100,7 +100,7 @@ type Euribor365Model
 (* 
     casting 
 *)
-    internal new () = Euribor365Model(null,null)
+    internal new () = new Euribor365Model(null,null)
     member internal this.Inject v = _Euribor365.Value <- v
     static member Cast (p : ICell<Euribor365>) = 
         if p :? Euribor365Model then 
@@ -229,7 +229,7 @@ type Euribor365Model1
 (* 
     casting 
 *)
-    internal new () = Euribor365Model1(null)
+    internal new () = new Euribor365Model1(null)
     member internal this.Inject v = _Euribor365.Value <- v
     static member Cast (p : ICell<Euribor365>) = 
         if p :? Euribor365Model1 then 

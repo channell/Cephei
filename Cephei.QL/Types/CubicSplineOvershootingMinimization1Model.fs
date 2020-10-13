@@ -79,7 +79,7 @@ type CubicSplineOvershootingMinimization1Model
 (* 
     casting 
 *)
-    internal new () = CubicSplineOvershootingMinimization1Model(null,null,null)
+    internal new () = new CubicSplineOvershootingMinimization1Model(null,null,null)
     member internal this.Inject v = _CubicSplineOvershootingMinimization1.Value <- v
     static member Cast (p : ICell<CubicSplineOvershootingMinimization1>) = 
         if p :? CubicSplineOvershootingMinimization1Model then 

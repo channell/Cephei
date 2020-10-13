@@ -74,7 +74,7 @@ type CPICouponPricerModel
 (* 
     casting 
 *)
-    internal new () = CPICouponPricerModel(null)
+    internal new () = new CPICouponPricerModel(null)
     member internal this.Inject v = _CPICouponPricer.Value <- v
     static member Cast (p : ICell<CPICouponPricer>) = 
         if p :? CPICouponPricerModel then 

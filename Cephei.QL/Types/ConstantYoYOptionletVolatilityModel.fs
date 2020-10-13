@@ -123,7 +123,7 @@ type ConstantYoYOptionletVolatilityModel
 (* 
     casting 
 *)
-    internal new () = ConstantYoYOptionletVolatilityModel(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new ConstantYoYOptionletVolatilityModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ConstantYoYOptionletVolatility.Value <- v
     static member Cast (p : ICell<ConstantYoYOptionletVolatility>) = 
         if p :? ConstantYoYOptionletVolatilityModel then 

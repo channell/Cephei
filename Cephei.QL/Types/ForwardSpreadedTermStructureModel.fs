@@ -57,7 +57,7 @@ type ForwardSpreadedTermStructureModel
 (* 
     casting 
 *)
-    internal new () = ForwardSpreadedTermStructureModel(null,null)
+    internal new () = new ForwardSpreadedTermStructureModel(null,null)
     member internal this.Inject v = _ForwardSpreadedTermStructure.Value <- v
     static member Cast (p : ICell<ForwardSpreadedTermStructure>) = 
         if p :? ForwardSpreadedTermStructureModel then 

@@ -229,7 +229,7 @@ type SouthKoreaModel1
 (* 
     casting 
 *)
-    internal new () = SouthKoreaModel1(null)
+    internal new () = new SouthKoreaModel1(null)
     member internal this.Inject v = _SouthKorea.Value <- v
     static member Cast (p : ICell<SouthKorea>) = 
         if p :? SouthKoreaModel1 then 

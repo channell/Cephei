@@ -60,7 +60,7 @@ type HaltonRsgModel
 (* 
     casting 
 *)
-    internal new () = HaltonRsgModel(null,null,null,null)
+    internal new () = new HaltonRsgModel(null,null,null,null)
     member internal this.Inject v = _HaltonRsg.Value <- v
     static member Cast (p : ICell<HaltonRsg>) = 
         if p :? HaltonRsgModel then 

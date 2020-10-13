@@ -98,7 +98,7 @@ type SoniaModel
 (* 
     casting 
 *)
-    internal new () = SoniaModel(null)
+    internal new () = new SoniaModel(null)
     member internal this.Inject v = _Sonia.Value <- v
     static member Cast (p : ICell<Sonia>) = 
         if p :? SoniaModel then 

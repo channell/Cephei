@@ -72,7 +72,7 @@ type FDShoutEngineModel
 (* 
     casting 
 *)
-    internal new () = FDShoutEngineModel(null,null,null,null)
+    internal new () = new FDShoutEngineModel(null,null,null,null)
     member internal this.Inject v = _FDShoutEngine.Value <- v
     static member Cast (p : ICell<FDShoutEngine>) = 
         if p :? FDShoutEngineModel then 

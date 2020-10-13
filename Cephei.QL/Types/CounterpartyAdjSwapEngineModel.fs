@@ -65,7 +65,7 @@ type CounterpartyAdjSwapEngineModel
 (* 
     casting 
 *)
-    internal new () = CounterpartyAdjSwapEngineModel(null,null,null,null,null,null)
+    internal new () = new CounterpartyAdjSwapEngineModel(null,null,null,null,null,null)
     member internal this.Inject v = _CounterpartyAdjSwapEngine.Value <- v
     static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
         if p :? CounterpartyAdjSwapEngineModel then 
@@ -123,7 +123,7 @@ type CounterpartyAdjSwapEngineModel1
 (* 
     casting 
 *)
-    internal new () = CounterpartyAdjSwapEngineModel1(null,null,null,null,null,null)
+    internal new () = new CounterpartyAdjSwapEngineModel1(null,null,null,null,null,null)
     member internal this.Inject v = _CounterpartyAdjSwapEngine.Value <- v
     static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
         if p :? CounterpartyAdjSwapEngineModel1 then 
@@ -181,7 +181,7 @@ type CounterpartyAdjSwapEngineModel2
 (* 
     casting 
 *)
-    internal new () = CounterpartyAdjSwapEngineModel2(null,null,null,null,null,null)
+    internal new () = new CounterpartyAdjSwapEngineModel2(null,null,null,null,null,null)
     member internal this.Inject v = _CounterpartyAdjSwapEngine.Value <- v
     static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
         if p :? CounterpartyAdjSwapEngineModel2 then 

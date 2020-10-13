@@ -143,7 +143,7 @@ type PiecewiseYoYInflationCurveModel
 (* 
     casting 
 *)
-    internal new () = PiecewiseYoYInflationCurveModel(null,null,null,null,null,null)
+    internal new () = new PiecewiseYoYInflationCurveModel(null,null,null,null,null,null)
     member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
     static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
         if p :? PiecewiseYoYInflationCurveModel then 
@@ -359,7 +359,7 @@ type PiecewiseYoYInflationCurveModel1
 (* 
     casting 
 *)
-    internal new () = PiecewiseYoYInflationCurveModel1(null,null,null,null,null,null,null,null)
+    internal new () = new PiecewiseYoYInflationCurveModel1(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
     static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
         if p :? PiecewiseYoYInflationCurveModel1 then 
@@ -577,7 +577,7 @@ type PiecewiseYoYInflationCurveModel2
 (* 
     casting 
 *)
-    internal new () = PiecewiseYoYInflationCurveModel2(null,null,null,null,null,null,null,null)
+    internal new () = new PiecewiseYoYInflationCurveModel2(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
     static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
         if p :? PiecewiseYoYInflationCurveModel2 then 

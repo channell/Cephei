@@ -133,7 +133,7 @@ type CappedFlooredYoYInflationCouponModel
 (* 
     casting 
 *)
-    internal new () = CappedFlooredYoYInflationCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CappedFlooredYoYInflationCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CappedFlooredYoYInflationCoupon.Value <- v
     static member Cast (p : ICell<CappedFlooredYoYInflationCoupon>) = 
         if p :? CappedFlooredYoYInflationCouponModel then 
@@ -298,7 +298,7 @@ type CappedFlooredYoYInflationCouponModel1
 (* 
     casting 
 *)
-    internal new () = CappedFlooredYoYInflationCouponModel1(null,null,null)
+    internal new () = new CappedFlooredYoYInflationCouponModel1(null,null,null)
     member internal this.Inject v = _CappedFlooredYoYInflationCoupon.Value <- v
     static member Cast (p : ICell<CappedFlooredYoYInflationCoupon>) = 
         if p :? CappedFlooredYoYInflationCouponModel1 then 

@@ -53,7 +53,7 @@ type GMRESResultModel
 (* 
     casting 
 *)
-    internal new () = GMRESResultModel(null,null)
+    internal new () = new GMRESResultModel(null,null)
     member internal this.Inject v = _GMRESResult.Value <- v
     static member Cast (p : ICell<GMRESResult>) = 
         if p :? GMRESResultModel then 

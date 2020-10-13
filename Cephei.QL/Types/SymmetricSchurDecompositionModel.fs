@@ -51,7 +51,7 @@ type SymmetricSchurDecompositionModel
 (* 
     casting 
 *)
-    internal new () = SymmetricSchurDecompositionModel(null)
+    internal new () = new SymmetricSchurDecompositionModel(null)
     member internal this.Inject v = _SymmetricSchurDecomposition.Value <- v
     static member Cast (p : ICell<SymmetricSchurDecomposition>) = 
         if p :? SymmetricSchurDecompositionModel then 

@@ -64,7 +64,7 @@ type SimpsonIntegralModel
 (* 
     casting 
 *)
-    internal new () = SimpsonIntegralModel(null,null)
+    internal new () = new SimpsonIntegralModel(null,null)
     member internal this.Inject v = _SimpsonIntegral.Value <- v
     static member Cast (p : ICell<SimpsonIntegral>) = 
         if p :? SimpsonIntegralModel then 

@@ -63,7 +63,7 @@ type ZeroSpreadedTermStructureModel
 (* 
     casting 
 *)
-    internal new () = ZeroSpreadedTermStructureModel(null,null,null,null,null)
+    internal new () = new ZeroSpreadedTermStructureModel(null,null,null,null,null)
     member internal this.Inject v = _ZeroSpreadedTermStructure.Value <- v
     static member Cast (p : ICell<ZeroSpreadedTermStructure>) = 
         if p :? ZeroSpreadedTermStructureModel then 

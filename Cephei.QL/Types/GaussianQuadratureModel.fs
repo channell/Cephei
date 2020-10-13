@@ -56,7 +56,7 @@ type GaussianQuadratureModel
 (* 
     casting 
 *)
-    internal new () = GaussianQuadratureModel(null,null)
+    internal new () = new GaussianQuadratureModel(null,null)
     member internal this.Inject v = _GaussianQuadrature.Value <- v
     static member Cast (p : ICell<GaussianQuadrature>) = 
         if p :? GaussianQuadratureModel then 

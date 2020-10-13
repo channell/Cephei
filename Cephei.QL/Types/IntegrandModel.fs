@@ -57,7 +57,7 @@ type IntegrandModel
 (* 
     casting 
 *)
-    internal new () = IntegrandModel(null,null,null,null)
+    internal new () = new IntegrandModel(null,null,null,null)
     member internal this.Inject v = _Integrand.Value <- v
     static member Cast (p : ICell<Integrand>) = 
         if p :? IntegrandModel then 

@@ -58,7 +58,7 @@ type ImpliedVolTermStructureModel
 (* 
     casting 
 *)
-    internal new () = ImpliedVolTermStructureModel(null,null)
+    internal new () = new ImpliedVolTermStructureModel(null,null)
     member internal this.Inject v = _ImpliedVolTermStructure.Value <- v
     static member Cast (p : ICell<ImpliedVolTermStructure>) = 
         if p :? ImpliedVolTermStructureModel then 

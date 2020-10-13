@@ -111,7 +111,7 @@ type VectorModel1
 (* 
     casting 
 *)
-    internal new () = VectorModel1(null)
+    internal new () = new VectorModel1(null)
     member internal this.Inject v = _Vector.Value <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel1 then 
@@ -167,7 +167,7 @@ type VectorModel2
 (* 
     casting 
 *)
-    internal new () = VectorModel2(null)
+    internal new () = new VectorModel2(null)
     member internal this.Inject v = _Vector.Value <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel2 then 
@@ -227,7 +227,7 @@ type VectorModel3
 (* 
     casting 
 *)
-    internal new () = VectorModel3(null,null,null)
+    internal new () = new VectorModel3(null,null,null)
     member internal this.Inject v = _Vector.Value <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel3 then 
@@ -285,7 +285,7 @@ type VectorModel4
 (* 
     casting 
 *)
-    internal new () = VectorModel4(null)
+    internal new () = new VectorModel4(null)
     member internal this.Inject v = _Vector.Value <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel4 then 
@@ -343,7 +343,7 @@ type VectorModel5
 (* 
     casting 
 *)
-    internal new () = VectorModel5(null,null)
+    internal new () = new VectorModel5(null,null)
     member internal this.Inject v = _Vector.Value <- v
     static member Cast (p : ICell<Vector>) = 
         if p :? VectorModel5 then 

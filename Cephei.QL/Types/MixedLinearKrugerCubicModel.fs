@@ -80,7 +80,7 @@ type MixedLinearKrugerCubicModel
 (* 
     casting 
 *)
-    internal new () = MixedLinearKrugerCubicModel(null,null,null,null,null)
+    internal new () = new MixedLinearKrugerCubicModel(null,null,null,null,null)
     member internal this.Inject v = _MixedLinearKrugerCubic.Value <- v
     static member Cast (p : ICell<MixedLinearKrugerCubic>) = 
         if p :? MixedLinearKrugerCubicModel then 

@@ -66,7 +66,7 @@ type TreeCallableFixedRateBondEngineModel
 (* 
     casting 
 *)
-    internal new () = TreeCallableFixedRateBondEngineModel(null,null,null)
+    internal new () = new TreeCallableFixedRateBondEngineModel(null,null,null)
     member internal this.Inject v = _TreeCallableFixedRateBondEngine.Value <- v
     static member Cast (p : ICell<TreeCallableFixedRateBondEngine>) = 
         if p :? TreeCallableFixedRateBondEngineModel then 
@@ -130,7 +130,7 @@ type TreeCallableFixedRateBondEngineModel1
 (* 
     casting 
 *)
-    internal new () = TreeCallableFixedRateBondEngineModel1(null,null,null)
+    internal new () = new TreeCallableFixedRateBondEngineModel1(null,null,null)
     member internal this.Inject v = _TreeCallableFixedRateBondEngine.Value <- v
     static member Cast (p : ICell<TreeCallableFixedRateBondEngine>) = 
         if p :? TreeCallableFixedRateBondEngineModel1 then 

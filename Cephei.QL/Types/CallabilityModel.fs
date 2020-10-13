@@ -67,7 +67,7 @@ type CallabilityModel
 (* 
     casting 
 *)
-    internal new () = CallabilityModel(null,null,null)
+    internal new () = new CallabilityModel(null,null,null)
     member internal this.Inject v = _Callability.Value <- v
     static member Cast (p : ICell<Callability>) = 
         if p :? CallabilityModel then 

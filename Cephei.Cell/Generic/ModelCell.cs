@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.FSharp.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -33,6 +34,17 @@ namespace Cephei.Cell.Generic
                 return _cell.Box;
             }
         }
+        public override string Mnemonic 
+        {
+            get
+            {
+                return _cell.Mnemonic;
+            }
+            set 
+            {
+                _cell.Mnemonic = value;
+            }
+        }
 
         public T Value { get => _cell.Value; set => _cell.Value = value; }
 
@@ -64,6 +76,27 @@ namespace Cephei.Cell.Generic
         public IDisposable Subscribe(IObserver<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>> observer)
         {
             return _cell.Subscribe(observer);
+        }
+        public FSharpFunc<Unit, T> Function
+        {
+            get
+            {
+                return _cell.Function;
+            }
+        }
+
+        public override void Clone(ICell source)
+        {
+            _cell.Clone(source);
+        }
+        public override void Notify(ICell listener)
+        {
+            _cell.Notify(listener);
+        }
+
+        public override void UnNotify(ICell listener)
+        {
+            _cell.UnNotify(listener);
         }
     }
 }

@@ -89,7 +89,7 @@ type BasisSwapHelperModel
 (* 
     casting 
 *)
-    internal new () = BasisSwapHelperModel(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new BasisSwapHelperModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _BasisSwapHelper.Value <- v
     static member Cast (p : ICell<BasisSwapHelper>) = 
         if p :? BasisSwapHelperModel then 

@@ -94,7 +94,7 @@ type CapFloorTermVolSurfaceModel
 (* 
     casting 
 *)
-    internal new () = CapFloorTermVolSurfaceModel(null,null,null,null,null,null,null)
+    internal new () = new CapFloorTermVolSurfaceModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel then 
@@ -212,7 +212,7 @@ type CapFloorTermVolSurfaceModel1
 (* 
     casting 
 *)
-    internal new () = CapFloorTermVolSurfaceModel1(null,null,null,null,null,null,null)
+    internal new () = new CapFloorTermVolSurfaceModel1(null,null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel1 then 
@@ -330,7 +330,7 @@ type CapFloorTermVolSurfaceModel2
 (* 
     casting 
 *)
-    internal new () = CapFloorTermVolSurfaceModel2(null,null,null,null,null,null,null)
+    internal new () = new CapFloorTermVolSurfaceModel2(null,null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel2 then 
@@ -448,7 +448,7 @@ type CapFloorTermVolSurfaceModel3
 (* 
     casting 
 *)
-    internal new () = CapFloorTermVolSurfaceModel3(null,null,null,null,null,null,null)
+    internal new () = new CapFloorTermVolSurfaceModel3(null,null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel3 then 

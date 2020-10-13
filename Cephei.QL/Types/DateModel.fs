@@ -166,7 +166,7 @@ type DateModel1
 (* 
     casting 
 *)
-    internal new () = DateModel1(null)
+    internal new () = new DateModel1(null)
     member internal this.Inject v = _Date.Value <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel1 then 
@@ -270,7 +270,7 @@ type DateModel2
 (* 
     casting 
 *)
-    internal new () = DateModel2(null,null,null,null,null,null,null)
+    internal new () = new DateModel2(null,null,null,null,null,null,null)
     member internal this.Inject v = _Date.Value <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel2 then 
@@ -373,7 +373,7 @@ type DateModel3
 (* 
     casting 
 *)
-    internal new () = DateModel3(null,null,null)
+    internal new () = new DateModel3(null,null,null)
     member internal this.Inject v = _Date.Value <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel3 then 
@@ -468,7 +468,7 @@ type DateModel4
 (* 
     casting 
 *)
-    internal new () = DateModel4(null)
+    internal new () = new DateModel4(null)
     member internal this.Inject v = _Date.Value <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel4 then 
@@ -573,7 +573,7 @@ type DateModel5
 (* 
     casting 
 *)
-    internal new () = DateModel5(null,null,null,null,null,null,null)
+    internal new () = new DateModel5(null,null,null,null,null,null,null)
     member internal this.Inject v = _Date.Value <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel5 then 

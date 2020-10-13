@@ -125,7 +125,7 @@ type OvernightIndexedCouponModel
 (* 
     casting 
 *)
-    internal new () = OvernightIndexedCouponModel(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new OvernightIndexedCouponModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _OvernightIndexedCoupon.Value <- v
     static member Cast (p : ICell<OvernightIndexedCoupon>) = 
         if p :? OvernightIndexedCouponModel then 

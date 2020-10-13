@@ -57,7 +57,7 @@ type BachelierSwaptionEngineModel
 (* 
     casting 
 *)
-    internal new () = BachelierSwaptionEngineModel(null,null,null,null)
+    internal new () = new BachelierSwaptionEngineModel(null,null,null,null)
     member internal this.Inject v = _BachelierSwaptionEngine.Value <- v
     static member Cast (p : ICell<BachelierSwaptionEngine>) = 
         if p :? BachelierSwaptionEngineModel then 
@@ -105,7 +105,7 @@ type BachelierSwaptionEngineModel1
 (* 
     casting 
 *)
-    internal new () = BachelierSwaptionEngineModel1(null,null,null)
+    internal new () = new BachelierSwaptionEngineModel1(null,null,null)
     member internal this.Inject v = _BachelierSwaptionEngine.Value <- v
     static member Cast (p : ICell<BachelierSwaptionEngine>) = 
         if p :? BachelierSwaptionEngineModel1 then 
@@ -154,7 +154,7 @@ type BachelierSwaptionEngineModel2
 (* 
     casting 
 *)
-    internal new () = BachelierSwaptionEngineModel2(null,null,null,null)
+    internal new () = new BachelierSwaptionEngineModel2(null,null,null,null)
     member internal this.Inject v = _BachelierSwaptionEngine.Value <- v
     static member Cast (p : ICell<BachelierSwaptionEngine>) = 
         if p :? BachelierSwaptionEngineModel2 then 

@@ -50,7 +50,7 @@ type InterpolatingCPICapFloorEngineModel
 (* 
     casting 
 *)
-    internal new () = InterpolatingCPICapFloorEngineModel(null)
+    internal new () = new InterpolatingCPICapFloorEngineModel(null)
     member internal this.Inject v = _InterpolatingCPICapFloorEngine.Value <- v
     static member Cast (p : ICell<InterpolatingCPICapFloorEngine>) = 
         if p :? InterpolatingCPICapFloorEngineModel then 

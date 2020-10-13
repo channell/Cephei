@@ -92,7 +92,7 @@ type MixedLinearCubicInterpolationModel
 (* 
     casting 
 *)
-    internal new () = MixedLinearCubicInterpolationModel(null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new MixedLinearCubicInterpolationModel(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _MixedLinearCubicInterpolation.Value <- v
     static member Cast (p : ICell<MixedLinearCubicInterpolation>) = 
         if p :? MixedLinearCubicInterpolationModel then 

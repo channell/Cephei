@@ -58,7 +58,7 @@ type FdmBackwardSolverModel
 (* 
     casting 
 *)
-    internal new () = FdmBackwardSolverModel(null,null,null,null)
+    internal new () = new FdmBackwardSolverModel(null,null,null,null)
     member internal this.Inject v = _FdmBackwardSolver.Value <- v
     static member Cast (p : ICell<FdmBackwardSolver>) = 
         if p :? FdmBackwardSolverModel then 

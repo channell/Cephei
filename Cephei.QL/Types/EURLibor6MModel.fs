@@ -98,7 +98,7 @@ type EURLibor6MModel
 (* 
     casting 
 *)
-    internal new () = EURLibor6MModel(null)
+    internal new () = new EURLibor6MModel(null)
     member internal this.Inject v = _EURLibor6M.Value <- v
     static member Cast (p : ICell<EURLibor6M>) = 
         if p :? EURLibor6MModel then 

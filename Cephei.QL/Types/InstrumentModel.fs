@@ -59,7 +59,7 @@ type InstrumentModel
 (* 
     casting 
 *)
-    internal new () = InstrumentModel(null,null)
+    internal new () = new InstrumentModel(null,null)
     member internal this.Inject v = _Instrument.Value <- v
     static member Cast (p : ICell<Instrument>) = 
         if p :? InstrumentModel then 

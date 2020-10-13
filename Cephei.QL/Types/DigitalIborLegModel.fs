@@ -104,7 +104,7 @@ type DigitalIborLegModel
 (* 
     casting 
 *)
-    internal new () = DigitalIborLegModel(null,null)
+    internal new () = new DigitalIborLegModel(null,null)
     member internal this.Inject v = _DigitalIborLeg.Value <- v
     static member Cast (p : ICell<DigitalIborLeg>) = 
         if p :? DigitalIborLegModel then 

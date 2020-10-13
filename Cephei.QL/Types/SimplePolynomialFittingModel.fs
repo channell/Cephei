@@ -65,7 +65,7 @@ type SimplePolynomialFittingModel
 (* 
     casting 
 *)
-    internal new () = SimplePolynomialFittingModel(null,null,null,null)
+    internal new () = new SimplePolynomialFittingModel(null,null,null,null)
     member internal this.Inject v = _SimplePolynomialFitting.Value <- v
     static member Cast (p : ICell<SimplePolynomialFitting>) = 
         if p :? SimplePolynomialFittingModel then 

@@ -100,7 +100,7 @@ type GBPLiborModel
 (* 
     casting 
 *)
-    internal new () = GBPLiborModel(null,null)
+    internal new () = new GBPLiborModel(null,null)
     member internal this.Inject v = _GBPLibor.Value <- v
     static member Cast (p : ICell<GBPLibor>) = 
         if p :? GBPLiborModel then 
@@ -229,7 +229,7 @@ type GBPLiborModel1
 (* 
     casting 
 *)
-    internal new () = GBPLiborModel1(null)
+    internal new () = new GBPLiborModel1(null)
     member internal this.Inject v = _GBPLibor.Value <- v
     static member Cast (p : ICell<GBPLibor>) = 
         if p :? GBPLiborModel1 then 

@@ -61,7 +61,7 @@ type SpreadBasketPayoffModel
 (* 
     casting 
 *)
-    internal new () = SpreadBasketPayoffModel(null)
+    internal new () = new SpreadBasketPayoffModel(null)
     member internal this.Inject v = _SpreadBasketPayoff.Value <- v
     static member Cast (p : ICell<SpreadBasketPayoff>) = 
         if p :? SpreadBasketPayoffModel then 

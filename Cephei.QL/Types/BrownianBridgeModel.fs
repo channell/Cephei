@@ -54,7 +54,7 @@ type BrownianBridgeModel
 (* 
     casting 
 *)
-    internal new () = BrownianBridgeModel(null)
+    internal new () = new BrownianBridgeModel(null)
     member internal this.Inject v = _BrownianBridge.Value <- v
     static member Cast (p : ICell<BrownianBridge>) = 
         if p :? BrownianBridgeModel then 
@@ -100,7 +100,7 @@ type BrownianBridgeModel1
 (* 
     casting 
 *)
-    internal new () = BrownianBridgeModel1(null)
+    internal new () = new BrownianBridgeModel1(null)
     member internal this.Inject v = _BrownianBridge.Value <- v
     static member Cast (p : ICell<BrownianBridge>) = 
         if p :? BrownianBridgeModel1 then 
@@ -146,7 +146,7 @@ type BrownianBridgeModel2
 (* 
     casting 
 *)
-    internal new () = BrownianBridgeModel2(null)
+    internal new () = new BrownianBridgeModel2(null)
     member internal this.Inject v = _BrownianBridge.Value <- v
     static member Cast (p : ICell<BrownianBridge>) = 
         if p :? BrownianBridgeModel2 then 

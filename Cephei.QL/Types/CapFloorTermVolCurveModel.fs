@@ -91,7 +91,7 @@ type CapFloorTermVolCurveModel
 (* 
     casting 
 *)
-    internal new () = CapFloorTermVolCurveModel(null,null,null,null,null,null)
+    internal new () = new CapFloorTermVolCurveModel(null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
     static member Cast (p : ICell<CapFloorTermVolCurve>) = 
         if p :? CapFloorTermVolCurveModel then 
@@ -204,7 +204,7 @@ type CapFloorTermVolCurveModel1
 (* 
     casting 
 *)
-    internal new () = CapFloorTermVolCurveModel1(null,null,null,null,null,null)
+    internal new () = new CapFloorTermVolCurveModel1(null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
     static member Cast (p : ICell<CapFloorTermVolCurve>) = 
         if p :? CapFloorTermVolCurveModel1 then 
@@ -317,7 +317,7 @@ type CapFloorTermVolCurveModel2
 (* 
     casting 
 *)
-    internal new () = CapFloorTermVolCurveModel2(null,null,null,null,null,null)
+    internal new () = new CapFloorTermVolCurveModel2(null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
     static member Cast (p : ICell<CapFloorTermVolCurve>) = 
         if p :? CapFloorTermVolCurveModel2 then 
@@ -430,7 +430,7 @@ type CapFloorTermVolCurveModel3
 (* 
     casting 
 *)
-    internal new () = CapFloorTermVolCurveModel3(null,null,null,null,null,null)
+    internal new () = new CapFloorTermVolCurveModel3(null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
     static member Cast (p : ICell<CapFloorTermVolCurve>) = 
         if p :? CapFloorTermVolCurveModel3 then 

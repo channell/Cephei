@@ -82,7 +82,7 @@ type NullEffectiveDateExceptionModel1
 (* 
     casting 
 *)
-    internal new () = NullEffectiveDateExceptionModel1(null)
+    internal new () = new NullEffectiveDateExceptionModel1(null)
     member internal this.Inject v = _NullEffectiveDateException.Value <- v
     static member Cast (p : ICell<NullEffectiveDateException>) = 
         if p :? NullEffectiveDateExceptionModel1 then 
@@ -121,7 +121,7 @@ type NullEffectiveDateExceptionModel2
 (* 
     casting 
 *)
-    internal new () = NullEffectiveDateExceptionModel2(null,null)
+    internal new () = new NullEffectiveDateExceptionModel2(null,null)
     member internal this.Inject v = _NullEffectiveDateException.Value <- v
     static member Cast (p : ICell<NullEffectiveDateException>) = 
         if p :? NullEffectiveDateExceptionModel2 then 

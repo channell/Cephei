@@ -123,7 +123,7 @@ type YoYInflationCouponModel
 (* 
     casting 
 *)
-    internal new () = YoYInflationCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new YoYInflationCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _YoYInflationCoupon.Value <- v
     static member Cast (p : ICell<YoYInflationCoupon>) = 
         if p :? YoYInflationCouponModel then 

@@ -63,7 +63,7 @@ type IsdaCdsEngineModel
 (* 
     casting 
 *)
-    internal new () = IsdaCdsEngineModel(null,null,null,null,null,null,null)
+    internal new () = new IsdaCdsEngineModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _IsdaCdsEngine.Value <- v
     static member Cast (p : ICell<IsdaCdsEngine>) = 
         if p :? IsdaCdsEngineModel then 

@@ -96,7 +96,7 @@ type CallableBondConstantVolatilityModel
 (* 
     casting 
 *)
-    internal new () = CallableBondConstantVolatilityModel(null,null,null)
+    internal new () = new CallableBondConstantVolatilityModel(null,null,null)
     member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
     static member Cast (p : ICell<CallableBondConstantVolatility>) = 
         if p :? CallableBondConstantVolatilityModel then 
@@ -224,7 +224,7 @@ type CallableBondConstantVolatilityModel1
 (* 
     casting 
 *)
-    internal new () = CallableBondConstantVolatilityModel1(null,null,null,null)
+    internal new () = new CallableBondConstantVolatilityModel1(null,null,null,null)
     member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
     static member Cast (p : ICell<CallableBondConstantVolatility>) = 
         if p :? CallableBondConstantVolatilityModel1 then 
@@ -353,7 +353,7 @@ type CallableBondConstantVolatilityModel2
 (* 
     casting 
 *)
-    internal new () = CallableBondConstantVolatilityModel2(null,null,null,null)
+    internal new () = new CallableBondConstantVolatilityModel2(null,null,null,null)
     member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
     static member Cast (p : ICell<CallableBondConstantVolatility>) = 
         if p :? CallableBondConstantVolatilityModel2 then 
@@ -480,7 +480,7 @@ type CallableBondConstantVolatilityModel3
 (* 
     casting 
 *)
-    internal new () = CallableBondConstantVolatilityModel3(null,null,null)
+    internal new () = new CallableBondConstantVolatilityModel3(null,null,null)
     member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
     static member Cast (p : ICell<CallableBondConstantVolatility>) = 
         if p :? CallableBondConstantVolatilityModel3 then 

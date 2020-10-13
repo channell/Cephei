@@ -61,7 +61,7 @@ type Thirty360Model
 (* 
     casting 
 *)
-    internal new () = Thirty360Model(null)
+    internal new () = new Thirty360Model(null)
     member internal this.Inject v = _Thirty360.Value <- v
     static member Cast (p : ICell<Thirty360>) = 
         if p :? Thirty360Model then 

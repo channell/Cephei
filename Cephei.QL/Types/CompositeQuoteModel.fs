@@ -65,7 +65,7 @@ type CompositeQuoteModel
 (* 
     casting 
 *)
-    internal new () = CompositeQuoteModel(null,null,null)
+    internal new () = new CompositeQuoteModel(null,null,null)
     member internal this.Inject v = _CompositeQuote.Value <- v
     static member Cast (p : ICell<CompositeQuote>) = 
         if p :? CompositeQuoteModel then 

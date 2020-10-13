@@ -115,7 +115,7 @@ type BrazilModel
 (* 
     casting 
 *)
-    internal new () = BrazilModel(null)
+    internal new () = new BrazilModel(null)
     member internal this.Inject v = _Brazil.Value <- v
     static member Cast (p : ICell<Brazil>) = 
         if p :? BrazilModel then 

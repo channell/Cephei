@@ -69,7 +69,7 @@ type FdmBlackScholesSolverModel
 (* 
     casting 
 *)
-    internal new () = FdmBlackScholesSolverModel(null,null,null,null,null,null,null)
+    internal new () = new FdmBlackScholesSolverModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _FdmBlackScholesSolver.Value <- v
     static member Cast (p : ICell<FdmBlackScholesSolver>) = 
         if p :? FdmBlackScholesSolverModel then 

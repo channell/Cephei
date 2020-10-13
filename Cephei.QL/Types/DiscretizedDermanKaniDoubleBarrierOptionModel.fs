@@ -82,7 +82,7 @@ type DiscretizedDermanKaniDoubleBarrierOptionModel
 (* 
     casting 
 *)
-    internal new () = DiscretizedDermanKaniDoubleBarrierOptionModel(null,null,null)
+    internal new () = new DiscretizedDermanKaniDoubleBarrierOptionModel(null,null,null)
     member internal this.Inject v = _DiscretizedDermanKaniDoubleBarrierOption.Value <- v
     static member Cast (p : ICell<DiscretizedDermanKaniDoubleBarrierOption>) = 
         if p :? DiscretizedDermanKaniDoubleBarrierOptionModel then 

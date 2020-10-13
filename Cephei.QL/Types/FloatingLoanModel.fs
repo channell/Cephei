@@ -79,7 +79,7 @@ type FloatingLoanModel
 (* 
     casting 
 *)
-    internal new () = FloatingLoanModel(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FloatingLoanModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingLoan.Value <- v
     static member Cast (p : ICell<FloatingLoan>) = 
         if p :? FloatingLoanModel then 

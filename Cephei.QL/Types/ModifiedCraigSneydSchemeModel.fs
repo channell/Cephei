@@ -110,7 +110,7 @@ type ModifiedCraigSneydSchemeModel1
 (* 
     casting 
 *)
-    internal new () = ModifiedCraigSneydSchemeModel1(null,null,null,null)
+    internal new () = new ModifiedCraigSneydSchemeModel1(null,null,null,null)
     member internal this.Inject v = _ModifiedCraigSneydScheme.Value <- v
     static member Cast (p : ICell<ModifiedCraigSneydScheme>) = 
         if p :? ModifiedCraigSneydSchemeModel1 then 

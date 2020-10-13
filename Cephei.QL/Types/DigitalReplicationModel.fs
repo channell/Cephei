@@ -53,7 +53,7 @@ type DigitalReplicationModel
 (* 
     casting 
 *)
-    internal new () = DigitalReplicationModel(null,null)
+    internal new () = new DigitalReplicationModel(null,null)
     member internal this.Inject v = _DigitalReplication.Value <- v
     static member Cast (p : ICell<DigitalReplication>) = 
         if p :? DigitalReplicationModel then 

@@ -55,7 +55,7 @@ type EventSetModel
 (* 
     casting 
 *)
-    internal new () = EventSetModel(null,null,null)
+    internal new () = new EventSetModel(null,null,null)
     member internal this.Inject v = _EventSet.Value <- v
     static member Cast (p : ICell<EventSet>) = 
         if p :? EventSetModel then 

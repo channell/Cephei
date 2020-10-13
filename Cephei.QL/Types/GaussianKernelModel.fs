@@ -57,7 +57,7 @@ type GaussianKernelModel
 (* 
     casting 
 *)
-    internal new () = GaussianKernelModel(null,null)
+    internal new () = new GaussianKernelModel(null,null)
     member internal this.Inject v = _GaussianKernel.Value <- v
     static member Cast (p : ICell<GaussianKernel>) = 
         if p :? GaussianKernelModel then 

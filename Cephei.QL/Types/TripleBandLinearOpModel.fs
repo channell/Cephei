@@ -86,7 +86,7 @@ type TripleBandLinearOpModel
 (* 
     casting 
 *)
-    internal new () = TripleBandLinearOpModel(null)
+    internal new () = new TripleBandLinearOpModel(null)
     member internal this.Inject v = _TripleBandLinearOp.Value <- v
     static member Cast (p : ICell<TripleBandLinearOp>) = 
         if p :? TripleBandLinearOpModel then 
@@ -196,7 +196,7 @@ type TripleBandLinearOpModel1
 (* 
     casting 
 *)
-    internal new () = TripleBandLinearOpModel1(null,null)
+    internal new () = new TripleBandLinearOpModel1(null,null)
     member internal this.Inject v = _TripleBandLinearOp.Value <- v
     static member Cast (p : ICell<TripleBandLinearOp>) = 
         if p :? TripleBandLinearOpModel1 then 

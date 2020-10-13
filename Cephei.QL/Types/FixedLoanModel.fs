@@ -77,7 +77,7 @@ type FixedLoanModel
 (* 
     casting 
 *)
-    internal new () = FixedLoanModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new FixedLoanModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedLoan.Value <- v
     static member Cast (p : ICell<FixedLoan>) = 
         if p :? FixedLoanModel then 

@@ -88,7 +88,7 @@ type InverseCumulativePoissonModel1
 (* 
     casting 
 *)
-    internal new () = InverseCumulativePoissonModel1(null)
+    internal new () = new InverseCumulativePoissonModel1(null)
     member internal this.Inject v = _InverseCumulativePoisson.Value <- v
     static member Cast (p : ICell<InverseCumulativePoisson>) = 
         if p :? InverseCumulativePoissonModel1 then 

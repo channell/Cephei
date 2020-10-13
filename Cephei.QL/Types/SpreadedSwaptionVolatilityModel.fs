@@ -123,7 +123,7 @@ type SpreadedSwaptionVolatilityModel
 (* 
     casting 
 *)
-    internal new () = SpreadedSwaptionVolatilityModel(null,null)
+    internal new () = new SpreadedSwaptionVolatilityModel(null,null)
     member internal this.Inject v = _SpreadedSwaptionVolatility.Value <- v
     static member Cast (p : ICell<SpreadedSwaptionVolatility>) = 
         if p :? SpreadedSwaptionVolatilityModel then 

@@ -67,7 +67,7 @@ type FdmSimpleProcess1DMesherModel
 (* 
     casting 
 *)
-    internal new () = FdmSimpleProcess1DMesherModel(null,null,null,null,null,null)
+    internal new () = new FdmSimpleProcess1DMesherModel(null,null,null,null,null,null)
     member internal this.Inject v = _FdmSimpleProcess1DMesher.Value <- v
     static member Cast (p : ICell<FdmSimpleProcess1DMesher>) = 
         if p :? FdmSimpleProcess1DMesherModel then 

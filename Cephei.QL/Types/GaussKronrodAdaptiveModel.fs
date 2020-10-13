@@ -66,7 +66,7 @@ type GaussKronrodAdaptiveModel
 (* 
     casting 
 *)
-    internal new () = GaussKronrodAdaptiveModel(null,null)
+    internal new () = new GaussKronrodAdaptiveModel(null,null)
     member internal this.Inject v = _GaussKronrodAdaptive.Value <- v
     static member Cast (p : ICell<GaussKronrodAdaptive>) = 
         if p :? GaussKronrodAdaptiveModel then 

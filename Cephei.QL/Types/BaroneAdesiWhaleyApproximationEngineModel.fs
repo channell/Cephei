@@ -49,7 +49,7 @@ type BaroneAdesiWhaleyApproximationEngineModel
 (* 
     casting 
 *)
-    internal new () = BaroneAdesiWhaleyApproximationEngineModel(null)
+    internal new () = new BaroneAdesiWhaleyApproximationEngineModel(null)
     member internal this.Inject v = _BaroneAdesiWhaleyApproximationEngine.Value <- v
     static member Cast (p : ICell<BaroneAdesiWhaleyApproximationEngine>) = 
         if p :? BaroneAdesiWhaleyApproximationEngineModel then 

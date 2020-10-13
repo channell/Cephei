@@ -66,7 +66,7 @@ type NeumannBCModel
 (* 
     casting 
 *)
-    internal new () = NeumannBCModel(null,null)
+    internal new () = new NeumannBCModel(null,null)
     member internal this.Inject v = _NeumannBC.Value <- v
     static member Cast (p : ICell<NeumannBC>) = 
         if p :? NeumannBCModel then 

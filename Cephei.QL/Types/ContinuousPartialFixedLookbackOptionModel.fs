@@ -80,7 +80,7 @@ type ContinuousPartialFixedLookbackOptionModel
 (* 
     casting 
 *)
-    internal new () = ContinuousPartialFixedLookbackOptionModel(null,null,null,null,null)
+    internal new () = new ContinuousPartialFixedLookbackOptionModel(null,null,null,null,null)
     member internal this.Inject v = _ContinuousPartialFixedLookbackOption.Value <- v
     static member Cast (p : ICell<ContinuousPartialFixedLookbackOption>) = 
         if p :? ContinuousPartialFixedLookbackOptionModel then 

@@ -84,7 +84,7 @@ type JointCalendarModel
 (* 
     casting 
 *)
-    internal new () = JointCalendarModel(null,null,null)
+    internal new () = new JointCalendarModel(null,null,null)
     member internal this.Inject v = _JointCalendar.Value <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel then 
@@ -187,7 +187,7 @@ type JointCalendarModel1
 (* 
     casting 
 *)
-    internal new () = JointCalendarModel1(null,null,null)
+    internal new () = new JointCalendarModel1(null,null,null)
     member internal this.Inject v = _JointCalendar.Value <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel1 then 
@@ -292,7 +292,7 @@ type JointCalendarModel2
 (* 
     casting 
 *)
-    internal new () = JointCalendarModel2(null,null,null,null)
+    internal new () = new JointCalendarModel2(null,null,null,null)
     member internal this.Inject v = _JointCalendar.Value <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel2 then 
@@ -400,7 +400,7 @@ type JointCalendarModel3
 (* 
     casting 
 *)
-    internal new () = JointCalendarModel3(null,null,null,null,null)
+    internal new () = new JointCalendarModel3(null,null,null,null,null)
     member internal this.Inject v = _JointCalendar.Value <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel3 then 
@@ -507,7 +507,7 @@ type JointCalendarModel4
 (* 
     casting 
 *)
-    internal new () = JointCalendarModel4(null,null,null,null)
+    internal new () = new JointCalendarModel4(null,null,null,null)
     member internal this.Inject v = _JointCalendar.Value <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel4 then 
@@ -609,7 +609,7 @@ type JointCalendarModel5
 (* 
     casting 
 *)
-    internal new () = JointCalendarModel5(null,null)
+    internal new () = new JointCalendarModel5(null,null)
     member internal this.Inject v = _JointCalendar.Value <- v
     static member Cast (p : ICell<JointCalendar>) = 
         if p :? JointCalendarModel5 then 

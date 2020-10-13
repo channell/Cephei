@@ -179,7 +179,7 @@ type PrincipalModel1
 (* 
     casting 
 *)
-    internal new () = PrincipalModel1(null,null,null,null,null,null,null,null)
+    internal new () = new PrincipalModel1(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _Principal.Value <- v
     static member Cast (p : ICell<Principal>) = 
         if p :? PrincipalModel1 then 

@@ -1,3 +1,4 @@
+using Microsoft.FSharp.Core;
 using System;
 using System.Collections.Generic;
 
@@ -20,6 +21,11 @@ namespace Cephei.Cell
             /// Either the Value of the Cell, or the appropriate value for the current session
             /// </summary>
             T Value { get; set; }
+
+            /// <summary>
+            /// Access the functions for this cell for cloning
+            /// </summary>
+            FSharpFunc<Unit, T> Function { get; }
         }
     }
 }

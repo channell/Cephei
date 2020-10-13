@@ -51,7 +51,7 @@ type SimplexModel
 (* 
     casting 
 *)
-    internal new () = SimplexModel(null)
+    internal new () = new SimplexModel(null)
     member internal this.Inject v = _Simplex.Value <- v
     static member Cast (p : ICell<Simplex>) = 
         if p :? SimplexModel then 

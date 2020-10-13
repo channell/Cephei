@@ -55,7 +55,7 @@ type TabulatedGaussLegendreModel
 (* 
     casting 
 *)
-    internal new () = TabulatedGaussLegendreModel(null)
+    internal new () = new TabulatedGaussLegendreModel(null)
     member internal this.Inject v = _TabulatedGaussLegendre.Value <- v
     static member Cast (p : ICell<TabulatedGaussLegendre>) = 
         if p :? TabulatedGaussLegendreModel then 

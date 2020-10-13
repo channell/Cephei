@@ -80,7 +80,7 @@ type CapModel
 (* 
     casting 
 *)
-    internal new () = CapModel(null,null,null,null)
+    internal new () = new CapModel(null,null,null,null)
     member internal this.Inject v = _Cap.Value <- v
     static member Cast (p : ICell<Cap>) = 
         if p :? CapModel then 

@@ -65,7 +65,7 @@ type FDVanillaEngineModel
 (* 
     casting 
 *)
-    internal new () = FDVanillaEngineModel(null,null,null,null)
+    internal new () = new FDVanillaEngineModel(null,null,null,null)
     member internal this.Inject v = _FDVanillaEngine.Value <- v
     static member Cast (p : ICell<FDVanillaEngine>) = 
         if p :? FDVanillaEngineModel then 

@@ -84,7 +84,7 @@ type IndexedCashFlowModel
 (* 
     casting 
 *)
-    internal new () = IndexedCashFlowModel(null,null,null,null,null,null)
+    internal new () = new IndexedCashFlowModel(null,null,null,null,null,null)
     member internal this.Inject v = _IndexedCashFlow.Value <- v
     static member Cast (p : ICell<IndexedCashFlow>) = 
         if p :? IndexedCashFlowModel then 

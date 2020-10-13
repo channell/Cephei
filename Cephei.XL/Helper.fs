@@ -172,9 +172,7 @@ module Helper =
                     ; source =  "(triv (fun () -> toHandle<" + typeof<'T>.Name + "> (" + c.Mnemonic + ")))"
                     }
             else
-                { cell = withMnemonic s (triv (fun () -> Util.toHandle (o :?> 'T)))
-                ; source =  "(triv (fun () -> toHandle (" + s + ")))"
-                }
+                invalidArg (o.ToString()) ("Invalid " + attribute)
         elif o :? 'T then 
             { cell =  withMnemonic (Model.formatMnemonic (o.ToString())) (triv (fun () -> Util.toHandle (o :?> 'T)))
             ; source = "(triv (fun () -> toHandle (" + o.ToString() + ")))"
@@ -216,11 +214,10 @@ module Helper =
         "[|" + (cs |> Array.fold (fun a y -> a + ";" + y) "").Substring(1) + "|]"
 
     let hashFold (cs : ICell array) = 
-        cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ if y.Mnemonic = null then y.Box.GetHashCode() else y.Mnemonic.GetHashCode()) 0
+        cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ if y.HasFunction || y.Mnemonic = null then y.Box.GetHashCode() else y.Mnemonic.GetHashCode()) 0
 
     let hashFold2 (cs : ICell<'t> array) = 
-        cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ if y.Mnemonic = null then y.Box.GetHashCode() else y.Mnemonic.GetHashCode()) 0
-
+        cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ if y.HasFunction || y.Mnemonic = null then y.Box.GetHashCode() else y.Mnemonic.GetHashCode()) 0
 
     module Range =
         let toArray (o : obj[,]) : obj array =

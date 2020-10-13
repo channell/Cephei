@@ -89,7 +89,7 @@ type YYFRHICPrModel
 (* 
     casting 
 *)
-    internal new () = YYFRHICPrModel(null,null)
+    internal new () = new YYFRHICPrModel(null,null)
     member internal this.Inject v = _YYFRHICPr.Value <- v
     static member Cast (p : ICell<YYFRHICPr>) = 
         if p :? YYFRHICPrModel then 
@@ -196,7 +196,7 @@ type YYFRHICPrModel1
 (* 
     casting 
 *)
-    internal new () = YYFRHICPrModel1(null)
+    internal new () = new YYFRHICPrModel1(null)
     member internal this.Inject v = _YYFRHICPr.Value <- v
     static member Cast (p : ICell<YYFRHICPr>) = 
         if p :? YYFRHICPrModel1 then 

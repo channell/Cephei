@@ -79,7 +79,7 @@ type HarmonicCubicModel
 (* 
     casting 
 *)
-    internal new () = HarmonicCubicModel(null,null,null)
+    internal new () = new HarmonicCubicModel(null,null,null)
     member internal this.Inject v = _HarmonicCubic.Value <- v
     static member Cast (p : ICell<HarmonicCubic>) = 
         if p :? HarmonicCubicModel then 

@@ -58,7 +58,7 @@ type ShoutConditionModel
 (* 
     casting 
 *)
-    internal new () = ShoutConditionModel(null,null,null,null)
+    internal new () = new ShoutConditionModel(null,null,null,null)
     member internal this.Inject v = _ShoutCondition.Value <- v
     static member Cast (p : ICell<ShoutCondition>) = 
         if p :? ShoutConditionModel then 
@@ -107,7 +107,7 @@ type ShoutConditionModel1
 (* 
     casting 
 *)
-    internal new () = ShoutConditionModel1(null,null,null)
+    internal new () = new ShoutConditionModel1(null,null,null)
     member internal this.Inject v = _ShoutCondition.Value <- v
     static member Cast (p : ICell<ShoutCondition>) = 
         if p :? ShoutConditionModel1 then 

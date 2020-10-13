@@ -55,7 +55,7 @@ type NegativePowerDefaultIntensityModel
 (* 
     casting 
 *)
-    internal new () = NegativePowerDefaultIntensityModel(null,null)
+    internal new () = new NegativePowerDefaultIntensityModel(null,null)
     member internal this.Inject v = _NegativePowerDefaultIntensity.Value <- v
     static member Cast (p : ICell<NegativePowerDefaultIntensity>) = 
         if p :? NegativePowerDefaultIntensityModel then 
@@ -105,7 +105,7 @@ type NegativePowerDefaultIntensityModel1
 (* 
     casting 
 *)
-    internal new () = NegativePowerDefaultIntensityModel1(null,null,null)
+    internal new () = new NegativePowerDefaultIntensityModel1(null,null,null)
     member internal this.Inject v = _NegativePowerDefaultIntensity.Value <- v
     static member Cast (p : ICell<NegativePowerDefaultIntensity>) = 
         if p :? NegativePowerDefaultIntensityModel1 then 

@@ -82,7 +82,7 @@ type LocalConstantVolModel
 (* 
     casting 
 *)
-    internal new () = LocalConstantVolModel(null,null,null,null)
+    internal new () = new LocalConstantVolModel(null,null,null,null)
     member internal this.Inject v = _LocalConstantVol.Value <- v
     static member Cast (p : ICell<LocalConstantVol>) = 
         if p :? LocalConstantVolModel then 
@@ -177,7 +177,7 @@ type LocalConstantVolModel1
 (* 
     casting 
 *)
-    internal new () = LocalConstantVolModel1(null,null,null)
+    internal new () = new LocalConstantVolModel1(null,null,null)
     member internal this.Inject v = _LocalConstantVol.Value <- v
     static member Cast (p : ICell<LocalConstantVol>) = 
         if p :? LocalConstantVolModel1 then 
@@ -271,7 +271,7 @@ type LocalConstantVolModel2
 (* 
     casting 
 *)
-    internal new () = LocalConstantVolModel2(null,null,null)
+    internal new () = new LocalConstantVolModel2(null,null,null)
     member internal this.Inject v = _LocalConstantVol.Value <- v
     static member Cast (p : ICell<LocalConstantVol>) = 
         if p :? LocalConstantVolModel2 then 
@@ -367,7 +367,7 @@ type LocalConstantVolModel3
 (* 
     casting 
 *)
-    internal new () = LocalConstantVolModel3(null,null,null,null)
+    internal new () = new LocalConstantVolModel3(null,null,null,null)
     member internal this.Inject v = _LocalConstantVol.Value <- v
     static member Cast (p : ICell<LocalConstantVol>) = 
         if p :? LocalConstantVolModel3 then 

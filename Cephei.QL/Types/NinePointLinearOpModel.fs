@@ -75,7 +75,7 @@ type NinePointLinearOpModel
 (* 
     casting 
 *)
-    internal new () = NinePointLinearOpModel(null)
+    internal new () = new NinePointLinearOpModel(null)
     member internal this.Inject v = _NinePointLinearOp.Value <- v
     static member Cast (p : ICell<NinePointLinearOp>) = 
         if p :? NinePointLinearOpModel then 
@@ -166,7 +166,7 @@ type NinePointLinearOpModel1
 (* 
     casting 
 *)
-    internal new () = NinePointLinearOpModel1(null,null,null)
+    internal new () = new NinePointLinearOpModel1(null,null,null)
     member internal this.Inject v = _NinePointLinearOp.Value <- v
     static member Cast (p : ICell<NinePointLinearOp>) = 
         if p :? NinePointLinearOpModel1 then 

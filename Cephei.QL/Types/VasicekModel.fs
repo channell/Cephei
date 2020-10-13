@@ -93,7 +93,7 @@ type VasicekModel
 (* 
     casting 
 *)
-    internal new () = VasicekModel(null,null,null,null,null)
+    internal new () = new VasicekModel(null,null,null,null,null)
     member internal this.Inject v = _Vasicek.Value <- v
     static member Cast (p : ICell<Vasicek>) = 
         if p :? VasicekModel then 

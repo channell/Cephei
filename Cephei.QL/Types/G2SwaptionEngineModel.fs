@@ -66,7 +66,7 @@ type G2SwaptionEngineModel
 (* 
     casting 
 *)
-    internal new () = G2SwaptionEngineModel(null,null,null)
+    internal new () = new G2SwaptionEngineModel(null,null,null)
     member internal this.Inject v = _G2SwaptionEngine.Value <- v
     static member Cast (p : ICell<G2SwaptionEngine>) = 
         if p :? G2SwaptionEngineModel then 

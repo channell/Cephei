@@ -55,7 +55,7 @@ type eqn3Model
 (* 
     casting 
 *)
-    internal new () = eqn3Model(null,null,null)
+    internal new () = new eqn3Model(null,null,null)
     member internal this.Inject v = _eqn3.Value <- v
     static member Cast (p : ICell<eqn3>) = 
         if p :? eqn3Model then 

@@ -86,7 +86,7 @@ type FdmHullWhiteOpModel
 (* 
     casting 
 *)
-    internal new () = FdmHullWhiteOpModel(null,null,null)
+    internal new () = new FdmHullWhiteOpModel(null,null,null)
     member internal this.Inject v = _FdmHullWhiteOp.Value <- v
     static member Cast (p : ICell<FdmHullWhiteOp>) = 
         if p :? FdmHullWhiteOpModel then 

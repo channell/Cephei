@@ -60,7 +60,7 @@ type ProjectedConstraintModel
 (* 
     casting 
 *)
-    internal new () = ProjectedConstraintModel(null,null)
+    internal new () = new ProjectedConstraintModel(null,null)
     member internal this.Inject v = _ProjectedConstraint.Value <- v
     static member Cast (p : ICell<ProjectedConstraint>) = 
         if p :? ProjectedConstraintModel then 
@@ -120,7 +120,7 @@ type ProjectedConstraintModel1
 (* 
     casting 
 *)
-    internal new () = ProjectedConstraintModel1(null,null,null)
+    internal new () = new ProjectedConstraintModel1(null,null,null)
     member internal this.Inject v = _ProjectedConstraint.Value <- v
     static member Cast (p : ICell<ProjectedConstraint>) = 
         if p :? ProjectedConstraintModel1 then 

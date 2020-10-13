@@ -49,7 +49,7 @@ type AnalyticDiscreteGeometricAveragePriceAsianEngineModel
 (* 
     casting 
 *)
-    internal new () = AnalyticDiscreteGeometricAveragePriceAsianEngineModel(null)
+    internal new () = new AnalyticDiscreteGeometricAveragePriceAsianEngineModel(null)
     member internal this.Inject v = _AnalyticDiscreteGeometricAveragePriceAsianEngine.Value <- v
     static member Cast (p : ICell<AnalyticDiscreteGeometricAveragePriceAsianEngine>) = 
         if p :? AnalyticDiscreteGeometricAveragePriceAsianEngineModel then 

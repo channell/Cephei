@@ -76,7 +76,7 @@ type HestonModelModel
 (* 
     casting 
 *)
-    internal new () = HestonModelModel(null)
+    internal new () = new HestonModelModel(null)
     member internal this.Inject v = _HestonModel.Value <- v
     static member Cast (p : ICell<HestonModel>) = 
         if p :? HestonModelModel then 

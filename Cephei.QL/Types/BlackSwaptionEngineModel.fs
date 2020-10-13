@@ -57,7 +57,7 @@ type BlackSwaptionEngineModel
 (* 
     casting 
 *)
-    internal new () = BlackSwaptionEngineModel(null,null,null,null)
+    internal new () = new BlackSwaptionEngineModel(null,null,null,null)
     member internal this.Inject v = _BlackSwaptionEngine.Value <- v
     static member Cast (p : ICell<BlackSwaptionEngine>) = 
         if p :? BlackSwaptionEngineModel then 
@@ -109,7 +109,7 @@ type BlackSwaptionEngineModel1
 (* 
     casting 
 *)
-    internal new () = BlackSwaptionEngineModel1(null,null,null,null,null)
+    internal new () = new BlackSwaptionEngineModel1(null,null,null,null,null)
     member internal this.Inject v = _BlackSwaptionEngine.Value <- v
     static member Cast (p : ICell<BlackSwaptionEngine>) = 
         if p :? BlackSwaptionEngineModel1 then 
@@ -162,7 +162,7 @@ type BlackSwaptionEngineModel2
 (* 
     casting 
 *)
-    internal new () = BlackSwaptionEngineModel2(null,null,null,null,null)
+    internal new () = new BlackSwaptionEngineModel2(null,null,null,null,null)
     member internal this.Inject v = _BlackSwaptionEngine.Value <- v
     static member Cast (p : ICell<BlackSwaptionEngine>) = 
         if p :? BlackSwaptionEngineModel2 then 

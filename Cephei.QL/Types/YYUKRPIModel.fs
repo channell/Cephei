@@ -89,7 +89,7 @@ type YYUKRPIModel
 (* 
     casting 
 *)
-    internal new () = YYUKRPIModel(null,null)
+    internal new () = new YYUKRPIModel(null,null)
     member internal this.Inject v = _YYUKRPI.Value <- v
     static member Cast (p : ICell<YYUKRPI>) = 
         if p :? YYUKRPIModel then 
@@ -196,7 +196,7 @@ type YYUKRPIModel1
 (* 
     casting 
 *)
-    internal new () = YYUKRPIModel1(null)
+    internal new () = new YYUKRPIModel1(null)
     member internal this.Inject v = _YYUKRPI.Value <- v
     static member Cast (p : ICell<YYUKRPI>) = 
         if p :? YYUKRPIModel1 then 

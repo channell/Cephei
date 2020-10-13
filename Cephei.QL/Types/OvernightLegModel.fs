@@ -68,7 +68,7 @@ type OvernightLegModel
 (* 
     casting 
 *)
-    internal new () = OvernightLegModel(null,null)
+    internal new () = new OvernightLegModel(null,null)
     member internal this.Inject v = _OvernightLeg.Value <- v
     static member Cast (p : ICell<OvernightLeg>) = 
         if p :? OvernightLegModel then 

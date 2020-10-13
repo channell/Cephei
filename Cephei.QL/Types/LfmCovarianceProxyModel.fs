@@ -69,7 +69,7 @@ type LfmCovarianceProxyModel
 (* 
     casting 
 *)
-    internal new () = LfmCovarianceProxyModel(null,null)
+    internal new () = new LfmCovarianceProxyModel(null,null)
     member internal this.Inject v = _LfmCovarianceProxy.Value <- v
     static member Cast (p : ICell<LfmCovarianceProxy>) = 
         if p :? LfmCovarianceProxyModel then 

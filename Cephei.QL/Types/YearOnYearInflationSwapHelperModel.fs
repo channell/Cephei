@@ -82,7 +82,7 @@ type YearOnYearInflationSwapHelperModel
 (* 
     casting 
 *)
-    internal new () = YearOnYearInflationSwapHelperModel(null,null,null,null,null,null,null)
+    internal new () = new YearOnYearInflationSwapHelperModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _YearOnYearInflationSwapHelper.Value <- v
     static member Cast (p : ICell<YearOnYearInflationSwapHelper>) = 
         if p :? YearOnYearInflationSwapHelperModel then 

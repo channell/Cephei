@@ -283,7 +283,7 @@ type CappedFlooredIborCouponModel1
 (* 
     casting 
 *)
-    internal new () = CappedFlooredIborCouponModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new CappedFlooredIborCouponModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CappedFlooredIborCoupon.Value <- v
     static member Cast (p : ICell<CappedFlooredIborCoupon>) = 
         if p :? CappedFlooredIborCouponModel1 then 

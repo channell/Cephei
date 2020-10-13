@@ -86,7 +86,7 @@ type BMASwapRateHelperModel
 (* 
     casting 
 *)
-    internal new () = BMASwapRateHelperModel(null,null,null,null,null,null,null,null,null)
+    internal new () = new BMASwapRateHelperModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _BMASwapRateHelper.Value <- v
     static member Cast (p : ICell<BMASwapRateHelper>) = 
         if p :? BMASwapRateHelperModel then 

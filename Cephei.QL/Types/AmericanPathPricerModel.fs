@@ -58,7 +58,7 @@ type AmericanPathPricerModel
 (* 
     casting 
 *)
-    internal new () = AmericanPathPricerModel(null,null,null)
+    internal new () = new AmericanPathPricerModel(null,null,null)
     member internal this.Inject v = _AmericanPathPricer.Value <- v
     static member Cast (p : ICell<AmericanPathPricer>) = 
         if p :? AmericanPathPricerModel then 

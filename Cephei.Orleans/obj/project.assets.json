@@ -52,6 +52,15 @@
           }
         }
       },
+      "ILGPU/0.9.1": {
+        "type": "package",
+        "compile": {
+          "lib/net47/ILGPU.dll": {}
+        },
+        "runtime": {
+          "lib/net47/ILGPU.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Connections.Abstractions/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -434,7 +443,7 @@
           "lib/netstandard2.0/Serilog.dll": {}
         }
       },
-      "System.Buffers/4.5.0": {
+      "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
           "ref/netstandard2.0/System.Buffers.dll": {}
@@ -454,10 +463,10 @@
           "ref/netstandard1.3/_._": {}
         }
       },
-      "System.Collections.Immutable/1.7.0": {
+      "System.Collections.Immutable/1.7.1": {
         "type": "package",
         "dependencies": {
-          "System.Memory": "4.5.3"
+          "System.Memory": "4.5.4"
         },
         "compile": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {}
@@ -744,12 +753,12 @@
           "lib/netstandard1.6/System.Linq.Expressions.dll": {}
         }
       },
-      "System.Memory/4.5.3": {
+      "System.Memory/4.5.4": {
         "type": "package",
         "dependencies": {
-          "System.Buffers": "4.4.0",
+          "System.Buffers": "4.5.1",
           "System.Numerics.Vectors": "4.4.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
         },
         "compile": {
           "lib/netstandard2.0/System.Memory.dll": {}
@@ -1153,7 +1162,9 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "FSharp.Core": "4.7.2",
-          "Serilog": "2.10.0"
+          "ILGPU": "0.9.1",
+          "Serilog": "2.10.0",
+          "System.Collections.Immutable": "1.7.1"
         },
         "compile": {
           "bin/placeholder/Cephei.Cell.dll": {}
@@ -1209,6 +1220,26 @@
         "lib/netstandard2.0/tr/FSharp.Core.resources.dll",
         "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll"
+      ]
+    },
+    "ILGPU/0.9.1": {
+      "sha512": "+nuaMbBWLbQkA0fJqZ4AFF4rleEQicc4i1PpGZiWKDVly1zn/P3mVU28MV1+1YkxBEC8VPfNmhJ04I0cJdr9Tg==",
+      "type": "package",
+      "path": "ilgpu/0.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE-3RD-PARTY..txt",
+        "LICENSE.txt",
+        "ilgpu.0.9.1.nupkg.sha512",
+        "ilgpu.nuspec",
+        "lib/net47/ILGPU.dll",
+        "lib/net47/ILGPU.pdb",
+        "lib/net47/ILGPU.xml",
+        "lib/netcoreapp2.0/ILGPU.dll",
+        "lib/netcoreapp2.0/ILGPU.xml",
+        "lib/netstandard2.1/ILGPU.dll",
+        "lib/netstandard2.1/ILGPU.xml"
       ]
     },
     "Microsoft.AspNetCore.Connections.Abstractions/3.0.0": {
@@ -1826,15 +1857,17 @@
         "serilog.nuspec"
       ]
     },
-    "System.Buffers/4.5.0": {
-      "sha512": "pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
+    "System.Buffers/4.5.1": {
+      "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
       "type": "package",
-      "path": "system.buffers/4.5.0",
+      "path": "system.buffers/4.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Buffers.dll",
+        "lib/net461/System.Buffers.xml",
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.1/System.Buffers.dll",
         "lib/netstandard1.1/System.Buffers.xml",
@@ -1849,7 +1882,7 @@
         "ref/netstandard2.0/System.Buffers.dll",
         "ref/netstandard2.0/System.Buffers.xml",
         "ref/uap10.0.16299/_._",
-        "system.buffers.4.5.0.nupkg.sha512",
+        "system.buffers.4.5.1.nupkg.sha512",
         "system.buffers.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -1923,15 +1956,18 @@
         "system.collections.nuspec"
       ]
     },
-    "System.Collections.Immutable/1.7.0": {
-      "sha512": "RVSM6wZUo6L2y6P3vN6gjUtyJ2IF2RVtrepF3J7nrDKfFQd5u/SnSUFclchYQis8/k5scHy9E+fVeKVQLnnkzw==",
+    "System.Collections.Immutable/1.7.1": {
+      "sha512": "B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
       "type": "package",
-      "path": "system.collections.immutable/1.7.0",
+      "path": "system.collections.immutable/1.7.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Collections.Immutable.dll",
+        "lib/net461/System.Collections.Immutable.xml",
         "lib/netstandard1.0/System.Collections.Immutable.dll",
         "lib/netstandard1.0/System.Collections.Immutable.xml",
         "lib/netstandard1.3/System.Collections.Immutable.dll",
@@ -1940,7 +1976,7 @@
         "lib/netstandard2.0/System.Collections.Immutable.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
-        "system.collections.immutable.1.7.0.nupkg.sha512",
+        "system.collections.immutable.1.7.1.nupkg.sha512",
         "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -2874,22 +2910,24 @@
         "system.linq.expressions.nuspec"
       ]
     },
-    "System.Memory/4.5.3": {
-      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+    "System.Memory/4.5.4": {
+      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
       "type": "package",
-      "path": "system.memory/4.5.3",
+      "path": "system.memory/4.5.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Memory.dll",
+        "lib/net461/System.Memory.xml",
         "lib/netcoreapp2.1/_._",
         "lib/netstandard1.1/System.Memory.dll",
         "lib/netstandard1.1/System.Memory.xml",
         "lib/netstandard2.0/System.Memory.dll",
         "lib/netstandard2.0/System.Memory.xml",
         "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.4.5.4.nupkg.sha512",
         "system.memory.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -4641,5 +4679,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ILGPU 0.9.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "ILGPU",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

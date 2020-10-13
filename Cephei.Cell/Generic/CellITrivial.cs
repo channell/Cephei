@@ -80,6 +80,11 @@ namespace Cephei.Cell.Generic
             {
             }
         }
+        public object GetFunction()
+        {
+            return _func;
+        }
+
 
         public IEnumerable<ICellEvent> Dependants
         {
@@ -98,6 +103,28 @@ namespace Cephei.Cell.Generic
                 else
                     return new ICell[0];
             }
+        }
+        public FSharpFunc<Unit, T> Function
+        {
+            get
+            {
+                return _func;
+            }
+        }
+
+        public void Clone(ICell source)
+        {
+            foreach (var d in source.Dependants)
+            {
+                Change += d.OnChange;
+            }
+            if (source.GetType() == this.GetType())
+            {
+                var c = (ICell<T>)source;
+                _func = c.Function;
+            }
+            if (Change != null)
+                Change(CellEvent.Link, this, DateTime.Now, null);
         }
 
         #region observable
@@ -134,5 +161,18 @@ namespace Cephei.Cell.Generic
             return new Cell<T>(_func, Mnemonic);
         }
         #endregion
+        public void Notify(ICell listener)
+        {
+            if (listener == this) return;
+            foreach (var v in Dependants)
+                if (v == listener)
+                    return;
+            Change += listener.OnChange;
+        }
+
+        public void UnNotify(ICell listener)
+        {
+            Change -= listener.OnChange;
+        }
     }
 }

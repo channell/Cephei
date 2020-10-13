@@ -86,7 +86,7 @@ type ConstantCapFloorTermVolatilityModel
 (* 
     casting 
 *)
-    internal new () = ConstantCapFloorTermVolatilityModel(null,null,null,null,null)
+    internal new () = new ConstantCapFloorTermVolatilityModel(null,null,null,null,null)
     member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
     static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
         if p :? ConstantCapFloorTermVolatilityModel then 
@@ -190,7 +190,7 @@ type ConstantCapFloorTermVolatilityModel1
 (* 
     casting 
 *)
-    internal new () = ConstantCapFloorTermVolatilityModel1(null,null,null,null,null)
+    internal new () = new ConstantCapFloorTermVolatilityModel1(null,null,null,null,null)
     member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
     static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
         if p :? ConstantCapFloorTermVolatilityModel1 then 
@@ -294,7 +294,7 @@ type ConstantCapFloorTermVolatilityModel2
 (* 
     casting 
 *)
-    internal new () = ConstantCapFloorTermVolatilityModel2(null,null,null,null,null)
+    internal new () = new ConstantCapFloorTermVolatilityModel2(null,null,null,null,null)
     member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
     static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
         if p :? ConstantCapFloorTermVolatilityModel2 then 
@@ -398,7 +398,7 @@ type ConstantCapFloorTermVolatilityModel3
 (* 
     casting 
 *)
-    internal new () = ConstantCapFloorTermVolatilityModel3(null,null,null,null,null)
+    internal new () = new ConstantCapFloorTermVolatilityModel3(null,null,null,null,null)
     member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
     static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
         if p :? ConstantCapFloorTermVolatilityModel3 then 

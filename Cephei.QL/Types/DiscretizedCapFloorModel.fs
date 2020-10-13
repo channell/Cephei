@@ -82,7 +82,7 @@ type DiscretizedCapFloorModel
 (* 
     casting 
 *)
-    internal new () = DiscretizedCapFloorModel(null,null,null)
+    internal new () = new DiscretizedCapFloorModel(null,null,null)
     member internal this.Inject v = _DiscretizedCapFloor.Value <- v
     static member Cast (p : ICell<DiscretizedCapFloor>) = 
         if p :? DiscretizedCapFloorModel then 

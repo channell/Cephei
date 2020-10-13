@@ -96,7 +96,7 @@ type CumulativeNormalDistributionModel1
 (* 
     casting 
 *)
-    internal new () = CumulativeNormalDistributionModel1(null,null)
+    internal new () = new CumulativeNormalDistributionModel1(null,null)
     member internal this.Inject v = _CumulativeNormalDistribution.Value <- v
     static member Cast (p : ICell<CumulativeNormalDistribution>) = 
         if p :? CumulativeNormalDistributionModel1 then 

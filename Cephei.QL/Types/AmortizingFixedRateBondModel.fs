@@ -121,7 +121,7 @@ type AmortizingFixedRateBondModel
 (* 
     casting 
 *)
-    internal new () = AmortizingFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    internal new () = new AmortizingFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AmortizingFixedRateBond.Value <- v
     static member Cast (p : ICell<AmortizingFixedRateBond>) = 
         if p :? AmortizingFixedRateBondModel then 
@@ -284,7 +284,7 @@ type AmortizingFixedRateBondModel1
 (* 
     casting 
 *)
-    internal new () = AmortizingFixedRateBondModel1(null,null,null,null,null,null,null,null,null)
+    internal new () = new AmortizingFixedRateBondModel1(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AmortizingFixedRateBond.Value <- v
     static member Cast (p : ICell<AmortizingFixedRateBond>) = 
         if p :? AmortizingFixedRateBondModel1 then 
@@ -444,7 +444,7 @@ type AmortizingFixedRateBondModel2
 (* 
     casting 
 *)
-    internal new () = AmortizingFixedRateBondModel2(null,null,null,null,null,null,null,null,null)
+    internal new () = new AmortizingFixedRateBondModel2(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AmortizingFixedRateBond.Value <- v
     static member Cast (p : ICell<AmortizingFixedRateBond>) = 
         if p :? AmortizingFixedRateBondModel2 then 

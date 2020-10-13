@@ -65,7 +65,7 @@ type SobolBrownianGeneratorModel
 (* 
     casting 
 *)
-    internal new () = SobolBrownianGeneratorModel(null,null,null,null,null)
+    internal new () = new SobolBrownianGeneratorModel(null,null,null,null,null)
     member internal this.Inject v = _SobolBrownianGenerator.Value <- v
     static member Cast (p : ICell<SobolBrownianGenerator>) = 
         if p :? SobolBrownianGeneratorModel then 

@@ -66,7 +66,7 @@ type TreeSwaptionEngineModel
 (* 
     casting 
 *)
-    internal new () = TreeSwaptionEngineModel(null,null,null)
+    internal new () = new TreeSwaptionEngineModel(null,null,null)
     member internal this.Inject v = _TreeSwaptionEngine.Value <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel then 
@@ -128,7 +128,7 @@ type TreeSwaptionEngineModel1
 (* 
     casting 
 *)
-    internal new () = TreeSwaptionEngineModel1(null,null)
+    internal new () = new TreeSwaptionEngineModel1(null,null)
     member internal this.Inject v = _TreeSwaptionEngine.Value <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel1 then 
@@ -191,7 +191,7 @@ type TreeSwaptionEngineModel2
 (* 
     casting 
 *)
-    internal new () = TreeSwaptionEngineModel2(null,null,null)
+    internal new () = new TreeSwaptionEngineModel2(null,null,null)
     member internal this.Inject v = _TreeSwaptionEngine.Value <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel2 then 
@@ -253,7 +253,7 @@ type TreeSwaptionEngineModel3
 (* 
     casting 
 *)
-    internal new () = TreeSwaptionEngineModel3(null,null)
+    internal new () = new TreeSwaptionEngineModel3(null,null)
     member internal this.Inject v = _TreeSwaptionEngine.Value <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel3 then 

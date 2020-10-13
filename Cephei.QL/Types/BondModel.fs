@@ -111,7 +111,7 @@ type BondModel
 (* 
     casting 
 *)
-    internal new () = BondModel(null,null,null,null,null,null,null,null)
+    internal new () = new BondModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _Bond.Value <- v
     static member Cast (p : ICell<Bond>) = 
         if p :? BondModel then 
@@ -260,7 +260,7 @@ type BondModel1
 (* 
     casting 
 *)
-    internal new () = BondModel1(null,null,null,null,null,null)
+    internal new () = new BondModel1(null,null,null,null,null,null)
     member internal this.Inject v = _Bond.Value <- v
     static member Cast (p : ICell<Bond>) = 
         if p :? BondModel1 then 

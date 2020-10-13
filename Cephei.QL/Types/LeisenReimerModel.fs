@@ -66,7 +66,7 @@ type LeisenReimerModel
 (* 
     casting 
 *)
-    internal new () = LeisenReimerModel(null,null,null,null)
+    internal new () = new LeisenReimerModel(null,null,null,null)
     member internal this.Inject v = _LeisenReimer.Value <- v
     static member Cast (p : ICell<LeisenReimer>) = 
         if p :? LeisenReimerModel then 

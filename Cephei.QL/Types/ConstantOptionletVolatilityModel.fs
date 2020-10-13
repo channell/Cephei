@@ -100,7 +100,7 @@ type ConstantOptionletVolatilityModel
 (* 
     casting 
 *)
-    internal new () = ConstantOptionletVolatilityModel(null,null,null,null,null)
+    internal new () = new ConstantOptionletVolatilityModel(null,null,null,null,null)
     member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
     static member Cast (p : ICell<ConstantOptionletVolatility>) = 
         if p :? ConstantOptionletVolatilityModel then 
@@ -232,7 +232,7 @@ type ConstantOptionletVolatilityModel1
 (* 
     casting 
 *)
-    internal new () = ConstantOptionletVolatilityModel1(null,null,null,null,null)
+    internal new () = new ConstantOptionletVolatilityModel1(null,null,null,null,null)
     member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
     static member Cast (p : ICell<ConstantOptionletVolatility>) = 
         if p :? ConstantOptionletVolatilityModel1 then 
@@ -364,7 +364,7 @@ type ConstantOptionletVolatilityModel2
 (* 
     casting 
 *)
-    internal new () = ConstantOptionletVolatilityModel2(null,null,null,null,null)
+    internal new () = new ConstantOptionletVolatilityModel2(null,null,null,null,null)
     member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
     static member Cast (p : ICell<ConstantOptionletVolatility>) = 
         if p :? ConstantOptionletVolatilityModel2 then 
@@ -496,7 +496,7 @@ type ConstantOptionletVolatilityModel3
 (* 
     casting 
 *)
-    internal new () = ConstantOptionletVolatilityModel3(null,null,null,null,null)
+    internal new () = new ConstantOptionletVolatilityModel3(null,null,null,null,null)
     member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
     static member Cast (p : ICell<ConstantOptionletVolatility>) = 
         if p :? ConstantOptionletVolatilityModel3 then 

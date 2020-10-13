@@ -78,7 +78,7 @@ type FraRateHelperModel
 (* 
     casting 
 *)
-    internal new () = FraRateHelperModel(null,null,null,null,null)
+    internal new () = new FraRateHelperModel(null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper.Value <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel then 
@@ -165,7 +165,7 @@ type FraRateHelperModel1
 (* 
     casting 
 *)
-    internal new () = FraRateHelperModel1(null,null,null,null,null)
+    internal new () = new FraRateHelperModel1(null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper.Value <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel1 then 
@@ -262,7 +262,7 @@ type FraRateHelperModel2
 (* 
     casting 
 *)
-    internal new () = FraRateHelperModel2(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FraRateHelperModel2(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper.Value <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel2 then 
@@ -364,7 +364,7 @@ type FraRateHelperModel3
 (* 
     casting 
 *)
-    internal new () = FraRateHelperModel3(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FraRateHelperModel3(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper.Value <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel3 then 
@@ -456,7 +456,7 @@ type FraRateHelperModel4
 (* 
     casting 
 *)
-    internal new () = FraRateHelperModel4(null,null,null,null,null)
+    internal new () = new FraRateHelperModel4(null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper.Value <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel4 then 
@@ -543,7 +543,7 @@ type FraRateHelperModel5
 (* 
     casting 
 *)
-    internal new () = FraRateHelperModel5(null,null,null,null,null)
+    internal new () = new FraRateHelperModel5(null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper.Value <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel5 then 
@@ -640,7 +640,7 @@ type FraRateHelperModel6
 (* 
     casting 
 *)
-    internal new () = FraRateHelperModel6(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FraRateHelperModel6(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper.Value <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel6 then 
@@ -742,7 +742,7 @@ type FraRateHelperModel7
 (* 
     casting 
 *)
-    internal new () = FraRateHelperModel7(null,null,null,null,null,null,null,null,null,null)
+    internal new () = new FraRateHelperModel7(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper.Value <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel7 then 
